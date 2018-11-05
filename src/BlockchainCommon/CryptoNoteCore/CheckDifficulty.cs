@@ -6,13 +6,13 @@
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define inline __inline
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define SWAP32LE IDENT32
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:

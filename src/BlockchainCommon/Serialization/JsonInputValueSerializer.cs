@@ -75,7 +75,7 @@ public class JsonInputValueSerializer : ISerializer
 	chain.RemoveAt(chain.Count - 1);
   }
 
-  public override bool beginArray(ref uint64_t size, Common.StringView name)
+  public override bool beginArray(ref ulong size, Common.StringView name)
   {
 	JsonValue parent = chain[chain.Count - 1].functorMethod;
 	string strName = name;
@@ -101,31 +101,31 @@ public class JsonInputValueSerializer : ISerializer
 	idxs.RemoveAt(idxs.Count - 1);
   }
 
-  public static override bool functorMethod(uint8_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
 	return getNumber(new Common.StringView(name), ref value);
   }
-  public static override bool functorMethod(int16_t value, Common.StringView name)
+  public static override bool functorMethod(short value, Common.StringView name)
   {
 	return getNumber(new Common.StringView(name), ref value);
   }
-  public static override bool functorMethod(uint16_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
 	return getNumber(new Common.StringView(name), ref value);
   }
-  public static override bool functorMethod(int32_t value, Common.StringView name)
+  public static override bool functorMethod(int value, Common.StringView name)
   {
 	return getNumber(new Common.StringView(name), ref value);
   }
-  public static override bool functorMethod(uint32_t value, Common.StringView name)
+  public static override bool functorMethod(uint value, Common.StringView name)
   {
 	return getNumber(new Common.StringView(name), ref value);
   }
-  public static override bool functorMethod(int64_t value, Common.StringView name)
+  public static override bool functorMethod(long value, Common.StringView name)
   {
 	return getNumber(new Common.StringView(name), ref value);
   }
-  public static override bool functorMethod(uint64_t value, Common.StringView name)
+  public static override bool functorMethod(ulong value, Common.StringView name)
   {
 	return getNumber(new Common.StringView(name), ref value);
   }
@@ -153,7 +153,7 @@ public class JsonInputValueSerializer : ISerializer
 	value = ptr.getString();
 	return true;
   }
-  public override bool binary(object value, uint64_t size, Common.StringView name)
+  public override bool binary(object value, ulong size, Common.StringView name)
   {
 	var ptr = getValue.functorMethod(new Common.StringView(name));
 	if (ptr == null)
@@ -187,7 +187,7 @@ public class JsonInputValueSerializer : ISerializer
 
   private Common.JsonValue value = new Common.JsonValue();
   private readonly List<Common.JsonValue> chain = new List<Common.JsonValue>();
-  private List<uint64_t> idxs = new List<uint64_t>();
+  private List<ulong> idxs = new List<ulong>();
 
   private JsonValue getValue(Common.StringView name)
   {

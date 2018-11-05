@@ -16,7 +16,7 @@ public class MemoryStream: Common.IOutputStream
 	  this.m_writePos = 0;
   }
 
-  public override uint64_t writeSome(object data, uint64_t size)
+  public override ulong writeSome(object data, ulong size)
   {
 	if (size == 0)
 	{
@@ -34,12 +34,12 @@ public class MemoryStream: Common.IOutputStream
 	return size;
   }
 
-  public uint64_t size()
+  public ulong size()
   {
 	return m_buffer.Count;
   }
 
-  public uint8_t data()
+  public ushort data()
   {
 	return m_buffer.data();
   }
@@ -50,8 +50,8 @@ public class MemoryStream: Common.IOutputStream
 	m_buffer.Resize(0);
   }
 
-  private uint64_t m_writePos = new uint64_t();
-  private List<uint8_t> m_buffer = new List<uint8_t>();
+  private ulong m_writePos = new ulong();
+  private List<ushort> m_buffer = new List<ushort>();
 }
 
 }

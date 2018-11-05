@@ -41,7 +41,7 @@ public class PeerlistManager
 		  trim_gray_peerlist();
 		  return true;
 		}
-		public bool get_peerlist_head(LinkedList<PeerlistEntry> bs_head, uint32_t depth = CryptoNote.P2P_DEFAULT_PEERS_IN_HANDSHAKE)
+		public bool get_peerlist_head(LinkedList<PeerlistEntry> bs_head, uint depth = CryptoNote.P2P_DEFAULT_PEERS_IN_HANDSHAKE)
 		{
 			/* Sort the peers by last seen [Newer peers come first] */
 //C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
@@ -51,7 +51,7 @@ public class PeerlistManager
 			}
 		   );
 
-			uint32_t i = 0;
+			uint i = 0;
 
 			foreach (var peer in m_peers_white)
 			{
@@ -203,14 +203,14 @@ public class PeerlistManager
 
 			return false;
 		}
-		public bool set_peer_just_seen(uint64_t peer, uint32_t ip, uint32_t port)
+		public bool set_peer_just_seen(ulong peer, uint ip, uint port)
 		{
 		  NetworkAddress addr = new NetworkAddress();
 		  addr.ip = ip;
 		  addr.port = port;
-		  return set_peer_just_seen(new uint64_t(peer), addr);
+		  return set_peer_just_seen(new ulong(peer), addr);
 		}
-		public bool set_peer_just_seen(uint64_t peer, NetworkAddress addr)
+		public bool set_peer_just_seen(ulong peer, NetworkAddress addr)
 		{
 		  try
 		  {
@@ -230,8 +230,8 @@ public class PeerlistManager
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //		bool set_peer_unreachable(PeerlistEntry pr);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool is_ip_allowed(uint32_t ip) const
-		public bool is_ip_allowed(uint32_t ip)
+//ORIGINAL LINE: bool is_ip_allowed(uint ip) const
+		public bool is_ip_allowed(uint ip)
 		{
 		  System.Ipv4Address addr = new System.Ipv4Address(networkToHost(ip));
 
@@ -259,8 +259,8 @@ public class PeerlistManager
 
 		public void serialize(CryptoNote.ISerializer s)
 		{
-		  const uint8_t currentVersion = 1;
-		  uint8_t version = new uint8_t(currentVersion);
+		  const ushort currentVersion = 1;
+		  ushort version = new ushort(currentVersion);
 
 		  s.functorMethod(version, "version");
 

@@ -12,32 +12,32 @@ namespace Crypto
 
 public class Hash
 {
-  public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+  public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(32);
 }
 
 public class PublicKey
 {
-  public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+  public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(32);
 }
 
 public class SecretKey
 {
-  public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+  public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(32);
 }
 
 public class KeyDerivation
 {
-  public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+  public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(32);
 }
 
 public class KeyImage
 {
-  public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+  public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(32);
 }
 
 public class Signature
 {
-  public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(64);
+  public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(64);
 }
 
 }
@@ -48,13 +48,13 @@ namespace CryptoNote
 
 public class BaseInput
 {
-  public uint32_t blockIndex = new uint32_t();
+  public uint blockIndex = new uint();
 }
 
 public class KeyInput
 {
-  public uint64_t amount = new uint64_t();
-  public List<uint32_t> outputIndexes = new List<uint32_t>();
+  public ulong amount = new ulong();
+  public List<uint> outputIndexes = new List<uint>();
   public Crypto.KeyImage keyImage = new Crypto.KeyImage();
 }
 
@@ -67,17 +67,17 @@ public class KeyOutput
 
 public class TransactionOutput
 {
-  public uint64_t amount = new uint64_t();
+  public ulong amount = new ulong();
   public TransactionOutputTarget target = new TransactionOutputTarget();
 }
 
 public class TransactionPrefix
 {
-  public uint8_t version = new uint8_t();
-  public uint64_t unlockTime = new uint64_t();
+  public ushort version = new ushort();
+  public ulong unlockTime = new ulong();
   public List<TransactionInput> inputs = new List<TransactionInput>();
   public List<TransactionOutput> outputs = new List<TransactionOutput>();
-  public List<uint8_t> extra = new List<uint8_t>();
+  public List<ushort> extra = new List<ushort>();
 }
 
 public class Transaction : TransactionPrefix
@@ -91,10 +91,10 @@ public class BaseTransaction : TransactionPrefix
 
 public class ParentBlock
 {
-  public uint8_t majorVersion = new uint8_t();
-  public uint8_t minorVersion = new uint8_t();
+  public ushort majorVersion = new ushort();
+  public ushort minorVersion = new ushort();
   public Crypto.Hash previousBlockHash = new Crypto.Hash();
-  public uint16_t transactionCount = new uint16_t();
+  public ushort transactionCount = new ushort();
   public List<Crypto.Hash> baseTransactionBranch = new List<Crypto.Hash>();
   public BaseTransaction baseTransaction = new BaseTransaction();
   public List<Crypto.Hash> blockchainBranch = new List<Crypto.Hash>();
@@ -102,10 +102,10 @@ public class ParentBlock
 
 public class BlockHeader
 {
-  public uint8_t majorVersion = new uint8_t();
-  public uint8_t minorVersion = new uint8_t();
-  public uint32_t nonce = new uint32_t();
-  public uint64_t timestamp = new uint64_t();
+  public ushort majorVersion = new ushort();
+  public ushort minorVersion = new ushort();
+  public uint nonce = new uint();
+  public ulong timestamp = new ulong();
   public Crypto.Hash previousBlockHash = new Crypto.Hash();
 }
 
@@ -151,13 +151,13 @@ namespace CryptoNote
 namespace TransactionTypes
 {
 
-  public enum InputType : uint8_t
+  public enum InputType : ushort
   {
 	  Invalid,
 	  Key,
 	  Generating
   }
-  public enum OutputType : uint8_t
+  public enum OutputType : ushort
   {
 	  Invalid,
 	  Key
@@ -166,7 +166,7 @@ namespace TransactionTypes
   public class GlobalOutput
   {
 	public Crypto.PublicKey targetKey = new Crypto.PublicKey();
-	public uint32_t outputIndex = new uint32_t();
+	public uint outputIndex = new uint();
   }
 
 
@@ -179,7 +179,7 @@ namespace TransactionTypes
 
   public class InputKeyInfo
   {
-	public uint64_t amount = new uint64_t();
+	public ulong amount = new ulong();
 	public GlobalOutputsContainer outputs = new GlobalOutputsContainer();
 	public OutputKeyInfo realOutput = new OutputKeyInfo();
   }
@@ -207,8 +207,8 @@ public abstract class ITransactionReader : System.IDisposable
 //ORIGINAL LINE: virtual bool getTransactionSecretKey(Crypto::SecretKey& key) const = 0;
   public abstract bool getTransactionSecretKey(Crypto.SecretKey key);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getUnlockTime() const = 0;
-  public abstract uint64_t getUnlockTime();
+//ORIGINAL LINE: virtual ulong getUnlockTime() const = 0;
+  public abstract ulong getUnlockTime();
 
   // extra
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
@@ -226,8 +226,8 @@ public abstract class ITransactionReader : System.IDisposable
 //ORIGINAL LINE: virtual size_t getInputCount() const = 0;
   public abstract size_t getInputCount();
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getInputTotalAmount() const = 0;
-  public abstract uint64_t getInputTotalAmount();
+//ORIGINAL LINE: virtual ulong getInputTotalAmount() const = 0;
+  public abstract ulong getInputTotalAmount();
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual TransactionTypes::InputType getInputType(size_t index) const = 0;
   public abstract TransactionTypes.InputType getInputType(size_t index);
@@ -240,22 +240,22 @@ public abstract class ITransactionReader : System.IDisposable
 //ORIGINAL LINE: virtual size_t getOutputCount() const = 0;
   public abstract size_t getOutputCount();
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getOutputTotalAmount() const = 0;
-  public abstract uint64_t getOutputTotalAmount();
+//ORIGINAL LINE: virtual ulong getOutputTotalAmount() const = 0;
+  public abstract ulong getOutputTotalAmount();
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual TransactionTypes::OutputType getOutputType(size_t index) const = 0;
   public abstract TransactionTypes.OutputType getOutputType(size_t index);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual void getOutput(size_t index, KeyOutput& output, uint64_t& amount) const = 0;
-  public abstract void getOutput(size_t index, KeyOutput output, uint64_t amount);
+//ORIGINAL LINE: virtual void getOutput(size_t index, KeyOutput& output, ulong& amount) const = 0;
+  public abstract void getOutput(size_t index, KeyOutput output, ulong amount);
 
   // signatures
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual size_t getRequiredSignaturesCount(size_t inputIndex) const = 0;
   public abstract size_t getRequiredSignaturesCount(size_t inputIndex);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool findOutputsToAccount(const AccountPublicAddress& addr, const Crypto::SecretKey& viewSecretKey, ClassicVector<uint32_t>& outs, uint64_t& outputAmount) const = 0;
-  public abstract bool findOutputsToAccount(AccountPublicAddress addr, Crypto.SecretKey viewSecretKey, List<uint32_t> outs, uint64_t outputAmount);
+//ORIGINAL LINE: virtual bool findOutputsToAccount(const AccountPublicAddress& addr, const Crypto::SecretKey& viewSecretKey, ClassicVector<uint>& outs, ulong& outputAmount) const = 0;
+  public abstract bool findOutputsToAccount(AccountPublicAddress addr, Crypto.SecretKey viewSecretKey, List<uint> outs, ulong outputAmount);
 
   // various checks
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
@@ -285,7 +285,7 @@ public abstract class ITransactionWriter : System.IDisposable
   }
 
   // transaction parameters
-  public abstract void setUnlockTime(uint64_t unlockTime);
+  public abstract void setUnlockTime(ulong unlockTime);
 
   // extra
   public abstract void setPaymentId(Crypto.Hash paymentId);
@@ -296,8 +296,8 @@ public abstract class ITransactionWriter : System.IDisposable
   public abstract size_t addInput(KeyInput input);
   public abstract size_t addInput(AccountKeys senderKeys, TransactionTypes.InputKeyInfo info, KeyPair ephKeys);
 
-  public abstract size_t addOutput(uint64_t amount, AccountPublicAddress to);
-  public abstract size_t addOutput(uint64_t amount, KeyOutput @out);
+  public abstract size_t addOutput(ulong amount, AccountPublicAddress to);
+  public abstract size_t addOutput(ulong amount, KeyOutput @out);
 
   // transaction info
   public abstract void setTransactionSecretKey(Crypto.SecretKey key);
@@ -357,12 +357,12 @@ namespace CryptoNote
 	public TransactionExtra()
 	{
 	}
-	public TransactionExtra(List<uint8_t> extra)
+	public TransactionExtra(List<ushort> extra)
 	{
 	  parse(extra);
 	}
 
-	public bool parse(List<uint8_t> extra)
+	public bool parse(List<ushort> extra)
 	{
 	  fields.Clear();
 	  return CryptoNote.parseTransactionExtra(extra, fields);
@@ -424,10 +424,10 @@ namespace CryptoNote
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint8_t> serialize() const
-	public List<uint8_t> serialize()
+//ORIGINAL LINE: ClassicVector<ushort> serialize() const
+	public List<ushort> serialize()
 	{
-	  List<uint8_t> extra = new List<uint8_t>();
+	  List<ushort> extra = new List<ushort>();
 	  writeTransactionExtra(extra, fields);
 	  return extra;
 	}
@@ -497,7 +497,7 @@ namespace CryptoNote
 
 	  transaction.version = CURRENT_TRANSACTION_VERSION;
 	  transaction.unlockTime = 0;
-	  transaction.extra = new List<uint8_t>(extra.serialize());
+	  transaction.extra = new List<ushort>(extra.serialize());
 
 	  secretKey = txKeys.secretKey;
 	}
@@ -536,8 +536,8 @@ namespace CryptoNote
 	  return pk;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getUnlockTime() const override
-	public override uint64_t getUnlockTime()
+//ORIGINAL LINE: virtual ulong getUnlockTime() const override
+	public override ulong getUnlockTime()
 	{
 	  return transaction.unlockTime;
 	}
@@ -545,7 +545,7 @@ namespace CryptoNote
 //ORIGINAL LINE: virtual bool getPaymentId(Hash& hash) const override
 	public override bool getPaymentId(ref Hash hash)
 	{
-	  List<uint8_t> nonce = new List<uint8_t>();
+	  List<ushort> nonce = new List<ushort>();
 	  if (getExtraNonce(nonce))
 	  {
 		Hash paymentId = new Hash();
@@ -563,8 +563,8 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	override bool getExtraNonce(BinaryArray nonce);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<uint8_t> getExtra() const override
-	public override List<uint8_t> getExtra()
+//ORIGINAL LINE: virtual ClassicVector<ushort> getExtra() const override
+	public override List<ushort> getExtra()
 	{
 	  return transaction.extra;
 	}
@@ -577,10 +577,10 @@ namespace CryptoNote
 	  return transaction.inputs.Count;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getInputTotalAmount() const override
-	public override uint64_t getInputTotalAmount()
+//ORIGINAL LINE: virtual ulong getInputTotalAmount() const override
+	public override ulong getInputTotalAmount()
 	{
-	  return std::accumulate(transaction.inputs.GetEnumerator(), transaction.inputs.end(), 0UL, (uint64_t val, boost::variant<BaseInput, KeyInput> in) =>
+	  return std::accumulate(transaction.inputs.GetEnumerator(), transaction.inputs.end(), 0UL, (ulong val, boost::variant<BaseInput, KeyInput> in) =>
 	  {
 		return val + getTransactionInputAmount(in);
 	  });
@@ -606,10 +606,10 @@ namespace CryptoNote
 	  return transaction.outputs.Count;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getOutputTotalAmount() const override
-	public override uint64_t getOutputTotalAmount()
+//ORIGINAL LINE: virtual ulong getOutputTotalAmount() const override
+	public override ulong getOutputTotalAmount()
 	{
-	  return std::accumulate(transaction.outputs.GetEnumerator(), transaction.outputs.end(), 0UL, (uint64_t val, TransactionOutput @out) =>
+	  return std::accumulate(transaction.outputs.GetEnumerator(), transaction.outputs.end(), 0UL, (ulong val, TransactionOutput @out) =>
 	  {
 		return val + @out.amount;
 	  });
@@ -621,8 +621,8 @@ namespace CryptoNote
 	  return getTransactionOutputType(getOutputChecked(transaction, index).target);
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual void getOutput(size_t index, KeyOutput& output, uint64_t& amount) const override
-	public override void getOutput(size_t index, ref KeyOutput output, ref uint64_t amount)
+//ORIGINAL LINE: virtual void getOutput(size_t index, KeyOutput& output, ulong& amount) const override
+	public override void getOutput(size_t index, ref KeyOutput output, ref ulong amount)
 	{
 	  auto @out = getOutputChecked(transaction, index, CryptoNote.TransactionTypes.OutputType.Key);
 	  output = boost::get<KeyOutput>(@out.target);
@@ -636,8 +636,8 @@ namespace CryptoNote
 	  return global::getRequiredSignaturesCount(getInputChecked(transaction, index));
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool findOutputsToAccount(const AccountPublicAddress& addr, const SecretKey& viewSecretKey, ClassicVector<uint32_t>& out, uint64_t& amount) const override
-	public override bool findOutputsToAccount(AccountPublicAddress addr, SecretKey viewSecretKey, List<uint32_t> @out, uint64_t amount)
+//ORIGINAL LINE: virtual bool findOutputsToAccount(const AccountPublicAddress& addr, const SecretKey& viewSecretKey, ClassicVector<uint>& out, ulong& amount) const override
+	public override bool findOutputsToAccount(AccountPublicAddress addr, SecretKey viewSecretKey, List<uint> @out, ulong amount)
 	{
 	  return global::CryptoNote.findOutputsToAccount(transaction, addr, viewSecretKey, @out, amount);
 	}
@@ -677,15 +677,15 @@ namespace CryptoNote
 
 	// get serialized transaction
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<uint8_t> getTransactionData() const override
-	public override List<uint8_t> getTransactionData()
+//ORIGINAL LINE: virtual ClassicVector<ushort> getTransactionData() const override
+	public override List<ushort> getTransactionData()
 	{
 	  return CryptoNote.GlobalMembers.toBinaryArray(transaction);
 	}
 
 	// ITransactionWriter
 
-	public override void setUnlockTime(uint64_t unlockTime)
+	public override void setUnlockTime(ulong unlockTime)
 	{
 	  checkIfSigning();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -696,7 +696,7 @@ namespace CryptoNote
 	public override void setPaymentId(Hash hash)
 	{
 	  checkIfSigning();
-	  List<uint8_t> paymentIdBlob = new List<uint8_t>();
+	  List<ushort> paymentIdBlob = new List<ushort>();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  setPaymentIdToTransactionExtraNonce(paymentIdBlob, reinterpret_cast<const Hash&>(hash));
 	  setExtraNonce(paymentIdBlob);
@@ -734,7 +734,7 @@ namespace CryptoNote
 	  return addInput(input);
 	}
 
-	public override size_t addOutput(uint64_t amount, AccountPublicAddress to)
+	public override size_t addOutput(ulong amount, AccountPublicAddress to)
 	{
 	  checkIfSigning();
 
@@ -746,7 +746,7 @@ namespace CryptoNote
 
 	  return transaction.outputs.Count - 1;
 	}
-	public override size_t addOutput(uint64_t amount, KeyOutput @out)
+	public override size_t addOutput(ulong amount, KeyOutput @out)
 	{
 	  checkIfSigning();
 	  size_t outputIndex = transaction.outputs.Count;
@@ -866,5 +866,5 @@ namespace CryptoNote
 
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool TransactionImpl::getExtraNonce(ClassicVector<uint8_t>& nonce) const
+//ORIGINAL LINE: bool TransactionImpl::getExtraNonce(ClassicVector<ushort>& nonce) const
 }

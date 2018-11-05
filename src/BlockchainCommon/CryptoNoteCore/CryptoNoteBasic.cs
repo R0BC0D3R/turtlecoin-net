@@ -8,7 +8,7 @@ namespace CryptoNote
 
   public class ParentBlockSerializer
   {
-	public ParentBlockSerializer(ParentBlock parentBlock, uint64_t timestamp, uint32_t nonce, bool hashingSerialization, bool headerOnly)
+	public ParentBlockSerializer(ParentBlock parentBlock, ulong timestamp, uint nonce, bool hashingSerialization, bool headerOnly)
 	{
 		this.m_parentBlock = parentBlock;
 		this.m_timestamp = timestamp;
@@ -18,8 +18,8 @@ namespace CryptoNote
 	}
 
 	public ParentBlock m_parentBlock;
-	public uint64_t m_timestamp;
-	public uint32_t m_nonce;
+	public ulong m_timestamp;
+	public uint m_nonce;
 	public bool m_hashingSerialization;
 	public bool m_headerOnly;
   }

@@ -70,7 +70,7 @@ public class RpcServer : HttpServer
 	m_fee_address = fee_address;
 	return true;
   }
-  public bool setFeeAmount(uint32_t fee_amount)
+  public bool setFeeAmount(uint fee_amount)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: m_fee_amount = fee_amount;
@@ -85,7 +85,7 @@ public class RpcServer : HttpServer
   public bool on_get_block_headers_range(COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.request req, COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.response res, JsonRpc.JsonRpcError error_resp)
   {
 	  // TODO: change usage to jsonRpcHandlers?
-	  uint64_t bc_height = m_core.get_current_blockchain_height();
+	  ulong bc_height = m_core.get_current_blockchain_height();
 	  if (req.start_height > bc_height || req.end_height >= bc_height != null || req.start_height > req.end_height)
 	  {
 		  error_resp.code = DefineConstants.CORE_RPC_ERROR_CODE_TOO_BIG_HEIGHT;
@@ -93,13 +93,13 @@ public class RpcServer : HttpServer
 		  return false;
 	  }
 
-	  for (uint32_t h = (uint32_t)req.start_height; h <= (uint32_t)req.end_height; ++h)
+	  for (uint h = (uint)req.start_height; h <= (uint)req.end_height; ++h)
 	  {
-		  Crypto.Hash block_hash = m_core.getBlockHashByIndex(new uint32_t(h));
+		  Crypto.Hash block_hash = m_core.getBlockHashByIndex(new uint(h));
 		  CryptoNote.BlockTemplate blk = m_core.getBlockByHash(block_hash);
 
 		  res.headers.Add(new block_header_response());
-		  fill_block_header_response(blk, false, new uint32_t(h), block_hash, res.headers[res.headers.Count - 1]);
+		  fill_block_header_response(blk, false, new uint(h), block_hash, res.headers[res.headers.Count - 1]);
 
 		  // TODO: Error handling like in monero?
 		  /*block blk;
@@ -116,7 +116,7 @@ public class RpcServer : HttpServer
 		  	error_resp.message = "Internal error: coinbase transaction in the block has the wrong type";
 		  	return false;
 		  }
-		  uint64_t block_height = boost::get<txin_gen>(blk.miner_tx.vin.front()).height;
+		  ulong block_height = boost::get<txin_gen>(blk.miner_tx.vin.front()).height;
 		  if (block_height != h)
 		  {
 		  	error_resp.code = CORE_RPC_ERROR_CODE_INTERNAL_ERROR;
@@ -150,21 +150,21 @@ public class RpcServer : HttpServer
 	res.tx_count = m_core.getBlockchainTransactionCount() - res.height; //without coinbase
 	res.tx_pool_size = m_core.getPoolTransactionCount();
 	res.alt_blocks_count = m_core.getAlternativeBlockCount();
-	uint64_t total_conn = m_p2p.get_connections_count();
+	ulong total_conn = m_p2p.get_connections_count();
 	res.outgoing_connections_count = m_p2p.get_outgoing_connections_count();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: res.incoming_connections_count = total_conn - res.outgoing_connections_count;
 	res.incoming_connections_count.CopyFrom(total_conn - res.outgoing_connections_count);
 	res.white_peerlist_size = m_p2p.getPeerlistManager().get_white_peers_count();
 	res.grey_peerlist_size = m_p2p.getPeerlistManager().get_gray_peers_count();
-	res.last_known_block_index = Math.Max((uint32_t)1, m_protocol.getObservedHeight()) - 1;
-	res.network_height = Math.Max((uint32_t)1, m_protocol.getBlockchainHeight());
-	res.upgrade_heights = new List<uint64_t>(CryptoNote.parameters.FORK_HEIGHTS_SIZE == 0 ? new List<uint64_t>() : new List<uint64_t>(CryptoNote.parameters.FORK_HEIGHTS, CryptoNote.parameters.FORK_HEIGHTS + CryptoNote.parameters.FORK_HEIGHTS_SIZE));
+	res.last_known_block_index = Math.Max((uint)1, m_protocol.getObservedHeight()) - 1;
+	res.network_height = Math.Max((uint)1, m_protocol.getBlockchainHeight());
+	res.upgrade_heights = new List<ulong>(CryptoNote.parameters.FORK_HEIGHTS_SIZE == 0 ? new List<ulong>() : new List<ulong>(CryptoNote.parameters.FORK_HEIGHTS, CryptoNote.parameters.FORK_HEIGHTS + CryptoNote.parameters.FORK_HEIGHTS_SIZE));
 	res.supported_height = CryptoNote.parameters.FORK_HEIGHTS_SIZE == 0 ? 0 : CryptoNote.parameters.FORK_HEIGHTS[CryptoNote.parameters.CURRENT_FORK_INDEX];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: res.hashrate = (uint32_t)round(res.difficulty / CryptoNote::parameters::DIFFICULTY_TARGET);
-	res.hashrate.CopyFrom((uint32_t)Math.Round(res.difficulty / CryptoNote.parameters.DIFFICULTY_TARGET));
-	res.synced = ((uint64_t)res.height == (uint64_t)res.network_height);
+//ORIGINAL LINE: res.hashrate = (uint)round(res.difficulty / CryptoNote::parameters::DIFFICULTY_TARGET);
+	res.hashrate.CopyFrom((uint)Math.Round(res.difficulty / CryptoNote.parameters.DIFFICULTY_TARGET));
+	res.synced = ((ulong)res.height == (ulong)res.network_height);
 	res.testnet = m_core.getCurrency().isTestnet();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: res.major_version = m_core.getBlockDetails(m_core.getTopBlockIndex()).majorVersion;
@@ -175,8 +175,8 @@ public class RpcServer : HttpServer
 	res.version = PROJECT_VERSION;
 	res.status = DefineConstants.CORE_RPC_STATUS_OK;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: res.start_time = (uint64_t)m_core.getStartTime();
-	res.start_time.CopyFrom((uint64_t)m_core.getStartTime());
+//ORIGINAL LINE: res.start_time = (ulong)m_core.getStartTime();
+	res.start_time.CopyFrom((ulong)m_core.getStartTime());
 	return true;
   }
 
@@ -334,8 +334,8 @@ public class RpcServer : HttpServer
 	  return false;
 	}
 
-	uint32_t totalBlockCount = new uint32_t();
-	uint32_t startBlockIndex = new uint32_t();
+	uint totalBlockCount = new uint();
+	uint startBlockIndex = new uint();
 	List<Crypto.Hash> supplement = m_core.findBlockchainSupplement(req.block_ids, COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT, totalBlockCount, startBlockIndex);
 
 	res.current_height = totalBlockCount;
@@ -350,11 +350,11 @@ public class RpcServer : HttpServer
   }
   private bool on_query_blocks(COMMAND_RPC_QUERY_BLOCKS.request req, COMMAND_RPC_QUERY_BLOCKS.response res)
   {
-	uint32_t startIndex = new uint32_t();
-	uint32_t currentIndex = new uint32_t();
-	uint32_t fullOffset = new uint32_t();
+	uint startIndex = new uint();
+	uint currentIndex = new uint();
+	uint fullOffset = new uint();
 
-	if (!m_core.queryBlocks(req.block_ids, new uint64_t(req.timestamp), startIndex, currentIndex, fullOffset, res.items))
+	if (!m_core.queryBlocks(req.block_ids, new ulong(req.timestamp), startIndex, currentIndex, fullOffset, res.items))
 	{
 	  res.status = "Failed to perform query";
 	  return false;
@@ -368,10 +368,10 @@ public class RpcServer : HttpServer
   }
   private bool on_query_blocks_lite(COMMAND_RPC_QUERY_BLOCKS_LITE.request req, COMMAND_RPC_QUERY_BLOCKS_LITE.response res)
   {
-	uint32_t startIndex = new uint32_t();
-	uint32_t currentIndex = new uint32_t();
-	uint32_t fullOffset = new uint32_t();
-	if (!m_core.queryBlocksLite(req.blockIds, new uint64_t(req.timestamp), startIndex, currentIndex, fullOffset, res.items))
+	uint startIndex = new uint();
+	uint currentIndex = new uint();
+	uint fullOffset = new uint();
+	if (!m_core.queryBlocksLite(req.blockIds, new ulong(req.timestamp), startIndex, currentIndex, fullOffset, res.items))
 	{
 	  res.status = "Failed to perform query";
 	  return false;
@@ -386,7 +386,7 @@ public class RpcServer : HttpServer
   }
   private bool on_get_indexes(COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.request req, COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.response res)
   {
-	List<uint32_t> outputIndexes = new List<uint32_t>();
+	List<uint> outputIndexes = new List<uint>();
 	if (!m_core.getTransactionGlobalIndexes(req.txid, outputIndexes))
 	{
 	  res.status = "Failed";
@@ -402,11 +402,11 @@ public class RpcServer : HttpServer
   {
 	res.status = "Failed";
 
-	foreach (uint64_t amount in req.amounts)
+	foreach (ulong amount in req.amounts)
 	{
-	  List<uint32_t> globalIndexes = new List<uint32_t>();
+	  List<uint> globalIndexes = new List<uint>();
 	  List<Crypto.PublicKey> publicKeys = new List<Crypto.PublicKey>();
-	  if (!m_core.getRandomOutputs(new uint64_t(amount), (uint16_t)req.outs_count, globalIndexes, publicKeys))
+	  if (!m_core.getRandomOutputs(new ulong(amount), (ushort)req.outs_count, globalIndexes, publicKeys))
 	  {
 		return true;
 	  }
@@ -460,7 +460,7 @@ public class RpcServer : HttpServer
 	try
 	{
 	  List<BlockDetails> blockDetails = new List<BlockDetails>();
-	  foreach (uint32_t height in req.blockHeights)
+	  foreach (uint height in req.blockHeights)
 	  {
 		blockDetails.Add(m_core.getBlockDetails(height));
 	  }
@@ -534,7 +534,7 @@ public class RpcServer : HttpServer
   {
 	try
 	{
-	  var blockHashes = m_core.getBlockHashesByTimestamps(new uint64_t(req.timestampBegin), new uint64_t(req.secondsCount));
+	  var blockHashes = m_core.getBlockHashesByTimestamps(new ulong(req.timestampBegin), new ulong(req.secondsCount));
 	  rsp.blockHashes = std::move(blockHashes);
 	}
 	catch (std::system_error e)
@@ -602,7 +602,7 @@ public class RpcServer : HttpServer
   private bool on_get_height(COMMAND_RPC_GET_HEIGHT.request req, COMMAND_RPC_GET_HEIGHT.response res)
   {
 	res.height = m_core.getTopBlockIndex() + 1;
-	res.network_height = Math.Max((uint32_t)1, m_protocol.getBlockchainHeight());
+	res.network_height = Math.Max((uint)1, m_protocol.getBlockchainHeight());
 	res.status = DefineConstants.CORE_RPC_STATUS_OK;
 	return true;
   }
@@ -723,7 +723,7 @@ public class RpcServer : HttpServer
 	  throw new JsonRpc.JsonRpcError(new int(DefineConstants.CORE_RPC_ERROR_CODE_WRONG_PARAM, "Wrong parameters, expected height"));
 	}
 
-	uint32_t h = (uint32_t)req[0];
+	uint h = (uint)req[0];
 	Crypto.Hash blockId = m_core.getBlockHashByIndex(h - 1);
 	if (blockId == GlobalMembers.NULL_HASH)
 	{
@@ -748,7 +748,7 @@ public class RpcServer : HttpServer
 	}
 
 	BlockTemplate blockTemplate = boost::value_initialized<BlockTemplate>();
-	List<uint8_t> blob_reserve = new List<uint8_t>();
+	List<ushort> blob_reserve = new List<ushort>();
 	blob_reserve.Resize(req.reserve_size, 0);
 
 	if (!m_core.getBlockTemplate(blockTemplate, acc, blob_reserve, res.difficulty, res.height))
@@ -867,16 +867,16 @@ public class RpcServer : HttpServer
 	  throw new JsonRpc.JsonRpcError(new int(DefineConstants.CORE_RPC_ERROR_CODE_TOO_BIG_HEIGHT, "To big height: " + Convert.ToString(req.height) + ", current blockchain height = " + Convert.ToString(m_core.getTopBlockIndex())));
 	}
 
-  uint32_t index = (uint32_t)req.height;
-	var block = m_core.getBlockByIndex(new uint32_t(index));
+  uint index = (uint)req.height;
+	var block = m_core.getBlockByIndex(new uint(index));
 	CachedBlock cachedBlock = new CachedBlock(block);
   Debug.Assert(cachedBlock.getBlockIndex() == req.height);
-	fill_block_header_response(block, false, new uint32_t(index), cachedBlock.getBlockHash(), res.block_header);
+	fill_block_header_response(block, false, new uint(index), cachedBlock.getBlockHash(), res.block_header);
 	res.status = DefineConstants.CORE_RPC_STATUS_OK;
 	return true;
   }
 
-  private void fill_block_header_response(BlockTemplate blk, bool orphan_status, uint32_t index, Hash hash, block_header_response response)
+  private void fill_block_header_response(BlockTemplate blk, bool orphan_status, uint index, Hash hash, block_header_response response)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: response.major_version = blk.majorVersion;
@@ -901,14 +901,14 @@ public class RpcServer : HttpServer
 	  response.hash = Common.GlobalMembers.podToHex(hash);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: response.difficulty = m_core.getBlockDifficulty(index);
-	  response.difficulty.CopyFrom(m_core.getBlockDifficulty(new uint32_t(index)));
+	  response.difficulty.CopyFrom(m_core.getBlockDifficulty(new uint(index)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: response.reward = get_block_reward(blk);
 	  response.reward.CopyFrom(GlobalMembers.get_block_reward(blk));
 	  BlockDetails blkDetails = m_core.getBlockDetails(hash);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: response.num_txes = static_cast<uint32_t>(blkDetails.transactions.size());
-	  response.num_txes.CopyFrom((uint32_t)blkDetails.transactions.Count);
+//ORIGINAL LINE: response.num_txes = static_cast<uint>(blkDetails.transactions.size());
+	  response.num_txes.CopyFrom((uint)blkDetails.transactions.Count);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: response.block_size = blkDetails.blockSize;
 	  response.block_size.CopyFrom(blkDetails.blockSize);
@@ -956,16 +956,16 @@ public class RpcServer : HttpServer
 	  throw new JsonRpc.JsonRpcError(new int(DefineConstants.CORE_RPC_ERROR_CODE_TOO_BIG_HEIGHT, "To big height: " + Convert.ToString(req.height) + ", current blockchain height = " + Convert.ToString(m_core.getTopBlockIndex())));
 	}
 
-	uint32_t print_blocks_count = 30;
-	uint32_t last_height = (uint32_t)(req.height - print_blocks_count);
+	uint print_blocks_count = 30;
+	uint last_height = (uint)(req.height - print_blocks_count);
 	if (req.height <= print_blocks_count)
 	{
 	  last_height = 0;
 	}
 
-	for (uint32_t i = (uint32_t)req.height; i >= last_height; i--)
+	for (uint i = (uint)req.height; i >= last_height; i--)
 	{
-	  Hash block_hash = m_core.getBlockHashByIndex((uint32_t)i);
+	  Hash block_hash = m_core.getBlockHashByIndex((uint)i);
 	  if (!m_core.hasBlock(block_hash))
 	  {
 		throw new JsonRpc.JsonRpcError(new int(DefineConstants.CORE_RPC_ERROR_CODE_INTERNAL_ERROR, "Internal error: can't get block by height. Height = " + Convert.ToString(i) + '.'));
@@ -1013,8 +1013,8 @@ public class RpcServer : HttpServer
 
 	try
 	{
-	  uint32_t height = boost::lexical_cast<uint32_t>(req.hash);
-	  hash = m_core.getBlockHashByIndex(new uint32_t(height));
+	  uint height = boost::lexical_cast<uint>(req.hash);
+	  hash = m_core.getBlockHashByIndex(new uint(height));
 	}
 	catch (boost::bad_lexical_cast)
 	{
@@ -1039,7 +1039,7 @@ public class RpcServer : HttpServer
 
 	block_header_response block_header = new block_header_response();
 	res.block.height = boost::get<BaseInput>(blk.baseTransaction.inputs[0]).blockIndex;
-	fill_block_header_response(blk, false, new uint32_t(res.block.height), hash, block_header);
+	fill_block_header_response(blk, false, new uint(res.block.height), hash, block_header);
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: res.block.major_version = block_header.major_version;
@@ -1058,7 +1058,7 @@ public class RpcServer : HttpServer
 	res.block.depth = m_core.getTopBlockIndex() - res.block.height;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: res.block.difficulty = m_core.getBlockDifficulty(res.block.height);
-	res.block.difficulty.CopyFrom(m_core.getBlockDifficulty(new uint32_t(res.block.height)));
+	res.block.difficulty.CopyFrom(m_core.getBlockDifficulty(new uint(res.block.height)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: res.block.transactionsCumulativeSize = blkDetails.transactionsCumulativeSize;
 	res.block.transactionsCumulativeSize.CopyFrom(blkDetails.transactionsCumulativeSize);
@@ -1077,9 +1077,9 @@ public class RpcServer : HttpServer
 	res.block.blockSize.CopyFrom(blkDetails.blockSize);
 	res.block.orphan_status = blkDetails.isAlternative;
 
-	uint64_t maxReward = 0;
-	uint64_t currentReward = 0;
-	int64_t emissionChange = 0;
+	ulong maxReward = 0;
+	ulong currentReward = 0;
+	long emissionChange = 0;
 
 	if (maxReward != null)
 	{
@@ -1091,7 +1091,7 @@ public class RpcServer : HttpServer
 	{
 	}
 
-	uint64_t blockGrantedFullRewardZone = m_core.getCurrency().blockGrantedFullRewardZoneByBlockVersion(new uint8_t(block_header.major_version));
+	ulong blockGrantedFullRewardZone = m_core.getCurrency().blockGrantedFullRewardZoneByBlockVersion(new ushort(block_header.major_version));
 	res.block.effectiveSizeMedian = Math.Max(res.block.sizeMedian, blockGrantedFullRewardZone);
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -1121,8 +1121,8 @@ public class RpcServer : HttpServer
 		throw new System.Exception("Couldn't deserialize transaction");
 	  }
 	  f_transaction_short_response transaction_short = new f_transaction_short_response();
-	  uint64_t amount_in = getInputAmount(tx);
-	  uint64_t amount_out = getOutputAmount(tx);
+	  ulong amount_in = getInputAmount(tx);
+	  ulong amount_out = getOutputAmount(tx);
 
 	  transaction_short.hash = Common.GlobalMembers.podToHex(CryptoNote.GlobalMembers.getObjectHash(tx));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -1182,14 +1182,14 @@ public class RpcServer : HttpServer
 	Crypto.Hash blockHash = new Crypto.Hash();
 	if (transactionDetails.inBlockchain)
 	{
-	  uint32_t blockHeight = new uint32_t(transactionDetails.blockIndex);
+	  uint blockHeight = new uint(transactionDetails.blockIndex);
 	  if (blockHeight == null)
 	  {
 		throw new JsonRpc.JsonRpcError(new int(DefineConstants.CORE_RPC_ERROR_CODE_INTERNAL_ERROR, "Internal error: can't get transaction by hash. Hash = " + Common.GlobalMembers.podToHex(hash) + '.'));
 	  }
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: blockHash = m_core.getBlockHashByIndex(blockHeight);
-	  blockHash.CopyFrom(m_core.getBlockHashByIndex(new uint32_t(blockHeight)));
+	  blockHash.CopyFrom(m_core.getBlockHashByIndex(new uint(blockHeight)));
 	  BlockTemplate blk = m_core.getBlockByHash(blockHash);
 	  BlockDetails blkDetails = m_core.getBlockDetails(blockHash);
 
@@ -1211,8 +1211,8 @@ public class RpcServer : HttpServer
 	  res.block.CopyFrom(block_short);
 	}
 
-	uint64_t amount_in = getInputAmount(res.tx);
-	uint64_t amount_out = getOutputAmount(res.tx);
+	ulong amount_in = getInputAmount(res.tx);
+	ulong amount_out = getOutputAmount(res.tx);
 
 	res.txDetails.hash = Common.GlobalMembers.podToHex(CryptoNote.GlobalMembers.getObjectHash(res.tx));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -1227,7 +1227,7 @@ public class RpcServer : HttpServer
 	res.txDetails.amount_out.CopyFrom(amount_out);
 	res.txDetails.size = CryptoNote.GlobalMembers.getObjectBinarySize(res.tx);
 
-	uint64_t mixin = new uint64_t();
+	ulong mixin = new ulong();
 	if (!f_getMixin(res.tx, ref mixin))
 	{
 	  return false;
@@ -1261,8 +1261,8 @@ public class RpcServer : HttpServer
 	foreach (Transaction tx in pool)
 	{
 	  f_transaction_short_response transaction_short = new f_transaction_short_response();
-	  uint64_t amount_in = getInputAmount(tx);
-	  uint64_t amount_out = getOutputAmount(tx);
+	  ulong amount_in = getInputAmount(tx);
+	  ulong amount_out = getOutputAmount(tx);
 
 	  transaction_short.hash = Common.GlobalMembers.podToHex(CryptoNote.GlobalMembers.getObjectHash(tx));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -1278,7 +1278,7 @@ public class RpcServer : HttpServer
 	res.status = DefineConstants.CORE_RPC_STATUS_OK;
 	return true;
   }
-  private bool f_getMixin(Transaction transaction, ref uint64_t mixin)
+  private bool f_getMixin(Transaction transaction, ref ulong mixin)
   {
 	mixin = 0;
 	foreach (TransactionInput txin in transaction.inputs)
@@ -1288,7 +1288,7 @@ public class RpcServer : HttpServer
 	  {
 		continue;
 	  }
-	  uint64_t currentMixin = boost::get<KeyInput>(txin).outputIndexes.size();
+	  ulong currentMixin = boost::get<KeyInput>(txin).outputIndexes.size();
 	  if (currentMixin > mixin)
 	  {
 		mixin = currentMixin;
@@ -1303,7 +1303,7 @@ public class RpcServer : HttpServer
   private ICryptoNoteProtocolHandler m_protocol;
   private List<string> m_cors_domains = new List<string>();
   private string m_fee_address;
-  private uint32_t m_fee_amount = new uint32_t();
+  private uint m_fee_amount = new uint();
 }
 
 }

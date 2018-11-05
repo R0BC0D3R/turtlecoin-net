@@ -35,7 +35,7 @@ public class TransactionExtraPublicKey
 
 public class TransactionExtraNonce
 {
-  public List<uint8_t> nonce = new List<uint8_t>();
+  public List<ushort> nonce = new List<ushort>();
 }
 
 public class TransactionExtraMergeMiningTag
@@ -61,9 +61,9 @@ namespace CryptoNote
 
 public class ExtraSerializerVisitor : boost::static_visitor<bool>
 {
-  public List<uint8_t> extra;
+  public List<ushort> extra;
 
-  public ExtraSerializerVisitor(List<uint8_t> tx_extra)
+  public ExtraSerializerVisitor(List<ushort> tx_extra)
   {
 	  this.extra = tx_extra;
   }

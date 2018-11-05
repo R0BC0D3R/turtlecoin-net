@@ -27,9 +27,9 @@ public class DatabaseBlockchainCacheFactory: IBlockchainCacheFactory
   {
 	return std::unique_ptr<IBlockchainCache> (new DatabaseBlockchainCache(currency, database, this, logger));
   }
-  public override std::unique_ptr<IBlockchainCache> createBlockchainCache(Currency currency, IBlockchainCache parent, uint32_t startIndex = 0)
+  public override std::unique_ptr<IBlockchainCache> createBlockchainCache(Currency currency, IBlockchainCache parent, uint startIndex = 0)
   {
-	return std::unique_ptr<IBlockchainCache> (new BlockchainCache("", currency, logger, parent, new uint32_t(startIndex)));
+	return std::unique_ptr<IBlockchainCache> (new BlockchainCache("", currency, logger, parent, new uint(startIndex)));
   }
 
   private IDataBase database;

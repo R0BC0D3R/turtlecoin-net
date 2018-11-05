@@ -54,13 +54,13 @@ namespace Crypto
 //#pragma pack(push, 1)
   public class chacha8_key
   {
-	public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.CHACHA8_KEY_SIZE);
+	public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.CHACHA8_KEY_SIZE);
   }
 
   // MS VC 2012 doesn't interpret `class chacha8_iv` as POD in spite of [9.0.10], so it is a struct
   public class chacha8_iv
   {
-	public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.CHACHA8_IV_SIZE);
+	public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.CHACHA8_IV_SIZE);
   }
 }
 

@@ -21,7 +21,7 @@ public abstract class HttpServer
 
   }
 
-  public void start(string address, uint16_t port)
+  public void start(string address, ushort port)
   {
 	m_listener = System.TcpListener(m_dispatcher, System.Ipv4Address(address), port);
 	workingContextGroup.spawn(std::bind(this.acceptLoop, this));

@@ -116,11 +116,11 @@ public enum OAES_RET
 // no option
 // enable ECB mode, disable CBC mode
 // enable CBC mode, disable ECB mode
-// value is optional, may pass uint8_t iv[OAES_BLOCK_SIZE] to specify
+// value is optional, may pass ushort iv[OAES_BLOCK_SIZE] to specify
 // the value of the initialization vector, iv
 
 #if OAES_DEBUG
-public delegate int oaes_step_cb(uint8_t[] state, string step_name, int step_count, object user_data);
+public delegate int oaes_step_cb(ushort[] state, string step_name, int step_count, object user_data);
 // enable state stepping mode
 // value is required, must pass oaes_step_cb to receive the state at each step
 #define OAES_OPTION_STEP_ON
@@ -132,9 +132,9 @@ public delegate int oaes_step_cb(uint8_t[] state, string step_name, int step_cou
 public class _oaes_key
 {
   public size_t data_len = new size_t();
-  public uint8_t[] data;
+  public ushort[] data;
   public size_t exp_data_len = new size_t();
-  public uint8_t[] exp_data;
+  public ushort[] exp_data;
   public size_t num_keys = new size_t();
   public size_t key_base = new size_t();
 }
@@ -150,6 +150,6 @@ public class _oaes_ctx
 #endif
 
   public _oaes_key[] key;
-  public uint16_t options = new uint16_t();
-  public uint8_t[] iv = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_BLOCK_SIZE);
+  public ushort options = new ushort();
+  public ushort[] iv = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_BLOCK_SIZE);
 }

@@ -28,7 +28,7 @@ namespace CryptoNote
 public class TransactionPoolCleanWrapper: ITransactionPoolCleanWrapper
 {
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-  public TransactionPoolCleanWrapper(std::unique_ptr<ITransactionPool>&& transactionPool, std::unique_ptr<ITimeProvider>&& timeProvider, Logging.ILogger logger, uint64_t timeout)
+  public TransactionPoolCleanWrapper(std::unique_ptr<ITransactionPool>&& transactionPool, std::unique_ptr<ITimeProvider>&& timeProvider, Logging.ILogger logger, ulong timeout)
   {
 	  this.transactionPool = std::move(transactionPool);
 	  this.timeProvider = std::move(timeProvider);
@@ -104,8 +104,8 @@ public class TransactionPoolCleanWrapper: ITransactionPoolCleanWrapper
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getTransactionReceiveTime(const Crypto::Hash& hash) const override
-  public override uint64_t getTransactionReceiveTime(Crypto.Hash hash)
+//ORIGINAL LINE: virtual ulong getTransactionReceiveTime(const Crypto::Hash& hash) const override
+  public override ulong getTransactionReceiveTime(Crypto.Hash hash)
   {
 	return transactionPool.getTransactionReceiveTime(hash);
   }
@@ -116,17 +116,17 @@ public class TransactionPoolCleanWrapper: ITransactionPoolCleanWrapper
 	return transactionPool.getTransactionHashesByPaymentId(paymentId);
   }
 
-  public override List<Crypto.Hash> clean(uint32_t height)
+  public override List<Crypto.Hash> clean(uint height)
   {
 	try
 	{
-	  uint64_t currentTime = timeProvider.now();
+	  ulong currentTime = timeProvider.now();
 	  var transactionHashes = transactionPool.getTransactionHashes();
 
 	  List<Crypto.Hash> deletedTransactions = new List<Crypto.Hash>();
 	  foreach (var hash in transactionHashes)
 	  {
-		uint64_t transactionAge = currentTime - transactionPool.getTransactionReceiveTime(hash);
+		ulong transactionAge = currentTime - transactionPool.getTransactionReceiveTime(hash);
 		if (transactionAge >= timeout)
 		{
 		  logger.functorMethod(Logging.Level.DEBUGGING) << "Deleting transaction " << Common.GlobalMembers.podToHex(hash) << " from pool";
@@ -139,7 +139,7 @@ public class TransactionPoolCleanWrapper: ITransactionPoolCleanWrapper
 		List<CachedTransaction> transactions = new List<CachedTransaction>();
 		transactions.emplace_back(transaction);
 
-		var (success, error) = Mixins.validate(new List<CachedTransaction>(transactions), new uint32_t(height));
+		var (success, error) = Mixins.validate(new List<CachedTransaction>(transactions), new uint(height));
 
 		if (!success)
 		{
@@ -150,7 +150,7 @@ public class TransactionPoolCleanWrapper: ITransactionPoolCleanWrapper
 		}
 	  }
 
-	  cleanRecentlyDeletedTransactions(new uint64_t(currentTime));
+	  cleanRecentlyDeletedTransactions(new ulong(currentTime));
 	  return deletedTransactions;
 	}
 	catch (System.InterruptedException)
@@ -167,8 +167,8 @@ public class TransactionPoolCleanWrapper: ITransactionPoolCleanWrapper
   private std::unique_ptr<ITransactionPool> transactionPool = new std::unique_ptr<ITransactionPool>();
   private std::unique_ptr<ITimeProvider> timeProvider = new std::unique_ptr<ITimeProvider>();
   private Logging.LoggerRef logger = new Logging.LoggerRef();
-  private Dictionary<Crypto.Hash, uint64_t> recentlyDeletedTransactions = new Dictionary<Crypto.Hash, uint64_t>();
-  private uint64_t timeout = new uint64_t();
+  private Dictionary<Crypto.Hash, ulong> recentlyDeletedTransactions = new Dictionary<Crypto.Hash, ulong>();
+  private ulong timeout = new ulong();
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: bool isTransactionRecentlyDeleted(const Crypto::Hash& hash) const
@@ -178,7 +178,7 @@ public class TransactionPoolCleanWrapper: ITransactionPoolCleanWrapper
 //C++ TO C# CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
 	return it != recentlyDeletedTransactions.end() && it.second >= timeout;
   }
-  private void cleanRecentlyDeletedTransactions(uint64_t currentTime)
+  private void cleanRecentlyDeletedTransactions(ulong currentTime)
   {
 	for (var it = recentlyDeletedTransactions.GetEnumerator(); it != recentlyDeletedTransactions.end();)
 	{

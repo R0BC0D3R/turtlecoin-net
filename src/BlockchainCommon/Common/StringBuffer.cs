@@ -10,7 +10,7 @@ namespace Common
 
 // 'StringBuffer' is a string of fixed maximum size.
 //C++ TO C# CONVERTER TODO TASK: C++ 'constraints' are not converted by C++ to C# Converter:
-//ORIGINAL LINE: template<uint64_t MAXIMUM_SIZE_VALUE> class StringBuffer {
+//ORIGINAL LINE: template<ulong MAXIMUM_SIZE_VALUE> class StringBuffer {
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<typename MAXIMUM_SIZE_VALUE>
 public class StringBuffer <MAXIMUM_SIZE_VALUE> : System.IDisposable
@@ -856,7 +856,7 @@ public class StringBuffer <MAXIMUM_SIZE_VALUE> : System.IDisposable
 }
 
 //C++ TO C# CONVERTER TODO TASK: C++ 'constraints' are not converted by C++ to C# Converter:
-//ORIGINAL LINE: template<uint64_t MAXIMUM_SIZE> const typename StringBuffer<MAXIMUM_SIZE>::Size StringBuffer<MAXIMUM_SIZE>::INVALID = std::numeric_limits<typename StringBuffer<MAXIMUM_SIZE>::Size>::max();
+//ORIGINAL LINE: template<ulong MAXIMUM_SIZE> const typename StringBuffer<MAXIMUM_SIZE>::Size StringBuffer<MAXIMUM_SIZE>::INVALID = std::numeric_limits<typename StringBuffer<MAXIMUM_SIZE>::Size>::max();
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<typename MAXIMUM_SIZE>
 

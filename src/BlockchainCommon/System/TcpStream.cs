@@ -31,7 +31,7 @@ public class TcpStreambuf : std::streambuf, System.IDisposable
 
   private TcpConnection connection;
   private List<char> readBuf = new List<char>(4096);
-  private List<uint8_t> writeBuf = new List<uint8_t>(1024);
+  private List<ushort> writeBuf = new List<ushort>(1024);
 
   private override std::streambuf.int_type overflow(std::streambuf.int_type ch)
   {
@@ -67,7 +67,7 @@ public class TcpStreambuf : std::streambuf, System.IDisposable
 	try
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  bytesRead = connection.read(reinterpret_cast<uint8_t>(readBuf[0]), readBuf.max_size());
+	  bytesRead = connection.read(reinterpret_cast<ushort>(readBuf[0]), readBuf.max_size());
 	}
 	catch (System.Exception)
 	{

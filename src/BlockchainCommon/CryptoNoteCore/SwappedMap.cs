@@ -14,8 +14,8 @@ public class SwappedMap <Key, T> : System.IDisposable
 {
   private class Descriptor
   {
-	public uint64_t offset = new uint64_t();
-	public uint64_t index = new uint64_t();
+	public ulong offset = new ulong();
+	public ulong index = new ulong();
   }
 
 
@@ -105,17 +105,17 @@ public class SwappedMap <Key, T> : System.IDisposable
 	m_indexesFile.open(indexFileName, std::ios.in | std::ios.@out | std::ios.binary);
 	if (m_itemsFile != null && m_indexesFile != null)
 	{
-	  uint64_t count = new uint64_t();
+	  ulong count = new ulong();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_indexesFile.read(reinterpret_cast<char>(count), sizeof (uint64_t));
+	  m_indexesFile.read(reinterpret_cast<char>(count), sizeof (ulong));
 	  if (m_indexesFile == null)
 	  {
 		return false;
 	  }
 
 	  Dictionary<Key, Descriptor> descriptors = new Dictionary<Key, Descriptor>();
-	  uint64_t itemsFileSize = 0;
-	  for (uint64_t i = 0; i < count; ++i)
+	  ulong itemsFileSize = 0;
+	  for (ulong i = 0; i < count; ++i)
 	  {
 		bool valid;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
@@ -133,9 +133,9 @@ public class SwappedMap <Key, T> : System.IDisposable
 		  return false;
 		}
 
-		uint32_t itemSize = new uint32_t();
+		uint itemSize = new uint();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-		m_indexesFile.read(reinterpret_cast<char>(itemSize), sizeof (uint32_t));
+		m_indexesFile.read(reinterpret_cast<char>(itemSize), sizeof (uint));
 		if (m_indexesFile == null)
 		{
 		  return false;
@@ -161,9 +161,9 @@ public class SwappedMap <Key, T> : System.IDisposable
 	  m_itemsFile.close();
 	  m_itemsFile.open(itemFileName, std::ios.in | std::ios.@out | std::ios.binary);
 	  m_indexesFile.open(indexFileName, std::ios.@out | std::ios.binary);
-	  uint64_t count = 0;
+	  ulong count = 0;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_indexesFile.write(reinterpret_cast<char>(count), sizeof (uint64_t));
+	  m_indexesFile.write(reinterpret_cast<char>(count), sizeof (ulong));
 	  if (m_indexesFile == null)
 	  {
 		return false;
@@ -199,8 +199,8 @@ public class SwappedMap <Key, T> : System.IDisposable
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t size() const
-  public uint64_t size()
+//ORIGINAL LINE: ulong size() const
+  public ulong size()
   {
 	return m_descriptors.Count;
   }
@@ -231,9 +231,9 @@ public class SwappedMap <Key, T> : System.IDisposable
 	}
 
 	m_indexesFile.seekp(0);
-	uint64_t count = 0;
+	ulong count = 0;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	m_indexesFile.write(reinterpret_cast<char>(count), sizeof (uint64_t));
+	m_indexesFile.write(reinterpret_cast<char>(count), sizeof (ulong));
 	if (m_indexesFile == null)
 	{
 	  throw new System.Exception("SwappedMap::clear");
@@ -255,7 +255,7 @@ public class SwappedMap <Key, T> : System.IDisposable
 
 	Dictionary<Key, Descriptor>.Enumerator descriptorsIterator = iterator.innerIterator();
 //C++ TO C# CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
-	m_indexesFile.seekp(sizeof(uint64_t) + (sizeof(bool) + sizeof(Key) + sizeof(uint32_t)) * descriptorsIterator.second.index);
+	m_indexesFile.seekp(sizeof(ulong) + (sizeof(bool) + sizeof(Key) + sizeof(uint)) * descriptorsIterator.second.index);
 	bool valid = false;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	m_indexesFile.write(reinterpret_cast<char>(valid), sizeof (bool));
@@ -280,7 +280,7 @@ public class SwappedMap <Key, T> : System.IDisposable
   }
   public Tuple<typename SwappedMap<Key, T>.const_iterator, bool> insert(Tuple<const Key, T> value)
   {
-	uint64_t itemsFileSize = new uint64_t();
+	ulong itemsFileSize = new ulong();
 
 	{
 	  if (m_itemsFile == null)
@@ -308,7 +308,7 @@ public class SwappedMap <Key, T> : System.IDisposable
 		throw new System.Exception("SwappedMap::insert");
 	  }
 
-	  m_indexesFile.seekp(sizeof(uint64_t) + (sizeof(bool) + sizeof(Key) + sizeof(uint32_t)) * descriptorsCounter);
+	  m_indexesFile.seekp(sizeof(ulong) + (sizeof(bool) + sizeof(Key) + sizeof(uint)) * descriptorsCounter);
 	  bool valid = true;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  m_indexesFile.write(reinterpret_cast<char>(valid), sizeof (bool));
@@ -324,18 +324,18 @@ public class SwappedMap <Key, T> : System.IDisposable
 		throw new System.Exception("SwappedMap::insert");
 	  }
 
-	  uint32_t itemSize = (uint32_t)(itemsFileSize - m_itemsFileSize);
+	  uint itemSize = (uint)(itemsFileSize - m_itemsFileSize);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_indexesFile.write(reinterpret_cast<char>(itemSize), sizeof (uint32_t));
+	  m_indexesFile.write(reinterpret_cast<char>(itemSize), sizeof (uint));
 	  if (m_indexesFile == null)
 	  {
 		throw new System.Exception("SwappedMap::insert");
 	  }
 
 	  m_indexesFile.seekp(0);
-	  uint64_t count = descriptorsCounter + 1;
+	  ulong count = descriptorsCounter + 1;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_indexesFile.write(reinterpret_cast<char>(count), sizeof (uint64_t));
+	  m_indexesFile.write(reinterpret_cast<char>(count), sizeof (ulong));
 	  if (m_indexesFile == null)
 	  {
 		throw new System.Exception("SwappedMap::insert");
@@ -360,13 +360,13 @@ public class SwappedMap <Key, T> : System.IDisposable
   private std::fstream m_indexesFile = new std::fstream();
   private size_t m_poolSize = new size_t();
   private Dictionary<Key, Descriptor> m_descriptors = new Dictionary<Key, Descriptor>();
-  private uint64_t m_itemsFileSize = new uint64_t();
+  private ulong m_itemsFileSize = new ulong();
   private Dictionary<Key, T> m_items = new Dictionary<Key, T>();
   private LinkedList<Key> m_cache = new LinkedList<Key>();
   private Dictionary<Key, typename LinkedList<Key>.Enumerator> m_cacheIterators = new Dictionary<Key, typename LinkedList<Key>.Enumerator>();
-  private uint64_t m_cacheHits = new uint64_t();
-  private uint64_t m_cacheMisses = new uint64_t();
-  private uint64_t descriptorsCounter = new uint64_t();
+  private ulong m_cacheHits = new ulong();
+  private ulong m_cacheMisses = new ulong();
+  private ulong descriptorsCounter = new ulong();
 
   private Tuple< Key, T> prepare(Key key)
   {
@@ -387,7 +387,7 @@ public class SwappedMap <Key, T> : System.IDisposable
 	m_cacheIterators.Add(key, cacheIter);
 	return *itemInsert.Item1;
   }
-  private Tuple< Key, T> load(Key key, uint64_t offset)
+  private Tuple< Key, T> load(Key key, ulong offset)
   {
 	var itemIterator = m_items.find(key);
 //C++ TO C# CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:

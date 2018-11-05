@@ -202,21 +202,21 @@ public class SwappedVector <T> : System.IDisposable
 	m_indexesFile.open(indexFileName, std::ios.in | std::ios.@out | std::ios.binary);
 	if (m_itemsFile != null && m_indexesFile != null)
 	{
-	  uint64_t count = new uint64_t();
+	  ulong count = new ulong();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_indexesFile.read(reinterpret_cast<char>(count), sizeof (uint64_t));
+	  m_indexesFile.read(reinterpret_cast<char>(count), sizeof (ulong));
 	  if (m_indexesFile == null)
 	  {
 		return false;
 	  }
 
-	  List<uint64_t> offsets = new List<uint64_t>();
-	  uint64_t itemsFileSize = 0;
-	  for (uint64_t i = 0; i < count; ++i)
+	  List<ulong> offsets = new List<ulong>();
+	  ulong itemsFileSize = 0;
+	  for (ulong i = 0; i < count; ++i)
 	  {
-		uint32_t itemSize = new uint32_t();
+		uint itemSize = new uint();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-		m_indexesFile.read(reinterpret_cast<char>(itemSize), sizeof (uint32_t));
+		m_indexesFile.read(reinterpret_cast<char>(itemSize), sizeof (uint));
 		if (m_indexesFile == null)
 		{
 		  return false;
@@ -237,9 +237,9 @@ public class SwappedVector <T> : System.IDisposable
 	  m_itemsFile.close();
 	  m_itemsFile.open(itemFileName, std::ios.in | std::ios.@out | std::ios.binary);
 	  m_indexesFile.open(indexFileName, std::ios.@out | std::ios.binary);
-	  uint64_t count = 0;
+	  ulong count = 0;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_indexesFile.write(reinterpret_cast<char>(count), sizeof (uint64_t));
+	  m_indexesFile.write(reinterpret_cast<char>(count), sizeof (ulong));
 	  if (m_indexesFile == null)
 	  {
 		return false;
@@ -271,8 +271,8 @@ public class SwappedVector <T> : System.IDisposable
 	return m_offsets.Count == 0;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t size() const
-  public uint64_t size()
+//ORIGINAL LINE: ulong size() const
+  public ulong size()
   {
 	return m_offsets.Count;
   }
@@ -284,7 +284,7 @@ public class SwappedVector <T> : System.IDisposable
   {
 	return new const_iterator(this, m_offsets.Count);
   }
-  public T this[uint64_t index]
+  public T this[ulong index]
   {
 	  get
 	  {
@@ -321,7 +321,7 @@ public class SwappedVector <T> : System.IDisposable
 		CryptoNote.BinaryInputStreamSerializer archive = new CryptoNote.BinaryInputStreamSerializer(stream);
 		CryptoNote.GlobalMembers.serialize(tempItem, archive.functorMethod);
     
-		T item = prepare(new uint64_t(index));
+		T item = prepare(new ulong(index));
 		std::swap(tempItem, item);
 		++m_cacheMisses;
 		return item;
@@ -347,9 +347,9 @@ public class SwappedVector <T> : System.IDisposable
 	}
 
 	m_indexesFile.seekp(0);
-	uint64_t count = 0;
+	ulong count = 0;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	m_indexesFile.write(reinterpret_cast<char>(count), sizeof (uint64_t));
+	m_indexesFile.write(reinterpret_cast<char>(count), sizeof (ulong));
 	if (m_indexesFile == null)
 	{
 	  throw new System.Exception("SwappedVector::clear");
@@ -368,9 +368,9 @@ public class SwappedVector <T> : System.IDisposable
 	}
 
 	m_indexesFile.seekp(0);
-	uint64_t count = m_offsets.Count - 1;
+	ulong count = m_offsets.Count - 1;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	m_indexesFile.write(reinterpret_cast<char>(count), sizeof (uint64_t));
+	m_indexesFile.write(reinterpret_cast<char>(count), sizeof (ulong));
 	if (m_indexesFile == null)
 	{
 	  throw new System.Exception("SwappedVector::pop_back");
@@ -392,7 +392,7 @@ public class SwappedVector <T> : System.IDisposable
   }
   public void push_back(T item)
   {
-	uint64_t itemsFileSize = new uint64_t();
+	ulong itemsFileSize = new ulong();
 
 	{
 	  if (m_itemsFile == null)
@@ -416,19 +416,19 @@ public class SwappedVector <T> : System.IDisposable
 		throw new System.Exception("SwappedVector::push_back");
 	  }
 
-	  m_indexesFile.seekp(sizeof(uint64_t) + sizeof(uint32_t) * m_offsets.Count);
-	  uint32_t itemSize = (uint32_t)(itemsFileSize - m_itemsFileSize);
+	  m_indexesFile.seekp(sizeof(ulong) + sizeof(uint) * m_offsets.Count);
+	  uint itemSize = (uint)(itemsFileSize - m_itemsFileSize);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_indexesFile.write(reinterpret_cast<char>(itemSize), sizeof (uint32_t));
+	  m_indexesFile.write(reinterpret_cast<char>(itemSize), sizeof (uint));
 	  if (m_indexesFile == null)
 	  {
 		throw new System.Exception("SwappedVector::push_back");
 	  }
 
 	  m_indexesFile.seekp(0);
-	  uint64_t count = m_offsets.Count + 1;
+	  ulong count = m_offsets.Count + 1;
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_indexesFile.write(reinterpret_cast<char>(count), sizeof (uint64_t));
+	  m_indexesFile.write(reinterpret_cast<char>(count), sizeof (ulong));
 	  if (m_indexesFile == null)
 	  {
 		throw new System.Exception("SwappedVector::push_back");
@@ -457,20 +457,20 @@ public class SwappedVector <T> : System.IDisposable
 
   private class CacheEntry
   {
-	public SortedDictionary<uint64_t, ItemEntry>.Enumerator itemIter;
+	public SortedDictionary<ulong, ItemEntry>.Enumerator itemIter;
   }
 
   private std::fstream m_itemsFile = new std::fstream();
   private std::fstream m_indexesFile = new std::fstream();
   private size_t m_poolSize = new size_t();
-  private List<uint64_t> m_offsets = new List<uint64_t>();
-  private uint64_t m_itemsFileSize = new uint64_t();
-  private SortedDictionary<uint64_t, ItemEntry> m_items = new SortedDictionary<uint64_t, ItemEntry>();
+  private List<ulong> m_offsets = new List<ulong>();
+  private ulong m_itemsFileSize = new ulong();
+  private SortedDictionary<ulong, ItemEntry> m_items = new SortedDictionary<ulong, ItemEntry>();
   private LinkedList<CacheEntry> m_cache = new LinkedList<CacheEntry>();
-  private uint64_t m_cacheHits = new uint64_t();
-  private uint64_t m_cacheMisses = new uint64_t();
+  private ulong m_cacheHits = new ulong();
+  private ulong m_cacheMisses = new ulong();
 
-  private T prepare(uint64_t index)
+  private T prepare(ulong index)
   {
 	if (m_items.Count == m_poolSize)
 	{

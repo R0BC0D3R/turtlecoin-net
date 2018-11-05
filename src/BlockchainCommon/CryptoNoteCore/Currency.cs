@@ -8,13 +8,13 @@
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define inline __inline
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define SWAP32LE IDENT32
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -112,8 +112,8 @@ namespace CryptoNote
 public class Currency
 {
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t maxBlockHeight() const
-  public uint32_t maxBlockHeight()
+//ORIGINAL LINE: uint maxBlockHeight() const
+  public uint maxBlockHeight()
   {
 	  return m_maxBlockHeight;
   }
@@ -130,21 +130,21 @@ public class Currency
 	  return m_maxTxSize;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t publicAddressBase58Prefix() const
-  public uint64_t publicAddressBase58Prefix()
+//ORIGINAL LINE: ulong publicAddressBase58Prefix() const
+  public ulong publicAddressBase58Prefix()
   {
 	  return m_publicAddressBase58Prefix;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t minedMoneyUnlockWindow() const
-  public uint32_t minedMoneyUnlockWindow()
+//ORIGINAL LINE: uint minedMoneyUnlockWindow() const
+  public uint minedMoneyUnlockWindow()
   {
 	  return m_minedMoneyUnlockWindow;
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t timestampCheckWindow(uint32_t blockHeight) const
-  public size_t timestampCheckWindow(uint32_t blockHeight)
+//ORIGINAL LINE: size_t timestampCheckWindow(uint blockHeight) const
+  public size_t timestampCheckWindow(uint blockHeight)
   {
 	  if (blockHeight >= CryptoNote.parameters.LWMA_2_DIFFICULTY_BLOCK_INDEX_V3)
 	  {
@@ -157,8 +157,8 @@ public class Currency
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t blockFutureTimeLimit(uint32_t blockHeight) const
-  public uint64_t blockFutureTimeLimit(uint32_t blockHeight)
+//ORIGINAL LINE: ulong blockFutureTimeLimit(uint blockHeight) const
+  public ulong blockFutureTimeLimit(uint blockHeight)
   {
 	  if (blockHeight >= CryptoNote.parameters.LWMA_2_DIFFICULTY_BLOCK_INDEX_V2)
 	  {
@@ -175,8 +175,8 @@ public class Currency
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t moneySupply() const
-  public uint64_t moneySupply()
+//ORIGINAL LINE: ulong moneySupply() const
+  public ulong moneySupply()
   {
 	  return m_moneySupply;
   }
@@ -187,8 +187,8 @@ public class Currency
 	  return m_emissionSpeedFactor;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t genesisBlockReward() const
-  public uint64_t genesisBlockReward()
+//ORIGINAL LINE: ulong genesisBlockReward() const
+  public ulong genesisBlockReward()
   {
 	  return m_genesisBlockReward;
   }
@@ -200,8 +200,8 @@ public class Currency
 	  return m_rewardBlocksWindow;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t zawyDifficultyBlockIndex() const
-  public uint32_t zawyDifficultyBlockIndex()
+//ORIGINAL LINE: uint zawyDifficultyBlockIndex() const
+  public uint zawyDifficultyBlockIndex()
   {
 	  return m_zawyDifficultyBlockIndex;
   }
@@ -212,8 +212,8 @@ public class Currency
 	  return m_zawyDifficultyV2;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint8_t zawyDifficultyBlockVersion() const
-  public uint8_t zawyDifficultyBlockVersion()
+//ORIGINAL LINE: ushort zawyDifficultyBlockVersion() const
+  public ushort zawyDifficultyBlockVersion()
   {
 	  return m_zawyDifficultyBlockVersion;
   }
@@ -224,8 +224,8 @@ public class Currency
 	  return m_blockGrantedFullRewardZone;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t blockGrantedFullRewardZoneByBlockVersion(uint8_t blockMajorVersion) const
-  public size_t blockGrantedFullRewardZoneByBlockVersion(uint8_t blockMajorVersion)
+//ORIGINAL LINE: size_t blockGrantedFullRewardZoneByBlockVersion(ushort blockMajorVersion) const
+  public size_t blockGrantedFullRewardZoneByBlockVersion(ushort blockMajorVersion)
   {
 	if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3)
 	{
@@ -254,21 +254,21 @@ public class Currency
 	  return m_numberOfDecimalPlaces;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t coin() const
-  public uint64_t coin()
+//ORIGINAL LINE: ulong coin() const
+  public ulong coin()
   {
 	  return m_coin;
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t minimumFee() const
-  public uint64_t minimumFee()
+//ORIGINAL LINE: ulong minimumFee() const
+  public ulong minimumFee()
   {
 	  return m_mininumFee;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t defaultDustThreshold(uint32_t height) const
-  public uint64_t defaultDustThreshold(uint32_t height)
+//ORIGINAL LINE: ulong defaultDustThreshold(uint height) const
+  public ulong defaultDustThreshold(uint height)
   {
 	  if (height >= CryptoNote.parameters.DUST_THRESHOLD_V2_HEIGHT)
 	  {
@@ -278,8 +278,8 @@ public class Currency
 	  return m_defaultDustThreshold;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t defaultFusionDustThreshold(uint32_t height) const
-  public uint64_t defaultFusionDustThreshold(uint32_t height)
+//ORIGINAL LINE: ulong defaultFusionDustThreshold(uint height) const
+  public ulong defaultFusionDustThreshold(uint height)
   {
 	  if (height >= CryptoNote.parameters.FUSION_DUST_THRESHOLD_HEIGHT_V2)
 	  {
@@ -290,8 +290,8 @@ public class Currency
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t difficultyTarget() const
-  public uint64_t difficultyTarget()
+//ORIGINAL LINE: ulong difficultyTarget() const
+  public ulong difficultyTarget()
   {
 	  return m_difficultyTarget;
   }
@@ -302,8 +302,8 @@ public class Currency
 	  return m_difficultyWindow;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion) const
-public size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion)
+//ORIGINAL LINE: size_t difficultyWindowByBlockVersion(ushort blockMajorVersion) const
+public size_t difficultyWindowByBlockVersion(ushort blockMajorVersion)
 {
   if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3)
   {
@@ -325,8 +325,8 @@ public size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion)
 	  return m_difficultyLag;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t difficultyLagByBlockVersion(uint8_t blockMajorVersion) const
-public size_t difficultyLagByBlockVersion(uint8_t blockMajorVersion)
+//ORIGINAL LINE: size_t difficultyLagByBlockVersion(ushort blockMajorVersion) const
+public size_t difficultyLagByBlockVersion(ushort blockMajorVersion)
 {
   if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3)
   {
@@ -348,8 +348,8 @@ public size_t difficultyLagByBlockVersion(uint8_t blockMajorVersion)
 	  return m_difficultyCut;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t difficultyCutByBlockVersion(uint8_t blockMajorVersion) const
-public size_t difficultyCutByBlockVersion(uint8_t blockMajorVersion)
+//ORIGINAL LINE: size_t difficultyCutByBlockVersion(ushort blockMajorVersion) const
+public size_t difficultyCutByBlockVersion(ushort blockMajorVersion)
 {
   if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3)
   {
@@ -371,15 +371,15 @@ public size_t difficultyCutByBlockVersion(uint8_t blockMajorVersion)
 	  return m_difficultyWindow + m_difficultyLag;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uint32_t height) const
-public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uint32_t height)
+//ORIGINAL LINE: size_t difficultyBlocksCountByBlockVersion(ushort blockMajorVersion, uint height) const
+public size_t difficultyBlocksCountByBlockVersion(ushort blockMajorVersion, uint height)
 {
 	if (height >= CryptoNote.parameters.LWMA_2_DIFFICULTY_BLOCK_INDEX)
 	{
 		return CryptoNote.parameters.DIFFICULTY_BLOCKS_COUNT_V3;
 	}
 
-	return difficultyWindowByBlockVersion(new uint8_t(blockMajorVersion)) + difficultyLagByBlockVersion(new uint8_t(blockMajorVersion));
+	return difficultyWindowByBlockVersion(new ushort(blockMajorVersion)) + difficultyLagByBlockVersion(new ushort(blockMajorVersion));
 }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
@@ -389,21 +389,21 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  return m_maxBlockSizeInitial;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t maxBlockSizeGrowthSpeedNumerator() const
-  public uint64_t maxBlockSizeGrowthSpeedNumerator()
+//ORIGINAL LINE: ulong maxBlockSizeGrowthSpeedNumerator() const
+  public ulong maxBlockSizeGrowthSpeedNumerator()
   {
 	  return m_maxBlockSizeGrowthSpeedNumerator;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t maxBlockSizeGrowthSpeedDenominator() const
-  public uint64_t maxBlockSizeGrowthSpeedDenominator()
+//ORIGINAL LINE: ulong maxBlockSizeGrowthSpeedDenominator() const
+  public ulong maxBlockSizeGrowthSpeedDenominator()
   {
 	  return m_maxBlockSizeGrowthSpeedDenominator;
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t lockedTxAllowedDeltaSeconds() const
-  public uint64_t lockedTxAllowedDeltaSeconds()
+//ORIGINAL LINE: ulong lockedTxAllowedDeltaSeconds() const
+  public ulong lockedTxAllowedDeltaSeconds()
   {
 	  return m_lockedTxAllowedDeltaSeconds;
   }
@@ -415,20 +415,20 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t mempoolTxLiveTime() const
-  public uint64_t mempoolTxLiveTime()
+//ORIGINAL LINE: ulong mempoolTxLiveTime() const
+  public ulong mempoolTxLiveTime()
   {
 	  return m_mempoolTxLiveTime;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t mempoolTxFromAltBlockLiveTime() const
-  public uint64_t mempoolTxFromAltBlockLiveTime()
+//ORIGINAL LINE: ulong mempoolTxFromAltBlockLiveTime() const
+  public ulong mempoolTxFromAltBlockLiveTime()
   {
 	  return m_mempoolTxFromAltBlockLiveTime;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t numberOfPeriodsToForgetTxDeletedFromPool() const
-  public uint64_t numberOfPeriodsToForgetTxDeletedFromPool()
+//ORIGINAL LINE: ulong numberOfPeriodsToForgetTxDeletedFromPool() const
+  public ulong numberOfPeriodsToForgetTxDeletedFromPool()
   {
 	  return m_numberOfPeriodsToForgetTxDeletedFromPool;
   }
@@ -453,8 +453,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t upgradeHeight(uint8_t majorVersion) const
-  public uint32_t upgradeHeight(uint8_t majorVersion)
+//ORIGINAL LINE: uint upgradeHeight(ushort majorVersion) const
+  public uint upgradeHeight(ushort majorVersion)
   {
 	if (majorVersion == BLOCK_MAJOR_VERSION_2)
 	{
@@ -470,7 +470,7 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	}
 	else
 	{
-	  return (uint32_t) - 1;
+	  return (uint) - 1;
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
@@ -480,32 +480,32 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  return m_upgradeVotingThreshold;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t upgradeVotingWindow() const
-  public uint32_t upgradeVotingWindow()
+//ORIGINAL LINE: uint upgradeVotingWindow() const
+  public uint upgradeVotingWindow()
   {
 	  return m_upgradeVotingWindow;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t upgradeWindow() const
-  public uint32_t upgradeWindow()
+//ORIGINAL LINE: uint upgradeWindow() const
+  public uint upgradeWindow()
   {
 	  return m_upgradeWindow;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t minNumberVotingBlocks() const
-  public uint32_t minNumberVotingBlocks()
+//ORIGINAL LINE: uint minNumberVotingBlocks() const
+  public uint minNumberVotingBlocks()
   {
 	  return (m_upgradeVotingWindow * m_upgradeVotingThreshold + 99) / 100;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t maxUpgradeDistance() const
-  public uint32_t maxUpgradeDistance()
+//ORIGINAL LINE: uint maxUpgradeDistance() const
+  public uint maxUpgradeDistance()
   {
 	  return 7 * m_upgradeWindow;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t calculateUpgradeHeight(uint32_t voteCompleteHeight) const
-  public uint32_t calculateUpgradeHeight(uint32_t voteCompleteHeight)
+//ORIGINAL LINE: uint calculateUpgradeHeight(uint voteCompleteHeight) const
+  public uint calculateUpgradeHeight(uint voteCompleteHeight)
   {
 	  return voteCompleteHeight + m_upgradeWindow;
   }
@@ -556,13 +556,13 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size_t currentBlockSize, uint64_t alreadyGeneratedCoins, uint64_t fee, uint64_t& reward, int64_t& emissionChange) const
-  public bool getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size_t currentBlockSize, uint64_t alreadyGeneratedCoins, uint64_t fee, ref uint64_t reward, ref int64_t emissionChange)
+//ORIGINAL LINE: bool getBlockReward(ushort blockMajorVersion, size_t medianSize, size_t currentBlockSize, ulong alreadyGeneratedCoins, ulong fee, ulong& reward, long& emissionChange) const
+  public bool getBlockReward(ushort blockMajorVersion, size_t medianSize, size_t currentBlockSize, ulong alreadyGeneratedCoins, ulong fee, ref ulong reward, ref long emissionChange)
   {
 	Debug.Assert(alreadyGeneratedCoins <= m_moneySupply);
-	Debug.Assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
+	Debug.Assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(ulong));
 
-	uint64_t baseReward = (m_moneySupply - alreadyGeneratedCoins) >> (int)m_emissionSpeedFactor;
+	ulong baseReward = (m_moneySupply - alreadyGeneratedCoins) >> (int)m_emissionSpeedFactor;
 	if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0)
 	{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -573,7 +573,7 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  Console.Write("\n");
 	}
 
-	size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(new uint8_t(blockMajorVersion));
+	size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(new ushort(blockMajorVersion));
 	medianSize = Math.Max(medianSize, blockGrantedFullRewardZone);
 	if (currentBlockSize > UINT64_C(2) * medianSize)
 	{
@@ -581,8 +581,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  return false;
 	}
 
-	uint64_t penalizedBaseReward = getPenalizedAmount(baseReward, medianSize, currentBlockSize);
-	uint64_t penalizedFee = blockMajorVersion >= BLOCK_MAJOR_VERSION_2 ? getPenalizedAmount(fee, medianSize, currentBlockSize) : fee;
+	ulong penalizedBaseReward = getPenalizedAmount(baseReward, medianSize, currentBlockSize);
+	ulong penalizedFee = blockMajorVersion >= BLOCK_MAJOR_VERSION_2 ? getPenalizedAmount(fee, medianSize, currentBlockSize) : fee;
 
 	emissionChange = penalizedBaseReward - (fee - penalizedFee);
 	reward = penalizedBaseReward + penalizedFee;
@@ -590,18 +590,18 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	return true;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t maxBlockCumulativeSize(uint64_t height) const
-  public size_t maxBlockCumulativeSize(uint64_t height)
+//ORIGINAL LINE: size_t maxBlockCumulativeSize(ulong height) const
+  public size_t maxBlockCumulativeSize(ulong height)
   {
-	Debug.Assert(height <= uint64_t.MaxValue / m_maxBlockSizeGrowthSpeedNumerator);
+	Debug.Assert(height <= ulong.MaxValue / m_maxBlockSizeGrowthSpeedNumerator);
 	size_t maxSize = (size_t)(m_maxBlockSizeInitial + (height * m_maxBlockSizeGrowthSpeedNumerator) / m_maxBlockSizeGrowthSpeedDenominator);
 	Debug.Assert(maxSize >= m_maxBlockSizeInitial);
 	return maxSize;
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool constructMinerTx(uint8_t blockMajorVersion, uint32_t height, size_t medianSize, uint64_t alreadyGeneratedCoins, size_t currentBlockSize, uint64_t fee, const AccountPublicAddress& minerAddress, Transaction& tx, const BinaryArray& extraNonce = BinaryArray(), size_t maxOuts = 1) const
-  public bool constructMinerTx(uint8_t blockMajorVersion, uint32_t height, size_t medianSize, uint64_t alreadyGeneratedCoins, size_t currentBlockSize, uint64_t fee, AccountPublicAddress minerAddress, Transaction tx, BinaryArray extraNonce = BinaryArray(), size_t maxOuts = 1)
+//ORIGINAL LINE: bool constructMinerTx(ushort blockMajorVersion, uint height, size_t medianSize, ulong alreadyGeneratedCoins, size_t currentBlockSize, ulong fee, const AccountPublicAddress& minerAddress, Transaction& tx, const BinaryArray& extraNonce = BinaryArray(), size_t maxOuts = 1) const
+  public bool constructMinerTx(ushort blockMajorVersion, uint height, size_t medianSize, ulong alreadyGeneratedCoins, size_t currentBlockSize, ulong fee, AccountPublicAddress minerAddress, Transaction tx, BinaryArray extraNonce = BinaryArray(), size_t maxOuts = 1)
   {
 
 	tx.inputs.clear();
@@ -621,19 +621,19 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	BaseInput in = new BaseInput();
 	in.blockIndex = height;
 
-	uint64_t blockReward = new uint64_t();
-	int64_t emissionChange = new int64_t();
-	if (!getBlockReward(new uint8_t(blockMajorVersion), new size_t(medianSize), new size_t(currentBlockSize), new uint64_t(alreadyGeneratedCoins), new uint64_t(fee), ref blockReward, ref emissionChange))
+	ulong blockReward = new ulong();
+	long emissionChange = new long();
+	if (!getBlockReward(new ushort(blockMajorVersion), new size_t(medianSize), new size_t(currentBlockSize), new ulong(alreadyGeneratedCoins), new ulong(fee), ref blockReward, ref emissionChange))
 	{
 	  logger.functorMethod(INFO) << "Block is too big";
 	  return false;
 	}
 
-	List<uint64_t> outAmounts = new List<uint64_t>();
-	CryptoNote.GlobalMembers.decompose_amount_into_digits(new uint64_t(blockReward), defaultDustThreshold(new uint32_t(height)), (uint64_t a_chunk) =>
+	List<ulong> outAmounts = new List<ulong>();
+	CryptoNote.GlobalMembers.decompose_amount_into_digits(new ulong(blockReward), defaultDustThreshold(new uint(height)), (ulong a_chunk) =>
 	{
 		outAmounts.Add(a_chunk);
-	}, (uint64_t a_dust) =>
+	}, (ulong a_dust) =>
 	{
 		outAmounts.Add(a_dust);
 	});
@@ -649,7 +649,7 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  outAmounts.Resize(outAmounts.Count - 1);
 	}
 
-	uint64_t summaryAmounts = 0;
+	ulong summaryAmounts = 0;
 	for (size_t no = 0; no < outAmounts.Count; no++)
 	{
 	  Crypto.KeyDerivation derivation = boost::value_initialized<Crypto.KeyDerivation>();
@@ -694,29 +694,29 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isFusionTransaction(const Transaction& transaction, uint32_t height) const
-  public bool isFusionTransaction(Transaction transaction, uint32_t height)
+//ORIGINAL LINE: bool isFusionTransaction(const Transaction& transaction, uint height) const
+  public bool isFusionTransaction(Transaction transaction, uint height)
   {
-	return isFusionTransaction(transaction, CryptoNote.GlobalMembers.getObjectBinarySize(transaction), new uint32_t(height));
+	return isFusionTransaction(transaction, CryptoNote.GlobalMembers.getObjectBinarySize(transaction), new uint(height));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isFusionTransaction(const Transaction& transaction, size_t size, uint32_t height) const
-  public bool isFusionTransaction(Transaction transaction, size_t size, uint32_t height)
+//ORIGINAL LINE: bool isFusionTransaction(const Transaction& transaction, size_t size, uint height) const
+  public bool isFusionTransaction(Transaction transaction, size_t size, uint height)
   {
 	Debug.Assert(CryptoNote.GlobalMembers.getObjectBinarySize(transaction) == size);
 
-	List<uint64_t> outputsAmounts = new List<uint64_t>();
+	List<ulong> outputsAmounts = new List<ulong>();
 	outputsAmounts.Capacity = transaction.outputs.size();
 	foreach (TransactionOutput output in transaction.outputs)
 	{
 	  outputsAmounts.Add(output.amount);
 	}
 
-	return isFusionTransaction(getInputsAmounts(transaction), outputsAmounts, new size_t(size), new uint32_t(height));
+	return isFusionTransaction(getInputsAmounts(transaction), outputsAmounts, new size_t(size), new uint(height));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isFusionTransaction(const ClassicVector<uint64_t>& inputsAmounts, const ClassicVector<uint64_t>& outputsAmounts, size_t size, uint32_t height) const
-  public bool isFusionTransaction(List<uint64_t> inputsAmounts, List<uint64_t> outputsAmounts, size_t size, uint32_t height)
+//ORIGINAL LINE: bool isFusionTransaction(const ClassicVector<ulong>& inputsAmounts, const ClassicVector<ulong>& outputsAmounts, size_t size, uint height) const
+  public bool isFusionTransaction(List<ulong> inputsAmounts, List<ulong> outputsAmounts, size_t size, uint height)
   {
 	if (size > fusionTxMaxSize())
 	{
@@ -733,10 +733,10 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  return false;
 	}
 
-	uint64_t inputAmount = 0;
+	ulong inputAmount = 0;
 	foreach (var amount in inputsAmounts)
 	{
-	  if (amount < defaultFusionDustThreshold(new uint32_t(height)))
+	  if (amount < defaultFusionDustThreshold(new uint(height)))
 	  {
 		return false;
 	  }
@@ -744,30 +744,30 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  inputAmount += amount;
 	}
 
-	List<uint64_t> expectedOutputsAmounts = new List<uint64_t>();
+	List<ulong> expectedOutputsAmounts = new List<ulong>();
 	expectedOutputsAmounts.Capacity = outputsAmounts.Count;
-	decomposeAmount(inputAmount, defaultFusionDustThreshold(new uint32_t(height)), expectedOutputsAmounts);
+	decomposeAmount(inputAmount, defaultFusionDustThreshold(new uint(height)), expectedOutputsAmounts);
 	expectedOutputsAmounts.Sort();
 
 	return expectedOutputsAmounts == outputsAmounts;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isAmountApplicableInFusionTransactionInput(uint64_t amount, uint64_t threshold, uint32_t height) const
-  public bool isAmountApplicableInFusionTransactionInput(uint64_t amount, uint64_t threshold, uint32_t height)
+//ORIGINAL LINE: bool isAmountApplicableInFusionTransactionInput(ulong amount, ulong threshold, uint height) const
+  public bool isAmountApplicableInFusionTransactionInput(ulong amount, ulong threshold, uint height)
   {
-	uint8_t ignore = new uint8_t();
-	return isAmountApplicableInFusionTransactionInput(new uint64_t(amount), new uint64_t(threshold), ref ignore, new uint32_t(height));
+	ushort ignore = new ushort();
+	return isAmountApplicableInFusionTransactionInput(new ulong(amount), new ulong(threshold), ref ignore, new uint(height));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isAmountApplicableInFusionTransactionInput(uint64_t amount, uint64_t threshold, uint8_t& amountPowerOfTen, uint32_t height) const
-  public bool isAmountApplicableInFusionTransactionInput(uint64_t amount, uint64_t threshold, ref uint8_t amountPowerOfTen, uint32_t height)
+//ORIGINAL LINE: bool isAmountApplicableInFusionTransactionInput(ulong amount, ulong threshold, ushort& amountPowerOfTen, uint height) const
+  public bool isAmountApplicableInFusionTransactionInput(ulong amount, ulong threshold, ref ushort amountPowerOfTen, uint height)
   {
 	if (amount >= threshold)
 	{
 	  return false;
 	}
 
-	if (amount < defaultFusionDustThreshold(new uint32_t(height)))
+	if (amount < defaultFusionDustThreshold(new uint(height)))
 	{
 	  return false;
 	}
@@ -778,7 +778,7 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  return false;
 	}
 
-	amountPowerOfTen = (uint8_t)(std::distance(GlobalMembers.PRETTY_AMOUNTS.GetEnumerator(), it) / 9);
+	amountPowerOfTen = (ushort)(std::distance(GlobalMembers.PRETTY_AMOUNTS.GetEnumerator(), it) / 9);
 	return true;
   }
 
@@ -798,7 +798,7 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 //ORIGINAL LINE: bool parseAccountAddressString(const string& str, AccountPublicAddress& addr) const
   public bool parseAccountAddressString(string str, AccountPublicAddress addr)
   {
-	uint64_t prefix = new uint64_t();
+	ulong prefix = new ulong();
 	if (!CryptoNote.parseAccountAddressString(prefix, addr, str))
 	{
 	  return false;
@@ -814,8 +814,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: string formatAmount(uint64_t amount) const
-  public string formatAmount(uint64_t amount)
+//ORIGINAL LINE: string formatAmount(ulong amount) const
+  public string formatAmount(ulong amount)
   {
 	string s = Convert.ToString(amount);
 	if (s.Length < m_numberOfDecimalPlaces + 1)
@@ -826,10 +826,10 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	return s;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: string formatAmount(int64_t amount) const
-  public string formatAmount(int64_t amount)
+//ORIGINAL LINE: string formatAmount(long amount) const
+  public string formatAmount(long amount)
   {
-	string s = formatAmount((uint64_t)Math.Abs(amount));
+	string s = formatAmount((ulong)Math.Abs(amount));
 
 	if (amount < 0)
 	{
@@ -839,8 +839,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	return s;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool parseAmount(const string& str, uint64_t& amount) const
-  public bool parseAmount(string str, uint64_t amount)
+//ORIGINAL LINE: bool parseAmount(const string& str, ulong& amount) const
+  public bool parseAmount(string str, ulong amount)
   {
 	string strAmount = str;
 	boost::algorithm.trim(strAmount);
@@ -885,8 +885,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getNextDifficulty(uint8_t version, uint32_t blockIndex, ClassicVector<uint64_t> timestamps, ClassicVector<uint64_t> cumulativeDifficulties) const
-  public uint64_t getNextDifficulty(uint8_t version, uint32_t blockIndex, List<uint64_t> timestamps, List<uint64_t> cumulativeDifficulties)
+//ORIGINAL LINE: ulong getNextDifficulty(ushort version, uint blockIndex, ClassicVector<ulong> timestamps, ClassicVector<ulong> cumulativeDifficulties) const
+  public ulong getNextDifficulty(ushort version, uint blockIndex, List<ulong> timestamps, List<ulong> cumulativeDifficulties)
   {
 	  /* nextDifficultyV3 and above are defined in src/CryptoNoteCore/Difficulty.cpp */
 	  if (blockIndex >= CryptoNote.parameters.LWMA_3_DIFFICULTY_BLOCK_INDEX)
@@ -907,18 +907,18 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  }
 	  else
 	  {
-		  return nextDifficulty(new uint8_t(version), new uint32_t(blockIndex), new List<uint64_t>(timestamps), new List<uint64_t>(cumulativeDifficulties));
+		  return nextDifficulty(new ushort(version), new uint(blockIndex), new List<ulong>(timestamps), new List<ulong>(cumulativeDifficulties));
 	  }
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t nextDifficulty(uint8_t version, uint32_t blockIndex, ClassicVector<uint64_t> timestamps, ClassicVector<uint64_t> cumulativeDifficulties) const
-  public uint64_t nextDifficulty(uint8_t version, uint32_t blockIndex, List<uint64_t> timestamps, List<uint64_t> cumulativeDifficulties)
+//ORIGINAL LINE: ulong nextDifficulty(ushort version, uint blockIndex, ClassicVector<ulong> timestamps, ClassicVector<ulong> cumulativeDifficulties) const
+  public ulong nextDifficulty(ushort version, uint blockIndex, List<ulong> timestamps, List<ulong> cumulativeDifficulties)
   {
 
-  List<uint64_t> timestamps_o = new List<uint64_t>(timestamps);
-  List<uint64_t> cumulativeDifficulties_o = new List<uint64_t>(cumulativeDifficulties);
-	size_t c_difficultyWindow = difficultyWindowByBlockVersion(new uint8_t(version));
-	size_t c_difficultyCut = difficultyCutByBlockVersion(new uint8_t(version));
+  List<ulong> timestamps_o = new List<ulong>(timestamps);
+  List<ulong> cumulativeDifficulties_o = new List<ulong>(cumulativeDifficulties);
+	size_t c_difficultyWindow = difficultyWindowByBlockVersion(new ushort(version));
+	size_t c_difficultyCut = difficultyCutByBlockVersion(new ushort(version));
 
 	Debug.Assert(c_difficultyWindow >= 2);
 
@@ -958,26 +958,26 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  cutEnd.CopyFrom(cutBegin + (c_difficultyWindow - 2 * c_difficultyCut));
 	}
 	Debug.Assert(cutBegin + 2 <= cutEnd != null && cutEnd <= length);
-	uint64_t timeSpan = timestamps[cutEnd - 1] - timestamps[cutBegin];
+	ulong timeSpan = timestamps[cutEnd - 1] - timestamps[cutBegin];
 	if (timeSpan == 0)
 	{
 	  timeSpan = 1;
 	}
 
-	uint64_t totalWork = cumulativeDifficulties[cutEnd - 1] - cumulativeDifficulties[cutBegin];
+	ulong totalWork = cumulativeDifficulties[cutEnd - 1] - cumulativeDifficulties[cutBegin];
 	Debug.Assert(totalWork > 0);
 
-	uint64_t low = new uint64_t();
-	uint64_t high = new uint64_t();
+	ulong low = new ulong();
+	ulong high = new ulong();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: low = mul128(totalWork, m_difficultyTarget, &high);
-	low.CopyFrom(GlobalMembers.mul128(new uint64_t(totalWork), new uint64_t(m_difficultyTarget), high));
-	if (high != 0 || uint64_t.MaxValue - low < (timeSpan - 1))
+	low.CopyFrom(GlobalMembers.mul128(new ulong(totalWork), new ulong(m_difficultyTarget), high));
+	if (high != 0 || ulong.MaxValue - low < (timeSpan - 1))
 	{
 	  return 0;
 	}
 
-	uint8_t c_zawyDifficultyBlockVersion = new uint8_t(m_zawyDifficultyBlockVersion);
+	ushort c_zawyDifficultyBlockVersion = new ushort(m_zawyDifficultyBlockVersion);
 	if (m_zawyDifficultyV2 != null)
 	{
 	  c_zawyDifficultyBlockVersion = 2;
@@ -988,7 +988,7 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  {
 		return 0;
 	  }
-	  uint64_t nextDiffZ = low / timeSpan;
+	  ulong nextDiffZ = low / timeSpan;
 
 	  return nextDiffZ;
 	}
@@ -1016,8 +1016,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	  {
 		t_difficultyWindow = timestamps.Count;
 	  }
-	  List<uint64_t> timestamps_tmp = new List<uint64_t>(timestamps_o.end() - t_difficultyWindow, timestamps_o.end());
-	  List<uint64_t> cumulativeDifficulties_tmp = new List<uint64_t>(cumulativeDifficulties_o.end() - t_difficultyWindow, cumulativeDifficulties_o.end());
+	  List<ulong> timestamps_tmp = new List<ulong>(timestamps_o.end() - t_difficultyWindow, timestamps_o.end());
+	  List<ulong> cumulativeDifficulties_tmp = new List<ulong>(cumulativeDifficulties_o.end() - t_difficultyWindow, cumulativeDifficulties_o.end());
 
 	  length = timestamps_tmp.Count;
 	  Debug.Assert(length == cumulativeDifficulties_tmp.Count);
@@ -1062,12 +1062,12 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: low = mul128(totalWork, m_difficultyTarget, &high);
-	  low.CopyFrom(GlobalMembers.mul128(new uint64_t(totalWork), new uint64_t(m_difficultyTarget), high));
-	  if (high != 0 || uint64_t.MaxValue - low < (timeSpan - 1))
+	  low.CopyFrom(GlobalMembers.mul128(new ulong(totalWork), new ulong(m_difficultyTarget), high));
+	  if (high != 0 || ulong.MaxValue - low < (timeSpan - 1))
 	  {
 		return 0;
 	  }
-	  uint64_t nextDiffZ = low / timeSpan;
+	  ulong nextDiffZ = low / timeSpan;
 	  if (nextDiffZ <= 100)
 	  {
 		nextDiffZ = 100;
@@ -1080,8 +1080,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool checkProofOfWorkV1(const CachedBlock& block, uint64_t currentDifficulty) const
-  public bool checkProofOfWorkV1(CachedBlock block, uint64_t currentDifficulty)
+//ORIGINAL LINE: bool checkProofOfWorkV1(const CachedBlock& block, ulong currentDifficulty) const
+  public bool checkProofOfWorkV1(CachedBlock block, ulong currentDifficulty)
   {
 	if (BLOCK_MAJOR_VERSION_1 != block.getBlock().majorVersion)
 	{
@@ -1091,8 +1091,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	return check_hash(block.getBlockLongHash(), currentDifficulty);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool checkProofOfWorkV2(const CachedBlock& cachedBlock, uint64_t currentDifficulty) const
-  public bool checkProofOfWorkV2(CachedBlock cachedBlock, uint64_t currentDifficulty)
+//ORIGINAL LINE: bool checkProofOfWorkV2(const CachedBlock& cachedBlock, ulong currentDifficulty) const
+  public bool checkProofOfWorkV2(CachedBlock cachedBlock, ulong currentDifficulty)
   {
 	auto block = cachedBlock.getBlock();
 	if (block.majorVersion < BLOCK_MAJOR_VERSION_2)
@@ -1129,18 +1129,18 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	return true;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool checkProofOfWork(const CachedBlock& block, uint64_t currentDiffic) const
-  public bool checkProofOfWork(CachedBlock block, uint64_t currentDiffic)
+//ORIGINAL LINE: bool checkProofOfWork(const CachedBlock& block, ulong currentDiffic) const
+  public bool checkProofOfWork(CachedBlock block, ulong currentDiffic)
   {
 	switch (block.getBlock().majorVersion)
 	{
 	case BLOCK_MAJOR_VERSION_1:
-	  return checkProofOfWorkV1(block, new uint64_t(currentDiffic));
+	  return checkProofOfWorkV1(block, new ulong(currentDiffic));
 
 	case BLOCK_MAJOR_VERSION_2:
 	case BLOCK_MAJOR_VERSION_3:
 	case BLOCK_MAJOR_VERSION_4:
-	  return checkProofOfWorkV2(block, new uint64_t(currentDiffic));
+	  return checkProofOfWorkV2(block, new ulong(currentDiffic));
 	}
 
 	logger.functorMethod(ERROR, BRIGHT_RED) << "Unknown block major version: " << block.getBlock().majorVersion << "." << block.getBlock().minorVersion;
@@ -1206,17 +1206,17 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
   {
 	size_t KEY_IMAGE_SIZE = sizeof(Crypto.KeyImage);
 	size_t OUTPUT_KEY_SIZE = sizeof(decltype(KeyOutput.key));
-	size_t AMOUNT_SIZE = sizeof(uint64_t) + 2; //varint
-	size_t GLOBAL_INDEXES_VECTOR_SIZE_SIZE = sizeof(uint8_t); //varint
-	size_t GLOBAL_INDEXES_INITIAL_VALUE_SIZE = sizeof(uint32_t); //varint
-	size_t GLOBAL_INDEXES_DIFFERENCE_SIZE = sizeof(uint32_t); //varint
+	size_t AMOUNT_SIZE = sizeof(ulong) + 2; //varint
+	size_t GLOBAL_INDEXES_VECTOR_SIZE_SIZE = sizeof(ushort); //varint
+	size_t GLOBAL_INDEXES_INITIAL_VALUE_SIZE = sizeof(uint); //varint
+	size_t GLOBAL_INDEXES_DIFFERENCE_SIZE = sizeof(uint); //varint
 	size_t SIGNATURE_SIZE = sizeof(Crypto.Signature);
-	size_t EXTRA_TAG_SIZE = sizeof(uint8_t);
-	size_t INPUT_TAG_SIZE = sizeof(uint8_t);
-	size_t OUTPUT_TAG_SIZE = sizeof(uint8_t);
+	size_t EXTRA_TAG_SIZE = sizeof(ushort);
+	size_t INPUT_TAG_SIZE = sizeof(ushort);
+	size_t OUTPUT_TAG_SIZE = sizeof(ushort);
 	size_t PUBLIC_KEY_SIZE = sizeof(Crypto.PublicKey);
-	size_t TRANSACTION_VERSION_SIZE = sizeof(uint8_t);
-	size_t TRANSACTION_UNLOCK_TIME_SIZE = sizeof(uint64_t);
+	size_t TRANSACTION_VERSION_SIZE = sizeof(ushort);
+	size_t TRANSACTION_UNLOCK_TIME_SIZE = sizeof(ulong);
 
 	size_t outputsSize = outputCount * (OUTPUT_TAG_SIZE + OUTPUT_KEY_SIZE + AMOUNT_SIZE);
 	size_t headerSize = TRANSACTION_VERSION_SIZE + TRANSACTION_UNLOCK_TIME_SIZE + EXTRA_TAG_SIZE + PUBLIC_KEY_SIZE;
@@ -1252,8 +1252,8 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	{
 	  m_upgradeHeightV2 = 0;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: m_upgradeHeightV3 = static_cast<uint32_t>(-1);
-	  m_upgradeHeightV3.CopyFrom((uint32_t) - 1);
+//ORIGINAL LINE: m_upgradeHeightV3 = static_cast<uint>(-1);
+	  m_upgradeHeightV3.CopyFrom((uint) - 1);
 	  m_blocksFileName = "testnet_" + m_blocksFileName;
 	  m_blockIndexesFileName = "testnet_" + m_blockIndexesFileName;
 	  m_txPoolFileName = "testnet_" + m_txPoolFileName;
@@ -1290,64 +1290,64 @@ public size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uin
 	return true;
   }
 
-  private uint32_t m_maxBlockHeight = new uint32_t();
+  private uint m_maxBlockHeight = new uint();
   private size_t m_maxBlockBlobSize = new size_t();
   private size_t m_maxTxSize = new size_t();
-  private uint64_t m_publicAddressBase58Prefix = new uint64_t();
-  private uint32_t m_minedMoneyUnlockWindow = new uint32_t();
+  private ulong m_publicAddressBase58Prefix = new ulong();
+  private uint m_minedMoneyUnlockWindow = new uint();
 
   private size_t m_timestampCheckWindow = new size_t();
-  private uint64_t m_blockFutureTimeLimit = new uint64_t();
+  private ulong m_blockFutureTimeLimit = new ulong();
 
-  private uint64_t m_moneySupply = new uint64_t();
+  private ulong m_moneySupply = new ulong();
   private uint m_emissionSpeedFactor;
-  private uint64_t m_genesisBlockReward = new uint64_t();
+  private ulong m_genesisBlockReward = new ulong();
 
   private size_t m_rewardBlocksWindow = new size_t();
-  private uint32_t m_zawyDifficultyBlockIndex = new uint32_t();
+  private uint m_zawyDifficultyBlockIndex = new uint();
   private size_t m_zawyDifficultyV2 = new size_t();
-  private uint8_t m_zawyDifficultyBlockVersion = new uint8_t();
+  private ushort m_zawyDifficultyBlockVersion = new ushort();
   private size_t m_blockGrantedFullRewardZone = new size_t();
   private size_t m_minerTxBlobReservedSize = new size_t();
 
   private size_t m_numberOfDecimalPlaces = new size_t();
-  private uint64_t m_coin = new uint64_t();
+  private ulong m_coin = new ulong();
 
-  private uint64_t m_mininumFee = new uint64_t();
-  private uint64_t m_defaultDustThreshold = new uint64_t();
+  private ulong m_mininumFee = new ulong();
+  private ulong m_defaultDustThreshold = new ulong();
 
-  private uint64_t m_difficultyTarget = new uint64_t();
+  private ulong m_difficultyTarget = new ulong();
   private size_t m_difficultyWindow = new size_t();
   private size_t m_difficultyLag = new size_t();
   private size_t m_difficultyCut = new size_t();
 
   private size_t m_maxBlockSizeInitial = new size_t();
-  private uint64_t m_maxBlockSizeGrowthSpeedNumerator = new uint64_t();
-  private uint64_t m_maxBlockSizeGrowthSpeedDenominator = new uint64_t();
+  private ulong m_maxBlockSizeGrowthSpeedNumerator = new ulong();
+  private ulong m_maxBlockSizeGrowthSpeedDenominator = new ulong();
 
-  private uint64_t m_lockedTxAllowedDeltaSeconds = new uint64_t();
+  private ulong m_lockedTxAllowedDeltaSeconds = new ulong();
   private size_t m_lockedTxAllowedDeltaBlocks = new size_t();
 
-  private uint64_t m_mempoolTxLiveTime = new uint64_t();
-  private uint64_t m_mempoolTxFromAltBlockLiveTime = new uint64_t();
-  private uint64_t m_numberOfPeriodsToForgetTxDeletedFromPool = new uint64_t();
+  private ulong m_mempoolTxLiveTime = new ulong();
+  private ulong m_mempoolTxFromAltBlockLiveTime = new ulong();
+  private ulong m_numberOfPeriodsToForgetTxDeletedFromPool = new ulong();
 
   private size_t m_fusionTxMaxSize = new size_t();
   private size_t m_fusionTxMinInputCount = new size_t();
   private size_t m_fusionTxMinInOutCountRatio = new size_t();
 
-  private uint32_t m_upgradeHeightV2 = new uint32_t();
-  private uint32_t m_upgradeHeightV3 = new uint32_t();
-  private uint32_t m_upgradeHeightV4 = new uint32_t();
+  private uint m_upgradeHeightV2 = new uint();
+  private uint m_upgradeHeightV3 = new uint();
+  private uint m_upgradeHeightV4 = new uint();
   private uint m_upgradeVotingThreshold;
-  private uint32_t m_upgradeVotingWindow = new uint32_t();
-  private uint32_t m_upgradeWindow = new uint32_t();
+  private uint m_upgradeVotingWindow = new uint();
+  private uint m_upgradeWindow = new uint();
 
   private string m_blocksFileName;
   private string m_blockIndexesFileName;
   private string m_txPoolFileName;
 
-  private readonly List<uint64_t> PRETTY_AMOUNTS = new List<uint64_t>();
+  private readonly List<ulong> PRETTY_AMOUNTS = new List<ulong>();
 
   private bool m_testnet;
   private bool m_isBlockexplorer;
@@ -1460,9 +1460,9 @@ public class CurrencyBuilder : boost::noncopyable
 	 BaseInput in = new BaseInput();
 	 in.blockIndex = 0;
 	 tx.inputs.push_back(in);
-	 uint64_t block_reward = m_currency.m_genesisBlockReward;
-	 uint64_t target_amount = block_reward / targets.Count;
-	 uint64_t first_target_amount = target_amount + block_reward % targets.Count;
+	 ulong block_reward = m_currency.m_genesisBlockReward;
+	 ulong target_amount = block_reward / targets.Count;
+	 ulong first_target_amount = target_amount + block_reward % targets.Count;
 	 for (size_t i = 0; i < targets.Count; ++i)
 	 {
 	   Crypto.KeyDerivation derivation = boost::value_initialized<Crypto.KeyDerivation>();
@@ -1488,7 +1488,7 @@ public class CurrencyBuilder : boost::noncopyable
 	 }
 	 return tx;
   }
-  public CurrencyBuilder maxBlockNumber(uint32_t val)
+  public CurrencyBuilder maxBlockNumber(uint val)
   {
 	  m_currency.m_maxBlockHeight = val;
 	  return this;
@@ -1503,12 +1503,12 @@ public class CurrencyBuilder : boost::noncopyable
 	  m_currency.m_maxTxSize = val;
 	  return this;
   }
-  public CurrencyBuilder publicAddressBase58Prefix(uint64_t val)
+  public CurrencyBuilder publicAddressBase58Prefix(ulong val)
   {
 	  m_currency.m_publicAddressBase58Prefix = val;
 	  return this;
   }
-  public CurrencyBuilder minedMoneyUnlockWindow(uint32_t val)
+  public CurrencyBuilder minedMoneyUnlockWindow(uint val)
   {
 	  m_currency.m_minedMoneyUnlockWindow = val;
 	  return this;
@@ -1519,20 +1519,20 @@ public class CurrencyBuilder : boost::noncopyable
 	  m_currency.m_timestampCheckWindow = val;
 	  return this;
   }
-  public CurrencyBuilder blockFutureTimeLimit(uint64_t val)
+  public CurrencyBuilder blockFutureTimeLimit(ulong val)
   {
 	  m_currency.m_blockFutureTimeLimit = val;
 	  return this;
   }
 
-  public CurrencyBuilder moneySupply(uint64_t val)
+  public CurrencyBuilder moneySupply(ulong val)
   {
 	  m_currency.m_moneySupply = val;
 	  return this;
   }
   public CurrencyBuilder emissionSpeedFactor(uint val)
   {
-	if (val <= 0 || val > 8 * sizeof(uint64_t))
+	if (val <= 0 || val > 8 * sizeof(ulong))
 	{
 	  throw new System.ArgumentException("val at emissionSpeedFactor()");
 	}
@@ -1540,7 +1540,7 @@ public class CurrencyBuilder : boost::noncopyable
 	m_currency.m_emissionSpeedFactor = val;
 	return this;
   }
-  public CurrencyBuilder genesisBlockReward(uint64_t val)
+  public CurrencyBuilder genesisBlockReward(ulong val)
   {
 	  m_currency.m_genesisBlockReward = val;
 	  return this;
@@ -1551,7 +1551,7 @@ public class CurrencyBuilder : boost::noncopyable
 	  m_currency.m_rewardBlocksWindow = val;
 	  return this;
   }
-  public CurrencyBuilder zawyDifficultyBlockIndex(uint32_t val)
+  public CurrencyBuilder zawyDifficultyBlockIndex(uint val)
   {
 	  m_currency.m_zawyDifficultyBlockIndex = val;
 	  return this;
@@ -1561,7 +1561,7 @@ public class CurrencyBuilder : boost::noncopyable
 	  m_currency.m_zawyDifficultyV2 = val;
 	  return this;
   }
-  public CurrencyBuilder zawyDifficultyBlockVersion(uint8_t val)
+  public CurrencyBuilder zawyDifficultyBlockVersion(ushort val)
   {
 	  m_currency.m_zawyDifficultyBlockVersion = val;
 	  return this;
@@ -1589,18 +1589,18 @@ public class CurrencyBuilder : boost::noncopyable
 	return this;
   }
 
-  public CurrencyBuilder mininumFee(uint64_t val)
+  public CurrencyBuilder mininumFee(ulong val)
   {
 	  m_currency.m_mininumFee = val;
 	  return this;
   }
-  public CurrencyBuilder defaultDustThreshold(uint64_t val)
+  public CurrencyBuilder defaultDustThreshold(ulong val)
   {
 	  m_currency.m_defaultDustThreshold = val;
 	  return this;
   }
 
-  public CurrencyBuilder difficultyTarget(uint64_t val)
+  public CurrencyBuilder difficultyTarget(ulong val)
   {
 	  m_currency.m_difficultyTarget = val;
 	  return this;
@@ -1630,18 +1630,18 @@ public class CurrencyBuilder : boost::noncopyable
 	  m_currency.m_maxBlockSizeInitial = val;
 	  return this;
   }
-  public CurrencyBuilder maxBlockSizeGrowthSpeedNumerator(uint64_t val)
+  public CurrencyBuilder maxBlockSizeGrowthSpeedNumerator(ulong val)
   {
 	  m_currency.m_maxBlockSizeGrowthSpeedNumerator = val;
 	  return this;
   }
-  public CurrencyBuilder maxBlockSizeGrowthSpeedDenominator(uint64_t val)
+  public CurrencyBuilder maxBlockSizeGrowthSpeedDenominator(ulong val)
   {
 	  m_currency.m_maxBlockSizeGrowthSpeedDenominator = val;
 	  return this;
   }
 
-  public CurrencyBuilder lockedTxAllowedDeltaSeconds(uint64_t val)
+  public CurrencyBuilder lockedTxAllowedDeltaSeconds(ulong val)
   {
 	  m_currency.m_lockedTxAllowedDeltaSeconds = val;
 	  return this;
@@ -1652,17 +1652,17 @@ public class CurrencyBuilder : boost::noncopyable
 	  return this;
   }
 
-  public CurrencyBuilder mempoolTxLiveTime(uint64_t val)
+  public CurrencyBuilder mempoolTxLiveTime(ulong val)
   {
 	  m_currency.m_mempoolTxLiveTime = val;
 	  return this;
   }
-  public CurrencyBuilder mempoolTxFromAltBlockLiveTime(uint64_t val)
+  public CurrencyBuilder mempoolTxFromAltBlockLiveTime(ulong val)
   {
 	  m_currency.m_mempoolTxFromAltBlockLiveTime = val;
 	  return this;
   }
-  public CurrencyBuilder numberOfPeriodsToForgetTxDeletedFromPool(uint64_t val)
+  public CurrencyBuilder numberOfPeriodsToForgetTxDeletedFromPool(ulong val)
   {
 	  m_currency.m_numberOfPeriodsToForgetTxDeletedFromPool = val;
 	  return this;
@@ -1684,17 +1684,17 @@ public class CurrencyBuilder : boost::noncopyable
 	  return this;
   }
 
-  public CurrencyBuilder upgradeHeightV2(uint32_t val)
+  public CurrencyBuilder upgradeHeightV2(uint val)
   {
 	  m_currency.m_upgradeHeightV2 = val;
 	  return this;
   }
-  public CurrencyBuilder upgradeHeightV3(uint32_t val)
+  public CurrencyBuilder upgradeHeightV3(uint val)
   {
 	  m_currency.m_upgradeHeightV3 = val;
 	  return this;
   }
-  public CurrencyBuilder upgradeHeightV4(uint32_t val)
+  public CurrencyBuilder upgradeHeightV4(uint val)
   {
 	  m_currency.m_upgradeHeightV4 = val;
 	  return this;
@@ -1709,12 +1709,12 @@ public class CurrencyBuilder : boost::noncopyable
 	m_currency.m_upgradeVotingThreshold = val;
 	return this;
   }
-  public CurrencyBuilder upgradeVotingWindow(uint32_t val)
+  public CurrencyBuilder upgradeVotingWindow(uint val)
   {
 	  m_currency.m_upgradeVotingWindow = val;
 	  return this;
   }
-  public CurrencyBuilder upgradeWindow(uint32_t val)
+  public CurrencyBuilder upgradeWindow(uint val)
   {
 	if (val <= 0)
 	{

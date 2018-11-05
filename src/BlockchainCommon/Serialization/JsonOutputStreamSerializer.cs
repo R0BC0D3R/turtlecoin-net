@@ -55,7 +55,7 @@ public class JsonOutputStreamSerializer : ISerializer
 	chain.RemoveAt(chain.Count - 1);
   }
 
-  public override bool beginArray(uint64_t size, Common.StringView name)
+  public override bool beginArray(ulong size, Common.StringView name)
   {
 	JsonValue val = new JsonValue(JsonValue.ARRAY);
 	JsonValue res = chain[chain.Count - 1].insert.functorMethod((string)name, val);
@@ -68,39 +68,39 @@ public class JsonOutputStreamSerializer : ISerializer
 	chain.RemoveAt(chain.Count - 1);
   }
 
-  public static override bool functorMethod(uint8_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
-	GlobalMembers.insertOrPush(*chain[chain.Count - 1].functorMethod, new Common.StringView(name), (int64_t)value);
+	GlobalMembers.insertOrPush(*chain[chain.Count - 1].functorMethod, new Common.StringView(name), (long)value);
 	return true;
   }
-  public static override bool functorMethod(int16_t value, Common.StringView name)
+  public static override bool functorMethod(short value, Common.StringView name)
   {
-	int64_t v = (int64_t)value;
+	long v = (long)value;
 	return operator ()(v, new Common.StringView(name));
   }
-  public static override bool functorMethod(uint16_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
-	uint64_t v = (uint64_t)value;
+	ulong v = (ulong)value;
 	return operator ()(v, new Common.StringView(name));
   }
-  public static override bool functorMethod(int32_t value, Common.StringView name)
+  public static override bool functorMethod(int value, Common.StringView name)
   {
-	int64_t v = (int64_t)value;
+	long v = (long)value;
 	return operator ()(v, new Common.StringView(name));
   }
-  public static override bool functorMethod(uint32_t value, Common.StringView name)
+  public static override bool functorMethod(uint value, Common.StringView name)
   {
-	uint64_t v = (uint64_t)value;
+	ulong v = (ulong)value;
 	return operator ()(v, new Common.StringView(name));
   }
-  public static override bool functorMethod(int64_t value, Common.StringView name)
+  public static override bool functorMethod(long value, Common.StringView name)
   {
 	GlobalMembers.insertOrPush(*chain[chain.Count - 1].functorMethod, new Common.StringView(name), value);
 	return true;
   }
-  public static override bool functorMethod(uint64_t value, Common.StringView name)
+  public static override bool functorMethod(ulong value, Common.StringView name)
   {
-	int64_t v = (int64_t)value;
+	long v = (long)value;
 	return operator ()(v, new Common.StringView(name));
   }
   public static override bool functorMethod(ref double value, Common.StringView name)
@@ -118,7 +118,7 @@ public class JsonOutputStreamSerializer : ISerializer
 	GlobalMembers.insertOrPush(*chain[chain.Count - 1].functorMethod, new Common.StringView(name), value);
 	return true;
   }
-  public override bool binary(object value, uint64_t size, Common.StringView name)
+  public override bool binary(object value, ulong size, Common.StringView name)
   {
 	string hex = Common.toHex(value, size);
 	return this.functorMethod(hex, name);

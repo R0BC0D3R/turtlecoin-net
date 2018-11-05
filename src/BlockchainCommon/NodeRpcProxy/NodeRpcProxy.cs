@@ -137,8 +137,8 @@ public class NodeRpcProxy : CryptoNote.INode
 	return m_peerCount.load(std::memory_order_relaxed);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getLastLocalBlockHeight() const override
-  public override uint32_t getLastLocalBlockHeight()
+//ORIGINAL LINE: virtual uint getLastLocalBlockHeight() const override
+  public override uint getLastLocalBlockHeight()
   {
 	lock (m_mutex)
 	{
@@ -146,14 +146,14 @@ public class NodeRpcProxy : CryptoNote.INode
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getLastKnownBlockHeight() const override
-  public override uint32_t getLastKnownBlockHeight()
+//ORIGINAL LINE: virtual uint getLastKnownBlockHeight() const override
+  public override uint getLastKnownBlockHeight()
   {
 	return m_networkHeight.load(std::memory_order_relaxed);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getLocalBlockCount() const override
-  public override uint32_t getLocalBlockCount()
+//ORIGINAL LINE: virtual uint getLocalBlockCount() const override
+  public override uint getLocalBlockCount()
   {
 	lock (m_mutex)
 	{
@@ -161,14 +161,14 @@ public class NodeRpcProxy : CryptoNote.INode
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getKnownBlockCount() const override
-  public override uint32_t getKnownBlockCount()
+//ORIGINAL LINE: virtual uint getKnownBlockCount() const override
+  public override uint getKnownBlockCount()
   {
 	return m_networkHeight.load(std::memory_order_relaxed) + 1;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getLastLocalBlockTimestamp() const override
-  public override uint64_t getLastLocalBlockTimestamp()
+//ORIGINAL LINE: virtual ulong getLastLocalBlockTimestamp() const override
+  public override ulong getLastLocalBlockTimestamp()
   {
 	lock (m_mutex)
 	{
@@ -176,8 +176,8 @@ public class NodeRpcProxy : CryptoNote.INode
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getNodeHeight() const override
-  public override uint64_t getNodeHeight()
+//ORIGINAL LINE: virtual ulong getNodeHeight() const override
+  public override ulong getNodeHeight()
   {
 	return m_nodeHeight.load(std::memory_order_relaxed);
   }
@@ -215,7 +215,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	return;
   }
 
-  public override void getBlockHashesByTimestamps(uint64_t timestampBegin, size_t secondsCount, List<Crypto.Hash> blockHashes, Callback callback)
+  public override void getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount, List<Crypto.Hash> blockHashes, Callback callback)
   {
 	lock (m_mutex)
 	{
@@ -266,7 +266,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	scheduleRequest(std::bind(this.doRelayTransaction, this, transaction), callback);
   }
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-  public override void getRandomOutsByAmounts(List<uint64_t>&& amounts, uint16_t outsCount, List<COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_outs_for_amount> outs, Callback callback)
+  public override void getRandomOutsByAmounts(List<ulong>&& amounts, ushort outsCount, List<COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_outs_for_amount> outs, Callback callback)
   {
 	lock (m_mutex)
 	{
@@ -280,7 +280,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	scheduleRequest(std::bind(this.doGetRandomOutsByAmounts, this, std::move(amounts), outsCount, std::@ref(outs)), callback);
   }
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-  public override void getNewBlocks(List<Crypto.Hash>&& knownBlockIds, List<CryptoNote.RawBlock> newBlocks, uint32_t startHeight, Callback callback)
+  public override void getNewBlocks(List<Crypto.Hash>&& knownBlockIds, List<CryptoNote.RawBlock> newBlocks, uint startHeight, Callback callback)
   {
 	lock (m_mutex)
 	{
@@ -293,7 +293,7 @@ public class NodeRpcProxy : CryptoNote.INode
 
 	scheduleRequest(std::bind(this.doGetNewBlocks, this, std::move(knownBlockIds), std::@ref(newBlocks), std::@ref(startHeight)), callback);
   }
-  public override void getTransactionOutsGlobalIndices(Crypto.Hash transactionHash, List<uint32_t> outsGlobalIndices, Callback callback)
+  public override void getTransactionOutsGlobalIndices(Crypto.Hash transactionHash, List<uint> outsGlobalIndices, Callback callback)
   {
 	lock (m_mutex)
 	{
@@ -307,7 +307,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	scheduleRequest(std::bind(this.doGetTransactionOutsGlobalIndices, this, transactionHash, std::@ref(outsGlobalIndices)), callback);
   }
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-  public override void queryBlocks(List<Crypto.Hash>&& knownBlockIds, uint64_t timestamp, List<BlockShortEntry> newBlocks, uint32_t startHeight, Callback callback)
+  public override void queryBlocks(List<Crypto.Hash>&& knownBlockIds, ulong timestamp, List<BlockShortEntry> newBlocks, uint startHeight, Callback callback)
   {
 	lock (m_mutex)
 	{
@@ -340,7 +340,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	}
    , callback);
   }
-  public override void getBlocks(List<uint32_t> blockHeights, List<List<BlockDetails>> blocks, Callback callback)
+  public override void getBlocks(List<uint> blockHeights, List<List<BlockDetails>> blocks, Callback callback)
   {
 	lock (m_mutex)
 	{
@@ -366,7 +366,7 @@ public class NodeRpcProxy : CryptoNote.INode
 
 	scheduleRequest(std::bind(this.doGetBlocksByHash, this, std::cref(blockHashes), std::@ref(blocks)), callback);
   }
-  public override void getBlock(uint32_t blockHeight, BlockDetails block, Callback callback)
+  public override void getBlock(uint blockHeight, BlockDetails block, Callback callback)
   {
 	lock (m_mutex)
 	{
@@ -410,7 +410,7 @@ public class NodeRpcProxy : CryptoNote.INode
   {
 	return m_fee_address;
   }
-  public override uint32_t feeAmount()
+  public override uint feeAmount()
   {
 	return m_fee_amount;
   }
@@ -540,7 +540,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	  }
 
 	  std::unique_lock<object> @lock = new std::unique_lock<object>(m_mutex);
-	  uint32_t blockIndex = rsp.block_header.height;
+	  uint blockIndex = rsp.block_header.height;
 	  if (blockHash != lastLocalBlockHeaderInfo.hash)
 	  {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -647,7 +647,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	}
   }
 
-  private std::error_code doGetBlockHashesByTimestamps(uint64_t timestampBegin, size_t secondsCount, ref List<Crypto.Hash> blockHashes)
+  private std::error_code doGetBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount, ref List<Crypto.Hash> blockHashes)
   {
 	COMMAND_RPC_GET_BLOCKS_HASHES_BY_TIMESTAMPS.request req = boost::value_initialized<decltype(req)>();
 	COMMAND_RPC_GET_BLOCKS_HASHES_BY_TIMESTAMPS.response rsp = boost::value_initialized<decltype(rsp)>();
@@ -673,7 +673,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	m_logger.functorMethod(TRACE) << "NodeRpcProxy::doRelayTransaction, tx hex " << req.tx_as_hex;
 	return jsonCommand("/sendrawtransaction", req, rsp);
   }
-  private std::error_code doGetRandomOutsByAmounts(List<uint64_t> amounts, uint16_t outsCount, ref List<COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_outs_for_amount> outs)
+  private std::error_code doGetRandomOutsByAmounts(List<ulong> amounts, ushort outsCount, ref List<COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_outs_for_amount> outs)
   {
 	COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS.request req = boost::value_initialized<decltype(req)>();
 	COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS.response rsp = boost::value_initialized<decltype(rsp)>();
@@ -694,7 +694,7 @@ public class NodeRpcProxy : CryptoNote.INode
 
 	return ec;
   }
-  private std::error_code doGetNewBlocks(List<Crypto.Hash> knownBlockIds, ref List<CryptoNote.RawBlock> newBlocks, ref uint32_t startHeight)
+  private std::error_code doGetNewBlocks(List<Crypto.Hash> knownBlockIds, ref List<CryptoNote.RawBlock> newBlocks, ref uint startHeight)
   {
 	CryptoNote.COMMAND_RPC_GET_BLOCKS_FAST.request req = boost::value_initialized<decltype(req)>();
 	CryptoNote.COMMAND_RPC_GET_BLOCKS_FAST.response rsp = boost::value_initialized<decltype(rsp)>();
@@ -706,7 +706,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	{
 	  m_logger.functorMethod(TRACE) << "getblocks complete, start_height " << rsp.start_height << ", block count " << rsp.blocks.Count;
 	  newBlocks = std::move(rsp.blocks);
-	  startHeight = (uint32_t)rsp.start_height;
+	  startHeight = (uint)rsp.start_height;
 	}
 	else
 	{
@@ -715,7 +715,7 @@ public class NodeRpcProxy : CryptoNote.INode
 
 	return ec;
   }
-  private std::error_code doGetTransactionOutsGlobalIndices(Crypto.Hash transactionHash, List<uint32_t> outsGlobalIndices)
+  private std::error_code doGetTransactionOutsGlobalIndices(Crypto.Hash transactionHash, List<uint> outsGlobalIndices)
   {
 	CryptoNote.COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.request req = boost::value_initialized<decltype(req)>();
 	CryptoNote.COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.response rsp = boost::value_initialized<decltype(rsp)>();
@@ -731,7 +731,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	  outsGlobalIndices.Clear();
 	  foreach (var idx in rsp.o_indexes)
 	  {
-		outsGlobalIndices.Add((uint32_t)idx);
+		outsGlobalIndices.Add((uint)idx);
 	  }
 	}
 	else
@@ -741,7 +741,7 @@ public class NodeRpcProxy : CryptoNote.INode
 
 	return ec;
   }
-  private std::error_code doQueryBlocksLite(List<Crypto.Hash> knownBlockIds, uint64_t timestamp, List<CryptoNote.BlockShortEntry> newBlocks, ref uint32_t startHeight)
+  private std::error_code doQueryBlocksLite(List<Crypto.Hash> knownBlockIds, ulong timestamp, List<CryptoNote.BlockShortEntry> newBlocks, ref uint startHeight)
   {
 	CryptoNote.COMMAND_RPC_QUERY_BLOCKS_LITE.request req = boost::value_initialized<decltype(req)>();
 	CryptoNote.COMMAND_RPC_QUERY_BLOCKS_LITE.response rsp = boost::value_initialized<decltype(rsp)>();
@@ -760,7 +760,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	}
 
 	m_logger.functorMethod(TRACE) << "queryblockslite complete, startHeight " << rsp.startHeight << ", block count " << rsp.items.Count;
-	startHeight = (uint32_t)rsp.startHeight;
+	startHeight = (uint)rsp.startHeight;
 
 	foreach (var item in rsp.items)
 	{
@@ -823,12 +823,12 @@ public class NodeRpcProxy : CryptoNote.INode
 
 	return ec;
   }
-  private std::error_code doGetBlocksByHeight(List<uint32_t> blockHeights, List<List<BlockDetails>> blocks)
+  private std::error_code doGetBlocksByHeight(List<uint> blockHeights, List<List<BlockDetails>> blocks)
   {
 	COMMAND_RPC_GET_BLOCKS_DETAILS_BY_HEIGHTS.request req = boost::value_initialized<decltype(req)>();
 	COMMAND_RPC_GET_BLOCKS_DETAILS_BY_HEIGHTS.response resp = boost::value_initialized<decltype(resp)>();
 
-	req.blockHeights = new List<uint32_t>(blockHeights);
+	req.blockHeights = new List<uint>(blockHeights);
 
 	std::error_code ec = jsonCommand("/get_blocks_details_by_heights", req, resp);
 	if (ec != null)
@@ -857,7 +857,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	blocks = std::move(resp.blocks);
 	return ec;
   }
-  private std::error_code doGetBlock(uint32_t blockHeight, ref BlockDetails block)
+  private std::error_code doGetBlock(uint blockHeight, ref BlockDetails block)
   {
 	COMMAND_RPC_GET_BLOCK_DETAILS_BY_HEIGHT.request req = boost::value_initialized<decltype(req)>();
 	COMMAND_RPC_GET_BLOCK_DETAILS_BY_HEIGHT.response resp = boost::value_initialized<decltype(resp)>();
@@ -1114,13 +1114,13 @@ public class NodeRpcProxy : CryptoNote.INode
   private HttpClient m_httpClient = null;
   private System.Event m_httpEvent = null;
 
-  private uint64_t m_pullInterval = new uint64_t();
+  private ulong m_pullInterval = new ulong();
 
   // Internal state
   private bool m_stop = false;
   private std::atomic<size_t> m_peerCount = new std::atomic<size_t>();
-  private std::atomic<uint32_t> m_networkHeight = new std::atomic<uint32_t>();
-  private std::atomic<uint64_t> m_nodeHeight = new std::atomic<uint64_t>();
+  private std::atomic<uint> m_networkHeight = new std::atomic<uint>();
+  private std::atomic<ulong> m_nodeHeight = new std::atomic<ulong>();
 
   private BlockHeaderInfo lastLocalBlockHeaderInfo = new BlockHeaderInfo();
   //protect it with mutex if decided to add worker threads
@@ -1128,7 +1128,7 @@ public class NodeRpcProxy : CryptoNote.INode
 
   private bool m_connected;
   private string m_fee_address;
-  private uint32_t m_fee_amount = new uint32_t();
+  private uint m_fee_amount = new uint();
 }
 }
 

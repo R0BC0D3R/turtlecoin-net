@@ -8,7 +8,7 @@
 
 public class BlockchainMonitor
 {
-  public BlockchainMonitor(System.Dispatcher dispatcher, string daemonHost, uint16_t daemonPort, size_t pollingInterval, Logging.ILogger logger)
+  public BlockchainMonitor(System.Dispatcher dispatcher, string daemonHost, ushort daemonPort, size_t pollingInterval, Logging.ILogger logger)
   {
 	  this.m_dispatcher = dispatcher;
 	  this.m_daemonHost = daemonHost;
@@ -68,7 +68,7 @@ public class BlockchainMonitor
   }
   private System.Dispatcher m_dispatcher;
   private string m_daemonHost;
-  private uint16_t m_daemonPort = new uint16_t();
+  private ushort m_daemonPort = new ushort();
   private size_t m_pollingInterval = new size_t();
   private bool m_stopped;
   private System.Event m_httpEvent = new System.Event();
@@ -82,7 +82,7 @@ public class BlockchainMonitor
 
 	try
 	{
-	  CryptoNote.HttpClient client = new CryptoNote.HttpClient(m_dispatcher, m_daemonHost, new uint16_t(m_daemonPort));
+	  CryptoNote.HttpClient client = new CryptoNote.HttpClient(m_dispatcher, m_daemonHost, new ushort(m_daemonPort));
 
 	  CryptoNote.COMMAND_RPC_GET_LAST_BLOCK_HEADER.request request = new CryptoNote.COMMAND_RPC_GET_LAST_BLOCK_HEADER.request();
 	  CryptoNote.COMMAND_RPC_GET_LAST_BLOCK_HEADER.response response = new CryptoNote.COMMAND_RPC_GET_LAST_BLOCK_HEADER.response();

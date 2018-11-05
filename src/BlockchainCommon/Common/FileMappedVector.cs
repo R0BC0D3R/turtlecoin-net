@@ -28,8 +28,8 @@ public enum FileMappedVectorOpenMode
 public class FileMappedVector <T>: EnableIfPod<T>.type
 {
 
-  public uint64_t metadataSize = static_cast<uint64_t>(2 * sizeof(uint64_t));
-  public uint64_t valueSize = static_cast<uint64_t>(sizeof(T));
+  public ulong metadataSize = static_cast<ulong>(2 * sizeof(ulong));
+  public ulong valueSize = static_cast<ulong>(sizeof(T));
 
   public class const_iterator
   {
@@ -39,7 +39,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 		this.m_fileMappedVector = new FileMappedVector(null);
 	}
 
-	public const_iterator(FileMappedVector fileMappedVector, uint64_t index)
+	public const_iterator(FileMappedVector fileMappedVector, ulong index)
 	{
 		this.m_fileMappedVector = new FileMappedVector(fileMappedVector);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -190,14 +190,14 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t index() const
-	public uint64_t index()
+//ORIGINAL LINE: ulong index() const
+	public ulong index()
 	{
 	  return m_index;
 	}
 
 	protected readonly FileMappedVector[] m_fileMappedVector;
-	protected uint64_t m_index = new uint64_t();
+	protected ulong m_index = new ulong();
   }
 
   public class iterator : const_iterator
@@ -207,7 +207,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 	{
 	}
 
-	public iterator(FileMappedVector fileMappedVector, uint64_t index) : base(fileMappedVector, new uint64_t(index))
+	public iterator(FileMappedVector fileMappedVector, ulong index) : base(fileMappedVector, new ulong(index))
 	{
 	}
 
@@ -325,21 +325,21 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   {
 	  this.m_autoFlush = true;
   }
-  public FileMappedVector(string path, FileMappedVectorOpenMode mode = FileMappedVectorOpenMode.OPEN_OR_CREATE, uint64_t prefixSize = 0)
+  public FileMappedVector(string path, FileMappedVectorOpenMode mode = FileMappedVectorOpenMode.OPEN_OR_CREATE, ulong prefixSize = 0)
   {
 	  this.m_autoFlush = true;
-	open(path, mode, new uint64_t(prefixSize));
+	open(path, mode, new ulong(prefixSize));
   }
 //C++ TO C# CONVERTER TODO TASK: C# has no equivalent to ' = delete':
 //  FileMappedVector(const FileMappedVector&) = delete;
 //C++ TO C# CONVERTER TODO TASK: C# has no equivalent to ' = delete':
 //  FileMappedVector& operator =(const FileMappedVector&) = delete;
 
-  public void open(string path, FileMappedVectorOpenMode mode = FileMappedVectorOpenMode.OPEN_OR_CREATE, uint64_t prefixSize = 0)
+  public void open(string path, FileMappedVectorOpenMode mode = FileMappedVectorOpenMode.OPEN_OR_CREATE, ulong prefixSize = 0)
   {
 	Debug.Assert(!isOpened());
 
-	const uint64_t initialCapacity = 10;
+	const ulong initialCapacity = 10;
 
 	boost::filesystem.path filePath = path;
 	boost::filesystem.path bakPath = path + ".bak";
@@ -365,21 +365,21 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 
 	if (mode == FileMappedVectorOpenMode.OPEN)
 	{
-	  open(path, new uint64_t(prefixSize));
+	  open(path, new ulong(prefixSize));
 	}
 	else if (mode == FileMappedVectorOpenMode.CREATE)
 	{
-	  create(path, new uint64_t(initialCapacity), new uint64_t(prefixSize), 0);
+	  create(path, new ulong(initialCapacity), new ulong(prefixSize), 0);
 	}
 	else if (mode == FileMappedVectorOpenMode.OPEN_OR_CREATE)
 	{
 	  if (fileExists)
 	  {
-		open(path, new uint64_t(prefixSize));
+		open(path, new ulong(prefixSize));
 	  }
 	  else
 	  {
-		create(path, new uint64_t(initialCapacity), new uint64_t(prefixSize), 0);
+		create(path, new ulong(initialCapacity), new ulong(prefixSize), 0);
 	  }
 	}
 	else
@@ -422,22 +422,22 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 	return size() == 0;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t capacity() const
-  public uint64_t capacity()
+//ORIGINAL LINE: ulong capacity() const
+  public ulong capacity()
   {
 	Debug.Assert(isOpened());
 
 	return capacityPtr();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t size() const
-  public uint64_t size()
+//ORIGINAL LINE: ulong size() const
+  public ulong size()
   {
 	Debug.Assert(isOpened());
 
 	return sizePtr();
   }
-  public void reserve(uint64_t n)
+  public void reserve(ulong n)
   {
 	Debug.Assert(isOpened());
 
@@ -446,7 +446,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   //C++ TO C# CONVERTER TODO TASK: The typedef 'value_type' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: atomicUpdate(size(), n, prefixSize(), suffixSize(), [this](value_type* target)
-	  atomicUpdate(size(), new uint64_t(n), prefixSize(), suffixSize(), (value_type target) =>
+	  atomicUpdate(size(), new ulong(n), prefixSize(), suffixSize(), (value_type target) =>
 	  {
 		std::copy(cbegin(), cend(), target);
 	  });
@@ -514,8 +514,8 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const T& operator [](uint64_t index) const
-  public T this[uint64_t index]
+//ORIGINAL LINE: const T& operator [](ulong index) const
+  public T this[ulong index]
   {
 	  get
 	  {
@@ -528,7 +528,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 		  vectorDataPtr()[index] = value;
 	  }
   }
-  public T this[uint64_t index]
+  public T this[ulong index]
   {
 	  get
 	  {
@@ -542,8 +542,8 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 	  }
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const T& at(uint64_t index) const
-  public T at(uint64_t index)
+//ORIGINAL LINE: const T& at(ulong index) const
+  public T at(ulong index)
   {
 	Debug.Assert(isOpened());
 
@@ -554,7 +554,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 
 	return vectorDataPtr()[index];
   }
-  public T at(uint64_t index)
+  public T at(ulong index)
   {
 	Debug.Assert(isOpened());
 
@@ -627,12 +627,12 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   {
 	Debug.Assert(isOpened());
 
-	uint64_t newSize = size() - std::distance(first, last);
+	ulong newSize = size() - std::distance(first, last);
 
   //C++ TO C# CONVERTER TODO TASK: The typedef 'value_type' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: atomicUpdate(newSize, capacity(), prefixSize(), suffixSize(), [this, first, last](value_type* target)
-	atomicUpdate(new uint64_t(newSize), capacity(), prefixSize(), suffixSize(), (value_type target) =>
+	atomicUpdate(new ulong(newSize), capacity(), prefixSize(), suffixSize(), (value_type target) =>
 	{
 	  std::copy(cbegin(), first, target);
 	  std::copy(last, cend(), target + std::distance(cbegin(), first));
@@ -654,8 +654,8 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   {
 	Debug.Assert(isOpened());
 
-	uint64_t newSize = size() + (uint64_t)std::distance(first, last);
-	uint64_t newCapacity = new uint64_t();
+	ulong newSize = size() + (ulong)std::distance(first, last);
+	ulong newCapacity = new ulong();
 	if (newSize > capacity())
 	{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -678,7 +678,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   //C++ TO C# CONVERTER TODO TASK: The typedef 'value_type' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: atomicUpdate(newSize, newCapacity, prefixSize(), suffixSize(), [this, position, first, last](value_type* target)
-	atomicUpdate(new uint64_t(newSize), new uint64_t(newCapacity), prefixSize(), suffixSize(), (value_type target) =>
+	atomicUpdate(new ulong(newSize), new ulong(newCapacity), prefixSize(), suffixSize(), (value_type target) =>
 	{
 	  std::copy(cbegin(), position, target);
 	  std::copy(first, last, target + position.index());
@@ -736,28 +736,28 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const uint8_t* prefix() const
-  public uint8_t prefix()
+//ORIGINAL LINE: const ushort* prefix() const
+  public ushort prefix()
   {
 	Debug.Assert(isOpened());
 
 	return prefixPtr();
   }
-  public uint8_t prefix()
+  public ushort prefix()
   {
 	Debug.Assert(isOpened());
 
 	return prefixPtr();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t prefixSize() const
-  public uint64_t prefixSize()
+//ORIGINAL LINE: ulong prefixSize() const
+  public ulong prefixSize()
   {
 	Debug.Assert(isOpened());
 
 	return m_prefixSize;
   }
-  public void resizePrefix(uint64_t newPrefixSize)
+  public void resizePrefix(ulong newPrefixSize)
   {
 	Debug.Assert(isOpened());
 
@@ -766,7 +766,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   //C++ TO C# CONVERTER TODO TASK: The typedef 'value_type' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: atomicUpdate(size(), capacity(), newPrefixSize, suffixSize(), [this](value_type* target)
-	  atomicUpdate(size(), capacity(), new uint64_t(newPrefixSize), suffixSize(), (value_type target) =>
+	  atomicUpdate(size(), capacity(), new ulong(newPrefixSize), suffixSize(), (value_type target) =>
 	  {
 		std::copy(cbegin(), cend(), target);
 	  });
@@ -774,28 +774,28 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const uint8_t* suffix() const
-  public uint8_t suffix()
+//ORIGINAL LINE: const ushort* suffix() const
+  public ushort suffix()
   {
 	Debug.Assert(isOpened());
 
 	return suffixPtr();
   }
-  public uint8_t suffix()
+  public ushort suffix()
   {
 	Debug.Assert(isOpened());
 
 	return suffixPtr();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t suffixSize() const
-  public uint64_t suffixSize()
+//ORIGINAL LINE: ulong suffixSize() const
+  public ulong suffixSize()
   {
 	Debug.Assert(isOpened());
 
 	return m_suffixSize;
   }
-  public void resizeSuffix(uint64_t newSuffixSize)
+  public void resizeSuffix(ulong newSuffixSize)
   {
 	Debug.Assert(isOpened());
 
@@ -804,7 +804,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
   //C++ TO C# CONVERTER TODO TASK: The typedef 'value_type' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: atomicUpdate(size(), capacity(), prefixSize(), newSuffixSize, [this](value_type* target)
-	  atomicUpdate(size(), capacity(), prefixSize(), new uint64_t(newSuffixSize), (value_type target) =>
+	  atomicUpdate(size(), capacity(), prefixSize(), new ulong(newSuffixSize), (value_type target) =>
 	  {
 		std::copy(cbegin(), cend(), target);
 	  });
@@ -835,20 +835,20 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 
   private string m_path;
   private System.MemoryMappedFile m_file = new System.MemoryMappedFile();
-  private uint64_t m_prefixSize = new uint64_t();
-  private uint64_t m_suffixSize = new uint64_t();
+  private ulong m_prefixSize = new ulong();
+  private ulong m_suffixSize = new ulong();
   private bool m_autoFlush;
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<class F>
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-  private void atomicUpdate<F>(uint64_t newSize, uint64_t newCapacity, uint64_t newPrefixSize, uint64_t newSuffixSize, F && func)
+  private void atomicUpdate<F>(ulong newSize, ulong newCapacity, ulong newPrefixSize, ulong newSuffixSize, F && func)
   {
 	Debug.Assert(newSize <= newCapacity);
 
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: atomicUpdate0(newCapacity, newPrefixSize, newSuffixSize, [this, newSize, &func](FileMappedVector<T>& newVector)
-	atomicUpdate0(new uint64_t(newCapacity), new uint64_t(newPrefixSize), new uint64_t(newSuffixSize), (FileMappedVector<T> newVector) =>
+	atomicUpdate0(new ulong(newCapacity), new ulong(newPrefixSize), new ulong(newSuffixSize), (FileMappedVector<T> newVector) =>
 	{
 	  if (prefixSize() != 0 && newVector.prefixSize() != 0)
 	  {
@@ -867,7 +867,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<class F>
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-  private void atomicUpdate0<F>(uint64_t newCapacity, uint64_t newPrefixSize, uint64_t newSuffixSize, F && func)
+  private void atomicUpdate0<F>(ulong newCapacity, ulong newPrefixSize, ulong newSuffixSize, F && func)
   {
 	if (m_file.path() != m_path)
 	{
@@ -890,7 +890,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 
 	// Copy file. It is slow but atomic operation
 	FileMappedVector<T> tmpVector = new FileMappedVector<T>();
-	tmpVector.create(tmpPath.string(), new uint64_t(newCapacity), new uint64_t(newPrefixSize), new uint64_t(newSuffixSize));
+	tmpVector.create(tmpPath.string(), new ulong(newCapacity), new ulong(newPrefixSize), new ulong(newSuffixSize));
 	func(tmpVector);
 	tmpVector.flush();
 
@@ -916,7 +916,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 	boost::filesystem.remove(bakPath, boostError);
   }
 
-  private void open(string path, uint64_t prefixSize)
+  private void open(string path, ulong prefixSize)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: m_prefixSize = prefixSize;
@@ -944,7 +944,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 //ORIGINAL LINE: m_suffixSize = m_file.size() - minRequiredFileSize;
 	m_suffixSize.CopyFrom(m_file.size() - minRequiredFileSize);
   }
-  private void create(string path, uint64_t initialCapacity, uint64_t prefixSize, uint64_t suffixSize)
+  private void create(string path, ulong initialCapacity, ulong prefixSize, ulong suffixSize)
   {
 	m_file.create(path, prefixSize + metadataSize + initialCapacity * valueSize + suffixSize, false);
 	m_path = path;
@@ -959,38 +959,38 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 //ORIGINAL LINE: *capacityPtr() = initialCapacity;
 	capacityPtr().CopyFrom(initialCapacity);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	m_file.flush(reinterpret_cast<uint8_t>(sizePtr()), new uint64_t(metadataSize));
+	m_file.flush(reinterpret_cast<ushort>(sizePtr()), new ulong(metadataSize));
   }
 
-  private uint8_t prefixPtr()
+  private ushort prefixPtr()
   {
 	return m_file.data();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const uint8_t* prefixPtr() const
-  private uint8_t prefixPtr()
+//ORIGINAL LINE: const ushort* prefixPtr() const
+  private ushort prefixPtr()
   {
 	return m_file.data();
   }
-  private uint64_t capacityPtr()
+  private ulong capacityPtr()
   {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	return reinterpret_cast<uint64_t>(prefixPtr() + m_prefixSize);
+	return reinterpret_cast<ulong>(prefixPtr() + m_prefixSize);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const uint64_t* capacityPtr() const
-  private uint64_t capacityPtr()
+//ORIGINAL LINE: const ulong* capacityPtr() const
+  private ulong capacityPtr()
   {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	return reinterpret_cast<const uint64_t>(prefixPtr() + m_prefixSize);
+	return reinterpret_cast<const ulong>(prefixPtr() + m_prefixSize);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const uint64_t* sizePtr() const
-  private uint64_t sizePtr()
+//ORIGINAL LINE: const ulong* sizePtr() const
+  private ulong sizePtr()
   {
 	return capacityPtr() + 1;
   }
-  private uint64_t sizePtr()
+  private ulong sizePtr()
   {
 	return capacityPtr() + 1;
   }
@@ -1006,35 +1006,35 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	return reinterpret_cast<const T>(sizePtr() + 1);
   }
-  private uint8_t suffixPtr()
+  private ushort suffixPtr()
   {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	return reinterpret_cast<uint8_t>(vectorDataPtr() + capacity());
+	return reinterpret_cast<ushort>(vectorDataPtr() + capacity());
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const uint8_t* suffixPtr() const
-  private uint8_t suffixPtr()
+//ORIGINAL LINE: const ushort* suffixPtr() const
+  private ushort suffixPtr()
   {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	return reinterpret_cast<const uint8_t>(vectorDataPtr() + capacity());
+	return reinterpret_cast<const ushort>(vectorDataPtr() + capacity());
   }
 
-  private uint64_t vectorDataSize()
+  private ulong vectorDataSize()
   {
 	return capacity() * valueSize;
   }
 
-  private uint64_t nextCapacity()
+  private ulong nextCapacity()
   {
 	return capacity() + capacity() / 2 + 1;
   }
 
-  private void flushElement(uint64_t index)
+  private void flushElement(ulong index)
   {
 	if (m_autoFlush)
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_file.flush(reinterpret_cast<uint8_t>(vectorDataPtr() + index), new uint64_t(valueSize));
+	  m_file.flush(reinterpret_cast<ushort>(vectorDataPtr() + index), new ulong(valueSize));
 	}
   }
   private void flushSize()
@@ -1042,7 +1042,7 @@ public class FileMappedVector <T>: EnableIfPod<T>.type
 	if (m_autoFlush)
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  m_file.flush(reinterpret_cast<uint8_t>(sizePtr()), sizeof(uint64_t));
+	  m_file.flush(reinterpret_cast<ushort>(sizePtr()), sizeof(ulong));
 	}
   }
 }

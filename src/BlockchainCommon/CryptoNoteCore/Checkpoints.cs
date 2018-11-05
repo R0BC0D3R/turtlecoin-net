@@ -29,7 +29,7 @@ namespace CryptoNote
 	}
 
 	//---------------------------------------------------------------------------
-	public bool addCheckpoint(uint32_t index, string hash_str)
+	public bool addCheckpoint(uint index, string hash_str)
 	{
 	  Crypto.Hash h = GlobalMembers.NULL_HASH;
 
@@ -66,8 +66,8 @@ namespace CryptoNote
 		/* The hash this block has (as a string) */
 		string hash;
 
-		/* The block index (as a uint32_t) */
-		uint32_t index = new uint32_t();
+		/* The block index (as a uint) */
+		uint index = new uint();
 
 		/* Checkpoints file has this format:
 	
@@ -92,7 +92,7 @@ namespace CryptoNote
 			}
 
 			/* Failed to parse hash, or checkpoint already exists */
-			if (!addCheckpoint(new uint32_t(index), hash))
+			if (!addCheckpoint(new uint(index), hash))
 			{
 				return false;
 			}
@@ -105,23 +105,23 @@ namespace CryptoNote
 
 	//---------------------------------------------------------------------------
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isInCheckpointZone(uint32_t index) const
-	public bool isInCheckpointZone(uint32_t index)
+//ORIGINAL LINE: bool isInCheckpointZone(uint index) const
+	public bool isInCheckpointZone(uint index)
 	{
 	  return points.Count > 0 && (index <= (--points.end()).first);
 	}
 	//---------------------------------------------------------------------------
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool checkBlock(uint32_t index, const Crypto::Hash &h) const
-	public bool checkBlock(uint32_t index, Crypto.Hash h)
+//ORIGINAL LINE: bool checkBlock(uint index, const Crypto::Hash &h) const
+	public bool checkBlock(uint index, Crypto.Hash h)
 	{
 	  bool ignored;
-	  return checkBlock(new uint32_t(index), h, ref ignored);
+	  return checkBlock(new uint(index), h, ref ignored);
 	}
 	//---------------------------------------------------------------------------
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool checkBlock(uint32_t index, const Crypto::Hash &h, bool& isCheckpoint) const
-	public bool checkBlock(uint32_t index, Crypto.Hash h, ref bool isCheckpoint)
+//ORIGINAL LINE: bool checkBlock(uint index, const Crypto::Hash &h, bool& isCheckpoint) const
+	public bool checkBlock(uint index, Crypto.Hash h, ref bool isCheckpoint)
 	{
 	  var it = points.find(index);
 //C++ TO C# CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
@@ -149,8 +149,8 @@ namespace CryptoNote
 	}
 	//---------------------------------------------------------------------------
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isAlternativeBlockAllowed(uint32_t blockchainSize, uint32_t blockIndex) const
-	public bool isAlternativeBlockAllowed(uint32_t blockchainSize, uint32_t blockIndex)
+//ORIGINAL LINE: bool isAlternativeBlockAllowed(uint blockchainSize, uint blockIndex) const
+	public bool isAlternativeBlockAllowed(uint blockchainSize, uint blockIndex)
 	{
 	  if (blockchainSize == 0)
 	  {
@@ -165,14 +165,14 @@ namespace CryptoNote
 	  }
 
 	  --it;
-	  uint32_t checkpointIndex = it.first;
+	  uint checkpointIndex = it.first;
 	  return checkpointIndex < blockIndex;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint32_t> getCheckpointHeights() const
-	public List<uint32_t> getCheckpointHeights()
+//ORIGINAL LINE: ClassicVector<uint> getCheckpointHeights() const
+	public List<uint> getCheckpointHeights()
 	{
-	  List<uint32_t> checkpointHeights = new List<uint32_t>();
+	  List<uint> checkpointHeights = new List<uint>();
 	  checkpointHeights.Capacity = points.Count;
 	  foreach (var it in points)
 	  {
@@ -181,7 +181,7 @@ namespace CryptoNote
 
 	  return checkpointHeights;
 	}
-	private SortedDictionary<uint32_t, Crypto.Hash> points = new SortedDictionary<uint32_t, Crypto.Hash>();
+	private SortedDictionary<uint, Crypto.Hash> points = new SortedDictionary<uint, Crypto.Hash>();
 	private Logging.LoggerRef logger = new Logging.LoggerRef();
   }
 }

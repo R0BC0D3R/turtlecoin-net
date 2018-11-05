@@ -232,12 +232,12 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
   }
 
   // INodeObserver
-  public override void localBlockchainUpdated(uint32_t height)
+  public override void localBlockchainUpdated(uint height)
   {
 	m_logger.functorMethod(DEBUGGING) << "Event: localBlockchainUpdated " << height;
 	setFutureState.blockchainSync;
   }
-  public override void lastKnownBlockHeightUpdated(uint32_t height)
+  public override void lastKnownBlockHeightUpdated(uint height)
   {
 	m_logger.functorMethod(DEBUGGING) << "Event: lastKnownBlockHeightUpdated " << height;
 	setFutureState.blockchainSync;
@@ -251,7 +251,7 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 
   private class GetBlocksResponse
   {
-	public uint32_t startHeight = new uint32_t();
+	public uint startHeight = new uint();
 	public List<BlockShortEntry> newBlocks = new List<BlockShortEntry>();
   }
 
@@ -462,7 +462,7 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 		var queryBlocksCompleted = std::promise<std::error_code>();
 		var queryBlocksWaitFuture = queryBlocksCompleted.get_future();
 
-		m_node.queryBlocks(std::move(req.knownBlocks), new uint64_t(req.syncStart.timestamp), response.newBlocks, response.startHeight, (std::error_code ec) =>
+		m_node.queryBlocks(std::move(req.knownBlocks), new ulong(req.syncStart.timestamp), response.newBlocks, response.startHeight, (std::error_code ec) =>
 		{
 			var detachedPromise = std::move(queryBlocksCompleted);
 			detachedPromise.set_value(ec);
@@ -553,7 +553,7 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 	  blocks.Add(std::move(completeBlock));
 	}
 
-	uint32_t processedBlockCount = response.startHeight + (uint32_t)response.newBlocks.Count;
+	uint processedBlockCount = response.startHeight + (uint)response.newBlocks.Count;
 	if (!checkIfShouldStop())
 	{
 	  response.newBlocks.Clear();
@@ -607,7 +607,7 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 	bool smthChanged = false;
 	bool hasErrors = false;
 
-	uint32_t lastBlockIndex = uint32_t.MaxValue;
+	uint lastBlockIndex = uint.MaxValue;
 	foreach (var kv in m_consumers)
 	{
 	  var result = kv.second.checkInterval(interval);
@@ -625,15 +625,15 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 	  }
 	  if (result.hasNewBlocks)
 	  {
-		uint32_t startOffset = result.newBlockHeight - interval.startHeight;
+		uint startOffset = result.newBlockHeight - interval.startHeight;
 	  if (result.newBlockHeight == 0)
 	  {
 		startOffset = 0;
 	  }
-		uint32_t blockCount = (uint32_t)blocks.Count - startOffset;
+		uint blockCount = (uint)blocks.Count - startOffset;
 		// update consumer
 		m_logger.functorMethod(DEBUGGING) << "Adding blocks to consumer, consumer " << kv.first << ", start index " << result.newBlockHeight << ", count " << blockCount;
-		uint32_t addedCount = kv.first.onNewBlocks(blocks.data() + startOffset, result.newBlockHeight, blockCount);
+		uint addedCount = kv.first.onNewBlocks(blocks.data() + startOffset, result.newBlockHeight, blockCount);
 		if (addedCount > 0)
 		{
 		  if (addedCount < blockCount)
@@ -659,7 +659,7 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 	  }
 	}
 
-	if (lastBlockIndex != uint32_t.MaxValue)
+	if (lastBlockIndex != uint.MaxValue)
 	{
 	  Debug.Assert(lastBlockIndex < blocks.Count);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:

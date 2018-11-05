@@ -84,7 +84,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	return observerManager.remove(observer);
   }
 
-  public override bool getBlocks(List<uint32_t> blockIndexes, List<List<BlockDetails>> blocks)
+  public override bool getBlocks(List<uint> blockIndexes, List<List<BlockDetails>> blocks)
   {
 	return getBlocks(blockIndexes, blocks, true);
   }
@@ -115,7 +115,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	Debug.Assert(blocks.Count == blockHashes.Count);
 	return true;
   }
-  public override bool getBlocks(uint64_t timestampBegin, uint64_t timestampEnd, uint32_t blocksNumberLimit, List<BlockDetails> blocks, ref uint32_t blocksNumberWithinTimestamps)
+  public override bool getBlocks(ulong timestampBegin, ulong timestampEnd, uint blocksNumberLimit, List<BlockDetails> blocks, ref uint blocksNumberWithinTimestamps)
   {
 	if (state.load() != State.INITIALIZED)
 	{
@@ -132,7 +132,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	List<Hash> blockHashes = new List<Hash>();
 	NodeRequest new request((INode.Callback cb) =>
 	{
-		node.getBlockHashesByTimestamps(new uint64_t(timestampBegin), timestampEnd - timestampBegin + 1, blockHashes, cb);
+		node.getBlockHashesByTimestamps(new ulong(timestampBegin), timestampEnd - timestampBegin + 1, blockHashes, cb);
 	});
 	var ec = request.performBlocking();
 	if (ec != null)
@@ -141,7 +141,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	  throw std::system_error(ec);
 	}
 
-	blocksNumberWithinTimestamps = (uint32_t)blockHashes.Count;
+	blocksNumberWithinTimestamps = (uint)blockHashes.Count;
 
 	if (blocksNumberLimit < blocksNumberWithinTimestamps)
 	{
@@ -253,7 +253,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	return getTransactions(newTransactionsHashes, newTransactions);
   }
 
-  public override uint64_t getRewardBlocksWindow()
+  public override ulong getRewardBlocksWindow()
   {
 	if (state.load() != State.INITIALIZED)
 	{
@@ -261,7 +261,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	}
 	return parameters.CRYPTONOTE_REWARD_BLOCKS_WINDOW;
   }
-  public override uint64_t getFullRewardMaxBlockSize(uint8_t majorVersion)
+  public override ulong getFullRewardMaxBlockSize(ushort majorVersion)
   {
 	if (state.load() != State.INITIALIZED)
 	{
@@ -480,7 +480,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 
 	poolUpdateEndGuard.reset();
   }
-  public override void blockchainSynchronized(uint32_t topIndex)
+  public override void blockchainSynchronized(uint topIndex)
   {
 	logger.functorMethod(DEBUGGING) << "Got blockchainSynchronized notification.";
 
@@ -505,13 +505,13 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	  return;
 	}
 
-	List<uint32_t> blockIndexesPtr = new List<uint32_t>();
+	List<uint> blockIndexesPtr = new List<uint>();
 	List<List<BlockDetails>> blocksPtr = new List<List<BlockDetails>>();
 
 	blockIndexesPtr.Add(topIndex);
 
 //C++ TO C# CONVERTER NOTE: Data member pointers are not available in C#:
-//	NodeRequest request(std::bind(static_cast< void(INode::*)(const ClassicVector<uint32_t>&, ClassicVector<ClassicVector<BlockDetails>>&, const INode::Callback&) >(&INode::getBlocks), std::@ref(node), std::cref(*blockIndexesPtr), std::@ref(*blocksPtr), std::placeholders::_1));
+//	NodeRequest request(std::bind(static_cast< void(INode::*)(const ClassicVector<uint>&, ClassicVector<ClassicVector<BlockDetails>>&, const INode::Callback&) >(&INode::getBlocks), std::@ref(node), std::cref(*blockIndexesPtr), std::@ref(*blocksPtr), std::placeholders::_1));
 
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: request.performAsync(asyncContextCounter, [this, blockIndexesPtr, blocksPtr](std::error_code ec)
@@ -535,7 +535,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 		logger.functorMethod(DEBUGGING) << "blockchainSynchronized notification was successfully sent.";
 	});
   }
-  public override void localBlockchainUpdated(uint32_t index)
+  public override void localBlockchainUpdated(uint index)
   {
 	logger.functorMethod(DEBUGGING) << "Got localBlockchainUpdated notification.";
 
@@ -546,10 +546,10 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	  return;
 	}
 
-	var blockIndexesPtr = new List<uint32_t>();
+	var blockIndexesPtr = new List<uint>();
 	var blocksPtr = new List<List<BlockDetails>>();
 
-	for (uint32_t i = knownBlockchainTop.index + 1; i <= index; ++i)
+	for (uint i = knownBlockchainTop.index + 1; i <= index; ++i)
 	{
 	  blockIndexesPtr.Add(i);
 	}
@@ -574,21 +574,21 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 		handleBlockchainUpdatedNotification(*blocksPtr);
 	});
   }
-  public override void chainSwitched(uint32_t newTopIndex, uint32_t commonRoot, List<Crypto.Hash> hashes)
+  public override void chainSwitched(uint newTopIndex, uint commonRoot, List<Crypto.Hash> hashes)
   {
 	Debug.Assert(newTopIndex > commonRoot);
-	List<uint32_t> blockIndexesPtr = new List<uint32_t>();
+	List<uint> blockIndexesPtr = new List<uint>();
 	List<List<BlockDetails>> blocksPtr = new List<List<BlockDetails>>();
 	blockIndexesPtr.Capacity = newTopIndex - commonRoot;
 	blocksPtr.Capacity = newTopIndex - commonRoot;
 
-	for (uint32_t i = commonRoot + 1; i <= newTopIndex; ++i)
+	for (uint i = commonRoot + 1; i <= newTopIndex; ++i)
 	{
 	  blockIndexesPtr.Add(i);
 	}
 
 //C++ TO C# CONVERTER NOTE: Data member pointers are not available in C#:
-//	NodeRequest request(std::bind(static_cast< void(INode::*)(const ClassicVector<uint32_t>&, ClassicVector<ClassicVector<BlockDetails>>&, const INode::Callback&) >(&INode::getBlocks), std::@ref(node), std::cref(*blockIndexesPtr), std::@ref(*blocksPtr), std::placeholders::_1));
+//	NodeRequest request(std::bind(static_cast< void(INode::*)(const ClassicVector<uint>&, ClassicVector<ClassicVector<BlockDetails>>&, const INode::Callback&) >(&INode::getBlocks), std::@ref(node), std::cref(*blockIndexesPtr), std::@ref(*blocksPtr), std::placeholders::_1));
 
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: request.performAsync(asyncContextCounter, [this, blockIndexesPtr, blocksPtr](std::error_code ec)
@@ -682,9 +682,9 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	}
 
 	logger.functorMethod(DEBUGGING) << "Get blockchain top request came.";
-	uint32_t lastIndex = node.getLastLocalBlockHeight();
+	uint lastIndex = node.getLastLocalBlockHeight();
 
-	List<uint32_t> indexes = new List<uint32_t>();
+	List<uint> indexes = new List<uint>();
 	indexes.Add(std::move(lastIndex));
 
 	List<List<BlockDetails>> blocks = new List<List<BlockDetails>>();
@@ -713,7 +713,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	}
 	return true;
   }
-  private bool getBlocks(List<uint32_t> blockIndexes, List<List<BlockDetails>> blocks, bool checkInitialization)
+  private bool getBlocks(List<uint> blockIndexes, List<List<BlockDetails>> blocks, bool checkInitialization)
   {
 	if (checkInitialization && state.load() != State.INITIALIZED)
 	{
@@ -751,7 +751,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 
 	  BlockDetails topMainchainBlock = new BlockDetails();
 	  bool gotTopMainchainBlock = false;
-	  uint64_t topHeight = 0;
+	  ulong topHeight = 0;
 
 	  foreach (List<BlockDetails> sameHeightBlocks in blocks)
 	  {
@@ -798,7 +798,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 
   private std::atomic<State> state = new std::atomic<State>();
   private std::atomic<bool> synchronized = new std::atomic<bool>();
-  private std::atomic<uint32_t> observersCounter = new std::atomic<uint32_t>();
+  private std::atomic<uint> observersCounter = new std::atomic<uint>();
   private Tools.ObserverManager<IBlockchainObserver> observerManager = new Tools.ObserverManager<IBlockchainObserver>();
 
   private object mutex = new object();

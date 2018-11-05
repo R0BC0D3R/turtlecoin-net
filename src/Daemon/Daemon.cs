@@ -100,7 +100,7 @@ public abstract class HttpServer
 //  HttpServer(System::Dispatcher dispatcher, Logging::ILogger log);
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void start(string address, uint16_t port);
+//  void start(string address, ushort port);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  void stop();
 
@@ -195,22 +195,22 @@ public abstract class ISerializer : System.IDisposable
 
   public abstract bool beginObject(Common.StringView name);
   public abstract void endObject();
-  public abstract bool beginArray(uint64_t size, Common.StringView name);
+  public abstract bool beginArray(ulong size, Common.StringView name);
   public abstract void endArray();
 
-  public static abstract bool operator ()(uint8_t value, Common.StringView name);
-  public static abstract bool operator ()(int16_t value, Common.StringView name);
-  public static abstract bool operator ()(uint16_t value, Common.StringView name);
-  public static abstract bool operator ()(int32_t value, Common.StringView name);
-  public static abstract bool operator ()(uint32_t value, Common.StringView name);
-  public static abstract bool operator ()(int64_t value, Common.StringView name);
-  public static abstract bool operator ()(uint64_t value, Common.StringView name);
+  public static abstract bool operator ()(ushort value, Common.StringView name);
+  public static abstract bool operator ()(short value, Common.StringView name);
+  public static abstract bool operator ()(ushort value, Common.StringView name);
+  public static abstract bool operator ()(int value, Common.StringView name);
+  public static abstract bool operator ()(uint value, Common.StringView name);
+  public static abstract bool operator ()(long value, Common.StringView name);
+  public static abstract bool operator ()(ulong value, Common.StringView name);
   public static abstract bool operator ()(ref double value, Common.StringView name);
   public static abstract bool operator ()(ref bool value, Common.StringView name);
   public static abstract bool operator ()(string value, Common.StringView name);
 
   // read/write binary block
-  public abstract bool binary(object value, uint64_t size, Common.StringView name);
+  public abstract bool binary(object value, ulong size, Common.StringView name);
   public abstract bool binary(string value, Common.StringView name);
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
@@ -279,8 +279,8 @@ namespace CryptoNote
   public class NOTIFY_NEW_BLOCK_request
   {
 	public RawBlockLegacy b = new RawBlockLegacy();
-	public uint32_t current_blockchain_height = new uint32_t();
-	public uint32_t hop = new uint32_t();
+	public uint current_blockchain_height = new uint();
+	public uint hop = new uint();
   }
 
   public class NOTIFY_NEW_BLOCK
@@ -326,7 +326,7 @@ namespace CryptoNote
 	public List<string> txs = new List<string>();
 	public List<RawBlockLegacy> blocks = new List<RawBlockLegacy>();
 	public List<Crypto.Hash> missed_ids = new List<Crypto.Hash>();
-	public uint32_t current_blockchain_height = new uint32_t();
+	public uint current_blockchain_height = new uint();
   }
 
   public class NOTIFY_RESPONSE_GET_OBJECTS
@@ -352,8 +352,8 @@ namespace CryptoNote
 
   public class NOTIFY_RESPONSE_CHAIN_ENTRY_request
   {
-	public uint32_t start_height = new uint32_t();
-	public uint32_t total_height = new uint32_t();
+	public uint start_height = new uint();
+	public uint total_height = new uint();
 	public List<Crypto.Hash> m_block_ids = new List<Crypto.Hash>();
 
 	public void serialize(ISerializer s)
@@ -413,7 +413,7 @@ namespace CryptoNote
 namespace CryptoNote
 {
 
-public enum TransactionRemoveReason : uint8_t
+public enum TransactionRemoveReason : ushort
 {
   INCLUDED_IN_BLOCK = 0,
   TIMEOUT = 1
@@ -422,7 +422,7 @@ public enum TransactionRemoveReason : uint8_t
 public class TransactionOutputDetails
 {
   public TransactionOutput output = new TransactionOutput();
-  public uint64_t globalIndex = new uint64_t();
+  public ulong globalIndex = new ulong();
 }
 
 public class TransactionOutputReferenceDetails
@@ -434,13 +434,13 @@ public class TransactionOutputReferenceDetails
 public class BaseInputDetails
 {
   public BaseInput input = new BaseInput();
-  public uint64_t amount = new uint64_t();
+  public ulong amount = new ulong();
 }
 
 public class KeyInputDetails
 {
   public KeyInput input = new KeyInput();
-  public uint64_t mixin = new uint64_t();
+  public ulong mixin = new ulong();
   public TransactionOutputReferenceDetails output = new TransactionOutputReferenceDetails();
 }
 
@@ -456,18 +456,18 @@ public class TransactionExtraDetails
 public class TransactionDetails
 {
   public Crypto.Hash hash = new Crypto.Hash();
-  public uint64_t size = 0;
-  public uint64_t fee = 0;
-  public uint64_t totalInputsAmount = 0;
-  public uint64_t totalOutputsAmount = 0;
-  public uint64_t mixin = 0;
-  public uint64_t unlockTime = 0;
-  public uint64_t timestamp = 0;
+  public ulong size = 0;
+  public ulong fee = 0;
+  public ulong totalInputsAmount = 0;
+  public ulong totalOutputsAmount = 0;
+  public ulong mixin = 0;
+  public ulong unlockTime = 0;
+  public ulong timestamp = 0;
   public Crypto.Hash paymentId = new Crypto.Hash();
   public bool hasPaymentId = false;
   public bool inBlockchain = false;
   public Crypto.Hash blockHash = new Crypto.Hash();
-  public uint32_t blockIndex = 0;
+  public uint blockIndex = 0;
   public TransactionExtraDetails extra = new TransactionExtraDetails();
   public List<List<Crypto.Signature>> signatures = new List<List<Crypto.Signature>>();
   public List<TransactionInputDetails> inputs = new List<TransactionInputDetails>();
@@ -476,24 +476,24 @@ public class TransactionDetails
 
 public class BlockDetails
 {
-  public uint8_t majorVersion = 0;
-  public uint8_t minorVersion = 0;
-  public uint64_t timestamp = 0;
+  public ushort majorVersion = 0;
+  public ushort minorVersion = 0;
+  public ulong timestamp = 0;
   public Crypto.Hash prevBlockHash = new Crypto.Hash();
-  public uint32_t nonce = 0;
+  public uint nonce = 0;
   public bool isAlternative = false;
-  public uint32_t index = 0;
+  public uint index = 0;
   public Crypto.Hash hash = new Crypto.Hash();
-  public uint64_t difficulty = 0;
-  public uint64_t reward = 0;
-  public uint64_t baseReward = 0;
-  public uint64_t blockSize = 0;
-  public uint64_t transactionsCumulativeSize = 0;
-  public uint64_t alreadyGeneratedCoins = 0;
-  public uint64_t alreadyGeneratedTransactions = 0;
-  public uint64_t sizeMedian = 0;
+  public ulong difficulty = 0;
+  public ulong reward = 0;
+  public ulong baseReward = 0;
+  public ulong blockSize = 0;
+  public ulong transactionsCumulativeSize = 0;
+  public ulong alreadyGeneratedCoins = 0;
+  public ulong alreadyGeneratedTransactions = 0;
+  public ulong sizeMedian = 0;
   public double penalty = 0.0;
-  public uint64_t totalFeeAmount = 0;
+  public ulong totalFeeAmount = 0;
   public List<TransactionDetails> transactions = new List<TransactionDetails>();
 }
 
@@ -548,8 +548,8 @@ public class COMMAND_RPC_GET_HEIGHT
 
   public class response
   {
-	public uint64_t height = new uint64_t();
-	public uint32_t network_height = new uint32_t();
+	public ulong height = new ulong();
+	public uint network_height = new uint();
 	public string status;
 
 	public void serialize(ISerializer s)
@@ -578,8 +578,8 @@ public class COMMAND_RPC_GET_BLOCKS_FAST
   public class response
   {
 	public List<RawBlock> blocks = new List<RawBlock>();
-	public uint64_t start_height = new uint64_t();
-	public uint64_t current_height = new uint64_t();
+	public ulong start_height = new ulong();
+	public ulong current_height = new ulong();
 	public string status;
   }
 }
@@ -693,7 +693,7 @@ public class COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES
 
   public class response
   {
-	public List<uint64_t> o_indexes = new List<uint64_t>();
+	public List<ulong> o_indexes = new List<ulong>();
 	public string status;
 
 	public void serialize(ISerializer s)
@@ -706,8 +706,8 @@ public class COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES
 //-----------------------------------------------
 public class COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_request
 {
-  public List<uint64_t> amounts = new List<uint64_t>();
-  public uint16_t outs_count = new uint16_t();
+  public List<ulong> amounts = new List<ulong>();
+  public ushort outs_count = new ushort();
 
   public void serialize(ISerializer s)
   {
@@ -720,7 +720,7 @@ public class COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_request
 //#pragma pack(push, 1)
 public class COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_out_entry
 {
-  public uint32_t global_amount_index = new uint32_t();
+  public uint global_amount_index = new uint();
   public Crypto.PublicKey out_key = new Crypto.PublicKey();
 
   public void serialize(ISerializer s)
@@ -734,7 +734,7 @@ public class COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_out_entry
 
 public class COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_outs_for_amount
 {
-  public uint64_t amount = new uint64_t();
+  public ulong amount = new ulong();
   public List<COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_out_entry> outs = new List<COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS_out_entry>();
 
   public void serialize(ISerializer s)
@@ -800,7 +800,7 @@ public class COMMAND_RPC_START_MINING
   public class request
   {
 	public string miner_address;
-	public uint64_t threads_count = new uint64_t();
+	public ulong threads_count = new ulong();
 
 	public void serialize(ISerializer s)
 	{
@@ -826,24 +826,24 @@ public class COMMAND_RPC_GET_INFO
   public class response
   {
 	public string status;
-	public uint64_t height = new uint64_t();
-	public uint64_t difficulty = new uint64_t();
-	public uint64_t tx_count = new uint64_t();
-	public uint64_t tx_pool_size = new uint64_t();
-	public uint64_t alt_blocks_count = new uint64_t();
-	public uint64_t outgoing_connections_count = new uint64_t();
-	public uint64_t incoming_connections_count = new uint64_t();
-	public uint64_t white_peerlist_size = new uint64_t();
-	public uint64_t grey_peerlist_size = new uint64_t();
-	public uint32_t last_known_block_index = new uint32_t();
-	public uint32_t network_height = new uint32_t();
-	public List<uint64_t> upgrade_heights = new List<uint64_t>();
-	public uint64_t supported_height = new uint64_t();
-	public uint32_t hashrate = new uint32_t();
-	public uint8_t major_version = new uint8_t();
-	public uint8_t minor_version = new uint8_t();
+	public ulong height = new ulong();
+	public ulong difficulty = new ulong();
+	public ulong tx_count = new ulong();
+	public ulong tx_pool_size = new ulong();
+	public ulong alt_blocks_count = new ulong();
+	public ulong outgoing_connections_count = new ulong();
+	public ulong incoming_connections_count = new ulong();
+	public ulong white_peerlist_size = new ulong();
+	public ulong grey_peerlist_size = new ulong();
+	public uint last_known_block_index = new uint();
+	public uint network_height = new uint();
+	public List<ulong> upgrade_heights = new List<ulong>();
+	public ulong supported_height = new ulong();
+	public uint hashrate = new uint();
+	public ushort major_version = new ushort();
+	public ushort minor_version = new ushort();
 	public string version;
-	public uint64_t start_time = new uint64_t();
+	public ulong start_time = new ulong();
 	public bool synced;
 	public bool testnet;
 
@@ -891,7 +891,7 @@ public class COMMAND_RPC_GETBLOCKCOUNT
 //C++ TO C# CONVERTER TODO TASK: The typedef 'response' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
   public class response
   {
-	public uint64_t count = new uint64_t();
+	public ulong count = new ulong();
 	public string status;
 
 	public void serialize(ISerializer s)
@@ -911,7 +911,7 @@ public class COMMAND_RPC_GETBLOCKTEMPLATE
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
   public class request
   {
-	public uint64_t reserve_size = new uint64_t(); //max 255 bytes
+	public ulong reserve_size = new ulong(); //max 255 bytes
 	public string wallet_address;
 
 	public void serialize(ISerializer s)
@@ -924,9 +924,9 @@ public class COMMAND_RPC_GETBLOCKTEMPLATE
 //C++ TO C# CONVERTER TODO TASK: The typedef 'response' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
   public class response
   {
-	public uint64_t difficulty = new uint64_t();
-	public uint32_t height = new uint32_t();
-	public uint64_t reserved_offset = new uint64_t();
+	public ulong difficulty = new ulong();
+	public uint height = new uint();
+	public ulong reserved_offset = new ulong();
 	public string blocktemplate_blob;
 	public string status;
 
@@ -962,19 +962,19 @@ public class COMMAND_RPC_SUBMITBLOCK
 
 public class block_header_response
 {
-  public uint8_t major_version = new uint8_t();
-  public uint8_t minor_version = new uint8_t();
-  public uint64_t timestamp = new uint64_t();
+  public ushort major_version = new ushort();
+  public ushort minor_version = new ushort();
+  public ulong timestamp = new ulong();
   public string prev_hash;
-  public uint32_t nonce = new uint32_t();
+  public uint nonce = new uint();
   public bool orphan_status;
-  public uint32_t height = new uint32_t();
-  public uint32_t depth = new uint32_t();
+  public uint height = new uint();
+  public uint depth = new uint();
   public string hash;
-  public uint64_t difficulty = new uint64_t();
-  public uint64_t reward = new uint64_t();
-  public uint32_t num_txes = new uint32_t();
-  public uint64_t block_size = new uint64_t();
+  public ulong difficulty = new ulong();
+  public ulong reward = new ulong();
+  public uint num_txes = new uint();
+  public ulong block_size = new ulong();
 
   public void serialize(ISerializer s)
   {
@@ -1012,8 +1012,8 @@ public class COMMAND_RPC_GET_BLOCK_HEADERS_RANGE
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	public class request
 	{
-		public uint64_t start_height = new uint64_t();
-		public uint64_t end_height = new uint64_t();
+		public ulong start_height = new ulong();
+		public ulong end_height = new ulong();
 
 		public void serialize(ISerializer s)
 		{
@@ -1050,9 +1050,9 @@ public class COMMAND_RPC_GET_BLOCK_HEADERS_RANGE
 public class f_transaction_short_response
 {
   public string hash;
-  public uint64_t fee = new uint64_t();
-  public uint64_t amount_out = new uint64_t();
-  public uint64_t size = new uint64_t();
+  public ulong fee = new ulong();
+  public ulong amount_out = new ulong();
+  public ulong size = new ulong();
 
   public void serialize(ISerializer s)
   {
@@ -1066,11 +1066,11 @@ public class f_transaction_short_response
 public class f_transaction_details_response
 {
   public string hash;
-  public uint64_t size = new uint64_t();
+  public ulong size = new ulong();
   public string paymentId;
-  public uint64_t mixin = new uint64_t();
-  public uint64_t fee = new uint64_t();
-  public uint64_t amount_out = new uint64_t();
+  public ulong mixin = new ulong();
+  public ulong fee = new ulong();
+  public ulong amount_out = new ulong();
 
   public void serialize(ISerializer s)
   {
@@ -1085,12 +1085,12 @@ public class f_transaction_details_response
 
 public class f_block_short_response
 {
-  public uint64_t difficulty = new uint64_t();
-  public uint64_t timestamp = new uint64_t();
-  public uint32_t height = new uint32_t();
+  public ulong difficulty = new ulong();
+  public ulong timestamp = new ulong();
+  public uint height = new uint();
   public string hash;
-  public uint64_t tx_count = new uint64_t();
-  public uint64_t cumul_size = new uint64_t();
+  public ulong tx_count = new ulong();
+  public ulong cumul_size = new ulong();
 
   public void serialize(ISerializer s)
   {
@@ -1105,26 +1105,26 @@ public class f_block_short_response
 
 public class f_block_details_response
 {
-  public uint8_t major_version = new uint8_t();
-  public uint8_t minor_version = new uint8_t();
-  public uint64_t timestamp = new uint64_t();
+  public ushort major_version = new ushort();
+  public ushort minor_version = new ushort();
+  public ulong timestamp = new ulong();
   public string prev_hash;
-  public uint32_t nonce = new uint32_t();
+  public uint nonce = new uint();
   public bool orphan_status;
-  public uint32_t height = new uint32_t();
-  public uint64_t depth = new uint64_t();
+  public uint height = new uint();
+  public ulong depth = new ulong();
   public string hash;
-  public uint64_t difficulty = new uint64_t();
-  public uint64_t reward = new uint64_t();
-  public uint64_t blockSize = new uint64_t();
-  public uint64_t sizeMedian = new uint64_t();
-  public uint64_t effectiveSizeMedian = new uint64_t();
-  public uint64_t transactionsCumulativeSize = new uint64_t();
+  public ulong difficulty = new ulong();
+  public ulong reward = new ulong();
+  public ulong blockSize = new ulong();
+  public ulong sizeMedian = new ulong();
+  public ulong effectiveSizeMedian = new ulong();
+  public ulong transactionsCumulativeSize = new ulong();
   public string alreadyGeneratedCoins;
-  public uint64_t alreadyGeneratedTransactions = new uint64_t();
-  public uint64_t baseReward = new uint64_t();
+  public ulong alreadyGeneratedTransactions = new ulong();
+  public ulong baseReward = new ulong();
   public double penalty;
-  public uint64_t totalFeeAmount = new uint64_t();
+  public ulong totalFeeAmount = new ulong();
   public List<f_transaction_short_response> transactions = new List<f_transaction_short_response>();
 
   public void serialize(ISerializer s)
@@ -1176,7 +1176,7 @@ public class COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
   public class request
   {
-	public uint64_t height = new uint64_t();
+	public ulong height = new ulong();
 
 	public void serialize(ISerializer s)
 	{
@@ -1191,7 +1191,7 @@ public class F_COMMAND_RPC_GET_BLOCKS_LIST
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
   public class request
   {
-	public uint64_t height = new uint64_t();
+	public ulong height = new ulong();
 
 	public void serialize(ISerializer s)
 	{
@@ -1293,7 +1293,7 @@ public class COMMAND_RPC_QUERY_BLOCKS
   public class request
   {
 	public List<Crypto.Hash> block_ids = new List<Crypto.Hash>(); //*first 10 blocks id goes sequential, next goes in pow(2,n) offset, like 2, 4, 8, 16, 32, 64 and so on, and the last one is always genesis block */
-	public uint64_t timestamp = new uint64_t();
+	public ulong timestamp = new ulong();
 
 	public void serialize(ISerializer s)
 	{
@@ -1306,9 +1306,9 @@ public class COMMAND_RPC_QUERY_BLOCKS
   public class response
   {
 	public string status;
-	public uint64_t start_height = new uint64_t();
-	public uint64_t current_height = new uint64_t();
-	public uint64_t full_offset = new uint64_t();
+	public ulong start_height = new ulong();
+	public ulong current_height = new ulong();
+	public ulong full_offset = new ulong();
 	public List<BlockFullInfo> items = new List<BlockFullInfo>();
 
 	public void serialize(ISerializer s)
@@ -1328,7 +1328,7 @@ public class COMMAND_RPC_QUERY_BLOCKS_LITE
   public class request
   {
 	public List<Crypto.Hash> blockIds = new List<Crypto.Hash>();
-	public uint64_t timestamp = new uint64_t();
+	public ulong timestamp = new ulong();
 
 	public void serialize(ISerializer s)
 	{
@@ -1341,9 +1341,9 @@ public class COMMAND_RPC_QUERY_BLOCKS_LITE
   public class response
   {
 	public string status;
-	public uint64_t startHeight = new uint64_t();
-	public uint64_t currentHeight = new uint64_t();
-	public uint64_t fullOffset = new uint64_t();
+	public ulong startHeight = new ulong();
+	public ulong currentHeight = new ulong();
+	public ulong fullOffset = new ulong();
 	public List<BlockShortInfo> items = new List<BlockShortInfo>();
 
 	public void serialize(ISerializer s)
@@ -1362,7 +1362,7 @@ public class COMMAND_RPC_GET_BLOCKS_DETAILS_BY_HEIGHTS
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
   public class request
   {
-	public List<uint32_t> blockHeights = new List<uint32_t>();
+	public List<uint> blockHeights = new List<uint>();
 
 	public void serialize(ISerializer s)
 	{
@@ -1416,7 +1416,7 @@ public class COMMAND_RPC_GET_BLOCK_DETAILS_BY_HEIGHT
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
   public class request
   {
-	public uint32_t blockHeight = new uint32_t();
+	public uint blockHeight = new uint();
 
 	public void serialize(ISerializer s)
 	{
@@ -1443,8 +1443,8 @@ public class COMMAND_RPC_GET_BLOCKS_HASHES_BY_TIMESTAMPS
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
   public class request
   {
-	public uint64_t timestampBegin = new uint64_t();
-	public uint64_t secondsCount = new uint64_t();
+	public ulong timestampBegin = new ulong();
+	public ulong secondsCount = new ulong();
 
 	public void serialize(ISerializer s)
 	{
@@ -1548,7 +1548,7 @@ public class COMMAND_RPC_GET_FEE_ADDRESS
   public class response
   {
 	public string address;
-	public uint32_t amount = new uint32_t();
+	public uint amount = new uint();
 	public string status;
 
 	public void serialize(ISerializer s)
@@ -1661,24 +1661,24 @@ public class JsonInputValueSerializer : ISerializer
 //  override void endObject();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool beginArray(uint64_t size, Common::StringView name);
+//  override bool beginArray(ulong size, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override void endArray();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint8_t value, Common::StringView name);
+//  override bool operator ()(ushort value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int16_t value, Common::StringView name);
+//  override bool operator ()(short value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint16_t value, Common::StringView name);
+//  override bool operator ()(ushort value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int32_t value, Common::StringView name);
+//  override bool operator ()(int value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint32_t value, Common::StringView name);
+//  override bool operator ()(uint value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int64_t value, Common::StringView name);
+//  override bool operator ()(long value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint64_t value, Common::StringView name);
+//  override bool operator ()(ulong value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool operator ()(ref double value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -1686,7 +1686,7 @@ public class JsonInputValueSerializer : ISerializer
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool operator ()(string value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool binary(object value, uint64_t size, Common::StringView name);
+//  override bool binary(object value, ulong size, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool binary(string value, Common::StringView name);
 
@@ -1699,7 +1699,7 @@ public class JsonInputValueSerializer : ISerializer
 
   private Common.JsonValue value = new Common.JsonValue();
   private readonly List<Common.JsonValue> chain = new List<Common.JsonValue>();
-  private List<uint64_t> idxs = new List<uint64_t>();
+  private List<ulong> idxs = new List<ulong>();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  Common::JsonValue getValue(Common::StringView name);
@@ -1777,24 +1777,24 @@ public class JsonOutputStreamSerializer : ISerializer
 //  override void endObject();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool beginArray(uint64_t size, Common::StringView name);
+//  override bool beginArray(ulong size, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override void endArray();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint8_t value, Common::StringView name);
+//  override bool operator ()(ushort value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int16_t value, Common::StringView name);
+//  override bool operator ()(short value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint16_t value, Common::StringView name);
+//  override bool operator ()(ushort value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int32_t value, Common::StringView name);
+//  override bool operator ()(int value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint32_t value, Common::StringView name);
+//  override bool operator ()(uint value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int64_t value, Common::StringView name);
+//  override bool operator ()(long value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint64_t value, Common::StringView name);
+//  override bool operator ()(ulong value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool operator ()(ref double value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -1802,7 +1802,7 @@ public class JsonOutputStreamSerializer : ISerializer
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool operator ()(string value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool binary(object value, uint64_t size, Common::StringView name);
+//  override bool binary(object value, ulong size, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool binary(string value, Common::StringView name);
 
@@ -1859,7 +1859,7 @@ public class KVBinaryInputStreamSerializer : JsonInputValueSerializer
 //  KVBinaryInputStreamSerializer(Common::IInputStream strm);
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool binary(object value, uint64_t size, Common::StringView name);
+//  override bool binary(object value, ulong size, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool binary(string value, Common::StringView name);
 }
@@ -1914,7 +1914,7 @@ public class MemoryStream: Common.IOutputStream
 	  this.m_writePos = 0;
   }
 
-  public override uint64_t writeSome(object data, uint64_t size)
+  public override ulong writeSome(object data, ulong size)
   {
 	if (size == 0)
 	{
@@ -1932,12 +1932,12 @@ public class MemoryStream: Common.IOutputStream
 	return size;
   }
 
-  public uint64_t size()
+  public ulong size()
   {
 	return m_buffer.Count;
   }
 
-  public uint8_t data()
+  public ushort data()
   {
 	return m_buffer.data();
   }
@@ -1948,8 +1948,8 @@ public class MemoryStream: Common.IOutputStream
 	m_buffer.Resize(0);
   }
 
-  private uint64_t m_writePos = new uint64_t();
-  private List<uint8_t> m_buffer = new List<uint8_t>();
+  private ulong m_writePos = new ulong();
+  private List<ushort> m_buffer = new List<ushort>();
 }
 
 }
@@ -1982,24 +1982,24 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 //  override void endObject();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool beginArray(uint64_t size, Common::StringView name);
+//  override bool beginArray(ulong size, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override void endArray();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint8_t value, Common::StringView name);
+//  override bool operator ()(ushort value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int16_t value, Common::StringView name);
+//  override bool operator ()(short value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint16_t value, Common::StringView name);
+//  override bool operator ()(ushort value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int32_t value, Common::StringView name);
+//  override bool operator ()(int value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint32_t value, Common::StringView name);
+//  override bool operator ()(uint value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(int64_t value, Common::StringView name);
+//  override bool operator ()(long value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool operator ()(uint64_t value, Common::StringView name);
+//  override bool operator ()(ulong value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool operator ()(ref double value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -2007,7 +2007,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool operator ()(string value, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool binary(object value, uint64_t size, Common::StringView name);
+//  override bool binary(object value, ulong size, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  override bool binary(string value, Common::StringView name);
 
@@ -2020,11 +2020,11 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void writeElementPrefix(uint8_t type, Common::StringView name);
+//  void writeElementPrefix(ushort type, Common::StringView name);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void checkArrayPreamble(uint8_t type);
+//  void checkArrayPreamble(ushort type);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void updateState(uint8_t type);
+//  void updateState(ushort type);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  MemoryStream stream();
 
@@ -2040,7 +2040,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
   {
 	public State state;
 	public string name;
-	public uint64_t count = new uint64_t();
+	public ulong count = new ulong();
 
 	public Level(Common.StringView nm)
 	{
@@ -2049,7 +2049,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 		this.count = 0;
 	}
 
-	public Level(Common.StringView nm, uint64_t arraySize)
+	public Level(Common.StringView nm, ulong arraySize)
 	{
 		this.name = nm;
 		this.state = new CryptoNote.KVBinaryOutputStreamSerializer.State.ArrayPrefix;
@@ -2327,7 +2327,7 @@ public class RpcServer : HttpServer
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  bool setFeeAddress(string fee_address);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  bool setFeeAmount(uint32_t fee_amount);
+//  bool setFeeAmount(uint fee_amount);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  ClassicVector<string> getCorsDomains();
 
@@ -2474,7 +2474,7 @@ public class RpcServer : HttpServer
 //  bool on_get_block_header_by_height(COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT::request req, COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT::response res);
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void fill_block_header_response(BlockTemplate blk, bool orphan_status, uint32_t index, Crypto::Hash hash, block_header_response responce);
+//  void fill_block_header_response(BlockTemplate blk, bool orphan_status, uint index, Crypto::Hash hash, block_header_response responce);
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  RawBlockLegacy prepareRawBlockLegacy(BinaryArray&& blockBlob);
@@ -2496,7 +2496,7 @@ public class RpcServer : HttpServer
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  bool f_on_transactions_pool_json(F_COMMAND_RPC_GET_POOL::request req, F_COMMAND_RPC_GET_POOL::response res);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  bool f_getMixin(Transaction transaction, uint64_t mixin);
+//  bool f_getMixin(Transaction transaction, ulong mixin);
 
   private Logging.LoggerRef logger = new Logging.LoggerRef();
   private Core m_core;
@@ -2504,7 +2504,7 @@ public class RpcServer : HttpServer
   private ICryptoNoteProtocolHandler m_protocol;
   private List<string> m_cors_domains = new List<string>();
   private string m_fee_address;
-  private uint32_t m_fee_amount = new uint32_t();
+  private uint m_fee_amount = new uint();
 }
 
 }
@@ -2545,7 +2545,7 @@ public class DaemonCommandsHandler
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  string get_commands_str();
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  bool print_block_by_height(uint32_t height);
+//  bool print_block_by_height(uint height);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  bool print_block_by_hash(string arg);
 
@@ -2640,7 +2640,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  {
 		logger(Logging.DEBUGGING) << "DB scheme version not found, writing: " << GlobalMembers.CURRENT_DB_SCHEME_VERSION;
     
-		DatabaseVersionWriteBatch writeBatch = new DatabaseVersionWriteBatch(new uint32_t(GlobalMembers.CURRENT_DB_SCHEME_VERSION));
+		DatabaseVersionWriteBatch writeBatch = new DatabaseVersionWriteBatch(new uint(GlobalMembers.CURRENT_DB_SCHEME_VERSION));
 		var writeError = database.write(writeBatch);
 		if (writeError)
 		{
@@ -2697,18 +2697,18 @@ public class DatabaseBlockchainCache : IBlockchainCache
    * is copied to new BlockchainCache. Unfortunately, implementation requires return value to be of
    * BlockchainCache type.
    */
-	public std::unique_ptr<IBlockchainCache> split(uint32_t splitBlockIndex)
+	public std::unique_ptr<IBlockchainCache> split(uint splitBlockIndex)
 	{
 	  Debug.Assert(splitBlockIndex <= getTopBlockIndex());
 	  logger(Logging.DEBUGGING) << "split at index " << splitBlockIndex << " started, top block index: " << getTopBlockIndex();
     
 	  var cache = blockchainCacheFactory.createBlockchainCache(currency, this, splitBlockIndex);
     
-	  List<Tuple<uint32_t, Crypto.Hash, TransactionValidatorState, uint64_t>> deletingBlocks = new List<Tuple<uint32_t, Crypto.Hash, TransactionValidatorState, uint64_t>>();
+	  List<Tuple<uint, Crypto.Hash, TransactionValidatorState, ulong>> deletingBlocks = new List<Tuple<uint, Crypto.Hash, TransactionValidatorState, ulong>>();
     
 	  BlockchainWriteBatch writeBatch = new BlockchainWriteBatch();
 	  var currentTop = getTopBlockIndex();
-	  for (uint32_t blockIndex = splitBlockIndex; blockIndex <= currentTop; ++blockIndex)
+	  for (uint blockIndex = splitBlockIndex; blockIndex <= currentTop; ++blockIndex)
 	  {
 		ExtendedPushedBlockInfo extendedInfo = getExtendedPushedBlockInfo(blockIndex);
     
@@ -2724,7 +2724,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 		var blockIndex = std::get<0>(*it);
 		var blockHash = std::get<1>(*it);
 		auto validatorState = std::get<2>(*it);
-		uint64_t timestamp = std::get<3>(*it);
+		ulong timestamp = std::get<3>(*it);
     
 		writeBatch.removeCachedBlock(blockHash, blockIndex).removeRawBlock(blockIndex);
 		requestDeleteSpentOutputs(writeBatch, blockIndex, validatorState);
@@ -2778,7 +2778,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return cache;
 	}
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-	public void pushBlock(CachedBlock cachedBlock, List<CachedTransaction> cachedTransactions, TransactionValidatorState validatorState, size_t blockSize, uint64_t generatedCoins, uint64_t blockDifficulty, RawBlock && rawBlock)
+	public void pushBlock(CachedBlock cachedBlock, List<CachedTransaction> cachedTransactions, TransactionValidatorState validatorState, size_t blockSize, ulong generatedCoins, ulong blockDifficulty, RawBlock && rawBlock)
 	{
 	  BlockchainWriteBatch batch = new BlockchainWriteBatch();
 	  logger(Logging.DEBUGGING) << "push block with hash " << cachedBlock.getBlockHash() << ", and " << cachedTransactions.Count + 1 << " transactions"; //+1 for base transaction
@@ -2794,7 +2794,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  blockInfo.alreadyGeneratedCoins = alreadyGeneratedCoins;
 	  blockInfo.alreadyGeneratedTransactions = alreadyGeneratedTransactions;
 	  blockInfo.cumulativeDifficulty = cumulativeDifficulty;
-	  blockInfo.blockSize = (uint32_t)blockSize;
+	  blockInfo.blockSize = (uint)blockSize;
 	  blockInfo.timestamp = cachedBlock.getBlock().timestamp;
     
 	  batch.insertSpentKeyImages(getTopBlockIndex() + 1, validatorState.spentKeyImages);
@@ -2849,14 +2849,14 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  }
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual PushedBlockInfo getPushedBlockInfo(uint32_t index) const override;
-	public PushedBlockInfo getPushedBlockInfo(uint32_t blockIndex)
+//ORIGINAL LINE: virtual PushedBlockInfo getPushedBlockInfo(uint index) const override;
+	public PushedBlockInfo getPushedBlockInfo(uint blockIndex)
 	{
 	  return getExtendedPushedBlockInfo(blockIndex).pushedBlockInfo;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool checkIfSpent(const Crypto::KeyImage& keyImage, uint32_t blockIndex) const override;
-	public bool checkIfSpent(Crypto.KeyImage keyImage, uint32_t blockIndex)
+//ORIGINAL LINE: bool checkIfSpent(const Crypto::KeyImage& keyImage, uint blockIndex) const override;
+	public bool checkIfSpent(Crypto.KeyImage keyImage, uint blockIndex)
 	{
 	  var batch = BlockchainReadBatch().requestBlockIndexBySpentKeyImage(keyImage);
 	  var res = database.read(batch);
@@ -2879,14 +2879,14 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isTransactionSpendTimeUnlocked(uint64_t unlockTime) const override;
-	public bool isTransactionSpendTimeUnlocked(uint64_t unlockTime)
+//ORIGINAL LINE: bool isTransactionSpendTimeUnlocked(ulong unlockTime) const override;
+	public bool isTransactionSpendTimeUnlocked(ulong unlockTime)
 	{
 	  return isTransactionSpendTimeUnlocked(unlockTime, getTopBlockIndex());
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool isTransactionSpendTimeUnlocked(uint64_t unlockTime, uint32_t blockIndex) const override;
-	public bool isTransactionSpendTimeUnlocked(uint64_t unlockTime, uint32_t blockIndex)
+//ORIGINAL LINE: bool isTransactionSpendTimeUnlocked(ulong unlockTime, uint blockIndex) const override;
+	public bool isTransactionSpendTimeUnlocked(ulong unlockTime, uint blockIndex)
 	{
 	  if (unlockTime < currency.maxBlockHeight())
 	  {
@@ -2895,22 +2895,22 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  }
     
 	  // interpret as time
-	  return (uint64_t)time(null) + currency.lockedTxAllowedDeltaSeconds() >= unlockTime;
+	  return (ulong)time(null) + currency.lockedTxAllowedDeltaSeconds() >= unlockTime;
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ExtractOutputKeysResult extractKeyOutputKeys(uint64_t amount, Common::ArrayView<uint32_t> globalIndexes, ClassicVector<Crypto::PublicKey>& publicKeys) const override;
-	public ExtractOutputKeysResult extractKeyOutputKeys(uint64_t amount, Common.ArrayView<uint32_t> globalIndexes, List<Crypto.PublicKey> publicKeys)
+//ORIGINAL LINE: ExtractOutputKeysResult extractKeyOutputKeys(ulong amount, Common::ArrayView<uint> globalIndexes, ClassicVector<Crypto::PublicKey>& publicKeys) const override;
+	public ExtractOutputKeysResult extractKeyOutputKeys(ulong amount, Common.ArrayView<uint> globalIndexes, List<Crypto.PublicKey> publicKeys)
 	{
 	  return extractKeyOutputKeys(amount, getTopBlockIndex(), globalIndexes, publicKeys);
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ExtractOutputKeysResult extractKeyOutputKeys(uint64_t amount, uint32_t blockIndex, Common::ArrayView<uint32_t> globalIndexes, ClassicVector<Crypto::PublicKey>& publicKeys) const override;
-	public ExtractOutputKeysResult extractKeyOutputKeys(uint64_t amount, uint32_t blockIndex, Common.ArrayView<uint32_t> globalIndexes, List<Crypto.PublicKey> publicKeys)
+//ORIGINAL LINE: ExtractOutputKeysResult extractKeyOutputKeys(ulong amount, uint blockIndex, Common::ArrayView<uint> globalIndexes, ClassicVector<Crypto::PublicKey>& publicKeys) const override;
+	public ExtractOutputKeysResult extractKeyOutputKeys(ulong amount, uint blockIndex, Common.ArrayView<uint> globalIndexes, List<Crypto.PublicKey> publicKeys)
 	{
 	//C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
-	//ORIGINAL LINE: return extractKeyOutputs(amount, blockIndex, globalIndexes, [this, &publicKeys, blockIndex] (const CachedTransactionInfo& info, PackedOutIndex index, uint32_t globalIndex)
-	  return extractKeyOutputs(amount, blockIndex, globalIndexes, (CachedTransactionInfo info, PackedOutIndex index, uint32_t globalIndex) =>
+	//ORIGINAL LINE: return extractKeyOutputs(amount, blockIndex, globalIndexes, [this, &publicKeys, blockIndex] (const CachedTransactionInfo& info, PackedOutIndex index, uint globalIndex)
+	  return extractKeyOutputs(amount, blockIndex, globalIndexes, (CachedTransactionInfo info, PackedOutIndex index, uint globalIndex) =>
 	  {
 		if (!isTransactionSpendTimeUnlocked(info.unlockTime, blockIndex))
 		{
@@ -2927,10 +2927,10 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ExtractOutputKeysResult extractKeyOtputIndexes(uint64_t amount, Common::ArrayView<uint32_t> globalIndexes, ClassicVector<PackedOutIndex>& outIndexes) const override;
-	public ExtractOutputKeysResult extractKeyOtputIndexes(uint64_t amount, Common.ArrayView<uint32_t> globalIndexes, List<PackedOutIndex> outIndexes)
+//ORIGINAL LINE: ExtractOutputKeysResult extractKeyOtputIndexes(ulong amount, Common::ArrayView<uint> globalIndexes, ClassicVector<PackedOutIndex>& outIndexes) const override;
+	public ExtractOutputKeysResult extractKeyOtputIndexes(ulong amount, Common.ArrayView<uint> globalIndexes, List<PackedOutIndex> outIndexes)
 	{
-	  if (!GlobalMembers.requestPackedOutputs(new uint64_t(amount), new Common.ArrayView<uint32_t>(globalIndexes), database, outIndexes))
+	  if (!GlobalMembers.requestPackedOutputs(new ulong(amount), new Common.ArrayView<uint>(globalIndexes), database, outIndexes))
 	  {
 		logger(Logging.ERROR) << "extractKeyOtputIndexes failed: failed to read database";
 		return ExtractOutputKeysResult.INVALID_GLOBAL_INDEX;
@@ -2939,11 +2939,11 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return ExtractOutputKeysResult.SUCCESS;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ExtractOutputKeysResult extractKeyOtputReferences(uint64_t amount, Common::ArrayView<uint32_t> globalIndexes, ClassicVector<System.Tuple<Crypto::Hash, size_t>>& outputReferences) const override;
-	public ExtractOutputKeysResult extractKeyOtputReferences(uint64_t amount, Common.ArrayView<uint32_t> globalIndexes, List<Tuple<Crypto.Hash, size_t>> outputReferences)
+//ORIGINAL LINE: ExtractOutputKeysResult extractKeyOtputReferences(ulong amount, Common::ArrayView<uint> globalIndexes, ClassicVector<System.Tuple<Crypto::Hash, size_t>>& outputReferences) const override;
+	public ExtractOutputKeysResult extractKeyOtputReferences(ulong amount, Common.ArrayView<uint> globalIndexes, List<Tuple<Crypto.Hash, size_t>> outputReferences)
 	{
     
-	  return extractKeyOutputs(amount, getTopBlockIndex(), globalIndexes, (CachedTransactionInfo info, PackedOutIndex index, uint32_t globalIndex) =>
+	  return extractKeyOutputs(amount, getTopBlockIndex(), globalIndexes, (CachedTransactionInfo info, PackedOutIndex index, uint globalIndex) =>
 	  {
 		outputReferences.Add(Tuple.Create(info.transactionHash, index.outputIndex));
 		return ExtractOutputKeysResult.SUCCESS;
@@ -2951,8 +2951,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t getTopBlockIndex() const override;
-	public uint32_t getTopBlockIndex()
+//ORIGINAL LINE: uint getTopBlockIndex() const override;
+	public uint getTopBlockIndex()
 	{
 	  if (!topBlockIndex)
 	  {
@@ -2990,8 +2990,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return *topBlockHash;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t getBlockCount() const override;
-	public uint32_t getBlockCount()
+//ORIGINAL LINE: uint getBlockCount() const override;
+	public uint getBlockCount()
 	{
 	  return getTopBlockIndex() + 1;
 	}
@@ -3004,8 +3004,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return !result && batch.extractResult().getBlockIndexesByBlockHashes().count(blockHash);
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t getBlockIndex(const Crypto::Hash& blockHash) const override;
-	public uint32_t getBlockIndex(Crypto.Hash blockHash)
+//ORIGINAL LINE: uint getBlockIndex(const Crypto::Hash& blockHash) const override;
+	public uint getBlockIndex(Crypto.Hash blockHash)
 	{
 	  if (blockHash == getTopBlockHash())
 	  {
@@ -3027,14 +3027,14 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint64_t> getLastTimestamps(size_t count) const override;
-	public List<uint64_t> getLastTimestamps(size_t count)
+//ORIGINAL LINE: ClassicVector<ulong> getLastTimestamps(size_t count) const override;
+	public List<ulong> getLastTimestamps(size_t count)
 	{
 	  return getLastTimestamps(count, getTopBlockIndex(), UseGenesis({true}));
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint64_t> getLastTimestamps(size_t count, uint32_t blockIndex, UseGenesis) const override;
-	public List<uint64_t> getLastTimestamps(size_t count, uint32_t blockIndex, UseGenesis useGenesis)
+//ORIGINAL LINE: ClassicVector<ulong> getLastTimestamps(size_t count, uint blockIndex, UseGenesis) const override;
+	public List<ulong> getLastTimestamps(size_t count, uint blockIndex, UseGenesis useGenesis)
 	{
 	  return getLastUnits(count, blockIndex, useGenesis, (CachedBlockInfo inf) =>
 	  {
@@ -3043,14 +3043,14 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint64_t> getLastBlocksSizes(size_t count) const override;
-	public List<uint64_t> getLastBlocksSizes(size_t count)
+//ORIGINAL LINE: ClassicVector<ulong> getLastBlocksSizes(size_t count) const override;
+	public List<ulong> getLastBlocksSizes(size_t count)
 	{
 	  return getLastBlocksSizes(count, getTopBlockIndex(), UseGenesis({true}));
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint64_t> getLastBlocksSizes(size_t count, uint32_t blockIndex, UseGenesis) const override;
-	public List<uint64_t> getLastBlocksSizes(size_t count, uint32_t blockIndex, UseGenesis useGenesis)
+//ORIGINAL LINE: ClassicVector<ulong> getLastBlocksSizes(size_t count, uint blockIndex, UseGenesis) const override;
+	public List<ulong> getLastBlocksSizes(size_t count, uint blockIndex, UseGenesis useGenesis)
 	{
 	  return getLastUnits(count, blockIndex, useGenesis, (CachedBlockInfo cb) =>
 	  {
@@ -3059,8 +3059,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint64_t> getLastCumulativeDifficulties(size_t count, uint32_t blockIndex, UseGenesis) const override;
-	public List<uint64_t> getLastCumulativeDifficulties(size_t count, uint32_t blockIndex, UseGenesis useGenesis)
+//ORIGINAL LINE: ClassicVector<ulong> getLastCumulativeDifficulties(size_t count, uint blockIndex, UseGenesis) const override;
+	public List<ulong> getLastCumulativeDifficulties(size_t count, uint blockIndex, UseGenesis useGenesis)
 	{
 	  return getLastUnits(count, blockIndex, useGenesis, (CachedBlockInfo info) =>
 	  {
@@ -3068,70 +3068,70 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  });
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint64_t> getLastCumulativeDifficulties(size_t count) const override;
-	public List<uint64_t> getLastCumulativeDifficulties(size_t count)
+//ORIGINAL LINE: ClassicVector<ulong> getLastCumulativeDifficulties(size_t count) const override;
+	public List<ulong> getLastCumulativeDifficulties(size_t count)
 	{
 	  return getLastCumulativeDifficulties(count, getTopBlockIndex(), UseGenesis({true}));
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getDifficultyForNextBlock() const override;
-	public uint64_t getDifficultyForNextBlock()
+//ORIGINAL LINE: ulong getDifficultyForNextBlock() const override;
+	public ulong getDifficultyForNextBlock()
 	{
 	  return getDifficultyForNextBlock(getTopBlockIndex());
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getDifficultyForNextBlock(uint32_t blockIndex) const override;
-	public uint64_t getDifficultyForNextBlock(uint32_t blockIndex)
+//ORIGINAL LINE: ulong getDifficultyForNextBlock(uint blockIndex) const override;
+	public ulong getDifficultyForNextBlock(uint blockIndex)
 	{
 	  Debug.Assert(blockIndex <= getTopBlockIndex());
-	  uint8_t nextBlockMajorVersion = getBlockMajorVersionForHeight(blockIndex + 1);
+	  ushort nextBlockMajorVersion = getBlockMajorVersionForHeight(blockIndex + 1);
 	  var timestamps = getLastTimestamps(currency.difficultyBlocksCountByBlockVersion(nextBlockMajorVersion, blockIndex), blockIndex, UseGenesis({false}));
 	  var commulativeDifficulties = getLastCumulativeDifficulties(currency.difficultyBlocksCountByBlockVersion(nextBlockMajorVersion, blockIndex), blockIndex, UseGenesis({false}));
 	  return currency.getNextDifficulty(nextBlockMajorVersion, blockIndex, std::move(timestamps), std::move(commulativeDifficulties));
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getCurrentCumulativeDifficulty() const override;
-	public uint64_t getCurrentCumulativeDifficulty()
+//ORIGINAL LINE: virtual ulong getCurrentCumulativeDifficulty() const override;
+	public ulong getCurrentCumulativeDifficulty()
 	{
 	  return getCachedBlockInfo(getTopBlockIndex()).cumulativeDifficulty;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getCurrentCumulativeDifficulty(uint32_t blockIndex) const override;
-	public uint64_t getCurrentCumulativeDifficulty(uint32_t blockIndex)
+//ORIGINAL LINE: virtual ulong getCurrentCumulativeDifficulty(uint blockIndex) const override;
+	public ulong getCurrentCumulativeDifficulty(uint blockIndex)
 	{
 	  Debug.Assert(blockIndex <= getTopBlockIndex());
 	  return getCachedBlockInfo(blockIndex).cumulativeDifficulty;
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getAlreadyGeneratedCoins() const override;
-	public uint64_t getAlreadyGeneratedCoins()
+//ORIGINAL LINE: ulong getAlreadyGeneratedCoins() const override;
+	public ulong getAlreadyGeneratedCoins()
 	{
 	  return getAlreadyGeneratedCoins(getTopBlockIndex());
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getAlreadyGeneratedCoins(uint32_t blockIndex) const override;
-	public uint64_t getAlreadyGeneratedCoins(uint32_t blockIndex)
+//ORIGINAL LINE: ulong getAlreadyGeneratedCoins(uint blockIndex) const override;
+	public ulong getAlreadyGeneratedCoins(uint blockIndex)
 	{
 	  return getCachedBlockInfo(blockIndex).alreadyGeneratedCoins;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getAlreadyGeneratedTransactions(uint32_t blockIndex) const override;
-	public uint64_t getAlreadyGeneratedTransactions(uint32_t blockIndex)
+//ORIGINAL LINE: ulong getAlreadyGeneratedTransactions(uint blockIndex) const override;
+	public ulong getAlreadyGeneratedTransactions(uint blockIndex)
 	{
 	  return getCachedBlockInfo(blockIndex).alreadyGeneratedTransactions;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint64_t> getLastUnits(size_t count, uint32_t blockIndex, UseGenesis use, System.Func<const CachedBlockInfo&, uint64_t> pred) const override;
-	public List<uint64_t> getLastUnits(size_t count, uint32_t blockIndex, UseGenesis useGenesis, Func<CachedBlockInfo , uint64_t> pred)
+//ORIGINAL LINE: ClassicVector<ulong> getLastUnits(size_t count, uint blockIndex, UseGenesis use, System.Func<const CachedBlockInfo&, ulong> pred) const override;
+	public List<ulong> getLastUnits(size_t count, uint blockIndex, UseGenesis useGenesis, Func<CachedBlockInfo , ulong> pred)
 	{
-	  Debug.Assert(count <= uint32_t.MaxValue);
+	  Debug.Assert(count <= uint.MaxValue);
     
 	  var cachedUnits = getLastCachedUnits(blockIndex, count, useGenesis);
     
-	  uint32_t availableUnits = new uint32_t(blockIndex);
+	  uint availableUnits = new uint(blockIndex);
 	  if (useGenesis != null)
 	  {
 		availableUnits += 1;
@@ -3141,7 +3141,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
     
 	  if (availableUnits - cachedUnits.size() == 0 != null)
 	  {
-		List<uint64_t> result = new List<uint64_t>();
+		List<ulong> result = new List<ulong>();
 		result.Capacity = cachedUnits.size();
 		foreach (var unit in cachedUnits)
 		{
@@ -3152,13 +3152,13 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  }
     
 	  Debug.Assert(blockIndex + 1 >= cachedUnits.size());
-	  uint32_t dbIndex = blockIndex - (uint32_t)cachedUnits.size();
+	  uint dbIndex = blockIndex - (uint)cachedUnits.size();
     
 	  Debug.Assert(count >= cachedUnits.size());
 	  size_t leftCount = count - cachedUnits.size();
     
 	  var dbUnits = getLastDbUnits(dbIndex, leftCount, useGenesis);
-	  List<uint64_t> result = new List<uint64_t>();
+	  List<ulong> result = new List<ulong>();
 	  result.Capacity = dbUnits.size() + cachedUnits.size();
 	  foreach (var unit in dbUnits)
 	  {
@@ -3174,8 +3174,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: Crypto::Hash getBlockHash(uint32_t blockIndex) const override;
-	public Crypto.Hash getBlockHash(uint32_t blockIndex)
+//ORIGINAL LINE: Crypto::Hash getBlockHash(uint blockIndex) const override;
+	public Crypto.Hash getBlockHash(uint blockIndex)
 	{
 	  if (blockIndex == getTopBlockIndex())
 	  {
@@ -3187,13 +3187,13 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return result.getCachedBlocks().at(blockIndex).blockHash;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getBlockHashes(uint32_t startIndex, size_t maxCount) const override;
-	public List<Crypto.Hash> getBlockHashes(uint32_t startIndex, size_t maxCount)
+//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getBlockHashes(uint startIndex, size_t maxCount) const override;
+	public List<Crypto.Hash> getBlockHashes(uint startIndex, size_t maxCount)
 	{
 	  Debug.Assert(startIndex <= getTopBlockIndex());
-	  Debug.Assert(maxCount <= uint32_t.MaxValue);
+	  Debug.Assert(maxCount <= uint.MaxValue);
     
-	  uint32_t count = Math.Min(getTopBlockIndex() - startIndex + 1, (uint32_t)maxCount);
+	  uint count = Math.Min(getTopBlockIndex() - startIndex + 1, (uint)maxCount);
 	  if (count == 0)
 	  {
 		return new List<Crypto.Hash>();
@@ -3212,9 +3212,9 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  List<Crypto.Hash> hashes = new List<Crypto.Hash>();
 	  hashes.Capacity = count;
     
-	  SortedDictionary<uint32_t, CachedBlockInfo> sortedResult = new SortedDictionary<uint32_t, CachedBlockInfo>(result.getCachedBlocks().begin(), result.getCachedBlocks().end());
+	  SortedDictionary<uint, CachedBlockInfo> sortedResult = new SortedDictionary<uint, CachedBlockInfo>(result.getCachedBlocks().begin(), result.getCachedBlocks().end());
     
-	  std::transform(sortedResult.GetEnumerator(), sortedResult.end(), std::back_inserter(hashes), (Tuple<uint32_t, CachedBlockInfo> cb) =>
+	  std::transform(sortedResult.GetEnumerator(), sortedResult.end(), std::back_inserter(hashes), (Tuple<uint, CachedBlockInfo> cb) =>
 	  {
 		  return cb.Item2.blockHash;
 	  });
@@ -3225,24 +3225,24 @@ public class DatabaseBlockchainCache : IBlockchainCache
    * This method always returns zero
    */
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getStartBlockIndex() const override;
-	public uint32_t getStartBlockIndex()
+//ORIGINAL LINE: virtual uint getStartBlockIndex() const override;
+	public uint getStartBlockIndex()
 	{
 	  return 0;
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getKeyOutputsCountForAmount(uint64_t amount, uint32_t blockIndex) const override;
-	public size_t getKeyOutputsCountForAmount(uint64_t amount, uint32_t blockIndex)
+//ORIGINAL LINE: virtual size_t getKeyOutputsCountForAmount(ulong amount, uint blockIndex) const override;
+	public size_t getKeyOutputsCountForAmount(ulong amount, uint blockIndex)
 	{
-	  uint32_t outputsCount = GlobalMembers.requestKeyOutputGlobalIndexesCountForAmount(new uint64_t(amount), database);
+	  uint outputsCount = GlobalMembers.requestKeyOutputGlobalIndexesCountForAmount(new ulong(amount), database);
     
 	  var getOutput = std::bind(GlobalMembers.retrieveKeyOutput, std::placeholders._1, std::placeholders._2, std::@ref(database));
-	  var begin = new DbOutputConstIterator(getOutput, new uint64_t(amount), 0);
-	  var end = new DbOutputConstIterator(getOutput, new uint64_t(amount), new uint32_t(outputsCount));
+	  var begin = new DbOutputConstIterator(getOutput, new ulong(amount), 0);
+	  var end = new DbOutputConstIterator(getOutput, new ulong(amount), new uint(outputsCount));
     
 	//C++ TO C# CONVERTER TODO TASK: Lambda expressions cannot be assigned to 'var':
-	  var it = std::lower_bound(begin, end, blockIndex, (PackedOutIndex output, uint32_t blockIndex) =>
+	  var it = std::lower_bound(begin, end, blockIndex, (PackedOutIndex output, uint blockIndex) =>
 	  {
 		return output.blockIndex < blockIndex;
 	  });
@@ -3254,10 +3254,10 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getTimestampLowerBoundBlockIndex(uint64_t timestamp) const override;
-	public uint32_t getTimestampLowerBoundBlockIndex(uint64_t timestamp)
+//ORIGINAL LINE: virtual uint getTimestampLowerBoundBlockIndex(ulong timestamp) const override;
+	public uint getTimestampLowerBoundBlockIndex(ulong timestamp)
 	{
-	  var midnight = GlobalMembers.roundToMidnight(new uint64_t(timestamp));
+	  var midnight = GlobalMembers.roundToMidnight(new ulong(timestamp));
     
 	  while (midnight > 0)
 	  {
@@ -3280,8 +3280,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return 0;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool getTransactionGlobalIndexes(const Crypto::Hash& transactionHash, ClassicVector<uint32_t>& globalIndexes) const override;
-	public bool getTransactionGlobalIndexes(Crypto.Hash transactionHash, ref List<uint32_t> globalIndexes)
+//ORIGINAL LINE: virtual bool getTransactionGlobalIndexes(const Crypto::Hash& transactionHash, ClassicVector<uint>& globalIndexes) const override;
+	public bool getTransactionGlobalIndexes(Crypto.Hash transactionHash, ref List<uint> globalIndexes)
 	{
 	  var batch = BlockchainReadBatch().requestCachedTransaction(transactionHash);
 	  var result = database.read(batch);
@@ -3309,8 +3309,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return (size_t)getCachedTransactionsCount();
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getBlockIndexContainingTx(const Crypto::Hash& transactionHash) const override;
-	public uint32_t getBlockIndexContainingTx(Crypto.Hash transactionHash)
+//ORIGINAL LINE: virtual uint getBlockIndexContainingTx(const Crypto::Hash& transactionHash) const override;
+	public uint getBlockIndexContainingTx(Crypto.Hash transactionHash)
 	{
 	  var batch = BlockchainReadBatch().requestCachedTransaction(transactionHash);
 	  var result = readDatabase(batch);
@@ -3364,24 +3364,24 @@ public class DatabaseBlockchainCache : IBlockchainCache
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ClassicVector<BinaryArray> getRawTransactions(const ClassicVector<Crypto::Hash>& transactions, ClassicVector<Crypto::Hash>& missedTransactions) const override;
-	public List<List<uint8_t>> getRawTransactions(List<Crypto.Hash> transactions, List<Crypto.Hash> missedTransactions)
+	public List<List<ushort>> getRawTransactions(List<Crypto.Hash> transactions, List<Crypto.Hash> missedTransactions)
 	{
-	  List<List<uint8_t>> found = new List<List<uint8_t>>();
+	  List<List<ushort>> found = new List<List<ushort>>();
 	  getRawTransactions(transactions, found, missedTransactions);
 	  return found;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ClassicVector<BinaryArray> getRawTransactions(const ClassicVector<Crypto::Hash>& transactions) const override;
-	public List<List<uint8_t>> getRawTransactions(List<Crypto.Hash> transactions)
+	public List<List<ushort>> getRawTransactions(List<Crypto.Hash> transactions)
 	{
 	  List<Crypto.Hash> missed = new List<Crypto.Hash>();
-	  List<List<uint8_t>> found = new List<List<uint8_t>>();
+	  List<List<ushort>> found = new List<List<ushort>>();
 	  getRawTransactions(transactions, found, missed);
 	  return found;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: void getRawTransactions(const ClassicVector<Crypto::Hash>& transactions, ClassicVector<BinaryArray>& foundTransactions, ClassicVector<Crypto::Hash>& missedTransactions) const override;
-	public void getRawTransactions(List<Crypto.Hash> transactions, List<List<uint8_t>> foundTransactions, List<Crypto.Hash> missedTransactions)
+	public void getRawTransactions(List<Crypto.Hash> transactions, List<List<ushort>> foundTransactions, List<Crypto.Hash> missedTransactions)
 	{
 	  BlockchainReadBatch batch = new BlockchainReadBatch();
 	  foreach (var hash in transactions)
@@ -3431,16 +3431,16 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  }
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint32_t index) const override;
-	public RawBlock getBlockByIndex(uint32_t index)
+//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint index) const override;
+	public RawBlock getBlockByIndex(uint index)
 	{
 	  var batch = BlockchainReadBatch().requestRawBlock(index);
 	  var res = readDatabase(batch);
 	  return std::move(res.getRawBlocks().at(index));
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual BinaryArray getRawTransaction(uint32_t blockIndex, uint32_t transactionIndex) const override;
-	public List<uint8_t> getRawTransaction(uint32_t blockIndex, uint32_t transactionIndex)
+//ORIGINAL LINE: virtual BinaryArray getRawTransaction(uint blockIndex, uint transactionIndex) const override;
+	public List<ushort> getRawTransaction(uint blockIndex, uint transactionIndex)
 	{
 	  return getBlockByIndex(blockIndex).transactions.at(transactionIndex);
 	}
@@ -3452,27 +3452,27 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return new List<Crypto.Hash>();
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<uint32_t> getRandomOutsByAmount(uint64_t amount, size_t count, uint32_t blockIndex) const override;
-	public List<uint32_t> getRandomOutsByAmount(uint64_t amount, size_t count, uint32_t blockIndex)
+//ORIGINAL LINE: virtual ClassicVector<uint> getRandomOutsByAmount(ulong amount, size_t count, uint blockIndex) const override;
+	public List<uint> getRandomOutsByAmount(ulong amount, size_t count, uint blockIndex)
 	{
 	  var batch = BlockchainReadBatch().requestKeyOutputGlobalIndexesCountForAmount(amount);
 	  var result = readDatabase(batch);
 	  var outputsCount = result.getKeyOutputGlobalIndexesCountForAmounts();
-	  var outputsToPick = Math.Min((uint32_t)count, outputsCount[amount]);
+	  var outputsToPick = Math.Min((uint)count, outputsCount[amount]);
     
-	  List<uint32_t> resultOuts = new List<uint32_t>();
+	  List<uint> resultOuts = new List<uint>();
 	  resultOuts.Capacity = outputsToPick;
     
-	  ShuffleGenerator<uint32_t, Crypto.random_engine<uint32_t>> generator = new ShuffleGenerator<uint32_t, Crypto.random_engine<uint32_t>>(outputsCount[amount]);
+	  ShuffleGenerator<uint, Crypto.random_engine<uint>> generator = new ShuffleGenerator<uint, Crypto.random_engine<uint>>(outputsCount[amount]);
     
 	  while (outputsToPick)
 	  {
-		List<uint32_t> globalIndexes = new List<uint32_t>();
+		List<uint> globalIndexes = new List<uint>();
 		globalIndexes.Capacity = outputsToPick;
     
 		try
 		{
-		  for (uint32_t i = 0; i < outputsToPick; ++i, globalIndexes.Add(generator()))
+		  for (uint i = 0; i < outputsToPick; ++i, globalIndexes.Add(generator()))
 		  {
 		  }
 		  //std::generate_n(std::back_inserter(globalIndexes), outputsToPick, generator);
@@ -3484,7 +3484,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 		}
     
 		List<PackedOutIndex> outputs = new List<PackedOutIndex>();
-		if (extractKeyOtputIndexes(amount, Common.ArrayView<uint32_t>(globalIndexes.data(), globalIndexes.Count), outputs) != ExtractOutputKeysResult.SUCCESS)
+		if (extractKeyOtputIndexes(amount, Common.ArrayView<uint>(globalIndexes.data(), globalIndexes.Count), outputs) != ExtractOutputKeysResult.SUCCESS)
 		{
 		  logger(Logging.DEBUGGING) << "getRandomOutsByAmount: failed to extract key output indexes";
 		  throw new System.Exception("Invalid output index"); //TODO: make error code
@@ -3499,7 +3499,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
     
 		Debug.Assert(globalIndexes.Count == transactions.Count);
     
-		uint32_t uppperBlockIndex = 0;
+		uint uppperBlockIndex = 0;
 		if (blockIndex > currency.minedMoneyUnlockWindow())
 		{
 	//C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -3522,8 +3522,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return resultOuts;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ExtractOutputKeysResult extractKeyOutputs(uint64_t amount, uint32_t blockIndex, Common::ArrayView<uint32_t> globalIndexes, System.Func<const CachedTransactionInfo& info, PackedOutIndex index, uint32_t globalIndex, ExtractOutputKeysResult> pred) const override;
-	public ExtractOutputKeysResult extractKeyOutputs(uint64_t amount, uint32_t blockIndex, Common.ArrayView<uint32_t> globalIndexes, Func<CachedTransactionInfo info, PackedOutIndex index, uint32_t globalIndex, ExtractOutputKeysResult> callback)
+//ORIGINAL LINE: virtual ExtractOutputKeysResult extractKeyOutputs(ulong amount, uint blockIndex, Common::ArrayView<uint> globalIndexes, System.Func<const CachedTransactionInfo& info, PackedOutIndex index, uint globalIndex, ExtractOutputKeysResult> pred) const override;
+	public ExtractOutputKeysResult extractKeyOutputs(ulong amount, uint blockIndex, Common.ArrayView<uint> globalIndexes, Func<CachedTransactionInfo info, PackedOutIndex index, uint globalIndex, ExtractOutputKeysResult> callback)
 	{
 	  BlockchainReadBatch batch = new BlockchainReadBatch();
 	  for (var it = globalIndexes.begin(); it != globalIndexes.end(); ++it)
@@ -3560,10 +3560,10 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	public List<Crypto.Hash> getTransactionHashesByPaymentId(Crypto.Hash paymentId)
 	{
 	  var countBatch = BlockchainReadBatch().requestTransactionCountByPaymentId(paymentId);
-	  uint32_t transactionsCountByPaymentId = readDatabase(countBatch).getTransactionCountByPaymentIds().at(paymentId);
+	  uint transactionsCountByPaymentId = readDatabase(countBatch).getTransactionCountByPaymentIds().at(paymentId);
     
 	  BlockchainReadBatch transactionBatch = new BlockchainReadBatch();
-	  for (uint32_t i = 0; i < transactionsCountByPaymentId; ++i)
+	  for (uint i = 0; i < transactionsCountByPaymentId; ++i)
 	  {
 		transactionBatch.requestTransactionHashByPaymentId(paymentId, i);
 	  }
@@ -3579,8 +3579,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return transactionHashes;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getBlockHashesByTimestamps(uint64_t timestampBegin, size_t secondsCount) const override;
-	public List<Crypto.Hash> getBlockHashesByTimestamps(uint64_t timestampBegin, size_t secondsCount)
+//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount) const override;
+	public List<Crypto.Hash> getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount)
 	{
 	  List<Crypto.Hash> blockHashes = new List<Crypto.Hash>();
 	  if (secondsCount == 0)
@@ -3589,13 +3589,13 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  }
     
 	  BlockchainReadBatch batch = new BlockchainReadBatch();
-	  for (uint64_t timestamp = timestampBegin; timestamp < timestampBegin + (uint64_t)secondsCount; ++timestamp)
+	  for (ulong timestamp = timestampBegin; timestamp < timestampBegin + (ulong)secondsCount; ++timestamp)
 	  {
 		batch.requestBlockHashesByTimestamp(timestamp);
 	  }
     
 	  var result = readDatabase(batch);
-	  for (uint64_t timestamp = timestampBegin; timestamp < timestampBegin + (uint64_t)secondsCount; ++timestamp)
+	  for (ulong timestamp = timestampBegin; timestamp < timestampBegin + (ulong)secondsCount; ++timestamp)
 	  {
 		if (result.getBlockHashesByTimestamp().count(timestamp) == 0)
 		{
@@ -3612,12 +3612,12 @@ public class DatabaseBlockchainCache : IBlockchainCache
   private readonly Currency currency;
   private IDataBase database;
   private IBlockchainCacheFactory blockchainCacheFactory;
-  private boost.optional<uint32_t> topBlockIndex;
+  private boost.optional<uint> topBlockIndex;
   private boost.optional<Crypto.Hash> topBlockHash;
-  private boost.optional<uint64_t> transactionsCount;
-  private boost.optional<uint32_t> keyOutputAmountsCount;
+  private boost.optional<ulong> transactionsCount;
+  private boost.optional<uint> keyOutputAmountsCount;
 //C++ TO C# CONVERTER TODO TASK: The typedef 'Amount' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-  private Dictionary<Amount, int32_t> keyOutputCountsForAmounts = new Dictionary<Amount, int32_t>();
+  private Dictionary<Amount, int> keyOutputCountsForAmounts = new Dictionary<Amount, int>();
   private List<IBlockchainCache> children = new List<IBlockchainCache>();
   private Logging.LoggerRef logger = new Logging.LoggerRef();
   private LinkedList<CachedBlockInfo> unitsCache = new LinkedList<CachedBlockInfo>();
@@ -3626,8 +3626,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following type could not be found:
 //  struct ExtendedPushedBlockInfo;
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ExtendedPushedBlockInfo getExtendedPushedBlockInfo(uint32_t blockIndex) const;
-	public DatabaseBlockchainCache.ExtendedPushedBlockInfo getExtendedPushedBlockInfo(uint32_t blockIndex)
+//ORIGINAL LINE: ExtendedPushedBlockInfo getExtendedPushedBlockInfo(uint blockIndex) const;
+	public DatabaseBlockchainCache.ExtendedPushedBlockInfo getExtendedPushedBlockInfo(uint blockIndex)
 	{
 	  Debug.Assert(blockIndex <= getTopBlockIndex());
     
@@ -3658,7 +3658,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return extendedInfo;
 	}
 
-	public void deleteClosestTimestampBlockIndex(BlockchainWriteBatch writeBatch, uint32_t splitBlockIndex)
+	public void deleteClosestTimestampBlockIndex(BlockchainWriteBatch writeBatch, uint splitBlockIndex)
 	{
 	  var batch = BlockchainReadBatch().requestCachedBlock(splitBlockIndex);
 	  var blockResult = readDatabase(batch);
@@ -3692,8 +3692,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  logger(Logging.TRACE) << "deleted closest timestamp";
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: CachedBlockInfo getCachedBlockInfo(uint32_t index) const;
-	public CachedBlockInfo getCachedBlockInfo(uint32_t index)
+//ORIGINAL LINE: CachedBlockInfo getCachedBlockInfo(uint index) const;
+	public CachedBlockInfo getCachedBlockInfo(uint index)
 	{
 	  var batch = BlockchainReadBatch().requestCachedBlock(index);
 	  var result = readDatabase(batch);
@@ -3714,8 +3714,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void addSpentKeyImage(Crypto::KeyImage keyImage, uint32_t blockIndex);
-	public void pushTransaction(CachedTransaction cachedTransaction, uint32_t blockIndex, uint16_t transactionBlockIndex, BlockchainWriteBatch batch)
+//  void addSpentKeyImage(Crypto::KeyImage keyImage, uint blockIndex);
+	public void pushTransaction(CachedTransaction cachedTransaction, uint blockIndex, ushort transactionBlockIndex, BlockchainWriteBatch batch)
 	{
     
 	  logger(Logging.DEBUGGING) << "push transaction with hash " << cachedTransaction.getTransactionHash();
@@ -3727,7 +3727,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  transactionCacheInfo.transactionHash = cachedTransaction.getTransactionHash();
 	  transactionCacheInfo.unlockTime = tx.unlockTime;
     
-	  Debug.Assert(tx.outputs.size() <= uint16_t.MaxValue);
+	  Debug.Assert(tx.outputs.size() <= ushort.MaxValue);
     
 	  transactionCacheInfo.globalIndexes.reserve(tx.outputs.size());
 	  transactionCacheInfo.outputs.reserve(tx.outputs.size());
@@ -3794,11 +3794,11 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  uint32_t insertKeyOutputToGlobalIndex(uint64_t amount, PackedOutIndex output); //TODO not implemented. Should it be removed?
+//  uint insertKeyOutputToGlobalIndex(ulong amount, PackedOutIndex output); //TODO not implemented. Should it be removed?
 //C++ TO C# CONVERTER TODO TASK: The typedef 'Amount' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t updateKeyOutputCount(Amount amount, int32_t diff) const;
-	public uint32_t updateKeyOutputCount(Amount amount, int32_t diff)
+//ORIGINAL LINE: uint updateKeyOutputCount(Amount amount, int diff) const;
+	public uint updateKeyOutputCount(Amount amount, int diff)
 	{
 	  var it = keyOutputCountsForAmounts.find(amount);
 	  if (it == keyOutputCountsForAmounts.end())
@@ -3836,7 +3836,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	public void insertPaymentId(BlockchainWriteBatch batch, Crypto.Hash transactionHash, Crypto.Hash paymentId)
 	{
 	  BlockchainReadBatch readBatch = new BlockchainReadBatch();
-	  uint32_t count = 0;
+	  uint count = 0;
     
 	  var readResult = readDatabase(readBatch.requestTransactionCountByPaymentId(paymentId));
 	  if (readResult.getTransactionCountByPaymentIds().count(paymentId) != 0)
@@ -3848,7 +3848,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
     
 	  batch.insertPaymentId(transactionHash, paymentId, count);
 	}
-	public void insertBlockTimestamp(BlockchainWriteBatch batch, uint64_t timestamp, Crypto.Hash blockHash)
+	public void insertBlockTimestamp(BlockchainWriteBatch batch, ulong timestamp, Crypto.Hash blockHash)
 	{
 	  BlockchainReadBatch readBatch = new BlockchainReadBatch();
 	  readBatch.requestBlockHashesByTimestamp(timestamp);
@@ -3869,7 +3869,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
 	public void addGenesisBlock(CachedBlock && genesisBlock)
 	{
-	  uint64_t minerReward = 0;
+	  ulong minerReward = 0;
 	  foreach (TransactionOutput output in genesisBlock.getBlock().baseTransaction.outputs)
 	  {
 		minerReward += output.amount;
@@ -3877,12 +3877,12 @@ public class DatabaseBlockchainCache : IBlockchainCache
     
 	  Debug.Assert(minerReward > 0);
     
-	  uint64_t baseTransactionSize = getObjectBinarySize(genesisBlock.getBlock().baseTransaction);
-	  Debug.Assert(baseTransactionSize < uint32_t.MaxValue);
+	  ulong baseTransactionSize = getObjectBinarySize(genesisBlock.getBlock().baseTransaction);
+	  Debug.Assert(baseTransactionSize < uint.MaxValue);
     
 	  BlockchainWriteBatch batch = new BlockchainWriteBatch();
     
-	  CachedBlockInfo blockInfo = new CachedBlockInfo(genesisBlock.getBlockHash(), genesisBlock.getBlock().timestamp, 1, minerReward, 1, uint32_t(baseTransactionSize));
+	  CachedBlockInfo blockInfo = new CachedBlockInfo(genesisBlock.getBlockHash(), genesisBlock.getBlock().timestamp, 1, minerReward, 1, uint(baseTransactionSize));
     
 	  var baseTransaction = genesisBlock.getBlock().baseTransaction;
 	  var cachedBaseTransaction = new CachedTransaction(new Transaction(std::move(baseTransaction)));
@@ -3905,7 +3905,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  unitsCache.push_back(blockInfo);
 	}
 
-  private enum OutputSearchResult : uint8_t
+  private enum OutputSearchResult : ushort
   {
 	  FOUND,
 	  NOT_FOUND,
@@ -3913,9 +3913,9 @@ public class DatabaseBlockchainCache : IBlockchainCache
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: TransactionValidatorState fillOutputsSpentByBlock(uint32_t blockIndex) const;
+//ORIGINAL LINE: TransactionValidatorState fillOutputsSpentByBlock(uint blockIndex) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  TransactionValidatorState fillOutputsSpentByBlock(uint32_t blockIndex);
+//  TransactionValidatorState fillOutputsSpentByBlock(uint blockIndex);
 
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
 	public Crypto.Hash pushBlockToAnotherCache(IBlockchainCache segment, PushedBlockInfo && pushedBlockInfo)
@@ -3939,7 +3939,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
     
 	  return cachedBlock.getBlockHash();
 	}
-	public void requestDeleteSpentOutputs(BlockchainWriteBatch writeBatch, uint32_t blockIndex, TransactionValidatorState spentOutputs)
+	public void requestDeleteSpentOutputs(BlockchainWriteBatch writeBatch, uint blockIndex, TransactionValidatorState spentOutputs)
 	{
 	  logger(Logging.DEBUGGING) << "Deleting spent outputs for block index " << blockIndex;
     
@@ -3947,12 +3947,12 @@ public class DatabaseBlockchainCache : IBlockchainCache
     
 	  writeBatch.removeSpentKeyImages(blockIndex, spentKeys);
 	}
-	public List<Crypto.Hash> requestTransactionHashesFromBlockIndex(uint32_t splitBlockIndex)
+	public List<Crypto.Hash> requestTransactionHashesFromBlockIndex(uint splitBlockIndex)
 	{
 	  logger(Logging.DEBUGGING) << "Requesting transaction hashes starting from block index " << splitBlockIndex;
     
 	  BlockchainReadBatch readBatch = new BlockchainReadBatch();
-	  for (uint32_t blockIndex = splitBlockIndex; blockIndex <= getTopBlockIndex(); ++blockIndex)
+	  for (uint blockIndex = splitBlockIndex; blockIndex <= getTopBlockIndex(); ++blockIndex)
 	  {
 		readBatch.requestTransactionHashesByBlock(blockIndex);
 	  }
@@ -4006,7 +4006,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  Debug.Assert(count >= toDelete);
     
 	  logger(Logging.DEBUGGING) << "Deleting last " << toDelete << " transaction hashes of payment id " << paymentId;
-	  writeBatch.removePaymentId(paymentId, (uint32_t)(count - toDelete));
+	  writeBatch.removePaymentId(paymentId, (uint)(count - toDelete));
 	}
 //C++ TO C# CONVERTER TODO TASK: The typedef 'GlobalOutputIndex' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: The typedef 'Amount' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -4025,7 +4025,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 		readBatch.requestKeyOutputGlobalIndexesCountForAmount(kv.first);
 	  }
     
-	  Dictionary<IBlockchainCache.Amount, uint32_t> amountCounts = readDatabase(readBatch).getKeyOutputGlobalIndexesCountForAmounts();
+	  Dictionary<IBlockchainCache.Amount, uint> amountCounts = readDatabase(readBatch).getKeyOutputGlobalIndexesCountForAmounts();
 	  Debug.Assert(amountCounts.Count == boundaries.Count);
     
 	  foreach (var kv in amountCounts)
@@ -4037,7 +4037,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 //C++ TO C# CONVERTER TODO TASK: The typedef 'GlobalOutputIndex' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: The typedef 'Amount' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public void requestDeleteKeyOutputsAmount(BlockchainWriteBatch writeBatch, IBlockchainCache.Amount amount, IBlockchainCache.GlobalOutputIndex boundary, uint32_t outputsCount)
+	public void requestDeleteKeyOutputsAmount(BlockchainWriteBatch writeBatch, IBlockchainCache.Amount amount, IBlockchainCache.GlobalOutputIndex boundary, uint outputsCount)
 	{
 	  logger(Logging.DEBUGGING) << "Requesting delete for key output amount " << amount << " starting from global index " << boundary << " to " << (outputsCount - 1);
     
@@ -4049,7 +4049,7 @@ public class DatabaseBlockchainCache : IBlockchainCache
     
 	  updateKeyOutputCount(amount, boundary - outputsCount);
 	}
-	public void requestRemoveTimestamp(BlockchainWriteBatch batch, uint64_t timestamp, Crypto.Hash blockHash)
+	public void requestRemoveTimestamp(BlockchainWriteBatch batch, ulong timestamp, Crypto.Hash blockHash)
 	{
 	  var readBatch = BlockchainReadBatch().requestBlockHashesByTimestamp(timestamp);
 	  var result = readDatabase(readBatch);
@@ -4076,8 +4076,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint8_t getBlockMajorVersionForHeight(uint32_t height) const;
-	public uint8_t getBlockMajorVersionForHeight(uint32_t height)
+//ORIGINAL LINE: ushort getBlockMajorVersionForHeight(uint height) const;
+	public ushort getBlockMajorVersionForHeight(uint height)
 	{
 	  UpgradeManager upgradeManager = new UpgradeManager();
 	  upgradeManager.addMajorBlockVersion(BLOCK_MAJOR_VERSION_2, currency.upgradeHeight(BLOCK_MAJOR_VERSION_2));
@@ -4085,8 +4085,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return upgradeManager.getBlockMajorVersion(height);
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getCachedTransactionsCount() const;
-	public uint64_t getCachedTransactionsCount()
+//ORIGINAL LINE: ulong getCachedTransactionsCount() const;
+	public ulong getCachedTransactionsCount()
 	{
 	  if (!transactionsCount)
 	  {
@@ -4115,13 +4115,13 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<CachedBlockInfo> getLastCachedUnits(uint32_t blockIndex, size_t count, UseGenesis useGenesis) const;
-	public List<CachedBlockInfo> getLastCachedUnits(uint32_t blockIndex, size_t count, UseGenesis useGenesis)
+//ORIGINAL LINE: ClassicVector<CachedBlockInfo> getLastCachedUnits(uint blockIndex, size_t count, UseGenesis useGenesis) const;
+	public List<CachedBlockInfo> getLastCachedUnits(uint blockIndex, size_t count, UseGenesis useGenesis)
 	{
 	  Debug.Assert(blockIndex <= getTopBlockIndex());
     
 	  List<CachedBlockInfo> cachedResult = new List<CachedBlockInfo>();
-	  uint32_t cacheStartIndex = (getTopBlockIndex() + 1) - (uint32_t)unitsCache.size();
+	  uint cacheStartIndex = (getTopBlockIndex() + 1) - (uint)unitsCache.size();
     
 	  count = Math.Min(unitsCache.size(), count);
     
@@ -4130,8 +4130,8 @@ public class DatabaseBlockchainCache : IBlockchainCache
 		return cachedResult;
 	  }
     
-	  count = Math.Min(blockIndex - cacheStartIndex + 1, (uint32_t)count);
-	  uint32_t offset = (uint32_t)(blockIndex + 1 - count) - cacheStartIndex;
+	  count = Math.Min(blockIndex - cacheStartIndex + 1, (uint)count);
+	  uint offset = (uint)(blockIndex + 1 - count) - cacheStartIndex;
     
 	  Debug.Assert(offset < unitsCache.size());
     
@@ -4155,20 +4155,20 @@ public class DatabaseBlockchainCache : IBlockchainCache
 	  return cachedResult;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<CachedBlockInfo> getLastDbUnits(uint32_t blockIndex, size_t count, UseGenesis useGenesis) const;
-	public List<CachedBlockInfo> getLastDbUnits(uint32_t blockIndex, size_t count, UseGenesis useGenesis)
+//ORIGINAL LINE: ClassicVector<CachedBlockInfo> getLastDbUnits(uint blockIndex, size_t count, UseGenesis useGenesis) const;
+	public List<CachedBlockInfo> getLastDbUnits(uint blockIndex, size_t count, UseGenesis useGenesis)
 	{
-	  uint32_t readFrom = blockIndex + 1 - Math.Min(blockIndex + 1, (uint32_t)count);
+	  uint readFrom = blockIndex + 1 - Math.Min(blockIndex + 1, (uint)count);
 	  if (readFrom == 0 && useGenesis == null)
 	  {
 		readFrom += 1;
 	  }
     
-	  uint32_t toRead = blockIndex - readFrom + 1;
+	  uint toRead = blockIndex - readFrom + 1;
 	  List<CachedBlockInfo> units = new List<CachedBlockInfo>();
 	  units.Capacity = toRead;
     
-	  const uint32_t step = 200;
+	  const uint step = 200;
 	  while (toRead > 0)
 	  {
 		var next = Math.Min(toRead, step);
@@ -4184,13 +4184,13 @@ public class DatabaseBlockchainCache : IBlockchainCache
     
 		var res = readDatabase(batch);
     
-		SortedDictionary<uint32_t, CachedBlockInfo> sortedResult = new SortedDictionary<uint32_t, CachedBlockInfo>(res.getCachedBlocks().begin(), res.getCachedBlocks().end());
+		SortedDictionary<uint, CachedBlockInfo> sortedResult = new SortedDictionary<uint, CachedBlockInfo>(res.getCachedBlocks().begin(), res.getCachedBlocks().end());
 		foreach (var kv in sortedResult)
 		{
 		  units.Add(kv.second);
 		}
 	//    std::transform(sortedResult.begin(), sortedResult.end(), std::back_inserter(units),
-	//                   [&](const std::pair<uint32_t, CachedBlockInfo>& cb) { return pred(cb.second); });
+	//                   [&](const std::pair<uint, CachedBlockInfo>& cb) { return pred(cb.second); });
 	  }
     
 	  return units;
@@ -4297,7 +4297,7 @@ namespace System
 namespace CryptoNote
 {
 
-public enum LevinError: int32_t
+public enum LevinError: int
 {
   OK = 0,
   ERROR_CONNECTION = -1,
@@ -4319,10 +4319,10 @@ public class LevinProtocol
 //ORIGINAL LINE: template <typename Request, typename Response>
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: The typedef 'response' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-  public bool invoke<Request, Response>(uint32_t command, Request request, Response response)
+  public bool invoke<Request, Response>(uint command, Request request, Response response)
   {
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	sendMessage(new uint32_t(command), encode(request), true);
+	sendMessage(new uint(command), encode(request), true);
 
 	Command cmd = new Command();
 	readCommand(cmd);
@@ -4339,15 +4339,15 @@ public class LevinProtocol
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <typename Request>
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-  public void notify<Request>(uint32_t command, Request request, int UnnamedParameter)
+  public void notify<Request>(uint command, Request request, int UnnamedParameter)
   {
 //C++ TO C# CONVERTER TODO TASK: The typedef 'request' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	sendMessage(new uint32_t(command), encode(request), false);
+	sendMessage(new uint(command), encode(request), false);
   }
 
   public class Command
   {
-	public uint32_t command = new uint32_t();
+	public uint command = new uint();
 	public bool isNotify;
 	public bool isResponse;
 	public BinaryArray buf = new BinaryArray();
@@ -4362,9 +4362,9 @@ public class LevinProtocol
 //  bool readCommand(Command cmd);
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void sendMessage(uint32_t command, BinaryArray @out, bool needResponse);
+//  void sendMessage(uint command, BinaryArray @out, bool needResponse);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void sendReply(uint32_t command, BinaryArray @out, int32_t returnCode);
+//  void sendReply(uint command, BinaryArray @out, int returnCode);
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <typename T>
@@ -4399,9 +4399,9 @@ public class LevinProtocol
 
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  bool readStrict(uint8_t ptr, size_t size);
+//  bool readStrict(ushort ptr, size_t size);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void writeStrict(uint8_t ptr, size_t size);
+//  void writeStrict(ushort ptr, size_t size);
   private System.TcpConnection m_conn;
 }
 
@@ -4438,13 +4438,13 @@ public class NetNodeConfig
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  string getBindIp();
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint16_t getBindPort() const;
+//ORIGINAL LINE: ushort getBindPort() const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  uint16_t getBindPort();
+//  ushort getBindPort();
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint16_t getExternalPort() const;
+//ORIGINAL LINE: ushort getExternalPort() const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  uint16_t getExternalPort();
+//  ushort getExternalPort();
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: bool getAllowLocalIp() const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -4481,9 +4481,9 @@ public class NetNodeConfig
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  void setBindIp(string ip);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void setBindPort(uint16_t port);
+//  void setBindPort(ushort port);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void setExternalPort(uint16_t port);
+//  void setExternalPort(ushort port);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  void setAllowLocalIp(bool allow);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -4500,8 +4500,8 @@ public class NetNodeConfig
 //  void setConfigFolder(string folder);
 
   private string bindIp;
-  private uint16_t bindPort = new uint16_t();
-  private uint16_t externalPort = new uint16_t();
+  private ushort bindPort = new ushort();
+  private ushort externalPort = new ushort();
   private bool allowLocalIp;
   private List<PeerlistEntry> peers = new List<PeerlistEntry>();
   private List<NetworkAddress> priorityNodes = new List<NetworkAddress>();
@@ -4546,7 +4546,7 @@ public class PeerlistManager
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //		bool merge_peerlist(ClassicLinkedList<PeerlistEntry> outer_bs);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//		bool get_peerlist_head(ClassicLinkedList<PeerlistEntry> bs_head, uint32_t depth = CryptoNote::P2P_DEFAULT_PEERS_IN_HANDSHAKE);
+//		bool get_peerlist_head(ClassicLinkedList<PeerlistEntry> bs_head, uint depth = CryptoNote::P2P_DEFAULT_PEERS_IN_HANDSHAKE);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: bool get_peerlist_full(ClassicLinkedList<PeerlistEntry>& pl_gray, ClassicLinkedList<PeerlistEntry>& pl_white) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -4564,15 +4564,15 @@ public class PeerlistManager
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //		bool append_with_peer_gray(PeerlistEntry pr);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//		bool set_peer_just_seen(uint64_t peer, uint32_t ip, uint32_t port);
+//		bool set_peer_just_seen(ulong peer, uint ip, uint port);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//		bool set_peer_just_seen(uint64_t peer, NetworkAddress addr);
+//		bool set_peer_just_seen(ulong peer, NetworkAddress addr);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //		bool set_peer_unreachable(PeerlistEntry pr);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool is_ip_allowed(uint32_t ip) const;
+//ORIGINAL LINE: bool is_ip_allowed(uint ip) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//		bool is_ip_allowed(uint32_t ip);
+//		bool is_ip_allowed(uint ip);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //		void trim_white_peerlist();
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -4617,7 +4617,7 @@ namespace CryptoNote
 	  NOTIFY
 	}
 
-	public P2pMessage(Type type, uint32_t command, BinaryArray buffer, int32_t returnCode = 0)
+	public P2pMessage(Type type, uint command, BinaryArray buffer, int returnCode = 0)
 	{
 		this.type = new CryptoNote.P2pMessage.Type(type);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -4646,16 +4646,16 @@ namespace CryptoNote
 	}
 
 	public Type type;
-	public uint32_t command = new uint32_t();
+	public uint command = new uint();
 	public readonly BinaryArray buffer = new BinaryArray();
-	public int32_t returnCode = new int32_t();
+	public int returnCode = new int();
   }
 
   public class P2pConnectionContext : CryptoNoteConnectionContext
   {
 
 	public System.Context context;
-	public uint64_t peerId = new uint64_t();
+	public ulong peerId = new ulong();
 	public System.TcpConnection connection = new System.TcpConnection();
 
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
@@ -4689,9 +4689,9 @@ namespace CryptoNote
 //	void interrupt();
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t writeDuration(std::chrono::steady_clock::time_point now) const;
+//ORIGINAL LINE: ulong writeDuration(std::chrono::steady_clock::time_point now) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	uint64_t writeDuration(std::chrono::steady_clock::time_point now);
+//	ulong writeDuration(std::chrono::steady_clock::time_point now);
 
 	private Logging.LoggerRef logger = new Logging.LoggerRef();
 	private std::chrono.steady_clock.time_point writeOperationStartTime = new std::chrono.steady_clock.time_point();
@@ -4718,7 +4718,7 @@ namespace CryptoNote
 //	bool deinit();
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	bool sendStopSignal();
-	public uint32_t get_this_peer_port()
+	public uint get_this_peer_port()
 	{
 		return m_listeningPort;
 	}
@@ -4734,7 +4734,7 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	bool log_connections();
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	uint64_t get_connections_count();
+//	ulong get_connections_count();
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	size_t get_outgoing_connections_count();
 
@@ -4806,7 +4806,7 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	bool invoke_notify_to_peer(int command, BinaryArray req_buff, CryptoNoteConnectionContext context);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	void for_each_connection(System.Action<CryptoNote::CryptoNoteConnectionContext , uint64_t> f);
+//	void for_each_connection(System.Action<CryptoNote::CryptoNoteConnectionContext , ulong> f);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	void externalRelayNotifyToAll(int command, BinaryArray data_buff, boost::uuids::uuid excludeConnection);
 
@@ -4827,14 +4827,14 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	bool merge_peerlist_with_local(ClassicLinkedList<PeerlistEntry> bs);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	bool fix_time_delta(ClassicLinkedList<PeerlistEntry> local_peerlist, time_t local_time, int64_t delta);
+//	bool fix_time_delta(ClassicLinkedList<PeerlistEntry> local_peerlist, time_t local_time, long delta);
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	bool connections_maker();
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	bool make_new_connection_from_peerlist(bool use_white_list);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	bool try_to_connect_and_handshake_with_new_peer(NetworkAddress na, bool just_take_peerlist = false, uint64_t last_seen_stamp = 0, bool white = true);
+//	bool try_to_connect_and_handshake_with_new_peer(NetworkAddress na, bool just_take_peerlist = false, ulong last_seen_stamp = 0, bool white = true);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	bool is_peer_used(PeerlistEntry peer);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -4879,7 +4879,7 @@ namespace CryptoNote
 	private class config <T>
 	{
 	  public network_config m_net_config = new network_config();
-	  public uint64_t m_peer_id = new uint64_t();
+	  public ulong m_peer_id = new ulong();
 
 	  public void serialize(ISerializer s)
 	  {
@@ -4893,9 +4893,9 @@ namespace CryptoNote
 
 	private bool m_have_address;
 	private bool m_first_connection_maker_call;
-	private uint32_t m_listeningPort = new uint32_t();
-	private uint32_t m_external_port = new uint32_t();
-	private uint32_t m_ip_address = new uint32_t();
+	private uint m_listeningPort = new uint();
+	private uint m_external_port = new uint();
+	private uint m_ip_address = new uint();
 	private bool m_allow_local_ip;
 	private bool m_hide_my_port;
 	private string m_p2p_state_filename;
@@ -4920,13 +4920,13 @@ namespace CryptoNote
 	private string m_bind_ip;
 	private string m_port;
 #if ALLOW_DEBUG_COMMANDS
-	private uint64_t m_last_stat_request_time = new uint64_t();
+	private ulong m_last_stat_request_time = new ulong();
 #endif
 	private List<NetworkAddress> m_priority_peers = new List<NetworkAddress>();
 	private List<NetworkAddress> m_exclusive_peers = new List<NetworkAddress>();
 	private List<NetworkAddress> m_seed_nodes = new List<NetworkAddress>();
 	private LinkedList<PeerlistEntry> m_command_line_peers = new LinkedList<PeerlistEntry>();
-	private uint64_t m_peer_livetime = new uint64_t();
+	private ulong m_peer_livetime = new ulong();
 	private boost::uuids.uuid m_network_id = new boost::uuids.uuid();
   }
 }

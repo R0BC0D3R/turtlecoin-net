@@ -34,8 +34,8 @@ public interface IP2pNodeInternal
 //ORIGINAL LINE: virtual basic_node_data getNodeData() const = 0;
   basic_node_data getNodeData();
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getPeerId() const = 0;
-  uint64_t getPeerId();
+//ORIGINAL LINE: virtual ulong getPeerId() const = 0;
+  ulong getPeerId();
 
   void handleNodeData(basic_node_data node, P2pContext ctx);
   bool handleRemotePeerList(LinkedList<PeerlistEntry> peerlist, time_t local_time);

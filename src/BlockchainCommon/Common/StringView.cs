@@ -18,7 +18,7 @@ namespace Common
 public class StringView : System.IDisposable
 {
 
-  public readonly uint64_t INVALID = uint64_t.MaxValue;
+  public readonly ulong INVALID = ulong.MaxValue;
   public readonly StringView EMPTY = new StringView(reinterpret_cast<Object>(1), 0);
   public readonly StringView NIL = new StringView(null, 0);
 
@@ -30,7 +30,7 @@ public class StringView : System.IDisposable
   // Direct constructor.
   // The behavior is undefined unless 'stringData' != 'nullptr' || 'stringSize' == 0
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  StringView(string stringData, uint64_t stringSize);
+//  StringView(string stringData, ulong stringSize);
 
   // Constructor from C array.
   // The behavior is undefined unless 'stringData' != 'nullptr' || 'stringSize' == 0. Input state can be malformed using poiner conversions.
@@ -100,8 +100,8 @@ public class StringView : System.IDisposable
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getSize() const
-  public uint64_t getSize()
+//ORIGINAL LINE: ulong getSize() const
+  public ulong getSize()
   {
 	Debug.Assert(data != null || size == 0);
 	return size;
@@ -130,9 +130,9 @@ public class StringView : System.IDisposable
   // Get 'StringView' element by index.
   // The behavior is undefined unless 'StringView' was initialized and 'index' < 'size'.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const char& operator [](uint64_t index) const;
+//ORIGINAL LINE: const char& operator [](ulong index) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  char operator [](uint64_t index);
+//  char operator [](ulong index);
 
   // Get first element.
   // The behavior is undefined unless 'StringView' was initialized and 'size' > 0
@@ -379,16 +379,16 @@ public class StringView : System.IDisposable
   // returns index or INVALID if there are no occurences.
   // The behavior is undefined unless 'StringView' was initialized.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t find(const char& object) const;
+//ORIGINAL LINE: ulong find(const char& object) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  uint64_t find(char @object);
+//  ulong find(char @object);
 
   // Looks for the first occurence of 'other' in 'StringView',
   // returns index or INVALID if there are no occurences.
   // The behavior is undefined unless both strings were initialized.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t find(StringView other) const
-  public uint64_t find(StringView other)
+//ORIGINAL LINE: ulong find(StringView other) const
+  public ulong find(StringView other)
   {
 	Debug.Assert(data != null || size == 0);
 	Debug.Assert(other.data != null || other.size == 0);
@@ -419,16 +419,16 @@ public class StringView : System.IDisposable
   // returns index or INVALID if there are no occurences.
   // The behavior is undefined unless 'StringView' was initialized.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t findLast(const char& object) const;
+//ORIGINAL LINE: ulong findLast(const char& object) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  uint64_t findLast(char @object);
+//  ulong findLast(char @object);
 
   // Looks for the first occurence of 'other' in 'StringView',
   // returns index or INVALID if there are no occurences.
   // The behavior is undefined unless both strings were initialized.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t findLast(StringView other) const
-  public uint64_t findLast(StringView other)
+//ORIGINAL LINE: ulong findLast(StringView other) const
+  public ulong findLast(StringView other)
   {
 	Debug.Assert(data != null || size == 0);
 	Debug.Assert(other.data != null || other.size == 0);
@@ -458,47 +458,47 @@ public class StringView : System.IDisposable
   // Returns substring of 'headSize' first elements.
   // The behavior is undefined unless 'StringView' was initialized and 'headSize' <= 'size'.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: StringView head(uint64_t headSize) const;
+//ORIGINAL LINE: StringView head(ulong headSize) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  StringView head(uint64_t headSize);
+//  StringView head(ulong headSize);
 
   // Returns substring of 'tailSize' last elements.
   // The behavior is undefined unless 'StringView' was initialized and 'tailSize' <= 'size'.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: StringView tail(uint64_t tailSize) const;
+//ORIGINAL LINE: StringView tail(ulong tailSize) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  StringView tail(uint64_t tailSize);
+//  StringView tail(ulong tailSize);
 
   // Returns 'StringView' without 'headSize' first elements.
   // The behavior is undefined unless 'StringView' was initialized and 'headSize' <= 'size'.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: StringView unhead(uint64_t headSize) const;
+//ORIGINAL LINE: StringView unhead(ulong headSize) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  StringView unhead(uint64_t headSize);
+//  StringView unhead(ulong headSize);
 
   // Returns 'StringView' without 'tailSize' last elements.
   // The behavior is undefined unless 'StringView' was initialized and 'tailSize' <= 'size'.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: StringView untail(uint64_t tailSize) const;
+//ORIGINAL LINE: StringView untail(ulong tailSize) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  StringView untail(uint64_t tailSize);
+//  StringView untail(ulong tailSize);
 
   // Returns substring starting at 'startIndex' and contaning 'endIndex' - 'startIndex' elements.
   // The behavior is undefined unless 'StringView' was initialized and 'startIndex' <= 'endIndex' and 'endIndex' <= 'size'.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: StringView range(uint64_t startIndex, uint64_t endIndex) const;
+//ORIGINAL LINE: StringView range(ulong startIndex, ulong endIndex) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  StringView range(uint64_t startIndex, uint64_t endIndex);
+//  StringView range(ulong startIndex, ulong endIndex);
 
   // Returns substring starting at 'startIndex' and contaning 'sliceSize' elements.
   // The behavior is undefined unless 'StringView' was initialized and 'startIndex' <= 'size' and 'startIndex' + 'sliceSize' <= 'size'.
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: StringView slice(uint64_t startIndex, uint64_t sliceSize) const;
+//ORIGINAL LINE: StringView slice(ulong startIndex, ulong sliceSize) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  StringView slice(uint64_t startIndex, uint64_t sliceSize);
+//  StringView slice(ulong startIndex, ulong sliceSize);
 
   protected readonly string data;
-  protected uint64_t size = new uint64_t();
+  protected ulong size = new ulong();
 }
 
 }
@@ -529,10 +529,10 @@ StringView.StringView()
 //ORIGINAL LINE: bool StringView::endsWith(const Object& object) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t StringView::find(const Object& object) const
+//ORIGINAL LINE: ulong StringView::find(const Object& object) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t StringView::findLast(const Object& object) const
+//ORIGINAL LINE: ulong StringView::findLast(const Object& object) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: StringView StringView::head(Size headSize) const

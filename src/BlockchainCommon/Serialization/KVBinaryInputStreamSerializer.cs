@@ -18,7 +18,7 @@ public class KVBinaryInputStreamSerializer : JsonInputValueSerializer
   {
   }
 
-  public override bool binary(object value, uint64_t size, Common.StringView name)
+  public override bool binary(object value, ulong size, Common.StringView name)
   {
 	string str;
 

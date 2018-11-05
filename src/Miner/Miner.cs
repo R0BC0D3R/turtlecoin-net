@@ -17,7 +17,7 @@ namespace CryptoNote
 public class BlockMiningParameters
 {
   public BlockTemplate blockTemplate = new BlockTemplate();
-  public uint64_t difficulty = new uint64_t();
+  public ulong difficulty = new ulong();
 }
 
 public class Miner : System.IDisposable
@@ -63,7 +63,7 @@ public class Miner : System.IDisposable
 	Debug.Assert(m_state == MiningState.BLOCK_FOUND);
 	return m_block;
   }
-  public uint64_t getHashCount()
+  public ulong getHashCount()
   {
 	lock (m_hashes_mutex)
 	{
@@ -86,7 +86,7 @@ public class Miner : System.IDisposable
   private System.Dispatcher m_dispatcher;
   private System.Event m_miningStopped = new System.Event();
 
-  private enum MiningState : uint8_t
+  private enum MiningState : ushort
   {
 	  MINING_STOPPED,
 	  BLOCK_FOUND,
@@ -97,7 +97,7 @@ public class Miner : System.IDisposable
   private List<std::unique_ptr<System.RemoteContext>> m_workers = new List<std::unique_ptr<System.RemoteContext>>();
 
   private BlockTemplate m_block = new BlockTemplate();
-  private uint64_t m_hash_count = new uint64_t();
+  private ulong m_hash_count = new ulong();
   private object m_hashes_mutex = new object();
 
   private Logging.LoggerRef m_logger = new Logging.LoggerRef();
@@ -110,11 +110,11 @@ public class Miner : System.IDisposable
 
 	try
 	{
-	  blockMiningParameters.blockTemplate.nonce = Crypto.GlobalMembers.rand<uint32_t>();
+	  blockMiningParameters.blockTemplate.nonce = Crypto.GlobalMembers.rand<uint>();
 
 	  for (size_t i = 0; i < threadCount; ++i)
 	  {
-		m_workers.emplace_back(std::unique_ptr<System.RemoteContext> (new System.RemoteContext(m_dispatcher, std::bind(this.workerFunc, this, blockMiningParameters.blockTemplate, blockMiningParameters.difficulty, (uint32_t)threadCount))));
+		m_workers.emplace_back(std::unique_ptr<System.RemoteContext> (new System.RemoteContext(m_dispatcher, std::bind(this.workerFunc, this, blockMiningParameters.blockTemplate, blockMiningParameters.difficulty, (uint)threadCount))));
 		m_logger.functorMethod(Logging.Level.INFO) << "Thread " << i << " started at nonce: " << blockMiningParameters.blockTemplate.nonce;
 
 		blockMiningParameters.blockTemplate.nonce++;
@@ -131,7 +131,7 @@ public class Miner : System.IDisposable
 
 	m_miningStopped.set();
   }
-  private void workerFunc(BlockTemplate blockTemplate, uint64_t difficulty, uint32_t nonceStep)
+  private void workerFunc(BlockTemplate blockTemplate, ulong difficulty, uint nonceStep)
   {
 	try
 	{

@@ -39,46 +39,46 @@ public class BinaryInputStreamSerializer : ISerializer
   {
   }
 
-  public override bool beginArray(uint64_t size, Common.StringView name)
+  public override bool beginArray(ulong size, Common.StringView name)
   {
-	GlobalMembers.readVarintAs<uint64_t>(stream, ref size);
+	GlobalMembers.readVarintAs<ulong>(stream, ref size);
 	return true;
   }
   public override void endArray()
   {
   }
 
-  public static override bool functorMethod(uint8_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
 	readVarint(stream, value);
 	return true;
   }
-  public static override bool functorMethod(int16_t value, Common.StringView name)
+  public static override bool functorMethod(short value, Common.StringView name)
   {
-	GlobalMembers.readVarintAs<uint16_t>(stream, ref value);
+	GlobalMembers.readVarintAs<ushort>(stream, ref value);
 	return true;
   }
-  public static override bool functorMethod(uint16_t value, Common.StringView name)
-  {
-	readVarint(stream, value);
-	return true;
-  }
-  public static override bool functorMethod(int32_t value, Common.StringView name)
-  {
-	GlobalMembers.readVarintAs<uint32_t>(stream, ref value);
-	return true;
-  }
-  public static override bool functorMethod(uint32_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
 	readVarint(stream, value);
 	return true;
   }
-  public static override bool functorMethod(int64_t value, Common.StringView name)
+  public static override bool functorMethod(int value, Common.StringView name)
   {
-	GlobalMembers.readVarintAs<uint64_t>(stream, ref value);
+	GlobalMembers.readVarintAs<uint>(stream, ref value);
 	return true;
   }
-  public static override bool functorMethod(uint64_t value, Common.StringView name)
+  public static override bool functorMethod(uint value, Common.StringView name)
+  {
+	readVarint(stream, value);
+	return true;
+  }
+  public static override bool functorMethod(long value, Common.StringView name)
+  {
+	GlobalMembers.readVarintAs<ulong>(stream, ref value);
+	return true;
+  }
+  public static override bool functorMethod(ulong value, Common.StringView name)
   {
 	readVarint(stream, value);
 	return true;
@@ -91,12 +91,12 @@ public class BinaryInputStreamSerializer : ISerializer
   }
   public static override bool functorMethod(ref bool value, Common.StringView name)
   {
-	value = read<uint8_t>(stream) != 0;
+	value = read<ushort>(stream) != 0;
 	return true;
   }
   public static override bool functorMethod(string value, Common.StringView name)
   {
-	uint64_t size = new uint64_t();
+	ulong size = new ulong();
 	readVarint(stream, size);
 
 	/* Can't take up more than a block size */
@@ -121,7 +121,7 @@ public class BinaryInputStreamSerializer : ISerializer
 	{
 	  List<char> temp = new List<char>();
 	  temp.Resize(size);
-	  checkedRead(ref temp[0], new uint64_t(size));
+	  checkedRead(ref temp[0], new ulong(size));
 	  value.reserve(size);
 	  value.assign(temp[0], size);
 	}
@@ -132,9 +132,9 @@ public class BinaryInputStreamSerializer : ISerializer
 
 	return true;
   }
-  public override bool binary(object value, uint64_t size, Common.StringView name)
+  public override bool binary(object value, ulong size, Common.StringView name)
   {
-	checkedRead(ref (char)value, new uint64_t(size));
+	checkedRead(ref (char)value, new ulong(size));
 	return true;
   }
   public override bool binary(string value, Common.StringView name)
@@ -150,7 +150,7 @@ public class BinaryInputStreamSerializer : ISerializer
   }
 
 
-  private void checkedRead(ref string buf, uint64_t size)
+  private void checkedRead(ref string buf, ulong size)
   {
 	read(stream, buf, size);
   }

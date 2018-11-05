@@ -36,20 +36,20 @@ public class SwappedBlockchainStorage : BlockchainStorage.IBlockchainStorageInte
 
   //Returns MemoryBlockchainStorage with elements from [splitIndex, blocks.size() - 1].
   //Original SwappedBlockchainStorage will contain elements from [0, splitIndex - 1].
-  public override std::unique_ptr<BlockchainStorage.IBlockchainStorageInternal> splitStorage(uint32_t splitIndex)
+  public override std::unique_ptr<BlockchainStorage.IBlockchainStorageInternal> splitStorage(uint splitIndex)
   {
 	Debug.Assert(splitIndex > 0);
 	Debug.Assert(splitIndex < blocks.size());
-	std::unique_ptr<MemoryBlockchainStorage> newStorage = new std::unique_ptr<MemoryBlockchainStorage>(new MemoryBlockchainStorage(new uint32_t(splitIndex)));
+	std::unique_ptr<MemoryBlockchainStorage> newStorage = new std::unique_ptr<MemoryBlockchainStorage>(new MemoryBlockchainStorage(new uint(splitIndex)));
 
-	uint64_t blocksCount = blocks.size();
+	ulong blocksCount = blocks.size();
 
-	for (uint64_t i = splitIndex; i < blocksCount; ++i)
+	for (ulong i = splitIndex; i < blocksCount; ++i)
 	{
 	  newStorage.pushBlock(RawBlock(blocks[i]));
 	}
 
-	for (uint64_t i = 0; i < blocksCount - splitIndex; ++i)
+	for (ulong i = 0; i < blocksCount - splitIndex; ++i)
 	{
 	  blocks.pop_back();
 	}
@@ -58,17 +58,17 @@ public class SwappedBlockchainStorage : BlockchainStorage.IBlockchainStorageInte
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint32_t index) const override
-  public override RawBlock getBlockByIndex(uint32_t index)
+//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint index) const override
+  public override RawBlock getBlockByIndex(uint index)
   {
 	Debug.Assert(index < getBlockCount());
 	return blocks[index];
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getBlockCount() const override
-  public override uint32_t getBlockCount()
+//ORIGINAL LINE: virtual uint getBlockCount() const override
+  public override uint getBlockCount()
   {
-	return (uint32_t)blocks.size();
+	return (uint)blocks.size();
   }
 
   private SwappedVector<RawBlock> blocks = new SwappedVector<RawBlock>();

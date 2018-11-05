@@ -43,6 +43,6 @@ public class hashState
 	public ulong datasize_in_buffer; //the size of the message remained in buffer; assumed to be multiple of 8bits except for the last partial block at the end of the message
 //C++ TO C# CONVERTER TODO TASK: The #define macro 'DATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 //C++ TO C# CONVERTER TODO TASK: The following statement was not recognized, possibly due to an unrecognized macro:
-	DATA_ALIGN16(uint64_t x[8][2]); //the 1024-bit state, ( x[i][0] || x[i][1] ) is the ith row of the state in the pseudocode
+	DATA_ALIGN16(ulong x[8][2]); //the 1024-bit state, ( x[i][0] || x[i][1] ) is the ith row of the state in the pseudocode
 	public byte[] buffer = new byte[64]; //the 512-bit message block to be hashed;
 }

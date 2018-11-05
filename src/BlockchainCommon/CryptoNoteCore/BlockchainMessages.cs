@@ -15,19 +15,19 @@ namespace Messages
 // immutable messages
 public class NewBlock
 {
-  public uint32_t blockIndex = new uint32_t();
+  public uint blockIndex = new uint();
   public Crypto.Hash blockHash = new Crypto.Hash();
 }
 
 public class NewAlternativeBlock
 {
-  public uint32_t blockIndex = new uint32_t();
+  public uint blockIndex = new uint();
   public Crypto.Hash blockHash = new Crypto.Hash();
 }
 
 public class ChainSwitch
 {
-  public uint32_t commonRootIndex = new uint32_t();
+  public uint commonRootIndex = new uint();
   public List<Crypto.Hash> blocksFromCommonRoot = new List<Crypto.Hash>();
 }
 

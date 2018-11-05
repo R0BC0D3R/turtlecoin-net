@@ -90,14 +90,14 @@ public class NetNodeConfig
 	return bindIp;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint16_t getBindPort() const
-  public uint16_t getBindPort()
+//ORIGINAL LINE: ushort getBindPort() const
+  public ushort getBindPort()
   {
 	return bindPort;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint16_t getExternalPort() const
-  public uint16_t getExternalPort()
+//ORIGINAL LINE: ushort getExternalPort() const
+  public ushort getExternalPort()
   {
 	return externalPort;
   }
@@ -156,13 +156,13 @@ public class NetNodeConfig
   {
 	bindIp = ip;
   }
-  public void setBindPort(uint16_t port)
+  public void setBindPort(ushort port)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: bindPort = port;
 	bindPort.CopyFrom(port);
   }
-  public void setExternalPort(uint16_t port)
+  public void setExternalPort(ushort port)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: externalPort = port;
@@ -198,8 +198,8 @@ public class NetNodeConfig
   }
 
   private string bindIp;
-  private uint16_t bindPort = new uint16_t();
-  private uint16_t externalPort = new uint16_t();
+  private ushort bindPort = new ushort();
+  private ushort externalPort = new ushort();
   private bool allowLocalIp;
   private List<PeerlistEntry> peers = new List<PeerlistEntry>();
   private List<NetworkAddress> priorityNodes = new List<NetworkAddress>();

@@ -48,8 +48,8 @@ public class MainChainStorage: IMainChainStorage
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint32_t index) const override
-  public override RawBlock getBlockByIndex(uint32_t index)
+//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint index) const override
+  public override RawBlock getBlockByIndex(uint index)
   {
 	if (index >= storage.size())
 	{
@@ -59,10 +59,10 @@ public class MainChainStorage: IMainChainStorage
 	return storage[index];
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getBlockCount() const override
-  public override uint32_t getBlockCount()
+//ORIGINAL LINE: virtual uint getBlockCount() const override
+  public override uint getBlockCount()
   {
-	return (uint32_t)storage.size();
+	return (uint)storage.size();
   }
 
   public override void clear()

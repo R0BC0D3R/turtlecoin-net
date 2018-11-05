@@ -126,7 +126,7 @@ public class JsonValue : System.IDisposable
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  JsonValue(bool value);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  JsonValue(int64_t value);
+//  JsonValue(long value);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  JsonValue(std::nullptr_t value);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -142,7 +142,7 @@ public class JsonValue : System.IDisposable
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  JsonValue(string&& value);
 //C++ TO C# CONVERTER TODO TASK: C++ 'constraints' are not converted by C++ to C# Converter:
-//ORIGINAL LINE: template<uint64_t size> JsonValue(const char(&value)[size]) {
+//ORIGINAL LINE: template<ulong size> JsonValue(const char(&value)[size]) {
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<typename size>
   public JsonValue<size>(string(value))
@@ -320,9 +320,9 @@ public class JsonValue : System.IDisposable
 //  JsonValue operator =(ClassicVector<JsonValue>&& value);
   //JsonValue& operator=(Bool value);
 //C++ TO C# CONVERTER NOTE: This 'CopyFrom' method was converted from the original copy assignment operator:
-//ORIGINAL LINE: JsonValue& operator =(int64_t value);
+//ORIGINAL LINE: JsonValue& operator =(long value);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  JsonValue CopyFrom(int64_t value);
+//  JsonValue CopyFrom(long value);
 //C++ TO C# CONVERTER NOTE: This 'CopyFrom' method was converted from the original copy assignment operator:
 //ORIGINAL LINE: JsonValue& operator =(std::nullptr_t value);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -346,7 +346,7 @@ public class JsonValue : System.IDisposable
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  JsonValue operator =(string&& value);
 //C++ TO C# CONVERTER TODO TASK: C++ 'constraints' are not converted by C++ to C# Converter:
-//ORIGINAL LINE: template<uint64_t size> JsonValue& operator=(const char(&value)[size]) {
+//ORIGINAL LINE: template<ulong size> JsonValue& operator=(const char(&value)[size]) {
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<typename size>
 //C++ TO C# CONVERTER NOTE: This 'CopyFrom' method was converted from the original copy assignment operator:
@@ -452,8 +452,8 @@ public class JsonValue : System.IDisposable
 	return valueBool;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: int64_t getInteger() const
-  public int64_t getInteger()
+//ORIGINAL LINE: long getInteger() const
+  public long getInteger()
   {
 	if (type != Type.INTEGER)
 	{
@@ -519,8 +519,8 @@ public class JsonValue : System.IDisposable
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t size() const
-  public uint64_t size()
+//ORIGINAL LINE: ulong size() const
+  public ulong size()
   {
 	switch (type)
 	{
@@ -535,7 +535,7 @@ public class JsonValue : System.IDisposable
 	}
   }
 
-  public JsonValue this[uint64_t index]
+  public JsonValue this[ulong index]
   {
 	  get
 	  {
@@ -554,8 +554,8 @@ public class JsonValue : System.IDisposable
 	  }
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const JsonValue& operator [](uint64_t index) const
-  public JsonValue this[uint64_t index]
+//ORIGINAL LINE: const JsonValue& operator [](ulong index) const
+  public JsonValue this[ulong index]
   {
 	  get
 	  {
@@ -623,7 +623,7 @@ public class JsonValue : System.IDisposable
 //  JsonValue set(string key, JsonValue&& value);
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  uint64_t erase(string key);
+//  ulong erase(string key);
 
   public static JsonValue fromString(string source)
   {
@@ -658,7 +658,7 @@ public class JsonValue : System.IDisposable
 	  if (array.Count > 0)
 	  {
 		@out << array[0].functorMethod;
-		for (uint64_t i = 1; i < array.Count; ++i)
+		for (ulong i = 1; i < array.Count; ++i)
 		{
 		  @out << ',' << array[i].functorMethod;
 		}
@@ -763,12 +763,12 @@ public class JsonValue : System.IDisposable
 //C++ TO C# CONVERTER TODO TASK: Unions are not supported in C#:
 //  union
 //  {
-//	uint8_t valueArray[sizeof(ClassicVector<JsonValue>)];
+//	ushort valueArray[sizeof(ClassicVector<JsonValue>)];
 //	bool valueBool;
-//	int64_t valueInteger;
-//	uint8_t valueObject[sizeof(ClassicMap<string, JsonValue>)];
+//	long valueInteger;
+//	ushort valueObject[sizeof(ClassicMap<string, JsonValue>)];
 //	double valueReal;
-//	uint8_t valueString[sizeof(string)];
+//	ushort valueString[sizeof(string)];
 //  };
 
   private void destructValue()
@@ -882,7 +882,7 @@ public class JsonValue : System.IDisposable
   {
 	string text;
 	text += c;
-	uint64_t dots = 0;
+	ulong dots = 0;
 	for (;;)
 	{
 	  Type.int i = in.peek();

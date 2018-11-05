@@ -184,7 +184,7 @@ public class P2pConnectionProxy : IP2pConnection
 	}
 
 	m_node.handleNodeData(res.node_data, m_context);
-	m_node.handleRemotePeerList(res.local_peerlist, new uint64_t(res.node_data.local_time));
+	m_node.handleRemotePeerList(res.local_peerlist, new ulong(res.node_data.local_time));
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: message.data = LevinProtocol::encode(res.payload_data);
@@ -196,7 +196,7 @@ public class P2pConnectionProxy : IP2pConnection
 	{
 	  COMMAND_TIMED_SYNC.response res = new COMMAND_TIMED_SYNC.response();
 	  LevinProtocol.decode(cmd.buf, res);
-	  m_node.handleRemotePeerList(res.local_peerlist, new uint64_t(res.local_time));
+	  m_node.handleRemotePeerList(res.local_peerlist, new ulong(res.local_time));
 	}
 	else
 	{

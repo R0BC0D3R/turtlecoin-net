@@ -17,7 +17,7 @@ namespace System
 namespace CryptoNote
 {
 
-public enum LevinError: int32_t
+public enum LevinError: int
 {
   OK = 0,
   ERROR_CONNECTION = -1,
@@ -39,9 +39,9 @@ public class LevinProtocol
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <typename Request, typename Response>
-  public bool invoke<Request, Response>(uint32_t command, Request request, Response response)
+  public bool invoke<Request, Response>(uint command, Request request, Response response)
   {
-	sendMessage(new uint32_t(command), encode(request), true);
+	sendMessage(new uint(command), encode(request), true);
 
 	Command cmd = new Command();
 	readCommand(cmd);
@@ -56,14 +56,14 @@ public class LevinProtocol
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <typename Request>
-  public void notify<Request>(uint32_t command, Request request, int UnnamedParameter)
+  public void notify<Request>(uint command, Request request, int UnnamedParameter)
   {
-	sendMessage(new uint32_t(command), encode(request), false);
+	sendMessage(new uint(command), encode(request), false);
   }
 
   public class Command
   {
-	public uint32_t command = new uint32_t();
+	public uint command = new uint();
 	public bool isNotify;
 	public bool isResponse;
 	public BinaryArray buf = new BinaryArray();
@@ -81,7 +81,7 @@ public class LevinProtocol
 	bucket_head2 head = new bucket_head2();
 
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	if (!readStrict(reinterpret_cast<uint8_t>(head), sizeof(bucket_head2)))
+	if (!readStrict(reinterpret_cast<ushort>(head), sizeof(bucket_head2)))
 	{
 	  return false;
 	}
@@ -101,7 +101,7 @@ public class LevinProtocol
 	if (head.m_cb != 0)
 	{
 	  buf.resize(head.m_cb);
-	  if (!readStrict(buf[0], new uint64_t(head.m_cb)))
+	  if (!readStrict(buf[0], new ulong(head.m_cb)))
 	  {
 		return false;
 	  }
@@ -117,7 +117,7 @@ public class LevinProtocol
 	return true;
   }
 
-  public void sendMessage(uint32_t command, BinaryArray @out, bool needResponse)
+  public void sendMessage(uint command, BinaryArray @out, bool needResponse)
   {
 	bucket_head2 head = new bucket_head2();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -145,7 +145,7 @@ public class LevinProtocol
 
 	writeStrict(writeBuffer.data(), writeBuffer.size());
   }
-  public void sendReply(uint32_t command, BinaryArray @out, int32_t returnCode)
+  public void sendReply(uint command, BinaryArray @out, int returnCode)
   {
 	bucket_head2 head = new bucket_head2();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -208,7 +208,7 @@ public class LevinProtocol
   }
 
 
-  private bool readStrict(uint8_t ptr, size_t size)
+  private bool readStrict(ushort ptr, size_t size)
   {
 	size_t offset = 0;
 	while (offset < size)
@@ -224,7 +224,7 @@ public class LevinProtocol
 
 	return true;
   }
-  private void writeStrict(uint8_t ptr, size_t size)
+  private void writeStrict(ushort ptr, size_t size)
   {
 	size_t offset = 0;
 	while (offset < size)
@@ -246,13 +246,13 @@ public class LevinProtocol
 //#pragma pack(1)
 public class bucket_head2
 {
-  public uint64_t m_signature = new uint64_t();
-  public uint64_t m_cb = new uint64_t();
+  public ulong m_signature = new ulong();
+  public ulong m_cb = new ulong();
   public bool m_have_to_return_data;
-  public uint32_t m_command = new uint32_t();
-  public int32_t m_return_code = new int32_t();
-  public uint32_t m_flags = new uint32_t();
-  public uint32_t m_protocol_version = new uint32_t();
+  public uint m_command = new uint();
+  public int m_return_code = new int();
+  public uint m_flags = new uint();
+  public uint m_protocol_version = new uint();
 }
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to most C++ 'pragma' directives in C#:
 //#pragma pack(pop)

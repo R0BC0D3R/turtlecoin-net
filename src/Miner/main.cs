@@ -13,7 +13,7 @@ namespace CryptoNote
 public class BlockMiningParameters
 {
   public BlockTemplate blockTemplate = new BlockTemplate();
-  public uint64_t difficulty = new uint64_t();
+  public ulong difficulty = new ulong();
 }
 
 public class Miner : System.IDisposable
@@ -26,7 +26,7 @@ public class Miner : System.IDisposable
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  BlockTemplate mine(BlockMiningParameters blockMiningParameters, size_t threadCount);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  uint64_t getHashCount();
+//  ulong getHashCount();
 
   //NOTE! this is blocking method
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -35,7 +35,7 @@ public class Miner : System.IDisposable
   private System.Dispatcher m_dispatcher;
   private System.Event m_miningStopped = new System.Event();
 
-  private enum MiningState : uint8_t
+  private enum MiningState : ushort
   {
 	  MINING_STOPPED,
 	  BLOCK_FOUND,
@@ -46,7 +46,7 @@ public class Miner : System.IDisposable
   private List<std::unique_ptr<System.RemoteContext>> m_workers = new List<std::unique_ptr<System.RemoteContext>>();
 
   private BlockTemplate m_block = new BlockTemplate();
-  private uint64_t m_hash_count = new uint64_t();
+  private ulong m_hash_count = new ulong();
   private object m_hashes_mutex = new object();
 
   private Logging.LoggerRef m_logger = new Logging.LoggerRef();
@@ -54,7 +54,7 @@ public class Miner : System.IDisposable
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  void runWorkers(BlockMiningParameters blockMiningParameters, size_t threadCount);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void workerFunc(BlockTemplate blockTemplate, uint64_t difficulty, uint32_t nonceStep);
+//  void workerFunc(BlockTemplate blockTemplate, ulong difficulty, uint nonceStep);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  bool setStateBlockFound();
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -84,7 +84,7 @@ public class Miner : System.IDisposable
 namespace Miner
 {
 
-public enum MinerEventType: uint8_t
+public enum MinerEventType: ushort
 {
   BLOCK_MINED,
   BLOCKCHAIN_UPDATED,
@@ -138,10 +138,10 @@ public class MiningConfig
   public int daemonPort;
   public size_t threadCount = new size_t();
   public size_t scanPeriod = new size_t();
-  public uint8_t logLevel = new uint8_t();
+  public ushort logLevel = new ushort();
   public size_t blocksLimit = new size_t();
-  public uint64_t firstBlockTimestamp = new uint64_t();
-  public int64_t blockTimestampInterval = new int64_t();
+  public ulong firstBlockTimestamp = new ulong();
+  public long blockTimestampInterval = new long();
   public bool help;
   public bool version;
 }
@@ -182,7 +182,7 @@ public class MinerManager : System.IDisposable
 
   private CryptoNote.BlockTemplate m_minedBlock = new CryptoNote.BlockTemplate();
 
-  private uint64_t m_lastBlockTimestamp = new uint64_t();
+  private ulong m_lastBlockTimestamp = new ulong();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  void eventLoop();
@@ -203,9 +203,9 @@ public class MinerManager : System.IDisposable
 //  void stopBlockchainMonitoring();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  bool submitBlock(CryptoNote::BlockTemplate minedBlock, string daemonHost, uint16_t daemonPort);
+//  bool submitBlock(CryptoNote::BlockTemplate minedBlock, string daemonHost, ushort daemonPort);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  CryptoNote::BlockMiningParameters requestMiningParameters(System::Dispatcher dispatcher, string daemonHost, uint16_t daemonPort, string miningAddress);
+//  CryptoNote::BlockMiningParameters requestMiningParameters(System::Dispatcher dispatcher, string daemonHost, ushort daemonPort, string miningAddress);
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: void adjustBlockTemplate(CryptoNote::BlockTemplate& blockTemplate) const;

@@ -95,9 +95,9 @@ public static class GlobalMembers
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define rf1(r,c) (r)
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define word_in(x,c) (*((uint32_t*)(x)+(c)))
+	//ORIGINAL LINE: #define word_in(x,c) (*((uint*)(x)+(c)))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define word_out(x,c,v) (*((uint32_t*)(x)+(c)) = (v))
+	//ORIGINAL LINE: #define word_out(x,c,v) (*((uint*)(x)+(c)) = (v))
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define s(x,c) x[c]
@@ -129,7 +129,7 @@ public static class GlobalMembers
 	//ORIGINAL LINE: #define rc_data(w) { w(0x01), w(0x02), w(0x04), w(0x08), w(0x10),w(0x20), w(0x40), w(0x80), w(0x1b), w(0x36) }
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define bytes2word(b0, b1, b2, b3) (((uint32_t)(b3) << 24) | ((uint32_t)(b2) << 16) | ((uint32_t)(b1) << 8) | (b0))
+	//ORIGINAL LINE: #define bytes2word(b0, b1, b2, b3) (((uint)(b3) << 24) | ((uint)(b2) << 16) | ((uint)(b1) << 8) | (b0))
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define h0(x) (x)
@@ -191,46 +191,46 @@ public static class GlobalMembers
 	//ORIGINAL LINE: #define four_tables(x,tab,vf,rf,c) (tab[0][bval(vf(x,0,c),rf(0,c))] ^ tab[1][bval(vf(x,1,c),rf(1,c))] ^ tab[2][bval(vf(x,2,c),rf(2,c))] ^ tab[3][bval(vf(x,3,c),rf(3,c))])
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'ALIGN' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static readonly ALIGN[,] uint32_t t_fn =
+	public static readonly ALIGN[,] uint t_fn =
 	{
-		{(((uint32_t)((f2(0x63) ^ 0x63)) << 24) | ((uint32_t)(0x63) << 16) | ((uint32_t)(0x63) << 8) | (((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x7c) ^ 0x7c)) << 24) | ((uint32_t)(0x7c) << 16) | ((uint32_t)(0x7c) << 8) | (((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x77) ^ 0x77)) << 24) | ((uint32_t)(0x77) << 16) | ((uint32_t)(0x77) << 8) | (((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x7b) ^ 0x7b)) << 24) | ((uint32_t)(0x7b) << 16) | ((uint32_t)(0x7b) << 8) | (((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf2) ^ 0xf2)) << 24) | ((uint32_t)(0xf2) << 16) | ((uint32_t)(0xf2) << 8) | (((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x6b) ^ 0x6b)) << 24) | ((uint32_t)(0x6b) << 16) | ((uint32_t)(0x6b) << 8) | (((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x6f) ^ 0x6f)) << 24) | ((uint32_t)(0x6f) << 16) | ((uint32_t)(0x6f) << 8) | (((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc5) ^ 0xc5)) << 24) | ((uint32_t)(0xc5) << 16) | ((uint32_t)(0xc5) << 8) | (((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x30) ^ 0x30)) << 24) | ((uint32_t)(0x30) << 16) | ((uint32_t)(0x30) << 8) | (((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x01) ^ 0x01)) << 24) | ((uint32_t)(0x01) << 16) | ((uint32_t)(0x01) << 8) | (((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x67) ^ 0x67)) << 24) | ((uint32_t)(0x67) << 16) | ((uint32_t)(0x67) << 8) | (((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x2b) ^ 0x2b)) << 24) | ((uint32_t)(0x2b) << 16) | ((uint32_t)(0x2b) << 8) | (((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xfe) ^ 0xfe)) << 24) | ((uint32_t)(0xfe) << 16) | ((uint32_t)(0xfe) << 8) | (((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd7) ^ 0xd7)) << 24) | ((uint32_t)(0xd7) << 16) | ((uint32_t)(0xd7) << 8) | (((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xab) ^ 0xab)) << 24) | ((uint32_t)(0xab) << 16) | ((uint32_t)(0xab) << 8) | (((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x76) ^ 0x76)) << 24) | ((uint32_t)(0x76) << 16) | ((uint32_t)(0x76) << 8) | (((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xca) ^ 0xca)) << 24) | ((uint32_t)(0xca) << 16) | ((uint32_t)(0xca) << 8) | (((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x82) ^ 0x82)) << 24) | ((uint32_t)(0x82) << 16) | ((uint32_t)(0x82) << 8) | (((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc9) ^ 0xc9)) << 24) | ((uint32_t)(0xc9) << 16) | ((uint32_t)(0xc9) << 8) | (((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x7d) ^ 0x7d)) << 24) | ((uint32_t)(0x7d) << 16) | ((uint32_t)(0x7d) << 8) | (((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xfa) ^ 0xfa)) << 24) | ((uint32_t)(0xfa) << 16) | ((uint32_t)(0xfa) << 8) | (((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x59) ^ 0x59)) << 24) | ((uint32_t)(0x59) << 16) | ((uint32_t)(0x59) << 8) | (((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x47) ^ 0x47)) << 24) | ((uint32_t)(0x47) << 16) | ((uint32_t)(0x47) << 8) | (((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf0) ^ 0xf0)) << 24) | ((uint32_t)(0xf0) << 16) | ((uint32_t)(0xf0) << 8) | (((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xad) ^ 0xad)) << 24) | ((uint32_t)(0xad) << 16) | ((uint32_t)(0xad) << 8) | (((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd4) ^ 0xd4)) << 24) | ((uint32_t)(0xd4) << 16) | ((uint32_t)(0xd4) << 8) | (((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa2) ^ 0xa2)) << 24) | ((uint32_t)(0xa2) << 16) | ((uint32_t)(0xa2) << 8) | (((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xaf) ^ 0xaf)) << 24) | ((uint32_t)(0xaf) << 16) | ((uint32_t)(0xaf) << 8) | (((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x9c) ^ 0x9c)) << 24) | ((uint32_t)(0x9c) << 16) | ((uint32_t)(0x9c) << 8) | (((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa4) ^ 0xa4)) << 24) | ((uint32_t)(0xa4) << 16) | ((uint32_t)(0xa4) << 8) | (((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x72) ^ 0x72)) << 24) | ((uint32_t)(0x72) << 16) | ((uint32_t)(0x72) << 8) | (((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc0) ^ 0xc0)) << 24) | ((uint32_t)(0xc0) << 16) | ((uint32_t)(0xc0) << 8) | (((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb7) ^ 0xb7)) << 24) | ((uint32_t)(0xb7) << 16) | ((uint32_t)(0xb7) << 8) | (((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xfd) ^ 0xfd)) << 24) | ((uint32_t)(0xfd) << 16) | ((uint32_t)(0xfd) << 8) | (((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x93) ^ 0x93)) << 24) | ((uint32_t)(0x93) << 16) | ((uint32_t)(0x93) << 8) | (((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x26) ^ 0x26)) << 24) | ((uint32_t)(0x26) << 16) | ((uint32_t)(0x26) << 8) | (((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x36) ^ 0x36)) << 24) | ((uint32_t)(0x36) << 16) | ((uint32_t)(0x36) << 8) | (((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x3f) ^ 0x3f)) << 24) | ((uint32_t)(0x3f) << 16) | ((uint32_t)(0x3f) << 8) | (((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf7) ^ 0xf7)) << 24) | ((uint32_t)(0xf7) << 16) | ((uint32_t)(0xf7) << 8) | (((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xcc) ^ 0xcc)) << 24) | ((uint32_t)(0xcc) << 16) | ((uint32_t)(0xcc) << 8) | (((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x34) ^ 0x34)) << 24) | ((uint32_t)(0x34) << 16) | ((uint32_t)(0x34) << 8) | (((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa5) ^ 0xa5)) << 24) | ((uint32_t)(0xa5) << 16) | ((uint32_t)(0xa5) << 8) | (((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe5) ^ 0xe5)) << 24) | ((uint32_t)(0xe5) << 16) | ((uint32_t)(0xe5) << 8) | (((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf1) ^ 0xf1)) << 24) | ((uint32_t)(0xf1) << 16) | ((uint32_t)(0xf1) << 8) | (((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x71) ^ 0x71)) << 24) | ((uint32_t)(0x71) << 16) | ((uint32_t)(0x71) << 8) | (((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd8) ^ 0xd8)) << 24) | ((uint32_t)(0xd8) << 16) | ((uint32_t)(0xd8) << 8) | (((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x31) ^ 0x31)) << 24) | ((uint32_t)(0x31) << 16) | ((uint32_t)(0x31) << 8) | (((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x15) ^ 0x15)) << 24) | ((uint32_t)(0x15) << 16) | ((uint32_t)(0x15) << 8) | (((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x04) ^ 0x04)) << 24) | ((uint32_t)(0x04) << 16) | ((uint32_t)(0x04) << 8) | (((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc7) ^ 0xc7)) << 24) | ((uint32_t)(0xc7) << 16) | ((uint32_t)(0xc7) << 8) | (((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x23) ^ 0x23)) << 24) | ((uint32_t)(0x23) << 16) | ((uint32_t)(0x23) << 8) | (((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc3) ^ 0xc3)) << 24) | ((uint32_t)(0xc3) << 16) | ((uint32_t)(0xc3) << 8) | (((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x18) ^ 0x18)) << 24) | ((uint32_t)(0x18) << 16) | ((uint32_t)(0x18) << 8) | (((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x96) ^ 0x96)) << 24) | ((uint32_t)(0x96) << 16) | ((uint32_t)(0x96) << 8) | (((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x05) ^ 0x05)) << 24) | ((uint32_t)(0x05) << 16) | ((uint32_t)(0x05) << 8) | (((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x9a) ^ 0x9a)) << 24) | ((uint32_t)(0x9a) << 16) | ((uint32_t)(0x9a) << 8) | (((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x07) ^ 0x07)) << 24) | ((uint32_t)(0x07) << 16) | ((uint32_t)(0x07) << 8) | (((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x12) ^ 0x12)) << 24) | ((uint32_t)(0x12) << 16) | ((uint32_t)(0x12) << 8) | (((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x80) ^ 0x80)) << 24) | ((uint32_t)(0x80) << 16) | ((uint32_t)(0x80) << 8) | (((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe2) ^ 0xe2)) << 24) | ((uint32_t)(0xe2) << 16) | ((uint32_t)(0xe2) << 8) | (((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xeb) ^ 0xeb)) << 24) | ((uint32_t)(0xeb) << 16) | ((uint32_t)(0xeb) << 8) | (((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x27) ^ 0x27)) << 24) | ((uint32_t)(0x27) << 16) | ((uint32_t)(0x27) << 8) | (((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb2) ^ 0xb2)) << 24) | ((uint32_t)(0xb2) << 16) | ((uint32_t)(0xb2) << 8) | (((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x75) ^ 0x75)) << 24) | ((uint32_t)(0x75) << 16) | ((uint32_t)(0x75) << 8) | (((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x09) ^ 0x09)) << 24) | ((uint32_t)(0x09) << 16) | ((uint32_t)(0x09) << 8) | (((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x83) ^ 0x83)) << 24) | ((uint32_t)(0x83) << 16) | ((uint32_t)(0x83) << 8) | (((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x2c) ^ 0x2c)) << 24) | ((uint32_t)(0x2c) << 16) | ((uint32_t)(0x2c) << 8) | (((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x1a) ^ 0x1a)) << 24) | ((uint32_t)(0x1a) << 16) | ((uint32_t)(0x1a) << 8) | (((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x1b) ^ 0x1b)) << 24) | ((uint32_t)(0x1b) << 16) | ((uint32_t)(0x1b) << 8) | (((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x6e) ^ 0x6e)) << 24) | ((uint32_t)(0x6e) << 16) | ((uint32_t)(0x6e) << 8) | (((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x5a) ^ 0x5a)) << 24) | ((uint32_t)(0x5a) << 16) | ((uint32_t)(0x5a) << 8) | (((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa0) ^ 0xa0)) << 24) | ((uint32_t)(0xa0) << 16) | ((uint32_t)(0xa0) << 8) | (((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x52) ^ 0x52)) << 24) | ((uint32_t)(0x52) << 16) | ((uint32_t)(0x52) << 8) | (((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x3b) ^ 0x3b)) << 24) | ((uint32_t)(0x3b) << 16) | ((uint32_t)(0x3b) << 8) | (((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd6) ^ 0xd6)) << 24) | ((uint32_t)(0xd6) << 16) | ((uint32_t)(0xd6) << 8) | (((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb3) ^ 0xb3)) << 24) | ((uint32_t)(0xb3) << 16) | ((uint32_t)(0xb3) << 8) | (((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x29) ^ 0x29)) << 24) | ((uint32_t)(0x29) << 16) | ((uint32_t)(0x29) << 8) | (((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe3) ^ 0xe3)) << 24) | ((uint32_t)(0xe3) << 16) | ((uint32_t)(0xe3) << 8) | (((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x2f) ^ 0x2f)) << 24) | ((uint32_t)(0x2f) << 16) | ((uint32_t)(0x2f) << 8) | (((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x84) ^ 0x84)) << 24) | ((uint32_t)(0x84) << 16) | ((uint32_t)(0x84) << 8) | (((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x53) ^ 0x53)) << 24) | ((uint32_t)(0x53) << 16) | ((uint32_t)(0x53) << 8) | (((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd1) ^ 0xd1)) << 24) | ((uint32_t)(0xd1) << 16) | ((uint32_t)(0xd1) << 8) | (((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x00) ^ 0x00)) << 24) | ((uint32_t)(0x00) << 16) | ((uint32_t)(0x00) << 8) | (((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xed) ^ 0xed)) << 24) | ((uint32_t)(0xed) << 16) | ((uint32_t)(0xed) << 8) | (((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x20) ^ 0x20)) << 24) | ((uint32_t)(0x20) << 16) | ((uint32_t)(0x20) << 8) | (((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xfc) ^ 0xfc)) << 24) | ((uint32_t)(0xfc) << 16) | ((uint32_t)(0xfc) << 8) | (((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb1) ^ 0xb1)) << 24) | ((uint32_t)(0xb1) << 16) | ((uint32_t)(0xb1) << 8) | (((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x5b) ^ 0x5b)) << 24) | ((uint32_t)(0x5b) << 16) | ((uint32_t)(0x5b) << 8) | (((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x6a) ^ 0x6a)) << 24) | ((uint32_t)(0x6a) << 16) | ((uint32_t)(0x6a) << 8) | (((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xcb) ^ 0xcb)) << 24) | ((uint32_t)(0xcb) << 16) | ((uint32_t)(0xcb) << 8) | (((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xbe) ^ 0xbe)) << 24) | ((uint32_t)(0xbe) << 16) | ((uint32_t)(0xbe) << 8) | (((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x39) ^ 0x39)) << 24) | ((uint32_t)(0x39) << 16) | ((uint32_t)(0x39) << 8) | (((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x4a) ^ 0x4a)) << 24) | ((uint32_t)(0x4a) << 16) | ((uint32_t)(0x4a) << 8) | (((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x4c) ^ 0x4c)) << 24) | ((uint32_t)(0x4c) << 16) | ((uint32_t)(0x4c) << 8) | (((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x58) ^ 0x58)) << 24) | ((uint32_t)(0x58) << 16) | ((uint32_t)(0x58) << 8) | (((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xcf) ^ 0xcf)) << 24) | ((uint32_t)(0xcf) << 16) | ((uint32_t)(0xcf) << 8) | (((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd0) ^ 0xd0)) << 24) | ((uint32_t)(0xd0) << 16) | ((uint32_t)(0xd0) << 8) | (((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xef) ^ 0xef)) << 24) | ((uint32_t)(0xef) << 16) | ((uint32_t)(0xef) << 8) | (((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xaa) ^ 0xaa)) << 24) | ((uint32_t)(0xaa) << 16) | ((uint32_t)(0xaa) << 8) | (((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xfb) ^ 0xfb)) << 24) | ((uint32_t)(0xfb) << 16) | ((uint32_t)(0xfb) << 8) | (((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x43) ^ 0x43)) << 24) | ((uint32_t)(0x43) << 16) | ((uint32_t)(0x43) << 8) | (((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x4d) ^ 0x4d)) << 24) | ((uint32_t)(0x4d) << 16) | ((uint32_t)(0x4d) << 8) | (((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x33) ^ 0x33)) << 24) | ((uint32_t)(0x33) << 16) | ((uint32_t)(0x33) << 8) | (((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x85) ^ 0x85)) << 24) | ((uint32_t)(0x85) << 16) | ((uint32_t)(0x85) << 8) | (((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x45) ^ 0x45)) << 24) | ((uint32_t)(0x45) << 16) | ((uint32_t)(0x45) << 8) | (((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf9) ^ 0xf9)) << 24) | ((uint32_t)(0xf9) << 16) | ((uint32_t)(0xf9) << 8) | (((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x02) ^ 0x02)) << 24) | ((uint32_t)(0x02) << 16) | ((uint32_t)(0x02) << 8) | (((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x7f) ^ 0x7f)) << 24) | ((uint32_t)(0x7f) << 16) | ((uint32_t)(0x7f) << 8) | (((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x50) ^ 0x50)) << 24) | ((uint32_t)(0x50) << 16) | ((uint32_t)(0x50) << 8) | (((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x3c) ^ 0x3c)) << 24) | ((uint32_t)(0x3c) << 16) | ((uint32_t)(0x3c) << 8) | (((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x9f) ^ 0x9f)) << 24) | ((uint32_t)(0x9f) << 16) | ((uint32_t)(0x9f) << 8) | (((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa8) ^ 0xa8)) << 24) | ((uint32_t)(0xa8) << 16) | ((uint32_t)(0xa8) << 8) | (((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x51) ^ 0x51)) << 24) | ((uint32_t)(0x51) << 16) | ((uint32_t)(0x51) << 8) | (((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa3) ^ 0xa3)) << 24) | ((uint32_t)(0xa3) << 16) | ((uint32_t)(0xa3) << 8) | (((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x40) ^ 0x40)) << 24) | ((uint32_t)(0x40) << 16) | ((uint32_t)(0x40) << 8) | (((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x8f) ^ 0x8f)) << 24) | ((uint32_t)(0x8f) << 16) | ((uint32_t)(0x8f) << 8) | (((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x92) ^ 0x92)) << 24) | ((uint32_t)(0x92) << 16) | ((uint32_t)(0x92) << 8) | (((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x9d) ^ 0x9d)) << 24) | ((uint32_t)(0x9d) << 16) | ((uint32_t)(0x9d) << 8) | (((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x38) ^ 0x38)) << 24) | ((uint32_t)(0x38) << 16) | ((uint32_t)(0x38) << 8) | (((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf5) ^ 0xf5)) << 24) | ((uint32_t)(0xf5) << 16) | ((uint32_t)(0xf5) << 8) | (((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xbc) ^ 0xbc)) << 24) | ((uint32_t)(0xbc) << 16) | ((uint32_t)(0xbc) << 8) | (((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb6) ^ 0xb6)) << 24) | ((uint32_t)(0xb6) << 16) | ((uint32_t)(0xb6) << 8) | (((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xda) ^ 0xda)) << 24) | ((uint32_t)(0xda) << 16) | ((uint32_t)(0xda) << 8) | (((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x21) ^ 0x21)) << 24) | ((uint32_t)(0x21) << 16) | ((uint32_t)(0x21) << 8) | (((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x10) ^ 0x10)) << 24) | ((uint32_t)(0x10) << 16) | ((uint32_t)(0x10) << 8) | (((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xff) ^ 0xff)) << 24) | ((uint32_t)(0xff) << 16) | ((uint32_t)(0xff) << 8) | (((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf3) ^ 0xf3)) << 24) | ((uint32_t)(0xf3) << 16) | ((uint32_t)(0xf3) << 8) | (((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd2) ^ 0xd2)) << 24) | ((uint32_t)(0xd2) << 16) | ((uint32_t)(0xd2) << 8) | (((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xcd) ^ 0xcd)) << 24) | ((uint32_t)(0xcd) << 16) | ((uint32_t)(0xcd) << 8) | (((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x0c) ^ 0x0c)) << 24) | ((uint32_t)(0x0c) << 16) | ((uint32_t)(0x0c) << 8) | (((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x13) ^ 0x13)) << 24) | ((uint32_t)(0x13) << 16) | ((uint32_t)(0x13) << 8) | (((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xec) ^ 0xec)) << 24) | ((uint32_t)(0xec) << 16) | ((uint32_t)(0xec) << 8) | (((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x5f) ^ 0x5f)) << 24) | ((uint32_t)(0x5f) << 16) | ((uint32_t)(0x5f) << 8) | (((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x97) ^ 0x97)) << 24) | ((uint32_t)(0x97) << 16) | ((uint32_t)(0x97) << 8) | (((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x44) ^ 0x44)) << 24) | ((uint32_t)(0x44) << 16) | ((uint32_t)(0x44) << 8) | (((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x17) ^ 0x17)) << 24) | ((uint32_t)(0x17) << 16) | ((uint32_t)(0x17) << 8) | (((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc4) ^ 0xc4)) << 24) | ((uint32_t)(0xc4) << 16) | ((uint32_t)(0xc4) << 8) | (((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa7) ^ 0xa7)) << 24) | ((uint32_t)(0xa7) << 16) | ((uint32_t)(0xa7) << 8) | (((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x7e) ^ 0x7e)) << 24) | ((uint32_t)(0x7e) << 16) | ((uint32_t)(0x7e) << 8) | (((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x3d) ^ 0x3d)) << 24) | ((uint32_t)(0x3d) << 16) | ((uint32_t)(0x3d) << 8) | (((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x64) ^ 0x64)) << 24) | ((uint32_t)(0x64) << 16) | ((uint32_t)(0x64) << 8) | (((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x5d) ^ 0x5d)) << 24) | ((uint32_t)(0x5d) << 16) | ((uint32_t)(0x5d) << 8) | (((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x19) ^ 0x19)) << 24) | ((uint32_t)(0x19) << 16) | ((uint32_t)(0x19) << 8) | (((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x73) ^ 0x73)) << 24) | ((uint32_t)(0x73) << 16) | ((uint32_t)(0x73) << 8) | (((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x60) ^ 0x60)) << 24) | ((uint32_t)(0x60) << 16) | ((uint32_t)(0x60) << 8) | (((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x81) ^ 0x81)) << 24) | ((uint32_t)(0x81) << 16) | ((uint32_t)(0x81) << 8) | (((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x4f) ^ 0x4f)) << 24) | ((uint32_t)(0x4f) << 16) | ((uint32_t)(0x4f) << 8) | (((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xdc) ^ 0xdc)) << 24) | ((uint32_t)(0xdc) << 16) | ((uint32_t)(0xdc) << 8) | (((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x22) ^ 0x22)) << 24) | ((uint32_t)(0x22) << 16) | ((uint32_t)(0x22) << 8) | (((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x2a) ^ 0x2a)) << 24) | ((uint32_t)(0x2a) << 16) | ((uint32_t)(0x2a) << 8) | (((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x90) ^ 0x90)) << 24) | ((uint32_t)(0x90) << 16) | ((uint32_t)(0x90) << 8) | (((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x88) ^ 0x88)) << 24) | ((uint32_t)(0x88) << 16) | ((uint32_t)(0x88) << 8) | (((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x46) ^ 0x46)) << 24) | ((uint32_t)(0x46) << 16) | ((uint32_t)(0x46) << 8) | (((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xee) ^ 0xee)) << 24) | ((uint32_t)(0xee) << 16) | ((uint32_t)(0xee) << 8) | (((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb8) ^ 0xb8)) << 24) | ((uint32_t)(0xb8) << 16) | ((uint32_t)(0xb8) << 8) | (((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x14) ^ 0x14)) << 24) | ((uint32_t)(0x14) << 16) | ((uint32_t)(0x14) << 8) | (((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xde) ^ 0xde)) << 24) | ((uint32_t)(0xde) << 16) | ((uint32_t)(0xde) << 8) | (((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x5e) ^ 0x5e)) << 24) | ((uint32_t)(0x5e) << 16) | ((uint32_t)(0x5e) << 8) | (((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x0b) ^ 0x0b)) << 24) | ((uint32_t)(0x0b) << 16) | ((uint32_t)(0x0b) << 8) | (((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xdb) ^ 0xdb)) << 24) | ((uint32_t)(0xdb) << 16) | ((uint32_t)(0xdb) << 8) | (((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe0) ^ 0xe0)) << 24) | ((uint32_t)(0xe0) << 16) | ((uint32_t)(0xe0) << 8) | (((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x32) ^ 0x32)) << 24) | ((uint32_t)(0x32) << 16) | ((uint32_t)(0x32) << 8) | (((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x3a) ^ 0x3a)) << 24) | ((uint32_t)(0x3a) << 16) | ((uint32_t)(0x3a) << 8) | (((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x0a) ^ 0x0a)) << 24) | ((uint32_t)(0x0a) << 16) | ((uint32_t)(0x0a) << 8) | (((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x49) ^ 0x49)) << 24) | ((uint32_t)(0x49) << 16) | ((uint32_t)(0x49) << 8) | (((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x06) ^ 0x06)) << 24) | ((uint32_t)(0x06) << 16) | ((uint32_t)(0x06) << 8) | (((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x24) ^ 0x24)) << 24) | ((uint32_t)(0x24) << 16) | ((uint32_t)(0x24) << 8) | (((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x5c) ^ 0x5c)) << 24) | ((uint32_t)(0x5c) << 16) | ((uint32_t)(0x5c) << 8) | (((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc2) ^ 0xc2)) << 24) | ((uint32_t)(0xc2) << 16) | ((uint32_t)(0xc2) << 8) | (((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd3) ^ 0xd3)) << 24) | ((uint32_t)(0xd3) << 16) | ((uint32_t)(0xd3) << 8) | (((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xac) ^ 0xac)) << 24) | ((uint32_t)(0xac) << 16) | ((uint32_t)(0xac) << 8) | (((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x62) ^ 0x62)) << 24) | ((uint32_t)(0x62) << 16) | ((uint32_t)(0x62) << 8) | (((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x91) ^ 0x91)) << 24) | ((uint32_t)(0x91) << 16) | ((uint32_t)(0x91) << 8) | (((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x95) ^ 0x95)) << 24) | ((uint32_t)(0x95) << 16) | ((uint32_t)(0x95) << 8) | (((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe4) ^ 0xe4)) << 24) | ((uint32_t)(0xe4) << 16) | ((uint32_t)(0xe4) << 8) | (((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x79) ^ 0x79)) << 24) | ((uint32_t)(0x79) << 16) | ((uint32_t)(0x79) << 8) | (((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe7) ^ 0xe7)) << 24) | ((uint32_t)(0xe7) << 16) | ((uint32_t)(0xe7) << 8) | (((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc8) ^ 0xc8)) << 24) | ((uint32_t)(0xc8) << 16) | ((uint32_t)(0xc8) << 8) | (((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x37) ^ 0x37)) << 24) | ((uint32_t)(0x37) << 16) | ((uint32_t)(0x37) << 8) | (((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x6d) ^ 0x6d)) << 24) | ((uint32_t)(0x6d) << 16) | ((uint32_t)(0x6d) << 8) | (((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x8d) ^ 0x8d)) << 24) | ((uint32_t)(0x8d) << 16) | ((uint32_t)(0x8d) << 8) | (((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd5) ^ 0xd5)) << 24) | ((uint32_t)(0xd5) << 16) | ((uint32_t)(0xd5) << 8) | (((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x4e) ^ 0x4e)) << 24) | ((uint32_t)(0x4e) << 16) | ((uint32_t)(0x4e) << 8) | (((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa9) ^ 0xa9)) << 24) | ((uint32_t)(0xa9) << 16) | ((uint32_t)(0xa9) << 8) | (((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x6c) ^ 0x6c)) << 24) | ((uint32_t)(0x6c) << 16) | ((uint32_t)(0x6c) << 8) | (((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x56) ^ 0x56)) << 24) | ((uint32_t)(0x56) << 16) | ((uint32_t)(0x56) << 8) | (((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf4) ^ 0xf4)) << 24) | ((uint32_t)(0xf4) << 16) | ((uint32_t)(0xf4) << 8) | (((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xea) ^ 0xea)) << 24) | ((uint32_t)(0xea) << 16) | ((uint32_t)(0xea) << 8) | (((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x65) ^ 0x65)) << 24) | ((uint32_t)(0x65) << 16) | ((uint32_t)(0x65) << 8) | (((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x7a) ^ 0x7a)) << 24) | ((uint32_t)(0x7a) << 16) | ((uint32_t)(0x7a) << 8) | (((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xae) ^ 0xae)) << 24) | ((uint32_t)(0xae) << 16) | ((uint32_t)(0xae) << 8) | (((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x08) ^ 0x08)) << 24) | ((uint32_t)(0x08) << 16) | ((uint32_t)(0x08) << 8) | (((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xba) ^ 0xba)) << 24) | ((uint32_t)(0xba) << 16) | ((uint32_t)(0xba) << 8) | (((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x78) ^ 0x78)) << 24) | ((uint32_t)(0x78) << 16) | ((uint32_t)(0x78) << 8) | (((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x25) ^ 0x25)) << 24) | ((uint32_t)(0x25) << 16) | ((uint32_t)(0x25) << 8) | (((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x2e) ^ 0x2e)) << 24) | ((uint32_t)(0x2e) << 16) | ((uint32_t)(0x2e) << 8) | (((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x1c) ^ 0x1c)) << 24) | ((uint32_t)(0x1c) << 16) | ((uint32_t)(0x1c) << 8) | (((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa6) ^ 0xa6)) << 24) | ((uint32_t)(0xa6) << 16) | ((uint32_t)(0xa6) << 8) | (((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb4) ^ 0xb4)) << 24) | ((uint32_t)(0xb4) << 16) | ((uint32_t)(0xb4) << 8) | (((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc6) ^ 0xc6)) << 24) | ((uint32_t)(0xc6) << 16) | ((uint32_t)(0xc6) << 8) | (((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe8) ^ 0xe8)) << 24) | ((uint32_t)(0xe8) << 16) | ((uint32_t)(0xe8) << 8) | (((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xdd) ^ 0xdd)) << 24) | ((uint32_t)(0xdd) << 16) | ((uint32_t)(0xdd) << 8) | (((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x74) ^ 0x74)) << 24) | ((uint32_t)(0x74) << 16) | ((uint32_t)(0x74) << 8) | (((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x1f) ^ 0x1f)) << 24) | ((uint32_t)(0x1f) << 16) | ((uint32_t)(0x1f) << 8) | (((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x4b) ^ 0x4b)) << 24) | ((uint32_t)(0x4b) << 16) | ((uint32_t)(0x4b) << 8) | (((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xbd) ^ 0xbd)) << 24) | ((uint32_t)(0xbd) << 16) | ((uint32_t)(0xbd) << 8) | (((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x8b) ^ 0x8b)) << 24) | ((uint32_t)(0x8b) << 16) | ((uint32_t)(0x8b) << 8) | (((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x8a) ^ 0x8a)) << 24) | ((uint32_t)(0x8a) << 16) | ((uint32_t)(0x8a) << 8) | (((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x70) ^ 0x70)) << 24) | ((uint32_t)(0x70) << 16) | ((uint32_t)(0x70) << 8) | (((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x3e) ^ 0x3e)) << 24) | ((uint32_t)(0x3e) << 16) | ((uint32_t)(0x3e) << 8) | (((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb5) ^ 0xb5)) << 24) | ((uint32_t)(0xb5) << 16) | ((uint32_t)(0xb5) << 8) | (((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x66) ^ 0x66)) << 24) | ((uint32_t)(0x66) << 16) | ((uint32_t)(0x66) << 8) | (((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x48) ^ 0x48)) << 24) | ((uint32_t)(0x48) << 16) | ((uint32_t)(0x48) << 8) | (((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x03) ^ 0x03)) << 24) | ((uint32_t)(0x03) << 16) | ((uint32_t)(0x03) << 8) | (((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf6) ^ 0xf6)) << 24) | ((uint32_t)(0xf6) << 16) | ((uint32_t)(0xf6) << 8) | (((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x0e) ^ 0x0e)) << 24) | ((uint32_t)(0x0e) << 16) | ((uint32_t)(0x0e) << 8) | (((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x61) ^ 0x61)) << 24) | ((uint32_t)(0x61) << 16) | ((uint32_t)(0x61) << 8) | (((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x35) ^ 0x35)) << 24) | ((uint32_t)(0x35) << 16) | ((uint32_t)(0x35) << 8) | (((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x57) ^ 0x57)) << 24) | ((uint32_t)(0x57) << 16) | ((uint32_t)(0x57) << 8) | (((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb9) ^ 0xb9)) << 24) | ((uint32_t)(0xb9) << 16) | ((uint32_t)(0xb9) << 8) | (((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x86) ^ 0x86)) << 24) | ((uint32_t)(0x86) << 16) | ((uint32_t)(0x86) << 8) | (((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xc1) ^ 0xc1)) << 24) | ((uint32_t)(0xc1) << 16) | ((uint32_t)(0xc1) << 8) | (((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x1d) ^ 0x1d)) << 24) | ((uint32_t)(0x1d) << 16) | ((uint32_t)(0x1d) << 8) | (((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x9e) ^ 0x9e)) << 24) | ((uint32_t)(0x9e) << 16) | ((uint32_t)(0x9e) << 8) | (((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe1) ^ 0xe1)) << 24) | ((uint32_t)(0xe1) << 16) | ((uint32_t)(0xe1) << 8) | (((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xf8) ^ 0xf8)) << 24) | ((uint32_t)(0xf8) << 16) | ((uint32_t)(0xf8) << 8) | (((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x98) ^ 0x98)) << 24) | ((uint32_t)(0x98) << 16) | ((uint32_t)(0x98) << 8) | (((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x11) ^ 0x11)) << 24) | ((uint32_t)(0x11) << 16) | ((uint32_t)(0x11) << 8) | (((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x69) ^ 0x69)) << 24) | ((uint32_t)(0x69) << 16) | ((uint32_t)(0x69) << 8) | (((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xd9) ^ 0xd9)) << 24) | ((uint32_t)(0xd9) << 16) | ((uint32_t)(0xd9) << 8) | (((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x8e) ^ 0x8e)) << 24) | ((uint32_t)(0x8e) << 16) | ((uint32_t)(0x8e) << 8) | (((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x94) ^ 0x94)) << 24) | ((uint32_t)(0x94) << 16) | ((uint32_t)(0x94) << 8) | (((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x9b) ^ 0x9b)) << 24) | ((uint32_t)(0x9b) << 16) | ((uint32_t)(0x9b) << 8) | (((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x1e) ^ 0x1e)) << 24) | ((uint32_t)(0x1e) << 16) | ((uint32_t)(0x1e) << 8) | (((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x87) ^ 0x87)) << 24) | ((uint32_t)(0x87) << 16) | ((uint32_t)(0x87) << 8) | (((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe9) ^ 0xe9)) << 24) | ((uint32_t)(0xe9) << 16) | ((uint32_t)(0xe9) << 8) | (((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xce) ^ 0xce)) << 24) | ((uint32_t)(0xce) << 16) | ((uint32_t)(0xce) << 8) | (((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x55) ^ 0x55)) << 24) | ((uint32_t)(0x55) << 16) | ((uint32_t)(0x55) << 8) | (((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x28) ^ 0x28)) << 24) | ((uint32_t)(0x28) << 16) | ((uint32_t)(0x28) << 8) | (((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xdf) ^ 0xdf)) << 24) | ((uint32_t)(0xdf) << 16) | ((uint32_t)(0xdf) << 8) | (((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x8c) ^ 0x8c)) << 24) | ((uint32_t)(0x8c) << 16) | ((uint32_t)(0x8c) << 8) | (((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xa1) ^ 0xa1)) << 24) | ((uint32_t)(0xa1) << 16) | ((uint32_t)(0xa1) << 8) | (((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x89) ^ 0x89)) << 24) | ((uint32_t)(0x89) << 16) | ((uint32_t)(0x89) << 8) | (((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x0d) ^ 0x0d)) << 24) | ((uint32_t)(0x0d) << 16) | ((uint32_t)(0x0d) << 8) | (((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xbf) ^ 0xbf)) << 24) | ((uint32_t)(0xbf) << 16) | ((uint32_t)(0xbf) << 8) | (((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xe6) ^ 0xe6)) << 24) | ((uint32_t)(0xe6) << 16) | ((uint32_t)(0xe6) << 8) | (((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x42) ^ 0x42)) << 24) | ((uint32_t)(0x42) << 16) | ((uint32_t)(0x42) << 8) | (((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x68) ^ 0x68)) << 24) | ((uint32_t)(0x68) << 16) | ((uint32_t)(0x68) << 8) | (((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x41) ^ 0x41)) << 24) | ((uint32_t)(0x41) << 16) | ((uint32_t)(0x41) << 8) | (((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x99) ^ 0x99)) << 24) | ((uint32_t)(0x99) << 16) | ((uint32_t)(0x99) << 8) | (((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x2d) ^ 0x2d)) << 24) | ((uint32_t)(0x2d) << 16) | ((uint32_t)(0x2d) << 8) | (((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x0f) ^ 0x0f)) << 24) | ((uint32_t)(0x0f) << 16) | ((uint32_t)(0x0f) << 8) | (((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xb0) ^ 0xb0)) << 24) | ((uint32_t)(0xb0) << 16) | ((uint32_t)(0xb0) << 8) | (((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x54) ^ 0x54)) << 24) | ((uint32_t)(0x54) << 16) | ((uint32_t)(0x54) << 8) | (((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0xbb) ^ 0xbb)) << 24) | ((uint32_t)(0xbb) << 16) | ((uint32_t)(0xbb) << 8) | (((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY)))), (((uint32_t)((f2(0x16) ^ 0x16)) << 24) | ((uint32_t)(0x16) << 16) | ((uint32_t)(0x16) << 8) | (((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))))},
-		{(((uint32_t)(0x63) << 24) | ((uint32_t)(0x63) << 16) | ((uint32_t)(((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x63) ^ 0x63))), (((uint32_t)(0x7c) << 24) | ((uint32_t)(0x7c) << 16) | ((uint32_t)(((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7c) ^ 0x7c))), (((uint32_t)(0x77) << 24) | ((uint32_t)(0x77) << 16) | ((uint32_t)(((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x77) ^ 0x77))), (((uint32_t)(0x7b) << 24) | ((uint32_t)(0x7b) << 16) | ((uint32_t)(((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7b) ^ 0x7b))), (((uint32_t)(0xf2) << 24) | ((uint32_t)(0xf2) << 16) | ((uint32_t)(((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf2) ^ 0xf2))), (((uint32_t)(0x6b) << 24) | ((uint32_t)(0x6b) << 16) | ((uint32_t)(((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6b) ^ 0x6b))), (((uint32_t)(0x6f) << 24) | ((uint32_t)(0x6f) << 16) | ((uint32_t)(((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6f) ^ 0x6f))), (((uint32_t)(0xc5) << 24) | ((uint32_t)(0xc5) << 16) | ((uint32_t)(((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc5) ^ 0xc5))), (((uint32_t)(0x30) << 24) | ((uint32_t)(0x30) << 16) | ((uint32_t)(((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x30) ^ 0x30))), (((uint32_t)(0x01) << 24) | ((uint32_t)(0x01) << 16) | ((uint32_t)(((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x01) ^ 0x01))), (((uint32_t)(0x67) << 24) | ((uint32_t)(0x67) << 16) | ((uint32_t)(((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x67) ^ 0x67))), (((uint32_t)(0x2b) << 24) | ((uint32_t)(0x2b) << 16) | ((uint32_t)(((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2b) ^ 0x2b))), (((uint32_t)(0xfe) << 24) | ((uint32_t)(0xfe) << 16) | ((uint32_t)(((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfe) ^ 0xfe))), (((uint32_t)(0xd7) << 24) | ((uint32_t)(0xd7) << 16) | ((uint32_t)(((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd7) ^ 0xd7))), (((uint32_t)(0xab) << 24) | ((uint32_t)(0xab) << 16) | ((uint32_t)(((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xab) ^ 0xab))), (((uint32_t)(0x76) << 24) | ((uint32_t)(0x76) << 16) | ((uint32_t)(((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x76) ^ 0x76))), (((uint32_t)(0xca) << 24) | ((uint32_t)(0xca) << 16) | ((uint32_t)(((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xca) ^ 0xca))), (((uint32_t)(0x82) << 24) | ((uint32_t)(0x82) << 16) | ((uint32_t)(((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x82) ^ 0x82))), (((uint32_t)(0xc9) << 24) | ((uint32_t)(0xc9) << 16) | ((uint32_t)(((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc9) ^ 0xc9))), (((uint32_t)(0x7d) << 24) | ((uint32_t)(0x7d) << 16) | ((uint32_t)(((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7d) ^ 0x7d))), (((uint32_t)(0xfa) << 24) | ((uint32_t)(0xfa) << 16) | ((uint32_t)(((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfa) ^ 0xfa))), (((uint32_t)(0x59) << 24) | ((uint32_t)(0x59) << 16) | ((uint32_t)(((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x59) ^ 0x59))), (((uint32_t)(0x47) << 24) | ((uint32_t)(0x47) << 16) | ((uint32_t)(((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x47) ^ 0x47))), (((uint32_t)(0xf0) << 24) | ((uint32_t)(0xf0) << 16) | ((uint32_t)(((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf0) ^ 0xf0))), (((uint32_t)(0xad) << 24) | ((uint32_t)(0xad) << 16) | ((uint32_t)(((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xad) ^ 0xad))), (((uint32_t)(0xd4) << 24) | ((uint32_t)(0xd4) << 16) | ((uint32_t)(((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd4) ^ 0xd4))), (((uint32_t)(0xa2) << 24) | ((uint32_t)(0xa2) << 16) | ((uint32_t)(((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa2) ^ 0xa2))), (((uint32_t)(0xaf) << 24) | ((uint32_t)(0xaf) << 16) | ((uint32_t)(((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xaf) ^ 0xaf))), (((uint32_t)(0x9c) << 24) | ((uint32_t)(0x9c) << 16) | ((uint32_t)(((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9c) ^ 0x9c))), (((uint32_t)(0xa4) << 24) | ((uint32_t)(0xa4) << 16) | ((uint32_t)(((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa4) ^ 0xa4))), (((uint32_t)(0x72) << 24) | ((uint32_t)(0x72) << 16) | ((uint32_t)(((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x72) ^ 0x72))), (((uint32_t)(0xc0) << 24) | ((uint32_t)(0xc0) << 16) | ((uint32_t)(((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc0) ^ 0xc0))), (((uint32_t)(0xb7) << 24) | ((uint32_t)(0xb7) << 16) | ((uint32_t)(((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb7) ^ 0xb7))), (((uint32_t)(0xfd) << 24) | ((uint32_t)(0xfd) << 16) | ((uint32_t)(((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfd) ^ 0xfd))), (((uint32_t)(0x93) << 24) | ((uint32_t)(0x93) << 16) | ((uint32_t)(((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x93) ^ 0x93))), (((uint32_t)(0x26) << 24) | ((uint32_t)(0x26) << 16) | ((uint32_t)(((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x26) ^ 0x26))), (((uint32_t)(0x36) << 24) | ((uint32_t)(0x36) << 16) | ((uint32_t)(((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x36) ^ 0x36))), (((uint32_t)(0x3f) << 24) | ((uint32_t)(0x3f) << 16) | ((uint32_t)(((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3f) ^ 0x3f))), (((uint32_t)(0xf7) << 24) | ((uint32_t)(0xf7) << 16) | ((uint32_t)(((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf7) ^ 0xf7))), (((uint32_t)(0xcc) << 24) | ((uint32_t)(0xcc) << 16) | ((uint32_t)(((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xcc) ^ 0xcc))), (((uint32_t)(0x34) << 24) | ((uint32_t)(0x34) << 16) | ((uint32_t)(((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x34) ^ 0x34))), (((uint32_t)(0xa5) << 24) | ((uint32_t)(0xa5) << 16) | ((uint32_t)(((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa5) ^ 0xa5))), (((uint32_t)(0xe5) << 24) | ((uint32_t)(0xe5) << 16) | ((uint32_t)(((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe5) ^ 0xe5))), (((uint32_t)(0xf1) << 24) | ((uint32_t)(0xf1) << 16) | ((uint32_t)(((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf1) ^ 0xf1))), (((uint32_t)(0x71) << 24) | ((uint32_t)(0x71) << 16) | ((uint32_t)(((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x71) ^ 0x71))), (((uint32_t)(0xd8) << 24) | ((uint32_t)(0xd8) << 16) | ((uint32_t)(((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd8) ^ 0xd8))), (((uint32_t)(0x31) << 24) | ((uint32_t)(0x31) << 16) | ((uint32_t)(((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x31) ^ 0x31))), (((uint32_t)(0x15) << 24) | ((uint32_t)(0x15) << 16) | ((uint32_t)(((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x15) ^ 0x15))), (((uint32_t)(0x04) << 24) | ((uint32_t)(0x04) << 16) | ((uint32_t)(((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x04) ^ 0x04))), (((uint32_t)(0xc7) << 24) | ((uint32_t)(0xc7) << 16) | ((uint32_t)(((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc7) ^ 0xc7))), (((uint32_t)(0x23) << 24) | ((uint32_t)(0x23) << 16) | ((uint32_t)(((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x23) ^ 0x23))), (((uint32_t)(0xc3) << 24) | ((uint32_t)(0xc3) << 16) | ((uint32_t)(((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc3) ^ 0xc3))), (((uint32_t)(0x18) << 24) | ((uint32_t)(0x18) << 16) | ((uint32_t)(((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x18) ^ 0x18))), (((uint32_t)(0x96) << 24) | ((uint32_t)(0x96) << 16) | ((uint32_t)(((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x96) ^ 0x96))), (((uint32_t)(0x05) << 24) | ((uint32_t)(0x05) << 16) | ((uint32_t)(((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x05) ^ 0x05))), (((uint32_t)(0x9a) << 24) | ((uint32_t)(0x9a) << 16) | ((uint32_t)(((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9a) ^ 0x9a))), (((uint32_t)(0x07) << 24) | ((uint32_t)(0x07) << 16) | ((uint32_t)(((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x07) ^ 0x07))), (((uint32_t)(0x12) << 24) | ((uint32_t)(0x12) << 16) | ((uint32_t)(((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x12) ^ 0x12))), (((uint32_t)(0x80) << 24) | ((uint32_t)(0x80) << 16) | ((uint32_t)(((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x80) ^ 0x80))), (((uint32_t)(0xe2) << 24) | ((uint32_t)(0xe2) << 16) | ((uint32_t)(((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe2) ^ 0xe2))), (((uint32_t)(0xeb) << 24) | ((uint32_t)(0xeb) << 16) | ((uint32_t)(((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xeb) ^ 0xeb))), (((uint32_t)(0x27) << 24) | ((uint32_t)(0x27) << 16) | ((uint32_t)(((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x27) ^ 0x27))), (((uint32_t)(0xb2) << 24) | ((uint32_t)(0xb2) << 16) | ((uint32_t)(((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb2) ^ 0xb2))), (((uint32_t)(0x75) << 24) | ((uint32_t)(0x75) << 16) | ((uint32_t)(((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x75) ^ 0x75))), (((uint32_t)(0x09) << 24) | ((uint32_t)(0x09) << 16) | ((uint32_t)(((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x09) ^ 0x09))), (((uint32_t)(0x83) << 24) | ((uint32_t)(0x83) << 16) | ((uint32_t)(((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x83) ^ 0x83))), (((uint32_t)(0x2c) << 24) | ((uint32_t)(0x2c) << 16) | ((uint32_t)(((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2c) ^ 0x2c))), (((uint32_t)(0x1a) << 24) | ((uint32_t)(0x1a) << 16) | ((uint32_t)(((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1a) ^ 0x1a))), (((uint32_t)(0x1b) << 24) | ((uint32_t)(0x1b) << 16) | ((uint32_t)(((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1b) ^ 0x1b))), (((uint32_t)(0x6e) << 24) | ((uint32_t)(0x6e) << 16) | ((uint32_t)(((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6e) ^ 0x6e))), (((uint32_t)(0x5a) << 24) | ((uint32_t)(0x5a) << 16) | ((uint32_t)(((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5a) ^ 0x5a))), (((uint32_t)(0xa0) << 24) | ((uint32_t)(0xa0) << 16) | ((uint32_t)(((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa0) ^ 0xa0))), (((uint32_t)(0x52) << 24) | ((uint32_t)(0x52) << 16) | ((uint32_t)(((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x52) ^ 0x52))), (((uint32_t)(0x3b) << 24) | ((uint32_t)(0x3b) << 16) | ((uint32_t)(((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3b) ^ 0x3b))), (((uint32_t)(0xd6) << 24) | ((uint32_t)(0xd6) << 16) | ((uint32_t)(((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd6) ^ 0xd6))), (((uint32_t)(0xb3) << 24) | ((uint32_t)(0xb3) << 16) | ((uint32_t)(((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb3) ^ 0xb3))), (((uint32_t)(0x29) << 24) | ((uint32_t)(0x29) << 16) | ((uint32_t)(((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x29) ^ 0x29))), (((uint32_t)(0xe3) << 24) | ((uint32_t)(0xe3) << 16) | ((uint32_t)(((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe3) ^ 0xe3))), (((uint32_t)(0x2f) << 24) | ((uint32_t)(0x2f) << 16) | ((uint32_t)(((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2f) ^ 0x2f))), (((uint32_t)(0x84) << 24) | ((uint32_t)(0x84) << 16) | ((uint32_t)(((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x84) ^ 0x84))), (((uint32_t)(0x53) << 24) | ((uint32_t)(0x53) << 16) | ((uint32_t)(((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x53) ^ 0x53))), (((uint32_t)(0xd1) << 24) | ((uint32_t)(0xd1) << 16) | ((uint32_t)(((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd1) ^ 0xd1))), (((uint32_t)(0x00) << 24) | ((uint32_t)(0x00) << 16) | ((uint32_t)(((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x00) ^ 0x00))), (((uint32_t)(0xed) << 24) | ((uint32_t)(0xed) << 16) | ((uint32_t)(((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xed) ^ 0xed))), (((uint32_t)(0x20) << 24) | ((uint32_t)(0x20) << 16) | ((uint32_t)(((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x20) ^ 0x20))), (((uint32_t)(0xfc) << 24) | ((uint32_t)(0xfc) << 16) | ((uint32_t)(((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfc) ^ 0xfc))), (((uint32_t)(0xb1) << 24) | ((uint32_t)(0xb1) << 16) | ((uint32_t)(((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb1) ^ 0xb1))), (((uint32_t)(0x5b) << 24) | ((uint32_t)(0x5b) << 16) | ((uint32_t)(((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5b) ^ 0x5b))), (((uint32_t)(0x6a) << 24) | ((uint32_t)(0x6a) << 16) | ((uint32_t)(((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6a) ^ 0x6a))), (((uint32_t)(0xcb) << 24) | ((uint32_t)(0xcb) << 16) | ((uint32_t)(((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xcb) ^ 0xcb))), (((uint32_t)(0xbe) << 24) | ((uint32_t)(0xbe) << 16) | ((uint32_t)(((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbe) ^ 0xbe))), (((uint32_t)(0x39) << 24) | ((uint32_t)(0x39) << 16) | ((uint32_t)(((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x39) ^ 0x39))), (((uint32_t)(0x4a) << 24) | ((uint32_t)(0x4a) << 16) | ((uint32_t)(((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4a) ^ 0x4a))), (((uint32_t)(0x4c) << 24) | ((uint32_t)(0x4c) << 16) | ((uint32_t)(((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4c) ^ 0x4c))), (((uint32_t)(0x58) << 24) | ((uint32_t)(0x58) << 16) | ((uint32_t)(((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x58) ^ 0x58))), (((uint32_t)(0xcf) << 24) | ((uint32_t)(0xcf) << 16) | ((uint32_t)(((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xcf) ^ 0xcf))), (((uint32_t)(0xd0) << 24) | ((uint32_t)(0xd0) << 16) | ((uint32_t)(((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd0) ^ 0xd0))), (((uint32_t)(0xef) << 24) | ((uint32_t)(0xef) << 16) | ((uint32_t)(((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xef) ^ 0xef))), (((uint32_t)(0xaa) << 24) | ((uint32_t)(0xaa) << 16) | ((uint32_t)(((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xaa) ^ 0xaa))), (((uint32_t)(0xfb) << 24) | ((uint32_t)(0xfb) << 16) | ((uint32_t)(((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfb) ^ 0xfb))), (((uint32_t)(0x43) << 24) | ((uint32_t)(0x43) << 16) | ((uint32_t)(((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x43) ^ 0x43))), (((uint32_t)(0x4d) << 24) | ((uint32_t)(0x4d) << 16) | ((uint32_t)(((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4d) ^ 0x4d))), (((uint32_t)(0x33) << 24) | ((uint32_t)(0x33) << 16) | ((uint32_t)(((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x33) ^ 0x33))), (((uint32_t)(0x85) << 24) | ((uint32_t)(0x85) << 16) | ((uint32_t)(((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x85) ^ 0x85))), (((uint32_t)(0x45) << 24) | ((uint32_t)(0x45) << 16) | ((uint32_t)(((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x45) ^ 0x45))), (((uint32_t)(0xf9) << 24) | ((uint32_t)(0xf9) << 16) | ((uint32_t)(((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf9) ^ 0xf9))), (((uint32_t)(0x02) << 24) | ((uint32_t)(0x02) << 16) | ((uint32_t)(((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x02) ^ 0x02))), (((uint32_t)(0x7f) << 24) | ((uint32_t)(0x7f) << 16) | ((uint32_t)(((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7f) ^ 0x7f))), (((uint32_t)(0x50) << 24) | ((uint32_t)(0x50) << 16) | ((uint32_t)(((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x50) ^ 0x50))), (((uint32_t)(0x3c) << 24) | ((uint32_t)(0x3c) << 16) | ((uint32_t)(((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3c) ^ 0x3c))), (((uint32_t)(0x9f) << 24) | ((uint32_t)(0x9f) << 16) | ((uint32_t)(((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9f) ^ 0x9f))), (((uint32_t)(0xa8) << 24) | ((uint32_t)(0xa8) << 16) | ((uint32_t)(((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa8) ^ 0xa8))), (((uint32_t)(0x51) << 24) | ((uint32_t)(0x51) << 16) | ((uint32_t)(((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x51) ^ 0x51))), (((uint32_t)(0xa3) << 24) | ((uint32_t)(0xa3) << 16) | ((uint32_t)(((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa3) ^ 0xa3))), (((uint32_t)(0x40) << 24) | ((uint32_t)(0x40) << 16) | ((uint32_t)(((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x40) ^ 0x40))), (((uint32_t)(0x8f) << 24) | ((uint32_t)(0x8f) << 16) | ((uint32_t)(((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8f) ^ 0x8f))), (((uint32_t)(0x92) << 24) | ((uint32_t)(0x92) << 16) | ((uint32_t)(((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x92) ^ 0x92))), (((uint32_t)(0x9d) << 24) | ((uint32_t)(0x9d) << 16) | ((uint32_t)(((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9d) ^ 0x9d))), (((uint32_t)(0x38) << 24) | ((uint32_t)(0x38) << 16) | ((uint32_t)(((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x38) ^ 0x38))), (((uint32_t)(0xf5) << 24) | ((uint32_t)(0xf5) << 16) | ((uint32_t)(((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf5) ^ 0xf5))), (((uint32_t)(0xbc) << 24) | ((uint32_t)(0xbc) << 16) | ((uint32_t)(((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbc) ^ 0xbc))), (((uint32_t)(0xb6) << 24) | ((uint32_t)(0xb6) << 16) | ((uint32_t)(((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb6) ^ 0xb6))), (((uint32_t)(0xda) << 24) | ((uint32_t)(0xda) << 16) | ((uint32_t)(((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xda) ^ 0xda))), (((uint32_t)(0x21) << 24) | ((uint32_t)(0x21) << 16) | ((uint32_t)(((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x21) ^ 0x21))), (((uint32_t)(0x10) << 24) | ((uint32_t)(0x10) << 16) | ((uint32_t)(((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x10) ^ 0x10))), (((uint32_t)(0xff) << 24) | ((uint32_t)(0xff) << 16) | ((uint32_t)(((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xff) ^ 0xff))), (((uint32_t)(0xf3) << 24) | ((uint32_t)(0xf3) << 16) | ((uint32_t)(((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf3) ^ 0xf3))), (((uint32_t)(0xd2) << 24) | ((uint32_t)(0xd2) << 16) | ((uint32_t)(((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd2) ^ 0xd2))), (((uint32_t)(0xcd) << 24) | ((uint32_t)(0xcd) << 16) | ((uint32_t)(((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xcd) ^ 0xcd))), (((uint32_t)(0x0c) << 24) | ((uint32_t)(0x0c) << 16) | ((uint32_t)(((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0c) ^ 0x0c))), (((uint32_t)(0x13) << 24) | ((uint32_t)(0x13) << 16) | ((uint32_t)(((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x13) ^ 0x13))), (((uint32_t)(0xec) << 24) | ((uint32_t)(0xec) << 16) | ((uint32_t)(((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xec) ^ 0xec))), (((uint32_t)(0x5f) << 24) | ((uint32_t)(0x5f) << 16) | ((uint32_t)(((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5f) ^ 0x5f))), (((uint32_t)(0x97) << 24) | ((uint32_t)(0x97) << 16) | ((uint32_t)(((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x97) ^ 0x97))), (((uint32_t)(0x44) << 24) | ((uint32_t)(0x44) << 16) | ((uint32_t)(((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x44) ^ 0x44))), (((uint32_t)(0x17) << 24) | ((uint32_t)(0x17) << 16) | ((uint32_t)(((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x17) ^ 0x17))), (((uint32_t)(0xc4) << 24) | ((uint32_t)(0xc4) << 16) | ((uint32_t)(((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc4) ^ 0xc4))), (((uint32_t)(0xa7) << 24) | ((uint32_t)(0xa7) << 16) | ((uint32_t)(((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa7) ^ 0xa7))), (((uint32_t)(0x7e) << 24) | ((uint32_t)(0x7e) << 16) | ((uint32_t)(((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7e) ^ 0x7e))), (((uint32_t)(0x3d) << 24) | ((uint32_t)(0x3d) << 16) | ((uint32_t)(((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3d) ^ 0x3d))), (((uint32_t)(0x64) << 24) | ((uint32_t)(0x64) << 16) | ((uint32_t)(((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x64) ^ 0x64))), (((uint32_t)(0x5d) << 24) | ((uint32_t)(0x5d) << 16) | ((uint32_t)(((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5d) ^ 0x5d))), (((uint32_t)(0x19) << 24) | ((uint32_t)(0x19) << 16) | ((uint32_t)(((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x19) ^ 0x19))), (((uint32_t)(0x73) << 24) | ((uint32_t)(0x73) << 16) | ((uint32_t)(((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x73) ^ 0x73))), (((uint32_t)(0x60) << 24) | ((uint32_t)(0x60) << 16) | ((uint32_t)(((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x60) ^ 0x60))), (((uint32_t)(0x81) << 24) | ((uint32_t)(0x81) << 16) | ((uint32_t)(((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x81) ^ 0x81))), (((uint32_t)(0x4f) << 24) | ((uint32_t)(0x4f) << 16) | ((uint32_t)(((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4f) ^ 0x4f))), (((uint32_t)(0xdc) << 24) | ((uint32_t)(0xdc) << 16) | ((uint32_t)(((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xdc) ^ 0xdc))), (((uint32_t)(0x22) << 24) | ((uint32_t)(0x22) << 16) | ((uint32_t)(((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x22) ^ 0x22))), (((uint32_t)(0x2a) << 24) | ((uint32_t)(0x2a) << 16) | ((uint32_t)(((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2a) ^ 0x2a))), (((uint32_t)(0x90) << 24) | ((uint32_t)(0x90) << 16) | ((uint32_t)(((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x90) ^ 0x90))), (((uint32_t)(0x88) << 24) | ((uint32_t)(0x88) << 16) | ((uint32_t)(((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x88) ^ 0x88))), (((uint32_t)(0x46) << 24) | ((uint32_t)(0x46) << 16) | ((uint32_t)(((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x46) ^ 0x46))), (((uint32_t)(0xee) << 24) | ((uint32_t)(0xee) << 16) | ((uint32_t)(((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xee) ^ 0xee))), (((uint32_t)(0xb8) << 24) | ((uint32_t)(0xb8) << 16) | ((uint32_t)(((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb8) ^ 0xb8))), (((uint32_t)(0x14) << 24) | ((uint32_t)(0x14) << 16) | ((uint32_t)(((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x14) ^ 0x14))), (((uint32_t)(0xde) << 24) | ((uint32_t)(0xde) << 16) | ((uint32_t)(((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xde) ^ 0xde))), (((uint32_t)(0x5e) << 24) | ((uint32_t)(0x5e) << 16) | ((uint32_t)(((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5e) ^ 0x5e))), (((uint32_t)(0x0b) << 24) | ((uint32_t)(0x0b) << 16) | ((uint32_t)(((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0b) ^ 0x0b))), (((uint32_t)(0xdb) << 24) | ((uint32_t)(0xdb) << 16) | ((uint32_t)(((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xdb) ^ 0xdb))), (((uint32_t)(0xe0) << 24) | ((uint32_t)(0xe0) << 16) | ((uint32_t)(((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe0) ^ 0xe0))), (((uint32_t)(0x32) << 24) | ((uint32_t)(0x32) << 16) | ((uint32_t)(((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x32) ^ 0x32))), (((uint32_t)(0x3a) << 24) | ((uint32_t)(0x3a) << 16) | ((uint32_t)(((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3a) ^ 0x3a))), (((uint32_t)(0x0a) << 24) | ((uint32_t)(0x0a) << 16) | ((uint32_t)(((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0a) ^ 0x0a))), (((uint32_t)(0x49) << 24) | ((uint32_t)(0x49) << 16) | ((uint32_t)(((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x49) ^ 0x49))), (((uint32_t)(0x06) << 24) | ((uint32_t)(0x06) << 16) | ((uint32_t)(((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x06) ^ 0x06))), (((uint32_t)(0x24) << 24) | ((uint32_t)(0x24) << 16) | ((uint32_t)(((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x24) ^ 0x24))), (((uint32_t)(0x5c) << 24) | ((uint32_t)(0x5c) << 16) | ((uint32_t)(((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5c) ^ 0x5c))), (((uint32_t)(0xc2) << 24) | ((uint32_t)(0xc2) << 16) | ((uint32_t)(((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc2) ^ 0xc2))), (((uint32_t)(0xd3) << 24) | ((uint32_t)(0xd3) << 16) | ((uint32_t)(((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd3) ^ 0xd3))), (((uint32_t)(0xac) << 24) | ((uint32_t)(0xac) << 16) | ((uint32_t)(((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xac) ^ 0xac))), (((uint32_t)(0x62) << 24) | ((uint32_t)(0x62) << 16) | ((uint32_t)(((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x62) ^ 0x62))), (((uint32_t)(0x91) << 24) | ((uint32_t)(0x91) << 16) | ((uint32_t)(((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x91) ^ 0x91))), (((uint32_t)(0x95) << 24) | ((uint32_t)(0x95) << 16) | ((uint32_t)(((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x95) ^ 0x95))), (((uint32_t)(0xe4) << 24) | ((uint32_t)(0xe4) << 16) | ((uint32_t)(((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe4) ^ 0xe4))), (((uint32_t)(0x79) << 24) | ((uint32_t)(0x79) << 16) | ((uint32_t)(((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x79) ^ 0x79))), (((uint32_t)(0xe7) << 24) | ((uint32_t)(0xe7) << 16) | ((uint32_t)(((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe7) ^ 0xe7))), (((uint32_t)(0xc8) << 24) | ((uint32_t)(0xc8) << 16) | ((uint32_t)(((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc8) ^ 0xc8))), (((uint32_t)(0x37) << 24) | ((uint32_t)(0x37) << 16) | ((uint32_t)(((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x37) ^ 0x37))), (((uint32_t)(0x6d) << 24) | ((uint32_t)(0x6d) << 16) | ((uint32_t)(((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6d) ^ 0x6d))), (((uint32_t)(0x8d) << 24) | ((uint32_t)(0x8d) << 16) | ((uint32_t)(((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8d) ^ 0x8d))), (((uint32_t)(0xd5) << 24) | ((uint32_t)(0xd5) << 16) | ((uint32_t)(((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd5) ^ 0xd5))), (((uint32_t)(0x4e) << 24) | ((uint32_t)(0x4e) << 16) | ((uint32_t)(((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4e) ^ 0x4e))), (((uint32_t)(0xa9) << 24) | ((uint32_t)(0xa9) << 16) | ((uint32_t)(((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa9) ^ 0xa9))), (((uint32_t)(0x6c) << 24) | ((uint32_t)(0x6c) << 16) | ((uint32_t)(((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6c) ^ 0x6c))), (((uint32_t)(0x56) << 24) | ((uint32_t)(0x56) << 16) | ((uint32_t)(((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x56) ^ 0x56))), (((uint32_t)(0xf4) << 24) | ((uint32_t)(0xf4) << 16) | ((uint32_t)(((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf4) ^ 0xf4))), (((uint32_t)(0xea) << 24) | ((uint32_t)(0xea) << 16) | ((uint32_t)(((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xea) ^ 0xea))), (((uint32_t)(0x65) << 24) | ((uint32_t)(0x65) << 16) | ((uint32_t)(((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x65) ^ 0x65))), (((uint32_t)(0x7a) << 24) | ((uint32_t)(0x7a) << 16) | ((uint32_t)(((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7a) ^ 0x7a))), (((uint32_t)(0xae) << 24) | ((uint32_t)(0xae) << 16) | ((uint32_t)(((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xae) ^ 0xae))), (((uint32_t)(0x08) << 24) | ((uint32_t)(0x08) << 16) | ((uint32_t)(((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x08) ^ 0x08))), (((uint32_t)(0xba) << 24) | ((uint32_t)(0xba) << 16) | ((uint32_t)(((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xba) ^ 0xba))), (((uint32_t)(0x78) << 24) | ((uint32_t)(0x78) << 16) | ((uint32_t)(((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x78) ^ 0x78))), (((uint32_t)(0x25) << 24) | ((uint32_t)(0x25) << 16) | ((uint32_t)(((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x25) ^ 0x25))), (((uint32_t)(0x2e) << 24) | ((uint32_t)(0x2e) << 16) | ((uint32_t)(((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2e) ^ 0x2e))), (((uint32_t)(0x1c) << 24) | ((uint32_t)(0x1c) << 16) | ((uint32_t)(((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1c) ^ 0x1c))), (((uint32_t)(0xa6) << 24) | ((uint32_t)(0xa6) << 16) | ((uint32_t)(((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa6) ^ 0xa6))), (((uint32_t)(0xb4) << 24) | ((uint32_t)(0xb4) << 16) | ((uint32_t)(((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb4) ^ 0xb4))), (((uint32_t)(0xc6) << 24) | ((uint32_t)(0xc6) << 16) | ((uint32_t)(((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc6) ^ 0xc6))), (((uint32_t)(0xe8) << 24) | ((uint32_t)(0xe8) << 16) | ((uint32_t)(((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe8) ^ 0xe8))), (((uint32_t)(0xdd) << 24) | ((uint32_t)(0xdd) << 16) | ((uint32_t)(((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xdd) ^ 0xdd))), (((uint32_t)(0x74) << 24) | ((uint32_t)(0x74) << 16) | ((uint32_t)(((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x74) ^ 0x74))), (((uint32_t)(0x1f) << 24) | ((uint32_t)(0x1f) << 16) | ((uint32_t)(((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1f) ^ 0x1f))), (((uint32_t)(0x4b) << 24) | ((uint32_t)(0x4b) << 16) | ((uint32_t)(((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4b) ^ 0x4b))), (((uint32_t)(0xbd) << 24) | ((uint32_t)(0xbd) << 16) | ((uint32_t)(((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbd) ^ 0xbd))), (((uint32_t)(0x8b) << 24) | ((uint32_t)(0x8b) << 16) | ((uint32_t)(((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8b) ^ 0x8b))), (((uint32_t)(0x8a) << 24) | ((uint32_t)(0x8a) << 16) | ((uint32_t)(((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8a) ^ 0x8a))), (((uint32_t)(0x70) << 24) | ((uint32_t)(0x70) << 16) | ((uint32_t)(((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x70) ^ 0x70))), (((uint32_t)(0x3e) << 24) | ((uint32_t)(0x3e) << 16) | ((uint32_t)(((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3e) ^ 0x3e))), (((uint32_t)(0xb5) << 24) | ((uint32_t)(0xb5) << 16) | ((uint32_t)(((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb5) ^ 0xb5))), (((uint32_t)(0x66) << 24) | ((uint32_t)(0x66) << 16) | ((uint32_t)(((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x66) ^ 0x66))), (((uint32_t)(0x48) << 24) | ((uint32_t)(0x48) << 16) | ((uint32_t)(((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x48) ^ 0x48))), (((uint32_t)(0x03) << 24) | ((uint32_t)(0x03) << 16) | ((uint32_t)(((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x03) ^ 0x03))), (((uint32_t)(0xf6) << 24) | ((uint32_t)(0xf6) << 16) | ((uint32_t)(((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf6) ^ 0xf6))), (((uint32_t)(0x0e) << 24) | ((uint32_t)(0x0e) << 16) | ((uint32_t)(((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0e) ^ 0x0e))), (((uint32_t)(0x61) << 24) | ((uint32_t)(0x61) << 16) | ((uint32_t)(((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x61) ^ 0x61))), (((uint32_t)(0x35) << 24) | ((uint32_t)(0x35) << 16) | ((uint32_t)(((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x35) ^ 0x35))), (((uint32_t)(0x57) << 24) | ((uint32_t)(0x57) << 16) | ((uint32_t)(((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x57) ^ 0x57))), (((uint32_t)(0xb9) << 24) | ((uint32_t)(0xb9) << 16) | ((uint32_t)(((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb9) ^ 0xb9))), (((uint32_t)(0x86) << 24) | ((uint32_t)(0x86) << 16) | ((uint32_t)(((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x86) ^ 0x86))), (((uint32_t)(0xc1) << 24) | ((uint32_t)(0xc1) << 16) | ((uint32_t)(((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc1) ^ 0xc1))), (((uint32_t)(0x1d) << 24) | ((uint32_t)(0x1d) << 16) | ((uint32_t)(((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1d) ^ 0x1d))), (((uint32_t)(0x9e) << 24) | ((uint32_t)(0x9e) << 16) | ((uint32_t)(((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9e) ^ 0x9e))), (((uint32_t)(0xe1) << 24) | ((uint32_t)(0xe1) << 16) | ((uint32_t)(((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe1) ^ 0xe1))), (((uint32_t)(0xf8) << 24) | ((uint32_t)(0xf8) << 16) | ((uint32_t)(((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf8) ^ 0xf8))), (((uint32_t)(0x98) << 24) | ((uint32_t)(0x98) << 16) | ((uint32_t)(((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x98) ^ 0x98))), (((uint32_t)(0x11) << 24) | ((uint32_t)(0x11) << 16) | ((uint32_t)(((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x11) ^ 0x11))), (((uint32_t)(0x69) << 24) | ((uint32_t)(0x69) << 16) | ((uint32_t)(((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x69) ^ 0x69))), (((uint32_t)(0xd9) << 24) | ((uint32_t)(0xd9) << 16) | ((uint32_t)(((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd9) ^ 0xd9))), (((uint32_t)(0x8e) << 24) | ((uint32_t)(0x8e) << 16) | ((uint32_t)(((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8e) ^ 0x8e))), (((uint32_t)(0x94) << 24) | ((uint32_t)(0x94) << 16) | ((uint32_t)(((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x94) ^ 0x94))), (((uint32_t)(0x9b) << 24) | ((uint32_t)(0x9b) << 16) | ((uint32_t)(((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9b) ^ 0x9b))), (((uint32_t)(0x1e) << 24) | ((uint32_t)(0x1e) << 16) | ((uint32_t)(((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1e) ^ 0x1e))), (((uint32_t)(0x87) << 24) | ((uint32_t)(0x87) << 16) | ((uint32_t)(((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x87) ^ 0x87))), (((uint32_t)(0xe9) << 24) | ((uint32_t)(0xe9) << 16) | ((uint32_t)(((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe9) ^ 0xe9))), (((uint32_t)(0xce) << 24) | ((uint32_t)(0xce) << 16) | ((uint32_t)(((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xce) ^ 0xce))), (((uint32_t)(0x55) << 24) | ((uint32_t)(0x55) << 16) | ((uint32_t)(((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x55) ^ 0x55))), (((uint32_t)(0x28) << 24) | ((uint32_t)(0x28) << 16) | ((uint32_t)(((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x28) ^ 0x28))), (((uint32_t)(0xdf) << 24) | ((uint32_t)(0xdf) << 16) | ((uint32_t)(((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xdf) ^ 0xdf))), (((uint32_t)(0x8c) << 24) | ((uint32_t)(0x8c) << 16) | ((uint32_t)(((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8c) ^ 0x8c))), (((uint32_t)(0xa1) << 24) | ((uint32_t)(0xa1) << 16) | ((uint32_t)(((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa1) ^ 0xa1))), (((uint32_t)(0x89) << 24) | ((uint32_t)(0x89) << 16) | ((uint32_t)(((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x89) ^ 0x89))), (((uint32_t)(0x0d) << 24) | ((uint32_t)(0x0d) << 16) | ((uint32_t)(((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0d) ^ 0x0d))), (((uint32_t)(0xbf) << 24) | ((uint32_t)(0xbf) << 16) | ((uint32_t)(((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbf) ^ 0xbf))), (((uint32_t)(0xe6) << 24) | ((uint32_t)(0xe6) << 16) | ((uint32_t)(((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe6) ^ 0xe6))), (((uint32_t)(0x42) << 24) | ((uint32_t)(0x42) << 16) | ((uint32_t)(((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x42) ^ 0x42))), (((uint32_t)(0x68) << 24) | ((uint32_t)(0x68) << 16) | ((uint32_t)(((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x68) ^ 0x68))), (((uint32_t)(0x41) << 24) | ((uint32_t)(0x41) << 16) | ((uint32_t)(((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x41) ^ 0x41))), (((uint32_t)(0x99) << 24) | ((uint32_t)(0x99) << 16) | ((uint32_t)(((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x99) ^ 0x99))), (((uint32_t)(0x2d) << 24) | ((uint32_t)(0x2d) << 16) | ((uint32_t)(((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2d) ^ 0x2d))), (((uint32_t)(0x0f) << 24) | ((uint32_t)(0x0f) << 16) | ((uint32_t)(((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0f) ^ 0x0f))), (((uint32_t)(0xb0) << 24) | ((uint32_t)(0xb0) << 16) | ((uint32_t)(((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb0) ^ 0xb0))), (((uint32_t)(0x54) << 24) | ((uint32_t)(0x54) << 16) | ((uint32_t)(((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x54) ^ 0x54))), (((uint32_t)(0xbb) << 24) | ((uint32_t)(0xbb) << 16) | ((uint32_t)(((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbb) ^ 0xbb))), (((uint32_t)(0x16) << 24) | ((uint32_t)(0x16) << 16) | ((uint32_t)(((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x16) ^ 0x16)))},
-		{(((uint32_t)(0x63) << 24) | ((uint32_t)(((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x63) ^ 0x63)) << 8) | (0x63)), (((uint32_t)(0x7c) << 24) | ((uint32_t)(((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x7c) ^ 0x7c)) << 8) | (0x7c)), (((uint32_t)(0x77) << 24) | ((uint32_t)(((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x77) ^ 0x77)) << 8) | (0x77)), (((uint32_t)(0x7b) << 24) | ((uint32_t)(((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x7b) ^ 0x7b)) << 8) | (0x7b)), (((uint32_t)(0xf2) << 24) | ((uint32_t)(((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf2) ^ 0xf2)) << 8) | (0xf2)), (((uint32_t)(0x6b) << 24) | ((uint32_t)(((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x6b) ^ 0x6b)) << 8) | (0x6b)), (((uint32_t)(0x6f) << 24) | ((uint32_t)(((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x6f) ^ 0x6f)) << 8) | (0x6f)), (((uint32_t)(0xc5) << 24) | ((uint32_t)(((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc5) ^ 0xc5)) << 8) | (0xc5)), (((uint32_t)(0x30) << 24) | ((uint32_t)(((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x30) ^ 0x30)) << 8) | (0x30)), (((uint32_t)(0x01) << 24) | ((uint32_t)(((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x01) ^ 0x01)) << 8) | (0x01)), (((uint32_t)(0x67) << 24) | ((uint32_t)(((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x67) ^ 0x67)) << 8) | (0x67)), (((uint32_t)(0x2b) << 24) | ((uint32_t)(((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x2b) ^ 0x2b)) << 8) | (0x2b)), (((uint32_t)(0xfe) << 24) | ((uint32_t)(((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xfe) ^ 0xfe)) << 8) | (0xfe)), (((uint32_t)(0xd7) << 24) | ((uint32_t)(((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd7) ^ 0xd7)) << 8) | (0xd7)), (((uint32_t)(0xab) << 24) | ((uint32_t)(((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xab) ^ 0xab)) << 8) | (0xab)), (((uint32_t)(0x76) << 24) | ((uint32_t)(((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x76) ^ 0x76)) << 8) | (0x76)), (((uint32_t)(0xca) << 24) | ((uint32_t)(((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xca) ^ 0xca)) << 8) | (0xca)), (((uint32_t)(0x82) << 24) | ((uint32_t)(((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x82) ^ 0x82)) << 8) | (0x82)), (((uint32_t)(0xc9) << 24) | ((uint32_t)(((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc9) ^ 0xc9)) << 8) | (0xc9)), (((uint32_t)(0x7d) << 24) | ((uint32_t)(((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x7d) ^ 0x7d)) << 8) | (0x7d)), (((uint32_t)(0xfa) << 24) | ((uint32_t)(((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xfa) ^ 0xfa)) << 8) | (0xfa)), (((uint32_t)(0x59) << 24) | ((uint32_t)(((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x59) ^ 0x59)) << 8) | (0x59)), (((uint32_t)(0x47) << 24) | ((uint32_t)(((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x47) ^ 0x47)) << 8) | (0x47)), (((uint32_t)(0xf0) << 24) | ((uint32_t)(((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf0) ^ 0xf0)) << 8) | (0xf0)), (((uint32_t)(0xad) << 24) | ((uint32_t)(((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xad) ^ 0xad)) << 8) | (0xad)), (((uint32_t)(0xd4) << 24) | ((uint32_t)(((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd4) ^ 0xd4)) << 8) | (0xd4)), (((uint32_t)(0xa2) << 24) | ((uint32_t)(((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa2) ^ 0xa2)) << 8) | (0xa2)), (((uint32_t)(0xaf) << 24) | ((uint32_t)(((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xaf) ^ 0xaf)) << 8) | (0xaf)), (((uint32_t)(0x9c) << 24) | ((uint32_t)(((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x9c) ^ 0x9c)) << 8) | (0x9c)), (((uint32_t)(0xa4) << 24) | ((uint32_t)(((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa4) ^ 0xa4)) << 8) | (0xa4)), (((uint32_t)(0x72) << 24) | ((uint32_t)(((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x72) ^ 0x72)) << 8) | (0x72)), (((uint32_t)(0xc0) << 24) | ((uint32_t)(((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc0) ^ 0xc0)) << 8) | (0xc0)), (((uint32_t)(0xb7) << 24) | ((uint32_t)(((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb7) ^ 0xb7)) << 8) | (0xb7)), (((uint32_t)(0xfd) << 24) | ((uint32_t)(((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xfd) ^ 0xfd)) << 8) | (0xfd)), (((uint32_t)(0x93) << 24) | ((uint32_t)(((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x93) ^ 0x93)) << 8) | (0x93)), (((uint32_t)(0x26) << 24) | ((uint32_t)(((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x26) ^ 0x26)) << 8) | (0x26)), (((uint32_t)(0x36) << 24) | ((uint32_t)(((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x36) ^ 0x36)) << 8) | (0x36)), (((uint32_t)(0x3f) << 24) | ((uint32_t)(((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x3f) ^ 0x3f)) << 8) | (0x3f)), (((uint32_t)(0xf7) << 24) | ((uint32_t)(((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf7) ^ 0xf7)) << 8) | (0xf7)), (((uint32_t)(0xcc) << 24) | ((uint32_t)(((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xcc) ^ 0xcc)) << 8) | (0xcc)), (((uint32_t)(0x34) << 24) | ((uint32_t)(((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x34) ^ 0x34)) << 8) | (0x34)), (((uint32_t)(0xa5) << 24) | ((uint32_t)(((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa5) ^ 0xa5)) << 8) | (0xa5)), (((uint32_t)(0xe5) << 24) | ((uint32_t)(((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe5) ^ 0xe5)) << 8) | (0xe5)), (((uint32_t)(0xf1) << 24) | ((uint32_t)(((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf1) ^ 0xf1)) << 8) | (0xf1)), (((uint32_t)(0x71) << 24) | ((uint32_t)(((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x71) ^ 0x71)) << 8) | (0x71)), (((uint32_t)(0xd8) << 24) | ((uint32_t)(((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd8) ^ 0xd8)) << 8) | (0xd8)), (((uint32_t)(0x31) << 24) | ((uint32_t)(((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x31) ^ 0x31)) << 8) | (0x31)), (((uint32_t)(0x15) << 24) | ((uint32_t)(((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x15) ^ 0x15)) << 8) | (0x15)), (((uint32_t)(0x04) << 24) | ((uint32_t)(((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x04) ^ 0x04)) << 8) | (0x04)), (((uint32_t)(0xc7) << 24) | ((uint32_t)(((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc7) ^ 0xc7)) << 8) | (0xc7)), (((uint32_t)(0x23) << 24) | ((uint32_t)(((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x23) ^ 0x23)) << 8) | (0x23)), (((uint32_t)(0xc3) << 24) | ((uint32_t)(((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc3) ^ 0xc3)) << 8) | (0xc3)), (((uint32_t)(0x18) << 24) | ((uint32_t)(((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x18) ^ 0x18)) << 8) | (0x18)), (((uint32_t)(0x96) << 24) | ((uint32_t)(((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x96) ^ 0x96)) << 8) | (0x96)), (((uint32_t)(0x05) << 24) | ((uint32_t)(((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x05) ^ 0x05)) << 8) | (0x05)), (((uint32_t)(0x9a) << 24) | ((uint32_t)(((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x9a) ^ 0x9a)) << 8) | (0x9a)), (((uint32_t)(0x07) << 24) | ((uint32_t)(((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x07) ^ 0x07)) << 8) | (0x07)), (((uint32_t)(0x12) << 24) | ((uint32_t)(((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x12) ^ 0x12)) << 8) | (0x12)), (((uint32_t)(0x80) << 24) | ((uint32_t)(((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x80) ^ 0x80)) << 8) | (0x80)), (((uint32_t)(0xe2) << 24) | ((uint32_t)(((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe2) ^ 0xe2)) << 8) | (0xe2)), (((uint32_t)(0xeb) << 24) | ((uint32_t)(((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xeb) ^ 0xeb)) << 8) | (0xeb)), (((uint32_t)(0x27) << 24) | ((uint32_t)(((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x27) ^ 0x27)) << 8) | (0x27)), (((uint32_t)(0xb2) << 24) | ((uint32_t)(((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb2) ^ 0xb2)) << 8) | (0xb2)), (((uint32_t)(0x75) << 24) | ((uint32_t)(((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x75) ^ 0x75)) << 8) | (0x75)), (((uint32_t)(0x09) << 24) | ((uint32_t)(((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x09) ^ 0x09)) << 8) | (0x09)), (((uint32_t)(0x83) << 24) | ((uint32_t)(((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x83) ^ 0x83)) << 8) | (0x83)), (((uint32_t)(0x2c) << 24) | ((uint32_t)(((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x2c) ^ 0x2c)) << 8) | (0x2c)), (((uint32_t)(0x1a) << 24) | ((uint32_t)(((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x1a) ^ 0x1a)) << 8) | (0x1a)), (((uint32_t)(0x1b) << 24) | ((uint32_t)(((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x1b) ^ 0x1b)) << 8) | (0x1b)), (((uint32_t)(0x6e) << 24) | ((uint32_t)(((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x6e) ^ 0x6e)) << 8) | (0x6e)), (((uint32_t)(0x5a) << 24) | ((uint32_t)(((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x5a) ^ 0x5a)) << 8) | (0x5a)), (((uint32_t)(0xa0) << 24) | ((uint32_t)(((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa0) ^ 0xa0)) << 8) | (0xa0)), (((uint32_t)(0x52) << 24) | ((uint32_t)(((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x52) ^ 0x52)) << 8) | (0x52)), (((uint32_t)(0x3b) << 24) | ((uint32_t)(((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x3b) ^ 0x3b)) << 8) | (0x3b)), (((uint32_t)(0xd6) << 24) | ((uint32_t)(((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd6) ^ 0xd6)) << 8) | (0xd6)), (((uint32_t)(0xb3) << 24) | ((uint32_t)(((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb3) ^ 0xb3)) << 8) | (0xb3)), (((uint32_t)(0x29) << 24) | ((uint32_t)(((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x29) ^ 0x29)) << 8) | (0x29)), (((uint32_t)(0xe3) << 24) | ((uint32_t)(((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe3) ^ 0xe3)) << 8) | (0xe3)), (((uint32_t)(0x2f) << 24) | ((uint32_t)(((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x2f) ^ 0x2f)) << 8) | (0x2f)), (((uint32_t)(0x84) << 24) | ((uint32_t)(((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x84) ^ 0x84)) << 8) | (0x84)), (((uint32_t)(0x53) << 24) | ((uint32_t)(((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x53) ^ 0x53)) << 8) | (0x53)), (((uint32_t)(0xd1) << 24) | ((uint32_t)(((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd1) ^ 0xd1)) << 8) | (0xd1)), (((uint32_t)(0x00) << 24) | ((uint32_t)(((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x00) ^ 0x00)) << 8) | (0x00)), (((uint32_t)(0xed) << 24) | ((uint32_t)(((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xed) ^ 0xed)) << 8) | (0xed)), (((uint32_t)(0x20) << 24) | ((uint32_t)(((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x20) ^ 0x20)) << 8) | (0x20)), (((uint32_t)(0xfc) << 24) | ((uint32_t)(((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xfc) ^ 0xfc)) << 8) | (0xfc)), (((uint32_t)(0xb1) << 24) | ((uint32_t)(((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb1) ^ 0xb1)) << 8) | (0xb1)), (((uint32_t)(0x5b) << 24) | ((uint32_t)(((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x5b) ^ 0x5b)) << 8) | (0x5b)), (((uint32_t)(0x6a) << 24) | ((uint32_t)(((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x6a) ^ 0x6a)) << 8) | (0x6a)), (((uint32_t)(0xcb) << 24) | ((uint32_t)(((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xcb) ^ 0xcb)) << 8) | (0xcb)), (((uint32_t)(0xbe) << 24) | ((uint32_t)(((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xbe) ^ 0xbe)) << 8) | (0xbe)), (((uint32_t)(0x39) << 24) | ((uint32_t)(((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x39) ^ 0x39)) << 8) | (0x39)), (((uint32_t)(0x4a) << 24) | ((uint32_t)(((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x4a) ^ 0x4a)) << 8) | (0x4a)), (((uint32_t)(0x4c) << 24) | ((uint32_t)(((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x4c) ^ 0x4c)) << 8) | (0x4c)), (((uint32_t)(0x58) << 24) | ((uint32_t)(((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x58) ^ 0x58)) << 8) | (0x58)), (((uint32_t)(0xcf) << 24) | ((uint32_t)(((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xcf) ^ 0xcf)) << 8) | (0xcf)), (((uint32_t)(0xd0) << 24) | ((uint32_t)(((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd0) ^ 0xd0)) << 8) | (0xd0)), (((uint32_t)(0xef) << 24) | ((uint32_t)(((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xef) ^ 0xef)) << 8) | (0xef)), (((uint32_t)(0xaa) << 24) | ((uint32_t)(((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xaa) ^ 0xaa)) << 8) | (0xaa)), (((uint32_t)(0xfb) << 24) | ((uint32_t)(((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xfb) ^ 0xfb)) << 8) | (0xfb)), (((uint32_t)(0x43) << 24) | ((uint32_t)(((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x43) ^ 0x43)) << 8) | (0x43)), (((uint32_t)(0x4d) << 24) | ((uint32_t)(((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x4d) ^ 0x4d)) << 8) | (0x4d)), (((uint32_t)(0x33) << 24) | ((uint32_t)(((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x33) ^ 0x33)) << 8) | (0x33)), (((uint32_t)(0x85) << 24) | ((uint32_t)(((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x85) ^ 0x85)) << 8) | (0x85)), (((uint32_t)(0x45) << 24) | ((uint32_t)(((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x45) ^ 0x45)) << 8) | (0x45)), (((uint32_t)(0xf9) << 24) | ((uint32_t)(((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf9) ^ 0xf9)) << 8) | (0xf9)), (((uint32_t)(0x02) << 24) | ((uint32_t)(((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x02) ^ 0x02)) << 8) | (0x02)), (((uint32_t)(0x7f) << 24) | ((uint32_t)(((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x7f) ^ 0x7f)) << 8) | (0x7f)), (((uint32_t)(0x50) << 24) | ((uint32_t)(((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x50) ^ 0x50)) << 8) | (0x50)), (((uint32_t)(0x3c) << 24) | ((uint32_t)(((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x3c) ^ 0x3c)) << 8) | (0x3c)), (((uint32_t)(0x9f) << 24) | ((uint32_t)(((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x9f) ^ 0x9f)) << 8) | (0x9f)), (((uint32_t)(0xa8) << 24) | ((uint32_t)(((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa8) ^ 0xa8)) << 8) | (0xa8)), (((uint32_t)(0x51) << 24) | ((uint32_t)(((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x51) ^ 0x51)) << 8) | (0x51)), (((uint32_t)(0xa3) << 24) | ((uint32_t)(((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa3) ^ 0xa3)) << 8) | (0xa3)), (((uint32_t)(0x40) << 24) | ((uint32_t)(((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x40) ^ 0x40)) << 8) | (0x40)), (((uint32_t)(0x8f) << 24) | ((uint32_t)(((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x8f) ^ 0x8f)) << 8) | (0x8f)), (((uint32_t)(0x92) << 24) | ((uint32_t)(((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x92) ^ 0x92)) << 8) | (0x92)), (((uint32_t)(0x9d) << 24) | ((uint32_t)(((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x9d) ^ 0x9d)) << 8) | (0x9d)), (((uint32_t)(0x38) << 24) | ((uint32_t)(((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x38) ^ 0x38)) << 8) | (0x38)), (((uint32_t)(0xf5) << 24) | ((uint32_t)(((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf5) ^ 0xf5)) << 8) | (0xf5)), (((uint32_t)(0xbc) << 24) | ((uint32_t)(((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xbc) ^ 0xbc)) << 8) | (0xbc)), (((uint32_t)(0xb6) << 24) | ((uint32_t)(((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb6) ^ 0xb6)) << 8) | (0xb6)), (((uint32_t)(0xda) << 24) | ((uint32_t)(((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xda) ^ 0xda)) << 8) | (0xda)), (((uint32_t)(0x21) << 24) | ((uint32_t)(((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x21) ^ 0x21)) << 8) | (0x21)), (((uint32_t)(0x10) << 24) | ((uint32_t)(((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x10) ^ 0x10)) << 8) | (0x10)), (((uint32_t)(0xff) << 24) | ((uint32_t)(((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xff) ^ 0xff)) << 8) | (0xff)), (((uint32_t)(0xf3) << 24) | ((uint32_t)(((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf3) ^ 0xf3)) << 8) | (0xf3)), (((uint32_t)(0xd2) << 24) | ((uint32_t)(((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd2) ^ 0xd2)) << 8) | (0xd2)), (((uint32_t)(0xcd) << 24) | ((uint32_t)(((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xcd) ^ 0xcd)) << 8) | (0xcd)), (((uint32_t)(0x0c) << 24) | ((uint32_t)(((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x0c) ^ 0x0c)) << 8) | (0x0c)), (((uint32_t)(0x13) << 24) | ((uint32_t)(((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x13) ^ 0x13)) << 8) | (0x13)), (((uint32_t)(0xec) << 24) | ((uint32_t)(((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xec) ^ 0xec)) << 8) | (0xec)), (((uint32_t)(0x5f) << 24) | ((uint32_t)(((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x5f) ^ 0x5f)) << 8) | (0x5f)), (((uint32_t)(0x97) << 24) | ((uint32_t)(((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x97) ^ 0x97)) << 8) | (0x97)), (((uint32_t)(0x44) << 24) | ((uint32_t)(((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x44) ^ 0x44)) << 8) | (0x44)), (((uint32_t)(0x17) << 24) | ((uint32_t)(((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x17) ^ 0x17)) << 8) | (0x17)), (((uint32_t)(0xc4) << 24) | ((uint32_t)(((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc4) ^ 0xc4)) << 8) | (0xc4)), (((uint32_t)(0xa7) << 24) | ((uint32_t)(((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa7) ^ 0xa7)) << 8) | (0xa7)), (((uint32_t)(0x7e) << 24) | ((uint32_t)(((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x7e) ^ 0x7e)) << 8) | (0x7e)), (((uint32_t)(0x3d) << 24) | ((uint32_t)(((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x3d) ^ 0x3d)) << 8) | (0x3d)), (((uint32_t)(0x64) << 24) | ((uint32_t)(((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x64) ^ 0x64)) << 8) | (0x64)), (((uint32_t)(0x5d) << 24) | ((uint32_t)(((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x5d) ^ 0x5d)) << 8) | (0x5d)), (((uint32_t)(0x19) << 24) | ((uint32_t)(((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x19) ^ 0x19)) << 8) | (0x19)), (((uint32_t)(0x73) << 24) | ((uint32_t)(((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x73) ^ 0x73)) << 8) | (0x73)), (((uint32_t)(0x60) << 24) | ((uint32_t)(((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x60) ^ 0x60)) << 8) | (0x60)), (((uint32_t)(0x81) << 24) | ((uint32_t)(((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x81) ^ 0x81)) << 8) | (0x81)), (((uint32_t)(0x4f) << 24) | ((uint32_t)(((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x4f) ^ 0x4f)) << 8) | (0x4f)), (((uint32_t)(0xdc) << 24) | ((uint32_t)(((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xdc) ^ 0xdc)) << 8) | (0xdc)), (((uint32_t)(0x22) << 24) | ((uint32_t)(((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x22) ^ 0x22)) << 8) | (0x22)), (((uint32_t)(0x2a) << 24) | ((uint32_t)(((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x2a) ^ 0x2a)) << 8) | (0x2a)), (((uint32_t)(0x90) << 24) | ((uint32_t)(((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x90) ^ 0x90)) << 8) | (0x90)), (((uint32_t)(0x88) << 24) | ((uint32_t)(((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x88) ^ 0x88)) << 8) | (0x88)), (((uint32_t)(0x46) << 24) | ((uint32_t)(((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x46) ^ 0x46)) << 8) | (0x46)), (((uint32_t)(0xee) << 24) | ((uint32_t)(((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xee) ^ 0xee)) << 8) | (0xee)), (((uint32_t)(0xb8) << 24) | ((uint32_t)(((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb8) ^ 0xb8)) << 8) | (0xb8)), (((uint32_t)(0x14) << 24) | ((uint32_t)(((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x14) ^ 0x14)) << 8) | (0x14)), (((uint32_t)(0xde) << 24) | ((uint32_t)(((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xde) ^ 0xde)) << 8) | (0xde)), (((uint32_t)(0x5e) << 24) | ((uint32_t)(((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x5e) ^ 0x5e)) << 8) | (0x5e)), (((uint32_t)(0x0b) << 24) | ((uint32_t)(((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x0b) ^ 0x0b)) << 8) | (0x0b)), (((uint32_t)(0xdb) << 24) | ((uint32_t)(((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xdb) ^ 0xdb)) << 8) | (0xdb)), (((uint32_t)(0xe0) << 24) | ((uint32_t)(((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe0) ^ 0xe0)) << 8) | (0xe0)), (((uint32_t)(0x32) << 24) | ((uint32_t)(((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x32) ^ 0x32)) << 8) | (0x32)), (((uint32_t)(0x3a) << 24) | ((uint32_t)(((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x3a) ^ 0x3a)) << 8) | (0x3a)), (((uint32_t)(0x0a) << 24) | ((uint32_t)(((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x0a) ^ 0x0a)) << 8) | (0x0a)), (((uint32_t)(0x49) << 24) | ((uint32_t)(((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x49) ^ 0x49)) << 8) | (0x49)), (((uint32_t)(0x06) << 24) | ((uint32_t)(((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x06) ^ 0x06)) << 8) | (0x06)), (((uint32_t)(0x24) << 24) | ((uint32_t)(((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x24) ^ 0x24)) << 8) | (0x24)), (((uint32_t)(0x5c) << 24) | ((uint32_t)(((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x5c) ^ 0x5c)) << 8) | (0x5c)), (((uint32_t)(0xc2) << 24) | ((uint32_t)(((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc2) ^ 0xc2)) << 8) | (0xc2)), (((uint32_t)(0xd3) << 24) | ((uint32_t)(((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd3) ^ 0xd3)) << 8) | (0xd3)), (((uint32_t)(0xac) << 24) | ((uint32_t)(((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xac) ^ 0xac)) << 8) | (0xac)), (((uint32_t)(0x62) << 24) | ((uint32_t)(((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x62) ^ 0x62)) << 8) | (0x62)), (((uint32_t)(0x91) << 24) | ((uint32_t)(((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x91) ^ 0x91)) << 8) | (0x91)), (((uint32_t)(0x95) << 24) | ((uint32_t)(((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x95) ^ 0x95)) << 8) | (0x95)), (((uint32_t)(0xe4) << 24) | ((uint32_t)(((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe4) ^ 0xe4)) << 8) | (0xe4)), (((uint32_t)(0x79) << 24) | ((uint32_t)(((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x79) ^ 0x79)) << 8) | (0x79)), (((uint32_t)(0xe7) << 24) | ((uint32_t)(((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe7) ^ 0xe7)) << 8) | (0xe7)), (((uint32_t)(0xc8) << 24) | ((uint32_t)(((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc8) ^ 0xc8)) << 8) | (0xc8)), (((uint32_t)(0x37) << 24) | ((uint32_t)(((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x37) ^ 0x37)) << 8) | (0x37)), (((uint32_t)(0x6d) << 24) | ((uint32_t)(((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x6d) ^ 0x6d)) << 8) | (0x6d)), (((uint32_t)(0x8d) << 24) | ((uint32_t)(((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x8d) ^ 0x8d)) << 8) | (0x8d)), (((uint32_t)(0xd5) << 24) | ((uint32_t)(((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd5) ^ 0xd5)) << 8) | (0xd5)), (((uint32_t)(0x4e) << 24) | ((uint32_t)(((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x4e) ^ 0x4e)) << 8) | (0x4e)), (((uint32_t)(0xa9) << 24) | ((uint32_t)(((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa9) ^ 0xa9)) << 8) | (0xa9)), (((uint32_t)(0x6c) << 24) | ((uint32_t)(((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x6c) ^ 0x6c)) << 8) | (0x6c)), (((uint32_t)(0x56) << 24) | ((uint32_t)(((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x56) ^ 0x56)) << 8) | (0x56)), (((uint32_t)(0xf4) << 24) | ((uint32_t)(((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf4) ^ 0xf4)) << 8) | (0xf4)), (((uint32_t)(0xea) << 24) | ((uint32_t)(((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xea) ^ 0xea)) << 8) | (0xea)), (((uint32_t)(0x65) << 24) | ((uint32_t)(((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x65) ^ 0x65)) << 8) | (0x65)), (((uint32_t)(0x7a) << 24) | ((uint32_t)(((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x7a) ^ 0x7a)) << 8) | (0x7a)), (((uint32_t)(0xae) << 24) | ((uint32_t)(((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xae) ^ 0xae)) << 8) | (0xae)), (((uint32_t)(0x08) << 24) | ((uint32_t)(((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x08) ^ 0x08)) << 8) | (0x08)), (((uint32_t)(0xba) << 24) | ((uint32_t)(((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xba) ^ 0xba)) << 8) | (0xba)), (((uint32_t)(0x78) << 24) | ((uint32_t)(((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x78) ^ 0x78)) << 8) | (0x78)), (((uint32_t)(0x25) << 24) | ((uint32_t)(((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x25) ^ 0x25)) << 8) | (0x25)), (((uint32_t)(0x2e) << 24) | ((uint32_t)(((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x2e) ^ 0x2e)) << 8) | (0x2e)), (((uint32_t)(0x1c) << 24) | ((uint32_t)(((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x1c) ^ 0x1c)) << 8) | (0x1c)), (((uint32_t)(0xa6) << 24) | ((uint32_t)(((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa6) ^ 0xa6)) << 8) | (0xa6)), (((uint32_t)(0xb4) << 24) | ((uint32_t)(((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb4) ^ 0xb4)) << 8) | (0xb4)), (((uint32_t)(0xc6) << 24) | ((uint32_t)(((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc6) ^ 0xc6)) << 8) | (0xc6)), (((uint32_t)(0xe8) << 24) | ((uint32_t)(((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe8) ^ 0xe8)) << 8) | (0xe8)), (((uint32_t)(0xdd) << 24) | ((uint32_t)(((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xdd) ^ 0xdd)) << 8) | (0xdd)), (((uint32_t)(0x74) << 24) | ((uint32_t)(((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x74) ^ 0x74)) << 8) | (0x74)), (((uint32_t)(0x1f) << 24) | ((uint32_t)(((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x1f) ^ 0x1f)) << 8) | (0x1f)), (((uint32_t)(0x4b) << 24) | ((uint32_t)(((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x4b) ^ 0x4b)) << 8) | (0x4b)), (((uint32_t)(0xbd) << 24) | ((uint32_t)(((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xbd) ^ 0xbd)) << 8) | (0xbd)), (((uint32_t)(0x8b) << 24) | ((uint32_t)(((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x8b) ^ 0x8b)) << 8) | (0x8b)), (((uint32_t)(0x8a) << 24) | ((uint32_t)(((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x8a) ^ 0x8a)) << 8) | (0x8a)), (((uint32_t)(0x70) << 24) | ((uint32_t)(((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x70) ^ 0x70)) << 8) | (0x70)), (((uint32_t)(0x3e) << 24) | ((uint32_t)(((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x3e) ^ 0x3e)) << 8) | (0x3e)), (((uint32_t)(0xb5) << 24) | ((uint32_t)(((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb5) ^ 0xb5)) << 8) | (0xb5)), (((uint32_t)(0x66) << 24) | ((uint32_t)(((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x66) ^ 0x66)) << 8) | (0x66)), (((uint32_t)(0x48) << 24) | ((uint32_t)(((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x48) ^ 0x48)) << 8) | (0x48)), (((uint32_t)(0x03) << 24) | ((uint32_t)(((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x03) ^ 0x03)) << 8) | (0x03)), (((uint32_t)(0xf6) << 24) | ((uint32_t)(((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf6) ^ 0xf6)) << 8) | (0xf6)), (((uint32_t)(0x0e) << 24) | ((uint32_t)(((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x0e) ^ 0x0e)) << 8) | (0x0e)), (((uint32_t)(0x61) << 24) | ((uint32_t)(((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x61) ^ 0x61)) << 8) | (0x61)), (((uint32_t)(0x35) << 24) | ((uint32_t)(((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x35) ^ 0x35)) << 8) | (0x35)), (((uint32_t)(0x57) << 24) | ((uint32_t)(((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x57) ^ 0x57)) << 8) | (0x57)), (((uint32_t)(0xb9) << 24) | ((uint32_t)(((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb9) ^ 0xb9)) << 8) | (0xb9)), (((uint32_t)(0x86) << 24) | ((uint32_t)(((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x86) ^ 0x86)) << 8) | (0x86)), (((uint32_t)(0xc1) << 24) | ((uint32_t)(((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xc1) ^ 0xc1)) << 8) | (0xc1)), (((uint32_t)(0x1d) << 24) | ((uint32_t)(((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x1d) ^ 0x1d)) << 8) | (0x1d)), (((uint32_t)(0x9e) << 24) | ((uint32_t)(((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x9e) ^ 0x9e)) << 8) | (0x9e)), (((uint32_t)(0xe1) << 24) | ((uint32_t)(((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe1) ^ 0xe1)) << 8) | (0xe1)), (((uint32_t)(0xf8) << 24) | ((uint32_t)(((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xf8) ^ 0xf8)) << 8) | (0xf8)), (((uint32_t)(0x98) << 24) | ((uint32_t)(((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x98) ^ 0x98)) << 8) | (0x98)), (((uint32_t)(0x11) << 24) | ((uint32_t)(((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x11) ^ 0x11)) << 8) | (0x11)), (((uint32_t)(0x69) << 24) | ((uint32_t)(((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x69) ^ 0x69)) << 8) | (0x69)), (((uint32_t)(0xd9) << 24) | ((uint32_t)(((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xd9) ^ 0xd9)) << 8) | (0xd9)), (((uint32_t)(0x8e) << 24) | ((uint32_t)(((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x8e) ^ 0x8e)) << 8) | (0x8e)), (((uint32_t)(0x94) << 24) | ((uint32_t)(((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x94) ^ 0x94)) << 8) | (0x94)), (((uint32_t)(0x9b) << 24) | ((uint32_t)(((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x9b) ^ 0x9b)) << 8) | (0x9b)), (((uint32_t)(0x1e) << 24) | ((uint32_t)(((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x1e) ^ 0x1e)) << 8) | (0x1e)), (((uint32_t)(0x87) << 24) | ((uint32_t)(((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x87) ^ 0x87)) << 8) | (0x87)), (((uint32_t)(0xe9) << 24) | ((uint32_t)(((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe9) ^ 0xe9)) << 8) | (0xe9)), (((uint32_t)(0xce) << 24) | ((uint32_t)(((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xce) ^ 0xce)) << 8) | (0xce)), (((uint32_t)(0x55) << 24) | ((uint32_t)(((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x55) ^ 0x55)) << 8) | (0x55)), (((uint32_t)(0x28) << 24) | ((uint32_t)(((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x28) ^ 0x28)) << 8) | (0x28)), (((uint32_t)(0xdf) << 24) | ((uint32_t)(((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xdf) ^ 0xdf)) << 8) | (0xdf)), (((uint32_t)(0x8c) << 24) | ((uint32_t)(((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x8c) ^ 0x8c)) << 8) | (0x8c)), (((uint32_t)(0xa1) << 24) | ((uint32_t)(((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xa1) ^ 0xa1)) << 8) | (0xa1)), (((uint32_t)(0x89) << 24) | ((uint32_t)(((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x89) ^ 0x89)) << 8) | (0x89)), (((uint32_t)(0x0d) << 24) | ((uint32_t)(((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x0d) ^ 0x0d)) << 8) | (0x0d)), (((uint32_t)(0xbf) << 24) | ((uint32_t)(((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xbf) ^ 0xbf)) << 8) | (0xbf)), (((uint32_t)(0xe6) << 24) | ((uint32_t)(((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xe6) ^ 0xe6)) << 8) | (0xe6)), (((uint32_t)(0x42) << 24) | ((uint32_t)(((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x42) ^ 0x42)) << 8) | (0x42)), (((uint32_t)(0x68) << 24) | ((uint32_t)(((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x68) ^ 0x68)) << 8) | (0x68)), (((uint32_t)(0x41) << 24) | ((uint32_t)(((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x41) ^ 0x41)) << 8) | (0x41)), (((uint32_t)(0x99) << 24) | ((uint32_t)(((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x99) ^ 0x99)) << 8) | (0x99)), (((uint32_t)(0x2d) << 24) | ((uint32_t)(((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x2d) ^ 0x2d)) << 8) | (0x2d)), (((uint32_t)(0x0f) << 24) | ((uint32_t)(((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x0f) ^ 0x0f)) << 8) | (0x0f)), (((uint32_t)(0xb0) << 24) | ((uint32_t)(((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xb0) ^ 0xb0)) << 8) | (0xb0)), (((uint32_t)(0x54) << 24) | ((uint32_t)(((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x54) ^ 0x54)) << 8) | (0x54)), (((uint32_t)(0xbb) << 24) | ((uint32_t)(((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0xbb) ^ 0xbb)) << 8) | (0xbb)), (((uint32_t)(0x16) << 24) | ((uint32_t)(((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint32_t)((f2(0x16) ^ 0x16)) << 8) | (0x16))},
-		{(((uint32_t)(((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x63) ^ 0x63)) << 16) | ((uint32_t)(0x63) << 8) | (0x63)), (((uint32_t)(((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x7c) ^ 0x7c)) << 16) | ((uint32_t)(0x7c) << 8) | (0x7c)), (((uint32_t)(((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x77) ^ 0x77)) << 16) | ((uint32_t)(0x77) << 8) | (0x77)), (((uint32_t)(((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x7b) ^ 0x7b)) << 16) | ((uint32_t)(0x7b) << 8) | (0x7b)), (((uint32_t)(((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf2) ^ 0xf2)) << 16) | ((uint32_t)(0xf2) << 8) | (0xf2)), (((uint32_t)(((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x6b) ^ 0x6b)) << 16) | ((uint32_t)(0x6b) << 8) | (0x6b)), (((uint32_t)(((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x6f) ^ 0x6f)) << 16) | ((uint32_t)(0x6f) << 8) | (0x6f)), (((uint32_t)(((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc5) ^ 0xc5)) << 16) | ((uint32_t)(0xc5) << 8) | (0xc5)), (((uint32_t)(((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x30) ^ 0x30)) << 16) | ((uint32_t)(0x30) << 8) | (0x30)), (((uint32_t)(((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x01) ^ 0x01)) << 16) | ((uint32_t)(0x01) << 8) | (0x01)), (((uint32_t)(((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x67) ^ 0x67)) << 16) | ((uint32_t)(0x67) << 8) | (0x67)), (((uint32_t)(((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x2b) ^ 0x2b)) << 16) | ((uint32_t)(0x2b) << 8) | (0x2b)), (((uint32_t)(((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xfe) ^ 0xfe)) << 16) | ((uint32_t)(0xfe) << 8) | (0xfe)), (((uint32_t)(((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd7) ^ 0xd7)) << 16) | ((uint32_t)(0xd7) << 8) | (0xd7)), (((uint32_t)(((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xab) ^ 0xab)) << 16) | ((uint32_t)(0xab) << 8) | (0xab)), (((uint32_t)(((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x76) ^ 0x76)) << 16) | ((uint32_t)(0x76) << 8) | (0x76)), (((uint32_t)(((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xca) ^ 0xca)) << 16) | ((uint32_t)(0xca) << 8) | (0xca)), (((uint32_t)(((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x82) ^ 0x82)) << 16) | ((uint32_t)(0x82) << 8) | (0x82)), (((uint32_t)(((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc9) ^ 0xc9)) << 16) | ((uint32_t)(0xc9) << 8) | (0xc9)), (((uint32_t)(((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x7d) ^ 0x7d)) << 16) | ((uint32_t)(0x7d) << 8) | (0x7d)), (((uint32_t)(((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xfa) ^ 0xfa)) << 16) | ((uint32_t)(0xfa) << 8) | (0xfa)), (((uint32_t)(((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x59) ^ 0x59)) << 16) | ((uint32_t)(0x59) << 8) | (0x59)), (((uint32_t)(((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x47) ^ 0x47)) << 16) | ((uint32_t)(0x47) << 8) | (0x47)), (((uint32_t)(((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf0) ^ 0xf0)) << 16) | ((uint32_t)(0xf0) << 8) | (0xf0)), (((uint32_t)(((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xad) ^ 0xad)) << 16) | ((uint32_t)(0xad) << 8) | (0xad)), (((uint32_t)(((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd4) ^ 0xd4)) << 16) | ((uint32_t)(0xd4) << 8) | (0xd4)), (((uint32_t)(((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa2) ^ 0xa2)) << 16) | ((uint32_t)(0xa2) << 8) | (0xa2)), (((uint32_t)(((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xaf) ^ 0xaf)) << 16) | ((uint32_t)(0xaf) << 8) | (0xaf)), (((uint32_t)(((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x9c) ^ 0x9c)) << 16) | ((uint32_t)(0x9c) << 8) | (0x9c)), (((uint32_t)(((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa4) ^ 0xa4)) << 16) | ((uint32_t)(0xa4) << 8) | (0xa4)), (((uint32_t)(((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x72) ^ 0x72)) << 16) | ((uint32_t)(0x72) << 8) | (0x72)), (((uint32_t)(((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc0) ^ 0xc0)) << 16) | ((uint32_t)(0xc0) << 8) | (0xc0)), (((uint32_t)(((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb7) ^ 0xb7)) << 16) | ((uint32_t)(0xb7) << 8) | (0xb7)), (((uint32_t)(((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xfd) ^ 0xfd)) << 16) | ((uint32_t)(0xfd) << 8) | (0xfd)), (((uint32_t)(((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x93) ^ 0x93)) << 16) | ((uint32_t)(0x93) << 8) | (0x93)), (((uint32_t)(((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x26) ^ 0x26)) << 16) | ((uint32_t)(0x26) << 8) | (0x26)), (((uint32_t)(((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x36) ^ 0x36)) << 16) | ((uint32_t)(0x36) << 8) | (0x36)), (((uint32_t)(((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x3f) ^ 0x3f)) << 16) | ((uint32_t)(0x3f) << 8) | (0x3f)), (((uint32_t)(((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf7) ^ 0xf7)) << 16) | ((uint32_t)(0xf7) << 8) | (0xf7)), (((uint32_t)(((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xcc) ^ 0xcc)) << 16) | ((uint32_t)(0xcc) << 8) | (0xcc)), (((uint32_t)(((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x34) ^ 0x34)) << 16) | ((uint32_t)(0x34) << 8) | (0x34)), (((uint32_t)(((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa5) ^ 0xa5)) << 16) | ((uint32_t)(0xa5) << 8) | (0xa5)), (((uint32_t)(((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe5) ^ 0xe5)) << 16) | ((uint32_t)(0xe5) << 8) | (0xe5)), (((uint32_t)(((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf1) ^ 0xf1)) << 16) | ((uint32_t)(0xf1) << 8) | (0xf1)), (((uint32_t)(((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x71) ^ 0x71)) << 16) | ((uint32_t)(0x71) << 8) | (0x71)), (((uint32_t)(((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd8) ^ 0xd8)) << 16) | ((uint32_t)(0xd8) << 8) | (0xd8)), (((uint32_t)(((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x31) ^ 0x31)) << 16) | ((uint32_t)(0x31) << 8) | (0x31)), (((uint32_t)(((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x15) ^ 0x15)) << 16) | ((uint32_t)(0x15) << 8) | (0x15)), (((uint32_t)(((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x04) ^ 0x04)) << 16) | ((uint32_t)(0x04) << 8) | (0x04)), (((uint32_t)(((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc7) ^ 0xc7)) << 16) | ((uint32_t)(0xc7) << 8) | (0xc7)), (((uint32_t)(((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x23) ^ 0x23)) << 16) | ((uint32_t)(0x23) << 8) | (0x23)), (((uint32_t)(((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc3) ^ 0xc3)) << 16) | ((uint32_t)(0xc3) << 8) | (0xc3)), (((uint32_t)(((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x18) ^ 0x18)) << 16) | ((uint32_t)(0x18) << 8) | (0x18)), (((uint32_t)(((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x96) ^ 0x96)) << 16) | ((uint32_t)(0x96) << 8) | (0x96)), (((uint32_t)(((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x05) ^ 0x05)) << 16) | ((uint32_t)(0x05) << 8) | (0x05)), (((uint32_t)(((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x9a) ^ 0x9a)) << 16) | ((uint32_t)(0x9a) << 8) | (0x9a)), (((uint32_t)(((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x07) ^ 0x07)) << 16) | ((uint32_t)(0x07) << 8) | (0x07)), (((uint32_t)(((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x12) ^ 0x12)) << 16) | ((uint32_t)(0x12) << 8) | (0x12)), (((uint32_t)(((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x80) ^ 0x80)) << 16) | ((uint32_t)(0x80) << 8) | (0x80)), (((uint32_t)(((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe2) ^ 0xe2)) << 16) | ((uint32_t)(0xe2) << 8) | (0xe2)), (((uint32_t)(((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xeb) ^ 0xeb)) << 16) | ((uint32_t)(0xeb) << 8) | (0xeb)), (((uint32_t)(((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x27) ^ 0x27)) << 16) | ((uint32_t)(0x27) << 8) | (0x27)), (((uint32_t)(((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb2) ^ 0xb2)) << 16) | ((uint32_t)(0xb2) << 8) | (0xb2)), (((uint32_t)(((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x75) ^ 0x75)) << 16) | ((uint32_t)(0x75) << 8) | (0x75)), (((uint32_t)(((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x09) ^ 0x09)) << 16) | ((uint32_t)(0x09) << 8) | (0x09)), (((uint32_t)(((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x83) ^ 0x83)) << 16) | ((uint32_t)(0x83) << 8) | (0x83)), (((uint32_t)(((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x2c) ^ 0x2c)) << 16) | ((uint32_t)(0x2c) << 8) | (0x2c)), (((uint32_t)(((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x1a) ^ 0x1a)) << 16) | ((uint32_t)(0x1a) << 8) | (0x1a)), (((uint32_t)(((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x1b) ^ 0x1b)) << 16) | ((uint32_t)(0x1b) << 8) | (0x1b)), (((uint32_t)(((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x6e) ^ 0x6e)) << 16) | ((uint32_t)(0x6e) << 8) | (0x6e)), (((uint32_t)(((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x5a) ^ 0x5a)) << 16) | ((uint32_t)(0x5a) << 8) | (0x5a)), (((uint32_t)(((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa0) ^ 0xa0)) << 16) | ((uint32_t)(0xa0) << 8) | (0xa0)), (((uint32_t)(((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x52) ^ 0x52)) << 16) | ((uint32_t)(0x52) << 8) | (0x52)), (((uint32_t)(((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x3b) ^ 0x3b)) << 16) | ((uint32_t)(0x3b) << 8) | (0x3b)), (((uint32_t)(((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd6) ^ 0xd6)) << 16) | ((uint32_t)(0xd6) << 8) | (0xd6)), (((uint32_t)(((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb3) ^ 0xb3)) << 16) | ((uint32_t)(0xb3) << 8) | (0xb3)), (((uint32_t)(((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x29) ^ 0x29)) << 16) | ((uint32_t)(0x29) << 8) | (0x29)), (((uint32_t)(((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe3) ^ 0xe3)) << 16) | ((uint32_t)(0xe3) << 8) | (0xe3)), (((uint32_t)(((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x2f) ^ 0x2f)) << 16) | ((uint32_t)(0x2f) << 8) | (0x2f)), (((uint32_t)(((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x84) ^ 0x84)) << 16) | ((uint32_t)(0x84) << 8) | (0x84)), (((uint32_t)(((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x53) ^ 0x53)) << 16) | ((uint32_t)(0x53) << 8) | (0x53)), (((uint32_t)(((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd1) ^ 0xd1)) << 16) | ((uint32_t)(0xd1) << 8) | (0xd1)), (((uint32_t)(((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x00) ^ 0x00)) << 16) | ((uint32_t)(0x00) << 8) | (0x00)), (((uint32_t)(((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xed) ^ 0xed)) << 16) | ((uint32_t)(0xed) << 8) | (0xed)), (((uint32_t)(((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x20) ^ 0x20)) << 16) | ((uint32_t)(0x20) << 8) | (0x20)), (((uint32_t)(((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xfc) ^ 0xfc)) << 16) | ((uint32_t)(0xfc) << 8) | (0xfc)), (((uint32_t)(((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb1) ^ 0xb1)) << 16) | ((uint32_t)(0xb1) << 8) | (0xb1)), (((uint32_t)(((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x5b) ^ 0x5b)) << 16) | ((uint32_t)(0x5b) << 8) | (0x5b)), (((uint32_t)(((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x6a) ^ 0x6a)) << 16) | ((uint32_t)(0x6a) << 8) | (0x6a)), (((uint32_t)(((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xcb) ^ 0xcb)) << 16) | ((uint32_t)(0xcb) << 8) | (0xcb)), (((uint32_t)(((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xbe) ^ 0xbe)) << 16) | ((uint32_t)(0xbe) << 8) | (0xbe)), (((uint32_t)(((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x39) ^ 0x39)) << 16) | ((uint32_t)(0x39) << 8) | (0x39)), (((uint32_t)(((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x4a) ^ 0x4a)) << 16) | ((uint32_t)(0x4a) << 8) | (0x4a)), (((uint32_t)(((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x4c) ^ 0x4c)) << 16) | ((uint32_t)(0x4c) << 8) | (0x4c)), (((uint32_t)(((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x58) ^ 0x58)) << 16) | ((uint32_t)(0x58) << 8) | (0x58)), (((uint32_t)(((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xcf) ^ 0xcf)) << 16) | ((uint32_t)(0xcf) << 8) | (0xcf)), (((uint32_t)(((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd0) ^ 0xd0)) << 16) | ((uint32_t)(0xd0) << 8) | (0xd0)), (((uint32_t)(((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xef) ^ 0xef)) << 16) | ((uint32_t)(0xef) << 8) | (0xef)), (((uint32_t)(((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xaa) ^ 0xaa)) << 16) | ((uint32_t)(0xaa) << 8) | (0xaa)), (((uint32_t)(((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xfb) ^ 0xfb)) << 16) | ((uint32_t)(0xfb) << 8) | (0xfb)), (((uint32_t)(((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x43) ^ 0x43)) << 16) | ((uint32_t)(0x43) << 8) | (0x43)), (((uint32_t)(((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x4d) ^ 0x4d)) << 16) | ((uint32_t)(0x4d) << 8) | (0x4d)), (((uint32_t)(((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x33) ^ 0x33)) << 16) | ((uint32_t)(0x33) << 8) | (0x33)), (((uint32_t)(((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x85) ^ 0x85)) << 16) | ((uint32_t)(0x85) << 8) | (0x85)), (((uint32_t)(((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x45) ^ 0x45)) << 16) | ((uint32_t)(0x45) << 8) | (0x45)), (((uint32_t)(((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf9) ^ 0xf9)) << 16) | ((uint32_t)(0xf9) << 8) | (0xf9)), (((uint32_t)(((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x02) ^ 0x02)) << 16) | ((uint32_t)(0x02) << 8) | (0x02)), (((uint32_t)(((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x7f) ^ 0x7f)) << 16) | ((uint32_t)(0x7f) << 8) | (0x7f)), (((uint32_t)(((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x50) ^ 0x50)) << 16) | ((uint32_t)(0x50) << 8) | (0x50)), (((uint32_t)(((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x3c) ^ 0x3c)) << 16) | ((uint32_t)(0x3c) << 8) | (0x3c)), (((uint32_t)(((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x9f) ^ 0x9f)) << 16) | ((uint32_t)(0x9f) << 8) | (0x9f)), (((uint32_t)(((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa8) ^ 0xa8)) << 16) | ((uint32_t)(0xa8) << 8) | (0xa8)), (((uint32_t)(((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x51) ^ 0x51)) << 16) | ((uint32_t)(0x51) << 8) | (0x51)), (((uint32_t)(((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa3) ^ 0xa3)) << 16) | ((uint32_t)(0xa3) << 8) | (0xa3)), (((uint32_t)(((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x40) ^ 0x40)) << 16) | ((uint32_t)(0x40) << 8) | (0x40)), (((uint32_t)(((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x8f) ^ 0x8f)) << 16) | ((uint32_t)(0x8f) << 8) | (0x8f)), (((uint32_t)(((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x92) ^ 0x92)) << 16) | ((uint32_t)(0x92) << 8) | (0x92)), (((uint32_t)(((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x9d) ^ 0x9d)) << 16) | ((uint32_t)(0x9d) << 8) | (0x9d)), (((uint32_t)(((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x38) ^ 0x38)) << 16) | ((uint32_t)(0x38) << 8) | (0x38)), (((uint32_t)(((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf5) ^ 0xf5)) << 16) | ((uint32_t)(0xf5) << 8) | (0xf5)), (((uint32_t)(((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xbc) ^ 0xbc)) << 16) | ((uint32_t)(0xbc) << 8) | (0xbc)), (((uint32_t)(((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb6) ^ 0xb6)) << 16) | ((uint32_t)(0xb6) << 8) | (0xb6)), (((uint32_t)(((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xda) ^ 0xda)) << 16) | ((uint32_t)(0xda) << 8) | (0xda)), (((uint32_t)(((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x21) ^ 0x21)) << 16) | ((uint32_t)(0x21) << 8) | (0x21)), (((uint32_t)(((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x10) ^ 0x10)) << 16) | ((uint32_t)(0x10) << 8) | (0x10)), (((uint32_t)(((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xff) ^ 0xff)) << 16) | ((uint32_t)(0xff) << 8) | (0xff)), (((uint32_t)(((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf3) ^ 0xf3)) << 16) | ((uint32_t)(0xf3) << 8) | (0xf3)), (((uint32_t)(((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd2) ^ 0xd2)) << 16) | ((uint32_t)(0xd2) << 8) | (0xd2)), (((uint32_t)(((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xcd) ^ 0xcd)) << 16) | ((uint32_t)(0xcd) << 8) | (0xcd)), (((uint32_t)(((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x0c) ^ 0x0c)) << 16) | ((uint32_t)(0x0c) << 8) | (0x0c)), (((uint32_t)(((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x13) ^ 0x13)) << 16) | ((uint32_t)(0x13) << 8) | (0x13)), (((uint32_t)(((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xec) ^ 0xec)) << 16) | ((uint32_t)(0xec) << 8) | (0xec)), (((uint32_t)(((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x5f) ^ 0x5f)) << 16) | ((uint32_t)(0x5f) << 8) | (0x5f)), (((uint32_t)(((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x97) ^ 0x97)) << 16) | ((uint32_t)(0x97) << 8) | (0x97)), (((uint32_t)(((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x44) ^ 0x44)) << 16) | ((uint32_t)(0x44) << 8) | (0x44)), (((uint32_t)(((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x17) ^ 0x17)) << 16) | ((uint32_t)(0x17) << 8) | (0x17)), (((uint32_t)(((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc4) ^ 0xc4)) << 16) | ((uint32_t)(0xc4) << 8) | (0xc4)), (((uint32_t)(((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa7) ^ 0xa7)) << 16) | ((uint32_t)(0xa7) << 8) | (0xa7)), (((uint32_t)(((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x7e) ^ 0x7e)) << 16) | ((uint32_t)(0x7e) << 8) | (0x7e)), (((uint32_t)(((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x3d) ^ 0x3d)) << 16) | ((uint32_t)(0x3d) << 8) | (0x3d)), (((uint32_t)(((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x64) ^ 0x64)) << 16) | ((uint32_t)(0x64) << 8) | (0x64)), (((uint32_t)(((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x5d) ^ 0x5d)) << 16) | ((uint32_t)(0x5d) << 8) | (0x5d)), (((uint32_t)(((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x19) ^ 0x19)) << 16) | ((uint32_t)(0x19) << 8) | (0x19)), (((uint32_t)(((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x73) ^ 0x73)) << 16) | ((uint32_t)(0x73) << 8) | (0x73)), (((uint32_t)(((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x60) ^ 0x60)) << 16) | ((uint32_t)(0x60) << 8) | (0x60)), (((uint32_t)(((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x81) ^ 0x81)) << 16) | ((uint32_t)(0x81) << 8) | (0x81)), (((uint32_t)(((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x4f) ^ 0x4f)) << 16) | ((uint32_t)(0x4f) << 8) | (0x4f)), (((uint32_t)(((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xdc) ^ 0xdc)) << 16) | ((uint32_t)(0xdc) << 8) | (0xdc)), (((uint32_t)(((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x22) ^ 0x22)) << 16) | ((uint32_t)(0x22) << 8) | (0x22)), (((uint32_t)(((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x2a) ^ 0x2a)) << 16) | ((uint32_t)(0x2a) << 8) | (0x2a)), (((uint32_t)(((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x90) ^ 0x90)) << 16) | ((uint32_t)(0x90) << 8) | (0x90)), (((uint32_t)(((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x88) ^ 0x88)) << 16) | ((uint32_t)(0x88) << 8) | (0x88)), (((uint32_t)(((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x46) ^ 0x46)) << 16) | ((uint32_t)(0x46) << 8) | (0x46)), (((uint32_t)(((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xee) ^ 0xee)) << 16) | ((uint32_t)(0xee) << 8) | (0xee)), (((uint32_t)(((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb8) ^ 0xb8)) << 16) | ((uint32_t)(0xb8) << 8) | (0xb8)), (((uint32_t)(((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x14) ^ 0x14)) << 16) | ((uint32_t)(0x14) << 8) | (0x14)), (((uint32_t)(((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xde) ^ 0xde)) << 16) | ((uint32_t)(0xde) << 8) | (0xde)), (((uint32_t)(((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x5e) ^ 0x5e)) << 16) | ((uint32_t)(0x5e) << 8) | (0x5e)), (((uint32_t)(((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x0b) ^ 0x0b)) << 16) | ((uint32_t)(0x0b) << 8) | (0x0b)), (((uint32_t)(((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xdb) ^ 0xdb)) << 16) | ((uint32_t)(0xdb) << 8) | (0xdb)), (((uint32_t)(((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe0) ^ 0xe0)) << 16) | ((uint32_t)(0xe0) << 8) | (0xe0)), (((uint32_t)(((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x32) ^ 0x32)) << 16) | ((uint32_t)(0x32) << 8) | (0x32)), (((uint32_t)(((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x3a) ^ 0x3a)) << 16) | ((uint32_t)(0x3a) << 8) | (0x3a)), (((uint32_t)(((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x0a) ^ 0x0a)) << 16) | ((uint32_t)(0x0a) << 8) | (0x0a)), (((uint32_t)(((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x49) ^ 0x49)) << 16) | ((uint32_t)(0x49) << 8) | (0x49)), (((uint32_t)(((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x06) ^ 0x06)) << 16) | ((uint32_t)(0x06) << 8) | (0x06)), (((uint32_t)(((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x24) ^ 0x24)) << 16) | ((uint32_t)(0x24) << 8) | (0x24)), (((uint32_t)(((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x5c) ^ 0x5c)) << 16) | ((uint32_t)(0x5c) << 8) | (0x5c)), (((uint32_t)(((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc2) ^ 0xc2)) << 16) | ((uint32_t)(0xc2) << 8) | (0xc2)), (((uint32_t)(((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd3) ^ 0xd3)) << 16) | ((uint32_t)(0xd3) << 8) | (0xd3)), (((uint32_t)(((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xac) ^ 0xac)) << 16) | ((uint32_t)(0xac) << 8) | (0xac)), (((uint32_t)(((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x62) ^ 0x62)) << 16) | ((uint32_t)(0x62) << 8) | (0x62)), (((uint32_t)(((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x91) ^ 0x91)) << 16) | ((uint32_t)(0x91) << 8) | (0x91)), (((uint32_t)(((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x95) ^ 0x95)) << 16) | ((uint32_t)(0x95) << 8) | (0x95)), (((uint32_t)(((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe4) ^ 0xe4)) << 16) | ((uint32_t)(0xe4) << 8) | (0xe4)), (((uint32_t)(((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x79) ^ 0x79)) << 16) | ((uint32_t)(0x79) << 8) | (0x79)), (((uint32_t)(((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe7) ^ 0xe7)) << 16) | ((uint32_t)(0xe7) << 8) | (0xe7)), (((uint32_t)(((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc8) ^ 0xc8)) << 16) | ((uint32_t)(0xc8) << 8) | (0xc8)), (((uint32_t)(((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x37) ^ 0x37)) << 16) | ((uint32_t)(0x37) << 8) | (0x37)), (((uint32_t)(((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x6d) ^ 0x6d)) << 16) | ((uint32_t)(0x6d) << 8) | (0x6d)), (((uint32_t)(((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x8d) ^ 0x8d)) << 16) | ((uint32_t)(0x8d) << 8) | (0x8d)), (((uint32_t)(((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd5) ^ 0xd5)) << 16) | ((uint32_t)(0xd5) << 8) | (0xd5)), (((uint32_t)(((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x4e) ^ 0x4e)) << 16) | ((uint32_t)(0x4e) << 8) | (0x4e)), (((uint32_t)(((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa9) ^ 0xa9)) << 16) | ((uint32_t)(0xa9) << 8) | (0xa9)), (((uint32_t)(((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x6c) ^ 0x6c)) << 16) | ((uint32_t)(0x6c) << 8) | (0x6c)), (((uint32_t)(((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x56) ^ 0x56)) << 16) | ((uint32_t)(0x56) << 8) | (0x56)), (((uint32_t)(((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf4) ^ 0xf4)) << 16) | ((uint32_t)(0xf4) << 8) | (0xf4)), (((uint32_t)(((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xea) ^ 0xea)) << 16) | ((uint32_t)(0xea) << 8) | (0xea)), (((uint32_t)(((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x65) ^ 0x65)) << 16) | ((uint32_t)(0x65) << 8) | (0x65)), (((uint32_t)(((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x7a) ^ 0x7a)) << 16) | ((uint32_t)(0x7a) << 8) | (0x7a)), (((uint32_t)(((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xae) ^ 0xae)) << 16) | ((uint32_t)(0xae) << 8) | (0xae)), (((uint32_t)(((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x08) ^ 0x08)) << 16) | ((uint32_t)(0x08) << 8) | (0x08)), (((uint32_t)(((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xba) ^ 0xba)) << 16) | ((uint32_t)(0xba) << 8) | (0xba)), (((uint32_t)(((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x78) ^ 0x78)) << 16) | ((uint32_t)(0x78) << 8) | (0x78)), (((uint32_t)(((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x25) ^ 0x25)) << 16) | ((uint32_t)(0x25) << 8) | (0x25)), (((uint32_t)(((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x2e) ^ 0x2e)) << 16) | ((uint32_t)(0x2e) << 8) | (0x2e)), (((uint32_t)(((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x1c) ^ 0x1c)) << 16) | ((uint32_t)(0x1c) << 8) | (0x1c)), (((uint32_t)(((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa6) ^ 0xa6)) << 16) | ((uint32_t)(0xa6) << 8) | (0xa6)), (((uint32_t)(((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb4) ^ 0xb4)) << 16) | ((uint32_t)(0xb4) << 8) | (0xb4)), (((uint32_t)(((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc6) ^ 0xc6)) << 16) | ((uint32_t)(0xc6) << 8) | (0xc6)), (((uint32_t)(((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe8) ^ 0xe8)) << 16) | ((uint32_t)(0xe8) << 8) | (0xe8)), (((uint32_t)(((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xdd) ^ 0xdd)) << 16) | ((uint32_t)(0xdd) << 8) | (0xdd)), (((uint32_t)(((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x74) ^ 0x74)) << 16) | ((uint32_t)(0x74) << 8) | (0x74)), (((uint32_t)(((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x1f) ^ 0x1f)) << 16) | ((uint32_t)(0x1f) << 8) | (0x1f)), (((uint32_t)(((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x4b) ^ 0x4b)) << 16) | ((uint32_t)(0x4b) << 8) | (0x4b)), (((uint32_t)(((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xbd) ^ 0xbd)) << 16) | ((uint32_t)(0xbd) << 8) | (0xbd)), (((uint32_t)(((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x8b) ^ 0x8b)) << 16) | ((uint32_t)(0x8b) << 8) | (0x8b)), (((uint32_t)(((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x8a) ^ 0x8a)) << 16) | ((uint32_t)(0x8a) << 8) | (0x8a)), (((uint32_t)(((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x70) ^ 0x70)) << 16) | ((uint32_t)(0x70) << 8) | (0x70)), (((uint32_t)(((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x3e) ^ 0x3e)) << 16) | ((uint32_t)(0x3e) << 8) | (0x3e)), (((uint32_t)(((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb5) ^ 0xb5)) << 16) | ((uint32_t)(0xb5) << 8) | (0xb5)), (((uint32_t)(((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x66) ^ 0x66)) << 16) | ((uint32_t)(0x66) << 8) | (0x66)), (((uint32_t)(((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x48) ^ 0x48)) << 16) | ((uint32_t)(0x48) << 8) | (0x48)), (((uint32_t)(((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x03) ^ 0x03)) << 16) | ((uint32_t)(0x03) << 8) | (0x03)), (((uint32_t)(((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf6) ^ 0xf6)) << 16) | ((uint32_t)(0xf6) << 8) | (0xf6)), (((uint32_t)(((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x0e) ^ 0x0e)) << 16) | ((uint32_t)(0x0e) << 8) | (0x0e)), (((uint32_t)(((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x61) ^ 0x61)) << 16) | ((uint32_t)(0x61) << 8) | (0x61)), (((uint32_t)(((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x35) ^ 0x35)) << 16) | ((uint32_t)(0x35) << 8) | (0x35)), (((uint32_t)(((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x57) ^ 0x57)) << 16) | ((uint32_t)(0x57) << 8) | (0x57)), (((uint32_t)(((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb9) ^ 0xb9)) << 16) | ((uint32_t)(0xb9) << 8) | (0xb9)), (((uint32_t)(((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x86) ^ 0x86)) << 16) | ((uint32_t)(0x86) << 8) | (0x86)), (((uint32_t)(((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xc1) ^ 0xc1)) << 16) | ((uint32_t)(0xc1) << 8) | (0xc1)), (((uint32_t)(((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x1d) ^ 0x1d)) << 16) | ((uint32_t)(0x1d) << 8) | (0x1d)), (((uint32_t)(((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x9e) ^ 0x9e)) << 16) | ((uint32_t)(0x9e) << 8) | (0x9e)), (((uint32_t)(((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe1) ^ 0xe1)) << 16) | ((uint32_t)(0xe1) << 8) | (0xe1)), (((uint32_t)(((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xf8) ^ 0xf8)) << 16) | ((uint32_t)(0xf8) << 8) | (0xf8)), (((uint32_t)(((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x98) ^ 0x98)) << 16) | ((uint32_t)(0x98) << 8) | (0x98)), (((uint32_t)(((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x11) ^ 0x11)) << 16) | ((uint32_t)(0x11) << 8) | (0x11)), (((uint32_t)(((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x69) ^ 0x69)) << 16) | ((uint32_t)(0x69) << 8) | (0x69)), (((uint32_t)(((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xd9) ^ 0xd9)) << 16) | ((uint32_t)(0xd9) << 8) | (0xd9)), (((uint32_t)(((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x8e) ^ 0x8e)) << 16) | ((uint32_t)(0x8e) << 8) | (0x8e)), (((uint32_t)(((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x94) ^ 0x94)) << 16) | ((uint32_t)(0x94) << 8) | (0x94)), (((uint32_t)(((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x9b) ^ 0x9b)) << 16) | ((uint32_t)(0x9b) << 8) | (0x9b)), (((uint32_t)(((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x1e) ^ 0x1e)) << 16) | ((uint32_t)(0x1e) << 8) | (0x1e)), (((uint32_t)(((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x87) ^ 0x87)) << 16) | ((uint32_t)(0x87) << 8) | (0x87)), (((uint32_t)(((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe9) ^ 0xe9)) << 16) | ((uint32_t)(0xe9) << 8) | (0xe9)), (((uint32_t)(((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xce) ^ 0xce)) << 16) | ((uint32_t)(0xce) << 8) | (0xce)), (((uint32_t)(((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x55) ^ 0x55)) << 16) | ((uint32_t)(0x55) << 8) | (0x55)), (((uint32_t)(((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x28) ^ 0x28)) << 16) | ((uint32_t)(0x28) << 8) | (0x28)), (((uint32_t)(((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xdf) ^ 0xdf)) << 16) | ((uint32_t)(0xdf) << 8) | (0xdf)), (((uint32_t)(((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x8c) ^ 0x8c)) << 16) | ((uint32_t)(0x8c) << 8) | (0x8c)), (((uint32_t)(((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xa1) ^ 0xa1)) << 16) | ((uint32_t)(0xa1) << 8) | (0xa1)), (((uint32_t)(((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x89) ^ 0x89)) << 16) | ((uint32_t)(0x89) << 8) | (0x89)), (((uint32_t)(((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x0d) ^ 0x0d)) << 16) | ((uint32_t)(0x0d) << 8) | (0x0d)), (((uint32_t)(((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xbf) ^ 0xbf)) << 16) | ((uint32_t)(0xbf) << 8) | (0xbf)), (((uint32_t)(((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xe6) ^ 0xe6)) << 16) | ((uint32_t)(0xe6) << 8) | (0xe6)), (((uint32_t)(((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x42) ^ 0x42)) << 16) | ((uint32_t)(0x42) << 8) | (0x42)), (((uint32_t)(((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x68) ^ 0x68)) << 16) | ((uint32_t)(0x68) << 8) | (0x68)), (((uint32_t)(((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x41) ^ 0x41)) << 16) | ((uint32_t)(0x41) << 8) | (0x41)), (((uint32_t)(((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x99) ^ 0x99)) << 16) | ((uint32_t)(0x99) << 8) | (0x99)), (((uint32_t)(((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x2d) ^ 0x2d)) << 16) | ((uint32_t)(0x2d) << 8) | (0x2d)), (((uint32_t)(((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x0f) ^ 0x0f)) << 16) | ((uint32_t)(0x0f) << 8) | (0x0f)), (((uint32_t)(((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xb0) ^ 0xb0)) << 16) | ((uint32_t)(0xb0) << 8) | (0xb0)), (((uint32_t)(((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x54) ^ 0x54)) << 16) | ((uint32_t)(0x54) << 8) | (0x54)), (((uint32_t)(((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0xbb) ^ 0xbb)) << 16) | ((uint32_t)(0xbb) << 8) | (0xbb)), (((uint32_t)(((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint32_t)((f2(0x16) ^ 0x16)) << 16) | ((uint32_t)(0x16) << 8) | (0x16))}
+		{(((uint)((f2(0x63) ^ 0x63)) << 24) | ((uint)(0x63) << 16) | ((uint)(0x63) << 8) | (((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7c) ^ 0x7c)) << 24) | ((uint)(0x7c) << 16) | ((uint)(0x7c) << 8) | (((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x77) ^ 0x77)) << 24) | ((uint)(0x77) << 16) | ((uint)(0x77) << 8) | (((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7b) ^ 0x7b)) << 24) | ((uint)(0x7b) << 16) | ((uint)(0x7b) << 8) | (((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf2) ^ 0xf2)) << 24) | ((uint)(0xf2) << 16) | ((uint)(0xf2) << 8) | (((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6b) ^ 0x6b)) << 24) | ((uint)(0x6b) << 16) | ((uint)(0x6b) << 8) | (((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6f) ^ 0x6f)) << 24) | ((uint)(0x6f) << 16) | ((uint)(0x6f) << 8) | (((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc5) ^ 0xc5)) << 24) | ((uint)(0xc5) << 16) | ((uint)(0xc5) << 8) | (((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x30) ^ 0x30)) << 24) | ((uint)(0x30) << 16) | ((uint)(0x30) << 8) | (((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x01) ^ 0x01)) << 24) | ((uint)(0x01) << 16) | ((uint)(0x01) << 8) | (((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x67) ^ 0x67)) << 24) | ((uint)(0x67) << 16) | ((uint)(0x67) << 8) | (((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2b) ^ 0x2b)) << 24) | ((uint)(0x2b) << 16) | ((uint)(0x2b) << 8) | (((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfe) ^ 0xfe)) << 24) | ((uint)(0xfe) << 16) | ((uint)(0xfe) << 8) | (((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd7) ^ 0xd7)) << 24) | ((uint)(0xd7) << 16) | ((uint)(0xd7) << 8) | (((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xab) ^ 0xab)) << 24) | ((uint)(0xab) << 16) | ((uint)(0xab) << 8) | (((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x76) ^ 0x76)) << 24) | ((uint)(0x76) << 16) | ((uint)(0x76) << 8) | (((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xca) ^ 0xca)) << 24) | ((uint)(0xca) << 16) | ((uint)(0xca) << 8) | (((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x82) ^ 0x82)) << 24) | ((uint)(0x82) << 16) | ((uint)(0x82) << 8) | (((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc9) ^ 0xc9)) << 24) | ((uint)(0xc9) << 16) | ((uint)(0xc9) << 8) | (((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7d) ^ 0x7d)) << 24) | ((uint)(0x7d) << 16) | ((uint)(0x7d) << 8) | (((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfa) ^ 0xfa)) << 24) | ((uint)(0xfa) << 16) | ((uint)(0xfa) << 8) | (((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x59) ^ 0x59)) << 24) | ((uint)(0x59) << 16) | ((uint)(0x59) << 8) | (((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x47) ^ 0x47)) << 24) | ((uint)(0x47) << 16) | ((uint)(0x47) << 8) | (((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf0) ^ 0xf0)) << 24) | ((uint)(0xf0) << 16) | ((uint)(0xf0) << 8) | (((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xad) ^ 0xad)) << 24) | ((uint)(0xad) << 16) | ((uint)(0xad) << 8) | (((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd4) ^ 0xd4)) << 24) | ((uint)(0xd4) << 16) | ((uint)(0xd4) << 8) | (((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa2) ^ 0xa2)) << 24) | ((uint)(0xa2) << 16) | ((uint)(0xa2) << 8) | (((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xaf) ^ 0xaf)) << 24) | ((uint)(0xaf) << 16) | ((uint)(0xaf) << 8) | (((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9c) ^ 0x9c)) << 24) | ((uint)(0x9c) << 16) | ((uint)(0x9c) << 8) | (((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa4) ^ 0xa4)) << 24) | ((uint)(0xa4) << 16) | ((uint)(0xa4) << 8) | (((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x72) ^ 0x72)) << 24) | ((uint)(0x72) << 16) | ((uint)(0x72) << 8) | (((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc0) ^ 0xc0)) << 24) | ((uint)(0xc0) << 16) | ((uint)(0xc0) << 8) | (((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb7) ^ 0xb7)) << 24) | ((uint)(0xb7) << 16) | ((uint)(0xb7) << 8) | (((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfd) ^ 0xfd)) << 24) | ((uint)(0xfd) << 16) | ((uint)(0xfd) << 8) | (((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x93) ^ 0x93)) << 24) | ((uint)(0x93) << 16) | ((uint)(0x93) << 8) | (((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x26) ^ 0x26)) << 24) | ((uint)(0x26) << 16) | ((uint)(0x26) << 8) | (((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x36) ^ 0x36)) << 24) | ((uint)(0x36) << 16) | ((uint)(0x36) << 8) | (((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3f) ^ 0x3f)) << 24) | ((uint)(0x3f) << 16) | ((uint)(0x3f) << 8) | (((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf7) ^ 0xf7)) << 24) | ((uint)(0xf7) << 16) | ((uint)(0xf7) << 8) | (((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xcc) ^ 0xcc)) << 24) | ((uint)(0xcc) << 16) | ((uint)(0xcc) << 8) | (((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x34) ^ 0x34)) << 24) | ((uint)(0x34) << 16) | ((uint)(0x34) << 8) | (((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa5) ^ 0xa5)) << 24) | ((uint)(0xa5) << 16) | ((uint)(0xa5) << 8) | (((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe5) ^ 0xe5)) << 24) | ((uint)(0xe5) << 16) | ((uint)(0xe5) << 8) | (((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf1) ^ 0xf1)) << 24) | ((uint)(0xf1) << 16) | ((uint)(0xf1) << 8) | (((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x71) ^ 0x71)) << 24) | ((uint)(0x71) << 16) | ((uint)(0x71) << 8) | (((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd8) ^ 0xd8)) << 24) | ((uint)(0xd8) << 16) | ((uint)(0xd8) << 8) | (((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x31) ^ 0x31)) << 24) | ((uint)(0x31) << 16) | ((uint)(0x31) << 8) | (((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x15) ^ 0x15)) << 24) | ((uint)(0x15) << 16) | ((uint)(0x15) << 8) | (((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x04) ^ 0x04)) << 24) | ((uint)(0x04) << 16) | ((uint)(0x04) << 8) | (((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc7) ^ 0xc7)) << 24) | ((uint)(0xc7) << 16) | ((uint)(0xc7) << 8) | (((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x23) ^ 0x23)) << 24) | ((uint)(0x23) << 16) | ((uint)(0x23) << 8) | (((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc3) ^ 0xc3)) << 24) | ((uint)(0xc3) << 16) | ((uint)(0xc3) << 8) | (((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x18) ^ 0x18)) << 24) | ((uint)(0x18) << 16) | ((uint)(0x18) << 8) | (((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x96) ^ 0x96)) << 24) | ((uint)(0x96) << 16) | ((uint)(0x96) << 8) | (((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x05) ^ 0x05)) << 24) | ((uint)(0x05) << 16) | ((uint)(0x05) << 8) | (((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9a) ^ 0x9a)) << 24) | ((uint)(0x9a) << 16) | ((uint)(0x9a) << 8) | (((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x07) ^ 0x07)) << 24) | ((uint)(0x07) << 16) | ((uint)(0x07) << 8) | (((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x12) ^ 0x12)) << 24) | ((uint)(0x12) << 16) | ((uint)(0x12) << 8) | (((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x80) ^ 0x80)) << 24) | ((uint)(0x80) << 16) | ((uint)(0x80) << 8) | (((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe2) ^ 0xe2)) << 24) | ((uint)(0xe2) << 16) | ((uint)(0xe2) << 8) | (((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xeb) ^ 0xeb)) << 24) | ((uint)(0xeb) << 16) | ((uint)(0xeb) << 8) | (((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x27) ^ 0x27)) << 24) | ((uint)(0x27) << 16) | ((uint)(0x27) << 8) | (((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb2) ^ 0xb2)) << 24) | ((uint)(0xb2) << 16) | ((uint)(0xb2) << 8) | (((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x75) ^ 0x75)) << 24) | ((uint)(0x75) << 16) | ((uint)(0x75) << 8) | (((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x09) ^ 0x09)) << 24) | ((uint)(0x09) << 16) | ((uint)(0x09) << 8) | (((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x83) ^ 0x83)) << 24) | ((uint)(0x83) << 16) | ((uint)(0x83) << 8) | (((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2c) ^ 0x2c)) << 24) | ((uint)(0x2c) << 16) | ((uint)(0x2c) << 8) | (((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1a) ^ 0x1a)) << 24) | ((uint)(0x1a) << 16) | ((uint)(0x1a) << 8) | (((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1b) ^ 0x1b)) << 24) | ((uint)(0x1b) << 16) | ((uint)(0x1b) << 8) | (((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6e) ^ 0x6e)) << 24) | ((uint)(0x6e) << 16) | ((uint)(0x6e) << 8) | (((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5a) ^ 0x5a)) << 24) | ((uint)(0x5a) << 16) | ((uint)(0x5a) << 8) | (((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa0) ^ 0xa0)) << 24) | ((uint)(0xa0) << 16) | ((uint)(0xa0) << 8) | (((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x52) ^ 0x52)) << 24) | ((uint)(0x52) << 16) | ((uint)(0x52) << 8) | (((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3b) ^ 0x3b)) << 24) | ((uint)(0x3b) << 16) | ((uint)(0x3b) << 8) | (((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd6) ^ 0xd6)) << 24) | ((uint)(0xd6) << 16) | ((uint)(0xd6) << 8) | (((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb3) ^ 0xb3)) << 24) | ((uint)(0xb3) << 16) | ((uint)(0xb3) << 8) | (((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x29) ^ 0x29)) << 24) | ((uint)(0x29) << 16) | ((uint)(0x29) << 8) | (((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe3) ^ 0xe3)) << 24) | ((uint)(0xe3) << 16) | ((uint)(0xe3) << 8) | (((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2f) ^ 0x2f)) << 24) | ((uint)(0x2f) << 16) | ((uint)(0x2f) << 8) | (((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x84) ^ 0x84)) << 24) | ((uint)(0x84) << 16) | ((uint)(0x84) << 8) | (((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x53) ^ 0x53)) << 24) | ((uint)(0x53) << 16) | ((uint)(0x53) << 8) | (((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd1) ^ 0xd1)) << 24) | ((uint)(0xd1) << 16) | ((uint)(0xd1) << 8) | (((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x00) ^ 0x00)) << 24) | ((uint)(0x00) << 16) | ((uint)(0x00) << 8) | (((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xed) ^ 0xed)) << 24) | ((uint)(0xed) << 16) | ((uint)(0xed) << 8) | (((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x20) ^ 0x20)) << 24) | ((uint)(0x20) << 16) | ((uint)(0x20) << 8) | (((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfc) ^ 0xfc)) << 24) | ((uint)(0xfc) << 16) | ((uint)(0xfc) << 8) | (((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb1) ^ 0xb1)) << 24) | ((uint)(0xb1) << 16) | ((uint)(0xb1) << 8) | (((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5b) ^ 0x5b)) << 24) | ((uint)(0x5b) << 16) | ((uint)(0x5b) << 8) | (((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6a) ^ 0x6a)) << 24) | ((uint)(0x6a) << 16) | ((uint)(0x6a) << 8) | (((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xcb) ^ 0xcb)) << 24) | ((uint)(0xcb) << 16) | ((uint)(0xcb) << 8) | (((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbe) ^ 0xbe)) << 24) | ((uint)(0xbe) << 16) | ((uint)(0xbe) << 8) | (((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x39) ^ 0x39)) << 24) | ((uint)(0x39) << 16) | ((uint)(0x39) << 8) | (((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4a) ^ 0x4a)) << 24) | ((uint)(0x4a) << 16) | ((uint)(0x4a) << 8) | (((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4c) ^ 0x4c)) << 24) | ((uint)(0x4c) << 16) | ((uint)(0x4c) << 8) | (((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x58) ^ 0x58)) << 24) | ((uint)(0x58) << 16) | ((uint)(0x58) << 8) | (((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xcf) ^ 0xcf)) << 24) | ((uint)(0xcf) << 16) | ((uint)(0xcf) << 8) | (((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd0) ^ 0xd0)) << 24) | ((uint)(0xd0) << 16) | ((uint)(0xd0) << 8) | (((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xef) ^ 0xef)) << 24) | ((uint)(0xef) << 16) | ((uint)(0xef) << 8) | (((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xaa) ^ 0xaa)) << 24) | ((uint)(0xaa) << 16) | ((uint)(0xaa) << 8) | (((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfb) ^ 0xfb)) << 24) | ((uint)(0xfb) << 16) | ((uint)(0xfb) << 8) | (((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x43) ^ 0x43)) << 24) | ((uint)(0x43) << 16) | ((uint)(0x43) << 8) | (((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4d) ^ 0x4d)) << 24) | ((uint)(0x4d) << 16) | ((uint)(0x4d) << 8) | (((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x33) ^ 0x33)) << 24) | ((uint)(0x33) << 16) | ((uint)(0x33) << 8) | (((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x85) ^ 0x85)) << 24) | ((uint)(0x85) << 16) | ((uint)(0x85) << 8) | (((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x45) ^ 0x45)) << 24) | ((uint)(0x45) << 16) | ((uint)(0x45) << 8) | (((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf9) ^ 0xf9)) << 24) | ((uint)(0xf9) << 16) | ((uint)(0xf9) << 8) | (((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x02) ^ 0x02)) << 24) | ((uint)(0x02) << 16) | ((uint)(0x02) << 8) | (((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7f) ^ 0x7f)) << 24) | ((uint)(0x7f) << 16) | ((uint)(0x7f) << 8) | (((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x50) ^ 0x50)) << 24) | ((uint)(0x50) << 16) | ((uint)(0x50) << 8) | (((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3c) ^ 0x3c)) << 24) | ((uint)(0x3c) << 16) | ((uint)(0x3c) << 8) | (((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9f) ^ 0x9f)) << 24) | ((uint)(0x9f) << 16) | ((uint)(0x9f) << 8) | (((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa8) ^ 0xa8)) << 24) | ((uint)(0xa8) << 16) | ((uint)(0xa8) << 8) | (((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x51) ^ 0x51)) << 24) | ((uint)(0x51) << 16) | ((uint)(0x51) << 8) | (((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa3) ^ 0xa3)) << 24) | ((uint)(0xa3) << 16) | ((uint)(0xa3) << 8) | (((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x40) ^ 0x40)) << 24) | ((uint)(0x40) << 16) | ((uint)(0x40) << 8) | (((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8f) ^ 0x8f)) << 24) | ((uint)(0x8f) << 16) | ((uint)(0x8f) << 8) | (((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x92) ^ 0x92)) << 24) | ((uint)(0x92) << 16) | ((uint)(0x92) << 8) | (((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9d) ^ 0x9d)) << 24) | ((uint)(0x9d) << 16) | ((uint)(0x9d) << 8) | (((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x38) ^ 0x38)) << 24) | ((uint)(0x38) << 16) | ((uint)(0x38) << 8) | (((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf5) ^ 0xf5)) << 24) | ((uint)(0xf5) << 16) | ((uint)(0xf5) << 8) | (((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbc) ^ 0xbc)) << 24) | ((uint)(0xbc) << 16) | ((uint)(0xbc) << 8) | (((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb6) ^ 0xb6)) << 24) | ((uint)(0xb6) << 16) | ((uint)(0xb6) << 8) | (((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xda) ^ 0xda)) << 24) | ((uint)(0xda) << 16) | ((uint)(0xda) << 8) | (((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x21) ^ 0x21)) << 24) | ((uint)(0x21) << 16) | ((uint)(0x21) << 8) | (((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x10) ^ 0x10)) << 24) | ((uint)(0x10) << 16) | ((uint)(0x10) << 8) | (((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xff) ^ 0xff)) << 24) | ((uint)(0xff) << 16) | ((uint)(0xff) << 8) | (((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf3) ^ 0xf3)) << 24) | ((uint)(0xf3) << 16) | ((uint)(0xf3) << 8) | (((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd2) ^ 0xd2)) << 24) | ((uint)(0xd2) << 16) | ((uint)(0xd2) << 8) | (((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xcd) ^ 0xcd)) << 24) | ((uint)(0xcd) << 16) | ((uint)(0xcd) << 8) | (((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0c) ^ 0x0c)) << 24) | ((uint)(0x0c) << 16) | ((uint)(0x0c) << 8) | (((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x13) ^ 0x13)) << 24) | ((uint)(0x13) << 16) | ((uint)(0x13) << 8) | (((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xec) ^ 0xec)) << 24) | ((uint)(0xec) << 16) | ((uint)(0xec) << 8) | (((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5f) ^ 0x5f)) << 24) | ((uint)(0x5f) << 16) | ((uint)(0x5f) << 8) | (((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x97) ^ 0x97)) << 24) | ((uint)(0x97) << 16) | ((uint)(0x97) << 8) | (((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x44) ^ 0x44)) << 24) | ((uint)(0x44) << 16) | ((uint)(0x44) << 8) | (((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x17) ^ 0x17)) << 24) | ((uint)(0x17) << 16) | ((uint)(0x17) << 8) | (((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc4) ^ 0xc4)) << 24) | ((uint)(0xc4) << 16) | ((uint)(0xc4) << 8) | (((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa7) ^ 0xa7)) << 24) | ((uint)(0xa7) << 16) | ((uint)(0xa7) << 8) | (((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7e) ^ 0x7e)) << 24) | ((uint)(0x7e) << 16) | ((uint)(0x7e) << 8) | (((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3d) ^ 0x3d)) << 24) | ((uint)(0x3d) << 16) | ((uint)(0x3d) << 8) | (((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x64) ^ 0x64)) << 24) | ((uint)(0x64) << 16) | ((uint)(0x64) << 8) | (((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5d) ^ 0x5d)) << 24) | ((uint)(0x5d) << 16) | ((uint)(0x5d) << 8) | (((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x19) ^ 0x19)) << 24) | ((uint)(0x19) << 16) | ((uint)(0x19) << 8) | (((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x73) ^ 0x73)) << 24) | ((uint)(0x73) << 16) | ((uint)(0x73) << 8) | (((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x60) ^ 0x60)) << 24) | ((uint)(0x60) << 16) | ((uint)(0x60) << 8) | (((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x81) ^ 0x81)) << 24) | ((uint)(0x81) << 16) | ((uint)(0x81) << 8) | (((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4f) ^ 0x4f)) << 24) | ((uint)(0x4f) << 16) | ((uint)(0x4f) << 8) | (((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xdc) ^ 0xdc)) << 24) | ((uint)(0xdc) << 16) | ((uint)(0xdc) << 8) | (((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x22) ^ 0x22)) << 24) | ((uint)(0x22) << 16) | ((uint)(0x22) << 8) | (((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2a) ^ 0x2a)) << 24) | ((uint)(0x2a) << 16) | ((uint)(0x2a) << 8) | (((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x90) ^ 0x90)) << 24) | ((uint)(0x90) << 16) | ((uint)(0x90) << 8) | (((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x88) ^ 0x88)) << 24) | ((uint)(0x88) << 16) | ((uint)(0x88) << 8) | (((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x46) ^ 0x46)) << 24) | ((uint)(0x46) << 16) | ((uint)(0x46) << 8) | (((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xee) ^ 0xee)) << 24) | ((uint)(0xee) << 16) | ((uint)(0xee) << 8) | (((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb8) ^ 0xb8)) << 24) | ((uint)(0xb8) << 16) | ((uint)(0xb8) << 8) | (((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x14) ^ 0x14)) << 24) | ((uint)(0x14) << 16) | ((uint)(0x14) << 8) | (((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xde) ^ 0xde)) << 24) | ((uint)(0xde) << 16) | ((uint)(0xde) << 8) | (((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5e) ^ 0x5e)) << 24) | ((uint)(0x5e) << 16) | ((uint)(0x5e) << 8) | (((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0b) ^ 0x0b)) << 24) | ((uint)(0x0b) << 16) | ((uint)(0x0b) << 8) | (((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xdb) ^ 0xdb)) << 24) | ((uint)(0xdb) << 16) | ((uint)(0xdb) << 8) | (((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe0) ^ 0xe0)) << 24) | ((uint)(0xe0) << 16) | ((uint)(0xe0) << 8) | (((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x32) ^ 0x32)) << 24) | ((uint)(0x32) << 16) | ((uint)(0x32) << 8) | (((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3a) ^ 0x3a)) << 24) | ((uint)(0x3a) << 16) | ((uint)(0x3a) << 8) | (((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0a) ^ 0x0a)) << 24) | ((uint)(0x0a) << 16) | ((uint)(0x0a) << 8) | (((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x49) ^ 0x49)) << 24) | ((uint)(0x49) << 16) | ((uint)(0x49) << 8) | (((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x06) ^ 0x06)) << 24) | ((uint)(0x06) << 16) | ((uint)(0x06) << 8) | (((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x24) ^ 0x24)) << 24) | ((uint)(0x24) << 16) | ((uint)(0x24) << 8) | (((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5c) ^ 0x5c)) << 24) | ((uint)(0x5c) << 16) | ((uint)(0x5c) << 8) | (((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc2) ^ 0xc2)) << 24) | ((uint)(0xc2) << 16) | ((uint)(0xc2) << 8) | (((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd3) ^ 0xd3)) << 24) | ((uint)(0xd3) << 16) | ((uint)(0xd3) << 8) | (((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xac) ^ 0xac)) << 24) | ((uint)(0xac) << 16) | ((uint)(0xac) << 8) | (((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x62) ^ 0x62)) << 24) | ((uint)(0x62) << 16) | ((uint)(0x62) << 8) | (((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x91) ^ 0x91)) << 24) | ((uint)(0x91) << 16) | ((uint)(0x91) << 8) | (((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x95) ^ 0x95)) << 24) | ((uint)(0x95) << 16) | ((uint)(0x95) << 8) | (((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe4) ^ 0xe4)) << 24) | ((uint)(0xe4) << 16) | ((uint)(0xe4) << 8) | (((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x79) ^ 0x79)) << 24) | ((uint)(0x79) << 16) | ((uint)(0x79) << 8) | (((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe7) ^ 0xe7)) << 24) | ((uint)(0xe7) << 16) | ((uint)(0xe7) << 8) | (((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc8) ^ 0xc8)) << 24) | ((uint)(0xc8) << 16) | ((uint)(0xc8) << 8) | (((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x37) ^ 0x37)) << 24) | ((uint)(0x37) << 16) | ((uint)(0x37) << 8) | (((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6d) ^ 0x6d)) << 24) | ((uint)(0x6d) << 16) | ((uint)(0x6d) << 8) | (((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8d) ^ 0x8d)) << 24) | ((uint)(0x8d) << 16) | ((uint)(0x8d) << 8) | (((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd5) ^ 0xd5)) << 24) | ((uint)(0xd5) << 16) | ((uint)(0xd5) << 8) | (((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4e) ^ 0x4e)) << 24) | ((uint)(0x4e) << 16) | ((uint)(0x4e) << 8) | (((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa9) ^ 0xa9)) << 24) | ((uint)(0xa9) << 16) | ((uint)(0xa9) << 8) | (((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6c) ^ 0x6c)) << 24) | ((uint)(0x6c) << 16) | ((uint)(0x6c) << 8) | (((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x56) ^ 0x56)) << 24) | ((uint)(0x56) << 16) | ((uint)(0x56) << 8) | (((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf4) ^ 0xf4)) << 24) | ((uint)(0xf4) << 16) | ((uint)(0xf4) << 8) | (((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xea) ^ 0xea)) << 24) | ((uint)(0xea) << 16) | ((uint)(0xea) << 8) | (((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x65) ^ 0x65)) << 24) | ((uint)(0x65) << 16) | ((uint)(0x65) << 8) | (((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7a) ^ 0x7a)) << 24) | ((uint)(0x7a) << 16) | ((uint)(0x7a) << 8) | (((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xae) ^ 0xae)) << 24) | ((uint)(0xae) << 16) | ((uint)(0xae) << 8) | (((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x08) ^ 0x08)) << 24) | ((uint)(0x08) << 16) | ((uint)(0x08) << 8) | (((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xba) ^ 0xba)) << 24) | ((uint)(0xba) << 16) | ((uint)(0xba) << 8) | (((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x78) ^ 0x78)) << 24) | ((uint)(0x78) << 16) | ((uint)(0x78) << 8) | (((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x25) ^ 0x25)) << 24) | ((uint)(0x25) << 16) | ((uint)(0x25) << 8) | (((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2e) ^ 0x2e)) << 24) | ((uint)(0x2e) << 16) | ((uint)(0x2e) << 8) | (((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1c) ^ 0x1c)) << 24) | ((uint)(0x1c) << 16) | ((uint)(0x1c) << 8) | (((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa6) ^ 0xa6)) << 24) | ((uint)(0xa6) << 16) | ((uint)(0xa6) << 8) | (((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb4) ^ 0xb4)) << 24) | ((uint)(0xb4) << 16) | ((uint)(0xb4) << 8) | (((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc6) ^ 0xc6)) << 24) | ((uint)(0xc6) << 16) | ((uint)(0xc6) << 8) | (((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe8) ^ 0xe8)) << 24) | ((uint)(0xe8) << 16) | ((uint)(0xe8) << 8) | (((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xdd) ^ 0xdd)) << 24) | ((uint)(0xdd) << 16) | ((uint)(0xdd) << 8) | (((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x74) ^ 0x74)) << 24) | ((uint)(0x74) << 16) | ((uint)(0x74) << 8) | (((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1f) ^ 0x1f)) << 24) | ((uint)(0x1f) << 16) | ((uint)(0x1f) << 8) | (((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4b) ^ 0x4b)) << 24) | ((uint)(0x4b) << 16) | ((uint)(0x4b) << 8) | (((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbd) ^ 0xbd)) << 24) | ((uint)(0xbd) << 16) | ((uint)(0xbd) << 8) | (((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8b) ^ 0x8b)) << 24) | ((uint)(0x8b) << 16) | ((uint)(0x8b) << 8) | (((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8a) ^ 0x8a)) << 24) | ((uint)(0x8a) << 16) | ((uint)(0x8a) << 8) | (((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x70) ^ 0x70)) << 24) | ((uint)(0x70) << 16) | ((uint)(0x70) << 8) | (((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3e) ^ 0x3e)) << 24) | ((uint)(0x3e) << 16) | ((uint)(0x3e) << 8) | (((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb5) ^ 0xb5)) << 24) | ((uint)(0xb5) << 16) | ((uint)(0xb5) << 8) | (((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x66) ^ 0x66)) << 24) | ((uint)(0x66) << 16) | ((uint)(0x66) << 8) | (((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x48) ^ 0x48)) << 24) | ((uint)(0x48) << 16) | ((uint)(0x48) << 8) | (((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x03) ^ 0x03)) << 24) | ((uint)(0x03) << 16) | ((uint)(0x03) << 8) | (((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf6) ^ 0xf6)) << 24) | ((uint)(0xf6) << 16) | ((uint)(0xf6) << 8) | (((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0e) ^ 0x0e)) << 24) | ((uint)(0x0e) << 16) | ((uint)(0x0e) << 8) | (((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x61) ^ 0x61)) << 24) | ((uint)(0x61) << 16) | ((uint)(0x61) << 8) | (((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x35) ^ 0x35)) << 24) | ((uint)(0x35) << 16) | ((uint)(0x35) << 8) | (((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x57) ^ 0x57)) << 24) | ((uint)(0x57) << 16) | ((uint)(0x57) << 8) | (((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb9) ^ 0xb9)) << 24) | ((uint)(0xb9) << 16) | ((uint)(0xb9) << 8) | (((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x86) ^ 0x86)) << 24) | ((uint)(0x86) << 16) | ((uint)(0x86) << 8) | (((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc1) ^ 0xc1)) << 24) | ((uint)(0xc1) << 16) | ((uint)(0xc1) << 8) | (((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1d) ^ 0x1d)) << 24) | ((uint)(0x1d) << 16) | ((uint)(0x1d) << 8) | (((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9e) ^ 0x9e)) << 24) | ((uint)(0x9e) << 16) | ((uint)(0x9e) << 8) | (((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe1) ^ 0xe1)) << 24) | ((uint)(0xe1) << 16) | ((uint)(0xe1) << 8) | (((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf8) ^ 0xf8)) << 24) | ((uint)(0xf8) << 16) | ((uint)(0xf8) << 8) | (((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x98) ^ 0x98)) << 24) | ((uint)(0x98) << 16) | ((uint)(0x98) << 8) | (((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x11) ^ 0x11)) << 24) | ((uint)(0x11) << 16) | ((uint)(0x11) << 8) | (((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x69) ^ 0x69)) << 24) | ((uint)(0x69) << 16) | ((uint)(0x69) << 8) | (((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd9) ^ 0xd9)) << 24) | ((uint)(0xd9) << 16) | ((uint)(0xd9) << 8) | (((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8e) ^ 0x8e)) << 24) | ((uint)(0x8e) << 16) | ((uint)(0x8e) << 8) | (((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x94) ^ 0x94)) << 24) | ((uint)(0x94) << 16) | ((uint)(0x94) << 8) | (((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9b) ^ 0x9b)) << 24) | ((uint)(0x9b) << 16) | ((uint)(0x9b) << 8) | (((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1e) ^ 0x1e)) << 24) | ((uint)(0x1e) << 16) | ((uint)(0x1e) << 8) | (((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x87) ^ 0x87)) << 24) | ((uint)(0x87) << 16) | ((uint)(0x87) << 8) | (((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe9) ^ 0xe9)) << 24) | ((uint)(0xe9) << 16) | ((uint)(0xe9) << 8) | (((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xce) ^ 0xce)) << 24) | ((uint)(0xce) << 16) | ((uint)(0xce) << 8) | (((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x55) ^ 0x55)) << 24) | ((uint)(0x55) << 16) | ((uint)(0x55) << 8) | (((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x28) ^ 0x28)) << 24) | ((uint)(0x28) << 16) | ((uint)(0x28) << 8) | (((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xdf) ^ 0xdf)) << 24) | ((uint)(0xdf) << 16) | ((uint)(0xdf) << 8) | (((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8c) ^ 0x8c)) << 24) | ((uint)(0x8c) << 16) | ((uint)(0x8c) << 8) | (((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa1) ^ 0xa1)) << 24) | ((uint)(0xa1) << 16) | ((uint)(0xa1) << 8) | (((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x89) ^ 0x89)) << 24) | ((uint)(0x89) << 16) | ((uint)(0x89) << 8) | (((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0d) ^ 0x0d)) << 24) | ((uint)(0x0d) << 16) | ((uint)(0x0d) << 8) | (((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbf) ^ 0xbf)) << 24) | ((uint)(0xbf) << 16) | ((uint)(0xbf) << 8) | (((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe6) ^ 0xe6)) << 24) | ((uint)(0xe6) << 16) | ((uint)(0xe6) << 8) | (((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x42) ^ 0x42)) << 24) | ((uint)(0x42) << 16) | ((uint)(0x42) << 8) | (((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x68) ^ 0x68)) << 24) | ((uint)(0x68) << 16) | ((uint)(0x68) << 8) | (((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x41) ^ 0x41)) << 24) | ((uint)(0x41) << 16) | ((uint)(0x41) << 8) | (((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x99) ^ 0x99)) << 24) | ((uint)(0x99) << 16) | ((uint)(0x99) << 8) | (((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2d) ^ 0x2d)) << 24) | ((uint)(0x2d) << 16) | ((uint)(0x2d) << 8) | (((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0f) ^ 0x0f)) << 24) | ((uint)(0x0f) << 16) | ((uint)(0x0f) << 8) | (((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb0) ^ 0xb0)) << 24) | ((uint)(0xb0) << 16) | ((uint)(0xb0) << 8) | (((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x54) ^ 0x54)) << 24) | ((uint)(0x54) << 16) | ((uint)(0x54) << 8) | (((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbb) ^ 0xbb)) << 24) | ((uint)(0xbb) << 16) | ((uint)(0xbb) << 8) | (((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x16) ^ 0x16)) << 24) | ((uint)(0x16) << 16) | ((uint)(0x16) << 8) | (((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))))},
+		{(((uint)(0x63) << 24) | ((uint)(0x63) << 16) | ((uint)(((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x63) ^ 0x63))), (((uint)(0x7c) << 24) | ((uint)(0x7c) << 16) | ((uint)(((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7c) ^ 0x7c))), (((uint)(0x77) << 24) | ((uint)(0x77) << 16) | ((uint)(((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x77) ^ 0x77))), (((uint)(0x7b) << 24) | ((uint)(0x7b) << 16) | ((uint)(((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7b) ^ 0x7b))), (((uint)(0xf2) << 24) | ((uint)(0xf2) << 16) | ((uint)(((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf2) ^ 0xf2))), (((uint)(0x6b) << 24) | ((uint)(0x6b) << 16) | ((uint)(((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6b) ^ 0x6b))), (((uint)(0x6f) << 24) | ((uint)(0x6f) << 16) | ((uint)(((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6f) ^ 0x6f))), (((uint)(0xc5) << 24) | ((uint)(0xc5) << 16) | ((uint)(((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc5) ^ 0xc5))), (((uint)(0x30) << 24) | ((uint)(0x30) << 16) | ((uint)(((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x30) ^ 0x30))), (((uint)(0x01) << 24) | ((uint)(0x01) << 16) | ((uint)(((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x01) ^ 0x01))), (((uint)(0x67) << 24) | ((uint)(0x67) << 16) | ((uint)(((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x67) ^ 0x67))), (((uint)(0x2b) << 24) | ((uint)(0x2b) << 16) | ((uint)(((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2b) ^ 0x2b))), (((uint)(0xfe) << 24) | ((uint)(0xfe) << 16) | ((uint)(((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfe) ^ 0xfe))), (((uint)(0xd7) << 24) | ((uint)(0xd7) << 16) | ((uint)(((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd7) ^ 0xd7))), (((uint)(0xab) << 24) | ((uint)(0xab) << 16) | ((uint)(((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xab) ^ 0xab))), (((uint)(0x76) << 24) | ((uint)(0x76) << 16) | ((uint)(((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x76) ^ 0x76))), (((uint)(0xca) << 24) | ((uint)(0xca) << 16) | ((uint)(((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xca) ^ 0xca))), (((uint)(0x82) << 24) | ((uint)(0x82) << 16) | ((uint)(((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x82) ^ 0x82))), (((uint)(0xc9) << 24) | ((uint)(0xc9) << 16) | ((uint)(((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc9) ^ 0xc9))), (((uint)(0x7d) << 24) | ((uint)(0x7d) << 16) | ((uint)(((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7d) ^ 0x7d))), (((uint)(0xfa) << 24) | ((uint)(0xfa) << 16) | ((uint)(((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfa) ^ 0xfa))), (((uint)(0x59) << 24) | ((uint)(0x59) << 16) | ((uint)(((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x59) ^ 0x59))), (((uint)(0x47) << 24) | ((uint)(0x47) << 16) | ((uint)(((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x47) ^ 0x47))), (((uint)(0xf0) << 24) | ((uint)(0xf0) << 16) | ((uint)(((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf0) ^ 0xf0))), (((uint)(0xad) << 24) | ((uint)(0xad) << 16) | ((uint)(((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xad) ^ 0xad))), (((uint)(0xd4) << 24) | ((uint)(0xd4) << 16) | ((uint)(((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd4) ^ 0xd4))), (((uint)(0xa2) << 24) | ((uint)(0xa2) << 16) | ((uint)(((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa2) ^ 0xa2))), (((uint)(0xaf) << 24) | ((uint)(0xaf) << 16) | ((uint)(((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xaf) ^ 0xaf))), (((uint)(0x9c) << 24) | ((uint)(0x9c) << 16) | ((uint)(((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9c) ^ 0x9c))), (((uint)(0xa4) << 24) | ((uint)(0xa4) << 16) | ((uint)(((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa4) ^ 0xa4))), (((uint)(0x72) << 24) | ((uint)(0x72) << 16) | ((uint)(((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x72) ^ 0x72))), (((uint)(0xc0) << 24) | ((uint)(0xc0) << 16) | ((uint)(((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc0) ^ 0xc0))), (((uint)(0xb7) << 24) | ((uint)(0xb7) << 16) | ((uint)(((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb7) ^ 0xb7))), (((uint)(0xfd) << 24) | ((uint)(0xfd) << 16) | ((uint)(((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfd) ^ 0xfd))), (((uint)(0x93) << 24) | ((uint)(0x93) << 16) | ((uint)(((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x93) ^ 0x93))), (((uint)(0x26) << 24) | ((uint)(0x26) << 16) | ((uint)(((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x26) ^ 0x26))), (((uint)(0x36) << 24) | ((uint)(0x36) << 16) | ((uint)(((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x36) ^ 0x36))), (((uint)(0x3f) << 24) | ((uint)(0x3f) << 16) | ((uint)(((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3f) ^ 0x3f))), (((uint)(0xf7) << 24) | ((uint)(0xf7) << 16) | ((uint)(((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf7) ^ 0xf7))), (((uint)(0xcc) << 24) | ((uint)(0xcc) << 16) | ((uint)(((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xcc) ^ 0xcc))), (((uint)(0x34) << 24) | ((uint)(0x34) << 16) | ((uint)(((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x34) ^ 0x34))), (((uint)(0xa5) << 24) | ((uint)(0xa5) << 16) | ((uint)(((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa5) ^ 0xa5))), (((uint)(0xe5) << 24) | ((uint)(0xe5) << 16) | ((uint)(((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe5) ^ 0xe5))), (((uint)(0xf1) << 24) | ((uint)(0xf1) << 16) | ((uint)(((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf1) ^ 0xf1))), (((uint)(0x71) << 24) | ((uint)(0x71) << 16) | ((uint)(((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x71) ^ 0x71))), (((uint)(0xd8) << 24) | ((uint)(0xd8) << 16) | ((uint)(((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd8) ^ 0xd8))), (((uint)(0x31) << 24) | ((uint)(0x31) << 16) | ((uint)(((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x31) ^ 0x31))), (((uint)(0x15) << 24) | ((uint)(0x15) << 16) | ((uint)(((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x15) ^ 0x15))), (((uint)(0x04) << 24) | ((uint)(0x04) << 16) | ((uint)(((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x04) ^ 0x04))), (((uint)(0xc7) << 24) | ((uint)(0xc7) << 16) | ((uint)(((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc7) ^ 0xc7))), (((uint)(0x23) << 24) | ((uint)(0x23) << 16) | ((uint)(((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x23) ^ 0x23))), (((uint)(0xc3) << 24) | ((uint)(0xc3) << 16) | ((uint)(((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc3) ^ 0xc3))), (((uint)(0x18) << 24) | ((uint)(0x18) << 16) | ((uint)(((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x18) ^ 0x18))), (((uint)(0x96) << 24) | ((uint)(0x96) << 16) | ((uint)(((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x96) ^ 0x96))), (((uint)(0x05) << 24) | ((uint)(0x05) << 16) | ((uint)(((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x05) ^ 0x05))), (((uint)(0x9a) << 24) | ((uint)(0x9a) << 16) | ((uint)(((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9a) ^ 0x9a))), (((uint)(0x07) << 24) | ((uint)(0x07) << 16) | ((uint)(((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x07) ^ 0x07))), (((uint)(0x12) << 24) | ((uint)(0x12) << 16) | ((uint)(((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x12) ^ 0x12))), (((uint)(0x80) << 24) | ((uint)(0x80) << 16) | ((uint)(((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x80) ^ 0x80))), (((uint)(0xe2) << 24) | ((uint)(0xe2) << 16) | ((uint)(((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe2) ^ 0xe2))), (((uint)(0xeb) << 24) | ((uint)(0xeb) << 16) | ((uint)(((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xeb) ^ 0xeb))), (((uint)(0x27) << 24) | ((uint)(0x27) << 16) | ((uint)(((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x27) ^ 0x27))), (((uint)(0xb2) << 24) | ((uint)(0xb2) << 16) | ((uint)(((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb2) ^ 0xb2))), (((uint)(0x75) << 24) | ((uint)(0x75) << 16) | ((uint)(((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x75) ^ 0x75))), (((uint)(0x09) << 24) | ((uint)(0x09) << 16) | ((uint)(((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x09) ^ 0x09))), (((uint)(0x83) << 24) | ((uint)(0x83) << 16) | ((uint)(((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x83) ^ 0x83))), (((uint)(0x2c) << 24) | ((uint)(0x2c) << 16) | ((uint)(((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2c) ^ 0x2c))), (((uint)(0x1a) << 24) | ((uint)(0x1a) << 16) | ((uint)(((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1a) ^ 0x1a))), (((uint)(0x1b) << 24) | ((uint)(0x1b) << 16) | ((uint)(((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1b) ^ 0x1b))), (((uint)(0x6e) << 24) | ((uint)(0x6e) << 16) | ((uint)(((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6e) ^ 0x6e))), (((uint)(0x5a) << 24) | ((uint)(0x5a) << 16) | ((uint)(((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5a) ^ 0x5a))), (((uint)(0xa0) << 24) | ((uint)(0xa0) << 16) | ((uint)(((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa0) ^ 0xa0))), (((uint)(0x52) << 24) | ((uint)(0x52) << 16) | ((uint)(((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x52) ^ 0x52))), (((uint)(0x3b) << 24) | ((uint)(0x3b) << 16) | ((uint)(((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3b) ^ 0x3b))), (((uint)(0xd6) << 24) | ((uint)(0xd6) << 16) | ((uint)(((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd6) ^ 0xd6))), (((uint)(0xb3) << 24) | ((uint)(0xb3) << 16) | ((uint)(((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb3) ^ 0xb3))), (((uint)(0x29) << 24) | ((uint)(0x29) << 16) | ((uint)(((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x29) ^ 0x29))), (((uint)(0xe3) << 24) | ((uint)(0xe3) << 16) | ((uint)(((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe3) ^ 0xe3))), (((uint)(0x2f) << 24) | ((uint)(0x2f) << 16) | ((uint)(((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2f) ^ 0x2f))), (((uint)(0x84) << 24) | ((uint)(0x84) << 16) | ((uint)(((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x84) ^ 0x84))), (((uint)(0x53) << 24) | ((uint)(0x53) << 16) | ((uint)(((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x53) ^ 0x53))), (((uint)(0xd1) << 24) | ((uint)(0xd1) << 16) | ((uint)(((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd1) ^ 0xd1))), (((uint)(0x00) << 24) | ((uint)(0x00) << 16) | ((uint)(((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x00) ^ 0x00))), (((uint)(0xed) << 24) | ((uint)(0xed) << 16) | ((uint)(((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xed) ^ 0xed))), (((uint)(0x20) << 24) | ((uint)(0x20) << 16) | ((uint)(((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x20) ^ 0x20))), (((uint)(0xfc) << 24) | ((uint)(0xfc) << 16) | ((uint)(((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfc) ^ 0xfc))), (((uint)(0xb1) << 24) | ((uint)(0xb1) << 16) | ((uint)(((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb1) ^ 0xb1))), (((uint)(0x5b) << 24) | ((uint)(0x5b) << 16) | ((uint)(((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5b) ^ 0x5b))), (((uint)(0x6a) << 24) | ((uint)(0x6a) << 16) | ((uint)(((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6a) ^ 0x6a))), (((uint)(0xcb) << 24) | ((uint)(0xcb) << 16) | ((uint)(((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xcb) ^ 0xcb))), (((uint)(0xbe) << 24) | ((uint)(0xbe) << 16) | ((uint)(((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbe) ^ 0xbe))), (((uint)(0x39) << 24) | ((uint)(0x39) << 16) | ((uint)(((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x39) ^ 0x39))), (((uint)(0x4a) << 24) | ((uint)(0x4a) << 16) | ((uint)(((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4a) ^ 0x4a))), (((uint)(0x4c) << 24) | ((uint)(0x4c) << 16) | ((uint)(((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4c) ^ 0x4c))), (((uint)(0x58) << 24) | ((uint)(0x58) << 16) | ((uint)(((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x58) ^ 0x58))), (((uint)(0xcf) << 24) | ((uint)(0xcf) << 16) | ((uint)(((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xcf) ^ 0xcf))), (((uint)(0xd0) << 24) | ((uint)(0xd0) << 16) | ((uint)(((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd0) ^ 0xd0))), (((uint)(0xef) << 24) | ((uint)(0xef) << 16) | ((uint)(((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xef) ^ 0xef))), (((uint)(0xaa) << 24) | ((uint)(0xaa) << 16) | ((uint)(((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xaa) ^ 0xaa))), (((uint)(0xfb) << 24) | ((uint)(0xfb) << 16) | ((uint)(((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xfb) ^ 0xfb))), (((uint)(0x43) << 24) | ((uint)(0x43) << 16) | ((uint)(((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x43) ^ 0x43))), (((uint)(0x4d) << 24) | ((uint)(0x4d) << 16) | ((uint)(((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4d) ^ 0x4d))), (((uint)(0x33) << 24) | ((uint)(0x33) << 16) | ((uint)(((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x33) ^ 0x33))), (((uint)(0x85) << 24) | ((uint)(0x85) << 16) | ((uint)(((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x85) ^ 0x85))), (((uint)(0x45) << 24) | ((uint)(0x45) << 16) | ((uint)(((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x45) ^ 0x45))), (((uint)(0xf9) << 24) | ((uint)(0xf9) << 16) | ((uint)(((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf9) ^ 0xf9))), (((uint)(0x02) << 24) | ((uint)(0x02) << 16) | ((uint)(((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x02) ^ 0x02))), (((uint)(0x7f) << 24) | ((uint)(0x7f) << 16) | ((uint)(((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7f) ^ 0x7f))), (((uint)(0x50) << 24) | ((uint)(0x50) << 16) | ((uint)(((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x50) ^ 0x50))), (((uint)(0x3c) << 24) | ((uint)(0x3c) << 16) | ((uint)(((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3c) ^ 0x3c))), (((uint)(0x9f) << 24) | ((uint)(0x9f) << 16) | ((uint)(((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9f) ^ 0x9f))), (((uint)(0xa8) << 24) | ((uint)(0xa8) << 16) | ((uint)(((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa8) ^ 0xa8))), (((uint)(0x51) << 24) | ((uint)(0x51) << 16) | ((uint)(((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x51) ^ 0x51))), (((uint)(0xa3) << 24) | ((uint)(0xa3) << 16) | ((uint)(((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa3) ^ 0xa3))), (((uint)(0x40) << 24) | ((uint)(0x40) << 16) | ((uint)(((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x40) ^ 0x40))), (((uint)(0x8f) << 24) | ((uint)(0x8f) << 16) | ((uint)(((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8f) ^ 0x8f))), (((uint)(0x92) << 24) | ((uint)(0x92) << 16) | ((uint)(((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x92) ^ 0x92))), (((uint)(0x9d) << 24) | ((uint)(0x9d) << 16) | ((uint)(((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9d) ^ 0x9d))), (((uint)(0x38) << 24) | ((uint)(0x38) << 16) | ((uint)(((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x38) ^ 0x38))), (((uint)(0xf5) << 24) | ((uint)(0xf5) << 16) | ((uint)(((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf5) ^ 0xf5))), (((uint)(0xbc) << 24) | ((uint)(0xbc) << 16) | ((uint)(((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbc) ^ 0xbc))), (((uint)(0xb6) << 24) | ((uint)(0xb6) << 16) | ((uint)(((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb6) ^ 0xb6))), (((uint)(0xda) << 24) | ((uint)(0xda) << 16) | ((uint)(((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xda) ^ 0xda))), (((uint)(0x21) << 24) | ((uint)(0x21) << 16) | ((uint)(((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x21) ^ 0x21))), (((uint)(0x10) << 24) | ((uint)(0x10) << 16) | ((uint)(((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x10) ^ 0x10))), (((uint)(0xff) << 24) | ((uint)(0xff) << 16) | ((uint)(((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xff) ^ 0xff))), (((uint)(0xf3) << 24) | ((uint)(0xf3) << 16) | ((uint)(((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf3) ^ 0xf3))), (((uint)(0xd2) << 24) | ((uint)(0xd2) << 16) | ((uint)(((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd2) ^ 0xd2))), (((uint)(0xcd) << 24) | ((uint)(0xcd) << 16) | ((uint)(((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xcd) ^ 0xcd))), (((uint)(0x0c) << 24) | ((uint)(0x0c) << 16) | ((uint)(((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0c) ^ 0x0c))), (((uint)(0x13) << 24) | ((uint)(0x13) << 16) | ((uint)(((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x13) ^ 0x13))), (((uint)(0xec) << 24) | ((uint)(0xec) << 16) | ((uint)(((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xec) ^ 0xec))), (((uint)(0x5f) << 24) | ((uint)(0x5f) << 16) | ((uint)(((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5f) ^ 0x5f))), (((uint)(0x97) << 24) | ((uint)(0x97) << 16) | ((uint)(((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x97) ^ 0x97))), (((uint)(0x44) << 24) | ((uint)(0x44) << 16) | ((uint)(((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x44) ^ 0x44))), (((uint)(0x17) << 24) | ((uint)(0x17) << 16) | ((uint)(((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x17) ^ 0x17))), (((uint)(0xc4) << 24) | ((uint)(0xc4) << 16) | ((uint)(((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc4) ^ 0xc4))), (((uint)(0xa7) << 24) | ((uint)(0xa7) << 16) | ((uint)(((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa7) ^ 0xa7))), (((uint)(0x7e) << 24) | ((uint)(0x7e) << 16) | ((uint)(((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7e) ^ 0x7e))), (((uint)(0x3d) << 24) | ((uint)(0x3d) << 16) | ((uint)(((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3d) ^ 0x3d))), (((uint)(0x64) << 24) | ((uint)(0x64) << 16) | ((uint)(((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x64) ^ 0x64))), (((uint)(0x5d) << 24) | ((uint)(0x5d) << 16) | ((uint)(((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5d) ^ 0x5d))), (((uint)(0x19) << 24) | ((uint)(0x19) << 16) | ((uint)(((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x19) ^ 0x19))), (((uint)(0x73) << 24) | ((uint)(0x73) << 16) | ((uint)(((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x73) ^ 0x73))), (((uint)(0x60) << 24) | ((uint)(0x60) << 16) | ((uint)(((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x60) ^ 0x60))), (((uint)(0x81) << 24) | ((uint)(0x81) << 16) | ((uint)(((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x81) ^ 0x81))), (((uint)(0x4f) << 24) | ((uint)(0x4f) << 16) | ((uint)(((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4f) ^ 0x4f))), (((uint)(0xdc) << 24) | ((uint)(0xdc) << 16) | ((uint)(((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xdc) ^ 0xdc))), (((uint)(0x22) << 24) | ((uint)(0x22) << 16) | ((uint)(((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x22) ^ 0x22))), (((uint)(0x2a) << 24) | ((uint)(0x2a) << 16) | ((uint)(((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2a) ^ 0x2a))), (((uint)(0x90) << 24) | ((uint)(0x90) << 16) | ((uint)(((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x90) ^ 0x90))), (((uint)(0x88) << 24) | ((uint)(0x88) << 16) | ((uint)(((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x88) ^ 0x88))), (((uint)(0x46) << 24) | ((uint)(0x46) << 16) | ((uint)(((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x46) ^ 0x46))), (((uint)(0xee) << 24) | ((uint)(0xee) << 16) | ((uint)(((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xee) ^ 0xee))), (((uint)(0xb8) << 24) | ((uint)(0xb8) << 16) | ((uint)(((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb8) ^ 0xb8))), (((uint)(0x14) << 24) | ((uint)(0x14) << 16) | ((uint)(((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x14) ^ 0x14))), (((uint)(0xde) << 24) | ((uint)(0xde) << 16) | ((uint)(((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xde) ^ 0xde))), (((uint)(0x5e) << 24) | ((uint)(0x5e) << 16) | ((uint)(((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5e) ^ 0x5e))), (((uint)(0x0b) << 24) | ((uint)(0x0b) << 16) | ((uint)(((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0b) ^ 0x0b))), (((uint)(0xdb) << 24) | ((uint)(0xdb) << 16) | ((uint)(((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xdb) ^ 0xdb))), (((uint)(0xe0) << 24) | ((uint)(0xe0) << 16) | ((uint)(((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe0) ^ 0xe0))), (((uint)(0x32) << 24) | ((uint)(0x32) << 16) | ((uint)(((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x32) ^ 0x32))), (((uint)(0x3a) << 24) | ((uint)(0x3a) << 16) | ((uint)(((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3a) ^ 0x3a))), (((uint)(0x0a) << 24) | ((uint)(0x0a) << 16) | ((uint)(((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0a) ^ 0x0a))), (((uint)(0x49) << 24) | ((uint)(0x49) << 16) | ((uint)(((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x49) ^ 0x49))), (((uint)(0x06) << 24) | ((uint)(0x06) << 16) | ((uint)(((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x06) ^ 0x06))), (((uint)(0x24) << 24) | ((uint)(0x24) << 16) | ((uint)(((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x24) ^ 0x24))), (((uint)(0x5c) << 24) | ((uint)(0x5c) << 16) | ((uint)(((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x5c) ^ 0x5c))), (((uint)(0xc2) << 24) | ((uint)(0xc2) << 16) | ((uint)(((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc2) ^ 0xc2))), (((uint)(0xd3) << 24) | ((uint)(0xd3) << 16) | ((uint)(((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd3) ^ 0xd3))), (((uint)(0xac) << 24) | ((uint)(0xac) << 16) | ((uint)(((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xac) ^ 0xac))), (((uint)(0x62) << 24) | ((uint)(0x62) << 16) | ((uint)(((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x62) ^ 0x62))), (((uint)(0x91) << 24) | ((uint)(0x91) << 16) | ((uint)(((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x91) ^ 0x91))), (((uint)(0x95) << 24) | ((uint)(0x95) << 16) | ((uint)(((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x95) ^ 0x95))), (((uint)(0xe4) << 24) | ((uint)(0xe4) << 16) | ((uint)(((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe4) ^ 0xe4))), (((uint)(0x79) << 24) | ((uint)(0x79) << 16) | ((uint)(((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x79) ^ 0x79))), (((uint)(0xe7) << 24) | ((uint)(0xe7) << 16) | ((uint)(((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe7) ^ 0xe7))), (((uint)(0xc8) << 24) | ((uint)(0xc8) << 16) | ((uint)(((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc8) ^ 0xc8))), (((uint)(0x37) << 24) | ((uint)(0x37) << 16) | ((uint)(((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x37) ^ 0x37))), (((uint)(0x6d) << 24) | ((uint)(0x6d) << 16) | ((uint)(((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6d) ^ 0x6d))), (((uint)(0x8d) << 24) | ((uint)(0x8d) << 16) | ((uint)(((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8d) ^ 0x8d))), (((uint)(0xd5) << 24) | ((uint)(0xd5) << 16) | ((uint)(((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd5) ^ 0xd5))), (((uint)(0x4e) << 24) | ((uint)(0x4e) << 16) | ((uint)(((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4e) ^ 0x4e))), (((uint)(0xa9) << 24) | ((uint)(0xa9) << 16) | ((uint)(((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa9) ^ 0xa9))), (((uint)(0x6c) << 24) | ((uint)(0x6c) << 16) | ((uint)(((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x6c) ^ 0x6c))), (((uint)(0x56) << 24) | ((uint)(0x56) << 16) | ((uint)(((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x56) ^ 0x56))), (((uint)(0xf4) << 24) | ((uint)(0xf4) << 16) | ((uint)(((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf4) ^ 0xf4))), (((uint)(0xea) << 24) | ((uint)(0xea) << 16) | ((uint)(((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xea) ^ 0xea))), (((uint)(0x65) << 24) | ((uint)(0x65) << 16) | ((uint)(((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x65) ^ 0x65))), (((uint)(0x7a) << 24) | ((uint)(0x7a) << 16) | ((uint)(((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x7a) ^ 0x7a))), (((uint)(0xae) << 24) | ((uint)(0xae) << 16) | ((uint)(((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xae) ^ 0xae))), (((uint)(0x08) << 24) | ((uint)(0x08) << 16) | ((uint)(((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x08) ^ 0x08))), (((uint)(0xba) << 24) | ((uint)(0xba) << 16) | ((uint)(((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xba) ^ 0xba))), (((uint)(0x78) << 24) | ((uint)(0x78) << 16) | ((uint)(((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x78) ^ 0x78))), (((uint)(0x25) << 24) | ((uint)(0x25) << 16) | ((uint)(((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x25) ^ 0x25))), (((uint)(0x2e) << 24) | ((uint)(0x2e) << 16) | ((uint)(((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2e) ^ 0x2e))), (((uint)(0x1c) << 24) | ((uint)(0x1c) << 16) | ((uint)(((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1c) ^ 0x1c))), (((uint)(0xa6) << 24) | ((uint)(0xa6) << 16) | ((uint)(((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa6) ^ 0xa6))), (((uint)(0xb4) << 24) | ((uint)(0xb4) << 16) | ((uint)(((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb4) ^ 0xb4))), (((uint)(0xc6) << 24) | ((uint)(0xc6) << 16) | ((uint)(((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc6) ^ 0xc6))), (((uint)(0xe8) << 24) | ((uint)(0xe8) << 16) | ((uint)(((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe8) ^ 0xe8))), (((uint)(0xdd) << 24) | ((uint)(0xdd) << 16) | ((uint)(((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xdd) ^ 0xdd))), (((uint)(0x74) << 24) | ((uint)(0x74) << 16) | ((uint)(((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x74) ^ 0x74))), (((uint)(0x1f) << 24) | ((uint)(0x1f) << 16) | ((uint)(((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1f) ^ 0x1f))), (((uint)(0x4b) << 24) | ((uint)(0x4b) << 16) | ((uint)(((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x4b) ^ 0x4b))), (((uint)(0xbd) << 24) | ((uint)(0xbd) << 16) | ((uint)(((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbd) ^ 0xbd))), (((uint)(0x8b) << 24) | ((uint)(0x8b) << 16) | ((uint)(((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8b) ^ 0x8b))), (((uint)(0x8a) << 24) | ((uint)(0x8a) << 16) | ((uint)(((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8a) ^ 0x8a))), (((uint)(0x70) << 24) | ((uint)(0x70) << 16) | ((uint)(((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x70) ^ 0x70))), (((uint)(0x3e) << 24) | ((uint)(0x3e) << 16) | ((uint)(((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x3e) ^ 0x3e))), (((uint)(0xb5) << 24) | ((uint)(0xb5) << 16) | ((uint)(((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb5) ^ 0xb5))), (((uint)(0x66) << 24) | ((uint)(0x66) << 16) | ((uint)(((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x66) ^ 0x66))), (((uint)(0x48) << 24) | ((uint)(0x48) << 16) | ((uint)(((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x48) ^ 0x48))), (((uint)(0x03) << 24) | ((uint)(0x03) << 16) | ((uint)(((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x03) ^ 0x03))), (((uint)(0xf6) << 24) | ((uint)(0xf6) << 16) | ((uint)(((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf6) ^ 0xf6))), (((uint)(0x0e) << 24) | ((uint)(0x0e) << 16) | ((uint)(((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0e) ^ 0x0e))), (((uint)(0x61) << 24) | ((uint)(0x61) << 16) | ((uint)(((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x61) ^ 0x61))), (((uint)(0x35) << 24) | ((uint)(0x35) << 16) | ((uint)(((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x35) ^ 0x35))), (((uint)(0x57) << 24) | ((uint)(0x57) << 16) | ((uint)(((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x57) ^ 0x57))), (((uint)(0xb9) << 24) | ((uint)(0xb9) << 16) | ((uint)(((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb9) ^ 0xb9))), (((uint)(0x86) << 24) | ((uint)(0x86) << 16) | ((uint)(((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x86) ^ 0x86))), (((uint)(0xc1) << 24) | ((uint)(0xc1) << 16) | ((uint)(((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xc1) ^ 0xc1))), (((uint)(0x1d) << 24) | ((uint)(0x1d) << 16) | ((uint)(((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1d) ^ 0x1d))), (((uint)(0x9e) << 24) | ((uint)(0x9e) << 16) | ((uint)(((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9e) ^ 0x9e))), (((uint)(0xe1) << 24) | ((uint)(0xe1) << 16) | ((uint)(((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe1) ^ 0xe1))), (((uint)(0xf8) << 24) | ((uint)(0xf8) << 16) | ((uint)(((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xf8) ^ 0xf8))), (((uint)(0x98) << 24) | ((uint)(0x98) << 16) | ((uint)(((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x98) ^ 0x98))), (((uint)(0x11) << 24) | ((uint)(0x11) << 16) | ((uint)(((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x11) ^ 0x11))), (((uint)(0x69) << 24) | ((uint)(0x69) << 16) | ((uint)(((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x69) ^ 0x69))), (((uint)(0xd9) << 24) | ((uint)(0xd9) << 16) | ((uint)(((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xd9) ^ 0xd9))), (((uint)(0x8e) << 24) | ((uint)(0x8e) << 16) | ((uint)(((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8e) ^ 0x8e))), (((uint)(0x94) << 24) | ((uint)(0x94) << 16) | ((uint)(((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x94) ^ 0x94))), (((uint)(0x9b) << 24) | ((uint)(0x9b) << 16) | ((uint)(((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x9b) ^ 0x9b))), (((uint)(0x1e) << 24) | ((uint)(0x1e) << 16) | ((uint)(((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x1e) ^ 0x1e))), (((uint)(0x87) << 24) | ((uint)(0x87) << 16) | ((uint)(((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x87) ^ 0x87))), (((uint)(0xe9) << 24) | ((uint)(0xe9) << 16) | ((uint)(((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe9) ^ 0xe9))), (((uint)(0xce) << 24) | ((uint)(0xce) << 16) | ((uint)(((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xce) ^ 0xce))), (((uint)(0x55) << 24) | ((uint)(0x55) << 16) | ((uint)(((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x55) ^ 0x55))), (((uint)(0x28) << 24) | ((uint)(0x28) << 16) | ((uint)(((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x28) ^ 0x28))), (((uint)(0xdf) << 24) | ((uint)(0xdf) << 16) | ((uint)(((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xdf) ^ 0xdf))), (((uint)(0x8c) << 24) | ((uint)(0x8c) << 16) | ((uint)(((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x8c) ^ 0x8c))), (((uint)(0xa1) << 24) | ((uint)(0xa1) << 16) | ((uint)(((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xa1) ^ 0xa1))), (((uint)(0x89) << 24) | ((uint)(0x89) << 16) | ((uint)(((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x89) ^ 0x89))), (((uint)(0x0d) << 24) | ((uint)(0x0d) << 16) | ((uint)(((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0d) ^ 0x0d))), (((uint)(0xbf) << 24) | ((uint)(0xbf) << 16) | ((uint)(((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbf) ^ 0xbf))), (((uint)(0xe6) << 24) | ((uint)(0xe6) << 16) | ((uint)(((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xe6) ^ 0xe6))), (((uint)(0x42) << 24) | ((uint)(0x42) << 16) | ((uint)(((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x42) ^ 0x42))), (((uint)(0x68) << 24) | ((uint)(0x68) << 16) | ((uint)(((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x68) ^ 0x68))), (((uint)(0x41) << 24) | ((uint)(0x41) << 16) | ((uint)(((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x41) ^ 0x41))), (((uint)(0x99) << 24) | ((uint)(0x99) << 16) | ((uint)(((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x99) ^ 0x99))), (((uint)(0x2d) << 24) | ((uint)(0x2d) << 16) | ((uint)(((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x2d) ^ 0x2d))), (((uint)(0x0f) << 24) | ((uint)(0x0f) << 16) | ((uint)(((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x0f) ^ 0x0f))), (((uint)(0xb0) << 24) | ((uint)(0xb0) << 16) | ((uint)(((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xb0) ^ 0xb0))), (((uint)(0x54) << 24) | ((uint)(0x54) << 16) | ((uint)(((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x54) ^ 0x54))), (((uint)(0xbb) << 24) | ((uint)(0xbb) << 16) | ((uint)(((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0xbb) ^ 0xbb))), (((uint)(0x16) << 24) | ((uint)(0x16) << 16) | ((uint)(((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))) << 8) | ((f2(0x16) ^ 0x16)))},
+		{(((uint)(0x63) << 24) | ((uint)(((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x63) ^ 0x63)) << 8) | (0x63)), (((uint)(0x7c) << 24) | ((uint)(((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7c) ^ 0x7c)) << 8) | (0x7c)), (((uint)(0x77) << 24) | ((uint)(((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x77) ^ 0x77)) << 8) | (0x77)), (((uint)(0x7b) << 24) | ((uint)(((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7b) ^ 0x7b)) << 8) | (0x7b)), (((uint)(0xf2) << 24) | ((uint)(((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf2) ^ 0xf2)) << 8) | (0xf2)), (((uint)(0x6b) << 24) | ((uint)(((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6b) ^ 0x6b)) << 8) | (0x6b)), (((uint)(0x6f) << 24) | ((uint)(((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6f) ^ 0x6f)) << 8) | (0x6f)), (((uint)(0xc5) << 24) | ((uint)(((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc5) ^ 0xc5)) << 8) | (0xc5)), (((uint)(0x30) << 24) | ((uint)(((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x30) ^ 0x30)) << 8) | (0x30)), (((uint)(0x01) << 24) | ((uint)(((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x01) ^ 0x01)) << 8) | (0x01)), (((uint)(0x67) << 24) | ((uint)(((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x67) ^ 0x67)) << 8) | (0x67)), (((uint)(0x2b) << 24) | ((uint)(((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2b) ^ 0x2b)) << 8) | (0x2b)), (((uint)(0xfe) << 24) | ((uint)(((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfe) ^ 0xfe)) << 8) | (0xfe)), (((uint)(0xd7) << 24) | ((uint)(((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd7) ^ 0xd7)) << 8) | (0xd7)), (((uint)(0xab) << 24) | ((uint)(((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xab) ^ 0xab)) << 8) | (0xab)), (((uint)(0x76) << 24) | ((uint)(((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x76) ^ 0x76)) << 8) | (0x76)), (((uint)(0xca) << 24) | ((uint)(((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xca) ^ 0xca)) << 8) | (0xca)), (((uint)(0x82) << 24) | ((uint)(((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x82) ^ 0x82)) << 8) | (0x82)), (((uint)(0xc9) << 24) | ((uint)(((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc9) ^ 0xc9)) << 8) | (0xc9)), (((uint)(0x7d) << 24) | ((uint)(((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7d) ^ 0x7d)) << 8) | (0x7d)), (((uint)(0xfa) << 24) | ((uint)(((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfa) ^ 0xfa)) << 8) | (0xfa)), (((uint)(0x59) << 24) | ((uint)(((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x59) ^ 0x59)) << 8) | (0x59)), (((uint)(0x47) << 24) | ((uint)(((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x47) ^ 0x47)) << 8) | (0x47)), (((uint)(0xf0) << 24) | ((uint)(((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf0) ^ 0xf0)) << 8) | (0xf0)), (((uint)(0xad) << 24) | ((uint)(((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xad) ^ 0xad)) << 8) | (0xad)), (((uint)(0xd4) << 24) | ((uint)(((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd4) ^ 0xd4)) << 8) | (0xd4)), (((uint)(0xa2) << 24) | ((uint)(((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa2) ^ 0xa2)) << 8) | (0xa2)), (((uint)(0xaf) << 24) | ((uint)(((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xaf) ^ 0xaf)) << 8) | (0xaf)), (((uint)(0x9c) << 24) | ((uint)(((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9c) ^ 0x9c)) << 8) | (0x9c)), (((uint)(0xa4) << 24) | ((uint)(((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa4) ^ 0xa4)) << 8) | (0xa4)), (((uint)(0x72) << 24) | ((uint)(((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x72) ^ 0x72)) << 8) | (0x72)), (((uint)(0xc0) << 24) | ((uint)(((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc0) ^ 0xc0)) << 8) | (0xc0)), (((uint)(0xb7) << 24) | ((uint)(((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb7) ^ 0xb7)) << 8) | (0xb7)), (((uint)(0xfd) << 24) | ((uint)(((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfd) ^ 0xfd)) << 8) | (0xfd)), (((uint)(0x93) << 24) | ((uint)(((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x93) ^ 0x93)) << 8) | (0x93)), (((uint)(0x26) << 24) | ((uint)(((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x26) ^ 0x26)) << 8) | (0x26)), (((uint)(0x36) << 24) | ((uint)(((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x36) ^ 0x36)) << 8) | (0x36)), (((uint)(0x3f) << 24) | ((uint)(((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3f) ^ 0x3f)) << 8) | (0x3f)), (((uint)(0xf7) << 24) | ((uint)(((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf7) ^ 0xf7)) << 8) | (0xf7)), (((uint)(0xcc) << 24) | ((uint)(((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xcc) ^ 0xcc)) << 8) | (0xcc)), (((uint)(0x34) << 24) | ((uint)(((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x34) ^ 0x34)) << 8) | (0x34)), (((uint)(0xa5) << 24) | ((uint)(((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa5) ^ 0xa5)) << 8) | (0xa5)), (((uint)(0xe5) << 24) | ((uint)(((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe5) ^ 0xe5)) << 8) | (0xe5)), (((uint)(0xf1) << 24) | ((uint)(((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf1) ^ 0xf1)) << 8) | (0xf1)), (((uint)(0x71) << 24) | ((uint)(((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x71) ^ 0x71)) << 8) | (0x71)), (((uint)(0xd8) << 24) | ((uint)(((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd8) ^ 0xd8)) << 8) | (0xd8)), (((uint)(0x31) << 24) | ((uint)(((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x31) ^ 0x31)) << 8) | (0x31)), (((uint)(0x15) << 24) | ((uint)(((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x15) ^ 0x15)) << 8) | (0x15)), (((uint)(0x04) << 24) | ((uint)(((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x04) ^ 0x04)) << 8) | (0x04)), (((uint)(0xc7) << 24) | ((uint)(((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc7) ^ 0xc7)) << 8) | (0xc7)), (((uint)(0x23) << 24) | ((uint)(((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x23) ^ 0x23)) << 8) | (0x23)), (((uint)(0xc3) << 24) | ((uint)(((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc3) ^ 0xc3)) << 8) | (0xc3)), (((uint)(0x18) << 24) | ((uint)(((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x18) ^ 0x18)) << 8) | (0x18)), (((uint)(0x96) << 24) | ((uint)(((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x96) ^ 0x96)) << 8) | (0x96)), (((uint)(0x05) << 24) | ((uint)(((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x05) ^ 0x05)) << 8) | (0x05)), (((uint)(0x9a) << 24) | ((uint)(((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9a) ^ 0x9a)) << 8) | (0x9a)), (((uint)(0x07) << 24) | ((uint)(((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x07) ^ 0x07)) << 8) | (0x07)), (((uint)(0x12) << 24) | ((uint)(((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x12) ^ 0x12)) << 8) | (0x12)), (((uint)(0x80) << 24) | ((uint)(((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x80) ^ 0x80)) << 8) | (0x80)), (((uint)(0xe2) << 24) | ((uint)(((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe2) ^ 0xe2)) << 8) | (0xe2)), (((uint)(0xeb) << 24) | ((uint)(((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xeb) ^ 0xeb)) << 8) | (0xeb)), (((uint)(0x27) << 24) | ((uint)(((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x27) ^ 0x27)) << 8) | (0x27)), (((uint)(0xb2) << 24) | ((uint)(((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb2) ^ 0xb2)) << 8) | (0xb2)), (((uint)(0x75) << 24) | ((uint)(((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x75) ^ 0x75)) << 8) | (0x75)), (((uint)(0x09) << 24) | ((uint)(((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x09) ^ 0x09)) << 8) | (0x09)), (((uint)(0x83) << 24) | ((uint)(((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x83) ^ 0x83)) << 8) | (0x83)), (((uint)(0x2c) << 24) | ((uint)(((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2c) ^ 0x2c)) << 8) | (0x2c)), (((uint)(0x1a) << 24) | ((uint)(((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1a) ^ 0x1a)) << 8) | (0x1a)), (((uint)(0x1b) << 24) | ((uint)(((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1b) ^ 0x1b)) << 8) | (0x1b)), (((uint)(0x6e) << 24) | ((uint)(((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6e) ^ 0x6e)) << 8) | (0x6e)), (((uint)(0x5a) << 24) | ((uint)(((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5a) ^ 0x5a)) << 8) | (0x5a)), (((uint)(0xa0) << 24) | ((uint)(((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa0) ^ 0xa0)) << 8) | (0xa0)), (((uint)(0x52) << 24) | ((uint)(((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x52) ^ 0x52)) << 8) | (0x52)), (((uint)(0x3b) << 24) | ((uint)(((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3b) ^ 0x3b)) << 8) | (0x3b)), (((uint)(0xd6) << 24) | ((uint)(((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd6) ^ 0xd6)) << 8) | (0xd6)), (((uint)(0xb3) << 24) | ((uint)(((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb3) ^ 0xb3)) << 8) | (0xb3)), (((uint)(0x29) << 24) | ((uint)(((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x29) ^ 0x29)) << 8) | (0x29)), (((uint)(0xe3) << 24) | ((uint)(((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe3) ^ 0xe3)) << 8) | (0xe3)), (((uint)(0x2f) << 24) | ((uint)(((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2f) ^ 0x2f)) << 8) | (0x2f)), (((uint)(0x84) << 24) | ((uint)(((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x84) ^ 0x84)) << 8) | (0x84)), (((uint)(0x53) << 24) | ((uint)(((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x53) ^ 0x53)) << 8) | (0x53)), (((uint)(0xd1) << 24) | ((uint)(((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd1) ^ 0xd1)) << 8) | (0xd1)), (((uint)(0x00) << 24) | ((uint)(((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x00) ^ 0x00)) << 8) | (0x00)), (((uint)(0xed) << 24) | ((uint)(((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xed) ^ 0xed)) << 8) | (0xed)), (((uint)(0x20) << 24) | ((uint)(((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x20) ^ 0x20)) << 8) | (0x20)), (((uint)(0xfc) << 24) | ((uint)(((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfc) ^ 0xfc)) << 8) | (0xfc)), (((uint)(0xb1) << 24) | ((uint)(((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb1) ^ 0xb1)) << 8) | (0xb1)), (((uint)(0x5b) << 24) | ((uint)(((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5b) ^ 0x5b)) << 8) | (0x5b)), (((uint)(0x6a) << 24) | ((uint)(((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6a) ^ 0x6a)) << 8) | (0x6a)), (((uint)(0xcb) << 24) | ((uint)(((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xcb) ^ 0xcb)) << 8) | (0xcb)), (((uint)(0xbe) << 24) | ((uint)(((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbe) ^ 0xbe)) << 8) | (0xbe)), (((uint)(0x39) << 24) | ((uint)(((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x39) ^ 0x39)) << 8) | (0x39)), (((uint)(0x4a) << 24) | ((uint)(((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4a) ^ 0x4a)) << 8) | (0x4a)), (((uint)(0x4c) << 24) | ((uint)(((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4c) ^ 0x4c)) << 8) | (0x4c)), (((uint)(0x58) << 24) | ((uint)(((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x58) ^ 0x58)) << 8) | (0x58)), (((uint)(0xcf) << 24) | ((uint)(((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xcf) ^ 0xcf)) << 8) | (0xcf)), (((uint)(0xd0) << 24) | ((uint)(((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd0) ^ 0xd0)) << 8) | (0xd0)), (((uint)(0xef) << 24) | ((uint)(((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xef) ^ 0xef)) << 8) | (0xef)), (((uint)(0xaa) << 24) | ((uint)(((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xaa) ^ 0xaa)) << 8) | (0xaa)), (((uint)(0xfb) << 24) | ((uint)(((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfb) ^ 0xfb)) << 8) | (0xfb)), (((uint)(0x43) << 24) | ((uint)(((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x43) ^ 0x43)) << 8) | (0x43)), (((uint)(0x4d) << 24) | ((uint)(((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4d) ^ 0x4d)) << 8) | (0x4d)), (((uint)(0x33) << 24) | ((uint)(((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x33) ^ 0x33)) << 8) | (0x33)), (((uint)(0x85) << 24) | ((uint)(((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x85) ^ 0x85)) << 8) | (0x85)), (((uint)(0x45) << 24) | ((uint)(((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x45) ^ 0x45)) << 8) | (0x45)), (((uint)(0xf9) << 24) | ((uint)(((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf9) ^ 0xf9)) << 8) | (0xf9)), (((uint)(0x02) << 24) | ((uint)(((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x02) ^ 0x02)) << 8) | (0x02)), (((uint)(0x7f) << 24) | ((uint)(((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7f) ^ 0x7f)) << 8) | (0x7f)), (((uint)(0x50) << 24) | ((uint)(((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x50) ^ 0x50)) << 8) | (0x50)), (((uint)(0x3c) << 24) | ((uint)(((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3c) ^ 0x3c)) << 8) | (0x3c)), (((uint)(0x9f) << 24) | ((uint)(((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9f) ^ 0x9f)) << 8) | (0x9f)), (((uint)(0xa8) << 24) | ((uint)(((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa8) ^ 0xa8)) << 8) | (0xa8)), (((uint)(0x51) << 24) | ((uint)(((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x51) ^ 0x51)) << 8) | (0x51)), (((uint)(0xa3) << 24) | ((uint)(((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa3) ^ 0xa3)) << 8) | (0xa3)), (((uint)(0x40) << 24) | ((uint)(((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x40) ^ 0x40)) << 8) | (0x40)), (((uint)(0x8f) << 24) | ((uint)(((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8f) ^ 0x8f)) << 8) | (0x8f)), (((uint)(0x92) << 24) | ((uint)(((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x92) ^ 0x92)) << 8) | (0x92)), (((uint)(0x9d) << 24) | ((uint)(((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9d) ^ 0x9d)) << 8) | (0x9d)), (((uint)(0x38) << 24) | ((uint)(((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x38) ^ 0x38)) << 8) | (0x38)), (((uint)(0xf5) << 24) | ((uint)(((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf5) ^ 0xf5)) << 8) | (0xf5)), (((uint)(0xbc) << 24) | ((uint)(((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbc) ^ 0xbc)) << 8) | (0xbc)), (((uint)(0xb6) << 24) | ((uint)(((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb6) ^ 0xb6)) << 8) | (0xb6)), (((uint)(0xda) << 24) | ((uint)(((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xda) ^ 0xda)) << 8) | (0xda)), (((uint)(0x21) << 24) | ((uint)(((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x21) ^ 0x21)) << 8) | (0x21)), (((uint)(0x10) << 24) | ((uint)(((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x10) ^ 0x10)) << 8) | (0x10)), (((uint)(0xff) << 24) | ((uint)(((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xff) ^ 0xff)) << 8) | (0xff)), (((uint)(0xf3) << 24) | ((uint)(((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf3) ^ 0xf3)) << 8) | (0xf3)), (((uint)(0xd2) << 24) | ((uint)(((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd2) ^ 0xd2)) << 8) | (0xd2)), (((uint)(0xcd) << 24) | ((uint)(((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xcd) ^ 0xcd)) << 8) | (0xcd)), (((uint)(0x0c) << 24) | ((uint)(((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0c) ^ 0x0c)) << 8) | (0x0c)), (((uint)(0x13) << 24) | ((uint)(((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x13) ^ 0x13)) << 8) | (0x13)), (((uint)(0xec) << 24) | ((uint)(((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xec) ^ 0xec)) << 8) | (0xec)), (((uint)(0x5f) << 24) | ((uint)(((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5f) ^ 0x5f)) << 8) | (0x5f)), (((uint)(0x97) << 24) | ((uint)(((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x97) ^ 0x97)) << 8) | (0x97)), (((uint)(0x44) << 24) | ((uint)(((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x44) ^ 0x44)) << 8) | (0x44)), (((uint)(0x17) << 24) | ((uint)(((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x17) ^ 0x17)) << 8) | (0x17)), (((uint)(0xc4) << 24) | ((uint)(((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc4) ^ 0xc4)) << 8) | (0xc4)), (((uint)(0xa7) << 24) | ((uint)(((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa7) ^ 0xa7)) << 8) | (0xa7)), (((uint)(0x7e) << 24) | ((uint)(((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7e) ^ 0x7e)) << 8) | (0x7e)), (((uint)(0x3d) << 24) | ((uint)(((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3d) ^ 0x3d)) << 8) | (0x3d)), (((uint)(0x64) << 24) | ((uint)(((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x64) ^ 0x64)) << 8) | (0x64)), (((uint)(0x5d) << 24) | ((uint)(((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5d) ^ 0x5d)) << 8) | (0x5d)), (((uint)(0x19) << 24) | ((uint)(((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x19) ^ 0x19)) << 8) | (0x19)), (((uint)(0x73) << 24) | ((uint)(((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x73) ^ 0x73)) << 8) | (0x73)), (((uint)(0x60) << 24) | ((uint)(((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x60) ^ 0x60)) << 8) | (0x60)), (((uint)(0x81) << 24) | ((uint)(((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x81) ^ 0x81)) << 8) | (0x81)), (((uint)(0x4f) << 24) | ((uint)(((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4f) ^ 0x4f)) << 8) | (0x4f)), (((uint)(0xdc) << 24) | ((uint)(((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xdc) ^ 0xdc)) << 8) | (0xdc)), (((uint)(0x22) << 24) | ((uint)(((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x22) ^ 0x22)) << 8) | (0x22)), (((uint)(0x2a) << 24) | ((uint)(((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2a) ^ 0x2a)) << 8) | (0x2a)), (((uint)(0x90) << 24) | ((uint)(((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x90) ^ 0x90)) << 8) | (0x90)), (((uint)(0x88) << 24) | ((uint)(((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x88) ^ 0x88)) << 8) | (0x88)), (((uint)(0x46) << 24) | ((uint)(((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x46) ^ 0x46)) << 8) | (0x46)), (((uint)(0xee) << 24) | ((uint)(((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xee) ^ 0xee)) << 8) | (0xee)), (((uint)(0xb8) << 24) | ((uint)(((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb8) ^ 0xb8)) << 8) | (0xb8)), (((uint)(0x14) << 24) | ((uint)(((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x14) ^ 0x14)) << 8) | (0x14)), (((uint)(0xde) << 24) | ((uint)(((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xde) ^ 0xde)) << 8) | (0xde)), (((uint)(0x5e) << 24) | ((uint)(((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5e) ^ 0x5e)) << 8) | (0x5e)), (((uint)(0x0b) << 24) | ((uint)(((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0b) ^ 0x0b)) << 8) | (0x0b)), (((uint)(0xdb) << 24) | ((uint)(((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xdb) ^ 0xdb)) << 8) | (0xdb)), (((uint)(0xe0) << 24) | ((uint)(((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe0) ^ 0xe0)) << 8) | (0xe0)), (((uint)(0x32) << 24) | ((uint)(((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x32) ^ 0x32)) << 8) | (0x32)), (((uint)(0x3a) << 24) | ((uint)(((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3a) ^ 0x3a)) << 8) | (0x3a)), (((uint)(0x0a) << 24) | ((uint)(((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0a) ^ 0x0a)) << 8) | (0x0a)), (((uint)(0x49) << 24) | ((uint)(((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x49) ^ 0x49)) << 8) | (0x49)), (((uint)(0x06) << 24) | ((uint)(((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x06) ^ 0x06)) << 8) | (0x06)), (((uint)(0x24) << 24) | ((uint)(((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x24) ^ 0x24)) << 8) | (0x24)), (((uint)(0x5c) << 24) | ((uint)(((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5c) ^ 0x5c)) << 8) | (0x5c)), (((uint)(0xc2) << 24) | ((uint)(((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc2) ^ 0xc2)) << 8) | (0xc2)), (((uint)(0xd3) << 24) | ((uint)(((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd3) ^ 0xd3)) << 8) | (0xd3)), (((uint)(0xac) << 24) | ((uint)(((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xac) ^ 0xac)) << 8) | (0xac)), (((uint)(0x62) << 24) | ((uint)(((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x62) ^ 0x62)) << 8) | (0x62)), (((uint)(0x91) << 24) | ((uint)(((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x91) ^ 0x91)) << 8) | (0x91)), (((uint)(0x95) << 24) | ((uint)(((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x95) ^ 0x95)) << 8) | (0x95)), (((uint)(0xe4) << 24) | ((uint)(((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe4) ^ 0xe4)) << 8) | (0xe4)), (((uint)(0x79) << 24) | ((uint)(((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x79) ^ 0x79)) << 8) | (0x79)), (((uint)(0xe7) << 24) | ((uint)(((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe7) ^ 0xe7)) << 8) | (0xe7)), (((uint)(0xc8) << 24) | ((uint)(((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc8) ^ 0xc8)) << 8) | (0xc8)), (((uint)(0x37) << 24) | ((uint)(((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x37) ^ 0x37)) << 8) | (0x37)), (((uint)(0x6d) << 24) | ((uint)(((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6d) ^ 0x6d)) << 8) | (0x6d)), (((uint)(0x8d) << 24) | ((uint)(((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8d) ^ 0x8d)) << 8) | (0x8d)), (((uint)(0xd5) << 24) | ((uint)(((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd5) ^ 0xd5)) << 8) | (0xd5)), (((uint)(0x4e) << 24) | ((uint)(((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4e) ^ 0x4e)) << 8) | (0x4e)), (((uint)(0xa9) << 24) | ((uint)(((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa9) ^ 0xa9)) << 8) | (0xa9)), (((uint)(0x6c) << 24) | ((uint)(((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6c) ^ 0x6c)) << 8) | (0x6c)), (((uint)(0x56) << 24) | ((uint)(((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x56) ^ 0x56)) << 8) | (0x56)), (((uint)(0xf4) << 24) | ((uint)(((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf4) ^ 0xf4)) << 8) | (0xf4)), (((uint)(0xea) << 24) | ((uint)(((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xea) ^ 0xea)) << 8) | (0xea)), (((uint)(0x65) << 24) | ((uint)(((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x65) ^ 0x65)) << 8) | (0x65)), (((uint)(0x7a) << 24) | ((uint)(((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7a) ^ 0x7a)) << 8) | (0x7a)), (((uint)(0xae) << 24) | ((uint)(((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xae) ^ 0xae)) << 8) | (0xae)), (((uint)(0x08) << 24) | ((uint)(((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x08) ^ 0x08)) << 8) | (0x08)), (((uint)(0xba) << 24) | ((uint)(((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xba) ^ 0xba)) << 8) | (0xba)), (((uint)(0x78) << 24) | ((uint)(((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x78) ^ 0x78)) << 8) | (0x78)), (((uint)(0x25) << 24) | ((uint)(((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x25) ^ 0x25)) << 8) | (0x25)), (((uint)(0x2e) << 24) | ((uint)(((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2e) ^ 0x2e)) << 8) | (0x2e)), (((uint)(0x1c) << 24) | ((uint)(((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1c) ^ 0x1c)) << 8) | (0x1c)), (((uint)(0xa6) << 24) | ((uint)(((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa6) ^ 0xa6)) << 8) | (0xa6)), (((uint)(0xb4) << 24) | ((uint)(((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb4) ^ 0xb4)) << 8) | (0xb4)), (((uint)(0xc6) << 24) | ((uint)(((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc6) ^ 0xc6)) << 8) | (0xc6)), (((uint)(0xe8) << 24) | ((uint)(((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe8) ^ 0xe8)) << 8) | (0xe8)), (((uint)(0xdd) << 24) | ((uint)(((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xdd) ^ 0xdd)) << 8) | (0xdd)), (((uint)(0x74) << 24) | ((uint)(((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x74) ^ 0x74)) << 8) | (0x74)), (((uint)(0x1f) << 24) | ((uint)(((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1f) ^ 0x1f)) << 8) | (0x1f)), (((uint)(0x4b) << 24) | ((uint)(((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4b) ^ 0x4b)) << 8) | (0x4b)), (((uint)(0xbd) << 24) | ((uint)(((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbd) ^ 0xbd)) << 8) | (0xbd)), (((uint)(0x8b) << 24) | ((uint)(((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8b) ^ 0x8b)) << 8) | (0x8b)), (((uint)(0x8a) << 24) | ((uint)(((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8a) ^ 0x8a)) << 8) | (0x8a)), (((uint)(0x70) << 24) | ((uint)(((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x70) ^ 0x70)) << 8) | (0x70)), (((uint)(0x3e) << 24) | ((uint)(((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3e) ^ 0x3e)) << 8) | (0x3e)), (((uint)(0xb5) << 24) | ((uint)(((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb5) ^ 0xb5)) << 8) | (0xb5)), (((uint)(0x66) << 24) | ((uint)(((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x66) ^ 0x66)) << 8) | (0x66)), (((uint)(0x48) << 24) | ((uint)(((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x48) ^ 0x48)) << 8) | (0x48)), (((uint)(0x03) << 24) | ((uint)(((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x03) ^ 0x03)) << 8) | (0x03)), (((uint)(0xf6) << 24) | ((uint)(((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf6) ^ 0xf6)) << 8) | (0xf6)), (((uint)(0x0e) << 24) | ((uint)(((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0e) ^ 0x0e)) << 8) | (0x0e)), (((uint)(0x61) << 24) | ((uint)(((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x61) ^ 0x61)) << 8) | (0x61)), (((uint)(0x35) << 24) | ((uint)(((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x35) ^ 0x35)) << 8) | (0x35)), (((uint)(0x57) << 24) | ((uint)(((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x57) ^ 0x57)) << 8) | (0x57)), (((uint)(0xb9) << 24) | ((uint)(((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb9) ^ 0xb9)) << 8) | (0xb9)), (((uint)(0x86) << 24) | ((uint)(((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x86) ^ 0x86)) << 8) | (0x86)), (((uint)(0xc1) << 24) | ((uint)(((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc1) ^ 0xc1)) << 8) | (0xc1)), (((uint)(0x1d) << 24) | ((uint)(((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1d) ^ 0x1d)) << 8) | (0x1d)), (((uint)(0x9e) << 24) | ((uint)(((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9e) ^ 0x9e)) << 8) | (0x9e)), (((uint)(0xe1) << 24) | ((uint)(((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe1) ^ 0xe1)) << 8) | (0xe1)), (((uint)(0xf8) << 24) | ((uint)(((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf8) ^ 0xf8)) << 8) | (0xf8)), (((uint)(0x98) << 24) | ((uint)(((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x98) ^ 0x98)) << 8) | (0x98)), (((uint)(0x11) << 24) | ((uint)(((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x11) ^ 0x11)) << 8) | (0x11)), (((uint)(0x69) << 24) | ((uint)(((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x69) ^ 0x69)) << 8) | (0x69)), (((uint)(0xd9) << 24) | ((uint)(((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd9) ^ 0xd9)) << 8) | (0xd9)), (((uint)(0x8e) << 24) | ((uint)(((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8e) ^ 0x8e)) << 8) | (0x8e)), (((uint)(0x94) << 24) | ((uint)(((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x94) ^ 0x94)) << 8) | (0x94)), (((uint)(0x9b) << 24) | ((uint)(((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9b) ^ 0x9b)) << 8) | (0x9b)), (((uint)(0x1e) << 24) | ((uint)(((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1e) ^ 0x1e)) << 8) | (0x1e)), (((uint)(0x87) << 24) | ((uint)(((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x87) ^ 0x87)) << 8) | (0x87)), (((uint)(0xe9) << 24) | ((uint)(((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe9) ^ 0xe9)) << 8) | (0xe9)), (((uint)(0xce) << 24) | ((uint)(((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xce) ^ 0xce)) << 8) | (0xce)), (((uint)(0x55) << 24) | ((uint)(((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x55) ^ 0x55)) << 8) | (0x55)), (((uint)(0x28) << 24) | ((uint)(((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x28) ^ 0x28)) << 8) | (0x28)), (((uint)(0xdf) << 24) | ((uint)(((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xdf) ^ 0xdf)) << 8) | (0xdf)), (((uint)(0x8c) << 24) | ((uint)(((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8c) ^ 0x8c)) << 8) | (0x8c)), (((uint)(0xa1) << 24) | ((uint)(((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa1) ^ 0xa1)) << 8) | (0xa1)), (((uint)(0x89) << 24) | ((uint)(((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x89) ^ 0x89)) << 8) | (0x89)), (((uint)(0x0d) << 24) | ((uint)(((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0d) ^ 0x0d)) << 8) | (0x0d)), (((uint)(0xbf) << 24) | ((uint)(((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbf) ^ 0xbf)) << 8) | (0xbf)), (((uint)(0xe6) << 24) | ((uint)(((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe6) ^ 0xe6)) << 8) | (0xe6)), (((uint)(0x42) << 24) | ((uint)(((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x42) ^ 0x42)) << 8) | (0x42)), (((uint)(0x68) << 24) | ((uint)(((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x68) ^ 0x68)) << 8) | (0x68)), (((uint)(0x41) << 24) | ((uint)(((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x41) ^ 0x41)) << 8) | (0x41)), (((uint)(0x99) << 24) | ((uint)(((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x99) ^ 0x99)) << 8) | (0x99)), (((uint)(0x2d) << 24) | ((uint)(((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2d) ^ 0x2d)) << 8) | (0x2d)), (((uint)(0x0f) << 24) | ((uint)(((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0f) ^ 0x0f)) << 8) | (0x0f)), (((uint)(0xb0) << 24) | ((uint)(((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb0) ^ 0xb0)) << 8) | (0xb0)), (((uint)(0x54) << 24) | ((uint)(((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x54) ^ 0x54)) << 8) | (0x54)), (((uint)(0xbb) << 24) | ((uint)(((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbb) ^ 0xbb)) << 8) | (0xbb)), (((uint)(0x16) << 24) | ((uint)(((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x16) ^ 0x16)) << 8) | (0x16))},
+		{(((uint)(((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x63) ^ 0x63)) << 16) | ((uint)(0x63) << 8) | (0x63)), (((uint)(((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7c) ^ 0x7c)) << 16) | ((uint)(0x7c) << 8) | (0x7c)), (((uint)(((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x77) ^ 0x77)) << 16) | ((uint)(0x77) << 8) | (0x77)), (((uint)(((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7b) ^ 0x7b)) << 16) | ((uint)(0x7b) << 8) | (0x7b)), (((uint)(((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf2) ^ 0xf2)) << 16) | ((uint)(0xf2) << 8) | (0xf2)), (((uint)(((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6b) ^ 0x6b)) << 16) | ((uint)(0x6b) << 8) | (0x6b)), (((uint)(((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6f) ^ 0x6f)) << 16) | ((uint)(0x6f) << 8) | (0x6f)), (((uint)(((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc5) ^ 0xc5)) << 16) | ((uint)(0xc5) << 8) | (0xc5)), (((uint)(((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x30) ^ 0x30)) << 16) | ((uint)(0x30) << 8) | (0x30)), (((uint)(((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x01) ^ 0x01)) << 16) | ((uint)(0x01) << 8) | (0x01)), (((uint)(((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x67) ^ 0x67)) << 16) | ((uint)(0x67) << 8) | (0x67)), (((uint)(((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2b) ^ 0x2b)) << 16) | ((uint)(0x2b) << 8) | (0x2b)), (((uint)(((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfe) ^ 0xfe)) << 16) | ((uint)(0xfe) << 8) | (0xfe)), (((uint)(((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd7) ^ 0xd7)) << 16) | ((uint)(0xd7) << 8) | (0xd7)), (((uint)(((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xab) ^ 0xab)) << 16) | ((uint)(0xab) << 8) | (0xab)), (((uint)(((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x76) ^ 0x76)) << 16) | ((uint)(0x76) << 8) | (0x76)), (((uint)(((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xca) ^ 0xca)) << 16) | ((uint)(0xca) << 8) | (0xca)), (((uint)(((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x82) ^ 0x82)) << 16) | ((uint)(0x82) << 8) | (0x82)), (((uint)(((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc9) ^ 0xc9)) << 16) | ((uint)(0xc9) << 8) | (0xc9)), (((uint)(((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7d) ^ 0x7d)) << 16) | ((uint)(0x7d) << 8) | (0x7d)), (((uint)(((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfa) ^ 0xfa)) << 16) | ((uint)(0xfa) << 8) | (0xfa)), (((uint)(((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x59) ^ 0x59)) << 16) | ((uint)(0x59) << 8) | (0x59)), (((uint)(((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x47) ^ 0x47)) << 16) | ((uint)(0x47) << 8) | (0x47)), (((uint)(((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf0) ^ 0xf0)) << 16) | ((uint)(0xf0) << 8) | (0xf0)), (((uint)(((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xad) ^ 0xad)) << 16) | ((uint)(0xad) << 8) | (0xad)), (((uint)(((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd4) ^ 0xd4)) << 16) | ((uint)(0xd4) << 8) | (0xd4)), (((uint)(((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa2) ^ 0xa2)) << 16) | ((uint)(0xa2) << 8) | (0xa2)), (((uint)(((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xaf) ^ 0xaf)) << 16) | ((uint)(0xaf) << 8) | (0xaf)), (((uint)(((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9c) ^ 0x9c)) << 16) | ((uint)(0x9c) << 8) | (0x9c)), (((uint)(((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa4) ^ 0xa4)) << 16) | ((uint)(0xa4) << 8) | (0xa4)), (((uint)(((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x72) ^ 0x72)) << 16) | ((uint)(0x72) << 8) | (0x72)), (((uint)(((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc0) ^ 0xc0)) << 16) | ((uint)(0xc0) << 8) | (0xc0)), (((uint)(((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb7) ^ 0xb7)) << 16) | ((uint)(0xb7) << 8) | (0xb7)), (((uint)(((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfd) ^ 0xfd)) << 16) | ((uint)(0xfd) << 8) | (0xfd)), (((uint)(((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x93) ^ 0x93)) << 16) | ((uint)(0x93) << 8) | (0x93)), (((uint)(((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x26) ^ 0x26)) << 16) | ((uint)(0x26) << 8) | (0x26)), (((uint)(((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x36) ^ 0x36)) << 16) | ((uint)(0x36) << 8) | (0x36)), (((uint)(((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3f) ^ 0x3f)) << 16) | ((uint)(0x3f) << 8) | (0x3f)), (((uint)(((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf7) ^ 0xf7)) << 16) | ((uint)(0xf7) << 8) | (0xf7)), (((uint)(((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xcc) ^ 0xcc)) << 16) | ((uint)(0xcc) << 8) | (0xcc)), (((uint)(((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x34) ^ 0x34)) << 16) | ((uint)(0x34) << 8) | (0x34)), (((uint)(((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa5) ^ 0xa5)) << 16) | ((uint)(0xa5) << 8) | (0xa5)), (((uint)(((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe5) ^ 0xe5)) << 16) | ((uint)(0xe5) << 8) | (0xe5)), (((uint)(((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf1) ^ 0xf1)) << 16) | ((uint)(0xf1) << 8) | (0xf1)), (((uint)(((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x71) ^ 0x71)) << 16) | ((uint)(0x71) << 8) | (0x71)), (((uint)(((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd8) ^ 0xd8)) << 16) | ((uint)(0xd8) << 8) | (0xd8)), (((uint)(((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x31) ^ 0x31)) << 16) | ((uint)(0x31) << 8) | (0x31)), (((uint)(((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x15) ^ 0x15)) << 16) | ((uint)(0x15) << 8) | (0x15)), (((uint)(((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x04) ^ 0x04)) << 16) | ((uint)(0x04) << 8) | (0x04)), (((uint)(((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc7) ^ 0xc7)) << 16) | ((uint)(0xc7) << 8) | (0xc7)), (((uint)(((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x23) ^ 0x23)) << 16) | ((uint)(0x23) << 8) | (0x23)), (((uint)(((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc3) ^ 0xc3)) << 16) | ((uint)(0xc3) << 8) | (0xc3)), (((uint)(((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x18) ^ 0x18)) << 16) | ((uint)(0x18) << 8) | (0x18)), (((uint)(((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x96) ^ 0x96)) << 16) | ((uint)(0x96) << 8) | (0x96)), (((uint)(((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x05) ^ 0x05)) << 16) | ((uint)(0x05) << 8) | (0x05)), (((uint)(((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9a) ^ 0x9a)) << 16) | ((uint)(0x9a) << 8) | (0x9a)), (((uint)(((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x07) ^ 0x07)) << 16) | ((uint)(0x07) << 8) | (0x07)), (((uint)(((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x12) ^ 0x12)) << 16) | ((uint)(0x12) << 8) | (0x12)), (((uint)(((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x80) ^ 0x80)) << 16) | ((uint)(0x80) << 8) | (0x80)), (((uint)(((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe2) ^ 0xe2)) << 16) | ((uint)(0xe2) << 8) | (0xe2)), (((uint)(((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xeb) ^ 0xeb)) << 16) | ((uint)(0xeb) << 8) | (0xeb)), (((uint)(((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x27) ^ 0x27)) << 16) | ((uint)(0x27) << 8) | (0x27)), (((uint)(((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb2) ^ 0xb2)) << 16) | ((uint)(0xb2) << 8) | (0xb2)), (((uint)(((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x75) ^ 0x75)) << 16) | ((uint)(0x75) << 8) | (0x75)), (((uint)(((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x09) ^ 0x09)) << 16) | ((uint)(0x09) << 8) | (0x09)), (((uint)(((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x83) ^ 0x83)) << 16) | ((uint)(0x83) << 8) | (0x83)), (((uint)(((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2c) ^ 0x2c)) << 16) | ((uint)(0x2c) << 8) | (0x2c)), (((uint)(((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1a) ^ 0x1a)) << 16) | ((uint)(0x1a) << 8) | (0x1a)), (((uint)(((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1b) ^ 0x1b)) << 16) | ((uint)(0x1b) << 8) | (0x1b)), (((uint)(((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6e) ^ 0x6e)) << 16) | ((uint)(0x6e) << 8) | (0x6e)), (((uint)(((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5a) ^ 0x5a)) << 16) | ((uint)(0x5a) << 8) | (0x5a)), (((uint)(((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa0) ^ 0xa0)) << 16) | ((uint)(0xa0) << 8) | (0xa0)), (((uint)(((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x52) ^ 0x52)) << 16) | ((uint)(0x52) << 8) | (0x52)), (((uint)(((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3b) ^ 0x3b)) << 16) | ((uint)(0x3b) << 8) | (0x3b)), (((uint)(((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd6) ^ 0xd6)) << 16) | ((uint)(0xd6) << 8) | (0xd6)), (((uint)(((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb3) ^ 0xb3)) << 16) | ((uint)(0xb3) << 8) | (0xb3)), (((uint)(((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x29) ^ 0x29)) << 16) | ((uint)(0x29) << 8) | (0x29)), (((uint)(((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe3) ^ 0xe3)) << 16) | ((uint)(0xe3) << 8) | (0xe3)), (((uint)(((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2f) ^ 0x2f)) << 16) | ((uint)(0x2f) << 8) | (0x2f)), (((uint)(((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x84) ^ 0x84)) << 16) | ((uint)(0x84) << 8) | (0x84)), (((uint)(((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x53) ^ 0x53)) << 16) | ((uint)(0x53) << 8) | (0x53)), (((uint)(((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd1) ^ 0xd1)) << 16) | ((uint)(0xd1) << 8) | (0xd1)), (((uint)(((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x00) ^ 0x00)) << 16) | ((uint)(0x00) << 8) | (0x00)), (((uint)(((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xed) ^ 0xed)) << 16) | ((uint)(0xed) << 8) | (0xed)), (((uint)(((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x20) ^ 0x20)) << 16) | ((uint)(0x20) << 8) | (0x20)), (((uint)(((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfc) ^ 0xfc)) << 16) | ((uint)(0xfc) << 8) | (0xfc)), (((uint)(((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb1) ^ 0xb1)) << 16) | ((uint)(0xb1) << 8) | (0xb1)), (((uint)(((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5b) ^ 0x5b)) << 16) | ((uint)(0x5b) << 8) | (0x5b)), (((uint)(((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6a) ^ 0x6a)) << 16) | ((uint)(0x6a) << 8) | (0x6a)), (((uint)(((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xcb) ^ 0xcb)) << 16) | ((uint)(0xcb) << 8) | (0xcb)), (((uint)(((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbe) ^ 0xbe)) << 16) | ((uint)(0xbe) << 8) | (0xbe)), (((uint)(((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x39) ^ 0x39)) << 16) | ((uint)(0x39) << 8) | (0x39)), (((uint)(((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4a) ^ 0x4a)) << 16) | ((uint)(0x4a) << 8) | (0x4a)), (((uint)(((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4c) ^ 0x4c)) << 16) | ((uint)(0x4c) << 8) | (0x4c)), (((uint)(((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x58) ^ 0x58)) << 16) | ((uint)(0x58) << 8) | (0x58)), (((uint)(((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xcf) ^ 0xcf)) << 16) | ((uint)(0xcf) << 8) | (0xcf)), (((uint)(((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd0) ^ 0xd0)) << 16) | ((uint)(0xd0) << 8) | (0xd0)), (((uint)(((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xef) ^ 0xef)) << 16) | ((uint)(0xef) << 8) | (0xef)), (((uint)(((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xaa) ^ 0xaa)) << 16) | ((uint)(0xaa) << 8) | (0xaa)), (((uint)(((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfb) ^ 0xfb)) << 16) | ((uint)(0xfb) << 8) | (0xfb)), (((uint)(((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x43) ^ 0x43)) << 16) | ((uint)(0x43) << 8) | (0x43)), (((uint)(((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4d) ^ 0x4d)) << 16) | ((uint)(0x4d) << 8) | (0x4d)), (((uint)(((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x33) ^ 0x33)) << 16) | ((uint)(0x33) << 8) | (0x33)), (((uint)(((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x85) ^ 0x85)) << 16) | ((uint)(0x85) << 8) | (0x85)), (((uint)(((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x45) ^ 0x45)) << 16) | ((uint)(0x45) << 8) | (0x45)), (((uint)(((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf9) ^ 0xf9)) << 16) | ((uint)(0xf9) << 8) | (0xf9)), (((uint)(((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x02) ^ 0x02)) << 16) | ((uint)(0x02) << 8) | (0x02)), (((uint)(((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7f) ^ 0x7f)) << 16) | ((uint)(0x7f) << 8) | (0x7f)), (((uint)(((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x50) ^ 0x50)) << 16) | ((uint)(0x50) << 8) | (0x50)), (((uint)(((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3c) ^ 0x3c)) << 16) | ((uint)(0x3c) << 8) | (0x3c)), (((uint)(((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9f) ^ 0x9f)) << 16) | ((uint)(0x9f) << 8) | (0x9f)), (((uint)(((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa8) ^ 0xa8)) << 16) | ((uint)(0xa8) << 8) | (0xa8)), (((uint)(((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x51) ^ 0x51)) << 16) | ((uint)(0x51) << 8) | (0x51)), (((uint)(((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa3) ^ 0xa3)) << 16) | ((uint)(0xa3) << 8) | (0xa3)), (((uint)(((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x40) ^ 0x40)) << 16) | ((uint)(0x40) << 8) | (0x40)), (((uint)(((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8f) ^ 0x8f)) << 16) | ((uint)(0x8f) << 8) | (0x8f)), (((uint)(((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x92) ^ 0x92)) << 16) | ((uint)(0x92) << 8) | (0x92)), (((uint)(((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9d) ^ 0x9d)) << 16) | ((uint)(0x9d) << 8) | (0x9d)), (((uint)(((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x38) ^ 0x38)) << 16) | ((uint)(0x38) << 8) | (0x38)), (((uint)(((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf5) ^ 0xf5)) << 16) | ((uint)(0xf5) << 8) | (0xf5)), (((uint)(((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbc) ^ 0xbc)) << 16) | ((uint)(0xbc) << 8) | (0xbc)), (((uint)(((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb6) ^ 0xb6)) << 16) | ((uint)(0xb6) << 8) | (0xb6)), (((uint)(((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xda) ^ 0xda)) << 16) | ((uint)(0xda) << 8) | (0xda)), (((uint)(((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x21) ^ 0x21)) << 16) | ((uint)(0x21) << 8) | (0x21)), (((uint)(((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x10) ^ 0x10)) << 16) | ((uint)(0x10) << 8) | (0x10)), (((uint)(((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xff) ^ 0xff)) << 16) | ((uint)(0xff) << 8) | (0xff)), (((uint)(((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf3) ^ 0xf3)) << 16) | ((uint)(0xf3) << 8) | (0xf3)), (((uint)(((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd2) ^ 0xd2)) << 16) | ((uint)(0xd2) << 8) | (0xd2)), (((uint)(((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xcd) ^ 0xcd)) << 16) | ((uint)(0xcd) << 8) | (0xcd)), (((uint)(((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0c) ^ 0x0c)) << 16) | ((uint)(0x0c) << 8) | (0x0c)), (((uint)(((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x13) ^ 0x13)) << 16) | ((uint)(0x13) << 8) | (0x13)), (((uint)(((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xec) ^ 0xec)) << 16) | ((uint)(0xec) << 8) | (0xec)), (((uint)(((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5f) ^ 0x5f)) << 16) | ((uint)(0x5f) << 8) | (0x5f)), (((uint)(((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x97) ^ 0x97)) << 16) | ((uint)(0x97) << 8) | (0x97)), (((uint)(((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x44) ^ 0x44)) << 16) | ((uint)(0x44) << 8) | (0x44)), (((uint)(((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x17) ^ 0x17)) << 16) | ((uint)(0x17) << 8) | (0x17)), (((uint)(((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc4) ^ 0xc4)) << 16) | ((uint)(0xc4) << 8) | (0xc4)), (((uint)(((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa7) ^ 0xa7)) << 16) | ((uint)(0xa7) << 8) | (0xa7)), (((uint)(((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7e) ^ 0x7e)) << 16) | ((uint)(0x7e) << 8) | (0x7e)), (((uint)(((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3d) ^ 0x3d)) << 16) | ((uint)(0x3d) << 8) | (0x3d)), (((uint)(((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x64) ^ 0x64)) << 16) | ((uint)(0x64) << 8) | (0x64)), (((uint)(((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5d) ^ 0x5d)) << 16) | ((uint)(0x5d) << 8) | (0x5d)), (((uint)(((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x19) ^ 0x19)) << 16) | ((uint)(0x19) << 8) | (0x19)), (((uint)(((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x73) ^ 0x73)) << 16) | ((uint)(0x73) << 8) | (0x73)), (((uint)(((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x60) ^ 0x60)) << 16) | ((uint)(0x60) << 8) | (0x60)), (((uint)(((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x81) ^ 0x81)) << 16) | ((uint)(0x81) << 8) | (0x81)), (((uint)(((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4f) ^ 0x4f)) << 16) | ((uint)(0x4f) << 8) | (0x4f)), (((uint)(((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xdc) ^ 0xdc)) << 16) | ((uint)(0xdc) << 8) | (0xdc)), (((uint)(((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x22) ^ 0x22)) << 16) | ((uint)(0x22) << 8) | (0x22)), (((uint)(((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2a) ^ 0x2a)) << 16) | ((uint)(0x2a) << 8) | (0x2a)), (((uint)(((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x90) ^ 0x90)) << 16) | ((uint)(0x90) << 8) | (0x90)), (((uint)(((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x88) ^ 0x88)) << 16) | ((uint)(0x88) << 8) | (0x88)), (((uint)(((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x46) ^ 0x46)) << 16) | ((uint)(0x46) << 8) | (0x46)), (((uint)(((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xee) ^ 0xee)) << 16) | ((uint)(0xee) << 8) | (0xee)), (((uint)(((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb8) ^ 0xb8)) << 16) | ((uint)(0xb8) << 8) | (0xb8)), (((uint)(((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x14) ^ 0x14)) << 16) | ((uint)(0x14) << 8) | (0x14)), (((uint)(((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xde) ^ 0xde)) << 16) | ((uint)(0xde) << 8) | (0xde)), (((uint)(((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5e) ^ 0x5e)) << 16) | ((uint)(0x5e) << 8) | (0x5e)), (((uint)(((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0b) ^ 0x0b)) << 16) | ((uint)(0x0b) << 8) | (0x0b)), (((uint)(((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xdb) ^ 0xdb)) << 16) | ((uint)(0xdb) << 8) | (0xdb)), (((uint)(((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe0) ^ 0xe0)) << 16) | ((uint)(0xe0) << 8) | (0xe0)), (((uint)(((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x32) ^ 0x32)) << 16) | ((uint)(0x32) << 8) | (0x32)), (((uint)(((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3a) ^ 0x3a)) << 16) | ((uint)(0x3a) << 8) | (0x3a)), (((uint)(((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0a) ^ 0x0a)) << 16) | ((uint)(0x0a) << 8) | (0x0a)), (((uint)(((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x49) ^ 0x49)) << 16) | ((uint)(0x49) << 8) | (0x49)), (((uint)(((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x06) ^ 0x06)) << 16) | ((uint)(0x06) << 8) | (0x06)), (((uint)(((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x24) ^ 0x24)) << 16) | ((uint)(0x24) << 8) | (0x24)), (((uint)(((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5c) ^ 0x5c)) << 16) | ((uint)(0x5c) << 8) | (0x5c)), (((uint)(((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc2) ^ 0xc2)) << 16) | ((uint)(0xc2) << 8) | (0xc2)), (((uint)(((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd3) ^ 0xd3)) << 16) | ((uint)(0xd3) << 8) | (0xd3)), (((uint)(((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xac) ^ 0xac)) << 16) | ((uint)(0xac) << 8) | (0xac)), (((uint)(((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x62) ^ 0x62)) << 16) | ((uint)(0x62) << 8) | (0x62)), (((uint)(((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x91) ^ 0x91)) << 16) | ((uint)(0x91) << 8) | (0x91)), (((uint)(((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x95) ^ 0x95)) << 16) | ((uint)(0x95) << 8) | (0x95)), (((uint)(((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe4) ^ 0xe4)) << 16) | ((uint)(0xe4) << 8) | (0xe4)), (((uint)(((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x79) ^ 0x79)) << 16) | ((uint)(0x79) << 8) | (0x79)), (((uint)(((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe7) ^ 0xe7)) << 16) | ((uint)(0xe7) << 8) | (0xe7)), (((uint)(((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc8) ^ 0xc8)) << 16) | ((uint)(0xc8) << 8) | (0xc8)), (((uint)(((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x37) ^ 0x37)) << 16) | ((uint)(0x37) << 8) | (0x37)), (((uint)(((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6d) ^ 0x6d)) << 16) | ((uint)(0x6d) << 8) | (0x6d)), (((uint)(((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8d) ^ 0x8d)) << 16) | ((uint)(0x8d) << 8) | (0x8d)), (((uint)(((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd5) ^ 0xd5)) << 16) | ((uint)(0xd5) << 8) | (0xd5)), (((uint)(((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4e) ^ 0x4e)) << 16) | ((uint)(0x4e) << 8) | (0x4e)), (((uint)(((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa9) ^ 0xa9)) << 16) | ((uint)(0xa9) << 8) | (0xa9)), (((uint)(((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6c) ^ 0x6c)) << 16) | ((uint)(0x6c) << 8) | (0x6c)), (((uint)(((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x56) ^ 0x56)) << 16) | ((uint)(0x56) << 8) | (0x56)), (((uint)(((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf4) ^ 0xf4)) << 16) | ((uint)(0xf4) << 8) | (0xf4)), (((uint)(((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xea) ^ 0xea)) << 16) | ((uint)(0xea) << 8) | (0xea)), (((uint)(((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x65) ^ 0x65)) << 16) | ((uint)(0x65) << 8) | (0x65)), (((uint)(((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7a) ^ 0x7a)) << 16) | ((uint)(0x7a) << 8) | (0x7a)), (((uint)(((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xae) ^ 0xae)) << 16) | ((uint)(0xae) << 8) | (0xae)), (((uint)(((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x08) ^ 0x08)) << 16) | ((uint)(0x08) << 8) | (0x08)), (((uint)(((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xba) ^ 0xba)) << 16) | ((uint)(0xba) << 8) | (0xba)), (((uint)(((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x78) ^ 0x78)) << 16) | ((uint)(0x78) << 8) | (0x78)), (((uint)(((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x25) ^ 0x25)) << 16) | ((uint)(0x25) << 8) | (0x25)), (((uint)(((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2e) ^ 0x2e)) << 16) | ((uint)(0x2e) << 8) | (0x2e)), (((uint)(((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1c) ^ 0x1c)) << 16) | ((uint)(0x1c) << 8) | (0x1c)), (((uint)(((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa6) ^ 0xa6)) << 16) | ((uint)(0xa6) << 8) | (0xa6)), (((uint)(((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb4) ^ 0xb4)) << 16) | ((uint)(0xb4) << 8) | (0xb4)), (((uint)(((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc6) ^ 0xc6)) << 16) | ((uint)(0xc6) << 8) | (0xc6)), (((uint)(((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe8) ^ 0xe8)) << 16) | ((uint)(0xe8) << 8) | (0xe8)), (((uint)(((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xdd) ^ 0xdd)) << 16) | ((uint)(0xdd) << 8) | (0xdd)), (((uint)(((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x74) ^ 0x74)) << 16) | ((uint)(0x74) << 8) | (0x74)), (((uint)(((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1f) ^ 0x1f)) << 16) | ((uint)(0x1f) << 8) | (0x1f)), (((uint)(((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4b) ^ 0x4b)) << 16) | ((uint)(0x4b) << 8) | (0x4b)), (((uint)(((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbd) ^ 0xbd)) << 16) | ((uint)(0xbd) << 8) | (0xbd)), (((uint)(((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8b) ^ 0x8b)) << 16) | ((uint)(0x8b) << 8) | (0x8b)), (((uint)(((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8a) ^ 0x8a)) << 16) | ((uint)(0x8a) << 8) | (0x8a)), (((uint)(((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x70) ^ 0x70)) << 16) | ((uint)(0x70) << 8) | (0x70)), (((uint)(((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3e) ^ 0x3e)) << 16) | ((uint)(0x3e) << 8) | (0x3e)), (((uint)(((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb5) ^ 0xb5)) << 16) | ((uint)(0xb5) << 8) | (0xb5)), (((uint)(((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x66) ^ 0x66)) << 16) | ((uint)(0x66) << 8) | (0x66)), (((uint)(((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x48) ^ 0x48)) << 16) | ((uint)(0x48) << 8) | (0x48)), (((uint)(((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x03) ^ 0x03)) << 16) | ((uint)(0x03) << 8) | (0x03)), (((uint)(((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf6) ^ 0xf6)) << 16) | ((uint)(0xf6) << 8) | (0xf6)), (((uint)(((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0e) ^ 0x0e)) << 16) | ((uint)(0x0e) << 8) | (0x0e)), (((uint)(((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x61) ^ 0x61)) << 16) | ((uint)(0x61) << 8) | (0x61)), (((uint)(((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x35) ^ 0x35)) << 16) | ((uint)(0x35) << 8) | (0x35)), (((uint)(((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x57) ^ 0x57)) << 16) | ((uint)(0x57) << 8) | (0x57)), (((uint)(((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb9) ^ 0xb9)) << 16) | ((uint)(0xb9) << 8) | (0xb9)), (((uint)(((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x86) ^ 0x86)) << 16) | ((uint)(0x86) << 8) | (0x86)), (((uint)(((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc1) ^ 0xc1)) << 16) | ((uint)(0xc1) << 8) | (0xc1)), (((uint)(((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1d) ^ 0x1d)) << 16) | ((uint)(0x1d) << 8) | (0x1d)), (((uint)(((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9e) ^ 0x9e)) << 16) | ((uint)(0x9e) << 8) | (0x9e)), (((uint)(((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe1) ^ 0xe1)) << 16) | ((uint)(0xe1) << 8) | (0xe1)), (((uint)(((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf8) ^ 0xf8)) << 16) | ((uint)(0xf8) << 8) | (0xf8)), (((uint)(((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x98) ^ 0x98)) << 16) | ((uint)(0x98) << 8) | (0x98)), (((uint)(((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x11) ^ 0x11)) << 16) | ((uint)(0x11) << 8) | (0x11)), (((uint)(((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x69) ^ 0x69)) << 16) | ((uint)(0x69) << 8) | (0x69)), (((uint)(((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd9) ^ 0xd9)) << 16) | ((uint)(0xd9) << 8) | (0xd9)), (((uint)(((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8e) ^ 0x8e)) << 16) | ((uint)(0x8e) << 8) | (0x8e)), (((uint)(((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x94) ^ 0x94)) << 16) | ((uint)(0x94) << 8) | (0x94)), (((uint)(((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9b) ^ 0x9b)) << 16) | ((uint)(0x9b) << 8) | (0x9b)), (((uint)(((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1e) ^ 0x1e)) << 16) | ((uint)(0x1e) << 8) | (0x1e)), (((uint)(((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x87) ^ 0x87)) << 16) | ((uint)(0x87) << 8) | (0x87)), (((uint)(((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe9) ^ 0xe9)) << 16) | ((uint)(0xe9) << 8) | (0xe9)), (((uint)(((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xce) ^ 0xce)) << 16) | ((uint)(0xce) << 8) | (0xce)), (((uint)(((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x55) ^ 0x55)) << 16) | ((uint)(0x55) << 8) | (0x55)), (((uint)(((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x28) ^ 0x28)) << 16) | ((uint)(0x28) << 8) | (0x28)), (((uint)(((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xdf) ^ 0xdf)) << 16) | ((uint)(0xdf) << 8) | (0xdf)), (((uint)(((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8c) ^ 0x8c)) << 16) | ((uint)(0x8c) << 8) | (0x8c)), (((uint)(((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa1) ^ 0xa1)) << 16) | ((uint)(0xa1) << 8) | (0xa1)), (((uint)(((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x89) ^ 0x89)) << 16) | ((uint)(0x89) << 8) | (0x89)), (((uint)(((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0d) ^ 0x0d)) << 16) | ((uint)(0x0d) << 8) | (0x0d)), (((uint)(((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbf) ^ 0xbf)) << 16) | ((uint)(0xbf) << 8) | (0xbf)), (((uint)(((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe6) ^ 0xe6)) << 16) | ((uint)(0xe6) << 8) | (0xe6)), (((uint)(((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x42) ^ 0x42)) << 16) | ((uint)(0x42) << 8) | (0x42)), (((uint)(((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x68) ^ 0x68)) << 16) | ((uint)(0x68) << 8) | (0x68)), (((uint)(((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x41) ^ 0x41)) << 16) | ((uint)(0x41) << 8) | (0x41)), (((uint)(((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x99) ^ 0x99)) << 16) | ((uint)(0x99) << 8) | (0x99)), (((uint)(((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2d) ^ 0x2d)) << 16) | ((uint)(0x2d) << 8) | (0x2d)), (((uint)(((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0f) ^ 0x0f)) << 16) | ((uint)(0x0f) << 8) | (0x0f)), (((uint)(((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb0) ^ 0xb0)) << 16) | ((uint)(0xb0) << 8) | (0xb0)), (((uint)(((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x54) ^ 0x54)) << 16) | ((uint)(0x54) << 8) | (0x54)), (((uint)(((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbb) ^ 0xbb)) << 16) | ((uint)(0xbb) << 8) | (0xbb)), (((uint)(((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x16) ^ 0x16)) << 16) | ((uint)(0x16) << 8) | (0x16))}
 	};
 
 
 
-	public static STATIC INLINE void aesb_single_round(uint8_t in, uint8_t @out, uint8_t expandedKey)
+	public static STATIC INLINE void aesb_single_round(ushort in, ushort @out, ushort expandedKey)
 	{
-	  uint32_t[] b0 = Arrays.InitializeWithDefaultInstances<uint32_t>(4);
-	  uint32_t[] b1 = Arrays.InitializeWithDefaultInstances<uint32_t>(4);
-	  uint32_t kp = (uint32_t) expandedKey;
-	  (b0[0] = ((uint32_t)(in) + (0)));
-	  (b0[1] = ((uint32_t)(in) + (1)));
-	  (b0[2] = ((uint32_t)(in) + (2)));
-	  (b0[3] = ((uint32_t)(in) + (3)));
+	  uint[] b0 = Arrays.InitializeWithDefaultInstances<uint>(4);
+	  uint[] b1 = Arrays.InitializeWithDefaultInstances<uint>(4);
+	  uint kp = (uint) expandedKey;
+	  (b0[0] = ((uint)(in) + (0)));
+	  (b0[1] = ((uint)(in) + (1)));
+	  (b0[2] = ((uint)(in) + (2)));
+	  (b0[3] = ((uint)(in) + (3)));
 
 	  (b1[0] = (kp)[0] ^ (t_fn[0][((((0 == 0 ? (0 == 0 ? s(b0,0) : 0 == 1 ? s(b0,1) : 0 == 2 ? s(b0,2) : s(b0,3)) : 0 == 1 ? (0 == 0 ? s(b0,1) : 0 == 1 ? s(b0,2) : 0 == 2 ? s(b0,3) : s(b0,0)) : 0 == 2 ? (0 == 0 ? s(b0,2) : 0 == 1 ? s(b0,3) : 0 == 2 ? s(b0,0) : s(b0,1)) : (0 == 0 ? s(b0,3) : 0 == 1 ? s(b0,0) : 0 == 2 ? s(b0,1) : s(b0,2)))) >> (8 * ((0)))) & 0xff)] ^ t_fn[1][((((1 == 0 ? (0 == 0 ? s(b0,0) : 0 == 1 ? s(b0,1) : 0 == 2 ? s(b0,2) : s(b0,3)) : 1 == 1 ? (0 == 0 ? s(b0,1) : 0 == 1 ? s(b0,2) : 0 == 2 ? s(b0,3) : s(b0,0)) : 1 == 2 ? (0 == 0 ? s(b0,2) : 0 == 1 ? s(b0,3) : 0 == 2 ? s(b0,0) : s(b0,1)) : (0 == 0 ? s(b0,3) : 0 == 1 ? s(b0,0) : 0 == 2 ? s(b0,1) : s(b0,2)))) >> (8 * ((1)))) & 0xff)] ^ t_fn[2][((((2 == 0 ? (0 == 0 ? s(b0,0) : 0 == 1 ? s(b0,1) : 0 == 2 ? s(b0,2) : s(b0,3)) : 2 == 1 ? (0 == 0 ? s(b0,1) : 0 == 1 ? s(b0,2) : 0 == 2 ? s(b0,3) : s(b0,0)) : 2 == 2 ? (0 == 0 ? s(b0,2) : 0 == 1 ? s(b0,3) : 0 == 2 ? s(b0,0) : s(b0,1)) : (0 == 0 ? s(b0,3) : 0 == 1 ? s(b0,0) : 0 == 2 ? s(b0,1) : s(b0,2)))) >> (8 * ((2)))) & 0xff)] ^ t_fn[3][((((3 == 0 ? (0 == 0 ? s(b0,0) : 0 == 1 ? s(b0,1) : 0 == 2 ? s(b0,2) : s(b0,3)) : 3 == 1 ? (0 == 0 ? s(b0,1) : 0 == 1 ? s(b0,2) : 0 == 2 ? s(b0,3) : s(b0,0)) : 3 == 2 ? (0 == 0 ? s(b0,2) : 0 == 1 ? s(b0,3) : 0 == 2 ? s(b0,0) : s(b0,1)) : (0 == 0 ? s(b0,3) : 0 == 1 ? s(b0,0) : 0 == 2 ? s(b0,1) : s(b0,2)))) >> (8 * ((3)))) & 0xff)]));
 	  (b1[1] = (kp)[1] ^ (t_fn[0][((((0 == 0 ? (1 == 0 ? b0[0] : 1 == 1 ? b0[1] : 1 == 2 ? b0[2] : b0[3]) : 0 == 1 ? (1 == 0 ? b0[1] : 1 == 1 ? b0[2] : 1 == 2 ? b0[3] : b0[0]) : 0 == 2 ? (1 == 0 ? b0[2] : 1 == 1 ? b0[3] : 1 == 2 ? b0[0] : b0[1]) : (1 == 0 ? b0[3] : 1 == 1 ? b0[0] : 1 == 2 ? b0[1] : b0[2]))) >> (8 * ((0)))) & 0xff)] ^ t_fn[1][((((1 == 0 ? (1 == 0 ? b0[0] : 1 == 1 ? b0[1] : 1 == 2 ? b0[2] : b0[3]) : 1 == 1 ? (1 == 0 ? b0[1] : 1 == 1 ? b0[2] : 1 == 2 ? b0[3] : b0[0]) : 1 == 2 ? (1 == 0 ? b0[2] : 1 == 1 ? b0[3] : 1 == 2 ? b0[0] : b0[1]) : (1 == 0 ? b0[3] : 1 == 1 ? b0[0] : 1 == 2 ? b0[1] : b0[2]))) >> (8 * ((1)))) & 0xff)] ^ t_fn[2][((((2 == 0 ? (1 == 0 ? b0[0] : 1 == 1 ? b0[1] : 1 == 2 ? b0[2] : b0[3]) : 2 == 1 ? (1 == 0 ? b0[1] : 1 == 1 ? b0[2] : 1 == 2 ? b0[3] : b0[0]) : 2 == 2 ? (1 == 0 ? b0[2] : 1 == 1 ? b0[3] : 1 == 2 ? b0[0] : b0[1]) : (1 == 0 ? b0[3] : 1 == 1 ? b0[0] : 1 == 2 ? b0[1] : b0[2]))) >> (8 * ((2)))) & 0xff)] ^ t_fn[3][((((3 == 0 ? (1 == 0 ? b0[0] : 1 == 1 ? b0[1] : 1 == 2 ? b0[2] : b0[3]) : 3 == 1 ? (1 == 0 ? b0[1] : 1 == 1 ? b0[2] : 1 == 2 ? b0[3] : b0[0]) : 3 == 2 ? (1 == 0 ? b0[2] : 1 == 1 ? b0[3] : 1 == 2 ? b0[0] : b0[1]) : (1 == 0 ? b0[3] : 1 == 1 ? b0[0] : 1 == 2 ? b0[1] : b0[2]))) >> (8 * ((3)))) & 0xff)]));
 	  (b1[2] = (kp)[2] ^ (t_fn[0][((((0 == 0 ? (2 == 0 ? b0[0] : 2 == 1 ? b0[1] : 2 == 2 ? b0[2] : b0[3]) : 0 == 1 ? (2 == 0 ? b0[1] : 2 == 1 ? b0[2] : 2 == 2 ? b0[3] : b0[0]) : 0 == 2 ? (2 == 0 ? b0[2] : 2 == 1 ? b0[3] : 2 == 2 ? b0[0] : b0[1]) : (2 == 0 ? b0[3] : 2 == 1 ? b0[0] : 2 == 2 ? b0[1] : b0[2]))) >> (8 * ((0)))) & 0xff)] ^ t_fn[1][((((1 == 0 ? (2 == 0 ? b0[0] : 2 == 1 ? b0[1] : 2 == 2 ? b0[2] : b0[3]) : 1 == 1 ? (2 == 0 ? b0[1] : 2 == 1 ? b0[2] : 2 == 2 ? b0[3] : b0[0]) : 1 == 2 ? (2 == 0 ? b0[2] : 2 == 1 ? b0[3] : 2 == 2 ? b0[0] : b0[1]) : (2 == 0 ? b0[3] : 2 == 1 ? b0[0] : 2 == 2 ? b0[1] : b0[2]))) >> (8 * ((1)))) & 0xff)] ^ t_fn[2][((((2 == 0 ? (2 == 0 ? b0[0] : 2 == 1 ? b0[1] : 2 == 2 ? b0[2] : b0[3]) : 2 == 1 ? (2 == 0 ? b0[1] : 2 == 1 ? b0[2] : 2 == 2 ? b0[3] : b0[0]) : 2 == 2 ? (2 == 0 ? b0[2] : 2 == 1 ? b0[3] : 2 == 2 ? b0[0] : b0[1]) : (2 == 0 ? b0[3] : 2 == 1 ? b0[0] : 2 == 2 ? b0[1] : b0[2]))) >> (8 * ((2)))) & 0xff)] ^ t_fn[3][((((3 == 0 ? (2 == 0 ? b0[0] : 2 == 1 ? b0[1] : 2 == 2 ? b0[2] : b0[3]) : 3 == 1 ? (2 == 0 ? b0[1] : 2 == 1 ? b0[2] : 2 == 2 ? b0[3] : b0[0]) : 3 == 2 ? (2 == 0 ? b0[2] : 2 == 1 ? b0[3] : 2 == 2 ? b0[0] : b0[1]) : (2 == 0 ? b0[3] : 2 == 1 ? b0[0] : 2 == 2 ? b0[1] : b0[2]))) >> (8 * ((3)))) & 0xff)]));
 	  (b1[3] = (kp)[3] ^ (t_fn[0][((((0 == 0 ? (3 == 0 ? b0[0] : 3 == 1 ? b0[1] : 3 == 2 ? b0[2] : b0[3]) : 0 == 1 ? (3 == 0 ? b0[1] : 3 == 1 ? b0[2] : 3 == 2 ? b0[3] : b0[0]) : 0 == 2 ? (3 == 0 ? b0[2] : 3 == 1 ? b0[3] : 3 == 2 ? b0[0] : b0[1]) : (3 == 0 ? b0[3] : 3 == 1 ? b0[0] : 3 == 2 ? b0[1] : b0[2]))) >> (8 * ((0)))) & 0xff)] ^ t_fn[1][((((1 == 0 ? (3 == 0 ? b0[0] : 3 == 1 ? b0[1] : 3 == 2 ? b0[2] : b0[3]) : 1 == 1 ? (3 == 0 ? b0[1] : 3 == 1 ? b0[2] : 3 == 2 ? b0[3] : b0[0]) : 1 == 2 ? (3 == 0 ? b0[2] : 3 == 1 ? b0[3] : 3 == 2 ? b0[0] : b0[1]) : (3 == 0 ? b0[3] : 3 == 1 ? b0[0] : 3 == 2 ? b0[1] : b0[2]))) >> (8 * ((1)))) & 0xff)] ^ t_fn[2][((((2 == 0 ? (3 == 0 ? b0[0] : 3 == 1 ? b0[1] : 3 == 2 ? b0[2] : b0[3]) : 2 == 1 ? (3 == 0 ? b0[1] : 3 == 1 ? b0[2] : 3 == 2 ? b0[3] : b0[0]) : 2 == 2 ? (3 == 0 ? b0[2] : 3 == 1 ? b0[3] : 3 == 2 ? b0[0] : b0[1]) : (3 == 0 ? b0[3] : 3 == 1 ? b0[0] : 3 == 2 ? b0[1] : b0[2]))) >> (8 * ((2)))) & 0xff)] ^ t_fn[3][((((3 == 0 ? (3 == 0 ? b0[0] : 3 == 1 ? b0[1] : 3 == 2 ? b0[2] : b0[3]) : 3 == 1 ? (3 == 0 ? b0[1] : 3 == 1 ? b0[2] : 3 == 2 ? b0[3] : b0[0]) : 3 == 2 ? (3 == 0 ? b0[2] : 3 == 1 ? b0[3] : 3 == 2 ? b0[0] : b0[1]) : (3 == 0 ? b0[3] : 3 == 1 ? b0[0] : 3 == 2 ? b0[1] : b0[2]))) >> (8 * ((3)))) & 0xff)]));
 
-	  ((uint32_t)(@out) + (0) = (b1[0]));
-	  ((uint32_t)(@out) + (1) = (b1[1]));
-	  ((uint32_t)(@out) + (2) = (b1[2]));
-	  ((uint32_t)(@out) + (3) = (b1[3]));
+	  ((uint)(@out) + (0) = (b1[0]));
+	  ((uint)(@out) + (1) = (b1[1]));
+	  ((uint)(@out) + (2) = (b1[2]));
+	  ((uint)(@out) + (3) = (b1[3]));
 	}
 
-	public static STATIC INLINE void aesb_pseudo_round(uint8_t in, uint8_t @out, uint8_t expandedKey)
+	public static STATIC INLINE void aesb_pseudo_round(ushort in, ushort @out, ushort expandedKey)
 	{
-	  uint32_t[] b0 = Arrays.InitializeWithDefaultInstances<uint32_t>(4);
-	  uint32_t[] b1 = Arrays.InitializeWithDefaultInstances<uint32_t>(4);
-	  uint32_t kp = (uint32_t) expandedKey;
-	  (b0[0] = ((uint32_t)(in) + (0)));
-	  (b0[1] = ((uint32_t)(in) + (1)));
-	  (b0[2] = ((uint32_t)(in) + (2)));
-	  (b0[3] = ((uint32_t)(in) + (3)));
+	  uint[] b0 = Arrays.InitializeWithDefaultInstances<uint>(4);
+	  uint[] b1 = Arrays.InitializeWithDefaultInstances<uint>(4);
+	  uint kp = (uint) expandedKey;
+	  (b0[0] = ((uint)(in) + (0)));
+	  (b0[1] = ((uint)(in) + (1)));
+	  (b0[2] = ((uint)(in) + (2)));
+	  (b0[3] = ((uint)(in) + (3)));
 
 	  (b1[0] = (kp)[0] ^ (t_fn[0][((((0 == 0 ? (0 == 0 ? s(b0,0) : 0 == 1 ? s(b0,1) : 0 == 2 ? s(b0,2) : s(b0,3)) : 0 == 1 ? (0 == 0 ? s(b0,1) : 0 == 1 ? s(b0,2) : 0 == 2 ? s(b0,3) : s(b0,0)) : 0 == 2 ? (0 == 0 ? s(b0,2) : 0 == 1 ? s(b0,3) : 0 == 2 ? s(b0,0) : s(b0,1)) : (0 == 0 ? s(b0,3) : 0 == 1 ? s(b0,0) : 0 == 2 ? s(b0,1) : s(b0,2)))) >> (8 * ((0)))) & 0xff)] ^ t_fn[1][((((1 == 0 ? (0 == 0 ? s(b0,0) : 0 == 1 ? s(b0,1) : 0 == 2 ? s(b0,2) : s(b0,3)) : 1 == 1 ? (0 == 0 ? s(b0,1) : 0 == 1 ? s(b0,2) : 0 == 2 ? s(b0,3) : s(b0,0)) : 1 == 2 ? (0 == 0 ? s(b0,2) : 0 == 1 ? s(b0,3) : 0 == 2 ? s(b0,0) : s(b0,1)) : (0 == 0 ? s(b0,3) : 0 == 1 ? s(b0,0) : 0 == 2 ? s(b0,1) : s(b0,2)))) >> (8 * ((1)))) & 0xff)] ^ t_fn[2][((((2 == 0 ? (0 == 0 ? s(b0,0) : 0 == 1 ? s(b0,1) : 0 == 2 ? s(b0,2) : s(b0,3)) : 2 == 1 ? (0 == 0 ? s(b0,1) : 0 == 1 ? s(b0,2) : 0 == 2 ? s(b0,3) : s(b0,0)) : 2 == 2 ? (0 == 0 ? s(b0,2) : 0 == 1 ? s(b0,3) : 0 == 2 ? s(b0,0) : s(b0,1)) : (0 == 0 ? s(b0,3) : 0 == 1 ? s(b0,0) : 0 == 2 ? s(b0,1) : s(b0,2)))) >> (8 * ((2)))) & 0xff)] ^ t_fn[3][((((3 == 0 ? (0 == 0 ? s(b0,0) : 0 == 1 ? s(b0,1) : 0 == 2 ? s(b0,2) : s(b0,3)) : 3 == 1 ? (0 == 0 ? s(b0,1) : 0 == 1 ? s(b0,2) : 0 == 2 ? s(b0,3) : s(b0,0)) : 3 == 2 ? (0 == 0 ? s(b0,2) : 0 == 1 ? s(b0,3) : 0 == 2 ? s(b0,0) : s(b0,1)) : (0 == 0 ? s(b0,3) : 0 == 1 ? s(b0,0) : 0 == 2 ? s(b0,1) : s(b0,2)))) >> (8 * ((3)))) & 0xff)]));
 	  (b1[1] = (kp)[1] ^ (t_fn[0][((((0 == 0 ? (1 == 0 ? b0[0] : 1 == 1 ? b0[1] : 1 == 2 ? b0[2] : b0[3]) : 0 == 1 ? (1 == 0 ? b0[1] : 1 == 1 ? b0[2] : 1 == 2 ? b0[3] : b0[0]) : 0 == 2 ? (1 == 0 ? b0[2] : 1 == 1 ? b0[3] : 1 == 2 ? b0[0] : b0[1]) : (1 == 0 ? b0[3] : 1 == 1 ? b0[0] : 1 == 2 ? b0[1] : b0[2]))) >> (8 * ((0)))) & 0xff)] ^ t_fn[1][((((1 == 0 ? (1 == 0 ? b0[0] : 1 == 1 ? b0[1] : 1 == 2 ? b0[2] : b0[3]) : 1 == 1 ? (1 == 0 ? b0[1] : 1 == 1 ? b0[2] : 1 == 2 ? b0[3] : b0[0]) : 1 == 2 ? (1 == 0 ? b0[2] : 1 == 1 ? b0[3] : 1 == 2 ? b0[0] : b0[1]) : (1 == 0 ? b0[3] : 1 == 1 ? b0[0] : 1 == 2 ? b0[1] : b0[2]))) >> (8 * ((1)))) & 0xff)] ^ t_fn[2][((((2 == 0 ? (1 == 0 ? b0[0] : 1 == 1 ? b0[1] : 1 == 2 ? b0[2] : b0[3]) : 2 == 1 ? (1 == 0 ? b0[1] : 1 == 1 ? b0[2] : 1 == 2 ? b0[3] : b0[0]) : 2 == 2 ? (1 == 0 ? b0[2] : 1 == 1 ? b0[3] : 1 == 2 ? b0[0] : b0[1]) : (1 == 0 ? b0[3] : 1 == 1 ? b0[0] : 1 == 2 ? b0[1] : b0[2]))) >> (8 * ((2)))) & 0xff)] ^ t_fn[3][((((3 == 0 ? (1 == 0 ? b0[0] : 1 == 1 ? b0[1] : 1 == 2 ? b0[2] : b0[3]) : 3 == 1 ? (1 == 0 ? b0[1] : 1 == 1 ? b0[2] : 1 == 2 ? b0[3] : b0[0]) : 3 == 2 ? (1 == 0 ? b0[2] : 1 == 1 ? b0[3] : 1 == 2 ? b0[0] : b0[1]) : (1 == 0 ? b0[3] : 1 == 1 ? b0[0] : 1 == 2 ? b0[1] : b0[2]))) >> (8 * ((3)))) & 0xff)]));
@@ -273,10 +273,10 @@ public static class GlobalMembers
 	  (b0[2] = (kp + 9 * DefineConstants.N_COLS)[2] ^ (t_fn[0][((((0 == 0 ? (2 == 0 ? b1[0] : 2 == 1 ? b1[1] : 2 == 2 ? b1[2] : b1[3]) : 0 == 1 ? (2 == 0 ? b1[1] : 2 == 1 ? b1[2] : 2 == 2 ? b1[3] : b1[0]) : 0 == 2 ? (2 == 0 ? b1[2] : 2 == 1 ? b1[3] : 2 == 2 ? b1[0] : b1[1]) : (2 == 0 ? b1[3] : 2 == 1 ? b1[0] : 2 == 2 ? b1[1] : b1[2]))) >> (8 * ((0)))) & 0xff)] ^ t_fn[1][((((1 == 0 ? (2 == 0 ? b1[0] : 2 == 1 ? b1[1] : 2 == 2 ? b1[2] : b1[3]) : 1 == 1 ? (2 == 0 ? b1[1] : 2 == 1 ? b1[2] : 2 == 2 ? b1[3] : b1[0]) : 1 == 2 ? (2 == 0 ? b1[2] : 2 == 1 ? b1[3] : 2 == 2 ? b1[0] : b1[1]) : (2 == 0 ? b1[3] : 2 == 1 ? b1[0] : 2 == 2 ? b1[1] : b1[2]))) >> (8 * ((1)))) & 0xff)] ^ t_fn[2][((((2 == 0 ? (2 == 0 ? b1[0] : 2 == 1 ? b1[1] : 2 == 2 ? b1[2] : b1[3]) : 2 == 1 ? (2 == 0 ? b1[1] : 2 == 1 ? b1[2] : 2 == 2 ? b1[3] : b1[0]) : 2 == 2 ? (2 == 0 ? b1[2] : 2 == 1 ? b1[3] : 2 == 2 ? b1[0] : b1[1]) : (2 == 0 ? b1[3] : 2 == 1 ? b1[0] : 2 == 2 ? b1[1] : b1[2]))) >> (8 * ((2)))) & 0xff)] ^ t_fn[3][((((3 == 0 ? (2 == 0 ? b1[0] : 2 == 1 ? b1[1] : 2 == 2 ? b1[2] : b1[3]) : 3 == 1 ? (2 == 0 ? b1[1] : 2 == 1 ? b1[2] : 2 == 2 ? b1[3] : b1[0]) : 3 == 2 ? (2 == 0 ? b1[2] : 2 == 1 ? b1[3] : 2 == 2 ? b1[0] : b1[1]) : (2 == 0 ? b1[3] : 2 == 1 ? b1[0] : 2 == 2 ? b1[1] : b1[2]))) >> (8 * ((3)))) & 0xff)]));
 	  (b0[3] = (kp + 9 * DefineConstants.N_COLS)[3] ^ (t_fn[0][((((0 == 0 ? (3 == 0 ? b1[0] : 3 == 1 ? b1[1] : 3 == 2 ? b1[2] : b1[3]) : 0 == 1 ? (3 == 0 ? b1[1] : 3 == 1 ? b1[2] : 3 == 2 ? b1[3] : b1[0]) : 0 == 2 ? (3 == 0 ? b1[2] : 3 == 1 ? b1[3] : 3 == 2 ? b1[0] : b1[1]) : (3 == 0 ? b1[3] : 3 == 1 ? b1[0] : 3 == 2 ? b1[1] : b1[2]))) >> (8 * ((0)))) & 0xff)] ^ t_fn[1][((((1 == 0 ? (3 == 0 ? b1[0] : 3 == 1 ? b1[1] : 3 == 2 ? b1[2] : b1[3]) : 1 == 1 ? (3 == 0 ? b1[1] : 3 == 1 ? b1[2] : 3 == 2 ? b1[3] : b1[0]) : 1 == 2 ? (3 == 0 ? b1[2] : 3 == 1 ? b1[3] : 3 == 2 ? b1[0] : b1[1]) : (3 == 0 ? b1[3] : 3 == 1 ? b1[0] : 3 == 2 ? b1[1] : b1[2]))) >> (8 * ((1)))) & 0xff)] ^ t_fn[2][((((2 == 0 ? (3 == 0 ? b1[0] : 3 == 1 ? b1[1] : 3 == 2 ? b1[2] : b1[3]) : 2 == 1 ? (3 == 0 ? b1[1] : 3 == 1 ? b1[2] : 3 == 2 ? b1[3] : b1[0]) : 2 == 2 ? (3 == 0 ? b1[2] : 3 == 1 ? b1[3] : 3 == 2 ? b1[0] : b1[1]) : (3 == 0 ? b1[3] : 3 == 1 ? b1[0] : 3 == 2 ? b1[1] : b1[2]))) >> (8 * ((2)))) & 0xff)] ^ t_fn[3][((((3 == 0 ? (3 == 0 ? b1[0] : 3 == 1 ? b1[1] : 3 == 2 ? b1[2] : b1[3]) : 3 == 1 ? (3 == 0 ? b1[1] : 3 == 1 ? b1[2] : 3 == 2 ? b1[3] : b1[0]) : 3 == 2 ? (3 == 0 ? b1[2] : 3 == 1 ? b1[3] : 3 == 2 ? b1[0] : b1[1]) : (3 == 0 ? b1[3] : 3 == 1 ? b1[0] : 3 == 2 ? b1[1] : b1[2]))) >> (8 * ((3)))) & 0xff)]));
 
-	  ((uint32_t)(@out) + (0) = (b0[0]));
-	  ((uint32_t)(@out) + (1) = (b0[1]));
-	  ((uint32_t)(@out) + (2) = (b0[2]));
-	  ((uint32_t)(@out) + (3) = (b0[3]));
+	  ((uint)(@out) + (0) = (b0[0]));
+	  ((uint)(@out) + (1) = (b0[1]));
+	  ((uint)(@out) + (2) = (b0[2]));
+	  ((uint)(@out) + (3) = (b0[3]));
 	}
 
 
@@ -314,7 +314,7 @@ public static class GlobalMembers
 // datalen = number of bits
 
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'data', so pointers on this parameter are left unchanged:
-	public static void blake256_update(state S, uint8_t * data, uint64_t datalen)
+	public static void blake256_update(state S, ushort * data, ulong datalen)
 	{
 		int left = S.buflen >> 3;
 		int fill = 64 - left;
@@ -341,7 +341,7 @@ public static class GlobalMembers
 			{
 				S.t[1]++;
 			}
-			blake256_compress(S, new uint8_t(data));
+			blake256_compress(S, new ushort(data));
 			data += 64;
 			datalen -= 512;
 		}
@@ -359,23 +359,23 @@ public static class GlobalMembers
 	}
 
 // datalen = number of bits
-	public static void blake224_update(state S, uint8_t data, uint64_t datalen)
+	public static void blake224_update(state S, ushort data, ulong datalen)
 	{
-		blake256_update(S, data, new uint64_t(datalen));
+		blake256_update(S, data, new ulong(datalen));
 	}
 
-	public static void blake256_final(state S, uint8_t digest)
+	public static void blake256_final(state S, ushort digest)
 	{
 		blake256_final_h(S, digest, 0x81, 0x01);
 	}
-	public static void blake224_final(state S, uint8_t digest)
+	public static void blake224_final(state S, ushort digest)
 	{
 		blake256_final_h(S, digest, 0x80, 0x00);
 	}
 
 // inlen = number of bytes
 
-	public static void blake256_hash(uint8_t @out, uint8_t in, uint64_t inlen)
+	public static void blake256_hash(ushort @out, ushort in, ulong inlen)
 	{
 		state S = new state();
 		blake256_init(S);
@@ -384,7 +384,7 @@ public static class GlobalMembers
 	}
 
 // inlen = number of bytes
-	public static void blake224_hash(uint8_t @out, uint8_t in, uint64_t inlen)
+	public static void blake224_hash(ushort @out, ushort in, ulong inlen)
 	{
 		state S = new state();
 		blake224_init(S);
@@ -396,16 +396,16 @@ public static class GlobalMembers
 
 	/* HMAC functions: */
 
-	public static void hmac_blake256_init(hmac_state S, uint8_t _key, uint64_t keylen)
+	public static void hmac_blake256_init(hmac_state S, ushort _key, ulong keylen)
 	{
-		uint8_t key = _key;
-		uint8_t[] keyhash = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
-		uint8_t[] pad = Arrays.InitializeWithDefaultInstances<uint8_t>(64);
-		uint64_t i = new uint64_t();
+		ushort key = _key;
+		ushort[] keyhash = Arrays.InitializeWithDefaultInstances<ushort>(32);
+		ushort[] pad = Arrays.InitializeWithDefaultInstances<ushort>(64);
+		ulong i = new ulong();
 
 		if (keylen > 64)
 		{
-			blake256_hash(keyhash, key, new uint64_t(keylen));
+			blake256_hash(keyhash, key, new ulong(keylen));
 			key = keyhash;
 			keylen = 32;
 		}
@@ -433,16 +433,16 @@ public static class GlobalMembers
 	}
 
 // keylen = number of bytes
-	public static void hmac_blake224_init(hmac_state S, uint8_t _key, uint64_t keylen)
+	public static void hmac_blake224_init(hmac_state S, ushort _key, ulong keylen)
 	{
-		uint8_t key = _key;
-		uint8_t[] keyhash = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
-		uint8_t[] pad = Arrays.InitializeWithDefaultInstances<uint8_t>(64);
-		uint64_t i = new uint64_t();
+		ushort key = _key;
+		ushort[] keyhash = Arrays.InitializeWithDefaultInstances<ushort>(32);
+		ushort[] pad = Arrays.InitializeWithDefaultInstances<ushort>(64);
+		ulong i = new ulong();
 
 		if (keylen > 64)
 		{
-			blake256_hash(keyhash, key, new uint64_t(keylen));
+			blake256_hash(keyhash, key, new ulong(keylen));
 			key = keyhash;
 			keylen = 28;
 		}
@@ -471,31 +471,31 @@ public static class GlobalMembers
 
 // datalen = number of bits
 
-	public static void hmac_blake256_update(hmac_state S, uint8_t data, uint64_t datalen)
+	public static void hmac_blake256_update(hmac_state S, ushort data, ulong datalen)
 	{
 	  // update the inner state
-	  blake256_update(S.inner, data, new uint64_t(datalen));
+	  blake256_update(S.inner, data, new ulong(datalen));
 	}
 
 // datalen = number of bits
-	public static void hmac_blake224_update(hmac_state S, uint8_t data, uint64_t datalen)
+	public static void hmac_blake224_update(hmac_state S, ushort data, ulong datalen)
 	{
 	  // update the inner state
-	  blake224_update(S.inner, data, new uint64_t(datalen));
+	  blake224_update(S.inner, data, new ulong(datalen));
 	}
 
-	public static void hmac_blake256_final(hmac_state S, uint8_t digest)
+	public static void hmac_blake256_final(hmac_state S, ushort digest)
 	{
-		uint8_t[] ihash = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+		ushort[] ihash = Arrays.InitializeWithDefaultInstances<ushort>(32);
 		blake256_final(S.inner, ihash);
 		blake256_update(S.outer, ihash, 256);
 		blake256_final(S.outer, digest);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
 		memset(ihash, 0, 32);
 	}
-	public static void hmac_blake224_final(hmac_state S, uint8_t digest)
+	public static void hmac_blake224_final(hmac_state S, ushort digest)
 	{
-		uint8_t[] ihash = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+		ushort[] ihash = Arrays.InitializeWithDefaultInstances<ushort>(32);
 		blake224_final(S.inner, ihash);
 		blake224_update(S.outer, ihash, 224);
 		blake224_final(S.outer, digest);
@@ -505,19 +505,19 @@ public static class GlobalMembers
 
 // keylen = number of bytes; inlen = number of bytes
 
-	public static void hmac_blake256_hash(uint8_t @out, uint8_t key, uint64_t keylen, uint8_t in, uint64_t inlen)
+	public static void hmac_blake256_hash(ushort @out, ushort key, ulong keylen, ushort in, ulong inlen)
 	{
 		hmac_state S = new hmac_state();
-		hmac_blake256_init(S, key, new uint64_t(keylen));
+		hmac_blake256_init(S, key, new ulong(keylen));
 		hmac_blake256_update(S, in, inlen * 8);
 		hmac_blake256_final(S, @out);
 	}
 
 // keylen = number of bytes; inlen = number of bytes
-	public static void hmac_blake224_hash(uint8_t @out, uint8_t key, uint64_t keylen, uint8_t in, uint64_t inlen)
+	public static void hmac_blake224_hash(ushort @out, ushort key, ulong keylen, ushort in, ulong inlen)
 	{
 		hmac_state S = new hmac_state();
-		hmac_blake224_init(S, key, new uint64_t(keylen));
+		hmac_blake224_init(S, key, new ulong(keylen));
 		hmac_blake224_update(S, in, inlen * 8);
 		hmac_blake224_final(S, @out);
 	}
@@ -525,11 +525,11 @@ public static class GlobalMembers
 
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U8TO32(p) (((uint32_t)((p)[0]) << 24) | ((uint32_t)((p)[1]) << 16) | ((uint32_t)((p)[2]) << 8) | ((uint32_t)((p)[3]) ))
+	//ORIGINAL LINE: #define U8TO32(p) (((uint)((p)[0]) << 24) | ((uint)((p)[1]) << 16) | ((uint)((p)[2]) << 8) | ((uint)((p)[3]) ))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U32TO8(p, v) (p)[0] = (uint8_t)((v) >> 24); (p)[1] = (uint8_t)((v) >> 16); (p)[2] = (uint8_t)((v) >> 8); (p)[3] = (uint8_t)((v) );
+	//ORIGINAL LINE: #define U32TO8(p, v) (p)[0] = (ushort)((v) >> 24); (p)[1] = (ushort)((v) >> 16); (p)[2] = (ushort)((v) >> 8); (p)[3] = (ushort)((v) );
 
-	public static readonly uint8_t[,] sigma =
+	public static readonly ushort[,] sigma =
 	{
 		{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
 		{14, 10, 4, 8, 9, 15, 13, 6, 1, 12, 0, 2, 11, 7, 5, 3},
@@ -547,16 +547,16 @@ public static class GlobalMembers
 		{7, 9, 3, 1, 13, 12, 11, 14, 2, 6, 5, 10, 4, 0, 15, 8}
 	};
 
-	public static readonly uint32_t[] cst = {0x243F6A88, 0x85A308D3, 0x13198A2E, 0x03707344, 0xA4093822, 0x299F31D0, 0x082EFA98, 0xEC4E6C89, 0x452821E6, 0x38D01377, 0xBE5466CF, 0x34E90C6C, 0xC0AC29B7, 0xC97C50DD, 0x3F84D5B5, 0xB5470917};
+	public static readonly uint[] cst = {0x243F6A88, 0x85A308D3, 0x13198A2E, 0x03707344, 0xA4093822, 0x299F31D0, 0x082EFA98, 0xEC4E6C89, 0x452821E6, 0x38D01377, 0xBE5466CF, 0x34E90C6C, 0xC0AC29B7, 0xC97C50DD, 0x3F84D5B5, 0xB5470917};
 
-	internal uint8_t[] padding = {0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	internal ushort[] padding = {0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 
-	public static void blake256_compress(state S, uint8_t block)
+	public static void blake256_compress(state S, ushort block)
 	{
-		uint32_t[] v = Arrays.InitializeWithDefaultInstances<uint32_t>(16);
-		uint32_t[] m = Arrays.InitializeWithDefaultInstances<uint32_t>(16);
-		uint32_t i = new uint32_t();
+		uint[] v = Arrays.InitializeWithDefaultInstances<uint>(16);
+		uint[] m = Arrays.InitializeWithDefaultInstances<uint>(16);
+		uint i = new uint();
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define ROT(x,n) (((x)<<(32-n))|((x)>>(n)))
@@ -565,7 +565,7 @@ public static class GlobalMembers
 
 		for (i = 0; i < 16; ++i)
 		{
-			m[i] = (((uint32_t)((block + i * 4)[0]) << 24) | ((uint32_t)((block + i * 4)[1]) << 16) | ((uint32_t)((block + i * 4)[2]) << 8) | ((uint32_t)((block + i * 4)[3])));
+			m[i] = (((uint)((block + i * 4)[0]) << 24) | ((uint)((block + i * 4)[1]) << 16) | ((uint)((block + i * 4)[2]) << 8) | ((uint)((block + i * 4)[3])));
 		}
 		for (i = 0; i < 8; ++i)
 		{
@@ -666,23 +666,23 @@ public static class GlobalMembers
 		}
 	}
 
-	public static void blake256_final_h(state S, uint8_t digest, uint8_t pa, uint8_t pb)
+	public static void blake256_final_h(state S, ushort digest, ushort pa, ushort pb)
 	{
-		uint8_t[] msglen = Arrays.InitializeWithDefaultInstances<uint8_t>(8);
-		uint32_t lo = S.t[0] + S.buflen;
-		uint32_t hi = S.t[1];
+		ushort[] msglen = Arrays.InitializeWithDefaultInstances<ushort>(8);
+		uint lo = S.t[0] + S.buflen;
+		uint hi = S.t[1];
 		if (lo < (uint) S.buflen)
 		{
 			hi++;
 		}
-		(msglen + 0)[0] = (uint8_t)((hi) >> 24);
-		(msglen + 0)[1] = (uint8_t)((hi) >> 16);
-		(msglen + 0)[2] = (uint8_t)((hi) >> 8);
-		(msglen + 0)[3] = (uint8_t)((hi));
-		(msglen + 4)[0] = (uint8_t)((lo) >> 24);
-		(msglen + 4)[1] = (uint8_t)((lo) >> 16);
-		(msglen + 4)[2] = (uint8_t)((lo) >> 8);
-		(msglen + 4)[3] = (uint8_t)((lo));
+		(msglen + 0)[0] = (ushort)((hi) >> 24);
+		(msglen + 0)[1] = (ushort)((hi) >> 16);
+		(msglen + 0)[2] = (ushort)((hi) >> 8);
+		(msglen + 0)[3] = (ushort)((hi));
+		(msglen + 4)[0] = (ushort)((lo) >> 24);
+		(msglen + 4)[1] = (ushort)((lo) >> 16);
+		(msglen + 4)[2] = (ushort)((lo) >> 8);
+		(msglen + 4)[3] = (ushort)((lo));
 
 		if (S.buflen == 440)
 		{ // one padding byte
@@ -714,51 +714,51 @@ public static class GlobalMembers
 		S.t[0] -= 64;
 		blake256_update(S, msglen, 64);
 
-		(digest + 0)[0] = (uint8_t)((S.h[0]) >> 24);
-		(digest + 0)[1] = (uint8_t)((S.h[0]) >> 16);
-		(digest + 0)[2] = (uint8_t)((S.h[0]) >> 8);
-		(digest + 0)[3] = (uint8_t)((S.h[0]));
-		(digest + 4)[0] = (uint8_t)((S.h[1]) >> 24);
-		(digest + 4)[1] = (uint8_t)((S.h[1]) >> 16);
-		(digest + 4)[2] = (uint8_t)((S.h[1]) >> 8);
-		(digest + 4)[3] = (uint8_t)((S.h[1]));
-		(digest + 8)[0] = (uint8_t)((S.h[2]) >> 24);
-		(digest + 8)[1] = (uint8_t)((S.h[2]) >> 16);
-		(digest + 8)[2] = (uint8_t)((S.h[2]) >> 8);
-		(digest + 8)[3] = (uint8_t)((S.h[2]));
-		(digest + 12)[0] = (uint8_t)((S.h[3]) >> 24);
-		(digest + 12)[1] = (uint8_t)((S.h[3]) >> 16);
-		(digest + 12)[2] = (uint8_t)((S.h[3]) >> 8);
-		(digest + 12)[3] = (uint8_t)((S.h[3]));
-		(digest + 16)[0] = (uint8_t)((S.h[4]) >> 24);
-		(digest + 16)[1] = (uint8_t)((S.h[4]) >> 16);
-		(digest + 16)[2] = (uint8_t)((S.h[4]) >> 8);
-		(digest + 16)[3] = (uint8_t)((S.h[4]));
-		(digest + 20)[0] = (uint8_t)((S.h[5]) >> 24);
-		(digest + 20)[1] = (uint8_t)((S.h[5]) >> 16);
-		(digest + 20)[2] = (uint8_t)((S.h[5]) >> 8);
-		(digest + 20)[3] = (uint8_t)((S.h[5]));
-		(digest + 24)[0] = (uint8_t)((S.h[6]) >> 24);
-		(digest + 24)[1] = (uint8_t)((S.h[6]) >> 16);
-		(digest + 24)[2] = (uint8_t)((S.h[6]) >> 8);
-		(digest + 24)[3] = (uint8_t)((S.h[6]));
-		(digest + 28)[0] = (uint8_t)((S.h[7]) >> 24);
-		(digest + 28)[1] = (uint8_t)((S.h[7]) >> 16);
-		(digest + 28)[2] = (uint8_t)((S.h[7]) >> 8);
-		(digest + 28)[3] = (uint8_t)((S.h[7]));
+		(digest + 0)[0] = (ushort)((S.h[0]) >> 24);
+		(digest + 0)[1] = (ushort)((S.h[0]) >> 16);
+		(digest + 0)[2] = (ushort)((S.h[0]) >> 8);
+		(digest + 0)[3] = (ushort)((S.h[0]));
+		(digest + 4)[0] = (ushort)((S.h[1]) >> 24);
+		(digest + 4)[1] = (ushort)((S.h[1]) >> 16);
+		(digest + 4)[2] = (ushort)((S.h[1]) >> 8);
+		(digest + 4)[3] = (ushort)((S.h[1]));
+		(digest + 8)[0] = (ushort)((S.h[2]) >> 24);
+		(digest + 8)[1] = (ushort)((S.h[2]) >> 16);
+		(digest + 8)[2] = (ushort)((S.h[2]) >> 8);
+		(digest + 8)[3] = (ushort)((S.h[2]));
+		(digest + 12)[0] = (ushort)((S.h[3]) >> 24);
+		(digest + 12)[1] = (ushort)((S.h[3]) >> 16);
+		(digest + 12)[2] = (ushort)((S.h[3]) >> 8);
+		(digest + 12)[3] = (ushort)((S.h[3]));
+		(digest + 16)[0] = (ushort)((S.h[4]) >> 24);
+		(digest + 16)[1] = (ushort)((S.h[4]) >> 16);
+		(digest + 16)[2] = (ushort)((S.h[4]) >> 8);
+		(digest + 16)[3] = (ushort)((S.h[4]));
+		(digest + 20)[0] = (ushort)((S.h[5]) >> 24);
+		(digest + 20)[1] = (ushort)((S.h[5]) >> 16);
+		(digest + 20)[2] = (ushort)((S.h[5]) >> 8);
+		(digest + 20)[3] = (ushort)((S.h[5]));
+		(digest + 24)[0] = (ushort)((S.h[6]) >> 24);
+		(digest + 24)[1] = (ushort)((S.h[6]) >> 16);
+		(digest + 24)[2] = (ushort)((S.h[6]) >> 8);
+		(digest + 24)[3] = (ushort)((S.h[6]));
+		(digest + 28)[0] = (ushort)((S.h[7]) >> 24);
+		(digest + 28)[1] = (ushort)((S.h[7]) >> 16);
+		(digest + 28)[2] = (ushort)((S.h[7]) >> 8);
+		(digest + 28)[3] = (ushort)((S.h[7]));
 	}
 
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define inline __inline
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+	//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+	//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+	//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+	//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define SWAP32LE IDENT32
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -828,18 +828,18 @@ public static class GlobalMembers
 	 * The following macros are used to obtain exact-width results.
 	 */
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U8V(v) ((uint8_t)(v) & UINT8_C(0xFF))
+	//ORIGINAL LINE: #define U8V(v) ((ushort)(v) & UINT8_C(0xFF))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U32V(v) ((uint32_t)(v) & UINT32_C(0xFFFFFFFF))
+	//ORIGINAL LINE: #define U32V(v) ((uint)(v) & UINT32_C(0xFFFFFFFF))
 
 	/*
 	 * The following macros load words from an array of bytes with
 	 * different types of endianness, and vice versa.
 	 */
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U8TO32_LITTLE(p) SWAP32LE(((uint32_t*)(p))[0])
+	//ORIGINAL LINE: #define U8TO32_LITTLE(p) SWAP32LE(((uint*)(p))[0])
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U32TO8_LITTLE(p, v) (((uint32_t*)(p))[0] = SWAP32LE(v))
+	//ORIGINAL LINE: #define U32TO8_LITTLE(p, v) (((uint*)(p))[0] = SWAP32LE(v))
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define ROTATE(v,c) (rol32(v,c))
@@ -863,7 +863,7 @@ public static class GlobalMembers
 
 	public static void ge_add(ge_p1p1 r, ge_p3 p, ge_cached q)
 	{
-	  int32_t[] t0 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] t0 = Arrays.InitializeWithDefaultInstances<int>(10);
 	  fe_add(r.X, p.Y, p.X);
 	  fe_sub(r.Y, p.Y, p.X);
 	  fe_mul(r.Z, r.X, q.YplusX);
@@ -975,41 +975,41 @@ B is the Ed25519 base point (x,4/5) with x positive.
 	/* From ge_frombytes.c, modified */
 
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_sqrtm1[10];
+	//extern const int fe_sqrtm1[10];
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_d[10];
+	//extern const int fe_d[10];
 
 /* From ge_frombytes.c, modified */
 
 	public static int ge_frombytes_vartime(ge_p3 h, byte[] s)
 	{
-	  int32_t[] u = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] v = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] vxx = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] check = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] u = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] v = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] vxx = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] check = Arrays.InitializeWithDefaultInstances<int>(10);
 
 	  /* From fe_frombytes.c */
 
-	  int64_t h0 = load_4(s);
-	  int64_t h1 = load_3(s + 4) << 6;
-	  int64_t h2 = load_3(s + 7) << 5;
-	  int64_t h3 = load_3(s + 10) << 3;
-	  int64_t h4 = load_3(s + 13) << 2;
-	  int64_t h5 = load_4(s + 16);
-	  int64_t h6 = load_3(s + 20) << 7;
-	  int64_t h7 = load_3(s + 23) << 5;
-	  int64_t h8 = load_3(s + 26) << 4;
-	  int64_t h9 = (load_3(s + 29) & 8388607) << 2;
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
+	  long h0 = load_4(s);
+	  long h1 = load_3(s + 4) << 6;
+	  long h2 = load_3(s + 7) << 5;
+	  long h3 = load_3(s + 10) << 3;
+	  long h4 = load_3(s + 13) << 2;
+	  long h5 = load_4(s + 16);
+	  long h6 = load_3(s + 20) << 7;
+	  long h7 = load_3(s + 23) << 5;
+	  long h8 = load_3(s + 26) << 4;
+	  long h9 = (load_3(s + 29) & 8388607) << 2;
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
 
 	  /* Validate the number to be canonical */
 	  if (h9 == 33554428 && h8 == 268435440 && h7 == 536870880 && h6 == 2147483520 && h5 == 4294967295 && h4 == 67108860 && h3 == 134217720 && h2 == 536870880 && h1 == 1073741760 && h0 >= 4294967277)
@@ -1017,48 +1017,48 @@ B is the Ed25519 base point (x,4/5) with x positive.
 		return -1;
 	  }
 
-	  carry9 = (h9 + (int64_t)(1 << 24)) >> 25;
+	  carry9 = (h9 + (long)(1 << 24)) >> 25;
 	  h0 += carry9 * 19;
 	  h9 -= carry9 << 25;
-	  carry1 = (h1 + (int64_t)(1 << 24)) >> 25;
+	  carry1 = (h1 + (long)(1 << 24)) >> 25;
 	  h2 += carry1;
 	  h1 -= carry1 << 25;
-	  carry3 = (h3 + (int64_t)(1 << 24)) >> 25;
+	  carry3 = (h3 + (long)(1 << 24)) >> 25;
 	  h4 += carry3;
 	  h3 -= carry3 << 25;
-	  carry5 = (h5 + (int64_t)(1 << 24)) >> 25;
+	  carry5 = (h5 + (long)(1 << 24)) >> 25;
 	  h6 += carry5;
 	  h5 -= carry5 << 25;
-	  carry7 = (h7 + (int64_t)(1 << 24)) >> 25;
+	  carry7 = (h7 + (long)(1 << 24)) >> 25;
 	  h8 += carry7;
 	  h7 -= carry7 << 25;
 
-	  carry0 = (h0 + (int64_t)(1 << 25)) >> 26;
+	  carry0 = (h0 + (long)(1 << 25)) >> 26;
 	  h1 += carry0;
 	  h0 -= carry0 << 26;
-	  carry2 = (h2 + (int64_t)(1 << 25)) >> 26;
+	  carry2 = (h2 + (long)(1 << 25)) >> 26;
 	  h3 += carry2;
 	  h2 -= carry2 << 26;
-	  carry4 = (h4 + (int64_t)(1 << 25)) >> 26;
+	  carry4 = (h4 + (long)(1 << 25)) >> 26;
 	  h5 += carry4;
 	  h4 -= carry4 << 26;
-	  carry6 = (h6 + (int64_t)(1 << 25)) >> 26;
+	  carry6 = (h6 + (long)(1 << 25)) >> 26;
 	  h7 += carry6;
 	  h6 -= carry6 << 26;
-	  carry8 = (h8 + (int64_t)(1 << 25)) >> 26;
+	  carry8 = (h8 + (long)(1 << 25)) >> 26;
 	  h9 += carry8;
 	  h8 -= carry8 << 26;
 
-	  h.Y[0] = (int32_t) h0;
-	  h.Y[1] = (int32_t) h1;
-	  h.Y[2] = (int32_t) h2;
-	  h.Y[3] = (int32_t) h3;
-	  h.Y[4] = (int32_t) h4;
-	  h.Y[5] = (int32_t) h5;
-	  h.Y[6] = (int32_t) h6;
-	  h.Y[7] = (int32_t) h7;
-	  h.Y[8] = (int32_t) h8;
-	  h.Y[9] = (int32_t) h9;
+	  h.Y[0] = (int) h0;
+	  h.Y[1] = (int) h1;
+	  h.Y[2] = (int) h2;
+	  h.Y[3] = (int) h3;
+	  h.Y[4] = (int) h4;
+	  h.Y[5] = (int) h5;
+	  h.Y[6] = (int) h6;
+	  h.Y[7] = (int) h7;
+	  h.Y[8] = (int) h8;
+	  h.Y[9] = (int) h9;
 
 	  /* End fe_frombytes.c */
 
@@ -1141,7 +1141,7 @@ r = 2 * p
 
 	public static void ge_p2_dbl(ge_p1p1 r, ge_p2 p)
 	{
-	  int32_t[] t0 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] t0 = Arrays.InitializeWithDefaultInstances<int>(10);
 	  fe_sq(r.X, p.X);
 	  fe_sq(r.Z, p.Y);
 	  fe_sq2(r.T, p.Z);
@@ -1156,7 +1156,7 @@ r = 2 * p
 	/* From ge_p3_to_cached.c */
 
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_d2[10];
+	//extern const int fe_d2[10];
 
 /* From ge_p3_to_cached.c */
 
@@ -1195,9 +1195,9 @@ r = p
 
 	public static void ge_p3_tobytes(byte[] s, ge_p3 h)
 	{
-	  int32_t[] recip = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] x = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] y = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] recip = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] x = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] y = Arrays.InitializeWithDefaultInstances<int>(10);
 
 	  fe_invert(recip, h.Z);
 	  fe_mul(x, h.X, recip);
@@ -1284,7 +1284,7 @@ r = p - q
 
 	public static void ge_sub(ge_p1p1 r, ge_p3 p, ge_cached q)
 	{
-	  int32_t[] t0 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] t0 = Arrays.InitializeWithDefaultInstances<int>(10);
 	  fe_add(r.X, p.Y, p.X);
 	  fe_sub(r.Y, p.Y, p.X);
 	  fe_mul(r.Z, r.X, q.YminusX);
@@ -1305,9 +1305,9 @@ r = p - q
 
 	public static void ge_tobytes(byte[] s, ge_p2 h)
 	{
-	  int32_t[] recip = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] x = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] y = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] recip = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] x = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] y = Arrays.InitializeWithDefaultInstances<int>(10);
 
 	  fe_invert(recip, h.Z);
 	  fe_mul(x, h.X, recip);
@@ -1333,47 +1333,47 @@ Output:
 
 	public static void sc_reduce(byte[] s)
 	{
-	  int64_t s0 = 2097151 & load_3(s);
-	  int64_t s1 = 2097151 & (load_4(s + 2) >> 5);
-	  int64_t s2 = 2097151 & (load_3(s + 5) >> 2);
-	  int64_t s3 = 2097151 & (load_4(s + 7) >> 7);
-	  int64_t s4 = 2097151 & (load_4(s + 10) >> 4);
-	  int64_t s5 = 2097151 & (load_3(s + 13) >> 1);
-	  int64_t s6 = 2097151 & (load_4(s + 15) >> 6);
-	  int64_t s7 = 2097151 & (load_3(s + 18) >> 3);
-	  int64_t s8 = 2097151 & load_3(s + 21);
-	  int64_t s9 = 2097151 & (load_4(s + 23) >> 5);
-	  int64_t s10 = 2097151 & (load_3(s + 26) >> 2);
-	  int64_t s11 = 2097151 & (load_4(s + 28) >> 7);
-	  int64_t s12 = 2097151 & (load_4(s + 31) >> 4);
-	  int64_t s13 = 2097151 & (load_3(s + 34) >> 1);
-	  int64_t s14 = 2097151 & (load_4(s + 36) >> 6);
-	  int64_t s15 = 2097151 & (load_3(s + 39) >> 3);
-	  int64_t s16 = 2097151 & load_3(s + 42);
-	  int64_t s17 = 2097151 & (load_4(s + 44) >> 5);
-	  int64_t s18 = 2097151 & (load_3(s + 47) >> 2);
-	  int64_t s19 = 2097151 & (load_4(s + 49) >> 7);
-	  int64_t s20 = 2097151 & (load_4(s + 52) >> 4);
-	  int64_t s21 = 2097151 & (load_3(s + 55) >> 1);
-	  int64_t s22 = 2097151 & (load_4(s + 57) >> 6);
-	  int64_t s23 = (load_4(s + 60) >> 3);
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
-	  int64_t carry10 = new int64_t();
-	  int64_t carry11 = new int64_t();
-	  int64_t carry12 = new int64_t();
-	  int64_t carry13 = new int64_t();
-	  int64_t carry14 = new int64_t();
-	  int64_t carry15 = new int64_t();
-	  int64_t carry16 = new int64_t();
+	  long s0 = 2097151 & load_3(s);
+	  long s1 = 2097151 & (load_4(s + 2) >> 5);
+	  long s2 = 2097151 & (load_3(s + 5) >> 2);
+	  long s3 = 2097151 & (load_4(s + 7) >> 7);
+	  long s4 = 2097151 & (load_4(s + 10) >> 4);
+	  long s5 = 2097151 & (load_3(s + 13) >> 1);
+	  long s6 = 2097151 & (load_4(s + 15) >> 6);
+	  long s7 = 2097151 & (load_3(s + 18) >> 3);
+	  long s8 = 2097151 & load_3(s + 21);
+	  long s9 = 2097151 & (load_4(s + 23) >> 5);
+	  long s10 = 2097151 & (load_3(s + 26) >> 2);
+	  long s11 = 2097151 & (load_4(s + 28) >> 7);
+	  long s12 = 2097151 & (load_4(s + 31) >> 4);
+	  long s13 = 2097151 & (load_3(s + 34) >> 1);
+	  long s14 = 2097151 & (load_4(s + 36) >> 6);
+	  long s15 = 2097151 & (load_3(s + 39) >> 3);
+	  long s16 = 2097151 & load_3(s + 42);
+	  long s17 = 2097151 & (load_4(s + 44) >> 5);
+	  long s18 = 2097151 & (load_3(s + 47) >> 2);
+	  long s19 = 2097151 & (load_4(s + 49) >> 7);
+	  long s20 = 2097151 & (load_4(s + 52) >> 4);
+	  long s21 = 2097151 & (load_3(s + 55) >> 1);
+	  long s22 = 2097151 & (load_4(s + 57) >> 6);
+	  long s23 = (load_4(s + 60) >> 3);
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
+	  long carry10 = new long();
+	  long carry11 = new long();
+	  long carry12 = new long();
+	  long carry13 = new long();
+	  long carry14 = new long();
+	  long carry15 = new long();
+	  long carry16 = new long();
 
 	  s11 += s23 * 666643;
 	  s12 += s23 * 470296;
@@ -2337,110 +2337,110 @@ Output:
 	  ge_p2_dbl(r, u);
 	}
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_ma2[10];
+	//extern const int fe_ma2[10];
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_ma[10];
+	//extern const int fe_ma[10];
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_fffb1[10];
+	//extern const int fe_fffb1[10];
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_fffb2[10];
+	//extern const int fe_fffb2[10];
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_fffb3[10];
+	//extern const int fe_fffb3[10];
 //C++ TO C# CONVERTER NOTE: 'extern' variable declarations are not required in C#:
-	//extern const int32_t fe_fffb4[10];
+	//extern const int fe_fffb4[10];
 	public static void ge_fromfe_frombytes_vartime(ge_p2 r, byte s)
 	{
-	  int32_t[] u = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t v = new int32_t();
-	  int32_t w = new int32_t();
-	  int32_t x = new int32_t();
-	  int32_t y = new int32_t();
-	  int32_t z = new int32_t();
+	  int[] u = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int v = new int();
+	  int w = new int();
+	  int x = new int();
+	  int y = new int();
+	  int z = new int();
 	  byte sign;
 
 	  /* From fe_frombytes.c */
 
-	  int64_t h0 = load_4(s);
-	  int64_t h1 = load_3(s + 4) << 6;
-	  int64_t h2 = load_3(s + 7) << 5;
-	  int64_t h3 = load_3(s + 10) << 3;
-	  int64_t h4 = load_3(s + 13) << 2;
-	  int64_t h5 = load_4(s + 16);
-	  int64_t h6 = load_3(s + 20) << 7;
-	  int64_t h7 = load_3(s + 23) << 5;
-	  int64_t h8 = load_3(s + 26) << 4;
-	  int64_t h9 = load_3(s + 29) << 2;
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
+	  long h0 = load_4(s);
+	  long h1 = load_3(s + 4) << 6;
+	  long h2 = load_3(s + 7) << 5;
+	  long h3 = load_3(s + 10) << 3;
+	  long h4 = load_3(s + 13) << 2;
+	  long h5 = load_4(s + 16);
+	  long h6 = load_3(s + 20) << 7;
+	  long h7 = load_3(s + 23) << 5;
+	  long h8 = load_3(s + 26) << 4;
+	  long h9 = load_3(s + 29) << 2;
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
 
-	  carry9 = (h9 + (int64_t)(1 << 24)) >> 25;
+	  carry9 = (h9 + (long)(1 << 24)) >> 25;
 	  h0 += carry9 * 19;
 	  h9 -= carry9 << 25;
-	  carry1 = (h1 + (int64_t)(1 << 24)) >> 25;
+	  carry1 = (h1 + (long)(1 << 24)) >> 25;
 	  h2 += carry1;
 	  h1 -= carry1 << 25;
-	  carry3 = (h3 + (int64_t)(1 << 24)) >> 25;
+	  carry3 = (h3 + (long)(1 << 24)) >> 25;
 	  h4 += carry3;
 	  h3 -= carry3 << 25;
-	  carry5 = (h5 + (int64_t)(1 << 24)) >> 25;
+	  carry5 = (h5 + (long)(1 << 24)) >> 25;
 	  h6 += carry5;
 	  h5 -= carry5 << 25;
-	  carry7 = (h7 + (int64_t)(1 << 24)) >> 25;
+	  carry7 = (h7 + (long)(1 << 24)) >> 25;
 	  h8 += carry7;
 	  h7 -= carry7 << 25;
 
-	  carry0 = (h0 + (int64_t)(1 << 25)) >> 26;
+	  carry0 = (h0 + (long)(1 << 25)) >> 26;
 	  h1 += carry0;
 	  h0 -= carry0 << 26;
-	  carry2 = (h2 + (int64_t)(1 << 25)) >> 26;
+	  carry2 = (h2 + (long)(1 << 25)) >> 26;
 	  h3 += carry2;
 	  h2 -= carry2 << 26;
-	  carry4 = (h4 + (int64_t)(1 << 25)) >> 26;
+	  carry4 = (h4 + (long)(1 << 25)) >> 26;
 	  h5 += carry4;
 	  h4 -= carry4 << 26;
-	  carry6 = (h6 + (int64_t)(1 << 25)) >> 26;
+	  carry6 = (h6 + (long)(1 << 25)) >> 26;
 	  h7 += carry6;
 	  h6 -= carry6 << 26;
-	  carry8 = (h8 + (int64_t)(1 << 25)) >> 26;
+	  carry8 = (h8 + (long)(1 << 25)) >> 26;
 	  h9 += carry8;
 	  h8 -= carry8 << 26;
 
-	  u[0] = (int32_t) h0;
-	  u[1] = (int32_t) h1;
-	  u[2] = (int32_t) h2;
-	  u[3] = (int32_t) h3;
-	  u[4] = (int32_t) h4;
-	  u[5] = (int32_t) h5;
-	  u[6] = (int32_t) h6;
-	  u[7] = (int32_t) h7;
-	  u[8] = (int32_t) h8;
-	  u[9] = (int32_t) h9;
+	  u[0] = (int) h0;
+	  u[1] = (int) h1;
+	  u[2] = (int) h2;
+	  u[3] = (int) h3;
+	  u[4] = (int) h4;
+	  u[5] = (int) h5;
+	  u[6] = (int) h6;
+	  u[7] = (int) h7;
+	  u[8] = (int) h8;
+	  u[9] = (int) h9;
 
 	  /* End fe_frombytes.c */
 
-	  fe_sq2(new int32_t(v), u); // 2 * u^2
-	  fe_1(new int32_t(w));
-	  fe_add(new int32_t(w), new int32_t(v), new int32_t(w)); // w = 2 * u^2 + 1
-	  fe_sq(new int32_t(x), new int32_t(w)); // w^2
-	  fe_mul(new int32_t(y), fe_ma2, new int32_t(v)); // -2 * A^2 * u^2
-	  fe_add(new int32_t(x), new int32_t(x), new int32_t(y)); // x = w^2 - 2 * A^2 * u^2
-	  fe_divpowm1(r.X, new int32_t(w), new int32_t(x)); // (w / x)^(m + 1)
-	  fe_sq(new int32_t(y), r.X);
-	  fe_mul(new int32_t(x), new int32_t(y), new int32_t(x));
-	  fe_sub(new int32_t(y), new int32_t(w), new int32_t(x));
-	  fe_copy(new int32_t(z), fe_ma);
-	  if (fe_isnonzero(new int32_t(y)) != 0)
+	  fe_sq2(new int(v), u); // 2 * u^2
+	  fe_1(new int(w));
+	  fe_add(new int(w), new int(v), new int(w)); // w = 2 * u^2 + 1
+	  fe_sq(new int(x), new int(w)); // w^2
+	  fe_mul(new int(y), fe_ma2, new int(v)); // -2 * A^2 * u^2
+	  fe_add(new int(x), new int(x), new int(y)); // x = w^2 - 2 * A^2 * u^2
+	  fe_divpowm1(r.X, new int(w), new int(x)); // (w / x)^(m + 1)
+	  fe_sq(new int(y), r.X);
+	  fe_mul(new int(x), new int(y), new int(x));
+	  fe_sub(new int(y), new int(w), new int(x));
+	  fe_copy(new int(z), fe_ma);
+	  if (fe_isnonzero(new int(y)) != 0)
 	  {
-		fe_add(new int32_t(y), new int32_t(w), new int32_t(x));
-		if (fe_isnonzero(new int32_t(y)) != 0)
+		fe_add(new int(y), new int(w), new int(x));
+		if (fe_isnonzero(new int(y)) != 0)
 		{
 		  goto negative;
 		}
@@ -2454,15 +2454,15 @@ Output:
 		fe_mul(r.X, r.X, fe_fffb2);
 	  }
 	  fe_mul(r.X, r.X, u); // u * sqrt(2 * A * (A + 2) * w / x)
-	  fe_mul(new int32_t(z), new int32_t(z), new int32_t(v)); // -2 * A * u^2
+	  fe_mul(new int(z), new int(z), new int(v)); // -2 * A * u^2
 	  sign = 0;
 	  goto setsign;
 	negative:
-	  fe_mul(new int32_t(x), new int32_t(x), fe_sqrtm1);
-	  fe_sub(new int32_t(y), new int32_t(w), new int32_t(x));
-	  if (fe_isnonzero(new int32_t(y)) != 0)
+	  fe_mul(new int(x), new int(x), fe_sqrtm1);
+	  fe_sub(new int(y), new int(w), new int(x));
+	  if (fe_isnonzero(new int(y)) != 0)
 	  {
-		Debug.Assert((fe_add(y, w, x), fe_isnonzero(new int32_t(y)) == 0));
+		Debug.Assert((fe_add(y, w, x), fe_isnonzero(new int(y)) == 0));
 		fe_mul(r.X, r.X, fe_fffb3);
 	  }
 	  else
@@ -2478,27 +2478,27 @@ Output:
 		Debug.Assert(fe_isnonzero(r.X));
 		fe_neg(r.X, r.X);
 	  }
-	  fe_add(r.Z, new int32_t(z), new int32_t(w));
-	  fe_sub(r.Y, new int32_t(z), new int32_t(w));
+	  fe_add(r.Z, new int(z), new int(w));
+	  fe_sub(r.Y, new int(z), new int(w));
 	  fe_mul(r.X, r.X, r.Z);
 	#if !NDEBUG
 	  {
-		int32_t[] check_x = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-		int32_t check_y = new int32_t();
-		int32_t check_iz = new int32_t();
-		int32_t check_v = new int32_t();
-		fe_invert(new int32_t(check_iz), r.Z);
-		fe_mul(check_x, r.X, new int32_t(check_iz));
-		fe_mul(new int32_t(check_y), r.Y, new int32_t(check_iz));
+		int[] check_x = Arrays.InitializeWithDefaultInstances<int>(10);
+		int check_y = new int();
+		int check_iz = new int();
+		int check_v = new int();
+		fe_invert(new int(check_iz), r.Z);
+		fe_mul(check_x, r.X, new int(check_iz));
+		fe_mul(new int(check_y), r.Y, new int(check_iz));
 		fe_sq(check_x, check_x);
-		fe_sq(new int32_t(check_y), new int32_t(check_y));
-		fe_mul(new int32_t(check_v), check_x, new int32_t(check_y));
-		fe_mul(new int32_t(check_v), fe_d, new int32_t(check_v));
-		fe_add(new int32_t(check_v), new int32_t(check_v), check_x);
-		fe_sub(new int32_t(check_v), new int32_t(check_v), new int32_t(check_y));
+		fe_sq(new int(check_y), new int(check_y));
+		fe_mul(new int(check_v), check_x, new int(check_y));
+		fe_mul(new int(check_v), fe_d, new int(check_v));
+		fe_add(new int(check_v), new int(check_v), check_x);
+		fe_sub(new int(check_v), new int(check_v), new int(check_y));
 		fe_1(check_x);
-		fe_add(new int32_t(check_v), new int32_t(check_v), check_x);
-		Debug.Assert(fe_isnonzero(new int32_t(check_v)) == 0);
+		fe_add(new int(check_v), new int(check_v), check_x);
+		Debug.Assert(fe_isnonzero(new int(check_v)) == 0);
 	  }
 	#endif
 	}
@@ -2512,31 +2512,31 @@ Output:
 	}
 	public static void sc_reduce32(byte[] s)
 	{
-	  int64_t s0 = 2097151 & load_3(s);
-	  int64_t s1 = 2097151 & (load_4(s + 2) >> 5);
-	  int64_t s2 = 2097151 & (load_3(s + 5) >> 2);
-	  int64_t s3 = 2097151 & (load_4(s + 7) >> 7);
-	  int64_t s4 = 2097151 & (load_4(s + 10) >> 4);
-	  int64_t s5 = 2097151 & (load_3(s + 13) >> 1);
-	  int64_t s6 = 2097151 & (load_4(s + 15) >> 6);
-	  int64_t s7 = 2097151 & (load_3(s + 18) >> 3);
-	  int64_t s8 = 2097151 & load_3(s + 21);
-	  int64_t s9 = 2097151 & (load_4(s + 23) >> 5);
-	  int64_t s10 = 2097151 & (load_3(s + 26) >> 2);
-	  int64_t s11 = (load_4(s + 28) >> 7);
-	  int64_t s12 = 0;
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
-	  int64_t carry10 = new int64_t();
-	  int64_t carry11 = new int64_t();
+	  long s0 = 2097151 & load_3(s);
+	  long s1 = 2097151 & (load_4(s + 2) >> 5);
+	  long s2 = 2097151 & (load_3(s + 5) >> 2);
+	  long s3 = 2097151 & (load_4(s + 7) >> 7);
+	  long s4 = 2097151 & (load_4(s + 10) >> 4);
+	  long s5 = 2097151 & (load_3(s + 13) >> 1);
+	  long s6 = 2097151 & (load_4(s + 15) >> 6);
+	  long s7 = 2097151 & (load_3(s + 18) >> 3);
+	  long s8 = 2097151 & load_3(s + 21);
+	  long s9 = 2097151 & (load_4(s + 23) >> 5);
+	  long s10 = 2097151 & (load_3(s + 26) >> 2);
+	  long s11 = (load_4(s + 28) >> 7);
+	  long s12 = 0;
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
+	  long carry10 = new long();
+	  long carry11 = new long();
 
 	  carry0 = (s0 + (1 << 20)) >> 21;
 	  s1 += carry0;
@@ -2697,55 +2697,55 @@ Output:
 	}
 	public static void sc_add(byte[] s, byte a, byte b)
 	{
-	  int64_t a0 = 2097151 & load_3(a);
-	  int64_t a1 = 2097151 & (load_4(a + 2) >> 5);
-	  int64_t a2 = 2097151 & (load_3(a + 5) >> 2);
-	  int64_t a3 = 2097151 & (load_4(a + 7) >> 7);
-	  int64_t a4 = 2097151 & (load_4(a + 10) >> 4);
-	  int64_t a5 = 2097151 & (load_3(a + 13) >> 1);
-	  int64_t a6 = 2097151 & (load_4(a + 15) >> 6);
-	  int64_t a7 = 2097151 & (load_3(a + 18) >> 3);
-	  int64_t a8 = 2097151 & load_3(a + 21);
-	  int64_t a9 = 2097151 & (load_4(a + 23) >> 5);
-	  int64_t a10 = 2097151 & (load_3(a + 26) >> 2);
-	  int64_t a11 = (load_4(a + 28) >> 7);
-	  int64_t b0 = 2097151 & load_3(b);
-	  int64_t b1 = 2097151 & (load_4(b + 2) >> 5);
-	  int64_t b2 = 2097151 & (load_3(b + 5) >> 2);
-	  int64_t b3 = 2097151 & (load_4(b + 7) >> 7);
-	  int64_t b4 = 2097151 & (load_4(b + 10) >> 4);
-	  int64_t b5 = 2097151 & (load_3(b + 13) >> 1);
-	  int64_t b6 = 2097151 & (load_4(b + 15) >> 6);
-	  int64_t b7 = 2097151 & (load_3(b + 18) >> 3);
-	  int64_t b8 = 2097151 & load_3(b + 21);
-	  int64_t b9 = 2097151 & (load_4(b + 23) >> 5);
-	  int64_t b10 = 2097151 & (load_3(b + 26) >> 2);
-	  int64_t b11 = (load_4(b + 28) >> 7);
-	  int64_t s0 = a0 + b0;
-	  int64_t s1 = a1 + b1;
-	  int64_t s2 = a2 + b2;
-	  int64_t s3 = a3 + b3;
-	  int64_t s4 = a4 + b4;
-	  int64_t s5 = a5 + b5;
-	  int64_t s6 = a6 + b6;
-	  int64_t s7 = a7 + b7;
-	  int64_t s8 = a8 + b8;
-	  int64_t s9 = a9 + b9;
-	  int64_t s10 = a10 + b10;
-	  int64_t s11 = a11 + b11;
-	  int64_t s12 = 0;
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
-	  int64_t carry10 = new int64_t();
-	  int64_t carry11 = new int64_t();
+	  long a0 = 2097151 & load_3(a);
+	  long a1 = 2097151 & (load_4(a + 2) >> 5);
+	  long a2 = 2097151 & (load_3(a + 5) >> 2);
+	  long a3 = 2097151 & (load_4(a + 7) >> 7);
+	  long a4 = 2097151 & (load_4(a + 10) >> 4);
+	  long a5 = 2097151 & (load_3(a + 13) >> 1);
+	  long a6 = 2097151 & (load_4(a + 15) >> 6);
+	  long a7 = 2097151 & (load_3(a + 18) >> 3);
+	  long a8 = 2097151 & load_3(a + 21);
+	  long a9 = 2097151 & (load_4(a + 23) >> 5);
+	  long a10 = 2097151 & (load_3(a + 26) >> 2);
+	  long a11 = (load_4(a + 28) >> 7);
+	  long b0 = 2097151 & load_3(b);
+	  long b1 = 2097151 & (load_4(b + 2) >> 5);
+	  long b2 = 2097151 & (load_3(b + 5) >> 2);
+	  long b3 = 2097151 & (load_4(b + 7) >> 7);
+	  long b4 = 2097151 & (load_4(b + 10) >> 4);
+	  long b5 = 2097151 & (load_3(b + 13) >> 1);
+	  long b6 = 2097151 & (load_4(b + 15) >> 6);
+	  long b7 = 2097151 & (load_3(b + 18) >> 3);
+	  long b8 = 2097151 & load_3(b + 21);
+	  long b9 = 2097151 & (load_4(b + 23) >> 5);
+	  long b10 = 2097151 & (load_3(b + 26) >> 2);
+	  long b11 = (load_4(b + 28) >> 7);
+	  long s0 = a0 + b0;
+	  long s1 = a1 + b1;
+	  long s2 = a2 + b2;
+	  long s3 = a3 + b3;
+	  long s4 = a4 + b4;
+	  long s5 = a5 + b5;
+	  long s6 = a6 + b6;
+	  long s7 = a7 + b7;
+	  long s8 = a8 + b8;
+	  long s9 = a9 + b9;
+	  long s10 = a10 + b10;
+	  long s11 = a11 + b11;
+	  long s12 = 0;
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
+	  long carry10 = new long();
+	  long carry11 = new long();
 
 	  carry0 = (s0 + (1 << 20)) >> 21;
 	  s1 += carry0;
@@ -2906,55 +2906,55 @@ Output:
 	}
 	public static void sc_sub(byte[] s, byte a, byte b)
 	{
-	  int64_t a0 = 2097151 & load_3(a);
-	  int64_t a1 = 2097151 & (load_4(a + 2) >> 5);
-	  int64_t a2 = 2097151 & (load_3(a + 5) >> 2);
-	  int64_t a3 = 2097151 & (load_4(a + 7) >> 7);
-	  int64_t a4 = 2097151 & (load_4(a + 10) >> 4);
-	  int64_t a5 = 2097151 & (load_3(a + 13) >> 1);
-	  int64_t a6 = 2097151 & (load_4(a + 15) >> 6);
-	  int64_t a7 = 2097151 & (load_3(a + 18) >> 3);
-	  int64_t a8 = 2097151 & load_3(a + 21);
-	  int64_t a9 = 2097151 & (load_4(a + 23) >> 5);
-	  int64_t a10 = 2097151 & (load_3(a + 26) >> 2);
-	  int64_t a11 = (load_4(a + 28) >> 7);
-	  int64_t b0 = 2097151 & load_3(b);
-	  int64_t b1 = 2097151 & (load_4(b + 2) >> 5);
-	  int64_t b2 = 2097151 & (load_3(b + 5) >> 2);
-	  int64_t b3 = 2097151 & (load_4(b + 7) >> 7);
-	  int64_t b4 = 2097151 & (load_4(b + 10) >> 4);
-	  int64_t b5 = 2097151 & (load_3(b + 13) >> 1);
-	  int64_t b6 = 2097151 & (load_4(b + 15) >> 6);
-	  int64_t b7 = 2097151 & (load_3(b + 18) >> 3);
-	  int64_t b8 = 2097151 & load_3(b + 21);
-	  int64_t b9 = 2097151 & (load_4(b + 23) >> 5);
-	  int64_t b10 = 2097151 & (load_3(b + 26) >> 2);
-	  int64_t b11 = (load_4(b + 28) >> 7);
-	  int64_t s0 = a0 - b0;
-	  int64_t s1 = a1 - b1;
-	  int64_t s2 = a2 - b2;
-	  int64_t s3 = a3 - b3;
-	  int64_t s4 = a4 - b4;
-	  int64_t s5 = a5 - b5;
-	  int64_t s6 = a6 - b6;
-	  int64_t s7 = a7 - b7;
-	  int64_t s8 = a8 - b8;
-	  int64_t s9 = a9 - b9;
-	  int64_t s10 = a10 - b10;
-	  int64_t s11 = a11 - b11;
-	  int64_t s12 = 0;
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
-	  int64_t carry10 = new int64_t();
-	  int64_t carry11 = new int64_t();
+	  long a0 = 2097151 & load_3(a);
+	  long a1 = 2097151 & (load_4(a + 2) >> 5);
+	  long a2 = 2097151 & (load_3(a + 5) >> 2);
+	  long a3 = 2097151 & (load_4(a + 7) >> 7);
+	  long a4 = 2097151 & (load_4(a + 10) >> 4);
+	  long a5 = 2097151 & (load_3(a + 13) >> 1);
+	  long a6 = 2097151 & (load_4(a + 15) >> 6);
+	  long a7 = 2097151 & (load_3(a + 18) >> 3);
+	  long a8 = 2097151 & load_3(a + 21);
+	  long a9 = 2097151 & (load_4(a + 23) >> 5);
+	  long a10 = 2097151 & (load_3(a + 26) >> 2);
+	  long a11 = (load_4(a + 28) >> 7);
+	  long b0 = 2097151 & load_3(b);
+	  long b1 = 2097151 & (load_4(b + 2) >> 5);
+	  long b2 = 2097151 & (load_3(b + 5) >> 2);
+	  long b3 = 2097151 & (load_4(b + 7) >> 7);
+	  long b4 = 2097151 & (load_4(b + 10) >> 4);
+	  long b5 = 2097151 & (load_3(b + 13) >> 1);
+	  long b6 = 2097151 & (load_4(b + 15) >> 6);
+	  long b7 = 2097151 & (load_3(b + 18) >> 3);
+	  long b8 = 2097151 & load_3(b + 21);
+	  long b9 = 2097151 & (load_4(b + 23) >> 5);
+	  long b10 = 2097151 & (load_3(b + 26) >> 2);
+	  long b11 = (load_4(b + 28) >> 7);
+	  long s0 = a0 - b0;
+	  long s1 = a1 - b1;
+	  long s2 = a2 - b2;
+	  long s3 = a3 - b3;
+	  long s4 = a4 - b4;
+	  long s5 = a5 - b5;
+	  long s6 = a6 - b6;
+	  long s7 = a7 - b7;
+	  long s8 = a8 - b8;
+	  long s9 = a9 - b9;
+	  long s10 = a10 - b10;
+	  long s11 = a11 - b11;
+	  long s12 = 0;
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
+	  long carry10 = new long();
+	  long carry11 = new long();
 
 	  carry0 = (s0 + (1 << 20)) >> 21;
 	  s1 += carry0;
@@ -3127,89 +3127,89 @@ Output:
 
 	public static void sc_mulsub(byte[] s, byte a, byte b, byte c)
 	{
-	  int64_t a0 = 2097151 & load_3(a);
-	  int64_t a1 = 2097151 & (load_4(a + 2) >> 5);
-	  int64_t a2 = 2097151 & (load_3(a + 5) >> 2);
-	  int64_t a3 = 2097151 & (load_4(a + 7) >> 7);
-	  int64_t a4 = 2097151 & (load_4(a + 10) >> 4);
-	  int64_t a5 = 2097151 & (load_3(a + 13) >> 1);
-	  int64_t a6 = 2097151 & (load_4(a + 15) >> 6);
-	  int64_t a7 = 2097151 & (load_3(a + 18) >> 3);
-	  int64_t a8 = 2097151 & load_3(a + 21);
-	  int64_t a9 = 2097151 & (load_4(a + 23) >> 5);
-	  int64_t a10 = 2097151 & (load_3(a + 26) >> 2);
-	  int64_t a11 = (load_4(a + 28) >> 7);
-	  int64_t b0 = 2097151 & load_3(b);
-	  int64_t b1 = 2097151 & (load_4(b + 2) >> 5);
-	  int64_t b2 = 2097151 & (load_3(b + 5) >> 2);
-	  int64_t b3 = 2097151 & (load_4(b + 7) >> 7);
-	  int64_t b4 = 2097151 & (load_4(b + 10) >> 4);
-	  int64_t b5 = 2097151 & (load_3(b + 13) >> 1);
-	  int64_t b6 = 2097151 & (load_4(b + 15) >> 6);
-	  int64_t b7 = 2097151 & (load_3(b + 18) >> 3);
-	  int64_t b8 = 2097151 & load_3(b + 21);
-	  int64_t b9 = 2097151 & (load_4(b + 23) >> 5);
-	  int64_t b10 = 2097151 & (load_3(b + 26) >> 2);
-	  int64_t b11 = (load_4(b + 28) >> 7);
-	  int64_t c0 = 2097151 & load_3(c);
-	  int64_t c1 = 2097151 & (load_4(c + 2) >> 5);
-	  int64_t c2 = 2097151 & (load_3(c + 5) >> 2);
-	  int64_t c3 = 2097151 & (load_4(c + 7) >> 7);
-	  int64_t c4 = 2097151 & (load_4(c + 10) >> 4);
-	  int64_t c5 = 2097151 & (load_3(c + 13) >> 1);
-	  int64_t c6 = 2097151 & (load_4(c + 15) >> 6);
-	  int64_t c7 = 2097151 & (load_3(c + 18) >> 3);
-	  int64_t c8 = 2097151 & load_3(c + 21);
-	  int64_t c9 = 2097151 & (load_4(c + 23) >> 5);
-	  int64_t c10 = 2097151 & (load_3(c + 26) >> 2);
-	  int64_t c11 = (load_4(c + 28) >> 7);
-	  int64_t s0 = new int64_t();
-	  int64_t s1 = new int64_t();
-	  int64_t s2 = new int64_t();
-	  int64_t s3 = new int64_t();
-	  int64_t s4 = new int64_t();
-	  int64_t s5 = new int64_t();
-	  int64_t s6 = new int64_t();
-	  int64_t s7 = new int64_t();
-	  int64_t s8 = new int64_t();
-	  int64_t s9 = new int64_t();
-	  int64_t s10 = new int64_t();
-	  int64_t s11 = new int64_t();
-	  int64_t s12 = new int64_t();
-	  int64_t s13 = new int64_t();
-	  int64_t s14 = new int64_t();
-	  int64_t s15 = new int64_t();
-	  int64_t s16 = new int64_t();
-	  int64_t s17 = new int64_t();
-	  int64_t s18 = new int64_t();
-	  int64_t s19 = new int64_t();
-	  int64_t s20 = new int64_t();
-	  int64_t s21 = new int64_t();
-	  int64_t s22 = new int64_t();
-	  int64_t s23 = new int64_t();
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
-	  int64_t carry10 = new int64_t();
-	  int64_t carry11 = new int64_t();
-	  int64_t carry12 = new int64_t();
-	  int64_t carry13 = new int64_t();
-	  int64_t carry14 = new int64_t();
-	  int64_t carry15 = new int64_t();
-	  int64_t carry16 = new int64_t();
-	  int64_t carry17 = new int64_t();
-	  int64_t carry18 = new int64_t();
-	  int64_t carry19 = new int64_t();
-	  int64_t carry20 = new int64_t();
-	  int64_t carry21 = new int64_t();
-	  int64_t carry22 = new int64_t();
+	  long a0 = 2097151 & load_3(a);
+	  long a1 = 2097151 & (load_4(a + 2) >> 5);
+	  long a2 = 2097151 & (load_3(a + 5) >> 2);
+	  long a3 = 2097151 & (load_4(a + 7) >> 7);
+	  long a4 = 2097151 & (load_4(a + 10) >> 4);
+	  long a5 = 2097151 & (load_3(a + 13) >> 1);
+	  long a6 = 2097151 & (load_4(a + 15) >> 6);
+	  long a7 = 2097151 & (load_3(a + 18) >> 3);
+	  long a8 = 2097151 & load_3(a + 21);
+	  long a9 = 2097151 & (load_4(a + 23) >> 5);
+	  long a10 = 2097151 & (load_3(a + 26) >> 2);
+	  long a11 = (load_4(a + 28) >> 7);
+	  long b0 = 2097151 & load_3(b);
+	  long b1 = 2097151 & (load_4(b + 2) >> 5);
+	  long b2 = 2097151 & (load_3(b + 5) >> 2);
+	  long b3 = 2097151 & (load_4(b + 7) >> 7);
+	  long b4 = 2097151 & (load_4(b + 10) >> 4);
+	  long b5 = 2097151 & (load_3(b + 13) >> 1);
+	  long b6 = 2097151 & (load_4(b + 15) >> 6);
+	  long b7 = 2097151 & (load_3(b + 18) >> 3);
+	  long b8 = 2097151 & load_3(b + 21);
+	  long b9 = 2097151 & (load_4(b + 23) >> 5);
+	  long b10 = 2097151 & (load_3(b + 26) >> 2);
+	  long b11 = (load_4(b + 28) >> 7);
+	  long c0 = 2097151 & load_3(c);
+	  long c1 = 2097151 & (load_4(c + 2) >> 5);
+	  long c2 = 2097151 & (load_3(c + 5) >> 2);
+	  long c3 = 2097151 & (load_4(c + 7) >> 7);
+	  long c4 = 2097151 & (load_4(c + 10) >> 4);
+	  long c5 = 2097151 & (load_3(c + 13) >> 1);
+	  long c6 = 2097151 & (load_4(c + 15) >> 6);
+	  long c7 = 2097151 & (load_3(c + 18) >> 3);
+	  long c8 = 2097151 & load_3(c + 21);
+	  long c9 = 2097151 & (load_4(c + 23) >> 5);
+	  long c10 = 2097151 & (load_3(c + 26) >> 2);
+	  long c11 = (load_4(c + 28) >> 7);
+	  long s0 = new long();
+	  long s1 = new long();
+	  long s2 = new long();
+	  long s3 = new long();
+	  long s4 = new long();
+	  long s5 = new long();
+	  long s6 = new long();
+	  long s7 = new long();
+	  long s8 = new long();
+	  long s9 = new long();
+	  long s10 = new long();
+	  long s11 = new long();
+	  long s12 = new long();
+	  long s13 = new long();
+	  long s14 = new long();
+	  long s15 = new long();
+	  long s16 = new long();
+	  long s17 = new long();
+	  long s18 = new long();
+	  long s19 = new long();
+	  long s20 = new long();
+	  long s21 = new long();
+	  long s22 = new long();
+	  long s23 = new long();
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
+	  long carry10 = new long();
+	  long carry11 = new long();
+	  long carry12 = new long();
+	  long carry13 = new long();
+	  long carry14 = new long();
+	  long carry15 = new long();
+	  long carry16 = new long();
+	  long carry17 = new long();
+	  long carry18 = new long();
+	  long carry19 = new long();
+	  long carry20 = new long();
+	  long carry21 = new long();
+	  long carry22 = new long();
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: s0 = c0 - a0 *b0;
@@ -3612,14 +3612,14 @@ Output:
 	}
 	public static int sc_check(byte s)
 	{
-	  int64_t s0 = load_4(s);
-	  int64_t s1 = load_4(s + 4);
-	  int64_t s2 = load_4(s + 8);
-	  int64_t s3 = load_4(s + 12);
-	  int64_t s4 = load_4(s + 16);
-	  int64_t s5 = load_4(s + 20);
-	  int64_t s6 = load_4(s + 24);
-	  int64_t s7 = load_4(s + 28);
+	  long s0 = load_4(s);
+	  long s1 = load_4(s + 4);
+	  long s2 = load_4(s + 8);
+	  long s3 = load_4(s + 12);
+	  long s4 = load_4(s + 16);
+	  long s5 = load_4(s + 20);
+	  long s6 = load_4(s + 24);
+	  long s7 = load_4(s + 28);
 	  return (int)((signum(1559614444 - s0) + (signum(1477600026 - s1) << 1) + (signum(2734136534 - s2) << 2) + (signum(350157278 - s3) << 3) + (signum(-s4) << 4) + (signum(-s5) << 5) + (signum(-s6) << 6) + (signum(268435456 - s7) << 7)) >> 8);
 	}
 	public static int sc_isnonzero(byte[] s)
@@ -3665,162 +3665,162 @@ With tighter constraints on inputs can squeeze carries into int32.
 
 	/* Predeclarations */
 
-	internal static void fe_mul(int32_t[] h, int32_t[] f, int32_t[] g)
+	internal static void fe_mul(int[] h, int[] f, int[] g)
 	{
-	  int32_t f0 = f[0];
-	  int32_t f1 = f[1];
-	  int32_t f2 = f[2];
-	  int32_t f3 = f[3];
-	  int32_t f4 = f[4];
-	  int32_t f5 = f[5];
-	  int32_t f6 = f[6];
-	  int32_t f7 = f[7];
-	  int32_t f8 = f[8];
-	  int32_t f9 = f[9];
-	  int32_t g0 = g[0];
-	  int32_t g1 = g[1];
-	  int32_t g2 = g[2];
-	  int32_t g3 = g[3];
-	  int32_t g4 = g[4];
-	  int32_t g5 = g[5];
-	  int32_t g6 = g[6];
-	  int32_t g7 = g[7];
-	  int32_t g8 = g[8];
-	  int32_t g9 = g[9];
-	  int32_t g1_19 = 19 * g1; // 1.959375*2^29
-	  int32_t g2_19 = 19 * g2; // 1.959375*2^30; still ok
-	  int32_t g3_19 = 19 * g3;
-	  int32_t g4_19 = 19 * g4;
-	  int32_t g5_19 = 19 * g5;
-	  int32_t g6_19 = 19 * g6;
-	  int32_t g7_19 = 19 * g7;
-	  int32_t g8_19 = 19 * g8;
-	  int32_t g9_19 = 19 * g9;
-	  int32_t f1_2 = 2 * f1;
-	  int32_t f3_2 = 2 * f3;
-	  int32_t f5_2 = 2 * f5;
-	  int32_t f7_2 = 2 * f7;
-	  int32_t f9_2 = 2 * f9;
-	  int64_t f0g0 = f0 * (int64_t) g0;
-	  int64_t f0g1 = f0 * (int64_t) g1;
-	  int64_t f0g2 = f0 * (int64_t) g2;
-	  int64_t f0g3 = f0 * (int64_t) g3;
-	  int64_t f0g4 = f0 * (int64_t) g4;
-	  int64_t f0g5 = f0 * (int64_t) g5;
-	  int64_t f0g6 = f0 * (int64_t) g6;
-	  int64_t f0g7 = f0 * (int64_t) g7;
-	  int64_t f0g8 = f0 * (int64_t) g8;
-	  int64_t f0g9 = f0 * (int64_t) g9;
-	  int64_t f1g0 = f1 * (int64_t) g0;
-	  int64_t f1g1_2 = f1_2 * (int64_t) g1;
-	  int64_t f1g2 = f1 * (int64_t) g2;
-	  int64_t f1g3_2 = f1_2 * (int64_t) g3;
-	  int64_t f1g4 = f1 * (int64_t) g4;
-	  int64_t f1g5_2 = f1_2 * (int64_t) g5;
-	  int64_t f1g6 = f1 * (int64_t) g6;
-	  int64_t f1g7_2 = f1_2 * (int64_t) g7;
-	  int64_t f1g8 = f1 * (int64_t) g8;
-	  int64_t f1g9_38 = f1_2 * (int64_t) g9_19;
-	  int64_t f2g0 = f2 * (int64_t) g0;
-	  int64_t f2g1 = f2 * (int64_t) g1;
-	  int64_t f2g2 = f2 * (int64_t) g2;
-	  int64_t f2g3 = f2 * (int64_t) g3;
-	  int64_t f2g4 = f2 * (int64_t) g4;
-	  int64_t f2g5 = f2 * (int64_t) g5;
-	  int64_t f2g6 = f2 * (int64_t) g6;
-	  int64_t f2g7 = f2 * (int64_t) g7;
-	  int64_t f2g8_19 = f2 * (int64_t) g8_19;
-	  int64_t f2g9_19 = f2 * (int64_t) g9_19;
-	  int64_t f3g0 = f3 * (int64_t) g0;
-	  int64_t f3g1_2 = f3_2 * (int64_t) g1;
-	  int64_t f3g2 = f3 * (int64_t) g2;
-	  int64_t f3g3_2 = f3_2 * (int64_t) g3;
-	  int64_t f3g4 = f3 * (int64_t) g4;
-	  int64_t f3g5_2 = f3_2 * (int64_t) g5;
-	  int64_t f3g6 = f3 * (int64_t) g6;
-	  int64_t f3g7_38 = f3_2 * (int64_t) g7_19;
-	  int64_t f3g8_19 = f3 * (int64_t) g8_19;
-	  int64_t f3g9_38 = f3_2 * (int64_t) g9_19;
-	  int64_t f4g0 = f4 * (int64_t) g0;
-	  int64_t f4g1 = f4 * (int64_t) g1;
-	  int64_t f4g2 = f4 * (int64_t) g2;
-	  int64_t f4g3 = f4 * (int64_t) g3;
-	  int64_t f4g4 = f4 * (int64_t) g4;
-	  int64_t f4g5 = f4 * (int64_t) g5;
-	  int64_t f4g6_19 = f4 * (int64_t) g6_19;
-	  int64_t f4g7_19 = f4 * (int64_t) g7_19;
-	  int64_t f4g8_19 = f4 * (int64_t) g8_19;
-	  int64_t f4g9_19 = f4 * (int64_t) g9_19;
-	  int64_t f5g0 = f5 * (int64_t) g0;
-	  int64_t f5g1_2 = f5_2 * (int64_t) g1;
-	  int64_t f5g2 = f5 * (int64_t) g2;
-	  int64_t f5g3_2 = f5_2 * (int64_t) g3;
-	  int64_t f5g4 = f5 * (int64_t) g4;
-	  int64_t f5g5_38 = f5_2 * (int64_t) g5_19;
-	  int64_t f5g6_19 = f5 * (int64_t) g6_19;
-	  int64_t f5g7_38 = f5_2 * (int64_t) g7_19;
-	  int64_t f5g8_19 = f5 * (int64_t) g8_19;
-	  int64_t f5g9_38 = f5_2 * (int64_t) g9_19;
-	  int64_t f6g0 = f6 * (int64_t) g0;
-	  int64_t f6g1 = f6 * (int64_t) g1;
-	  int64_t f6g2 = f6 * (int64_t) g2;
-	  int64_t f6g3 = f6 * (int64_t) g3;
-	  int64_t f6g4_19 = f6 * (int64_t) g4_19;
-	  int64_t f6g5_19 = f6 * (int64_t) g5_19;
-	  int64_t f6g6_19 = f6 * (int64_t) g6_19;
-	  int64_t f6g7_19 = f6 * (int64_t) g7_19;
-	  int64_t f6g8_19 = f6 * (int64_t) g8_19;
-	  int64_t f6g9_19 = f6 * (int64_t) g9_19;
-	  int64_t f7g0 = f7 * (int64_t) g0;
-	  int64_t f7g1_2 = f7_2 * (int64_t) g1;
-	  int64_t f7g2 = f7 * (int64_t) g2;
-	  int64_t f7g3_38 = f7_2 * (int64_t) g3_19;
-	  int64_t f7g4_19 = f7 * (int64_t) g4_19;
-	  int64_t f7g5_38 = f7_2 * (int64_t) g5_19;
-	  int64_t f7g6_19 = f7 * (int64_t) g6_19;
-	  int64_t f7g7_38 = f7_2 * (int64_t) g7_19;
-	  int64_t f7g8_19 = f7 * (int64_t) g8_19;
-	  int64_t f7g9_38 = f7_2 * (int64_t) g9_19;
-	  int64_t f8g0 = f8 * (int64_t) g0;
-	  int64_t f8g1 = f8 * (int64_t) g1;
-	  int64_t f8g2_19 = f8 * (int64_t) g2_19;
-	  int64_t f8g3_19 = f8 * (int64_t) g3_19;
-	  int64_t f8g4_19 = f8 * (int64_t) g4_19;
-	  int64_t f8g5_19 = f8 * (int64_t) g5_19;
-	  int64_t f8g6_19 = f8 * (int64_t) g6_19;
-	  int64_t f8g7_19 = f8 * (int64_t) g7_19;
-	  int64_t f8g8_19 = f8 * (int64_t) g8_19;
-	  int64_t f8g9_19 = f8 * (int64_t) g9_19;
-	  int64_t f9g0 = f9 * (int64_t) g0;
-	  int64_t f9g1_38 = f9_2 * (int64_t) g1_19;
-	  int64_t f9g2_19 = f9 * (int64_t) g2_19;
-	  int64_t f9g3_38 = f9_2 * (int64_t) g3_19;
-	  int64_t f9g4_19 = f9 * (int64_t) g4_19;
-	  int64_t f9g5_38 = f9_2 * (int64_t) g5_19;
-	  int64_t f9g6_19 = f9 * (int64_t) g6_19;
-	  int64_t f9g7_38 = f9_2 * (int64_t) g7_19;
-	  int64_t f9g8_19 = f9 * (int64_t) g8_19;
-	  int64_t f9g9_38 = f9_2 * (int64_t) g9_19;
-	  int64_t h0 = f0g0 + f1g9_38 + f2g8_19 + f3g7_38 + f4g6_19 + f5g5_38 + f6g4_19 + f7g3_38 + f8g2_19 + f9g1_38;
-	  int64_t h1 = f0g1 + f1g0 + f2g9_19 + f3g8_19 + f4g7_19 + f5g6_19 + f6g5_19 + f7g4_19 + f8g3_19 + f9g2_19;
-	  int64_t h2 = f0g2 + f1g1_2 + f2g0 + f3g9_38 + f4g8_19 + f5g7_38 + f6g6_19 + f7g5_38 + f8g4_19 + f9g3_38;
-	  int64_t h3 = f0g3 + f1g2 + f2g1 + f3g0 + f4g9_19 + f5g8_19 + f6g7_19 + f7g6_19 + f8g5_19 + f9g4_19;
-	  int64_t h4 = f0g4 + f1g3_2 + f2g2 + f3g1_2 + f4g0 + f5g9_38 + f6g8_19 + f7g7_38 + f8g6_19 + f9g5_38;
-	  int64_t h5 = f0g5 + f1g4 + f2g3 + f3g2 + f4g1 + f5g0 + f6g9_19 + f7g8_19 + f8g7_19 + f9g6_19;
-	  int64_t h6 = f0g6 + f1g5_2 + f2g4 + f3g3_2 + f4g2 + f5g1_2 + f6g0 + f7g9_38 + f8g8_19 + f9g7_38;
-	  int64_t h7 = f0g7 + f1g6 + f2g5 + f3g4 + f4g3 + f5g2 + f6g1 + f7g0 + f8g9_19 + f9g8_19;
-	  int64_t h8 = f0g8 + f1g7_2 + f2g6 + f3g5_2 + f4g4 + f5g3_2 + f6g2 + f7g1_2 + f8g0 + f9g9_38;
-	  int64_t h9 = f0g9 + f1g8 + f2g7 + f3g6 + f4g5 + f5g4 + f6g3 + f7g2 + f8g1 + f9g0;
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
+	  int f0 = f[0];
+	  int f1 = f[1];
+	  int f2 = f[2];
+	  int f3 = f[3];
+	  int f4 = f[4];
+	  int f5 = f[5];
+	  int f6 = f[6];
+	  int f7 = f[7];
+	  int f8 = f[8];
+	  int f9 = f[9];
+	  int g0 = g[0];
+	  int g1 = g[1];
+	  int g2 = g[2];
+	  int g3 = g[3];
+	  int g4 = g[4];
+	  int g5 = g[5];
+	  int g6 = g[6];
+	  int g7 = g[7];
+	  int g8 = g[8];
+	  int g9 = g[9];
+	  int g1_19 = 19 * g1; // 1.959375*2^29
+	  int g2_19 = 19 * g2; // 1.959375*2^30; still ok
+	  int g3_19 = 19 * g3;
+	  int g4_19 = 19 * g4;
+	  int g5_19 = 19 * g5;
+	  int g6_19 = 19 * g6;
+	  int g7_19 = 19 * g7;
+	  int g8_19 = 19 * g8;
+	  int g9_19 = 19 * g9;
+	  int f1_2 = 2 * f1;
+	  int f3_2 = 2 * f3;
+	  int f5_2 = 2 * f5;
+	  int f7_2 = 2 * f7;
+	  int f9_2 = 2 * f9;
+	  long f0g0 = f0 * (long) g0;
+	  long f0g1 = f0 * (long) g1;
+	  long f0g2 = f0 * (long) g2;
+	  long f0g3 = f0 * (long) g3;
+	  long f0g4 = f0 * (long) g4;
+	  long f0g5 = f0 * (long) g5;
+	  long f0g6 = f0 * (long) g6;
+	  long f0g7 = f0 * (long) g7;
+	  long f0g8 = f0 * (long) g8;
+	  long f0g9 = f0 * (long) g9;
+	  long f1g0 = f1 * (long) g0;
+	  long f1g1_2 = f1_2 * (long) g1;
+	  long f1g2 = f1 * (long) g2;
+	  long f1g3_2 = f1_2 * (long) g3;
+	  long f1g4 = f1 * (long) g4;
+	  long f1g5_2 = f1_2 * (long) g5;
+	  long f1g6 = f1 * (long) g6;
+	  long f1g7_2 = f1_2 * (long) g7;
+	  long f1g8 = f1 * (long) g8;
+	  long f1g9_38 = f1_2 * (long) g9_19;
+	  long f2g0 = f2 * (long) g0;
+	  long f2g1 = f2 * (long) g1;
+	  long f2g2 = f2 * (long) g2;
+	  long f2g3 = f2 * (long) g3;
+	  long f2g4 = f2 * (long) g4;
+	  long f2g5 = f2 * (long) g5;
+	  long f2g6 = f2 * (long) g6;
+	  long f2g7 = f2 * (long) g7;
+	  long f2g8_19 = f2 * (long) g8_19;
+	  long f2g9_19 = f2 * (long) g9_19;
+	  long f3g0 = f3 * (long) g0;
+	  long f3g1_2 = f3_2 * (long) g1;
+	  long f3g2 = f3 * (long) g2;
+	  long f3g3_2 = f3_2 * (long) g3;
+	  long f3g4 = f3 * (long) g4;
+	  long f3g5_2 = f3_2 * (long) g5;
+	  long f3g6 = f3 * (long) g6;
+	  long f3g7_38 = f3_2 * (long) g7_19;
+	  long f3g8_19 = f3 * (long) g8_19;
+	  long f3g9_38 = f3_2 * (long) g9_19;
+	  long f4g0 = f4 * (long) g0;
+	  long f4g1 = f4 * (long) g1;
+	  long f4g2 = f4 * (long) g2;
+	  long f4g3 = f4 * (long) g3;
+	  long f4g4 = f4 * (long) g4;
+	  long f4g5 = f4 * (long) g5;
+	  long f4g6_19 = f4 * (long) g6_19;
+	  long f4g7_19 = f4 * (long) g7_19;
+	  long f4g8_19 = f4 * (long) g8_19;
+	  long f4g9_19 = f4 * (long) g9_19;
+	  long f5g0 = f5 * (long) g0;
+	  long f5g1_2 = f5_2 * (long) g1;
+	  long f5g2 = f5 * (long) g2;
+	  long f5g3_2 = f5_2 * (long) g3;
+	  long f5g4 = f5 * (long) g4;
+	  long f5g5_38 = f5_2 * (long) g5_19;
+	  long f5g6_19 = f5 * (long) g6_19;
+	  long f5g7_38 = f5_2 * (long) g7_19;
+	  long f5g8_19 = f5 * (long) g8_19;
+	  long f5g9_38 = f5_2 * (long) g9_19;
+	  long f6g0 = f6 * (long) g0;
+	  long f6g1 = f6 * (long) g1;
+	  long f6g2 = f6 * (long) g2;
+	  long f6g3 = f6 * (long) g3;
+	  long f6g4_19 = f6 * (long) g4_19;
+	  long f6g5_19 = f6 * (long) g5_19;
+	  long f6g6_19 = f6 * (long) g6_19;
+	  long f6g7_19 = f6 * (long) g7_19;
+	  long f6g8_19 = f6 * (long) g8_19;
+	  long f6g9_19 = f6 * (long) g9_19;
+	  long f7g0 = f7 * (long) g0;
+	  long f7g1_2 = f7_2 * (long) g1;
+	  long f7g2 = f7 * (long) g2;
+	  long f7g3_38 = f7_2 * (long) g3_19;
+	  long f7g4_19 = f7 * (long) g4_19;
+	  long f7g5_38 = f7_2 * (long) g5_19;
+	  long f7g6_19 = f7 * (long) g6_19;
+	  long f7g7_38 = f7_2 * (long) g7_19;
+	  long f7g8_19 = f7 * (long) g8_19;
+	  long f7g9_38 = f7_2 * (long) g9_19;
+	  long f8g0 = f8 * (long) g0;
+	  long f8g1 = f8 * (long) g1;
+	  long f8g2_19 = f8 * (long) g2_19;
+	  long f8g3_19 = f8 * (long) g3_19;
+	  long f8g4_19 = f8 * (long) g4_19;
+	  long f8g5_19 = f8 * (long) g5_19;
+	  long f8g6_19 = f8 * (long) g6_19;
+	  long f8g7_19 = f8 * (long) g7_19;
+	  long f8g8_19 = f8 * (long) g8_19;
+	  long f8g9_19 = f8 * (long) g9_19;
+	  long f9g0 = f9 * (long) g0;
+	  long f9g1_38 = f9_2 * (long) g1_19;
+	  long f9g2_19 = f9 * (long) g2_19;
+	  long f9g3_38 = f9_2 * (long) g3_19;
+	  long f9g4_19 = f9 * (long) g4_19;
+	  long f9g5_38 = f9_2 * (long) g5_19;
+	  long f9g6_19 = f9 * (long) g6_19;
+	  long f9g7_38 = f9_2 * (long) g7_19;
+	  long f9g8_19 = f9 * (long) g8_19;
+	  long f9g9_38 = f9_2 * (long) g9_19;
+	  long h0 = f0g0 + f1g9_38 + f2g8_19 + f3g7_38 + f4g6_19 + f5g5_38 + f6g4_19 + f7g3_38 + f8g2_19 + f9g1_38;
+	  long h1 = f0g1 + f1g0 + f2g9_19 + f3g8_19 + f4g7_19 + f5g6_19 + f6g5_19 + f7g4_19 + f8g3_19 + f9g2_19;
+	  long h2 = f0g2 + f1g1_2 + f2g0 + f3g9_38 + f4g8_19 + f5g7_38 + f6g6_19 + f7g5_38 + f8g4_19 + f9g3_38;
+	  long h3 = f0g3 + f1g2 + f2g1 + f3g0 + f4g9_19 + f5g8_19 + f6g7_19 + f7g6_19 + f8g5_19 + f9g4_19;
+	  long h4 = f0g4 + f1g3_2 + f2g2 + f3g1_2 + f4g0 + f5g9_38 + f6g8_19 + f7g7_38 + f8g6_19 + f9g5_38;
+	  long h5 = f0g5 + f1g4 + f2g3 + f3g2 + f4g1 + f5g0 + f6g9_19 + f7g8_19 + f8g7_19 + f9g6_19;
+	  long h6 = f0g6 + f1g5_2 + f2g4 + f3g3_2 + f4g2 + f5g1_2 + f6g0 + f7g9_38 + f8g8_19 + f9g7_38;
+	  long h7 = f0g7 + f1g6 + f2g5 + f3g4 + f4g3 + f5g2 + f6g1 + f7g0 + f8g9_19 + f9g8_19;
+	  long h8 = f0g8 + f1g7_2 + f2g6 + f3g5_2 + f4g4 + f5g3_2 + f6g2 + f7g1_2 + f8g0 + f9g9_38;
+	  long h9 = f0g9 + f1g8 + f2g7 + f3g6 + f4g5 + f5g4 + f6g3 + f7g2 + f8g1 + f9g0;
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
 
 	  /*
 	  |h0| <= (1.65*1.65*2^52*(1+19+19+19+19)+1.65*1.65*2^50*(38+38+38+38+38))
@@ -3829,10 +3829,10 @@ With tighter constraints on inputs can squeeze carries into int32.
 	    i.e. |h1| <= 1.7*2^59; narrower ranges for h3, h5, h7, h9
 	  */
 
-	  carry0 = (h0 + (int64_t)(1 << 25)) >> 26;
+	  carry0 = (h0 + (long)(1 << 25)) >> 26;
 	  h1 += carry0;
 	  h0 -= carry0 << 26;
-	  carry4 = (h4 + (int64_t)(1 << 25)) >> 26;
+	  carry4 = (h4 + (long)(1 << 25)) >> 26;
 	  h5 += carry4;
 	  h4 -= carry4 << 26;
 	  /* |h0| <= 2^25 */
@@ -3840,10 +3840,10 @@ With tighter constraints on inputs can squeeze carries into int32.
 	  /* |h1| <= 1.71*2^59 */
 	  /* |h5| <= 1.71*2^59 */
 
-	  carry1 = (h1 + (int64_t)(1 << 24)) >> 25;
+	  carry1 = (h1 + (long)(1 << 24)) >> 25;
 	  h2 += carry1;
 	  h1 -= carry1 << 25;
-	  carry5 = (h5 + (int64_t)(1 << 24)) >> 25;
+	  carry5 = (h5 + (long)(1 << 24)) >> 25;
 	  h6 += carry5;
 	  h5 -= carry5 << 25;
 	  /* |h1| <= 2^24; from now on fits into int32 */
@@ -3851,10 +3851,10 @@ With tighter constraints on inputs can squeeze carries into int32.
 	  /* |h2| <= 1.41*2^60 */
 	  /* |h6| <= 1.41*2^60 */
 
-	  carry2 = (h2 + (int64_t)(1 << 25)) >> 26;
+	  carry2 = (h2 + (long)(1 << 25)) >> 26;
 	  h3 += carry2;
 	  h2 -= carry2 << 26;
-	  carry6 = (h6 + (int64_t)(1 << 25)) >> 26;
+	  carry6 = (h6 + (long)(1 << 25)) >> 26;
 	  h7 += carry6;
 	  h6 -= carry6 << 26;
 	  /* |h2| <= 2^25; from now on fits into int32 unchanged */
@@ -3862,10 +3862,10 @@ With tighter constraints on inputs can squeeze carries into int32.
 	  /* |h3| <= 1.71*2^59 */
 	  /* |h7| <= 1.71*2^59 */
 
-	  carry3 = (h3 + (int64_t)(1 << 24)) >> 25;
+	  carry3 = (h3 + (long)(1 << 24)) >> 25;
 	  h4 += carry3;
 	  h3 -= carry3 << 25;
-	  carry7 = (h7 + (int64_t)(1 << 24)) >> 25;
+	  carry7 = (h7 + (long)(1 << 24)) >> 25;
 	  h8 += carry7;
 	  h7 -= carry7 << 25;
 	  /* |h3| <= 2^24; from now on fits into int32 unchanged */
@@ -3873,10 +3873,10 @@ With tighter constraints on inputs can squeeze carries into int32.
 	  /* |h4| <= 1.72*2^34 */
 	  /* |h8| <= 1.41*2^60 */
 
-	  carry4 = (h4 + (int64_t)(1 << 25)) >> 26;
+	  carry4 = (h4 + (long)(1 << 25)) >> 26;
 	  h5 += carry4;
 	  h4 -= carry4 << 26;
-	  carry8 = (h8 + (int64_t)(1 << 25)) >> 26;
+	  carry8 = (h8 + (long)(1 << 25)) >> 26;
 	  h9 += carry8;
 	  h8 -= carry8 << 26;
 	  /* |h4| <= 2^25; from now on fits into int32 unchanged */
@@ -3884,28 +3884,28 @@ With tighter constraints on inputs can squeeze carries into int32.
 	  /* |h5| <= 1.01*2^24 */
 	  /* |h9| <= 1.71*2^59 */
 
-	  carry9 = (h9 + (int64_t)(1 << 24)) >> 25;
+	  carry9 = (h9 + (long)(1 << 24)) >> 25;
 	  h0 += carry9 * 19;
 	  h9 -= carry9 << 25;
 	  /* |h9| <= 2^24; from now on fits into int32 unchanged */
 	  /* |h0| <= 1.1*2^39 */
 
-	  carry0 = (h0 + (int64_t)(1 << 25)) >> 26;
+	  carry0 = (h0 + (long)(1 << 25)) >> 26;
 	  h1 += carry0;
 	  h0 -= carry0 << 26;
 	  /* |h0| <= 2^25; from now on fits into int32 unchanged */
 	  /* |h1| <= 1.01*2^24 */
 
-	  h[0] = (int32_t) h0;
-	  h[1] = (int32_t) h1;
-	  h[2] = (int32_t) h2;
-	  h[3] = (int32_t) h3;
-	  h[4] = (int32_t) h4;
-	  h[5] = (int32_t) h5;
-	  h[6] = (int32_t) h6;
-	  h[7] = (int32_t) h7;
-	  h[8] = (int32_t) h8;
-	  h[9] = (int32_t) h9;
+	  h[0] = (int) h0;
+	  h[1] = (int) h1;
+	  h[2] = (int) h2;
+	  h[3] = (int) h3;
+	  h[4] = (int) h4;
+	  h[5] = (int) h5;
+	  h[6] = (int) h6;
+	  h[7] = (int) h7;
+	  h[8] = (int) h8;
+	  h[9] = (int) h9;
 	}
 
 /* From fe_sq.c */
@@ -3925,160 +3925,160 @@ Postconditions:
 See fe_mul.c for discussion of implementation strategy.
 */
 
-	internal static void fe_sq(int32_t[] h, int32_t[] f)
+	internal static void fe_sq(int[] h, int[] f)
 	{
-	  int32_t f0 = f[0];
-	  int32_t f1 = f[1];
-	  int32_t f2 = f[2];
-	  int32_t f3 = f[3];
-	  int32_t f4 = f[4];
-	  int32_t f5 = f[5];
-	  int32_t f6 = f[6];
-	  int32_t f7 = f[7];
-	  int32_t f8 = f[8];
-	  int32_t f9 = f[9];
-	  int32_t f0_2 = 2 * f0;
-	  int32_t f1_2 = 2 * f1;
-	  int32_t f2_2 = 2 * f2;
-	  int32_t f3_2 = 2 * f3;
-	  int32_t f4_2 = 2 * f4;
-	  int32_t f5_2 = 2 * f5;
-	  int32_t f6_2 = 2 * f6;
-	  int32_t f7_2 = 2 * f7;
-	  int32_t f5_38 = 38 * f5; // 1.959375*2^30
-	  int32_t f6_19 = 19 * f6; // 1.959375*2^30
-	  int32_t f7_38 = 38 * f7; // 1.959375*2^30
-	  int32_t f8_19 = 19 * f8; // 1.959375*2^30
-	  int32_t f9_38 = 38 * f9; // 1.959375*2^30
-	  int64_t f0f0 = f0 * (int64_t) f0;
-	  int64_t f0f1_2 = f0_2 * (int64_t) f1;
-	  int64_t f0f2_2 = f0_2 * (int64_t) f2;
-	  int64_t f0f3_2 = f0_2 * (int64_t) f3;
-	  int64_t f0f4_2 = f0_2 * (int64_t) f4;
-	  int64_t f0f5_2 = f0_2 * (int64_t) f5;
-	  int64_t f0f6_2 = f0_2 * (int64_t) f6;
-	  int64_t f0f7_2 = f0_2 * (int64_t) f7;
-	  int64_t f0f8_2 = f0_2 * (int64_t) f8;
-	  int64_t f0f9_2 = f0_2 * (int64_t) f9;
-	  int64_t f1f1_2 = f1_2 * (int64_t) f1;
-	  int64_t f1f2_2 = f1_2 * (int64_t) f2;
-	  int64_t f1f3_4 = f1_2 * (int64_t) f3_2;
-	  int64_t f1f4_2 = f1_2 * (int64_t) f4;
-	  int64_t f1f5_4 = f1_2 * (int64_t) f5_2;
-	  int64_t f1f6_2 = f1_2 * (int64_t) f6;
-	  int64_t f1f7_4 = f1_2 * (int64_t) f7_2;
-	  int64_t f1f8_2 = f1_2 * (int64_t) f8;
-	  int64_t f1f9_76 = f1_2 * (int64_t) f9_38;
-	  int64_t f2f2 = f2 * (int64_t) f2;
-	  int64_t f2f3_2 = f2_2 * (int64_t) f3;
-	  int64_t f2f4_2 = f2_2 * (int64_t) f4;
-	  int64_t f2f5_2 = f2_2 * (int64_t) f5;
-	  int64_t f2f6_2 = f2_2 * (int64_t) f6;
-	  int64_t f2f7_2 = f2_2 * (int64_t) f7;
-	  int64_t f2f8_38 = f2_2 * (int64_t) f8_19;
-	  int64_t f2f9_38 = f2 * (int64_t) f9_38;
-	  int64_t f3f3_2 = f3_2 * (int64_t) f3;
-	  int64_t f3f4_2 = f3_2 * (int64_t) f4;
-	  int64_t f3f5_4 = f3_2 * (int64_t) f5_2;
-	  int64_t f3f6_2 = f3_2 * (int64_t) f6;
-	  int64_t f3f7_76 = f3_2 * (int64_t) f7_38;
-	  int64_t f3f8_38 = f3_2 * (int64_t) f8_19;
-	  int64_t f3f9_76 = f3_2 * (int64_t) f9_38;
-	  int64_t f4f4 = f4 * (int64_t) f4;
-	  int64_t f4f5_2 = f4_2 * (int64_t) f5;
-	  int64_t f4f6_38 = f4_2 * (int64_t) f6_19;
-	  int64_t f4f7_38 = f4 * (int64_t) f7_38;
-	  int64_t f4f8_38 = f4_2 * (int64_t) f8_19;
-	  int64_t f4f9_38 = f4 * (int64_t) f9_38;
-	  int64_t f5f5_38 = f5 * (int64_t) f5_38;
-	  int64_t f5f6_38 = f5_2 * (int64_t) f6_19;
-	  int64_t f5f7_76 = f5_2 * (int64_t) f7_38;
-	  int64_t f5f8_38 = f5_2 * (int64_t) f8_19;
-	  int64_t f5f9_76 = f5_2 * (int64_t) f9_38;
-	  int64_t f6f6_19 = f6 * (int64_t) f6_19;
-	  int64_t f6f7_38 = f6 * (int64_t) f7_38;
-	  int64_t f6f8_38 = f6_2 * (int64_t) f8_19;
-	  int64_t f6f9_38 = f6 * (int64_t) f9_38;
-	  int64_t f7f7_38 = f7 * (int64_t) f7_38;
-	  int64_t f7f8_38 = f7_2 * (int64_t) f8_19;
-	  int64_t f7f9_76 = f7_2 * (int64_t) f9_38;
-	  int64_t f8f8_19 = f8 * (int64_t) f8_19;
-	  int64_t f8f9_38 = f8 * (int64_t) f9_38;
-	  int64_t f9f9_38 = f9 * (int64_t) f9_38;
-	  int64_t h0 = f0f0 + f1f9_76 + f2f8_38 + f3f7_76 + f4f6_38 + f5f5_38;
-	  int64_t h1 = f0f1_2 + f2f9_38 + f3f8_38 + f4f7_38 + f5f6_38;
-	  int64_t h2 = f0f2_2 + f1f1_2 + f3f9_76 + f4f8_38 + f5f7_76 + f6f6_19;
-	  int64_t h3 = f0f3_2 + f1f2_2 + f4f9_38 + f5f8_38 + f6f7_38;
-	  int64_t h4 = f0f4_2 + f1f3_4 + f2f2 + f5f9_76 + f6f8_38 + f7f7_38;
-	  int64_t h5 = f0f5_2 + f1f4_2 + f2f3_2 + f6f9_38 + f7f8_38;
-	  int64_t h6 = f0f6_2 + f1f5_4 + f2f4_2 + f3f3_2 + f7f9_76 + f8f8_19;
-	  int64_t h7 = f0f7_2 + f1f6_2 + f2f5_2 + f3f4_2 + f8f9_38;
-	  int64_t h8 = f0f8_2 + f1f7_4 + f2f6_2 + f3f5_4 + f4f4 + f9f9_38;
-	  int64_t h9 = f0f9_2 + f1f8_2 + f2f7_2 + f3f6_2 + f4f5_2;
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
+	  int f0 = f[0];
+	  int f1 = f[1];
+	  int f2 = f[2];
+	  int f3 = f[3];
+	  int f4 = f[4];
+	  int f5 = f[5];
+	  int f6 = f[6];
+	  int f7 = f[7];
+	  int f8 = f[8];
+	  int f9 = f[9];
+	  int f0_2 = 2 * f0;
+	  int f1_2 = 2 * f1;
+	  int f2_2 = 2 * f2;
+	  int f3_2 = 2 * f3;
+	  int f4_2 = 2 * f4;
+	  int f5_2 = 2 * f5;
+	  int f6_2 = 2 * f6;
+	  int f7_2 = 2 * f7;
+	  int f5_38 = 38 * f5; // 1.959375*2^30
+	  int f6_19 = 19 * f6; // 1.959375*2^30
+	  int f7_38 = 38 * f7; // 1.959375*2^30
+	  int f8_19 = 19 * f8; // 1.959375*2^30
+	  int f9_38 = 38 * f9; // 1.959375*2^30
+	  long f0f0 = f0 * (long) f0;
+	  long f0f1_2 = f0_2 * (long) f1;
+	  long f0f2_2 = f0_2 * (long) f2;
+	  long f0f3_2 = f0_2 * (long) f3;
+	  long f0f4_2 = f0_2 * (long) f4;
+	  long f0f5_2 = f0_2 * (long) f5;
+	  long f0f6_2 = f0_2 * (long) f6;
+	  long f0f7_2 = f0_2 * (long) f7;
+	  long f0f8_2 = f0_2 * (long) f8;
+	  long f0f9_2 = f0_2 * (long) f9;
+	  long f1f1_2 = f1_2 * (long) f1;
+	  long f1f2_2 = f1_2 * (long) f2;
+	  long f1f3_4 = f1_2 * (long) f3_2;
+	  long f1f4_2 = f1_2 * (long) f4;
+	  long f1f5_4 = f1_2 * (long) f5_2;
+	  long f1f6_2 = f1_2 * (long) f6;
+	  long f1f7_4 = f1_2 * (long) f7_2;
+	  long f1f8_2 = f1_2 * (long) f8;
+	  long f1f9_76 = f1_2 * (long) f9_38;
+	  long f2f2 = f2 * (long) f2;
+	  long f2f3_2 = f2_2 * (long) f3;
+	  long f2f4_2 = f2_2 * (long) f4;
+	  long f2f5_2 = f2_2 * (long) f5;
+	  long f2f6_2 = f2_2 * (long) f6;
+	  long f2f7_2 = f2_2 * (long) f7;
+	  long f2f8_38 = f2_2 * (long) f8_19;
+	  long f2f9_38 = f2 * (long) f9_38;
+	  long f3f3_2 = f3_2 * (long) f3;
+	  long f3f4_2 = f3_2 * (long) f4;
+	  long f3f5_4 = f3_2 * (long) f5_2;
+	  long f3f6_2 = f3_2 * (long) f6;
+	  long f3f7_76 = f3_2 * (long) f7_38;
+	  long f3f8_38 = f3_2 * (long) f8_19;
+	  long f3f9_76 = f3_2 * (long) f9_38;
+	  long f4f4 = f4 * (long) f4;
+	  long f4f5_2 = f4_2 * (long) f5;
+	  long f4f6_38 = f4_2 * (long) f6_19;
+	  long f4f7_38 = f4 * (long) f7_38;
+	  long f4f8_38 = f4_2 * (long) f8_19;
+	  long f4f9_38 = f4 * (long) f9_38;
+	  long f5f5_38 = f5 * (long) f5_38;
+	  long f5f6_38 = f5_2 * (long) f6_19;
+	  long f5f7_76 = f5_2 * (long) f7_38;
+	  long f5f8_38 = f5_2 * (long) f8_19;
+	  long f5f9_76 = f5_2 * (long) f9_38;
+	  long f6f6_19 = f6 * (long) f6_19;
+	  long f6f7_38 = f6 * (long) f7_38;
+	  long f6f8_38 = f6_2 * (long) f8_19;
+	  long f6f9_38 = f6 * (long) f9_38;
+	  long f7f7_38 = f7 * (long) f7_38;
+	  long f7f8_38 = f7_2 * (long) f8_19;
+	  long f7f9_76 = f7_2 * (long) f9_38;
+	  long f8f8_19 = f8 * (long) f8_19;
+	  long f8f9_38 = f8 * (long) f9_38;
+	  long f9f9_38 = f9 * (long) f9_38;
+	  long h0 = f0f0 + f1f9_76 + f2f8_38 + f3f7_76 + f4f6_38 + f5f5_38;
+	  long h1 = f0f1_2 + f2f9_38 + f3f8_38 + f4f7_38 + f5f6_38;
+	  long h2 = f0f2_2 + f1f1_2 + f3f9_76 + f4f8_38 + f5f7_76 + f6f6_19;
+	  long h3 = f0f3_2 + f1f2_2 + f4f9_38 + f5f8_38 + f6f7_38;
+	  long h4 = f0f4_2 + f1f3_4 + f2f2 + f5f9_76 + f6f8_38 + f7f7_38;
+	  long h5 = f0f5_2 + f1f4_2 + f2f3_2 + f6f9_38 + f7f8_38;
+	  long h6 = f0f6_2 + f1f5_4 + f2f4_2 + f3f3_2 + f7f9_76 + f8f8_19;
+	  long h7 = f0f7_2 + f1f6_2 + f2f5_2 + f3f4_2 + f8f9_38;
+	  long h8 = f0f8_2 + f1f7_4 + f2f6_2 + f3f5_4 + f4f4 + f9f9_38;
+	  long h9 = f0f9_2 + f1f8_2 + f2f7_2 + f3f6_2 + f4f5_2;
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
 
-	  carry0 = (h0 + (int64_t)(1 << 25)) >> 26;
+	  carry0 = (h0 + (long)(1 << 25)) >> 26;
 	  h1 += carry0;
 	  h0 -= carry0 << 26;
-	  carry4 = (h4 + (int64_t)(1 << 25)) >> 26;
+	  carry4 = (h4 + (long)(1 << 25)) >> 26;
 	  h5 += carry4;
 	  h4 -= carry4 << 26;
 
-	  carry1 = (h1 + (int64_t)(1 << 24)) >> 25;
+	  carry1 = (h1 + (long)(1 << 24)) >> 25;
 	  h2 += carry1;
 	  h1 -= carry1 << 25;
-	  carry5 = (h5 + (int64_t)(1 << 24)) >> 25;
+	  carry5 = (h5 + (long)(1 << 24)) >> 25;
 	  h6 += carry5;
 	  h5 -= carry5 << 25;
 
-	  carry2 = (h2 + (int64_t)(1 << 25)) >> 26;
+	  carry2 = (h2 + (long)(1 << 25)) >> 26;
 	  h3 += carry2;
 	  h2 -= carry2 << 26;
-	  carry6 = (h6 + (int64_t)(1 << 25)) >> 26;
+	  carry6 = (h6 + (long)(1 << 25)) >> 26;
 	  h7 += carry6;
 	  h6 -= carry6 << 26;
 
-	  carry3 = (h3 + (int64_t)(1 << 24)) >> 25;
+	  carry3 = (h3 + (long)(1 << 24)) >> 25;
 	  h4 += carry3;
 	  h3 -= carry3 << 25;
-	  carry7 = (h7 + (int64_t)(1 << 24)) >> 25;
+	  carry7 = (h7 + (long)(1 << 24)) >> 25;
 	  h8 += carry7;
 	  h7 -= carry7 << 25;
 
-	  carry4 = (h4 + (int64_t)(1 << 25)) >> 26;
+	  carry4 = (h4 + (long)(1 << 25)) >> 26;
 	  h5 += carry4;
 	  h4 -= carry4 << 26;
-	  carry8 = (h8 + (int64_t)(1 << 25)) >> 26;
+	  carry8 = (h8 + (long)(1 << 25)) >> 26;
 	  h9 += carry8;
 	  h8 -= carry8 << 26;
 
-	  carry9 = (h9 + (int64_t)(1 << 24)) >> 25;
+	  carry9 = (h9 + (long)(1 << 24)) >> 25;
 	  h0 += carry9 * 19;
 	  h9 -= carry9 << 25;
 
-	  carry0 = (h0 + (int64_t)(1 << 25)) >> 26;
+	  carry0 = (h0 + (long)(1 << 25)) >> 26;
 	  h1 += carry0;
 	  h0 -= carry0 << 26;
 
-	  h[0] = (int32_t) h0;
-	  h[1] = (int32_t) h1;
-	  h[2] = (int32_t) h2;
-	  h[3] = (int32_t) h3;
-	  h[4] = (int32_t) h4;
-	  h[5] = (int32_t) h5;
-	  h[6] = (int32_t) h6;
-	  h[7] = (int32_t) h7;
-	  h[8] = (int32_t) h8;
-	  h[9] = (int32_t) h9;
+	  h[0] = (int) h0;
+	  h[1] = (int) h1;
+	  h[2] = (int) h2;
+	  h[3] = (int) h3;
+	  h[4] = (int) h4;
+	  h[5] = (int) h5;
+	  h[6] = (int) h6;
+	  h[7] = (int) h7;
+	  h[8] = (int) h8;
+	  h[9] = (int) h9;
 	}
 
 /* From fe_tobytes.c */
@@ -4108,31 +4108,31 @@ Proof:
   so floor(2^(-255)(h + 19 2^(-25) h9 + 2^(-1))) = q.
 */
 
-	internal static void fe_tobytes(byte[] s, int32_t[] h)
+	internal static void fe_tobytes(byte[] s, int[] h)
 	{
-	  int32_t h0 = h[0];
-	  int32_t h1 = h[1];
-	  int32_t h2 = h[2];
-	  int32_t h3 = h[3];
-	  int32_t h4 = h[4];
-	  int32_t h5 = h[5];
-	  int32_t h6 = h[6];
-	  int32_t h7 = h[7];
-	  int32_t h8 = h[8];
-	  int32_t h9 = h[9];
-	  int32_t q = new int32_t();
-	  int32_t carry0 = new int32_t();
-	  int32_t carry1 = new int32_t();
-	  int32_t carry2 = new int32_t();
-	  int32_t carry3 = new int32_t();
-	  int32_t carry4 = new int32_t();
-	  int32_t carry5 = new int32_t();
-	  int32_t carry6 = new int32_t();
-	  int32_t carry7 = new int32_t();
-	  int32_t carry8 = new int32_t();
-	  int32_t carry9 = new int32_t();
+	  int h0 = h[0];
+	  int h1 = h[1];
+	  int h2 = h[2];
+	  int h3 = h[3];
+	  int h4 = h[4];
+	  int h5 = h[5];
+	  int h6 = h[6];
+	  int h7 = h[7];
+	  int h8 = h[8];
+	  int h9 = h[9];
+	  int q = new int();
+	  int carry0 = new int();
+	  int carry1 = new int();
+	  int carry2 = new int();
+	  int carry3 = new int();
+	  int carry4 = new int();
+	  int carry5 = new int();
+	  int carry6 = new int();
+	  int carry7 = new int();
+	  int carry8 = new int();
+	  int carry9 = new int();
 
-	  q = (19 * h9 + (((int32_t) 1) << 24)) >> 25;
+	  q = (19 * h9 + (((int) 1) << 24)) >> 25;
 	  q = (h0 + q) >> 26;
 	  q = (h1 + q) >> 25;
 	  q = (h2 + q) >> 26;
@@ -4228,7 +4228,7 @@ r = p + q
 
 	internal static void ge_madd(ge_p1p1 r, ge_p3 p, ge_precomp q)
 	{
-	  int32_t[] t0 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] t0 = Arrays.InitializeWithDefaultInstances<int>(10);
 	  fe_add(r.X, p.Y, p.X);
 	  fe_sub(r.Y, p.Y, p.X);
 	  fe_mul(r.Z, r.X, q.yplusx);
@@ -4249,7 +4249,7 @@ r = p - q
 
 	internal static void ge_msub(ge_p1p1 r, ge_p3 p, ge_precomp q)
 	{
-	  int32_t[] t0 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] t0 = Arrays.InitializeWithDefaultInstances<int>(10);
 	  fe_add(r.X, p.Y, p.X);
 	  fe_sub(r.Y, p.Y, p.X);
 	  fe_mul(r.Z, r.X, q.yminusx);
@@ -4286,104 +4286,104 @@ r = 2 * p
 
 /* New code */
 
-	internal static void fe_divpowm1(int32_t[] r, int32_t[] u, int32_t[] v)
+	internal static void fe_divpowm1(int[] r, int[] u, int[] v)
 	{
-	  int32_t[] v3 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t uv7 = new int32_t();
-	  int32_t t0 = new int32_t();
-	  int32_t t1 = new int32_t();
-	  int32_t t2 = new int32_t();
+	  int[] v3 = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int uv7 = new int();
+	  int t0 = new int();
+	  int t1 = new int();
+	  int t2 = new int();
 	  int i;
 
 	  fe_sq(v3, v);
 	  fe_mul(v3, v3, v); // v3 = v^3
-	  fe_sq(new int32_t(uv7), v3);
-	  fe_mul(new int32_t(uv7), new int32_t(uv7), v);
-	  fe_mul(new int32_t(uv7), new int32_t(uv7), u); // uv7 = uv^7
+	  fe_sq(new int(uv7), v3);
+	  fe_mul(new int(uv7), new int(uv7), v);
+	  fe_mul(new int(uv7), new int(uv7), u); // uv7 = uv^7
 
 	  /*fe_pow22523(uv7, uv7);*/
 
 	  /* From fe_pow22523.c */
 
-	  fe_sq(new int32_t(t0), new int32_t(uv7));
-	  fe_sq(new int32_t(t1), new int32_t(t0));
-	  fe_sq(new int32_t(t1), new int32_t(t1));
-	  fe_mul(new int32_t(t1), new int32_t(uv7), new int32_t(t1));
-	  fe_mul(new int32_t(t0), new int32_t(t0), new int32_t(t1));
-	  fe_sq(new int32_t(t0), new int32_t(t0));
-	  fe_mul(new int32_t(t0), new int32_t(t1), new int32_t(t0));
-	  fe_sq(new int32_t(t1), new int32_t(t0));
+	  fe_sq(new int(t0), new int(uv7));
+	  fe_sq(new int(t1), new int(t0));
+	  fe_sq(new int(t1), new int(t1));
+	  fe_mul(new int(t1), new int(uv7), new int(t1));
+	  fe_mul(new int(t0), new int(t0), new int(t1));
+	  fe_sq(new int(t0), new int(t0));
+	  fe_mul(new int(t0), new int(t1), new int(t0));
+	  fe_sq(new int(t1), new int(t0));
 	  for (i = 0; i < 4; ++i)
 	  {
-		fe_sq(new int32_t(t1), new int32_t(t1));
+		fe_sq(new int(t1), new int(t1));
 	  }
-	  fe_mul(new int32_t(t0), new int32_t(t1), new int32_t(t0));
-	  fe_sq(new int32_t(t1), new int32_t(t0));
+	  fe_mul(new int(t0), new int(t1), new int(t0));
+	  fe_sq(new int(t1), new int(t0));
 	  for (i = 0; i < 9; ++i)
 	  {
-		fe_sq(new int32_t(t1), new int32_t(t1));
+		fe_sq(new int(t1), new int(t1));
 	  }
-	  fe_mul(new int32_t(t1), new int32_t(t1), new int32_t(t0));
-	  fe_sq(new int32_t(t2), new int32_t(t1));
+	  fe_mul(new int(t1), new int(t1), new int(t0));
+	  fe_sq(new int(t2), new int(t1));
 	  for (i = 0; i < 19; ++i)
 	  {
-		fe_sq(new int32_t(t2), new int32_t(t2));
+		fe_sq(new int(t2), new int(t2));
 	  }
-	  fe_mul(new int32_t(t1), new int32_t(t2), new int32_t(t1));
+	  fe_mul(new int(t1), new int(t2), new int(t1));
 	  for (i = 0; i < 10; ++i)
 	  {
-		fe_sq(new int32_t(t1), new int32_t(t1));
+		fe_sq(new int(t1), new int(t1));
 	  }
-	  fe_mul(new int32_t(t0), new int32_t(t1), new int32_t(t0));
-	  fe_sq(new int32_t(t1), new int32_t(t0));
+	  fe_mul(new int(t0), new int(t1), new int(t0));
+	  fe_sq(new int(t1), new int(t0));
 	  for (i = 0; i < 49; ++i)
 	  {
-		fe_sq(new int32_t(t1), new int32_t(t1));
+		fe_sq(new int(t1), new int(t1));
 	  }
-	  fe_mul(new int32_t(t1), new int32_t(t1), new int32_t(t0));
-	  fe_sq(new int32_t(t2), new int32_t(t1));
+	  fe_mul(new int(t1), new int(t1), new int(t0));
+	  fe_sq(new int(t2), new int(t1));
 	  for (i = 0; i < 99; ++i)
 	  {
-		fe_sq(new int32_t(t2), new int32_t(t2));
+		fe_sq(new int(t2), new int(t2));
 	  }
-	  fe_mul(new int32_t(t1), new int32_t(t2), new int32_t(t1));
+	  fe_mul(new int(t1), new int(t2), new int(t1));
 	  for (i = 0; i < 50; ++i)
 	  {
-		fe_sq(new int32_t(t1), new int32_t(t1));
+		fe_sq(new int(t1), new int(t1));
 	  }
-	  fe_mul(new int32_t(t0), new int32_t(t1), new int32_t(t0));
-	  fe_sq(new int32_t(t0), new int32_t(t0));
-	  fe_sq(new int32_t(t0), new int32_t(t0));
-	  fe_mul(new int32_t(t0), new int32_t(t0), new int32_t(uv7));
+	  fe_mul(new int(t0), new int(t1), new int(t0));
+	  fe_sq(new int(t0), new int(t0));
+	  fe_sq(new int(t0), new int(t0));
+	  fe_mul(new int(t0), new int(t0), new int(uv7));
 
 	  /* End fe_pow22523.c */
 	  /* t0 = (uv^7)^((q-5)/8) */
-	  fe_mul(new int32_t(t0), new int32_t(t0), v3);
-	  fe_mul(r, new int32_t(t0), u); // u^(m+1)v^(-(m+1))
+	  fe_mul(new int(t0), new int(t0), v3);
+	  fe_mul(r, new int(t0), u); // u^(m+1)v^(-(m+1))
 	}
 
 	/* Common functions */
 
-	internal static uint64_t load_3(byte[] in)
+	internal static ulong load_3(byte[] in)
 	{
-	  uint64_t result = new uint64_t();
+	  ulong result = new ulong();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: result = (uint64_t) in[0];
-	  result.CopyFrom((uint64_t) in[0]);
-	  result |= ((uint64_t) in[1]) << 8;
-	  result |= ((uint64_t) in[2]) << 16;
+//ORIGINAL LINE: result = (ulong) in[0];
+	  result.CopyFrom((ulong) in[0]);
+	  result |= ((ulong) in[1]) << 8;
+	  result |= ((ulong) in[2]) << 16;
 	  return result;
 	}
 
-	internal static uint64_t load_4(byte[] in)
+	internal static ulong load_4(byte[] in)
 	{
-	  uint64_t result = new uint64_t();
+	  ulong result = new ulong();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: result = (uint64_t) in[0];
-	  result.CopyFrom((uint64_t) in[0]);
-	  result |= ((uint64_t) in[1]) << 8;
-	  result |= ((uint64_t) in[2]) << 16;
-	  result |= ((uint64_t) in[3]) << 24;
+//ORIGINAL LINE: result = (ulong) in[0];
+	  result.CopyFrom((ulong) in[0]);
+	  result |= ((ulong) in[1]) << 8;
+	  result |= ((ulong) in[2]) << 16;
+	  result |= ((ulong) in[3]) << 24;
 	  return result;
 	}
 
@@ -4393,7 +4393,7 @@ r = 2 * p
 	h = 0
 	*/
 
-	internal static void fe_0(int32_t[] h)
+	internal static void fe_0(int[] h)
 	{
 	  h[0] = 0;
 	  h[1] = 0;
@@ -4413,7 +4413,7 @@ r = 2 * p
 	h = 1
 	*/
 
-	internal static void fe_1(int32_t[] h)
+	internal static void fe_1(int[] h)
 	{
 	  h[0] = 1;
 	  h[1] = 0;
@@ -4441,38 +4441,38 @@ r = 2 * p
 	   |h| bounded by 1.1*2^26,1.1*2^25,1.1*2^26,1.1*2^25,etc.
 	*/
 
-	internal static void fe_add(int32_t[] h, int32_t[] f, int32_t[] g)
+	internal static void fe_add(int[] h, int[] f, int[] g)
 	{
-	  int32_t f0 = f[0];
-	  int32_t f1 = f[1];
-	  int32_t f2 = f[2];
-	  int32_t f3 = f[3];
-	  int32_t f4 = f[4];
-	  int32_t f5 = f[5];
-	  int32_t f6 = f[6];
-	  int32_t f7 = f[7];
-	  int32_t f8 = f[8];
-	  int32_t f9 = f[9];
-	  int32_t g0 = g[0];
-	  int32_t g1 = g[1];
-	  int32_t g2 = g[2];
-	  int32_t g3 = g[3];
-	  int32_t g4 = g[4];
-	  int32_t g5 = g[5];
-	  int32_t g6 = g[6];
-	  int32_t g7 = g[7];
-	  int32_t g8 = g[8];
-	  int32_t g9 = g[9];
-	  int32_t h0 = f0 + g0;
-	  int32_t h1 = f1 + g1;
-	  int32_t h2 = f2 + g2;
-	  int32_t h3 = f3 + g3;
-	  int32_t h4 = f4 + g4;
-	  int32_t h5 = f5 + g5;
-	  int32_t h6 = f6 + g6;
-	  int32_t h7 = f7 + g7;
-	  int32_t h8 = f8 + g8;
-	  int32_t h9 = f9 + g9;
+	  int f0 = f[0];
+	  int f1 = f[1];
+	  int f2 = f[2];
+	  int f3 = f[3];
+	  int f4 = f[4];
+	  int f5 = f[5];
+	  int f6 = f[6];
+	  int f7 = f[7];
+	  int f8 = f[8];
+	  int f9 = f[9];
+	  int g0 = g[0];
+	  int g1 = g[1];
+	  int g2 = g[2];
+	  int g3 = g[3];
+	  int g4 = g[4];
+	  int g5 = g[5];
+	  int g6 = g[6];
+	  int g7 = g[7];
+	  int g8 = g[8];
+	  int g9 = g[9];
+	  int h0 = f0 + g0;
+	  int h1 = f1 + g1;
+	  int h2 = f2 + g2;
+	  int h3 = f3 + g3;
+	  int h4 = f4 + g4;
+	  int h5 = f5 + g5;
+	  int h6 = f6 + g6;
+	  int h7 = f7 + g7;
+	  int h8 = f8 + g8;
+	  int h9 = f9 + g9;
 	  h[0] = h0;
 	  h[1] = h1;
 	  h[2] = h2;
@@ -4494,38 +4494,38 @@ r = 2 * p
 	Preconditions: b in {0,1}.
 	*/
 
-	internal static void fe_cmov(int32_t[] f, int32_t[] g, uint b)
+	internal static void fe_cmov(int[] f, int[] g, uint b)
 	{
-	  int32_t f0 = f[0];
-	  int32_t f1 = f[1];
-	  int32_t f2 = f[2];
-	  int32_t f3 = f[3];
-	  int32_t f4 = f[4];
-	  int32_t f5 = f[5];
-	  int32_t f6 = f[6];
-	  int32_t f7 = f[7];
-	  int32_t f8 = f[8];
-	  int32_t f9 = f[9];
-	  int32_t g0 = g[0];
-	  int32_t g1 = g[1];
-	  int32_t g2 = g[2];
-	  int32_t g3 = g[3];
-	  int32_t g4 = g[4];
-	  int32_t g5 = g[5];
-	  int32_t g6 = g[6];
-	  int32_t g7 = g[7];
-	  int32_t g8 = g[8];
-	  int32_t g9 = g[9];
-	  int32_t x0 = f0 ^ g0;
-	  int32_t x1 = f1 ^ g1;
-	  int32_t x2 = f2 ^ g2;
-	  int32_t x3 = f3 ^ g3;
-	  int32_t x4 = f4 ^ g4;
-	  int32_t x5 = f5 ^ g5;
-	  int32_t x6 = f6 ^ g6;
-	  int32_t x7 = f7 ^ g7;
-	  int32_t x8 = f8 ^ g8;
-	  int32_t x9 = f9 ^ g9;
+	  int f0 = f[0];
+	  int f1 = f[1];
+	  int f2 = f[2];
+	  int f3 = f[3];
+	  int f4 = f[4];
+	  int f5 = f[5];
+	  int f6 = f[6];
+	  int f7 = f[7];
+	  int f8 = f[8];
+	  int f9 = f[9];
+	  int g0 = g[0];
+	  int g1 = g[1];
+	  int g2 = g[2];
+	  int g3 = g[3];
+	  int g4 = g[4];
+	  int g5 = g[5];
+	  int g6 = g[6];
+	  int g7 = g[7];
+	  int g8 = g[8];
+	  int g9 = g[9];
+	  int x0 = f0 ^ g0;
+	  int x1 = f1 ^ g1;
+	  int x2 = f2 ^ g2;
+	  int x3 = f3 ^ g3;
+	  int x4 = f4 ^ g4;
+	  int x5 = f5 ^ g5;
+	  int x6 = f6 ^ g6;
+	  int x7 = f7 ^ g7;
+	  int x8 = f8 ^ g8;
+	  int x9 = f9 ^ g9;
 	  Debug.Assert((((b - 1) & ~b) | ((b - 2) & ~(b - 1))) == (uint) -1);
 	  b = -(int) b;
 	  x0 &= b;
@@ -4556,18 +4556,18 @@ r = 2 * p
 	h = f
 	*/
 
-	internal static void fe_copy(int32_t[] h, int32_t[] f)
+	internal static void fe_copy(int[] h, int[] f)
 	{
-	  int32_t f0 = f[0];
-	  int32_t f1 = f[1];
-	  int32_t f2 = f[2];
-	  int32_t f3 = f[3];
-	  int32_t f4 = f[4];
-	  int32_t f5 = f[5];
-	  int32_t f6 = f[6];
-	  int32_t f7 = f[7];
-	  int32_t f8 = f[8];
-	  int32_t f9 = f[9];
+	  int f0 = f[0];
+	  int f1 = f[1];
+	  int f2 = f[2];
+	  int f3 = f[3];
+	  int f4 = f[4];
+	  int f5 = f[5];
+	  int f6 = f[6];
+	  int f7 = f[7];
+	  int f8 = f[8];
+	  int f9 = f[9];
 	  h[0] = f0;
 	  h[1] = f1;
 	  h[2] = f2;
@@ -4582,12 +4582,12 @@ r = 2 * p
 
 	/* From fe_invert.c */
 
-	internal static void fe_invert(int32_t[] @out, int32_t[] z)
+	internal static void fe_invert(int[] @out, int[] z)
 	{
-	  int32_t[] t0 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] t1 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] t2 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
-	  int32_t[] t3 = Arrays.InitializeWithDefaultInstances<int32_t>(10);
+	  int[] t0 = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] t1 = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] t2 = Arrays.InitializeWithDefaultInstances<int>(10);
+	  int[] t3 = Arrays.InitializeWithDefaultInstances<int>(10);
 	  int i;
 
 	  fe_sq(t0, z);
@@ -4659,7 +4659,7 @@ r = 2 * p
 	   |f| bounded by 1.1*2^26,1.1*2^25,1.1*2^26,1.1*2^25,etc.
 	*/
 
-	internal static int fe_isnegative(int32_t[] f)
+	internal static int fe_isnegative(int[] f)
 	{
 	  byte[] s = new byte[32];
 	  fe_tobytes(s, f);
@@ -4668,7 +4668,7 @@ r = 2 * p
 
 	/* From fe_isnonzero.c, modified */
 
-	internal static int fe_isnonzero(int32_t[] f)
+	internal static int fe_isnonzero(int[] f)
 	{
 	  byte[] s = new byte[32];
 	  fe_tobytes(s, f);
@@ -4687,28 +4687,28 @@ r = 2 * p
 	   |h| bounded by 1.1*2^25,1.1*2^24,1.1*2^25,1.1*2^24,etc.
 	*/
 
-	internal static void fe_neg(int32_t[] h, int32_t[] f)
+	internal static void fe_neg(int[] h, int[] f)
 	{
-	  int32_t f0 = f[0];
-	  int32_t f1 = f[1];
-	  int32_t f2 = f[2];
-	  int32_t f3 = f[3];
-	  int32_t f4 = f[4];
-	  int32_t f5 = f[5];
-	  int32_t f6 = f[6];
-	  int32_t f7 = f[7];
-	  int32_t f8 = f[8];
-	  int32_t f9 = f[9];
-	  int32_t h0 = -f0;
-	  int32_t h1 = -f1;
-	  int32_t h2 = -f2;
-	  int32_t h3 = -f3;
-	  int32_t h4 = -f4;
-	  int32_t h5 = -f5;
-	  int32_t h6 = -f6;
-	  int32_t h7 = -f7;
-	  int32_t h8 = -f8;
-	  int32_t h9 = -f9;
+	  int f0 = f[0];
+	  int f1 = f[1];
+	  int f2 = f[2];
+	  int f3 = f[3];
+	  int f4 = f[4];
+	  int f5 = f[5];
+	  int f6 = f[6];
+	  int f7 = f[7];
+	  int f8 = f[8];
+	  int f9 = f[9];
+	  int h0 = -f0;
+	  int h1 = -f1;
+	  int h2 = -f2;
+	  int h3 = -f3;
+	  int h4 = -f4;
+	  int h5 = -f5;
+	  int h6 = -f6;
+	  int h7 = -f7;
+	  int h8 = -f8;
+	  int h9 = -f9;
 	  h[0] = h0;
 	  h[1] = h1;
 	  h[2] = h2;
@@ -4738,106 +4738,106 @@ r = 2 * p
 	See fe_mul.c for discussion of implementation strategy.
 	*/
 
-	internal static void fe_sq2(int32_t[] h, int32_t[] f)
+	internal static void fe_sq2(int[] h, int[] f)
 	{
-	  int32_t f0 = f[0];
-	  int32_t f1 = f[1];
-	  int32_t f2 = f[2];
-	  int32_t f3 = f[3];
-	  int32_t f4 = f[4];
-	  int32_t f5 = f[5];
-	  int32_t f6 = f[6];
-	  int32_t f7 = f[7];
-	  int32_t f8 = f[8];
-	  int32_t f9 = f[9];
-	  int32_t f0_2 = 2 * f0;
-	  int32_t f1_2 = 2 * f1;
-	  int32_t f2_2 = 2 * f2;
-	  int32_t f3_2 = 2 * f3;
-	  int32_t f4_2 = 2 * f4;
-	  int32_t f5_2 = 2 * f5;
-	  int32_t f6_2 = 2 * f6;
-	  int32_t f7_2 = 2 * f7;
-	  int32_t f5_38 = 38 * f5; // 1.959375*2^30
-	  int32_t f6_19 = 19 * f6; // 1.959375*2^30
-	  int32_t f7_38 = 38 * f7; // 1.959375*2^30
-	  int32_t f8_19 = 19 * f8; // 1.959375*2^30
-	  int32_t f9_38 = 38 * f9; // 1.959375*2^30
-	  int64_t f0f0 = f0 * (int64_t) f0;
-	  int64_t f0f1_2 = f0_2 * (int64_t) f1;
-	  int64_t f0f2_2 = f0_2 * (int64_t) f2;
-	  int64_t f0f3_2 = f0_2 * (int64_t) f3;
-	  int64_t f0f4_2 = f0_2 * (int64_t) f4;
-	  int64_t f0f5_2 = f0_2 * (int64_t) f5;
-	  int64_t f0f6_2 = f0_2 * (int64_t) f6;
-	  int64_t f0f7_2 = f0_2 * (int64_t) f7;
-	  int64_t f0f8_2 = f0_2 * (int64_t) f8;
-	  int64_t f0f9_2 = f0_2 * (int64_t) f9;
-	  int64_t f1f1_2 = f1_2 * (int64_t) f1;
-	  int64_t f1f2_2 = f1_2 * (int64_t) f2;
-	  int64_t f1f3_4 = f1_2 * (int64_t) f3_2;
-	  int64_t f1f4_2 = f1_2 * (int64_t) f4;
-	  int64_t f1f5_4 = f1_2 * (int64_t) f5_2;
-	  int64_t f1f6_2 = f1_2 * (int64_t) f6;
-	  int64_t f1f7_4 = f1_2 * (int64_t) f7_2;
-	  int64_t f1f8_2 = f1_2 * (int64_t) f8;
-	  int64_t f1f9_76 = f1_2 * (int64_t) f9_38;
-	  int64_t f2f2 = f2 * (int64_t) f2;
-	  int64_t f2f3_2 = f2_2 * (int64_t) f3;
-	  int64_t f2f4_2 = f2_2 * (int64_t) f4;
-	  int64_t f2f5_2 = f2_2 * (int64_t) f5;
-	  int64_t f2f6_2 = f2_2 * (int64_t) f6;
-	  int64_t f2f7_2 = f2_2 * (int64_t) f7;
-	  int64_t f2f8_38 = f2_2 * (int64_t) f8_19;
-	  int64_t f2f9_38 = f2 * (int64_t) f9_38;
-	  int64_t f3f3_2 = f3_2 * (int64_t) f3;
-	  int64_t f3f4_2 = f3_2 * (int64_t) f4;
-	  int64_t f3f5_4 = f3_2 * (int64_t) f5_2;
-	  int64_t f3f6_2 = f3_2 * (int64_t) f6;
-	  int64_t f3f7_76 = f3_2 * (int64_t) f7_38;
-	  int64_t f3f8_38 = f3_2 * (int64_t) f8_19;
-	  int64_t f3f9_76 = f3_2 * (int64_t) f9_38;
-	  int64_t f4f4 = f4 * (int64_t) f4;
-	  int64_t f4f5_2 = f4_2 * (int64_t) f5;
-	  int64_t f4f6_38 = f4_2 * (int64_t) f6_19;
-	  int64_t f4f7_38 = f4 * (int64_t) f7_38;
-	  int64_t f4f8_38 = f4_2 * (int64_t) f8_19;
-	  int64_t f4f9_38 = f4 * (int64_t) f9_38;
-	  int64_t f5f5_38 = f5 * (int64_t) f5_38;
-	  int64_t f5f6_38 = f5_2 * (int64_t) f6_19;
-	  int64_t f5f7_76 = f5_2 * (int64_t) f7_38;
-	  int64_t f5f8_38 = f5_2 * (int64_t) f8_19;
-	  int64_t f5f9_76 = f5_2 * (int64_t) f9_38;
-	  int64_t f6f6_19 = f6 * (int64_t) f6_19;
-	  int64_t f6f7_38 = f6 * (int64_t) f7_38;
-	  int64_t f6f8_38 = f6_2 * (int64_t) f8_19;
-	  int64_t f6f9_38 = f6 * (int64_t) f9_38;
-	  int64_t f7f7_38 = f7 * (int64_t) f7_38;
-	  int64_t f7f8_38 = f7_2 * (int64_t) f8_19;
-	  int64_t f7f9_76 = f7_2 * (int64_t) f9_38;
-	  int64_t f8f8_19 = f8 * (int64_t) f8_19;
-	  int64_t f8f9_38 = f8 * (int64_t) f9_38;
-	  int64_t f9f9_38 = f9 * (int64_t) f9_38;
-	  int64_t h0 = f0f0 + f1f9_76 + f2f8_38 + f3f7_76 + f4f6_38 + f5f5_38;
-	  int64_t h1 = f0f1_2 + f2f9_38 + f3f8_38 + f4f7_38 + f5f6_38;
-	  int64_t h2 = f0f2_2 + f1f1_2 + f3f9_76 + f4f8_38 + f5f7_76 + f6f6_19;
-	  int64_t h3 = f0f3_2 + f1f2_2 + f4f9_38 + f5f8_38 + f6f7_38;
-	  int64_t h4 = f0f4_2 + f1f3_4 + f2f2 + f5f9_76 + f6f8_38 + f7f7_38;
-	  int64_t h5 = f0f5_2 + f1f4_2 + f2f3_2 + f6f9_38 + f7f8_38;
-	  int64_t h6 = f0f6_2 + f1f5_4 + f2f4_2 + f3f3_2 + f7f9_76 + f8f8_19;
-	  int64_t h7 = f0f7_2 + f1f6_2 + f2f5_2 + f3f4_2 + f8f9_38;
-	  int64_t h8 = f0f8_2 + f1f7_4 + f2f6_2 + f3f5_4 + f4f4 + f9f9_38;
-	  int64_t h9 = f0f9_2 + f1f8_2 + f2f7_2 + f3f6_2 + f4f5_2;
-	  int64_t carry0 = new int64_t();
-	  int64_t carry1 = new int64_t();
-	  int64_t carry2 = new int64_t();
-	  int64_t carry3 = new int64_t();
-	  int64_t carry4 = new int64_t();
-	  int64_t carry5 = new int64_t();
-	  int64_t carry6 = new int64_t();
-	  int64_t carry7 = new int64_t();
-	  int64_t carry8 = new int64_t();
-	  int64_t carry9 = new int64_t();
+	  int f0 = f[0];
+	  int f1 = f[1];
+	  int f2 = f[2];
+	  int f3 = f[3];
+	  int f4 = f[4];
+	  int f5 = f[5];
+	  int f6 = f[6];
+	  int f7 = f[7];
+	  int f8 = f[8];
+	  int f9 = f[9];
+	  int f0_2 = 2 * f0;
+	  int f1_2 = 2 * f1;
+	  int f2_2 = 2 * f2;
+	  int f3_2 = 2 * f3;
+	  int f4_2 = 2 * f4;
+	  int f5_2 = 2 * f5;
+	  int f6_2 = 2 * f6;
+	  int f7_2 = 2 * f7;
+	  int f5_38 = 38 * f5; // 1.959375*2^30
+	  int f6_19 = 19 * f6; // 1.959375*2^30
+	  int f7_38 = 38 * f7; // 1.959375*2^30
+	  int f8_19 = 19 * f8; // 1.959375*2^30
+	  int f9_38 = 38 * f9; // 1.959375*2^30
+	  long f0f0 = f0 * (long) f0;
+	  long f0f1_2 = f0_2 * (long) f1;
+	  long f0f2_2 = f0_2 * (long) f2;
+	  long f0f3_2 = f0_2 * (long) f3;
+	  long f0f4_2 = f0_2 * (long) f4;
+	  long f0f5_2 = f0_2 * (long) f5;
+	  long f0f6_2 = f0_2 * (long) f6;
+	  long f0f7_2 = f0_2 * (long) f7;
+	  long f0f8_2 = f0_2 * (long) f8;
+	  long f0f9_2 = f0_2 * (long) f9;
+	  long f1f1_2 = f1_2 * (long) f1;
+	  long f1f2_2 = f1_2 * (long) f2;
+	  long f1f3_4 = f1_2 * (long) f3_2;
+	  long f1f4_2 = f1_2 * (long) f4;
+	  long f1f5_4 = f1_2 * (long) f5_2;
+	  long f1f6_2 = f1_2 * (long) f6;
+	  long f1f7_4 = f1_2 * (long) f7_2;
+	  long f1f8_2 = f1_2 * (long) f8;
+	  long f1f9_76 = f1_2 * (long) f9_38;
+	  long f2f2 = f2 * (long) f2;
+	  long f2f3_2 = f2_2 * (long) f3;
+	  long f2f4_2 = f2_2 * (long) f4;
+	  long f2f5_2 = f2_2 * (long) f5;
+	  long f2f6_2 = f2_2 * (long) f6;
+	  long f2f7_2 = f2_2 * (long) f7;
+	  long f2f8_38 = f2_2 * (long) f8_19;
+	  long f2f9_38 = f2 * (long) f9_38;
+	  long f3f3_2 = f3_2 * (long) f3;
+	  long f3f4_2 = f3_2 * (long) f4;
+	  long f3f5_4 = f3_2 * (long) f5_2;
+	  long f3f6_2 = f3_2 * (long) f6;
+	  long f3f7_76 = f3_2 * (long) f7_38;
+	  long f3f8_38 = f3_2 * (long) f8_19;
+	  long f3f9_76 = f3_2 * (long) f9_38;
+	  long f4f4 = f4 * (long) f4;
+	  long f4f5_2 = f4_2 * (long) f5;
+	  long f4f6_38 = f4_2 * (long) f6_19;
+	  long f4f7_38 = f4 * (long) f7_38;
+	  long f4f8_38 = f4_2 * (long) f8_19;
+	  long f4f9_38 = f4 * (long) f9_38;
+	  long f5f5_38 = f5 * (long) f5_38;
+	  long f5f6_38 = f5_2 * (long) f6_19;
+	  long f5f7_76 = f5_2 * (long) f7_38;
+	  long f5f8_38 = f5_2 * (long) f8_19;
+	  long f5f9_76 = f5_2 * (long) f9_38;
+	  long f6f6_19 = f6 * (long) f6_19;
+	  long f6f7_38 = f6 * (long) f7_38;
+	  long f6f8_38 = f6_2 * (long) f8_19;
+	  long f6f9_38 = f6 * (long) f9_38;
+	  long f7f7_38 = f7 * (long) f7_38;
+	  long f7f8_38 = f7_2 * (long) f8_19;
+	  long f7f9_76 = f7_2 * (long) f9_38;
+	  long f8f8_19 = f8 * (long) f8_19;
+	  long f8f9_38 = f8 * (long) f9_38;
+	  long f9f9_38 = f9 * (long) f9_38;
+	  long h0 = f0f0 + f1f9_76 + f2f8_38 + f3f7_76 + f4f6_38 + f5f5_38;
+	  long h1 = f0f1_2 + f2f9_38 + f3f8_38 + f4f7_38 + f5f6_38;
+	  long h2 = f0f2_2 + f1f1_2 + f3f9_76 + f4f8_38 + f5f7_76 + f6f6_19;
+	  long h3 = f0f3_2 + f1f2_2 + f4f9_38 + f5f8_38 + f6f7_38;
+	  long h4 = f0f4_2 + f1f3_4 + f2f2 + f5f9_76 + f6f8_38 + f7f7_38;
+	  long h5 = f0f5_2 + f1f4_2 + f2f3_2 + f6f9_38 + f7f8_38;
+	  long h6 = f0f6_2 + f1f5_4 + f2f4_2 + f3f3_2 + f7f9_76 + f8f8_19;
+	  long h7 = f0f7_2 + f1f6_2 + f2f5_2 + f3f4_2 + f8f9_38;
+	  long h8 = f0f8_2 + f1f7_4 + f2f6_2 + f3f5_4 + f4f4 + f9f9_38;
+	  long h9 = f0f9_2 + f1f8_2 + f2f7_2 + f3f6_2 + f4f5_2;
+	  long carry0 = new long();
+	  long carry1 = new long();
+	  long carry2 = new long();
+	  long carry3 = new long();
+	  long carry4 = new long();
+	  long carry5 = new long();
+	  long carry6 = new long();
+	  long carry7 = new long();
+	  long carry8 = new long();
+	  long carry9 = new long();
 
 	  h0 += h0;
 	  h1 += h1;
@@ -4850,59 +4850,59 @@ r = 2 * p
 	  h8 += h8;
 	  h9 += h9;
 
-	  carry0 = (h0 + (int64_t)(1 << 25)) >> 26;
+	  carry0 = (h0 + (long)(1 << 25)) >> 26;
 	  h1 += carry0;
 	  h0 -= carry0 << 26;
-	  carry4 = (h4 + (int64_t)(1 << 25)) >> 26;
+	  carry4 = (h4 + (long)(1 << 25)) >> 26;
 	  h5 += carry4;
 	  h4 -= carry4 << 26;
 
-	  carry1 = (h1 + (int64_t)(1 << 24)) >> 25;
+	  carry1 = (h1 + (long)(1 << 24)) >> 25;
 	  h2 += carry1;
 	  h1 -= carry1 << 25;
-	  carry5 = (h5 + (int64_t)(1 << 24)) >> 25;
+	  carry5 = (h5 + (long)(1 << 24)) >> 25;
 	  h6 += carry5;
 	  h5 -= carry5 << 25;
 
-	  carry2 = (h2 + (int64_t)(1 << 25)) >> 26;
+	  carry2 = (h2 + (long)(1 << 25)) >> 26;
 	  h3 += carry2;
 	  h2 -= carry2 << 26;
-	  carry6 = (h6 + (int64_t)(1 << 25)) >> 26;
+	  carry6 = (h6 + (long)(1 << 25)) >> 26;
 	  h7 += carry6;
 	  h6 -= carry6 << 26;
 
-	  carry3 = (h3 + (int64_t)(1 << 24)) >> 25;
+	  carry3 = (h3 + (long)(1 << 24)) >> 25;
 	  h4 += carry3;
 	  h3 -= carry3 << 25;
-	  carry7 = (h7 + (int64_t)(1 << 24)) >> 25;
+	  carry7 = (h7 + (long)(1 << 24)) >> 25;
 	  h8 += carry7;
 	  h7 -= carry7 << 25;
 
-	  carry4 = (h4 + (int64_t)(1 << 25)) >> 26;
+	  carry4 = (h4 + (long)(1 << 25)) >> 26;
 	  h5 += carry4;
 	  h4 -= carry4 << 26;
-	  carry8 = (h8 + (int64_t)(1 << 25)) >> 26;
+	  carry8 = (h8 + (long)(1 << 25)) >> 26;
 	  h9 += carry8;
 	  h8 -= carry8 << 26;
 
-	  carry9 = (h9 + (int64_t)(1 << 24)) >> 25;
+	  carry9 = (h9 + (long)(1 << 24)) >> 25;
 	  h0 += carry9 * 19;
 	  h9 -= carry9 << 25;
 
-	  carry0 = (h0 + (int64_t)(1 << 25)) >> 26;
+	  carry0 = (h0 + (long)(1 << 25)) >> 26;
 	  h1 += carry0;
 	  h0 -= carry0 << 26;
 
-	  h[0] = (int32_t) h0;
-	  h[1] = (int32_t) h1;
-	  h[2] = (int32_t) h2;
-	  h[3] = (int32_t) h3;
-	  h[4] = (int32_t) h4;
-	  h[5] = (int32_t) h5;
-	  h[6] = (int32_t) h6;
-	  h[7] = (int32_t) h7;
-	  h[8] = (int32_t) h8;
-	  h[9] = (int32_t) h9;
+	  h[0] = (int) h0;
+	  h[1] = (int) h1;
+	  h[2] = (int) h2;
+	  h[3] = (int) h3;
+	  h[4] = (int) h4;
+	  h[5] = (int) h5;
+	  h[6] = (int) h6;
+	  h[7] = (int) h7;
+	  h[8] = (int) h8;
+	  h[9] = (int) h9;
 	}
 
 	/* From fe_sub.c */
@@ -4919,38 +4919,38 @@ r = 2 * p
 	   |h| bounded by 1.1*2^26,1.1*2^25,1.1*2^26,1.1*2^25,etc.
 	*/
 
-	internal static void fe_sub(int32_t[] h, int32_t[] f, int32_t[] g)
+	internal static void fe_sub(int[] h, int[] f, int[] g)
 	{
-	  int32_t f0 = f[0];
-	  int32_t f1 = f[1];
-	  int32_t f2 = f[2];
-	  int32_t f3 = f[3];
-	  int32_t f4 = f[4];
-	  int32_t f5 = f[5];
-	  int32_t f6 = f[6];
-	  int32_t f7 = f[7];
-	  int32_t f8 = f[8];
-	  int32_t f9 = f[9];
-	  int32_t g0 = g[0];
-	  int32_t g1 = g[1];
-	  int32_t g2 = g[2];
-	  int32_t g3 = g[3];
-	  int32_t g4 = g[4];
-	  int32_t g5 = g[5];
-	  int32_t g6 = g[6];
-	  int32_t g7 = g[7];
-	  int32_t g8 = g[8];
-	  int32_t g9 = g[9];
-	  int32_t h0 = f0 - g0;
-	  int32_t h1 = f1 - g1;
-	  int32_t h2 = f2 - g2;
-	  int32_t h3 = f3 - g3;
-	  int32_t h4 = f4 - g4;
-	  int32_t h5 = f5 - g5;
-	  int32_t h6 = f6 - g6;
-	  int32_t h7 = f7 - g7;
-	  int32_t h8 = f8 - g8;
-	  int32_t h9 = f9 - g9;
+	  int f0 = f[0];
+	  int f1 = f[1];
+	  int f2 = f[2];
+	  int f3 = f[3];
+	  int f4 = f[4];
+	  int f5 = f[5];
+	  int f6 = f[6];
+	  int f7 = f[7];
+	  int f8 = f[8];
+	  int f9 = f[9];
+	  int g0 = g[0];
+	  int g1 = g[1];
+	  int g2 = g[2];
+	  int g3 = g[3];
+	  int g4 = g[4];
+	  int g5 = g[5];
+	  int g6 = g[6];
+	  int g7 = g[7];
+	  int g8 = g[8];
+	  int g9 = g[9];
+	  int h0 = f0 - g0;
+	  int h1 = f1 - g1;
+	  int h2 = f2 - g2;
+	  int h3 = f3 - g3;
+	  int h4 = f4 - g4;
+	  int h5 = f5 - g5;
+	  int h6 = f6 - g6;
+	  int h7 = f7 - g7;
+	  int h8 = f8 - g8;
+	  int h9 = f9 - g9;
 	  h[0] = h0;
 	  h[1] = h1;
 	  h[2] = h2;
@@ -5038,7 +5038,7 @@ r = 2 * p
 	  byte ub = b;
 	  byte uc = c;
 	  byte x = ub ^ uc; // 0: yes; 1..255: no
-	  uint32_t y = x; // 0: yes; 1..255: no
+	  uint y = x; // 0: yes; 1..255: no
 	  y -= 1; // 4294967295: yes; 0..254: no
 	  y >>= 31; // 1: yes; 0: no
 	  return y;
@@ -5096,7 +5096,7 @@ r = 2 * p
 	}
 
 	/* Assumes that a != INT64_MIN */
-	internal static int64_t signum(int64_t a)
+	internal static long signum(long a)
 	{
 	  return (a >> 63) - ((-a) >> 63);
 	}
@@ -5122,9 +5122,9 @@ r = 2 * p
 
 	/* sqrt(x) is such an integer y that 0 <= y <= p - 1, y % 2 = 0, and y^2 = x (mod p). */
 	/* d = -121665 / 121666 */
-	public static readonly int32_t[] fe_d = {-10913610, 13857413, -15372611, 6949391, 114729, -8787816, -6275908, -3247719, -18696448, -12055116}; // d
-	public static readonly int32_t[] fe_sqrtm1 = {-32595792, -7943725, 9377950, 3500415, 12389472, -272473, -25146209, -2005654, 326686, 11406482}; // sqrt(-1)
-	public static readonly int32_t[] fe_d2 = {-21827239, -5839606, -30745221, 13898782, 229458, 15978800, -12551817, -6495438, 29715968, 9444199}; // 2 * d
+	public static readonly int[] fe_d = {-10913610, 13857413, -15372611, 6949391, 114729, -8787816, -6275908, -3247719, -18696448, -12055116}; // d
+	public static readonly int[] fe_sqrtm1 = {-32595792, -7943725, 9377950, 3500415, 12389472, -272473, -25146209, -2005654, 326686, 11406482}; // sqrt(-1)
+	public static readonly int[] fe_d2 = {-21827239, -5839606, -30745221, 13898782, 229458, 15978800, -12551817, -6495438, 29715968, 9444199}; // 2 * d
 
 	/* base[i][j] = (j+1)*256^i*B */
 	public static readonly ge_precomp[,] ge_base =
@@ -6520,12 +6520,12 @@ r = 2 * p
 	};
 
 	/* A = 2 * (1 - d) / (1 + d) = 486662 */
-	public static readonly int32_t[] fe_ma2 = {-12721188, -3529, 0, 0, 0, 0, 0, 0, 0, 0}; // -A^2
-	public static readonly int32_t[] fe_ma = {-486662, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // -A
-	public static readonly int32_t[] fe_fffb1 = {-31702527, -2466483, -26106795, -12203692, -12169197, -321052, 14850977, -10296299, -16929438, -407568}; // sqrt(-2 * A * (A + 2))
-	public static readonly int32_t[] fe_fffb2 = {8166131, -6741800, -17040804, 3154616, 21461005, 1466302, -30876704, -6368709, 10503587, -13363080}; // sqrt(2 * A * (A + 2))
-	public static readonly int32_t[] fe_fffb3 = {-13620103, 14639558, 4532995, 7679154, 16815101, -15883539, -22863840, -14813421, 13716513, -6477756}; // sqrt(-sqrt(-1) * A * (A + 2))
-	public static readonly int32_t[] fe_fffb4 = {-21786234, -12173074, 21573800, 4524538, -4645904, 16204591, 8012863, -8444712, 3212926, 6885324}; // sqrt(sqrt(-1) * A * (A + 2))
+	public static readonly int[] fe_ma2 = {-12721188, -3529, 0, 0, 0, 0, 0, 0, 0, 0}; // -A^2
+	public static readonly int[] fe_ma = {-486662, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // -A
+	public static readonly int[] fe_fffb1 = {-31702527, -2466483, -26106795, -12203692, -12169197, -321052, 14850977, -10296299, -16929438, -407568}; // sqrt(-2 * A * (A + 2))
+	public static readonly int[] fe_fffb2 = {8166131, -6741800, -17040804, 3154616, 21461005, 1466302, -30876704, -6368709, 10503587, -13363080}; // sqrt(2 * A * (A + 2))
+	public static readonly int[] fe_fffb3 = {-13620103, 14639558, 4532995, 7679154, 16815101, -15883539, -22863840, -14813421, 13716513, -6477756}; // sqrt(-sqrt(-1) * A * (A + 2))
+	public static readonly int[] fe_fffb4 = {-21786234, -12173074, 21573800, 4524538, -4645904, 16204591, 8012863, -8444712, 3212926, 6885324}; // sqrt(sqrt(-1) * A * (A + 2))
 
 
 /* hash bit sequence */
@@ -6559,13 +6559,13 @@ r = 2 * p
 
 
 
-	public static readonly uint8_t[,] shift_Values =
+	public static readonly ushort[,] shift_Values =
 	{
 		{0, 1, 2, 3, 4, 5, 6, 7},
 		{1, 3, 5, 7, 0, 2, 4, 6}
 	};
 
-	public static readonly uint8_t[] indices_cyclic = {0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6};
+	public static readonly ushort[] indices_cyclic = {0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6};
 
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -6573,18 +6573,18 @@ r = 2 * p
 
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define COLUMN(x,y,i,c0,c1,c2,c3,c4,c5,c6,c7,tv1,tv2,tu,tl,t) tu = T[2*(uint32_t)x[4*c0+0]]; tl = T[2*(uint32_t)x[4*c0+0]+1]; tv1 = T[2*(uint32_t)x[4*c1+1]]; tv2 = T[2*(uint32_t)x[4*c1+1]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,1,t) tu ^= tv1; tl ^= tv2; tv1 = T[2*(uint32_t)x[4*c2+2]]; tv2 = T[2*(uint32_t)x[4*c2+2]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,2,t) tu ^= tv1; tl ^= tv2; tv1 = T[2*(uint32_t)x[4*c3+3]]; tv2 = T[2*(uint32_t)x[4*c3+3]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,3,t) tu ^= tv1; tl ^= tv2; tl ^= T[2*(uint32_t)x[4*c4+0]]; tu ^= T[2*(uint32_t)x[4*c4+0]+1]; tv1 = T[2*(uint32_t)x[4*c5+1]]; tv2 = T[2*(uint32_t)x[4*c5+1]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,1,t) tl ^= tv1; tu ^= tv2; tv1 = T[2*(uint32_t)x[4*c6+2]]; tv2 = T[2*(uint32_t)x[4*c6+2]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,2,t) tl ^= tv1; tu ^= tv2; tv1 = T[2*(uint32_t)x[4*c7+3]]; tv2 = T[2*(uint32_t)x[4*c7+3]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,3,t) tl ^= tv1; tu ^= tv2; y[i] = tu; y[i+1] = tl;
+	//ORIGINAL LINE: #define COLUMN(x,y,i,c0,c1,c2,c3,c4,c5,c6,c7,tv1,tv2,tu,tl,t) tu = T[2*(uint)x[4*c0+0]]; tl = T[2*(uint)x[4*c0+0]+1]; tv1 = T[2*(uint)x[4*c1+1]]; tv2 = T[2*(uint)x[4*c1+1]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,1,t) tu ^= tv1; tl ^= tv2; tv1 = T[2*(uint)x[4*c2+2]]; tv2 = T[2*(uint)x[4*c2+2]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,2,t) tu ^= tv1; tl ^= tv2; tv1 = T[2*(uint)x[4*c3+3]]; tv2 = T[2*(uint)x[4*c3+3]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,3,t) tu ^= tv1; tl ^= tv2; tl ^= T[2*(uint)x[4*c4+0]]; tu ^= T[2*(uint)x[4*c4+0]+1]; tv1 = T[2*(uint)x[4*c5+1]]; tv2 = T[2*(uint)x[4*c5+1]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,1,t) tl ^= tv1; tu ^= tv2; tv1 = T[2*(uint)x[4*c6+2]]; tv2 = T[2*(uint)x[4*c6+2]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,2,t) tl ^= tv1; tu ^= tv2; tv1 = T[2*(uint)x[4*c7+3]]; tv2 = T[2*(uint)x[4*c7+3]+1]; ROTATE_COLUMN_DOWN(tv1,tv2,3,t) tl ^= tv1; tu ^= tv2; y[i] = tu; y[i+1] = tl;
 
 
 	/* compute one round of P (short variants) */
-	internal static void RND512P(uint8_t[] x, uint32_t[] y, uint32_t r)
+	internal static void RND512P(ushort[] x, uint[] y, uint r)
 	{
-	  uint32_t temp_v1 = new uint32_t();
-	  uint32_t temp_v2 = new uint32_t();
-	  uint32_t temp_upper_value = new uint32_t();
-	  uint32_t temp_lower_value = new uint32_t();
-	  uint32_t temp = new uint32_t();
-	  uint32_t[] x32 = (uint32_t)x;
+	  uint temp_v1 = new uint();
+	  uint temp_v2 = new uint();
+	  uint temp_upper_value = new uint();
+	  uint temp_lower_value = new uint();
+	  uint temp = new uint();
+	  uint[] x32 = (uint)x;
 	  x32[0] ^= 0x00000000 ^ r;
 	  x32[2] ^= 0x00000010 ^ r;
 	  x32[4] ^= 0x00000020 ^ r;
@@ -6594,17 +6594,17 @@ r = 2 * p
 	  x32[12] ^= 0x00000060 ^ r;
 	  x32[14] ^= 0x00000070 ^ r;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *0+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *0+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 0 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *0+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *0+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 0 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *2+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *2+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 2 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *2+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *2+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 2 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -6615,11 +6615,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *4+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *4+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 4 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *4+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *4+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 4 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -6630,11 +6630,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *6+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *6+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 6 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *6+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *6+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 6 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -6644,14 +6644,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 9 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 9 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 9 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 9 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *11+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *11+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 11 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *11+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *11+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 11 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -6662,11 +6662,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *13+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *13+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 13 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *13+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *13+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 13 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -6677,11 +6677,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *15+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *15+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 15 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *15+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *15+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 15 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -6694,17 +6694,17 @@ r = 2 * p
 	  y[0] = temp_upper_value;
 	  y[0 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *2+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *2+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 2 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *2+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *2+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 2 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *4+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *4+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 4 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *4+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *4+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 4 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -6715,11 +6715,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *6+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *6+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 6 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *6+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *6+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 6 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -6730,11 +6730,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *8+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *8+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 8 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *8+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *8+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 8 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -6744,14 +6744,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 11 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 11 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 11 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 11 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *13+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *13+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 13 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *13+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *13+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 13 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -6762,11 +6762,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *15+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *15+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 15 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *15+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *15+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 15 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -6777,11 +6777,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *1+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *1+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 1 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *1+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *1+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 1 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -6794,17 +6794,17 @@ r = 2 * p
 	  y[2] = temp_upper_value;
 	  y[2 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *4+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *4+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 4 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *4+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *4+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 4 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *6+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *6+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 6 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *6+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *6+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 6 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -6815,11 +6815,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *8+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *8+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 8 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *8+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *8+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 8 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -6830,11 +6830,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *10+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *10+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 10 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *10+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *10+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 10 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -6844,14 +6844,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 13 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 13 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 13 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 13 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *15+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *15+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 15 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *15+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *15+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 15 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -6862,11 +6862,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *1+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *1+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 1 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *1+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *1+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 1 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -6877,11 +6877,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *3+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *3+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 3 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *3+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *3+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 3 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -6894,17 +6894,17 @@ r = 2 * p
 	  y[4] = temp_upper_value;
 	  y[4 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *6+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *6+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 6 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *6+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *6+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 6 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *8+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *8+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 8 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *8+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *8+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 8 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -6915,11 +6915,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *10+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *10+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 10 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *10+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *10+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 10 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -6930,11 +6930,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *12+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *12+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 12 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *12+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *12+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 12 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -6944,14 +6944,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 15 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 15 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 15 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 15 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *1+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *1+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 1 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *1+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *1+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 1 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -6962,11 +6962,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *3+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *3+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 3 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *3+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *3+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 3 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -6977,11 +6977,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *5+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *5+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 5 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *5+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *5+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 5 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -6994,17 +6994,17 @@ r = 2 * p
 	  y[6] = temp_upper_value;
 	  y[6 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *8+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *8+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 8 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *8+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *8+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 8 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *10+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *10+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 10 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *10+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *10+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 10 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7015,11 +7015,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *12+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *12+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 12 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *12+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *12+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 12 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7030,11 +7030,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *14+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *14+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 14 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *14+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *14+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 14 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7044,14 +7044,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 1 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 1 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 1 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 1 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *3+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *3+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 3 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *3+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *3+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 3 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7062,11 +7062,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *5+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *5+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 5 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *5+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *5+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 5 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7077,11 +7077,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *7+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *7+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 7 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *7+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *7+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 7 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7094,17 +7094,17 @@ r = 2 * p
 	  y[8] = temp_upper_value;
 	  y[8 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *10+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *10+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 10 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *10+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *10+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 10 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *12+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *12+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 12 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *12+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *12+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 12 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7115,11 +7115,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *14+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *14+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 14 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *14+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *14+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 14 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7130,11 +7130,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *0+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *0+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 0 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *0+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *0+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 0 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7144,14 +7144,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 3 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 3 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 3 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 3 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *5+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *5+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 5 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *5+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *5+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 5 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7162,11 +7162,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *7+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *7+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 7 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *7+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *7+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 7 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7177,11 +7177,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *9+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *9+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 9 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *9+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *9+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 9 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7194,17 +7194,17 @@ r = 2 * p
 	  y[10] = temp_upper_value;
 	  y[10 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *12+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *12+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 12 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *12+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *12+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 12 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *14+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *14+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 14 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *14+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *14+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 14 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7215,11 +7215,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *0+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *0+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 0 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *0+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *0+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 0 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7230,11 +7230,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *2+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *2+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 2 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *2+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *2+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 2 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7244,14 +7244,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 5 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 5 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 5 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 5 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *7+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *7+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 7 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *7+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *7+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 7 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7262,11 +7262,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *9+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *9+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 9 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *9+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *9+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 9 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7277,11 +7277,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *11+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *11+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 11 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *11+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *11+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 11 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7294,17 +7294,17 @@ r = 2 * p
 	  y[12] = temp_upper_value;
 	  y[12 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *14+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *14+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 14 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *14+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *14+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 14 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *0+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *0+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 0 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *0+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *0+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 0 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7315,11 +7315,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *2+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *2+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 2 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *2+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *2+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 2 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7330,11 +7330,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *4+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *4+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 4 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *4+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *4+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 4 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7344,14 +7344,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 7 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 7 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 7 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 7 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *9+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *9+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 9 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *9+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *9+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 9 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7362,11 +7362,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *11+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *11+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 11 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *11+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *11+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 11 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7377,11 +7377,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *13+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *13+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 13 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *13+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *13+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 13 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7396,14 +7396,14 @@ r = 2 * p
 	}
 
 	/* compute one round of Q (short variants) */
-	internal static void RND512Q(uint8_t[] x, uint32_t[] y, uint32_t r)
+	internal static void RND512Q(ushort[] x, uint[] y, uint r)
 	{
-	  uint32_t temp_v1 = new uint32_t();
-	  uint32_t temp_v2 = new uint32_t();
-	  uint32_t temp_upper_value = new uint32_t();
-	  uint32_t temp_lower_value = new uint32_t();
-	  uint32_t temp = new uint32_t();
-	  uint32_t[] x32 = (uint32_t)x;
+	  uint temp_v1 = new uint();
+	  uint temp_v2 = new uint();
+	  uint temp_upper_value = new uint();
+	  uint temp_lower_value = new uint();
+	  uint temp = new uint();
+	  uint[] x32 = (uint)x;
 	  x32[0] = ~x32[0];
 	  x32[1] ^= 0xffffffff ^ r;
 	  x32[2] = ~x32[2];
@@ -7421,17 +7421,17 @@ r = 2 * p
 	  x32[14] = ~x32[14];
 	  x32[15] ^= 0x8fffffff ^ r;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *2+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *2+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 2 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *2+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *2+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 2 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *6+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *6+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 6 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *6+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *6+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 6 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7442,11 +7442,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *10+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *10+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 10 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *10+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *10+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 10 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7457,11 +7457,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *14+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *14+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 14 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *14+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *14+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 14 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7471,14 +7471,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 1 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 1 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 1 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 1 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *5+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *5+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 5 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *5+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *5+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 5 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7489,11 +7489,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *9+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *9+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 9 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *9+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *9+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 9 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7504,11 +7504,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *13+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *13+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 13 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *13+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *13+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 13 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7521,17 +7521,17 @@ r = 2 * p
 	  y[0] = temp_upper_value;
 	  y[0 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *4+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *4+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 4 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *4+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *4+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 4 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *8+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *8+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 8 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *8+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *8+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 8 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7542,11 +7542,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *12+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *12+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 12 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *12+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *12+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 12 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7557,11 +7557,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *0+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *0+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 0 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *0+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *0+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 0 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7571,14 +7571,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 3 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 3 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 3 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 3 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *7+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *7+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 7 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *7+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *7+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 7 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7589,11 +7589,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *11+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *11+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 11 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *11+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *11+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 11 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7604,11 +7604,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *15+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *15+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 15 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *15+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *15+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 15 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7621,17 +7621,17 @@ r = 2 * p
 	  y[2] = temp_upper_value;
 	  y[2 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *6+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *6+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 6 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *6+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *6+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 6 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *10+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *10+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 10 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *10+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *10+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 10 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7642,11 +7642,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *14+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *14+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 14 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *14+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *14+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 14 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7657,11 +7657,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *2+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *2+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 2 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *2+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *2+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 2 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7671,14 +7671,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 5 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 5 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 5 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 5 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *9+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *9+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 9 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *9+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *9+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 9 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7689,11 +7689,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *13+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *13+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 13 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *13+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *13+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 13 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7704,11 +7704,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *1+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *1+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 1 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *1+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *1+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 1 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7721,17 +7721,17 @@ r = 2 * p
 	  y[4] = temp_upper_value;
 	  y[4 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *8+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *8+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 8 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *8+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *8+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 8 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *12+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *12+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 12 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *12+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *12+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 12 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7742,11 +7742,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *0+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *0+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 0 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *0+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *0+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 0 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7757,11 +7757,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *4+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *4+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 4 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *4+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *4+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 4 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7771,14 +7771,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 7 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 7 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 7 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 7 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *11+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *11+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 11 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *11+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *11+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 11 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7789,11 +7789,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *15+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *15+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 15 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *15+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *15+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 15 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7804,11 +7804,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *3+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *3+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 3 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *3+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *3+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 3 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7821,17 +7821,17 @@ r = 2 * p
 	  y[6] = temp_upper_value;
 	  y[6 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *10+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *10+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 10 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *10+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *10+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 10 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *14+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *14+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 14 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *14+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *14+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 14 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7842,11 +7842,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *2+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *2+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 2 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *2+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *2+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 2 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7857,11 +7857,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *6+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *6+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 6 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *6+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *6+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 6 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7871,14 +7871,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 9 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 9 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 9 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 9 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *13+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *13+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 13 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *13+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 13 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *13+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 13 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7889,11 +7889,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *1+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *1+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 1 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *1+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *1+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 1 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7904,11 +7904,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *5+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *5+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 5 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *5+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *5+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 5 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7921,17 +7921,17 @@ r = 2 * p
 	  y[8] = temp_upper_value;
 	  y[8 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *12+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *12+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 12 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *12+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *12+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 12 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *0+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *0+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 0 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *0+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *0+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 0 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7942,11 +7942,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *4+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *4+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 4 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *4+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *4+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 4 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -7957,11 +7957,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *8+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *8+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 8 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *8+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *8+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 8 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -7971,14 +7971,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 11 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 11 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 11 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 11 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *15+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *15+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 15 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *15+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 15 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *15+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 15 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -7989,11 +7989,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *3+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *3+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 3 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *3+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *3+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 3 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -8004,11 +8004,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *7+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *7+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 7 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *7+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *7+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 7 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -8021,17 +8021,17 @@ r = 2 * p
 	  y[10] = temp_upper_value;
 	  y[10 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *14+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *14+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 14 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *14+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 14 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *14+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 14 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *2+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *2+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 2 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *2+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 2 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *2+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 2 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -8042,11 +8042,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *6+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *6+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 6 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *6+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 6 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *6+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 6 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -8057,11 +8057,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *10+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *10+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 10 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *10+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 10 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *10+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 10 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -8071,14 +8071,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 13 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 13 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 13 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 13 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *1+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *1+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 1 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *1+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 1 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *1+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 1 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -8089,11 +8089,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *5+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *5+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 5 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *5+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 5 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *5+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 5 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -8104,11 +8104,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *9+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *9+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 9 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *9+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 9 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *9+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 9 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -8121,17 +8121,17 @@ r = 2 * p
 	  y[12] = temp_upper_value;
 	  y[12 + 1] = temp_lower_value;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_upper_value = T[2*(uint32_t)x[4 *0+0]];
-	  temp_upper_value.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 0]]);
+//ORIGINAL LINE: temp_upper_value = T[2*(uint)x[4 *0+0]];
+	  temp_upper_value.CopyFrom(T[2 * (uint)x[4 * 0 + 0]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_lower_value = T[2*(uint32_t)x[4 *0+0]+1];
-	  temp_lower_value.CopyFrom(T[2 * (uint32_t)x[4 * 0 + 0] + 1]);
+//ORIGINAL LINE: temp_lower_value = T[2*(uint)x[4 *0+0]+1];
+	  temp_lower_value.CopyFrom(T[2 * (uint)x[4 * 0 + 0] + 1]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *4+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *4+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 4 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *4+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 4 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *4+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 4 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -8142,11 +8142,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *8+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *8+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 8 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *8+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 8 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *8+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 8 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -8157,11 +8157,11 @@ r = 2 * p
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *12+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *12+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 12 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *12+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 12 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *12+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 12 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -8171,14 +8171,14 @@ r = 2 * p
 	  }
 	  temp_upper_value ^= temp_v1;
 	  temp_lower_value ^= temp_v2;
-	  temp_lower_value ^= T[2 * (uint32_t)x[4 * 15 + 0]];
-	  temp_upper_value ^= T[2 * (uint32_t)x[4 * 15 + 0] + 1];
+	  temp_lower_value ^= T[2 * (uint)x[4 * 15 + 0]];
+	  temp_upper_value ^= T[2 * (uint)x[4 * 15 + 0] + 1];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *3+1]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 1]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *3+1]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 3 + 1]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *3+1]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 3 + 1] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *3+1]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 3 + 1] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 1)) | (temp_v2>>(8 * (4 - 1)));
 		  temp_v2 = (temp_v2 << (8 * 1)) | (temp_v1>>(8 * (4 - 1)));
@@ -8189,11 +8189,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *7+2]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 2]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *7+2]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 7 + 2]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *7+2]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 7 + 2] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *7+2]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 7 + 2] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 2)) | (temp_v2>>(8 * (4 - 2)));
 		  temp_v2 = (temp_v2 << (8 * 2)) | (temp_v1>>(8 * (4 - 2)));
@@ -8204,11 +8204,11 @@ r = 2 * p
 	  temp_lower_value ^= temp_v1;
 	  temp_upper_value ^= temp_v2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v1 = T[2*(uint32_t)x[4 *11+3]];
-	  temp_v1.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 3]]);
+//ORIGINAL LINE: temp_v1 = T[2*(uint)x[4 *11+3]];
+	  temp_v1.CopyFrom(T[2 * (uint)x[4 * 11 + 3]]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: temp_v2 = T[2*(uint32_t)x[4 *11+3]+1];
-	  temp_v2.CopyFrom(T[2 * (uint32_t)x[4 * 11 + 3] + 1]);
+//ORIGINAL LINE: temp_v2 = T[2*(uint)x[4 *11+3]+1];
+	  temp_v2.CopyFrom(T[2 * (uint)x[4 * 11 + 3] + 1]);
 	  {
 		  temp = (temp_v1 << (8 * 3)) | (temp_v2>>(8 * (4 - 3)));
 		  temp_v2 = (temp_v2 << (8 * 3)) | (temp_v1>>(8 * (4 - 3)));
@@ -8223,13 +8223,13 @@ r = 2 * p
 	}
 
 	/* compute compression function (short variants) */
-	internal static void F512(uint32_t[] h, uint32_t[] m)
+	internal static void F512(uint[] h, uint[] m)
 	{
 	  int i;
-	  uint32_t[] Ptmp = Arrays.InitializeWithDefaultInstances<uint32_t>(2 * DefineConstants.COLS512);
-	  uint32_t[] Qtmp = Arrays.InitializeWithDefaultInstances<uint32_t>(2 * DefineConstants.COLS512);
-	  uint32_t[] y = Arrays.InitializeWithDefaultInstances<uint32_t>(2 * DefineConstants.COLS512);
-	  uint32_t[] z = Arrays.InitializeWithDefaultInstances<uint32_t>(2 * DefineConstants.COLS512);
+	  uint[] Ptmp = Arrays.InitializeWithDefaultInstances<uint>(2 * DefineConstants.COLS512);
+	  uint[] Qtmp = Arrays.InitializeWithDefaultInstances<uint>(2 * DefineConstants.COLS512);
+	  uint[] y = Arrays.InitializeWithDefaultInstances<uint>(2 * DefineConstants.COLS512);
+	  uint[] z = Arrays.InitializeWithDefaultInstances<uint>(2 * DefineConstants.COLS512);
 
 	  for (i = 0; i < 2 * DefineConstants.COLS512; i++)
 	  {
@@ -8238,28 +8238,28 @@ r = 2 * p
 	  }
 
 	  /* compute Q(m) */
-	  RND512Q((uint8_t)z, y, 0x00000000);
-	  RND512Q((uint8_t)y, z, 0x01000000);
-	  RND512Q((uint8_t)z, y, 0x02000000);
-	  RND512Q((uint8_t)y, z, 0x03000000);
-	  RND512Q((uint8_t)z, y, 0x04000000);
-	  RND512Q((uint8_t)y, z, 0x05000000);
-	  RND512Q((uint8_t)z, y, 0x06000000);
-	  RND512Q((uint8_t)y, z, 0x07000000);
-	  RND512Q((uint8_t)z, y, 0x08000000);
-	  RND512Q((uint8_t)y, Qtmp, 0x09000000);
+	  RND512Q((ushort)z, y, 0x00000000);
+	  RND512Q((ushort)y, z, 0x01000000);
+	  RND512Q((ushort)z, y, 0x02000000);
+	  RND512Q((ushort)y, z, 0x03000000);
+	  RND512Q((ushort)z, y, 0x04000000);
+	  RND512Q((ushort)y, z, 0x05000000);
+	  RND512Q((ushort)z, y, 0x06000000);
+	  RND512Q((ushort)y, z, 0x07000000);
+	  RND512Q((ushort)z, y, 0x08000000);
+	  RND512Q((ushort)y, Qtmp, 0x09000000);
 
 	  /* compute P(h+m) */
-	  RND512P((uint8_t)Ptmp, y, 0x00000000);
-	  RND512P((uint8_t)y, z, 0x00000001);
-	  RND512P((uint8_t)z, y, 0x00000002);
-	  RND512P((uint8_t)y, z, 0x00000003);
-	  RND512P((uint8_t)z, y, 0x00000004);
-	  RND512P((uint8_t)y, z, 0x00000005);
-	  RND512P((uint8_t)z, y, 0x00000006);
-	  RND512P((uint8_t)y, z, 0x00000007);
-	  RND512P((uint8_t)z, y, 0x00000008);
-	  RND512P((uint8_t)y, Ptmp, 0x00000009);
+	  RND512P((ushort)Ptmp, y, 0x00000000);
+	  RND512P((ushort)y, z, 0x00000001);
+	  RND512P((ushort)z, y, 0x00000002);
+	  RND512P((ushort)y, z, 0x00000003);
+	  RND512P((ushort)z, y, 0x00000004);
+	  RND512P((ushort)y, z, 0x00000005);
+	  RND512P((ushort)z, y, 0x00000006);
+	  RND512P((ushort)y, z, 0x00000007);
+	  RND512P((ushort)z, y, 0x00000008);
+	  RND512P((ushort)y, Ptmp, 0x00000009);
 
 	  /* compute P(h+m) + Q(m) + h */
 	  for (i = 0; i < 2 * DefineConstants.COLS512; i++)
@@ -8271,13 +8271,13 @@ r = 2 * p
 
 	/* digest up to msglen bytes of input (full blocks only) */
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'input', so pointers on this parameter are left unchanged:
-	internal static void Transform(hashState ctx, uint8_t * input, int msglen)
+	internal static void Transform(hashState ctx, ushort * input, int msglen)
 	{
 
 	  /* digest message, one block at a time */
 	  for (; msglen >= (DefineConstants.ROWS * DefineConstants.COLS512); msglen -= (DefineConstants.ROWS * DefineConstants.COLS512), input += (DefineConstants.ROWS * DefineConstants.COLS512))
 	  {
-		F512(ctx.chaining, (uint32_t)input);
+		F512(ctx.chaining, (uint)input);
 
 		/* increment block counter */
 		ctx.block_counter1++;
@@ -8292,9 +8292,9 @@ r = 2 * p
 	internal static void OutputTransformation(hashState ctx)
 	{
 	  int j;
-	  uint32_t[] temp = Arrays.InitializeWithDefaultInstances<uint32_t>(2 * DefineConstants.COLS512);
-	  uint32_t[] y = Arrays.InitializeWithDefaultInstances<uint32_t>(2 * DefineConstants.COLS512);
-	  uint32_t[] z = Arrays.InitializeWithDefaultInstances<uint32_t>(2 * DefineConstants.COLS512);
+	  uint[] temp = Arrays.InitializeWithDefaultInstances<uint>(2 * DefineConstants.COLS512);
+	  uint[] y = Arrays.InitializeWithDefaultInstances<uint>(2 * DefineConstants.COLS512);
+	  uint[] z = Arrays.InitializeWithDefaultInstances<uint>(2 * DefineConstants.COLS512);
 
 
 
@@ -8302,16 +8302,16 @@ r = 2 * p
 		{
 		  temp[j] = ctx.chaining[j];
 		}
-		RND512P((uint8_t)temp, y, 0x00000000);
-		RND512P((uint8_t)y, z, 0x00000001);
-		RND512P((uint8_t)z, y, 0x00000002);
-		RND512P((uint8_t)y, z, 0x00000003);
-		RND512P((uint8_t)z, y, 0x00000004);
-		RND512P((uint8_t)y, z, 0x00000005);
-		RND512P((uint8_t)z, y, 0x00000006);
-		RND512P((uint8_t)y, z, 0x00000007);
-		RND512P((uint8_t)z, y, 0x00000008);
-		RND512P((uint8_t)y, temp, 0x00000009);
+		RND512P((ushort)temp, y, 0x00000000);
+		RND512P((ushort)y, z, 0x00000001);
+		RND512P((ushort)z, y, 0x00000002);
+		RND512P((ushort)y, z, 0x00000003);
+		RND512P((ushort)z, y, 0x00000004);
+		RND512P((ushort)y, z, 0x00000005);
+		RND512P((ushort)z, y, 0x00000006);
+		RND512P((ushort)y, z, 0x00000007);
+		RND512P((ushort)z, y, 0x00000008);
+		RND512P((ushort)y, temp, 0x00000009);
 		for (j = 0; j < 2 * DefineConstants.COLS512; j++)
 		{
 		  ctx.chaining[j] ^= temp[j];
@@ -8324,13 +8324,13 @@ r = 2 * p
 	  uint i = 0;
 	  /* allocate memory for state and data buffer */
 
-	  for (;i < ((DefineConstants.ROWS * DefineConstants.COLS512) / sizeof(uint32_t));i++)
+	  for (;i < ((DefineConstants.ROWS * DefineConstants.COLS512) / sizeof(uint));i++)
 	  {
 		ctx.chaining[i] = 0;
 	  }
 
 	  /* set initial value */
-	  ctx.chaining[2 * DefineConstants.COLS512 - 1] = (((((((uint32_t)DefineConstants.HASH_BIT_LEN) << (8)) | (((uint32_t)DefineConstants.HASH_BIT_LEN)>>(32 - (8)))) & 0xffffffffu) & 0x0x0FF00FFu) | ((((((uint32_t)DefineConstants.HASH_BIT_LEN) << (24)) | (((uint32_t)DefineConstants.HASH_BIT_LEN)>>(32 - (24)))) & 0xffffffffu) & 0xFF00FF00u));
+	  ctx.chaining[2 * DefineConstants.COLS512 - 1] = (((((((uint)DefineConstants.HASH_BIT_LEN) << (8)) | (((uint)DefineConstants.HASH_BIT_LEN)>>(32 - (8)))) & 0xffffffffu) & 0x0x0FF00FFu) | ((((((uint)DefineConstants.HASH_BIT_LEN) << (24)) | (((uint)DefineConstants.HASH_BIT_LEN)>>(32 - (24)))) & 0xffffffffu) & 0xFF00FF00u));
 
 	  /* set other variables */
 	  ctx.buf_ptr = 0;
@@ -8401,7 +8401,7 @@ r = 2 * p
 	  int i;
 	  int j = 0;
 	  int hashbytelen = DefineConstants.HASH_BIT_LEN / 8;
-	  uint8_t s = (byte)ctx.chaining;
+	  ushort s = (byte)ctx.chaining;
 
 	  /* pad with '1'-bit and first few '0'-bits */
 	  if (ctx.bits_in_last_byte != 0)
@@ -8442,14 +8442,14 @@ r = 2 * p
 	  }
 	  ctx.buf_ptr = (DefineConstants.ROWS * DefineConstants.COLS512);
 
-	  while (ctx.buf_ptr > (DefineConstants.ROWS * DefineConstants.COLS512) - (int)sizeof(uint32_t))
+	  while (ctx.buf_ptr > (DefineConstants.ROWS * DefineConstants.COLS512) - (int)sizeof(uint))
 	  {
-		ctx.buffer[(int)--ctx.buf_ptr] = (uint8_t)ctx.block_counter1;
+		ctx.buffer[(int)--ctx.buf_ptr] = (ushort)ctx.block_counter1;
 		ctx.block_counter1 >>= 8;
 	  }
 	  while (ctx.buf_ptr > (DefineConstants.ROWS * DefineConstants.COLS512) - DefineConstants.ROWS)
 	  {
-		ctx.buffer[(int)--ctx.buf_ptr] = (uint8_t)ctx.block_counter2;
+		ctx.buffer[(int)--ctx.buf_ptr] = (ushort)ctx.block_counter2;
 		ctx.block_counter2 >>= 8;
 	  }
 	  /* digest final padding block */
@@ -8552,63 +8552,63 @@ r = 2 * p
 	//ORIGINAL LINE: #define inline __inline
 	#define inline
 
-	internal static uint32_t rol32(uint32_t x, int r)
+	internal static uint rol32(uint x, int r)
 	{
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
-	//  static_assert(sizeof(uint32_t) == sizeof(uint), "this code assumes 32-bit integers");
+	//  static_assert(sizeof(uint) == sizeof(uint), "this code assumes 32-bit integers");
 	  return _rotl(x, r);
 	}
 
-	internal static uint64_t rol64(uint64_t x, int r)
+	internal static ulong rol64(ulong x, int r)
 	{
 	  return _rotl64(x, r);
 	}
 
 	#else
 
-	internal static uint32_t rol32(uint32_t x, int r)
+	internal static uint rol32(uint x, int r)
 	{
 	  return (x << (r & 31)) | (x >> (-r & 31));
 	}
 
-	internal static uint64_t rol64(uint64_t x, int r)
+	internal static ulong rol64(ulong x, int r)
 	{
 	  return (x << (r & 63)) | (x >> (-r & 63));
 	}
 
 	#endif
 
-	internal static uint64_t hi_dword(uint64_t val)
+	internal static ulong hi_dword(ulong val)
 	{
 	  return val >> 32;
 	}
 
-	internal static uint64_t lo_dword(uint64_t val)
+	internal static ulong lo_dword(ulong val)
 	{
 	  return val & 0xFFFFFFFF;
 	}
 
-	internal static uint64_t mul128(uint64_t multiplier, uint64_t multiplicand, uint64_t product_hi)
+	internal static ulong mul128(ulong multiplier, ulong multiplicand, ulong product_hi)
 	{
 	  // multiplier   = ab = a * 2^32 + b
 	  // multiplicand = cd = c * 2^32 + d
 	  // ab * cd = a * c * 2^64 + (a * d + b * c) * 2^32 + b * d
-	  uint64_t a = hi_dword(new uint64_t(multiplier));
-	  uint64_t b = lo_dword(new uint64_t(multiplier));
-	  uint64_t c = hi_dword(new uint64_t(multiplicand));
-	  uint64_t d = lo_dword(new uint64_t(multiplicand));
+	  ulong a = hi_dword(new ulong(multiplier));
+	  ulong b = lo_dword(new ulong(multiplier));
+	  ulong c = hi_dword(new ulong(multiplicand));
+	  ulong d = lo_dword(new ulong(multiplicand));
 
-	  uint64_t ac = a * c;
-	  uint64_t ad = a * d;
-	  uint64_t bc = b * c;
-	  uint64_t bd = b * d;
+	  ulong ac = a * c;
+	  ulong ad = a * d;
+	  ulong bc = b * c;
+	  ulong bd = b * d;
 
-	  uint64_t adbc = ad + bc;
-	  uint64_t adbc_carry = adbc < ad != null ? 1 : 0;
+	  ulong adbc = ad + bc;
+	  ulong adbc_carry = adbc < ad != null ? 1 : 0;
 
 	  // multiplier * multiplicand = product_hi * 2^64 + product_lo
-	  uint64_t product_lo = bd + (adbc << 32);
-	  uint64_t product_lo_carry = product_lo < bd != null ? 1 : 0;
+	  ulong product_lo = bd + (adbc << 32);
+	  ulong product_lo_carry = product_lo < bd != null ? 1 : 0;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: *product_hi = ac + (adbc >> 32) + (adbc_carry << 32) + product_lo_carry;
 	  product_hi.CopyFrom(ac + (adbc >> 32) + (adbc_carry << 32) + product_lo_carry);
@@ -8617,65 +8617,65 @@ r = 2 * p
 	  return product_lo;
 	}
 
-	internal static uint64_t div_with_reminder(uint64_t dividend, uint32_t divisor, uint32_t remainder)
+	internal static ulong div_with_reminder(ulong dividend, uint divisor, uint remainder)
 	{
-	  dividend |= ((uint64_t) remainder) << 32;
+	  dividend |= ((ulong) remainder) << 32;
 	  remainder = dividend % divisor;
 	  return dividend / divisor;
 	}
 
 	// Long division with 2^32 base
-	internal static uint32_t div128_32(uint64_t dividend_hi, uint64_t dividend_lo, uint32_t divisor, uint64_t quotient_hi, uint64_t quotient_lo)
+	internal static uint div128_32(ulong dividend_hi, ulong dividend_lo, uint divisor, ulong quotient_hi, ulong quotient_lo)
 	{
-	  uint64_t[] dividend_dwords = Arrays.InitializeWithDefaultInstances<uint64_t>(4);
-	  uint32_t remainder = 0;
+	  ulong[] dividend_dwords = Arrays.InitializeWithDefaultInstances<ulong>(4);
+	  uint remainder = 0;
 
-	  dividend_dwords[3] = hi_dword(new uint64_t(dividend_hi));
-	  dividend_dwords[2] = lo_dword(new uint64_t(dividend_hi));
-	  dividend_dwords[1] = hi_dword(new uint64_t(dividend_lo));
-	  dividend_dwords[0] = lo_dword(new uint64_t(dividend_lo));
+	  dividend_dwords[3] = hi_dword(new ulong(dividend_hi));
+	  dividend_dwords[2] = lo_dword(new ulong(dividend_hi));
+	  dividend_dwords[1] = hi_dword(new ulong(dividend_lo));
+	  dividend_dwords[0] = lo_dword(new ulong(dividend_lo));
 
-	  quotient_hi = div_with_reminder(dividend_dwords[3], new uint32_t(divisor), remainder) << 32;
-	  quotient_hi |= div_with_reminder(dividend_dwords[2], new uint32_t(divisor), remainder);
-	  quotient_lo = div_with_reminder(dividend_dwords[1], new uint32_t(divisor), remainder) << 32;
-	  quotient_lo |= div_with_reminder(dividend_dwords[0], new uint32_t(divisor), remainder);
+	  quotient_hi = div_with_reminder(dividend_dwords[3], new uint(divisor), remainder) << 32;
+	  quotient_hi |= div_with_reminder(dividend_dwords[2], new uint(divisor), remainder);
+	  quotient_lo = div_with_reminder(dividend_dwords[1], new uint(divisor), remainder) << 32;
+	  quotient_lo |= div_with_reminder(dividend_dwords[0], new uint(divisor), remainder);
 
 	  return remainder;
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+	//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 	#define IDENT32
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+	//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 	#define IDENT64
 
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+	//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 	#define SWAP32
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+	//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 	#define SWAP64
 
-	internal static uint32_t ident32(uint32_t x)
+	internal static uint ident32(uint x)
 	{
 		return x;
 	}
-	internal static uint64_t ident64(uint64_t x)
+	internal static ulong ident64(ulong x)
 	{
 		return x;
 	}
 
-	internal static uint32_t swap32(uint32_t x)
+	internal static uint swap32(uint x)
 	{
 	  x = ((x & 0x00ff00ff) << 8) | ((x & 0xff00ff00) >> 8);
 	  return (x << 16) | (x >> 16);
 	}
-	internal static uint64_t swap64(uint64_t x)
+	internal static ulong swap64(ulong x)
 	{
 	  x = ((x & 0x00ff00ff00ff00ff) << 8) | ((x & 0xff00ff00ff00ff00) >> 8);
 	  x = ((x & 0x0000ffff0000ffff) << 16) | ((x & 0xffff0000ffff0000) >> 16);
@@ -8688,53 +8688,53 @@ r = 2 * p
 	#define UNUSED
 	#endif
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'UNUSED' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	internal static void mem_inplace_ident(object * mem UNUSED, uint64_t n UNUSED)
+	internal static void mem_inplace_ident(object * mem UNUSED, ulong n UNUSED)
 	{
 	}
 	#undef UNUSED
 
-	internal static void mem_inplace_swap32(object mem, uint64_t n)
+	internal static void mem_inplace_swap32(object mem, ulong n)
 	{
-	  uint64_t i = new uint64_t();
+	  ulong i = new ulong();
 	  for (i = 0; i < n; i++)
 	  {
-		((uint32_t) mem)[i] = swap32(((uint32_t) mem)[i]);
+		((uint) mem)[i] = swap32(((uint) mem)[i]);
 	  }
 	}
-	internal static void mem_inplace_swap64(object mem, uint64_t n)
+	internal static void mem_inplace_swap64(object mem, ulong n)
 	{
-	  uint64_t i = new uint64_t();
+	  ulong i = new ulong();
 	  for (i = 0; i < n; i++)
 	  {
-		((uint64_t) mem)[i] = swap64(((uint64_t) mem)[i]);
+		((ulong) mem)[i] = swap64(((ulong) mem)[i]);
 	  }
 	}
 
-	internal static void memcpy_ident32(object dst, object src, uint64_t n)
+	internal static void memcpy_ident32(object dst, object src, ulong n)
 	{
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(dst, src, 4 * n);
 	}
-	internal static void memcpy_ident64(object dst, object src, uint64_t n)
+	internal static void memcpy_ident64(object dst, object src, ulong n)
 	{
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(dst, src, 8 * n);
 	}
 
-	internal static void memcpy_swap32(object dst, object src, uint64_t n)
+	internal static void memcpy_swap32(object dst, object src, ulong n)
 	{
-	  uint64_t i = new uint64_t();
+	  ulong i = new ulong();
 	  for (i = 0; i < n; i++)
 	  {
-		((uint32_t) dst)[i] = swap32(((uint32_t) src)[i]);
+		((uint) dst)[i] = swap32(((uint) src)[i]);
 	  }
 	}
-	internal static void memcpy_swap64(object dst, object src, uint64_t n)
+	internal static void memcpy_swap64(object dst, object src, ulong n)
 	{
-	  uint64_t i = new uint64_t();
+	  ulong i = new ulong();
 	  for (i = 0; i < n; i++)
 	  {
-		((uint64_t) dst)[i] = swap64(((uint64_t) src)[i]);
+		((ulong) dst)[i] = swap64(((ulong) src)[i]);
 	  }
 	}
 
@@ -8892,22 +8892,22 @@ r = 2 * p
 
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
 	//static_assert(sizeof(size_t) == 4 || sizeof(size_t) == 8, "size_t must be 4 or 8 bytes long");
-	internal static void place_length(uint8_t buffer, size_t bufsize, size_t length)
+	internal static void place_length(ushort buffer, size_t bufsize, size_t length)
 	{
 	  if (sizeof(size_t) == 4)
 	  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'swap32be' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-		(uint32_t) padd(buffer, bufsize - 4) = swap32be((uint32_t) length);
+		(uint) padd(buffer, bufsize - 4) = swap32be((uint) length);
 	  }
 	  else
 	  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'swap64be' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-		(uint64_t) padd(buffer, bufsize - 8) = swap64be(length);
+		(ulong) padd(buffer, bufsize - 8) = swap64be(length);
 	  }
 	}
 	//{
-	//  uint8_t b[200];
-	//  uint64_t w[25];
+	//  ushort b[200];
+	//  ulong w[25];
 	//};
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent to most C++ 'pragma' directives in C#:
 	//#pragma pack(pop)
@@ -8916,11 +8916,11 @@ r = 2 * p
 
 	public static void hash_permutation(hash_state state)
 	{
-	  keccakf((uint64_t)state, 24);
+	  keccakf((ulong)state, 24);
 	}
-	public static void hash_process(hash_state state, uint8_t buf, size_t count)
+	public static void hash_process(hash_state state, ushort buf, size_t count)
 	{
-	  keccak1600(buf, (int)count, (uint8_t)state);
+	  keccak1600(buf, (int)count, (ushort)state);
 	}
 
 	#endif
@@ -8932,7 +8932,7 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(hash, state, AnonymousEnum.HASH_SIZE);
 	}
-	//void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint32_t page_size, uint32_t scratchpad, uint32_t iterations);Tangible Method Implementation Not Found-cn_slow_hash
+	//void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint page_size, uint scratchpad, uint iterations);Tangible Method Implementation Not Found-cn_slow_hash
 
 	//void hash_extra_blake(object data, size_t length, ref string hash);Tangible Method Implementation Not Found-hash_extra_blake
 	//void hash_extra_groestl(object data, size_t length, ref string hash);Tangible Method Implementation Not Found-hash_extra_groestl
@@ -8958,12 +8958,12 @@ r = 2 * p
 	#endif
 
 	// compute a keccak hash (md) of given byte length from "in"
-	//int keccak(uint8_t in, int inlen, uint8_t md, int mdlen);Tangible Method Implementation Not Found-keccak
+	//int keccak(ushort in, int inlen, ushort md, int mdlen);Tangible Method Implementation Not Found-keccak
 
 	// update the state
-	//void keccakf(uint64_t[] st, int norounds);Tangible Method Implementation Not Found-keccakf
+	//void keccakf(ulong[] st, int norounds);Tangible Method Implementation Not Found-keccakf
 
-	//void keccak1600(uint8_t in, int inlen, uint8_t md);Tangible Method Implementation Not Found-keccak1600
+	//void keccak1600(ushort in, int inlen, ushort md);Tangible Method Implementation Not Found-keccak1600
 
 	// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 	//
@@ -8986,7 +8986,7 @@ r = 2 * p
 
 	public static void hash_extra_blake(object data, size_t length, ref string hash)
 	{
-	  blake256_hash((uint8_t)hash, data, new size_t(length));
+	  blake256_hash((ushort)hash, data, new size_t(length));
 	}
 
 	// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
@@ -9016,13 +9016,13 @@ r = 2 * p
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define li_32(h) 0x##h##u
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define EXT_BYTE(var,n) ((uint8_t)((uint32_t)(var) >> (8*n)))
+	//ORIGINAL LINE: #define EXT_BYTE(var,n) ((ushort)((uint)(var) >> (8*n)))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define u32BIG(a) ((ROTL32(a,8) & li_32(00FF00FF)) | (ROTL32(a,24) & li_32(FF00FF00)))
 
 	public static void hash_extra_groestl(object data, size_t length, ref string hash)
 	{
-	  groestl(data, length * 8, ref (uint8_t)hash);
+	  groestl(data, length * 8, ref (ushort)hash);
 	}
 
 
@@ -9031,13 +9031,13 @@ r = 2 * p
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define inline __inline
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+	//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+	//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+	//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+	//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define SWAP32LE IDENT32
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -9105,7 +9105,7 @@ r = 2 * p
 
 	public static void hash_extra_jh(object data, size_t length, ref string hash)
 	{
-	  int r = (int)jh_hash(AnonymousEnum.HASH_SIZE * 8, data, 8 * length, ref (uint8_t)hash);
+	  int r = (int)jh_hash(AnonymousEnum.HASH_SIZE * 8, data, 8 * length, ref (ushort)hash);
 	  if (r != 0)
 	  {
 	  }
@@ -9116,14 +9116,14 @@ r = 2 * p
 
 	#if ! Skein_Put64_LSB_First
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-	public static void memcpy(uint8_t[] dst, uint64_t[] src, size_t bCnt)
+	public static void memcpy(ushort[] dst, ulong[] src, size_t bCnt)
 	#if SKEIN_PORT_CODE
 	{ // this version is fully portable (big-endian or little-endian), but slow
 		size_t n = new size_t();
 
 		for (n = 0;n < bCnt;n++)
 		{
-			dst[n] = (uint8_t)(src[n >> 3] >> (8 * (n & 7)));
+			dst[n] = (ushort)(src[n >> 3] >> (8 * (n & 7)));
 		}
 	}
 	#else
@@ -9134,14 +9134,14 @@ r = 2 * p
 
 	#if ! Skein_Get64_LSB_First
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-	void memcpy(uint64_t * dst,const uint8_t * src,8 * (size_t wCnt))
+	void memcpy(ulong * dst,const ushort * src,8 * (size_t wCnt))
 	#if SKEIN_PORT_CODE
 	{ // this version is fully portable (big-endian or little-endian), but slow
 		size_t n = new size_t();
 
 		for (n = 0;n < 8 * wCnt;n += 8)
 		{
-			dst[n / 8] = (((uint64_t) src[n])) + (((uint64_t) src[n + 1]) << 8) + (((uint64_t) src[n + 2]) << 16) + (((uint64_t) src[n + 3]) << 24) + (((uint64_t) src[n + 4]) << 32) + (((uint64_t) src[n + 5]) << 40) + (((uint64_t) src[n + 6]) << 48) + (((uint64_t) src[n + 7]) << 56);
+			dst[n / 8] = (((ulong) src[n])) + (((ulong) src[n + 1]) << 8) + (((ulong) src[n + 2]) << 16) + (((ulong) src[n + 3]) << 24) + (((ulong) src[n + 4]) << 32) + (((ulong) src[n + 5]) << 40) + (((ulong) src[n + 6]) << 48) + (((ulong) src[n + 7]) << 56);
 		}
 	}
 	#else
@@ -9161,13 +9161,13 @@ r = 2 * p
 
 
 	/* "all-in-one" call */
-	HashReturn skein_hash = new HashReturn(int hashbitlen, const uint8_t * data, size_t databitlen, uint8_t * hashval);
+	HashReturn skein_hash = new HashReturn(int hashbitlen, const ushort * data, size_t databitlen, ushort * hashval);
 
 
 
 	void hash_extra_skein(const object * data, size_t length, char * hash)
 	{
-	  int r = (int)skein_hash(8 * AnonymousEnum.HASH_SIZE, data, 8 * length, (uint8_t)hash);
+	  int r = (int)skein_hash(8 * AnonymousEnum.HASH_SIZE, data, 8 * length, (ushort)hash);
 	  if (r != 0)
 	  {
 	  }
@@ -9273,10 +9273,10 @@ r = 2 * p
 
 	internal static void E8(hashState state)
 	{
-		  uint64_t i = new uint64_t();
-		  uint64_t roundnumber = new uint64_t();
-		  uint64_t temp0 = new uint64_t();
-		  uint64_t temp1 = new uint64_t();
+		  ulong i = new ulong();
+		  ulong roundnumber = new ulong();
+		  ulong temp0 = new ulong();
+		  ulong temp1 = new ulong();
 
 		  for (roundnumber = 0; roundnumber < 42; roundnumber = roundnumber + 7)
 		  {
@@ -9285,10 +9285,10 @@ r = 2 * p
 				{
 					  state.x[6][i] = ~(state.x[6][i]);
 					  state.x[7][i] = ~(state.x[7][i]);
-					  state.x[0][i] ^= ((~(state.x[4][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 0])[i]));
-					  state.x[1][i] ^= ((~(state.x[5][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 0])[i + 2]));
-					  temp0 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 0])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
-					  temp1 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 0])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
+					  state.x[0][i] ^= ((~(state.x[4][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 0])[i]));
+					  state.x[1][i] ^= ((~(state.x[5][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 0])[i + 2]));
+					  temp0 = (((ulong)E8_bitslice_roundconstant[roundnumber + 0])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
+					  temp1 = (((ulong)E8_bitslice_roundconstant[roundnumber + 0])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
 					  state.x[0][i] ^= ((state.x[4][i]) & (state.x[6][i]));
 					  state.x[1][i] ^= ((state.x[5][i]) & (state.x[7][i]));
 					  state.x[6][i] ^= ((~(state.x[2][i])) & (state.x[4][i]));
@@ -9327,10 +9327,10 @@ r = 2 * p
 				{
 					  state.x[6][i] = ~(state.x[6][i]);
 					  state.x[7][i] = ~(state.x[7][i]);
-					  state.x[0][i] ^= ((~(state.x[4][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 1])[i]));
-					  state.x[1][i] ^= ((~(state.x[5][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 1])[i + 2]));
-					  temp0 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 1])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
-					  temp1 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 1])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
+					  state.x[0][i] ^= ((~(state.x[4][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 1])[i]));
+					  state.x[1][i] ^= ((~(state.x[5][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 1])[i + 2]));
+					  temp0 = (((ulong)E8_bitslice_roundconstant[roundnumber + 1])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
+					  temp1 = (((ulong)E8_bitslice_roundconstant[roundnumber + 1])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
 					  state.x[0][i] ^= ((state.x[4][i]) & (state.x[6][i]));
 					  state.x[1][i] ^= ((state.x[5][i]) & (state.x[7][i]));
 					  state.x[6][i] ^= ((~(state.x[2][i])) & (state.x[4][i]));
@@ -9369,10 +9369,10 @@ r = 2 * p
 				{
 					  state.x[6][i] = ~(state.x[6][i]);
 					  state.x[7][i] = ~(state.x[7][i]);
-					  state.x[0][i] ^= ((~(state.x[4][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 2])[i]));
-					  state.x[1][i] ^= ((~(state.x[5][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 2])[i + 2]));
-					  temp0 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 2])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
-					  temp1 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 2])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
+					  state.x[0][i] ^= ((~(state.x[4][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 2])[i]));
+					  state.x[1][i] ^= ((~(state.x[5][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 2])[i + 2]));
+					  temp0 = (((ulong)E8_bitslice_roundconstant[roundnumber + 2])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
+					  temp1 = (((ulong)E8_bitslice_roundconstant[roundnumber + 2])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
 					  state.x[0][i] ^= ((state.x[4][i]) & (state.x[6][i]));
 					  state.x[1][i] ^= ((state.x[5][i]) & (state.x[7][i]));
 					  state.x[6][i] ^= ((~(state.x[2][i])) & (state.x[4][i]));
@@ -9411,10 +9411,10 @@ r = 2 * p
 				{
 					  state.x[6][i] = ~(state.x[6][i]);
 					  state.x[7][i] = ~(state.x[7][i]);
-					  state.x[0][i] ^= ((~(state.x[4][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 3])[i]));
-					  state.x[1][i] ^= ((~(state.x[5][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 3])[i + 2]));
-					  temp0 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 3])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
-					  temp1 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 3])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
+					  state.x[0][i] ^= ((~(state.x[4][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 3])[i]));
+					  state.x[1][i] ^= ((~(state.x[5][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 3])[i + 2]));
+					  temp0 = (((ulong)E8_bitslice_roundconstant[roundnumber + 3])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
+					  temp1 = (((ulong)E8_bitslice_roundconstant[roundnumber + 3])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
 					  state.x[0][i] ^= ((state.x[4][i]) & (state.x[6][i]));
 					  state.x[1][i] ^= ((state.x[5][i]) & (state.x[7][i]));
 					  state.x[6][i] ^= ((~(state.x[2][i])) & (state.x[4][i]));
@@ -9453,10 +9453,10 @@ r = 2 * p
 				{
 					  state.x[6][i] = ~(state.x[6][i]);
 					  state.x[7][i] = ~(state.x[7][i]);
-					  state.x[0][i] ^= ((~(state.x[4][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 4])[i]));
-					  state.x[1][i] ^= ((~(state.x[5][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 4])[i + 2]));
-					  temp0 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 4])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
-					  temp1 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 4])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
+					  state.x[0][i] ^= ((~(state.x[4][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 4])[i]));
+					  state.x[1][i] ^= ((~(state.x[5][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 4])[i + 2]));
+					  temp0 = (((ulong)E8_bitslice_roundconstant[roundnumber + 4])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
+					  temp1 = (((ulong)E8_bitslice_roundconstant[roundnumber + 4])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
 					  state.x[0][i] ^= ((state.x[4][i]) & (state.x[6][i]));
 					  state.x[1][i] ^= ((state.x[5][i]) & (state.x[7][i]));
 					  state.x[6][i] ^= ((~(state.x[2][i])) & (state.x[4][i]));
@@ -9495,10 +9495,10 @@ r = 2 * p
 				{
 					  state.x[6][i] = ~(state.x[6][i]);
 					  state.x[7][i] = ~(state.x[7][i]);
-					  state.x[0][i] ^= ((~(state.x[4][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 5])[i]));
-					  state.x[1][i] ^= ((~(state.x[5][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 5])[i + 2]));
-					  temp0 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 5])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
-					  temp1 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 5])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
+					  state.x[0][i] ^= ((~(state.x[4][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 5])[i]));
+					  state.x[1][i] ^= ((~(state.x[5][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 5])[i + 2]));
+					  temp0 = (((ulong)E8_bitslice_roundconstant[roundnumber + 5])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
+					  temp1 = (((ulong)E8_bitslice_roundconstant[roundnumber + 5])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
 					  state.x[0][i] ^= ((state.x[4][i]) & (state.x[6][i]));
 					  state.x[1][i] ^= ((state.x[5][i]) & (state.x[7][i]));
 					  state.x[6][i] ^= ((~(state.x[2][i])) & (state.x[4][i]));
@@ -9537,10 +9537,10 @@ r = 2 * p
 				{
 					  state.x[6][i] = ~(state.x[6][i]);
 					  state.x[7][i] = ~(state.x[7][i]);
-					  state.x[0][i] ^= ((~(state.x[4][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 6])[i]));
-					  state.x[1][i] ^= ((~(state.x[5][i])) & (((uint64_t)E8_bitslice_roundconstant[roundnumber + 6])[i + 2]));
-					  temp0 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 6])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
-					  temp1 = (((uint64_t)E8_bitslice_roundconstant[roundnumber + 6])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
+					  state.x[0][i] ^= ((~(state.x[4][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 6])[i]));
+					  state.x[1][i] ^= ((~(state.x[5][i])) & (((ulong)E8_bitslice_roundconstant[roundnumber + 6])[i + 2]));
+					  temp0 = (((ulong)E8_bitslice_roundconstant[roundnumber + 6])[i]) ^ ((state.x[0][i]) & (state.x[2][i]));
+					  temp1 = (((ulong)E8_bitslice_roundconstant[roundnumber + 6])[i + 2]) ^ ((state.x[1][i]) & (state.x[3][i]));
 					  state.x[0][i] ^= ((state.x[4][i]) & (state.x[6][i]));
 					  state.x[1][i] ^= ((state.x[5][i]) & (state.x[7][i]));
 					  state.x[6][i] ^= ((~(state.x[2][i])) & (state.x[4][i]));
@@ -9580,12 +9580,12 @@ r = 2 * p
 /*The compression function F8 */
 	internal static void F8(hashState state)
 	{
-		  uint64_t i = new uint64_t();
+		  ulong i = new ulong();
 
 		  /*xor the 512-bit message with the fist half of the 1024-bit hash state*/
 		  for (i = 0; i < 8; i++)
 		  {
-			  state.x[i >> 1][i & 1] ^= ((uint64_t)state.buffer)[i];
+			  state.x[i >> 1][i & 1] ^= ((ulong)state.buffer)[i];
 		  }
 
 		  /*the bijective function E8 */
@@ -9594,7 +9594,7 @@ r = 2 * p
 		  /*xor the 512-bit message with the second half of the 1024-bit hash state*/
 		  for (i = 0; i < 8; i++)
 		  {
-			  state.x[(8 + i) >> 1][(8 + i) & 1] ^= ((uint64_t)state.buffer)[i];
+			  state.x[(8 + i) >> 1][(8 + i) & 1] ^= ((ulong)state.buffer)[i];
 		  }
 	}
 
@@ -9811,10 +9811,10 @@ r = 2 * p
 
 	// compute a keccak hash (md) of given byte length from "in"
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'in', so pointers on this parameter are left unchanged:
-	public static int keccak(uint8_t * in, int inlen, uint8_t md, int mdlen)
+	public static int keccak(ushort * in, int inlen, ushort md, int mdlen)
 	{
-		uint64_t[] st = Arrays.InitializeWithDefaultInstances<uint64_t>(25);
-		uint8_t[] temp = Arrays.InitializeWithDefaultInstances<uint8_t>(144);
+		ulong[] st = Arrays.InitializeWithDefaultInstances<ulong>(25);
+		ushort[] temp = Arrays.InitializeWithDefaultInstances<ushort>(144);
 		int i;
 		int rsiz;
 		int rsizw;
@@ -9826,17 +9826,17 @@ r = 2 * p
 
 		const int HASH_DATA_AREA = 136;
 
-		rsiz = sizeof(uint64_t[25]) == mdlen != 0 ? HASH_DATA_AREA : 200 - 2 * mdlen;
+		rsiz = sizeof(ulong[25]) == mdlen != 0 ? HASH_DATA_AREA : 200 - 2 * mdlen;
 		rsizw = rsiz / 8;
 
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
-		memset(st, 0, sizeof(uint64_t));
+		memset(st, 0, sizeof(ulong));
 
 		for (; inlen >= rsiz; inlen -= rsiz, in += rsiz)
 		{
 			for (i = 0; i < rsizw; i++)
 			{
-				st[i] ^= ((uint64_t) in)[i];
+				st[i] ^= ((ulong) in)[i];
 			}
 			keccakf(st, DefineConstants.KECCAK_ROUNDS);
 		}
@@ -9851,7 +9851,7 @@ r = 2 * p
 
 		for (i = 0; i < rsizw; i++)
 		{
-			st[i] ^= ((uint64_t) temp)[i];
+			st[i] ^= ((ulong) temp)[i];
 		}
 
 		keccakf(st, DefineConstants.KECCAK_ROUNDS);
@@ -9866,13 +9866,13 @@ r = 2 * p
 
 
 	// update the state
-	public static void keccakf(uint64_t[] st, int rounds)
+	public static void keccakf(ulong[] st, int rounds)
 	{
 		int i;
 		int j;
 		int round;
-		uint64_t t = new uint64_t();
-		uint64_t[] bc = Arrays.InitializeWithDefaultInstances<uint64_t>(5);
+		ulong t = new ulong();
+		ulong[] bc = Arrays.InitializeWithDefaultInstances<ulong>(5);
 
 		for (round = 0; round < rounds; round++)
 		{
@@ -9926,14 +9926,14 @@ r = 2 * p
 		}
 	}
 
-	public static void keccak1600(uint8_t in, int inlen, uint8_t md)
+	public static void keccak1600(ushort in, int inlen, ushort md)
 	{
-		keccak(in, inlen, md, sizeof(uint64_t[25]));
+		keccak(in, inlen, md, sizeof(ulong[25]));
 	}
 
 
 
-	public static readonly uint64_t[] keccakf_rndc = {0x0000000000000001, 0x0000000000008082, 0x800000000000808a, 0x8000000080008000, 0x000000000000808b, 0x0000000080000001, 0x8000000080008081, 0x8000000000008009, 0x000000000000008a, 0x0000000000000088, 0x0000000080008009, 0x000000008000000a, 0x000000008000808b, 0x800000000000008b, 0x8000000000008089, 0x8000000000008003, 0x8000000000008002, 0x8000000000000080, 0x000000000000800a, 0x800000008000000a, 0x8000000080008081, 0x8000000000008080, 0x0000000080000001, 0x8000000080008008};
+	public static readonly ulong[] keccakf_rndc = {0x0000000000000001, 0x0000000000008082, 0x800000000000808a, 0x8000000080008000, 0x000000000000808b, 0x0000000080000001, 0x8000000080008081, 0x8000000000008009, 0x000000000000008a, 0x0000000000000088, 0x0000000080008009, 0x000000008000000a, 0x000000008000808b, 0x800000000000008b, 0x8000000000008089, 0x8000000000008003, 0x8000000000008002, 0x8000000000000080, 0x000000000000800a, 0x800000008000000a, 0x8000000080008081, 0x8000000000008080, 0x0000000080000001, 0x8000000080008008};
 
 	public static readonly int[] keccakf_rotc = {1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 2, 14, 27, 41, 56, 8, 25, 43, 62, 18, 39, 61, 20, 44};
 
@@ -10026,7 +10026,7 @@ r = 2 * p
 
 	//OAES_API OAES_RET oaes_free(object[] ctx);Tangible Method Implementation Not Found-oaes_free
 
-	//OAES_API OAES_RET oaes_set_option(object ctx, uint16_t option, object value);Tangible Method Implementation Not Found-oaes_set_option
+	//OAES_API OAES_RET oaes_set_option(object ctx, ushort option, object value);Tangible Method Implementation Not Found-oaes_set_option
 
 	//OAES_API OAES_RET oaes_key_gen_128(object ctx);Tangible Method Implementation Not Found-oaes_key_gen_128
 
@@ -10036,26 +10036,26 @@ r = 2 * p
 
 	// export key with header information
 	// set data == NULL to get the required data_len
-	//OAES_API OAES_RET oaes_key_export(object ctx, uint8_t data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_export
+	//OAES_API OAES_RET oaes_key_export(object ctx, ushort data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_export
 
 	// directly export the data from key
 	// set data == NULL to get the required data_len
-	//OAES_API OAES_RET oaes_key_export_data(object ctx, uint8_t data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_export_data
+	//OAES_API OAES_RET oaes_key_export_data(object ctx, ushort data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_export_data
 
 	// import key with header information
-	//OAES_API OAES_RET oaes_key_import(object ctx, uint8_t data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_import
+	//OAES_API OAES_RET oaes_key_import(object ctx, ushort data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_import
 
 	// directly import data into key
-	//OAES_API OAES_RET oaes_key_import_data(object ctx, uint8_t data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_import_data
+	//OAES_API OAES_RET oaes_key_import_data(object ctx, ushort data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_import_data
 
 	// set c == NULL to get the required c_len
-	//OAES_API OAES_RET oaes_encrypt(object ctx, uint8_t m, size_t m_len, uint8_t c, size_t c_len);Tangible Method Implementation Not Found-oaes_encrypt
+	//OAES_API OAES_RET oaes_encrypt(object ctx, ushort m, size_t m_len, ushort c, size_t c_len);Tangible Method Implementation Not Found-oaes_encrypt
 
 	// set m == NULL to get the required m_len
-	//OAES_API OAES_RET oaes_decrypt(object ctx, uint8_t c, size_t c_len, uint8_t m, size_t m_len);Tangible Method Implementation Not Found-oaes_decrypt
+	//OAES_API OAES_RET oaes_decrypt(object ctx, ushort c, size_t c_len, ushort m, size_t m_len);Tangible Method Implementation Not Found-oaes_decrypt
 
 	// set buf == NULL to get the required buf_len
-	public static OAES_RET oaes_sprintf(ref string buf, size_t buf_len, uint8_t[] data, size_t data_len)
+	public static OAES_RET oaes_sprintf(ref string buf, size_t buf_len, ushort[] data, size_t data_len)
 	{
 		size_t _i = new size_t();
 		size_t _buf_len_in = new size_t();
@@ -10103,7 +10103,7 @@ r = 2 * p
 		return OAES_RET.OAES_RET_SUCCESS;
 	}
 
-	public static OAES_API OAES_RET oaes_encryption_round(uint8_t[] key, uint8_t[] c)
+	public static OAES_API OAES_RET oaes_encryption_round(ushort[] key, ushort[] c)
 	{
 	  size_t _i = new size_t();
 
@@ -10124,10 +10124,10 @@ r = 2 * p
 	  }
 
 	  // ShiftRows(state)
-	  oaes_shift_rows(new uint8_t(c));
+	  oaes_shift_rows(new ushort(c));
 
 	  // MixColumns(state)
-	  oaes_mix_cols(new uint8_t(c));
+	  oaes_mix_cols(new ushort(c));
 	  oaes_mix_cols(c + 4);
 	  oaes_mix_cols(c + 8);
 	  oaes_mix_cols(c + 12);
@@ -10141,7 +10141,7 @@ r = 2 * p
 	  return OAES_RET.OAES_RET_SUCCESS;
 	}
 
-	//OAES_API OAES_RET oaes_pseudo_encrypt_ecb(object ctx, uint8_t c);Tangible Method Implementation Not Found-oaes_pseudo_encrypt_ecb
+	//OAES_API OAES_RET oaes_pseudo_encrypt_ecb(object ctx, ushort c);Tangible Method Implementation Not Found-oaes_pseudo_encrypt_ecb
 
 	#if __cplusplus
 	#endif
@@ -10174,10 +10174,10 @@ r = 2 * p
 	#endif
 
 	// "OAES<8-bit header version><8-bit type><16-bit options><8-bit flags><56-bit reserved>"
-	internal static uint8_t[] oaes_header = {0x4f, 0x41, 0x45, 0x53, 0x01, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-	internal static uint8_t[] oaes_gf_8 = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36};
+	internal static ushort[] oaes_header = {0x4f, 0x41, 0x45, 0x53, 0x01, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+	internal static ushort[] oaes_gf_8 = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36};
 
-	internal static uint8_t[,] oaes_sub_byte_value =
+	internal static ushort[,] oaes_sub_byte_value =
 	{
 		{0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76},
 		{0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0},
@@ -10197,7 +10197,7 @@ r = 2 * p
 		{0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16}
 	};
 
-	internal static uint8_t[,] oaes_inv_sub_byte_value =
+	internal static ushort[,] oaes_inv_sub_byte_value =
 	{
 		{0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40, 0xa3, 0x9e, 0x81, 0xf3, 0xd7, 0xfb},
 		{0x7c, 0xe3, 0x39, 0x82, 0x9b, 0x2f, 0xff, 0x87, 0x34, 0x8e, 0x43, 0x44, 0xc4, 0xde, 0xe9, 0xcb},
@@ -10217,7 +10217,7 @@ r = 2 * p
 		{0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14, 0x63, 0x55, 0x21, 0x0c, 0x7d}
 	};
 
-	internal static uint8_t[,] oaes_gf_mul_2 =
+	internal static ushort[,] oaes_gf_mul_2 =
 	{
 		{0x00, 0x02, 0x04, 0x06, 0x08, 0x0a, 0x0c, 0x0e, 0x10, 0x12, 0x14, 0x16, 0x18, 0x1a, 0x1c, 0x1e},
 		{0x20, 0x22, 0x24, 0x26, 0x28, 0x2a, 0x2c, 0x2e, 0x30, 0x32, 0x34, 0x36, 0x38, 0x3a, 0x3c, 0x3e},
@@ -10237,7 +10237,7 @@ r = 2 * p
 		{0xfb, 0xf9, 0xff, 0xfd, 0xf3, 0xf1, 0xf7, 0xf5, 0xeb, 0xe9, 0xef, 0xed, 0xe3, 0xe1, 0xe7, 0xe5}
 	};
 
-	internal static uint8_t[,] oaes_gf_mul_3 =
+	internal static ushort[,] oaes_gf_mul_3 =
 	{
 		{0x00, 0x03, 0x06, 0x05, 0x0c, 0x0f, 0x0a, 0x09, 0x18, 0x1b, 0x1e, 0x1d, 0x14, 0x17, 0x12, 0x11},
 		{0x30, 0x33, 0x36, 0x35, 0x3c, 0x3f, 0x3a, 0x39, 0x28, 0x2b, 0x2e, 0x2d, 0x24, 0x27, 0x22, 0x21},
@@ -10257,7 +10257,7 @@ r = 2 * p
 		{0x0b, 0x08, 0x0d, 0x0e, 0x07, 0x04, 0x01, 0x02, 0x13, 0x10, 0x15, 0x16, 0x1f, 0x1c, 0x19, 0x1a}
 	};
 
-	internal static uint8_t[,] oaes_gf_mul_9 =
+	internal static ushort[,] oaes_gf_mul_9 =
 	{
 		{0x00, 0x09, 0x12, 0x1b, 0x24, 0x2d, 0x36, 0x3f, 0x48, 0x41, 0x5a, 0x53, 0x6c, 0x65, 0x7e, 0x77},
 		{0x90, 0x99, 0x82, 0x8b, 0xb4, 0xbd, 0xa6, 0xaf, 0xd8, 0xd1, 0xca, 0xc3, 0xfc, 0xf5, 0xee, 0xe7},
@@ -10277,7 +10277,7 @@ r = 2 * p
 		{0x31, 0x38, 0x23, 0x2a, 0x15, 0x1c, 0x07, 0x0e, 0x79, 0x70, 0x6b, 0x62, 0x5d, 0x54, 0x4f, 0x46}
 	};
 
-	internal static uint8_t[,] oaes_gf_mul_b =
+	internal static ushort[,] oaes_gf_mul_b =
 	{
 		{0x00, 0x0b, 0x16, 0x1d, 0x2c, 0x27, 0x3a, 0x31, 0x58, 0x53, 0x4e, 0x45, 0x74, 0x7f, 0x62, 0x69},
 		{0xb0, 0xbb, 0xa6, 0xad, 0x9c, 0x97, 0x8a, 0x81, 0xe8, 0xe3, 0xfe, 0xf5, 0xc4, 0xcf, 0xd2, 0xd9},
@@ -10297,7 +10297,7 @@ r = 2 * p
 		{0xca, 0xc1, 0xdc, 0xd7, 0xe6, 0xed, 0xf0, 0xfb, 0x92, 0x99, 0x84, 0x8f, 0xbe, 0xb5, 0xa8, 0xa3}
 	};
 
-	internal static uint8_t[,] oaes_gf_mul_d =
+	internal static ushort[,] oaes_gf_mul_d =
 	{
 		{0x00, 0x0d, 0x1a, 0x17, 0x34, 0x39, 0x2e, 0x23, 0x68, 0x65, 0x72, 0x7f, 0x5c, 0x51, 0x46, 0x4b},
 		{0xd0, 0xdd, 0xca, 0xc7, 0xe4, 0xe9, 0xfe, 0xf3, 0xb8, 0xb5, 0xa2, 0xaf, 0x8c, 0x81, 0x96, 0x9b},
@@ -10317,7 +10317,7 @@ r = 2 * p
 		{0xdc, 0xd1, 0xc6, 0xcb, 0xe8, 0xe5, 0xf2, 0xff, 0xb4, 0xb9, 0xae, 0xa3, 0x80, 0x8d, 0x9a, 0x97}
 	};
 
-	internal static uint8_t[,] oaes_gf_mul_e =
+	internal static ushort[,] oaes_gf_mul_e =
 	{
 		{0x00, 0x0e, 0x1c, 0x12, 0x38, 0x36, 0x24, 0x2a, 0x70, 0x7e, 0x6c, 0x62, 0x48, 0x46, 0x54, 0x5a},
 		{0xe0, 0xee, 0xfc, 0xf2, 0xd8, 0xd6, 0xc4, 0xca, 0x90, 0x9e, 0x8c, 0x82, 0xa8, 0xa6, 0xb4, 0xba},
@@ -10337,7 +10337,7 @@ r = 2 * p
 		{0xd7, 0xd9, 0xcb, 0xc5, 0xef, 0xe1, 0xf3, 0xfd, 0xa7, 0xa9, 0xbb, 0xb5, 0x9f, 0x91, 0x83, 0x8d}
 	};
 
-	internal static OAES_RET oaes_sub_byte(uint8_t @byte)
+	internal static OAES_RET oaes_sub_byte(ushort @byte)
 	{
 		size_t _x = new size_t();
 		size_t _y = new size_t();
@@ -10358,7 +10358,7 @@ r = 2 * p
 		return OAES_RET.OAES_RET_SUCCESS;
 	}
 
-	internal static OAES_RET oaes_inv_sub_byte(uint8_t @byte)
+	internal static OAES_RET oaes_inv_sub_byte(ushort @byte)
 	{
 		size_t _x = new size_t();
 		size_t _y = new size_t();
@@ -10379,9 +10379,9 @@ r = 2 * p
 		return OAES_RET.OAES_RET_SUCCESS;
 	}
 	/*
-	static OAES_RET oaes_word_rot_right( uint8_t word[OAES_COL_LEN] )
+	static OAES_RET oaes_word_rot_right( ushort word[OAES_COL_LEN] )
 	{
-		uint8_t _temp[OAES_COL_LEN];
+		ushort _temp[OAES_COL_LEN];
 		
 		if( NULL == word )
 			return OAES_RET_ARG1;
@@ -10393,9 +10393,9 @@ r = 2 * p
 		return OAES_RET_SUCCESS;
 	}
 	*/
-	internal static OAES_RET oaes_word_rot_left(uint8_t[] word)
+	internal static OAES_RET oaes_word_rot_left(ushort[] word)
 	{
-		uint8_t[] _temp = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_COL_LEN);
+		ushort[] _temp = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_COL_LEN);
 
 		if (word == null)
 		{
@@ -10411,9 +10411,9 @@ r = 2 * p
 		return OAES_RET.OAES_RET_SUCCESS;
 	}
 
-	internal static OAES_RET oaes_shift_rows(uint8_t[] block)
+	internal static OAES_RET oaes_shift_rows(ushort[] block)
 	{
-		uint8_t[] _temp = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_BLOCK_SIZE);
+		ushort[] _temp = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_BLOCK_SIZE);
 
 		if (block == null)
 		{
@@ -10442,9 +10442,9 @@ r = 2 * p
 		return OAES_RET.OAES_RET_SUCCESS;
 	}
 
-	internal static OAES_RET oaes_inv_shift_rows(uint8_t[] block)
+	internal static OAES_RET oaes_inv_shift_rows(ushort[] block)
 	{
-		uint8_t[] _temp = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_BLOCK_SIZE);
+		ushort[] _temp = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_BLOCK_SIZE);
 
 		if (block == null)
 		{
@@ -10473,7 +10473,7 @@ r = 2 * p
 		return OAES_RET.OAES_RET_SUCCESS;
 	}
 
-	internal static uint8_t oaes_gf_mul(uint8_t left, uint8_t right)
+	internal static ushort oaes_gf_mul(ushort left, ushort right)
 	{
 		size_t _x = new size_t();
 		size_t _y = new size_t();
@@ -10509,9 +10509,9 @@ r = 2 * p
 		}
 	}
 
-	internal static OAES_RET oaes_mix_cols(uint8_t[] word)
+	internal static OAES_RET oaes_mix_cols(ushort[] word)
 	{
-		uint8_t[] _temp = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_COL_LEN);
+		ushort[] _temp = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_COL_LEN);
 
 		if (word == null)
 		{
@@ -10528,9 +10528,9 @@ r = 2 * p
 		return OAES_RET.OAES_RET_SUCCESS;
 	}
 
-	internal static OAES_RET oaes_inv_mix_cols(uint8_t[] word)
+	internal static OAES_RET oaes_inv_mix_cols(ushort[] word)
 	{
-		uint8_t[] _temp = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_COL_LEN);
+		ushort[] _temp = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_COL_LEN);
 
 		if (word == null)
 		{
@@ -10583,13 +10583,13 @@ r = 2 * p
 		}
 	}
 	#else
-	internal static uint32_t oaes_get_seed()
+	internal static uint oaes_get_seed()
 	{
 			#if !__FreeBSD__ && !__OpenBSD__ && !__ANDROID__
 		timeb timer = new timeb();
 		tm gmTimer;
 		string _test = null;
-		uint32_t _ret = 0;
+		uint _ret = 0;
 
 		ftime(timer);
 		gmTimer = gmtime(timer.time);
@@ -10600,7 +10600,7 @@ r = 2 * p
 		timeval timer = new timeval();
 		tm gmTimer;
 		string _test = null;
-		uint32_t _ret = 0;
+		uint _ret = 0;
 
 		gettimeofday(timer, null);
 		gmTimer = gmtime(timer.tv_sec);
@@ -10672,7 +10672,7 @@ r = 2 * p
 
 		_ctx.key.exp_data_len = _ctx.key.num_keys * DefineConstants.OAES_RKEY_LEN * DefineConstants.OAES_COL_LEN;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'calloc' has no equivalent in C#:
-		_ctx.key.exp_data = (uint8_t) calloc(_ctx.key.exp_data_len, sizeof(uint8_t));
+		_ctx.key.exp_data = (ushort) calloc(_ctx.key.exp_data_len, sizeof(ushort));
 
 		if (_ctx.== null key.exp_data)
 		{
@@ -10686,7 +10686,7 @@ r = 2 * p
 		// apply ExpandKey algorithm for remainder
 		for (_i = _ctx.key.key_base; _i < _ctx.key.num_keys * DefineConstants.OAES_RKEY_LEN; _i++)
 		{
-			uint8_t[] _temp = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_COL_LEN);
+			ushort[] _temp = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_COL_LEN);
 
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(_temp, _ctx.key.exp_data + (_i - 1) * DefineConstants.OAES_RKEY_LEN, DefineConstants.OAES_COL_LEN);
@@ -10751,7 +10751,7 @@ r = 2 * p
 
 		_key.data_len = key_size;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'calloc' has no equivalent in C#:
-		_key.data = (uint8_t) calloc(key_size, sizeof(uint8_t));
+		_key.data = (ushort) calloc(key_size, sizeof(ushort));
 
 		if (_key.== null data)
 		{
@@ -10762,10 +10762,10 @@ r = 2 * p
 		for (_i = 0; _i < key_size; _i++)
 		{
 	#if OAES_HAVE_ISAAC
-			_key.data[_i] = (uint8_t) rand(_ctx.rctx);
+			_key.data[_i] = (ushort) rand(_ctx.rctx);
 		}
 	#else
-			_key.data[_i] = (uint8_t) RandomNumbers.NextNumber();
+			_key.data[_i] = (ushort) RandomNumbers.NextNumber();
 	#endif
 
 		_ctx.key = _key;
@@ -10799,7 +10799,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_key_export(OAES_CTX * ctx, uint8_t * data, size_t * data_len)
+	OAES_RET oaes_key_export(OAES_CTX * ctx, ushort * data, size_t * data_len)
 	{
 		size_t _data_len_in = new size_t();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
@@ -10846,7 +10846,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_key_export_data(OAES_CTX * ctx, uint8_t * data, size_t * data_len)
+	OAES_RET oaes_key_export_data(OAES_CTX * ctx, ushort * data, size_t * data_len)
 	{
 		size_t _data_len_in = new size_t();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
@@ -10887,7 +10887,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_key_import(OAES_CTX * ctx, const uint8_t * data, size_t data_len)
+	OAES_RET oaes_key_import(OAES_CTX * ctx, const ushort * data, size_t data_len)
 	{
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
@@ -10972,7 +10972,7 @@ r = 2 * p
 
 		_ctx.key.data_len = _key_length;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'calloc' has no equivalent in C#:
-		_ctx.key.data = (uint8_t) calloc(_key_length, sizeof(uint8_t));
+		_ctx.key.data = (ushort) calloc(_key_length, sizeof(ushort));
 
 		if (_ctx.== null key.data)
 		{
@@ -10994,7 +10994,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_key_import_data(OAES_CTX * ctx, const uint8_t * data, size_t data_len)
+	OAES_RET oaes_key_import_data(OAES_CTX * ctx, const ushort * data, size_t data_len)
 	{
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
@@ -11036,7 +11036,7 @@ r = 2 * p
 
 		_ctx.key.data_len = data_len;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'calloc' has no equivalent in C#:
-		_ctx.key.data = (uint8_t) calloc(data_len, sizeof(uint8_t));
+		_ctx.key.data = (ushort) calloc(data_len, sizeof(ushort));
 
 		if (_ctx.== null key.data)
 		{
@@ -11124,10 +11124,10 @@ r = 2 * p
 					for (_i = 0; _i < DefineConstants.OAES_BLOCK_SIZE; _i++)
 					{
 	#if OAES_HAVE_ISAAC
-						_ctx.iv[_i] = (uint8_t) rand(_ctx.rctx);
+						_ctx.iv[_i] = (ushort) rand(_ctx.rctx);
 					}
 	#else
-						_ctx.iv[_i] = (uint8_t) RandomNumbers.NextNumber();
+						_ctx.iv[_i] = (ushort) RandomNumbers.NextNumber();
 	#endif
 				}
 				break;
@@ -11168,7 +11168,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	static OAES_RET oaes_encrypt_block(OAES_CTX * ctx, uint8_t * c, size_t c_len)
+	static OAES_RET oaes_encrypt_block(OAES_CTX * ctx, ushort * c, size_t c_len)
 	{
 		size_t _i = new size_t();
 		size_t _j = new size_t();
@@ -11312,7 +11312,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	static OAES_RET oaes_decrypt_block(OAES_CTX * ctx, uint8_t * c, size_t c_len)
+	static OAES_RET oaes_decrypt_block(OAES_CTX * ctx, ushort * c, size_t c_len)
 	{
 		size_t _i = new size_t();
 		size_t _j = new size_t();
@@ -11455,7 +11455,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_encrypt(OAES_CTX * ctx, const uint8_t * m, size_t m_len, uint8_t * c, size_t * c_len)
+	OAES_RET oaes_encrypt(OAES_CTX * ctx, const ushort * m, size_t m_len, ushort * c, size_t * c_len)
 	{
 		size_t _i = new size_t();
 		size_t _j = new size_t();
@@ -11465,7 +11465,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 		OAES_RET _rc = OAES_RET.OAES_RET_SUCCESS;
-		uint8_t _flags = _pad_len != null ? DefineConstants.OAES_FLAG_PAD : 0;
+		ushort _flags = _pad_len != null ? DefineConstants.OAES_FLAG_PAD : 0;
 
 		if (_ctx == null)
 		{
@@ -11509,7 +11509,7 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 		memcpy(c + 6, _ctx.options, sizeof(_ctx.options));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-		memcpy(c + 8, _flags, sizeof(uint8_t));
+		memcpy(c + 8, _flags, sizeof(ushort));
 		// iv
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 		memcpy(c + DefineConstants.OAES_BLOCK_SIZE, _ctx.iv, DefineConstants.OAES_BLOCK_SIZE);
@@ -11519,7 +11519,7 @@ r = 2 * p
 
 		for (_i = 0; _i < _c_data_len; _i += DefineConstants.OAES_BLOCK_SIZE)
 		{
-			uint8_t[] _block = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_BLOCK_SIZE);
+			ushort[] _block = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_BLOCK_SIZE);
 			size_t _block_size = (((m_len - _i) < (DefineConstants.OAES_BLOCK_SIZE)) ? (m_len - _i) : (DefineConstants.OAES_BLOCK_SIZE));
 
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
@@ -11555,7 +11555,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_decrypt(OAES_CTX * ctx, const uint8_t * c, size_t c_len, uint8_t * m, size_t * m_len)
+	OAES_RET oaes_decrypt(OAES_CTX * ctx, const ushort * c, size_t c_len, ushort * m, size_t * m_len)
 	{
 		size_t _i = new size_t();
 		size_t _j = new size_t();
@@ -11563,8 +11563,8 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 		OAES_RET _rc = OAES_RET.OAES_RET_SUCCESS;
-		uint8_t[] _iv = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.OAES_BLOCK_SIZE);
-		uint8_t _flags = new uint8_t();
+		ushort[] _iv = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_BLOCK_SIZE);
+		ushort _flags = new ushort();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		OAES_OPTION _options = new OAES_OPTION();
 
@@ -11655,7 +11655,7 @@ r = 2 * p
 
 		// flags
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-		memcpy(_flags, c + 8, sizeof(uint8_t));
+		memcpy(_flags, c + 8, sizeof(ushort));
 		// validate that all flags are valid
 		if (_flags & ~(DefineConstants.OAES_FLAG_PAD) != null)
 		{
@@ -11722,7 +11722,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_API OAES_RET oaes_pseudo_encrypt_ecb(OAES_CTX * ctx, uint8_t * c)
+	OAES_API OAES_RET oaes_pseudo_encrypt_ecb(OAES_CTX * ctx, ushort * c)
 	{
 	  size_t _i = new size_t();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
@@ -11918,7 +11918,7 @@ r = 2 * p
 
 
 	/* "all-in-one" call */
-	public static HashReturn skein_hash(int hashbitlen, uint8_t data, size_t databitlen, uint8_t hashval)
+	public static HashReturn skein_hash(int hashbitlen, ushort data, size_t databitlen, ushort hashval)
 	{
 	  hashState state = new hashState();
 	  HashReturn r = Init(state, hashbitlen);
@@ -11946,8 +11946,8 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	union
 	//		{
-	//		uint8_t b[(8 *DefineConstants.SKEIN_512_STATE_WORDS)];
-	//		uint64_t w[DefineConstants.SKEIN_512_STATE_WORDS];
+	//		ushort b[(8 *DefineConstants.SKEIN_512_STATE_WORDS)];
+	//		ulong w[DefineConstants.SKEIN_512_STATE_WORDS];
 	//		}
 			cfg; // config block
 
@@ -11963,19 +11963,19 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: C# does not allow fall-through from a non-empty 'case':
 			case 512:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-				memcpy(ctx.X, SKEIN_512_IV_512, sizeof(uint64_t));
+				memcpy(ctx.X, SKEIN_512_IV_512, sizeof(ulong));
 				break;
 			case 384:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-				memcpy(ctx.X, SKEIN_512_IV_384, sizeof(uint64_t));
+				memcpy(ctx.X, SKEIN_512_IV_384, sizeof(ulong));
 				break;
 			case 256:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-				memcpy(ctx.X, SKEIN_512_IV_256, sizeof(uint64_t));
+				memcpy(ctx.X, SKEIN_512_IV_256, sizeof(ulong));
 				break;
 			case 224:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-				memcpy(ctx.X, SKEIN_512_IV_224, sizeof(uint64_t));
+				memcpy(ctx.X, SKEIN_512_IV_224, sizeof(ulong));
 				break;
 	#endif
 //C++ TO C# CONVERTER TODO TASK: C# does not allow fall-through from a non-empty 'case':
@@ -11988,21 +11988,21 @@ r = 2 * p
 							(ctx).h.T[0] = ((0));
 					};
 					{
-							(ctx).h.T[1] = (((((uint64_t) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_CFG_FINAL));
+							(ctx).h.T[1] = (((((ulong) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_CFG_FINAL));
 					};
 				};
 					(ctx).h.bCnt = 0;
 			}; // set tweaks: T0=0; T1=CFG | FINAL
 
-				cfg.w[0] = Skein_Swap64((((0x33414853)) + (((uint64_t)(DefineConstants.SKEIN_VERSION)) << 32))); // set the schema, version
+				cfg.w[0] = Skein_Swap64((((0x33414853)) + (((ulong)(DefineConstants.SKEIN_VERSION)) << 32))); // set the schema, version
 				cfg.w[1] = Skein_Swap64(hashBitLen); // hash result length in bits
-				cfg.w[2] = Skein_Swap64(((((uint64_t)(0)) << DefineConstants.SKEIN_CFG_TREE_LEAF_SIZE_POS) | (((uint64_t)(0)) << DefineConstants.SKEIN_CFG_TREE_NODE_SIZE_POS) | (((uint64_t)(0)) << DefineConstants.SKEIN_CFG_TREE_MAX_LEVEL_POS)));
+				cfg.w[2] = Skein_Swap64(((((ulong)(0)) << DefineConstants.SKEIN_CFG_TREE_LEAF_SIZE_POS) | (((ulong)(0)) << DefineConstants.SKEIN_CFG_TREE_NODE_SIZE_POS) | (((ulong)(0)) << DefineConstants.SKEIN_CFG_TREE_MAX_LEVEL_POS)));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
 				memset(cfg.w[3], 0, sizeof(cfg) - 3 * sizeof(cfg.w[0])); // zero pad config block
 
 				/* compute the initial chaining values from config block */
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
-				memset(ctx.X,0,sizeof(uint64_t)); // zero the chaining variables
+				memset(ctx.X,0,sizeof(ulong)); // zero the chaining variables
 				Skein_512_Process_Block(ctx, cfg.b, 1, DefineConstants.SKEIN_CFG_STR_LEN);
 				break;
 		}
@@ -12015,7 +12015,7 @@ r = 2 * p
 					(ctx).h.T[0] = ((0));
 			};
 			{
-					(ctx).h.T[1] = (((((uint64_t) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_MSG));
+					(ctx).h.T[1] = (((((ulong) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_MSG));
 			};
 		};
 			(ctx).h.bCnt = 0;
@@ -12034,8 +12034,8 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	union
 	//		{
-	//		uint8_t b[(8 *DefineConstants.SKEIN1024_STATE_WORDS)];
-	//		uint64_t w[DefineConstants.SKEIN1024_STATE_WORDS];
+	//		ushort b[(8 *DefineConstants.SKEIN1024_STATE_WORDS)];
+	//		ulong w[DefineConstants.SKEIN1024_STATE_WORDS];
 	//		}
 			cfg; // config block
 
@@ -12051,15 +12051,15 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: C# does not allow fall-through from a non-empty 'case':
 			case 512:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-				memcpy(ctx.X, SKEIN1024_IV_512, sizeof(uint64_t));
+				memcpy(ctx.X, SKEIN1024_IV_512, sizeof(ulong));
 				break;
 			case 384:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-				memcpy(ctx.X, SKEIN1024_IV_384, sizeof(uint64_t));
+				memcpy(ctx.X, SKEIN1024_IV_384, sizeof(ulong));
 				break;
 			case 1024:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-				memcpy(ctx.X, SKEIN1024_IV_1024, sizeof(uint64_t));
+				memcpy(ctx.X, SKEIN1024_IV_1024, sizeof(ulong));
 				break;
 	#endif
 //C++ TO C# CONVERTER TODO TASK: C# does not allow fall-through from a non-empty 'case':
@@ -12072,21 +12072,21 @@ r = 2 * p
 							(ctx).h.T[0] = ((0));
 					};
 					{
-							(ctx).h.T[1] = (((((uint64_t) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_CFG_FINAL));
+							(ctx).h.T[1] = (((((ulong) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_CFG_FINAL));
 					};
 				};
 					(ctx).h.bCnt = 0;
 			}; // set tweaks: T0=0; T1=CFG | FINAL
 
-				cfg.w[0] = Skein_Swap64((((0x33414853)) + (((uint64_t)(DefineConstants.SKEIN_VERSION)) << 32))); // set the schema, version
+				cfg.w[0] = Skein_Swap64((((0x33414853)) + (((ulong)(DefineConstants.SKEIN_VERSION)) << 32))); // set the schema, version
 				cfg.w[1] = Skein_Swap64(hashBitLen); // hash result length in bits
-				cfg.w[2] = Skein_Swap64(((((uint64_t)(0)) << DefineConstants.SKEIN_CFG_TREE_LEAF_SIZE_POS) | (((uint64_t)(0)) << DefineConstants.SKEIN_CFG_TREE_NODE_SIZE_POS) | (((uint64_t)(0)) << DefineConstants.SKEIN_CFG_TREE_MAX_LEVEL_POS)));
+				cfg.w[2] = Skein_Swap64(((((ulong)(0)) << DefineConstants.SKEIN_CFG_TREE_LEAF_SIZE_POS) | (((ulong)(0)) << DefineConstants.SKEIN_CFG_TREE_NODE_SIZE_POS) | (((ulong)(0)) << DefineConstants.SKEIN_CFG_TREE_MAX_LEVEL_POS)));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
 				memset(cfg.w[3], 0, sizeof(cfg) - 3 * sizeof(cfg.w[0])); // zero pad config block
 
 				/* compute the initial chaining values from config block */
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
-				memset(ctx.X,0,sizeof(uint64_t)); // zero the chaining variables
+				memset(ctx.X,0,sizeof(ulong)); // zero the chaining variables
 				Skein1024_Process_Block(ctx, cfg.b, 1, DefineConstants.SKEIN_CFG_STR_LEN);
 				break;
 		}
@@ -12099,7 +12099,7 @@ r = 2 * p
 					(ctx).h.T[0] = ((0));
 			};
 			{
-					(ctx).h.T[1] = (((((uint64_t) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_MSG));
+					(ctx).h.T[1] = (((((ulong) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_MSG));
 			};
 		};
 			(ctx).h.bCnt = 0;
@@ -12219,7 +12219,7 @@ r = 2 * p
 	//    }
 	#endif
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'msg', so pointers on this parameter are left unchanged:
-	internal static int Skein_256_Update(Skein_256_Ctxt_t ctx, uint8_t * msg, size_t msgByteCnt)
+	internal static int Skein_256_Update(Skein_256_Ctxt_t ctx, ushort * msg, size_t msgByteCnt)
 	{
 		size_t n = new size_t();
 
@@ -12237,7 +12237,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					Skein_assert(n < msgByteCnt); // check on our logic here
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-					memcpy(ctx.b[ctx.h.bCnt], new uint8_t(msg), new size_t(n));
+					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(n));
 					msgByteCnt -= n;
 					msg += n;
 					ctx.h.bCnt += n;
@@ -12253,7 +12253,7 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = (msgByteCnt-1) / (8 *DefineConstants.SKEIN_256_STATE_WORDS);
 				n.CopyFrom((msgByteCnt - 1) / (8 * DefineConstants.SKEIN_256_STATE_WORDS)); // number of full blocks to process
-				Skein_256_Process_Block(ctx, new uint8_t(msg), new size_t(n), (8 * DefineConstants.SKEIN_256_STATE_WORDS));
+				Skein_256_Process_Block(ctx, new ushort(msg), new size_t(n), (8 * DefineConstants.SKEIN_256_STATE_WORDS));
 				msgByteCnt -= n * (8 * DefineConstants.SKEIN_256_STATE_WORDS);
 				msg += n * (8 * DefineConstants.SKEIN_256_STATE_WORDS);
 			}
@@ -12267,7 +12267,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			Skein_assert(msgByteCnt + ctx.h.bCnt <= (8 * DefineConstants.SKEIN_256_STATE_WORDS));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.b[ctx.h.bCnt], new uint8_t(msg), new size_t(msgByteCnt));
+			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(msgByteCnt));
 			ctx.h.bCnt += msgByteCnt;
 		}
 
@@ -12337,7 +12337,7 @@ r = 2 * p
 	//    }
 	#endif
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'msg', so pointers on this parameter are left unchanged:
-	internal static int Skein_512_Update(Skein_512_Ctxt_t ctx, uint8_t * msg, size_t msgByteCnt)
+	internal static int Skein_512_Update(Skein_512_Ctxt_t ctx, ushort * msg, size_t msgByteCnt)
 	{
 		size_t n = new size_t();
 
@@ -12355,7 +12355,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					Skein_assert(n < msgByteCnt); // check on our logic here
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-					memcpy(ctx.b[ctx.h.bCnt], new uint8_t(msg), new size_t(n));
+					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(n));
 					msgByteCnt -= n;
 					msg += n;
 					ctx.h.bCnt += n;
@@ -12371,7 +12371,7 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = (msgByteCnt-1) / (8 *DefineConstants.SKEIN_512_STATE_WORDS);
 				n.CopyFrom((msgByteCnt - 1) / (8 * DefineConstants.SKEIN_512_STATE_WORDS)); // number of full blocks to process
-				Skein_512_Process_Block(ctx, new uint8_t(msg), new size_t(n), (8 * DefineConstants.SKEIN_512_STATE_WORDS));
+				Skein_512_Process_Block(ctx, new ushort(msg), new size_t(n), (8 * DefineConstants.SKEIN_512_STATE_WORDS));
 				msgByteCnt -= n * (8 * DefineConstants.SKEIN_512_STATE_WORDS);
 				msg += n * (8 * DefineConstants.SKEIN_512_STATE_WORDS);
 			}
@@ -12385,7 +12385,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			Skein_assert(msgByteCnt + ctx.h.bCnt <= (8 * DefineConstants.SKEIN_512_STATE_WORDS));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.b[ctx.h.bCnt], new uint8_t(msg), new size_t(msgByteCnt));
+			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(msgByteCnt));
 			ctx.h.bCnt += msgByteCnt;
 		}
 
@@ -12455,7 +12455,7 @@ r = 2 * p
 	//    }
 	#endif
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'msg', so pointers on this parameter are left unchanged:
-	internal static int Skein1024_Update(Skein1024_Ctxt_t ctx, uint8_t * msg, size_t msgByteCnt)
+	internal static int Skein1024_Update(Skein1024_Ctxt_t ctx, ushort * msg, size_t msgByteCnt)
 	{
 		size_t n = new size_t();
 
@@ -12473,7 +12473,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					Skein_assert(n < msgByteCnt); // check on our logic here
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-					memcpy(ctx.b[ctx.h.bCnt], new uint8_t(msg), new size_t(n));
+					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(n));
 					msgByteCnt -= n;
 					msg += n;
 					ctx.h.bCnt += n;
@@ -12489,7 +12489,7 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = (msgByteCnt-1) / (8 *DefineConstants.SKEIN1024_STATE_WORDS);
 				n.CopyFrom((msgByteCnt - 1) / (8 * DefineConstants.SKEIN1024_STATE_WORDS)); // number of full blocks to process
-				Skein1024_Process_Block(ctx, new uint8_t(msg), new size_t(n), (8 * DefineConstants.SKEIN1024_STATE_WORDS));
+				Skein1024_Process_Block(ctx, new ushort(msg), new size_t(n), (8 * DefineConstants.SKEIN1024_STATE_WORDS));
 				msgByteCnt -= n * (8 * DefineConstants.SKEIN1024_STATE_WORDS);
 				msg += n * (8 * DefineConstants.SKEIN1024_STATE_WORDS);
 			}
@@ -12503,7 +12503,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			Skein_assert(msgByteCnt + ctx.h.bCnt <= (8 * DefineConstants.SKEIN1024_STATE_WORDS));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.b[ctx.h.bCnt], new uint8_t(msg), new size_t(msgByteCnt));
+			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(msgByteCnt));
 			ctx.h.bCnt += msgByteCnt;
 		}
 
@@ -12513,16 +12513,16 @@ r = 2 * p
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* finalize the hash computation and output the result */
 
-	internal static int Skein_256_Final(Skein_256_Ctxt_t ctx, uint8_t hashVal)
+	internal static int Skein_256_Final(Skein_256_Ctxt_t ctx, ushort hashVal)
 	{
 		size_t i = new size_t();
 		size_t n = new size_t();
 		size_t byteCnt = new size_t();
-		uint64_t[] X = Arrays.InitializeWithDefaultInstances<uint64_t>(DefineConstants.SKEIN_256_STATE_WORDS);
+		ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN_256_STATE_WORDS);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN_256_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
 
-		ctx.h.T[1] |= (((uint64_t) 1) << ((127) - 64)); // tag as the final block
+		ctx.h.T[1] |= (((ulong) 1) << ((127) - 64)); // tag as the final block
 		if (ctx.h.bCnt < (8 * DefineConstants.SKEIN_256_STATE_WORDS)) // zero pad b[] if necessary
 		{
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
@@ -12538,22 +12538,22 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
 		memset(ctx.b,0,sizeof(ctx.b)); // zero out b[], so it can hold the counter
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-		memcpy(X, ctx.X, sizeof(uint64_t)); // keep a local copy of counter mode "key"
+		memcpy(X, ctx.X, sizeof(ulong)); // keep a local copy of counter mode "key"
 		for (i = 0;i * (8 * DefineConstants.SKEIN_256_STATE_WORDS) < byteCnt;i++)
 		{
-			((uint64_t)ctx.b)[0] = Skein_Swap64((uint64_t) i); // build the counter block
+			((ulong)ctx.b)[0] = Skein_Swap64((ulong) i); // build the counter block
 			{
 				{
 					{
 						(ctx).h.T[0] = ((0));
 				};
 				{
-						(ctx).h.T[1] = (((((uint64_t) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_OUT_FINAL));
+						(ctx).h.T[1] = (((((ulong) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_OUT_FINAL));
 				};
 			};
 				(ctx).h.bCnt = 0;
 			};
-			Skein_256_Process_Block(ctx, ctx.b, 1, sizeof(uint64_t)); // run "counter mode"
+			Skein_256_Process_Block(ctx, ctx.b, 1, sizeof(ulong)); // run "counter mode"
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = byteCnt - i*(8 *DefineConstants.SKEIN_256_STATE_WORDS);
 			n.CopyFrom(byteCnt - i * (8 * DefineConstants.SKEIN_256_STATE_WORDS)); // number of output bytes left to go
@@ -12565,23 +12565,23 @@ r = 2 * p
 			memcpy(hashVal + i * (8 * DefineConstants.SKEIN_256_STATE_WORDS), ctx.X, new size_t(n)); // "output" the ctr mode bytes
 			;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.X, X, sizeof(uint64_t)); // restore the counter mode key for next time
+			memcpy(ctx.X, X, sizeof(ulong)); // restore the counter mode key for next time
 		}
 		return HashReturn.SKEIN_SUCCESS;
 	}
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* finalize the hash computation and output the result */
-	internal static int Skein_512_Final(Skein_512_Ctxt_t ctx, uint8_t hashVal)
+	internal static int Skein_512_Final(Skein_512_Ctxt_t ctx, ushort hashVal)
 	{
 		size_t i = new size_t();
 		size_t n = new size_t();
 		size_t byteCnt = new size_t();
-		uint64_t[] X = Arrays.InitializeWithDefaultInstances<uint64_t>(DefineConstants.SKEIN_512_STATE_WORDS);
+		ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN_512_STATE_WORDS);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN_512_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
 
-		ctx.h.T[1] |= (((uint64_t) 1) << ((127) - 64)); // tag as the final block
+		ctx.h.T[1] |= (((ulong) 1) << ((127) - 64)); // tag as the final block
 		if (ctx.h.bCnt < (8 * DefineConstants.SKEIN_512_STATE_WORDS)) // zero pad b[] if necessary
 		{
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
@@ -12597,22 +12597,22 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
 		memset(ctx.b,0,sizeof(ctx.b)); // zero out b[], so it can hold the counter
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-		memcpy(X, ctx.X, sizeof(uint64_t)); // keep a local copy of counter mode "key"
+		memcpy(X, ctx.X, sizeof(ulong)); // keep a local copy of counter mode "key"
 		for (i = 0;i * (8 * DefineConstants.SKEIN_512_STATE_WORDS) < byteCnt;i++)
 		{
-			((uint64_t)ctx.b)[0] = Skein_Swap64((uint64_t) i); // build the counter block
+			((ulong)ctx.b)[0] = Skein_Swap64((ulong) i); // build the counter block
 			{
 				{
 					{
 						(ctx).h.T[0] = ((0));
 				};
 				{
-						(ctx).h.T[1] = (((((uint64_t) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_OUT_FINAL));
+						(ctx).h.T[1] = (((((ulong) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_OUT_FINAL));
 				};
 			};
 				(ctx).h.bCnt = 0;
 			};
-			Skein_512_Process_Block(ctx, ctx.b, 1, sizeof(uint64_t)); // run "counter mode"
+			Skein_512_Process_Block(ctx, ctx.b, 1, sizeof(ulong)); // run "counter mode"
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = byteCnt - i*(8 *DefineConstants.SKEIN_512_STATE_WORDS);
 			n.CopyFrom(byteCnt - i * (8 * DefineConstants.SKEIN_512_STATE_WORDS)); // number of output bytes left to go
@@ -12624,23 +12624,23 @@ r = 2 * p
 			memcpy(hashVal + i * (8 * DefineConstants.SKEIN_512_STATE_WORDS), ctx.X, new size_t(n)); // "output" the ctr mode bytes
 			;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.X, X, sizeof(uint64_t)); // restore the counter mode key for next time
+			memcpy(ctx.X, X, sizeof(ulong)); // restore the counter mode key for next time
 		}
 		return HashReturn.SKEIN_SUCCESS;
 	}
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* finalize the hash computation and output the result */
-	internal static int Skein1024_Final(Skein1024_Ctxt_t ctx, uint8_t hashVal)
+	internal static int Skein1024_Final(Skein1024_Ctxt_t ctx, ushort hashVal)
 	{
 		size_t i = new size_t();
 		size_t n = new size_t();
 		size_t byteCnt = new size_t();
-		uint64_t[] X = Arrays.InitializeWithDefaultInstances<uint64_t>(DefineConstants.SKEIN1024_STATE_WORDS);
+		ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN1024_STATE_WORDS);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN1024_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
 
-		ctx.h.T[1] |= (((uint64_t) 1) << ((127) - 64)); // tag as the final block
+		ctx.h.T[1] |= (((ulong) 1) << ((127) - 64)); // tag as the final block
 		if (ctx.h.bCnt < (8 * DefineConstants.SKEIN1024_STATE_WORDS)) // zero pad b[] if necessary
 		{
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
@@ -12656,22 +12656,22 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memset' has no equivalent in C#:
 		memset(ctx.b,0,sizeof(ctx.b)); // zero out b[], so it can hold the counter
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-		memcpy(X, ctx.X, sizeof(uint64_t)); // keep a local copy of counter mode "key"
+		memcpy(X, ctx.X, sizeof(ulong)); // keep a local copy of counter mode "key"
 		for (i = 0;i * (8 * DefineConstants.SKEIN1024_STATE_WORDS) < byteCnt;i++)
 		{
-			((uint64_t)ctx.b)[0] = Skein_Swap64((uint64_t) i); // build the counter block
+			((ulong)ctx.b)[0] = Skein_Swap64((ulong) i); // build the counter block
 			{
 				{
 					{
 						(ctx).h.T[0] = ((0));
 				};
 				{
-						(ctx).h.T[1] = (((((uint64_t) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_OUT_FINAL));
+						(ctx).h.T[1] = (((((ulong) 1) << ((126) - 64)) | SKEIN_T1_BLK_TYPE_OUT_FINAL));
 				};
 			};
 				(ctx).h.bCnt = 0;
 			};
-			Skein1024_Process_Block(ctx, ctx.b, 1, sizeof(uint64_t)); // run "counter mode"
+			Skein1024_Process_Block(ctx, ctx.b, 1, sizeof(ulong)); // run "counter mode"
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = byteCnt - i*(8 *DefineConstants.SKEIN1024_STATE_WORDS);
 			n.CopyFrom(byteCnt - i * (8 * DefineConstants.SKEIN1024_STATE_WORDS)); // number of output bytes left to go
@@ -12683,7 +12683,7 @@ r = 2 * p
 			memcpy(hashVal + i * (8 * DefineConstants.SKEIN1024_STATE_WORDS), ctx.X, new size_t(n)); // "output" the ctr mode bytes
 			;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.X, X, sizeof(uint64_t)); // restore the counter mode key for next time
+			memcpy(ctx.X, X, sizeof(ulong)); // restore the counter mode key for next time
 		}
 		return HashReturn.SKEIN_SUCCESS;
 	}
@@ -12919,43 +12919,43 @@ r = 2 * p
 	//ORIGINAL LINE: #define MK_64 SKEIN_MK_64
 
 	/* blkSize =  256 bits. hashSize =  128 bits */
-	public static readonly uint64_t[] SKEIN_256_IV_128 = {((0x964D7260) + (((uint64_t)(0xE1111906)) << 32)), ((0x7C8D811C) + (((uint64_t)(0x883DAAA7)) << 32)), ((0x91960F7A) + (((uint64_t)(0x10080DF4)) << 32)), ((0xB45BC1C2) + (((uint64_t)(0xCCF7DDE5)) << 32))};
+	public static readonly ulong[] SKEIN_256_IV_128 = {((0x964D7260) + (((ulong)(0xE1111906)) << 32)), ((0x7C8D811C) + (((ulong)(0x883DAAA7)) << 32)), ((0x91960F7A) + (((ulong)(0x10080DF4)) << 32)), ((0xB45BC1C2) + (((ulong)(0xCCF7DDE5)) << 32))};
 
 	/* blkSize =  256 bits. hashSize =  160 bits */
-	public static readonly uint64_t[] SKEIN_256_IV_160 = {((0x72825E98) + (((uint64_t)(0x14202314)) << 32)), ((0x5A77E590) + (((uint64_t)(0x2AC4E9A2)) << 32)), ((0x8838D63E) + (((uint64_t)(0xD47A5856)) << 32)), ((0x8586AB7D) + (((uint64_t)(0x2DD2E496)) << 32))};
+	public static readonly ulong[] SKEIN_256_IV_160 = {((0x72825E98) + (((ulong)(0x14202314)) << 32)), ((0x5A77E590) + (((ulong)(0x2AC4E9A2)) << 32)), ((0x8838D63E) + (((ulong)(0xD47A5856)) << 32)), ((0x8586AB7D) + (((ulong)(0x2DD2E496)) << 32))};
 
 	/* blkSize =  256 bits. hashSize =  224 bits */
-	public static readonly uint64_t[] SKEIN_256_IV_224 = {((0x9AE5EA0B) + (((uint64_t)(0xC6098A8C)) << 32)), ((0x08C5191C) + (((uint64_t)(0x876D5686)) << 32)), ((0xD7F53884) + (((uint64_t)(0x99CB88D7)) << 32)), ((0xAEDDB5DE) + (((uint64_t)(0x384BDDB1)) << 32))};
+	public static readonly ulong[] SKEIN_256_IV_224 = {((0x9AE5EA0B) + (((ulong)(0xC6098A8C)) << 32)), ((0x08C5191C) + (((ulong)(0x876D5686)) << 32)), ((0xD7F53884) + (((ulong)(0x99CB88D7)) << 32)), ((0xAEDDB5DE) + (((ulong)(0x384BDDB1)) << 32))};
 
 	/* blkSize =  256 bits. hashSize =  256 bits */
-	public static readonly uint64_t[] SKEIN_256_IV_256 = {((0xD048B449) + (((uint64_t)(0xFC9DA860)) << 32)), ((0x9FA7D833) + (((uint64_t)(0x2FCA6647)) << 32)), ((0x6656840F) + (((uint64_t)(0xB33BC389)) << 32)), ((0xFDE8DA69) + (((uint64_t)(0x6A54E920)) << 32))};
+	public static readonly ulong[] SKEIN_256_IV_256 = {((0xD048B449) + (((ulong)(0xFC9DA860)) << 32)), ((0x9FA7D833) + (((ulong)(0x2FCA6647)) << 32)), ((0x6656840F) + (((ulong)(0xB33BC389)) << 32)), ((0xFDE8DA69) + (((ulong)(0x6A54E920)) << 32))};
 
 	/* blkSize =  512 bits. hashSize =  128 bits */
-	public static readonly uint64_t[] SKEIN_512_IV_128 = {((0x6FBF9F52) + (((uint64_t)(0xA8BC7BF3)) << 32)), ((0xBD1AF0AA) + (((uint64_t)(0x1E9872CE)) << 32)), ((0xB32190D3) + (((uint64_t)(0x309B1790)) << 32)), ((0x3F94805C) + (((uint64_t)(0xBCFBB854)) << 32)), ((0x6E31B11B) + (((uint64_t)(0x0DA61BCD)) << 32)), ((0xD46A32E3) + (((uint64_t)(0x1A18EBEA)) << 32)), ((0xCE84AA82) + (((uint64_t)(0xA2CC5B18)) << 32)), ((0x9D46982D) + (((uint64_t)(0x6982AB28)) << 32))};
+	public static readonly ulong[] SKEIN_512_IV_128 = {((0x6FBF9F52) + (((ulong)(0xA8BC7BF3)) << 32)), ((0xBD1AF0AA) + (((ulong)(0x1E9872CE)) << 32)), ((0xB32190D3) + (((ulong)(0x309B1790)) << 32)), ((0x3F94805C) + (((ulong)(0xBCFBB854)) << 32)), ((0x6E31B11B) + (((ulong)(0x0DA61BCD)) << 32)), ((0xD46A32E3) + (((ulong)(0x1A18EBEA)) << 32)), ((0xCE84AA82) + (((ulong)(0xA2CC5B18)) << 32)), ((0x9D46982D) + (((ulong)(0x6982AB28)) << 32))};
 
 	/* blkSize =  512 bits. hashSize =  160 bits */
-	public static readonly uint64_t[] SKEIN_512_IV_160 = {((0xE013BD91) + (((uint64_t)(0x28B81A2A)) << 32)), ((0xB5BDF78F) + (((uint64_t)(0xC2F11668)) << 32)), ((0xF6A56F12) + (((uint64_t)(0x1760D8F3)) << 32)), ((0x8239904F) + (((uint64_t)(0x4FB74758)) << 32)), ((0x7EAF5056) + (((uint64_t)(0x21EDE07F)) << 32)), ((0x63ED70B8) + (((uint64_t)(0xD908922E)) << 32)), ((0xECCB52FA) + (((uint64_t)(0xB8EC76FF)) << 32)), ((0xA3F27A6E) + (((uint64_t)(0x01A47BB8)) << 32))};
+	public static readonly ulong[] SKEIN_512_IV_160 = {((0xE013BD91) + (((ulong)(0x28B81A2A)) << 32)), ((0xB5BDF78F) + (((ulong)(0xC2F11668)) << 32)), ((0xF6A56F12) + (((ulong)(0x1760D8F3)) << 32)), ((0x8239904F) + (((ulong)(0x4FB74758)) << 32)), ((0x7EAF5056) + (((ulong)(0x21EDE07F)) << 32)), ((0x63ED70B8) + (((ulong)(0xD908922E)) << 32)), ((0xECCB52FA) + (((ulong)(0xB8EC76FF)) << 32)), ((0xA3F27A6E) + (((ulong)(0x01A47BB8)) << 32))};
 
 	/* blkSize =  512 bits. hashSize =  224 bits */
-	public static readonly uint64_t[] SKEIN_512_IV_224 = {((0x48677224) + (((uint64_t)(0xCCD06162)) << 32)), ((0xA92339EF) + (((uint64_t)(0xCBA65CF3)) << 32)), ((0x52FF4B64) + (((uint64_t)(0x8CCD69D6)) << 32)), ((0x3AB890B4) + (((uint64_t)(0x398AED7B)) << 32)), ((0x457D2BD0) + (((uint64_t)(0x0F59D1B1)) << 32)), ((0x75D4EB3D) + (((uint64_t)(0x6776FE65)) << 32)), ((0x997413E9) + (((uint64_t)(0x99FBC70E)) << 32)), ((0xE1C41EF7) + (((uint64_t)(0x9E2CFCCF)) << 32))};
+	public static readonly ulong[] SKEIN_512_IV_224 = {((0x48677224) + (((ulong)(0xCCD06162)) << 32)), ((0xA92339EF) + (((ulong)(0xCBA65CF3)) << 32)), ((0x52FF4B64) + (((ulong)(0x8CCD69D6)) << 32)), ((0x3AB890B4) + (((ulong)(0x398AED7B)) << 32)), ((0x457D2BD0) + (((ulong)(0x0F59D1B1)) << 32)), ((0x75D4EB3D) + (((ulong)(0x6776FE65)) << 32)), ((0x997413E9) + (((ulong)(0x99FBC70E)) << 32)), ((0xE1C41EF7) + (((ulong)(0x9E2CFCCF)) << 32))};
 
 	/* blkSize =  512 bits. hashSize =  256 bits */
-	public static readonly uint64_t[] SKEIN_512_IV_256 = {((0x2FDB3E13) + (((uint64_t)(0xCCD044A1)) << 32)), ((0x1A79A9EB) + (((uint64_t)(0xE8359030)) << 32)), ((0x4F816E6F) + (((uint64_t)(0x55AEA061)) << 32)), ((0xAE9B94DB) + (((uint64_t)(0x2A2767A4)) << 32)), ((0x74DD7683) + (((uint64_t)(0xEC06025E)) << 32)), ((0xC4746251) + (((uint64_t)(0xE7A436CD)) << 32)), ((0x393AD185) + (((uint64_t)(0xC36FBAF9)) << 32)), ((0x33EDFC13) + (((uint64_t)(0x3EEDBA18)) << 32))};
+	public static readonly ulong[] SKEIN_512_IV_256 = {((0x2FDB3E13) + (((ulong)(0xCCD044A1)) << 32)), ((0x1A79A9EB) + (((ulong)(0xE8359030)) << 32)), ((0x4F816E6F) + (((ulong)(0x55AEA061)) << 32)), ((0xAE9B94DB) + (((ulong)(0x2A2767A4)) << 32)), ((0x74DD7683) + (((ulong)(0xEC06025E)) << 32)), ((0xC4746251) + (((ulong)(0xE7A436CD)) << 32)), ((0x393AD185) + (((ulong)(0xC36FBAF9)) << 32)), ((0x33EDFC13) + (((ulong)(0x3EEDBA18)) << 32))};
 
 	/* blkSize =  512 bits. hashSize =  384 bits */
-	public static readonly uint64_t[] SKEIN_512_IV_384 = {((0x3A75EF5F) + (((uint64_t)(0xA3F6C6BF)) << 32)), ((0xFD84FAA4) + (((uint64_t)(0xB0FEF9CC)) << 32)), ((0x3D770CFE) + (((uint64_t)(0x9D77DD66)) << 32)), ((0xB468FDDA) + (((uint64_t)(0xD798CBF3)) << 32)), ((0x8A0E4465) + (((uint64_t)(0x1BC4A666)) << 32)), ((0xE5807407) + (((uint64_t)(0x7ED7D434)) << 32)), ((0xD4EC44D6) + (((uint64_t)(0x548FC1AC)) << 32)), ((0x6AA18FF8) + (((uint64_t)(0x266E1754)) << 32))};
+	public static readonly ulong[] SKEIN_512_IV_384 = {((0x3A75EF5F) + (((ulong)(0xA3F6C6BF)) << 32)), ((0xFD84FAA4) + (((ulong)(0xB0FEF9CC)) << 32)), ((0x3D770CFE) + (((ulong)(0x9D77DD66)) << 32)), ((0xB468FDDA) + (((ulong)(0xD798CBF3)) << 32)), ((0x8A0E4465) + (((ulong)(0x1BC4A666)) << 32)), ((0xE5807407) + (((ulong)(0x7ED7D434)) << 32)), ((0xD4EC44D6) + (((ulong)(0x548FC1AC)) << 32)), ((0x6AA18FF8) + (((ulong)(0x266E1754)) << 32))};
 
 	/* blkSize =  512 bits. hashSize =  512 bits */
-	public static readonly uint64_t[] SKEIN_512_IV_512 = {((0x749C51CE) + (((uint64_t)(0x4903ADFF)) << 32)), ((0x9746DF03) + (((uint64_t)(0x0D95DE39)) << 32)), ((0x27C79BCE) + (((uint64_t)(0x8FD19341)) << 32)), ((0xFF352CB1) + (((uint64_t)(0x9A255629)) << 32)), ((0xDF6CA7B0) + (((uint64_t)(0x5DB62599)) << 32)), ((0xA9D5C3F4) + (((uint64_t)(0xEABE394C)) << 32)), ((0x1A75B523) + (((uint64_t)(0x991112C7)) << 32)), ((0x660FCC33) + (((uint64_t)(0xAE18A40B)) << 32))};
+	public static readonly ulong[] SKEIN_512_IV_512 = {((0x749C51CE) + (((ulong)(0x4903ADFF)) << 32)), ((0x9746DF03) + (((ulong)(0x0D95DE39)) << 32)), ((0x27C79BCE) + (((ulong)(0x8FD19341)) << 32)), ((0xFF352CB1) + (((ulong)(0x9A255629)) << 32)), ((0xDF6CA7B0) + (((ulong)(0x5DB62599)) << 32)), ((0xA9D5C3F4) + (((ulong)(0xEABE394C)) << 32)), ((0x1A75B523) + (((ulong)(0x991112C7)) << 32)), ((0x660FCC33) + (((ulong)(0xAE18A40B)) << 32))};
 
 	/* blkSize = 1024 bits. hashSize =  384 bits */
-	public static readonly uint64_t[] SKEIN1024_IV_384 = {((0xC1894A35) + (((uint64_t)(0x5102B6B8)) << 32)), ((0xFE8AF11A) + (((uint64_t)(0xFEEBC9E3)) << 32)), ((0xE32BED71) + (((uint64_t)(0x0C807F06)) << 32)), ((0xB41A91F6) + (((uint64_t)(0x60C13A52)) << 32)), ((0xD4917C38) + (((uint64_t)(0x9716D35D)) << 32)), ((0x6FD31D3A) + (((uint64_t)(0xE780DF12)) << 32)), ((0xC898303A) + (((uint64_t)(0x797846B6)) << 32)), ((0xB3572A3B) + (((uint64_t)(0xB172C2A8)) << 32)), ((0xA6104A6C) + (((uint64_t)(0xC9BC8203)) << 32)), ((0xD75624F4) + (((uint64_t)(0x65909338)) << 32)), ((0x4B3F81A0) + (((uint64_t)(0x94BCC568)) << 32)), ((0x10ECFD46) + (((uint64_t)(0x3EBBF51E)) << 32)), ((0xEEB08542) + (((uint64_t)(0x2DF50F0B)) << 32)), ((0x0DBC6516) + (((uint64_t)(0x3B5A6530)) << 32)), ((0x167BBCE1) + (((uint64_t)(0x484B9CD2)) << 32)), ((0xD4CBAFEA) + (((uint64_t)(0x2D136947)) << 32))};
+	public static readonly ulong[] SKEIN1024_IV_384 = {((0xC1894A35) + (((ulong)(0x5102B6B8)) << 32)), ((0xFE8AF11A) + (((ulong)(0xFEEBC9E3)) << 32)), ((0xE32BED71) + (((ulong)(0x0C807F06)) << 32)), ((0xB41A91F6) + (((ulong)(0x60C13A52)) << 32)), ((0xD4917C38) + (((ulong)(0x9716D35D)) << 32)), ((0x6FD31D3A) + (((ulong)(0xE780DF12)) << 32)), ((0xC898303A) + (((ulong)(0x797846B6)) << 32)), ((0xB3572A3B) + (((ulong)(0xB172C2A8)) << 32)), ((0xA6104A6C) + (((ulong)(0xC9BC8203)) << 32)), ((0xD75624F4) + (((ulong)(0x65909338)) << 32)), ((0x4B3F81A0) + (((ulong)(0x94BCC568)) << 32)), ((0x10ECFD46) + (((ulong)(0x3EBBF51E)) << 32)), ((0xEEB08542) + (((ulong)(0x2DF50F0B)) << 32)), ((0x0DBC6516) + (((ulong)(0x3B5A6530)) << 32)), ((0x167BBCE1) + (((ulong)(0x484B9CD2)) << 32)), ((0xD4CBAFEA) + (((ulong)(0x2D136947)) << 32))};
 
 	/* blkSize = 1024 bits. hashSize =  512 bits */
-	public static readonly uint64_t[] SKEIN1024_IV_512 = {((0x7C1B1B18) + (((uint64_t)(0xCAEC0E5D)) << 32)), ((0x5F03E802) + (((uint64_t)(0xA01B0E04)) << 32)), ((0xED912885) + (((uint64_t)(0x33840451)) << 32)), ((0xEAEC2E1C) + (((uint64_t)(0x374AFB04)) << 32)), ((0x813581F7) + (((uint64_t)(0xDF25A0E2)) << 32)), ((0x8B12F9D2) + (((uint64_t)(0xE4004093)) << 32)), ((0xC2ED39B6) + (((uint64_t)(0xA662D539)) << 32)), ((0x45D8C75A) + (((uint64_t)(0xFA8B85CF)) << 32)), ((0x29EDE796) + (((uint64_t)(0x8316ED8E)) << 32)), ((0x2E9F91B8) + (((uint64_t)(0x053289C0)) << 32)), ((0x6D518B73) + (((uint64_t)(0xC3F8EF1D)) << 32)), ((0xD5EF332E) + (((uint64_t)(0xBDCEC3C4)) << 32)), ((0x22974487) + (((uint64_t)(0x549A7E52)) << 32)), ((0x5B749816) + (((uint64_t)(0x67070872)) << 32)), ((0xF0581BD1) + (((uint64_t)(0xB9CD28FB)) << 32)), ((0x15804974) + (((uint64_t)(0x0E2940B8)) << 32))};
+	public static readonly ulong[] SKEIN1024_IV_512 = {((0x7C1B1B18) + (((ulong)(0xCAEC0E5D)) << 32)), ((0x5F03E802) + (((ulong)(0xA01B0E04)) << 32)), ((0xED912885) + (((ulong)(0x33840451)) << 32)), ((0xEAEC2E1C) + (((ulong)(0x374AFB04)) << 32)), ((0x813581F7) + (((ulong)(0xDF25A0E2)) << 32)), ((0x8B12F9D2) + (((ulong)(0xE4004093)) << 32)), ((0xC2ED39B6) + (((ulong)(0xA662D539)) << 32)), ((0x45D8C75A) + (((ulong)(0xFA8B85CF)) << 32)), ((0x29EDE796) + (((ulong)(0x8316ED8E)) << 32)), ((0x2E9F91B8) + (((ulong)(0x053289C0)) << 32)), ((0x6D518B73) + (((ulong)(0xC3F8EF1D)) << 32)), ((0xD5EF332E) + (((ulong)(0xBDCEC3C4)) << 32)), ((0x22974487) + (((ulong)(0x549A7E52)) << 32)), ((0x5B749816) + (((ulong)(0x67070872)) << 32)), ((0xF0581BD1) + (((ulong)(0xB9CD28FB)) << 32)), ((0x15804974) + (((ulong)(0x0E2940B8)) << 32))};
 
 	/* blkSize = 1024 bits. hashSize = 1024 bits */
-	public static readonly uint64_t[] SKEIN1024_IV_1024 = {((0x41E72355) + (((uint64_t)(0xD593DA07)) << 32)), ((0xAC73E00C) + (((uint64_t)(0x15B5E511)) << 32)), ((0xBAF2C4F0) + (((uint64_t)(0x5180E5AE)) << 32)), ((0xFCBCAFAF) + (((uint64_t)(0x03BD41D3)) << 32)), ((0x1983A898) + (((uint64_t)(0x1CAEC6FD)) << 32)), ((0xCDD0589F) + (((uint64_t)(0x6E510B8B)) << 32)), ((0xC6394ADA) + (((uint64_t)(0x77E2BDFD)) << 32)), ((0x24DCB0A3) + (((uint64_t)(0xC11E1DB5)) << 32)), ((0xC6329AB5) + (((uint64_t)(0xD6D14AF9)) << 32)), ((0x6EB67E0D) + (((uint64_t)(0x6A9B0BFC)) << 32)), ((0xCCFF1332) + (((uint64_t)(0x9243C60D)) << 32)), ((0x743F02D4) + (((uint64_t)(0x1A1F1DDE)) << 32)), ((0x10ED0BB8) + (((uint64_t)(0x0996753C)) << 32)), ((0xF2B4969A) + (((uint64_t)(0x6572DD22)) << 32)), ((0xD00A579A) + (((uint64_t)(0x61FD3062)) << 32)), ((0x8682E539) + (((uint64_t)(0x1DE0536E)) << 32))};
+	public static readonly ulong[] SKEIN1024_IV_1024 = {((0x41E72355) + (((ulong)(0xD593DA07)) << 32)), ((0xAC73E00C) + (((ulong)(0x15B5E511)) << 32)), ((0xBAF2C4F0) + (((ulong)(0x5180E5AE)) << 32)), ((0xFCBCAFAF) + (((ulong)(0x03BD41D3)) << 32)), ((0x1983A898) + (((ulong)(0x1CAEC6FD)) << 32)), ((0xCDD0589F) + (((ulong)(0x6E510B8B)) << 32)), ((0xC6394ADA) + (((ulong)(0x77E2BDFD)) << 32)), ((0x24DCB0A3) + (((ulong)(0xC11E1DB5)) << 32)), ((0xC6329AB5) + (((ulong)(0xD6D14AF9)) << 32)), ((0x6EB67E0D) + (((ulong)(0x6A9B0BFC)) << 32)), ((0xCCFF1332) + (((ulong)(0x9243C60D)) << 32)), ((0x743F02D4) + (((ulong)(0x1A1F1DDE)) << 32)), ((0x10ED0BB8) + (((ulong)(0x0996753C)) << 32)), ((0xF2B4969A) + (((ulong)(0x6572DD22)) << 32)), ((0xD00A579A) + (((ulong)(0x61FD3062)) << 32)), ((0x8682E539) + (((ulong)(0x1DE0536E)) << 32))};
 
 
 
@@ -12982,7 +12982,7 @@ r = 2 * p
 	/*****************************  Skein_256 ******************************/
 	#if !(SKEIN_USE_ASM & 256)
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'blkPtr', so pointers on this parameter are left unchanged:
-	internal static void Skein_256_Process_Block(Skein_256_Ctxt_t ctx, uint8_t * blkPtr, size_t blkCnt, size_t byteCntAdd)
+	internal static void Skein_256_Process_Block(Skein_256_Ctxt_t ctx, ushort * blkPtr, size_t blkCnt, size_t byteCntAdd)
 	{ // do it in C
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	enum
@@ -13009,17 +13009,17 @@ r = 2 * p
 	#error "Invalid SKEIN_UNROLL_256"
 	#endif
 		size_t r = new size_t();
-		uint64_t[] kw = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS / 100) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
+		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS / 100) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
 	#else
-		uint64_t[] kw = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT + 4); // key schedule words : chaining vars + tweak
+		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4); // key schedule words : chaining vars + tweak
 	#endif
-		uint64_t X0 = new uint64_t(); // local copy of context vars, for speed
-		uint64_t X1 = new uint64_t();
-		uint64_t X2 = new uint64_t();
-		uint64_t X3 = new uint64_t();
-		uint64_t[] w = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT); // local copy of input block
+		ulong X0 = new ulong(); // local copy of context vars, for speed
+		ulong X1 = new ulong();
+		ulong X2 = new ulong();
+		ulong X3 = new ulong();
+		ulong[] w = Arrays.InitializeWithDefaultInstances<ulong>(WCNT); // local copy of input block
 	#if SKEIN_DEBUG
-		uint64_t[] Xptr = Arrays.InitializeWithDefaultInstances<uint64_t>(4); // use for debugging (help compiler put Xn in registers)
+		ulong[] Xptr = Arrays.InitializeWithDefaultInstances<ulong>(4); // use for debugging (help compiler put Xn in registers)
 		Xptr[0] = X0;
 		Xptr[1] = X1;
 		Xptr[2] = X2;
@@ -13039,12 +13039,12 @@ r = 2 * p
 			(kw + DefineConstants.KW_KEY_BASE)[1] = ctx.X[1];
 			(kw + DefineConstants.KW_KEY_BASE)[2] = ctx.X[2];
 			(kw + DefineConstants.KW_KEY_BASE)[3] = ctx.X[3];
-			(kw + DefineConstants.KW_KEY_BASE)[4] = (kw + DefineConstants.KW_KEY_BASE)[0] ^ (kw + DefineConstants.KW_KEY_BASE)[1] ^ (kw + DefineConstants.KW_KEY_BASE)[2] ^ (kw + DefineConstants.KW_KEY_BASE)[3] ^ ((0xA9FC1A22) + (((uint64_t)(0x1BD11BDA)) << 32));
+			(kw + DefineConstants.KW_KEY_BASE)[4] = (kw + DefineConstants.KW_KEY_BASE)[0] ^ (kw + DefineConstants.KW_KEY_BASE)[1] ^ (kw + DefineConstants.KW_KEY_BASE)[2] ^ (kw + DefineConstants.KW_KEY_BASE)[3] ^ ((0xA9FC1A22) + (((ulong)(0x1BD11BDA)) << 32));
 
 			(kw + DefineConstants.KW_TWK_BASE)[2] = (kw + DefineConstants.KW_TWK_BASE)[0] ^ (kw + DefineConstants.KW_TWK_BASE)[1];
 
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(w, new uint8_t(blkPtr), 8 * (WCNT)); // get input block in little-endian format
+			memcpy(w, new ushort(blkPtr), 8 * (WCNT)); // get input block in little-endian format
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'DebugSaveTweak' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			DebugSaveTweak(ctx);
 			;
@@ -13584,7 +13584,7 @@ r = 2 * p
 
 			;
 
-			(kw + DefineConstants.KW_TWK_BASE)[1] &= ~(((uint64_t) 1) << ((126) - 64));
+			(kw + DefineConstants.KW_TWK_BASE)[1] &= ~(((ulong) 1) << ((126) - 64));
 		} while (--blkCnt != 0);
 		ctx.h.T[0] = (kw + DefineConstants.KW_TWK_BASE)[0];
 		ctx.h.T[1] = (kw + DefineConstants.KW_TWK_BASE)[1];
@@ -13593,7 +13593,7 @@ r = 2 * p
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
 	internal static size_t Skein_256_Process_Block_CodeSize()
 	{
-		return ((uint8_t) Skein_256_Process_Block_CodeSize) - ((uint8_t) Skein_256_Process_Block);
+		return ((ushort) Skein_256_Process_Block_CodeSize) - ((ushort) Skein_256_Process_Block);
 	}
 	internal static uint Skein_256_Unroll_Cnt()
 	{
@@ -13605,7 +13605,7 @@ r = 2 * p
 	/*****************************  Skein_512 ******************************/
 	#if !(SKEIN_USE_ASM & 512)
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'blkPtr', so pointers on this parameter are left unchanged:
-	internal static void Skein_512_Process_Block(Skein_512_Ctxt_t ctx, uint8_t * blkPtr, size_t blkCnt, size_t byteCntAdd)
+	internal static void Skein_512_Process_Block(Skein_512_Ctxt_t ctx, ushort * blkPtr, size_t blkCnt, size_t byteCntAdd)
 	{ // do it in C
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	enum
@@ -13632,21 +13632,21 @@ r = 2 * p
 	#error "Invalid SKEIN_UNROLL_512"
 	#endif
 		size_t r = new size_t();
-		uint64_t[] kw = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS / 10) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
+		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS / 10) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
 	#else
-		uint64_t[] kw = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT + 4); // key schedule words : chaining vars + tweak
+		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4); // key schedule words : chaining vars + tweak
 	#endif
-		uint64_t X0 = new uint64_t(); // local copy of vars, for speed
-		uint64_t X1 = new uint64_t();
-		uint64_t X2 = new uint64_t();
-		uint64_t X3 = new uint64_t();
-		uint64_t X4 = new uint64_t();
-		uint64_t X5 = new uint64_t();
-		uint64_t X6 = new uint64_t();
-		uint64_t X7 = new uint64_t();
-		uint64_t[] w = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT); // local copy of input block
+		ulong X0 = new ulong(); // local copy of vars, for speed
+		ulong X1 = new ulong();
+		ulong X2 = new ulong();
+		ulong X3 = new ulong();
+		ulong X4 = new ulong();
+		ulong X5 = new ulong();
+		ulong X6 = new ulong();
+		ulong X7 = new ulong();
+		ulong[] w = Arrays.InitializeWithDefaultInstances<ulong>(WCNT); // local copy of input block
 	#if SKEIN_DEBUG
-		uint64_t[] Xptr = Arrays.InitializeWithDefaultInstances<uint64_t>(8); // use for debugging (help compiler put Xn in registers)
+		ulong[] Xptr = Arrays.InitializeWithDefaultInstances<ulong>(8); // use for debugging (help compiler put Xn in registers)
 		Xptr[0] = X0;
 		Xptr[1] = X1;
 		Xptr[2] = X2;
@@ -13675,12 +13675,12 @@ r = 2 * p
 			(kw + DefineConstants.KW_KEY_BASE)[5] = ctx.X[5];
 			(kw + DefineConstants.KW_KEY_BASE)[6] = ctx.X[6];
 			(kw + DefineConstants.KW_KEY_BASE)[7] = ctx.X[7];
-			(kw + DefineConstants.KW_KEY_BASE)[8] = (kw + DefineConstants.KW_KEY_BASE)[0] ^ (kw + DefineConstants.KW_KEY_BASE)[1] ^ (kw + DefineConstants.KW_KEY_BASE)[2] ^ (kw + DefineConstants.KW_KEY_BASE)[3] ^ (kw + DefineConstants.KW_KEY_BASE)[4] ^ (kw + DefineConstants.KW_KEY_BASE)[5] ^ (kw + DefineConstants.KW_KEY_BASE)[6] ^ (kw + DefineConstants.KW_KEY_BASE)[7] ^ ((0xA9FC1A22) + (((uint64_t)(0x1BD11BDA)) << 32));
+			(kw + DefineConstants.KW_KEY_BASE)[8] = (kw + DefineConstants.KW_KEY_BASE)[0] ^ (kw + DefineConstants.KW_KEY_BASE)[1] ^ (kw + DefineConstants.KW_KEY_BASE)[2] ^ (kw + DefineConstants.KW_KEY_BASE)[3] ^ (kw + DefineConstants.KW_KEY_BASE)[4] ^ (kw + DefineConstants.KW_KEY_BASE)[5] ^ (kw + DefineConstants.KW_KEY_BASE)[6] ^ (kw + DefineConstants.KW_KEY_BASE)[7] ^ ((0xA9FC1A22) + (((ulong)(0x1BD11BDA)) << 32));
 
 			(kw + DefineConstants.KW_TWK_BASE)[2] = (kw + DefineConstants.KW_TWK_BASE)[0] ^ (kw + DefineConstants.KW_TWK_BASE)[1];
 
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(w, new uint8_t(blkPtr), 8 * (WCNT)); // get input block in little-endian format
+			memcpy(w, new ushort(blkPtr), 8 * (WCNT)); // get input block in little-endian format
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'DebugSaveTweak' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			DebugSaveTweak(ctx);
 			;
@@ -14234,7 +14234,7 @@ r = 2 * p
 			ctx.X[7] = X7 ^ w[7];
 			;
 
-			(kw + DefineConstants.KW_TWK_BASE)[1] &= ~(((uint64_t) 1) << ((126) - 64));
+			(kw + DefineConstants.KW_TWK_BASE)[1] &= ~(((ulong) 1) << ((126) - 64));
 		} while (--blkCnt != 0);
 		ctx.h.T[0] = (kw + DefineConstants.KW_TWK_BASE)[0];
 		ctx.h.T[1] = (kw + DefineConstants.KW_TWK_BASE)[1];
@@ -14243,7 +14243,7 @@ r = 2 * p
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
 	internal static size_t Skein_512_Process_Block_CodeSize()
 	{
-		return ((uint8_t) Skein_512_Process_Block_CodeSize) - ((uint8_t) Skein_512_Process_Block);
+		return ((ushort) Skein_512_Process_Block_CodeSize) - ((ushort) Skein_512_Process_Block);
 	}
 	internal static uint Skein_512_Unroll_Cnt()
 	{
@@ -14255,7 +14255,7 @@ r = 2 * p
 	/*****************************  Skein1024 ******************************/
 	#if !(SKEIN_USE_ASM & 1024)
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'blkPtr', so pointers on this parameter are left unchanged:
-	internal static void Skein1024_Process_Block(Skein1024_Ctxt_t ctx, uint8_t * blkPtr, size_t blkCnt, size_t byteCntAdd)
+	internal static void Skein1024_Process_Block(Skein1024_Ctxt_t ctx, ushort * blkPtr, size_t blkCnt, size_t byteCntAdd)
 	{ // do it in C, always looping (unrolled is bigger AND slower!)
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	enum
@@ -14283,30 +14283,30 @@ r = 2 * p
 	#error "Invalid SKEIN_UNROLL_1024"
 	#endif
 		size_t r = new size_t();
-		uint64_t[] kw = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
+		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
 	#else
-		uint64_t[] kw = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT + 4); // key schedule words : chaining vars + tweak
+		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4); // key schedule words : chaining vars + tweak
 	#endif
 
-		uint64_t X00 = new uint64_t();
-		uint64_t X01 = new uint64_t();
-		uint64_t X02 = new uint64_t();
-		uint64_t X03 = new uint64_t();
-		uint64_t X04 = new uint64_t();
-		uint64_t X05 = new uint64_t();
-		uint64_t X06 = new uint64_t();
-		uint64_t X07 = new uint64_t();
-		uint64_t X08 = new uint64_t();
-		uint64_t X09 = new uint64_t();
-		uint64_t X10 = new uint64_t();
-		uint64_t X11 = new uint64_t();
-		uint64_t X12 = new uint64_t();
-		uint64_t X13 = new uint64_t();
-		uint64_t X14 = new uint64_t();
-		uint64_t X15 = new uint64_t();
-		uint64_t[] w = Arrays.InitializeWithDefaultInstances<uint64_t>(WCNT); // local copy of input block
+		ulong X00 = new ulong();
+		ulong X01 = new ulong();
+		ulong X02 = new ulong();
+		ulong X03 = new ulong();
+		ulong X04 = new ulong();
+		ulong X05 = new ulong();
+		ulong X06 = new ulong();
+		ulong X07 = new ulong();
+		ulong X08 = new ulong();
+		ulong X09 = new ulong();
+		ulong X10 = new ulong();
+		ulong X11 = new ulong();
+		ulong X12 = new ulong();
+		ulong X13 = new ulong();
+		ulong X14 = new ulong();
+		ulong X15 = new ulong();
+		ulong[] w = Arrays.InitializeWithDefaultInstances<ulong>(WCNT); // local copy of input block
 	#if SKEIN_DEBUG
-		uint64_t[] Xptr = Arrays.InitializeWithDefaultInstances<uint64_t>(16); // use for debugging (help compiler put Xn in registers)
+		ulong[] Xptr = Arrays.InitializeWithDefaultInstances<ulong>(16); // use for debugging (help compiler put Xn in registers)
 		Xptr[0] = X00;
 		Xptr[1] = X01;
 		Xptr[2] = X02;
@@ -14351,12 +14351,12 @@ r = 2 * p
 			(kw + DefineConstants.KW_KEY_BASE)[13] = ctx.X[13];
 			(kw + DefineConstants.KW_KEY_BASE)[14] = ctx.X[14];
 			(kw + DefineConstants.KW_KEY_BASE)[15] = ctx.X[15];
-			(kw + DefineConstants.KW_KEY_BASE)[16] = (kw + DefineConstants.KW_KEY_BASE)[0] ^ (kw + DefineConstants.KW_KEY_BASE)[1] ^ (kw + DefineConstants.KW_KEY_BASE)[2] ^ (kw + DefineConstants.KW_KEY_BASE)[3] ^ (kw + DefineConstants.KW_KEY_BASE)[4] ^ (kw + DefineConstants.KW_KEY_BASE)[5] ^ (kw + DefineConstants.KW_KEY_BASE)[6] ^ (kw + DefineConstants.KW_KEY_BASE)[7] ^ (kw + DefineConstants.KW_KEY_BASE)[8] ^ (kw + DefineConstants.KW_KEY_BASE)[9] ^ (kw + DefineConstants.KW_KEY_BASE)[10] ^ (kw + DefineConstants.KW_KEY_BASE)[11] ^ (kw + DefineConstants.KW_KEY_BASE)[12] ^ (kw + DefineConstants.KW_KEY_BASE)[13] ^ (kw + DefineConstants.KW_KEY_BASE)[14] ^ (kw + DefineConstants.KW_KEY_BASE)[15] ^ ((0xA9FC1A22) + (((uint64_t)(0x1BD11BDA)) << 32));
+			(kw + DefineConstants.KW_KEY_BASE)[16] = (kw + DefineConstants.KW_KEY_BASE)[0] ^ (kw + DefineConstants.KW_KEY_BASE)[1] ^ (kw + DefineConstants.KW_KEY_BASE)[2] ^ (kw + DefineConstants.KW_KEY_BASE)[3] ^ (kw + DefineConstants.KW_KEY_BASE)[4] ^ (kw + DefineConstants.KW_KEY_BASE)[5] ^ (kw + DefineConstants.KW_KEY_BASE)[6] ^ (kw + DefineConstants.KW_KEY_BASE)[7] ^ (kw + DefineConstants.KW_KEY_BASE)[8] ^ (kw + DefineConstants.KW_KEY_BASE)[9] ^ (kw + DefineConstants.KW_KEY_BASE)[10] ^ (kw + DefineConstants.KW_KEY_BASE)[11] ^ (kw + DefineConstants.KW_KEY_BASE)[12] ^ (kw + DefineConstants.KW_KEY_BASE)[13] ^ (kw + DefineConstants.KW_KEY_BASE)[14] ^ (kw + DefineConstants.KW_KEY_BASE)[15] ^ ((0xA9FC1A22) + (((ulong)(0x1BD11BDA)) << 32));
 
 			(kw + DefineConstants.KW_TWK_BASE)[2] = (kw + DefineConstants.KW_TWK_BASE)[0] ^ (kw + DefineConstants.KW_TWK_BASE)[1];
 
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(w, new uint8_t(blkPtr), 8 * (WCNT)); // get input block in little-endian format
+			memcpy(w, new ushort(blkPtr), 8 * (WCNT)); // get input block in little-endian format
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'DebugSaveTweak' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			DebugSaveTweak(ctx);
 			;
@@ -14941,7 +14941,7 @@ r = 2 * p
 
 			;
 
-			(kw + DefineConstants.KW_TWK_BASE)[1] &= ~(((uint64_t) 1) << ((126) - 64));
+			(kw + DefineConstants.KW_TWK_BASE)[1] &= ~(((ulong) 1) << ((126) - 64));
 			blkPtr += (8 * DefineConstants.SKEIN1024_STATE_WORDS);
 		} while (--blkCnt != 0);
 		ctx.h.T[0] = (kw + DefineConstants.KW_TWK_BASE)[0];
@@ -14951,7 +14951,7 @@ r = 2 * p
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
 	internal static size_t Skein1024_Process_Block_CodeSize()
 	{
-		return ((uint8_t) Skein1024_Process_Block_CodeSize) - ((uint8_t) Skein1024_Process_Block);
+		return ((ushort) Skein1024_Process_Block_CodeSize) - ((ushort) Skein1024_Process_Block);
 	}
 	internal static uint Skein1024_Unroll_Cnt()
 	{
@@ -14965,7 +14965,7 @@ r = 2 * p
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
 	internal static size_t Skein_256_API_CodeSize()
 	{
-		return ((uint8_t) Skein_256_API_CodeSize) - ((uint8_t) Skein_256_Init);
+		return ((ushort) Skein_256_API_CodeSize) - ((ushort) Skein_256_Init);
 	}
 	#endif
 
@@ -14973,7 +14973,7 @@ r = 2 * p
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
 	internal static size_t Skein_512_API_CodeSize()
 	{
-		return ((uint8_t) Skein_512_API_CodeSize) - ((uint8_t) Skein_512_Init);
+		return ((ushort) Skein_512_API_CodeSize) - ((ushort) Skein_512_Init);
 	}
 	#endif
 
@@ -14981,7 +14981,7 @@ r = 2 * p
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
 	internal static size_t Skein1024_API_CodeSize()
 	{
-		return ((uint8_t) Skein1024_API_CodeSize) - ((uint8_t) Skein1024_Init);
+		return ((ushort) Skein1024_API_CodeSize) - ((ushort) Skein1024_Init);
 	}
 	#endif
 
@@ -15157,11 +15157,11 @@ r = 2 * p
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* process data to be hashed */
-	internal static HashReturn Update(hashState state, uint8_t[] data, size_t databitlen)
+	internal static HashReturn Update(hashState state, ushort[] data, size_t databitlen)
 	{
 	  /* only the final Update() call is allowed do partial bytes, else assert an error */
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  Skein_Assert((state.u.h.T[1] & (((uint64_t) 1) << ((119) - 64))) == 0 || databitlen == 0, HashReturn.SKEIN_FAIL);
+	  Skein_Assert((state.u.h.T[1] & (((ulong) 1) << ((119) - 64))) == 0 || databitlen == 0, HashReturn.SKEIN_FAIL);
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	  Skein_Assert(state.statebits % 256 == 0 && (state.statebits - 256) < 1024, HashReturn.SKEIN_FAIL);
@@ -15170,11 +15170,11 @@ r = 2 * p
 		switch ((state.statebits >> 8) & 3)
 		{
 		case 2:
-			return Skein_512_Update(state.u.ctx_512, new uint8_t(data), databitlen >> 3);
+			return Skein_512_Update(state.u.ctx_512, new ushort(data), databitlen >> 3);
 		case 1:
-			return Skein_256_Update(state.u.ctx_256, new uint8_t(data), databitlen >> 3);
+			return Skein_256_Update(state.u.ctx_256, new ushort(data), databitlen >> 3);
 		case 0:
-			return Skein1024_Update(state.u.ctx1024, new uint8_t(data), databitlen >> 3);
+			return Skein1024_Update(state.u.ctx1024, new ushort(data), databitlen >> 3);
 		default:
 			return HashReturn.SKEIN_FAIL;
 		}
@@ -15182,35 +15182,35 @@ r = 2 * p
 	  else
 	  { // handle partial final byte
 		size_t bCnt = (databitlen >> 3) + 1; // number of bytes to handle (nonzero here!)
-		uint8_t b = new uint8_t();
-		uint8_t mask = new uint8_t();
+		ushort b = new ushort();
+		ushort mask = new ushort();
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: mask = (uint8_t)(1u << (7 - (databitlen & 7)));
-		mask.CopyFrom((uint8_t)(1u << (7 - (databitlen & 7)))); // partial byte bit mask
+//ORIGINAL LINE: mask = (ushort)(1u << (7 - (databitlen & 7)));
+		mask.CopyFrom((ushort)(1u << (7 - (databitlen & 7)))); // partial byte bit mask
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: b = (uint8_t)((data[bCnt-1] & (0-mask)) | mask);
-		b.CopyFrom((uint8_t)((data[bCnt - 1] & (0 - mask)) | mask)); // apply bit padding on final byte
+//ORIGINAL LINE: b = (ushort)((data[bCnt-1] & (0-mask)) | mask);
+		b.CopyFrom((ushort)((data[bCnt - 1] & (0 - mask)) | mask)); // apply bit padding on final byte
 
 		switch ((state.statebits >> 8) & 3)
 		{
 		case 2:
-			Skein_512_Update(state.u.ctx_512, new uint8_t(data), bCnt - 1); // process all but the final byte
+			Skein_512_Update(state.u.ctx_512, new ushort(data), bCnt - 1); // process all but the final byte
 		  Skein_512_Update(state.u.ctx_512, b, 1); // process the (masked) partial byte
 		  break;
 		case 1:
-			Skein_256_Update(state.u.ctx_256, new uint8_t(data), bCnt - 1); // process all but the final byte
+			Skein_256_Update(state.u.ctx_256, new ushort(data), bCnt - 1); // process all but the final byte
 		  Skein_256_Update(state.u.ctx_256, b, 1); // process the (masked) partial byte
 		  break;
 		case 0:
-			Skein1024_Update(state.u.ctx1024, new uint8_t(data), bCnt - 1); // process all but the final byte
+			Skein1024_Update(state.u.ctx1024, new ushort(data), bCnt - 1); // process all but the final byte
 		  Skein1024_Update(state.u.ctx1024, b, 1); // process the (masked) partial byte
 		  break;
 		default:
 			return HashReturn.SKEIN_FAIL;
 		}
 		{
-			(state.u.h).T[1] |= (((uint64_t) 1) << ((119) - 64));
+			(state.u.h).T[1] |= (((ulong) 1) << ((119) - 64));
 	}; // set tweak flag for the final call
 
 		return HashReturn.SKEIN_SUCCESS;
@@ -15219,7 +15219,7 @@ r = 2 * p
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* finalize hash computation and output the result (hashbitlen bits) */
-	internal static HashReturn Final(hashState state, uint8_t hashval)
+	internal static HashReturn Final(hashState state, ushort hashval)
 	{
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	  Skein_Assert(state.statebits % 256 == 0 && (state.statebits - 256) < 1024, FAIL);
@@ -15247,13 +15247,13 @@ r = 2 * p
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define inline __inline
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+	//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+	//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+	//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+	//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define SWAP32LE IDENT32
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -15326,7 +15326,7 @@ r = 2 * p
 
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT2_INTEGER_MATH_SQRT_STEP_SSE2() do { const __m128i exp_double_bias = _mm_set_epi64x(0, 1023ULL << 52); __m128d x = _mm_castsi128_pd(_mm_add_epi64(_mm_cvtsi64_si128(sqrt_input >> 12), exp_double_bias)); x = _mm_sqrt_sd(_mm_setzero_pd(), x); sqrt_result = (uint64_t)(_mm_cvtsi128_si64(_mm_sub_epi64(_mm_castpd_si128(x), exp_double_bias))) >> 19; } while(0)
+	//ORIGINAL LINE: #define VARIANT2_INTEGER_MATH_SQRT_STEP_SSE2() do { const __m128i exp_double_bias = _mm_set_epi64x(0, 1023ULL << 52); __m128d x = _mm_castsi128_pd(_mm_add_epi64(_mm_cvtsi64_si128(sqrt_input >> 12), exp_double_bias)); x = _mm_sqrt_sd(_mm_setzero_pd(), x); sqrt_result = (ulong)(_mm_cvtsi128_si64(_mm_sub_epi64(_mm_castpd_si128(x), exp_double_bias))) >> 19; } while(0)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define VARIANT2_INTEGER_MATH_SQRT_STEP_FP64() do { sqrt_result = sqrt(sqrt_input + 18446744073709551616.0) * 2.0 - 8589934592.0; } while(0)
@@ -15358,15 +15358,15 @@ r = 2 * p
 
 	// The reference implementation as it is now uses only unsigned int64 arithmetic, so it can't have undefined behavior
 	// It was tested once for all edge cases and confirmed correct
-	internal static uint32_t integer_square_root_v2(uint64_t n)
+	internal static uint integer_square_root_v2(ulong n)
 	{
-	  uint64_t r = 1UL << 63;
+	  ulong r = 1UL << 63;
 
-	  for (uint64_t bit = 1UL << 60; bit != null; bit >>= 2)
+	  for (ulong bit = 1UL << 60; bit != null; bit >>= 2)
 	  {
 		bool b = (n < r + bit);
-		uint64_t n_next = n - (r + bit);
-		uint64_t r_next = r + bit * 2;
+		ulong n_next = n - (r + bit);
+		ulong r_next = r + bit * 2;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = b ? n : n_next;
 		n.CopyFrom(b ? n : n_next);
@@ -15471,18 +15471,18 @@ r = 2 * p
 	*/
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT2_INTEGER_MATH_SQRT_FIXUP(r) do { const uint64_t s = r >> 1; const uint64_t b = r & 1; const uint64_t r2 = (uint64_t)(s) * (s + b) + (r << 32); r += ((r2 + b > sqrt_input) ? -1 : 0) + ((r2 + (1ULL << 32) < sqrt_input - s) ? 1 : 0); } while(0)
+	//ORIGINAL LINE: #define VARIANT2_INTEGER_MATH_SQRT_FIXUP(r) do { const ulong s = r >> 1; const ulong b = r & 1; const ulong r2 = (ulong)(s) * (s + b) + (r << 32); r += ((r2 + b > sqrt_input) ? -1 : 0) + ((r2 + (1ULL << 32) < sqrt_input - s) ? 1 : 0); } while(0)
 
 
 	// Standard Crypto Definitions
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define INIT_SIZE_BYTE (INIT_SIZE_BLK * AES_BLOCK_SIZE)
 
-	//int aesb_single_round(uint8_t in, uint8_t @out, uint8_t expandedKey);Tangible Method Implementation Not Found-aesb_single_round
-	//int aesb_pseudo_round(uint8_t in, uint8_t @out, uint8_t expandedKey);Tangible Method Implementation Not Found-aesb_pseudo_round
+	//int aesb_single_round(ushort in, ushort @out, ushort expandedKey);Tangible Method Implementation Not Found-aesb_single_round
+	//int aesb_pseudo_round(ushort in, ushort @out, ushort expandedKey);Tangible Method Implementation Not Found-aesb_pseudo_round
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT1_1(p) do if (variant == 1) { const uint8_t tmp = ((const uint8_t*)(p))[11]; static const uint32_t table = 0x75310; const uint8_t index = (((tmp >> 3) & 6) | (tmp & 1)) << 1; ((uint8_t*)(p))[11] = tmp ^ ((table >> index) & 0x30); } while(0)
+	//ORIGINAL LINE: #define VARIANT1_1(p) do if (variant == 1) { const ushort tmp = ((const ushort*)(p))[11]; static const uint table = 0x75310; const ushort index = (((tmp >> 3) & 6) | (tmp & 1)) << 1; ((ushort*)(p))[11] = tmp ^ ((table >> index) & 0x30); } while(0)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define VARIANT1_2(p) do if (variant == 1) { xor64(p, tweak1_2); } while(0)
@@ -15491,19 +15491,19 @@ r = 2 * p
 	//ORIGINAL LINE: #define VARIANT1_CHECK() do if (length < 43) { fprintf(stderr, "Cryptonight variant 1 need at least 43 bytes of data"); abort(); } while(0)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define NONCE_POINTER (((const uint8_t*)data)+35)
+	//ORIGINAL LINE: #define NONCE_POINTER (((const ushort*)data)+35)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT1_PORTABLE_INIT() uint8_t tweak1_2[8]; do if (variant == 1) { VARIANT1_CHECK(); memcpy(&tweak1_2, &state.hs.b[192], sizeof(tweak1_2)); xor64(tweak1_2, NONCE_POINTER); } while(0)
+	//ORIGINAL LINE: #define VARIANT1_PORTABLE_INIT() ushort tweak1_2[8]; do if (variant == 1) { VARIANT1_CHECK(); memcpy(&tweak1_2, &state.hs.b[192], sizeof(tweak1_2)); xor64(tweak1_2, NONCE_POINTER); } while(0)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT1_INIT64() if (variant == 1) { VARIANT1_CHECK(); } const uint64_t tweak1_2 = (variant == 1) ? (state.hs.w[24] ^ (*((const uint64_t*)NONCE_POINTER))) : 0
+	//ORIGINAL LINE: #define VARIANT1_INIT64() if (variant == 1) { VARIANT1_CHECK(); } const ulong tweak1_2 = (variant == 1) ? (state.hs.w[24] ^ (*((const ulong*)NONCE_POINTER))) : 0
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT2_INIT64() uint64_t division_result = 0; uint64_t sqrt_result = 0; do if (variant == 2) { U64(b)[2] = state.hs.w[8] ^ state.hs.w[10]; U64(b)[3] = state.hs.w[9] ^ state.hs.w[11]; division_result = state.hs.w[12]; sqrt_result = state.hs.w[13]; } while (0)
+	//ORIGINAL LINE: #define VARIANT2_INIT64() ulong division_result = 0; ulong sqrt_result = 0; do if (variant == 2) { U64(b)[2] = state.hs.w[8] ^ state.hs.w[10]; U64(b)[3] = state.hs.w[9] ^ state.hs.w[11]; division_result = state.hs.w[12]; sqrt_result = state.hs.w[13]; } while (0)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT2_PORTABLE_INIT() uint64_t division_result = 0; uint64_t sqrt_result = 0; do if (variant == 2) { memcpy(b + AES_BLOCK_SIZE, state.hs.b + 64, AES_BLOCK_SIZE); xor64(b + AES_BLOCK_SIZE, state.hs.b + 80); xor64(b + AES_BLOCK_SIZE + 8, state.hs.b + 88); division_result = state.hs.w[12]; sqrt_result = state.hs.w[13]; } while (0)
+	//ORIGINAL LINE: #define VARIANT2_PORTABLE_INIT() ulong division_result = 0; ulong sqrt_result = 0; do if (variant == 2) { memcpy(b + AES_BLOCK_SIZE, state.hs.b + 64, AES_BLOCK_SIZE); xor64(b + AES_BLOCK_SIZE, state.hs.b + 80); xor64(b + AES_BLOCK_SIZE + 8, state.hs.b + 88); division_result = state.hs.w[12]; sqrt_result = state.hs.w[13]; } while (0)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define VARIANT2_SHUFFLE_ADD_SSE2(base_ptr, offset) do if (variant == 2) { const __m128i chunk1 = _mm_load_si128((__m128i *)((base_ptr) + ((offset) ^ 0x10))); const __m128i chunk2 = _mm_load_si128((__m128i *)((base_ptr) + ((offset) ^ 0x20))); const __m128i chunk3 = _mm_load_si128((__m128i *)((base_ptr) + ((offset) ^ 0x30))); _mm_store_si128((__m128i *)((base_ptr) + ((offset) ^ 0x10)), _mm_add_epi64(chunk3, _b1)); _mm_store_si128((__m128i *)((base_ptr) + ((offset) ^ 0x20)), _mm_add_epi64(chunk1, _b)); _mm_store_si128((__m128i *)((base_ptr) + ((offset) ^ 0x30)), _mm_add_epi64(chunk2, _a)); } while (0)
@@ -15512,10 +15512,10 @@ r = 2 * p
 	//ORIGINAL LINE: #define VARIANT2_SHUFFLE_ADD_NEON(base_ptr, offset) do if (variant == 2) { const uint64x2_t chunk1 = vld1q_u64(U64((base_ptr) + ((offset) ^ 0x10))); const uint64x2_t chunk2 = vld1q_u64(U64((base_ptr) + ((offset) ^ 0x20))); const uint64x2_t chunk3 = vld1q_u64(U64((base_ptr) + ((offset) ^ 0x30))); vst1q_u64(U64((base_ptr) + ((offset) ^ 0x10)), vaddq_u64(chunk3, vreinterpretq_u64_u8(_b1))); vst1q_u64(U64((base_ptr) + ((offset) ^ 0x20)), vaddq_u64(chunk1, vreinterpretq_u64_u8(_b))); vst1q_u64(U64((base_ptr) + ((offset) ^ 0x30)), vaddq_u64(chunk2, vreinterpretq_u64_u8(_a))); } while (0)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT2_PORTABLE_SHUFFLE_ADD(base_ptr, offset) do if (variant == 2) { uint64_t* chunk1 = U64((base_ptr) + ((offset) ^ 0x10)); uint64_t* chunk2 = U64((base_ptr) + ((offset) ^ 0x20)); uint64_t* chunk3 = U64((base_ptr) + ((offset) ^ 0x30)); const uint64_t chunk1_old[2] = { chunk1[0], chunk1[1] }; uint64_t b1[2]; memcpy(b1, b + 16, 16); chunk1[0] = chunk3[0] + b1[0]; chunk1[1] = chunk3[1] + b1[1]; uint64_t a0[2]; memcpy(a0, a, 16); chunk3[0] = chunk2[0] + a0[0]; chunk3[1] = chunk2[1] + a0[1]; uint64_t b0[2]; memcpy(b0, b, 16); chunk2[0] = chunk1_old[0] + b0[0]; chunk2[1] = chunk1_old[1] + b0[1]; } while (0)
+	//ORIGINAL LINE: #define VARIANT2_PORTABLE_SHUFFLE_ADD(base_ptr, offset) do if (variant == 2) { ulong* chunk1 = U64((base_ptr) + ((offset) ^ 0x10)); ulong* chunk2 = U64((base_ptr) + ((offset) ^ 0x20)); ulong* chunk3 = U64((base_ptr) + ((offset) ^ 0x30)); const ulong chunk1_old[2] = { chunk1[0], chunk1[1] }; ulong b1[2]; memcpy(b1, b + 16, 16); chunk1[0] = chunk3[0] + b1[0]; chunk1[1] = chunk3[1] + b1[1]; ulong a0[2]; memcpy(a0, a, 16); chunk3[0] = chunk2[0] + a0[0]; chunk3[1] = chunk2[1] + a0[1]; ulong b0[2]; memcpy(b0, b, 16); chunk2[0] = chunk1_old[0] + b0[0]; chunk2[1] = chunk1_old[1] + b0[1]; } while (0)
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define VARIANT2_INTEGER_MATH_DIVISION_STEP(b, ptr) ((uint64_t*)(b))[0] ^= division_result ^ (sqrt_result << 32); { const uint64_t dividend = ((uint64_t*)(ptr))[1]; const uint32_t divisor = (((uint64_t*)(ptr))[0] + (uint32_t)(sqrt_result << 1)) | 0x80000001UL; division_result = ((uint32_t)(dividend / divisor)) + (((uint64_t)(dividend % divisor)) << 32); } const uint64_t sqrt_input = ((uint64_t*)(ptr))[0] + division_result
+	//ORIGINAL LINE: #define VARIANT2_INTEGER_MATH_DIVISION_STEP(b, ptr) ((ulong*)(b))[0] ^= division_result ^ (sqrt_result << 32); { const ulong dividend = ((ulong*)(ptr))[1]; const uint divisor = (((ulong*)(ptr))[0] + (uint)(sqrt_result << 1)) | 0x80000001UL; division_result = ((uint)(dividend / divisor)) + (((ulong)(dividend % divisor)) << 32); } const ulong sqrt_input = ((ulong*)(ptr))[0] + division_result
 
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define VARIANT2_INTEGER_MATH_SSE2(b, ptr) do if (variant == 2) { VARIANT2_INTEGER_MATH_DIVISION_STEP(b, ptr); VARIANT2_INTEGER_MATH_SQRT_STEP_SSE2(); VARIANT2_INTEGER_MATH_SQRT_FIXUP(sqrt_result); } while(0)
@@ -15598,7 +15598,7 @@ r = 2 * p
 
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U64(x) ((uint64_t *) (x))
+	//ORIGINAL LINE: #define U64(x) ((ulong *) (x))
 	#define U64
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -15607,7 +15607,7 @@ r = 2 * p
 
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define state_index(x,div) (((*((uint64_t *)x) >> 4) & (TOTALBLOCKS /(div) - 1)) << 4)
+	//ORIGINAL LINE: #define state_index(x,div) (((*((ulong *)x) >> 4) & (TOTALBLOCKS /(div) - 1)) << 4)
 	#define state_index
 	#if _MSC_VER
 	#if !_WIN64
@@ -15667,15 +15667,15 @@ r = 2 * p
 	//  union hash_state hs;
 	//  struct
 	//  {
-	//	uint8_t k[64];
-	//	uint8_t init[(DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)];
+	//	ushort k[64];
+	//	ushort init[(DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)];
 	//  };
 	//};
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent to most C++ 'pragma' directives in C#:
 	//#pragma pack(pop)
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'THREADV' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static THREADV uint8_t * hp_state = null;
+	public static THREADV ushort * hp_state = null;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'THREADV' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	public static THREADV int hp_allocated = 0;
 
@@ -15707,15 +15707,15 @@ r = 2 * p
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void xor_blocks(uint8_t a, uint8_t b)
+	public static STATIC INLINE void xor_blocks(ushort a, ushort b)
 	{
-	  ((uint64_t)(a))[0] ^= ((uint64_t)(b))[0];
-	  ((uint64_t)(a))[1] ^= ((uint64_t)(b))[1];
+	  ((ulong)(a))[0] ^= ((ulong)(b))[0];
+	  ((ulong)(a))[1] ^= ((ulong)(b))[1];
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void xor64(uint64_t a, uint64_t b)
+	public static STATIC INLINE void xor64(ulong a, ulong b)
 	{
 	  a ^= b;
 	}
@@ -15829,7 +15829,7 @@ private static int check_aes_hw_supported = -1;
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void aes_expand_key(uint8_t key, uint8_t expandedKey)
+	public static STATIC INLINE void aes_expand_key(ushort key, ushort expandedKey)
 	{
 	  __m128i[] ek = ((__m128i)(expandedKey));
 	  __m128i t1 = new __m128i();
@@ -15893,7 +15893,7 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void aes_pseudo_round(uint8_t in, uint8_t @out, uint8_t expandedKey, int nblocks)
+	public static STATIC INLINE void aes_pseudo_round(ushort in, ushort @out, ushort expandedKey, int nblocks)
 	{
 	  __m128i[] k = ((__m128i)(expandedKey));
 	  __m128i d = new __m128i();
@@ -15934,7 +15934,7 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void aes_pseudo_round_xor(uint8_t in, uint8_t @out, uint8_t expandedKey, uint8_t xor, int nblocks)
+	public static STATIC INLINE void aes_pseudo_round_xor(ushort in, ushort @out, ushort expandedKey, ushort xor, int nblocks)
 	{
 		__m128i[] k = ((__m128i)(expandedKey));
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on this variable, so pointers on this variable are left unchanged:
@@ -16013,7 +16013,7 @@ private static int check_aes_hw_supported = -1;
 	 * the allocated buffer.
 	 */
 
-	public static void slow_hash_allocate_state(uint32_t PAGE_SIZE)
+	public static void slow_hash_allocate_state(uint PAGE_SIZE)
 	{
 		if (hp_state != null)
 		{
@@ -16022,7 +16022,7 @@ private static int check_aes_hw_supported = -1;
 
 	#if _MSC_VER || __MINGW32__
 		SetLockPagesPrivilege(GetCurrentProcess(), 1);
-		hp_state = (uint8_t) VirtualAlloc(hp_state, PAGE_SIZE, MEM_LARGE_PAGES | MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+		hp_state = (ushort) VirtualAlloc(hp_state, PAGE_SIZE, MEM_LARGE_PAGES | MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 	#else
 	#if __APPLE__ || __FreeBSD__ || __OpenBSD__ || __DragonFly__ || __NetBSD__
 		hp_state = mmap(0, PAGE_SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, 0, 0);
@@ -16039,7 +16039,7 @@ private static int check_aes_hw_supported = -1;
 		{
 			hp_allocated = 0;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'malloc' has no equivalent in C#:
-			hp_state = (uint8_t) malloc(PAGE_SIZE);
+			hp_state = (ushort) malloc(PAGE_SIZE);
 		}
 	}
 
@@ -16047,7 +16047,7 @@ private static int check_aes_hw_supported = -1;
 	 *@brief frees the state allocated by slow_hash_allocate_state
 	 */
 
-	public static void slow_hash_free_state(uint32_t PAGE_SIZE)
+	public static void slow_hash_free_state(uint PAGE_SIZE)
 	{
 		if (hp_state == null)
 		{
@@ -16101,41 +16101,41 @@ private static int check_aes_hw_supported = -1;
 	 * @param length the length in bytes of the data
 	 * @param hash a pointer to a buffer in which the final 256 bit hash will be stored
 	 */
-	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint32_t PAGE_SIZE, uint32_t scratchpad, uint32_t iterations)
+	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
 	{
-	  uint32_t TOTALBLOCKS = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
-	  uint32_t init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
-	  uint32_t aes_rounds = (iterations / 2);
+	  uint TOTALBLOCKS = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
+	  uint init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
+	  uint aes_rounds = (iterations / 2);
 	  size_t lightFlag = (light != 0 ? 2: 1);
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint8_t expandedKey[240]; // These buffers are aligned to use later with SSE functions
+	  RDATA_ALIGN16 ushort expandedKey[240]; // These buffers are aligned to use later with SSE functions
 
-	  uint8_t[] text = Arrays.InitializeWithDefaultInstances<uint8_t>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
+	  ushort[] text = Arrays.InitializeWithDefaultInstances<ushort>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint64_t a[2];
+	  RDATA_ALIGN16 ulong a[2];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint64_t b[4];
+	  RDATA_ALIGN16 ulong b[4];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint64_t c[2];
+	  RDATA_ALIGN16 ulong c[2];
 	  cn_slow_hash_state state = new cn_slow_hash_state();
 	  __m128i _a = new __m128i();
 	  __m128i _b = new __m128i();
 	  __m128i _b1 = new __m128i();
 	  __m128i _c = new __m128i();
-	  uint64_t hi = new uint64_t();
-	  uint64_t lo = new uint64_t();
+	  ulong hi = new ulong();
+	  ulong lo = new ulong();
 
 	  size_t i = new size_t();
 	  size_t j = new size_t();
-	  uint64_t p = null;
+	  ulong p = null;
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  oaes_ctx aes_ctx = null;
 	  int useAes = force_software_aes() == 0 && check_aes_hw() != 0;
 
 	  static[] extra_hashesDelegate extra_hashes = new extra_hashesDelegate(hash_extra_blake, hash_extra_groestl, hash_extra_jh, hash_extra_skein);
 
-	  slow_hash_allocate_state(new uint32_t(PAGE_SIZE));
+	  slow_hash_allocate_state(new uint(PAGE_SIZE));
 
 	  /* CryptoNight Step 1:  Use Keccak1600 to initialize the 'state' (and 'text') buffers from the data. */
 	  if (prehashed != 0)
@@ -16161,15 +16161,15 @@ private static int check_aes_hw_supported = -1;
 			  }
 		  } while (0 != 0);
 	  }
-	  uint64_t tweak1_2 = (variant == 1) ? (state.hs.w[24] ^ ((uint64_t)(((uint8_t)data) + 35))) : 0;
-	  uint64_t division_result = 0;
-	  uint64_t sqrt_result = 0;
+	  ulong tweak1_2 = (variant == 1) ? (state.hs.w[24] ^ ((ulong)(((ushort)data) + 35))) : 0;
+	  ulong division_result = 0;
+	  ulong sqrt_result = 0;
 	  do
 	  {
 		  if (variant == 2)
 		  {
-		  ((uint64_t)(b))[2] = state.hs.w[8] ^ state.hs.w[10];
-		  ((uint64_t)(b))[3] = state.hs.w[9] ^ state.hs.w[11];
+		  ((ulong)(b))[2] = state.hs.w[8] ^ state.hs.w[10];
+		  ((ulong)(b))[3] = state.hs.w[9] ^ state.hs.w[11];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: division_result = state.hs.w[12];
 		  division_result.CopyFrom(state.hs.w[12]);
@@ -16210,10 +16210,10 @@ private static int check_aes_hw_supported = -1;
 		  }
 	  }
 
-	  ((uint64_t)(a))[0] = ((uint64_t)(state.k[0]))[0] ^ ((uint64_t)(state.k[32]))[0];
-	  ((uint64_t)(a))[1] = ((uint64_t)(state.k[0]))[1] ^ ((uint64_t)(state.k[32]))[1];
-	  ((uint64_t)(b))[0] = ((uint64_t)(state.k[16]))[0] ^ ((uint64_t)(state.k[48]))[0];
-	  ((uint64_t)(b))[1] = ((uint64_t)(state.k[16]))[1] ^ ((uint64_t)(state.k[48]))[1];
+	  ((ulong)(a))[0] = ((ulong)(state.k[0]))[0] ^ ((ulong)(state.k[32]))[0];
+	  ((ulong)(a))[1] = ((ulong)(state.k[0]))[1] ^ ((ulong)(state.k[32]))[1];
+	  ((ulong)(b))[0] = ((ulong)(state.k[16]))[0] ^ ((ulong)(state.k[48]))[0];
+	  ((ulong)(b))[1] = ((ulong)(state.k[16]))[1] ^ ((ulong)(state.k[48]))[1];
 
 	  /* CryptoNight Step 3:  Bounce randomly 1,048,576 times (1<<20) through the mixing buffer,
 	   * using 524,288 iterations of the following mixing function.  Each execution
@@ -16228,7 +16228,7 @@ private static int check_aes_hw_supported = -1;
 	  {
 		  for (i = 0; i < aes_rounds; i++)
 		  {
-			  j = ((((uint64_t)a >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
+			  j = ((((ulong)a >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
 			  _c = _mm_load_si128(((__m128i)(hp_state[j])));
 			  _a = _mm_load_si128(((__m128i)(a)));
 			  _c = _mm_aesenc_si128(_c, _a);
@@ -16266,20 +16266,20 @@ private static int check_aes_hw_supported = -1;
 				  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  uint8_t tmp = ((uint8_t)(hp_state[j]))[11];
+				  ushort tmp = ((ushort)(hp_state[j]))[11];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  const uint32_t table = 0x75310;
+				  const uint table = 0x75310;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  uint8_t index = (((tmp >> 3) & 6) | (tmp & 1)) << 1;
+				  ushort index = (((tmp >> 3) & 6) | (tmp & 1)) << 1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  ((uint8_t)(hp_state[j]))[11] = tmp ^ ((table >> index) & 0x30);
+				  ((ushort)(hp_state[j]))[11] = tmp ^ ((table >> index) & 0x30);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  }
 			  } while (0 != 0);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  j = ((((uint64_t)c >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
+			  j = ((((ulong)c >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  p = ((uint64_t)(hp_state[j]));
+			  p = ((ulong)(hp_state[j]));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			  b[0] = p[0];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -16292,19 +16292,19 @@ private static int check_aes_hw_supported = -1;
 				  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  ((uint64_t)(b))[0] ^= division_result ^ (sqrt_result << 32);
+				  ((ulong)(b))[0] ^= division_result ^ (sqrt_result << 32);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint64_t dividend = ((uint64_t)(c))[1];
+					  ulong dividend = ((ulong)(c))[1];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint32_t divisor = (((uint64_t)(c))[0] + (uint32_t)(sqrt_result << 1)) | 0x80000001U;
+					  uint divisor = (((ulong)(c))[0] + (uint)(sqrt_result << 1)) | 0x80000001U;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  division_result = ((uint32_t)(dividend / divisor)) + (((uint64_t)(dividend % divisor)) << 32);
+					  division_result = ((uint)(dividend / divisor)) + (((ulong)(dividend % divisor)) << 32);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  }
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  uint64_t sqrt_input = ((uint64_t)(c))[0] + division_result;
+				  ulong sqrt_input = ((ulong)(c))[0] + division_result;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  do
 				  {
@@ -16316,7 +16316,7 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					  x = _mm_sqrt_sd(_mm_setzero_pd(), x);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  sqrt_result = (uint64_t)(_mm_cvtsi128_si64(_mm_sub_epi64(_mm_castpd_si128(x), exp_double_bias))) >> 19;
+					  sqrt_result = (ulong)(_mm_cvtsi128_si64(_mm_sub_epi64(_mm_castpd_si128(x), exp_double_bias))) >> 19;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  } while (0 != 0);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -16324,11 +16324,11 @@ private static int check_aes_hw_supported = -1;
 				  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint64_t s = sqrt_result >> 1;
+					  ulong s = sqrt_result >> 1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint64_t b = sqrt_result & 1;
+					  ulong b = sqrt_result & 1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint64_t r2 = (uint64_t)(s) * (s + b) + (sqrt_result << 32);
+					  ulong r2 = (ulong)(s) * (s + b) + (sqrt_result << 32);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					  sqrt_result += ((r2 + b > sqrt_input) ? -1 : 0) + ((r2 + (1UL << 32) < sqrt_input - s) ? 1 : 0);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -16342,10 +16342,10 @@ private static int check_aes_hw_supported = -1;
 			  {
 				  if (variant == 2)
 				  {
-				  (uint64_t)(hp_state + (j ^ 0x10)) ^= hi;
-				  *(((uint64_t)(hp_state + (j ^ 0x10))) + 1) ^= lo;
-				  hi ^= (uint64_t)(hp_state + (j ^ 0x20));
-				  lo ^= *(((uint64_t)(hp_state + (j ^ 0x20))) + 1);
+				  (ulong)(hp_state + (j ^ 0x10)) ^= hi;
+				  *(((ulong)(hp_state + (j ^ 0x10))) + 1) ^= lo;
+				  hi ^= (ulong)(hp_state + (j ^ 0x20));
+				  lo ^= *(((ulong)(hp_state + (j ^ 0x20))) + 1);
 				  }
 			  } while (0 != 0);
 			  do
@@ -16362,7 +16362,7 @@ private static int check_aes_hw_supported = -1;
 			  } while (0 != 0);
 			  a[0] += hi;
 			  a[1] += lo;
-			  p = ((uint64_t)(hp_state[j]));
+			  p = ((ulong)(hp_state[j]));
 			  p[0] = a[0];
 			  p[1] = a[1];
 			  a[0] ^= b[0];
@@ -16371,7 +16371,7 @@ private static int check_aes_hw_supported = -1;
 			  {
 				  if (variant == 1)
 				  {
-				  xor64(p + 1, new uint64_t(tweak1_2));
+				  xor64(p + 1, new ulong(tweak1_2));
 				  }
 			  } while (0 != 0);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -16386,10 +16386,10 @@ private static int check_aes_hw_supported = -1;
 	  {
 		  for (i = 0; i < aes_rounds; i++)
 		  {
-			  j = ((((uint64_t)a >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
+			  j = ((((ulong)a >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
 			  _c = _mm_load_si128(((__m128i)(hp_state[j])));
 			  _a = _mm_load_si128(((__m128i)(a)));
-			  aesb_single_round((uint8_t) _c, (uint8_t) _c, (uint8_t) _a);
+			  aesb_single_round((ushort) _c, (ushort) _c, (ushort) _a);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			  do
 			  {
@@ -16424,20 +16424,20 @@ private static int check_aes_hw_supported = -1;
 				  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  uint8_t tmp = ((uint8_t)(hp_state[j]))[11];
+				  ushort tmp = ((ushort)(hp_state[j]))[11];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  const uint32_t table = 0x75310;
+				  const uint table = 0x75310;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  uint8_t index = (((tmp >> 3) & 6) | (tmp & 1)) << 1;
+				  ushort index = (((tmp >> 3) & 6) | (tmp & 1)) << 1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  ((uint8_t)(hp_state[j]))[11] = tmp ^ ((table >> index) & 0x30);
+				  ((ushort)(hp_state[j]))[11] = tmp ^ ((table >> index) & 0x30);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  }
 			  } while (0 != 0);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  j = ((((uint64_t)c >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
+			  j = ((((ulong)c >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  p = ((uint64_t)(hp_state[j]));
+			  p = ((ulong)(hp_state[j]));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			  b[0] = p[0];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -16450,19 +16450,19 @@ private static int check_aes_hw_supported = -1;
 				  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  ((uint64_t)(b))[0] ^= division_result ^ (sqrt_result << 32);
+				  ((ulong)(b))[0] ^= division_result ^ (sqrt_result << 32);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint64_t dividend = ((uint64_t)(c))[1];
+					  ulong dividend = ((ulong)(c))[1];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint32_t divisor = (((uint64_t)(c))[0] + (uint32_t)(sqrt_result << 1)) | 0x80000001U;
+					  uint divisor = (((ulong)(c))[0] + (uint)(sqrt_result << 1)) | 0x80000001U;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  division_result = ((uint32_t)(dividend / divisor)) + (((uint64_t)(dividend % divisor)) << 32);
+					  division_result = ((uint)(dividend / divisor)) + (((ulong)(dividend % divisor)) << 32);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  }
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-				  uint64_t sqrt_input = ((uint64_t)(c))[0] + division_result;
+				  ulong sqrt_input = ((ulong)(c))[0] + division_result;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  do
 				  {
@@ -16474,7 +16474,7 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					  x = _mm_sqrt_sd(_mm_setzero_pd(), x);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  sqrt_result = (uint64_t)(_mm_cvtsi128_si64(_mm_sub_epi64(_mm_castpd_si128(x), exp_double_bias))) >> 19;
+					  sqrt_result = (ulong)(_mm_cvtsi128_si64(_mm_sub_epi64(_mm_castpd_si128(x), exp_double_bias))) >> 19;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 				  } while (0 != 0);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -16482,11 +16482,11 @@ private static int check_aes_hw_supported = -1;
 				  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint64_t s = sqrt_result >> 1;
+					  ulong s = sqrt_result >> 1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint64_t b = sqrt_result & 1;
+					  ulong b = sqrt_result & 1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-					  uint64_t r2 = (uint64_t)(s) * (s + b) + (sqrt_result << 32);
+					  ulong r2 = (ulong)(s) * (s + b) + (sqrt_result << 32);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					  sqrt_result += ((r2 + b > sqrt_input) ? -1 : 0) + ((r2 + (1UL << 32) < sqrt_input - s) ? 1 : 0);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro '__mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -16500,10 +16500,10 @@ private static int check_aes_hw_supported = -1;
 			  {
 				  if (variant == 2)
 				  {
-				  (uint64_t)(hp_state + (j ^ 0x10)) ^= hi;
-				  *(((uint64_t)(hp_state + (j ^ 0x10))) + 1) ^= lo;
-				  hi ^= (uint64_t)(hp_state + (j ^ 0x20));
-				  lo ^= *(((uint64_t)(hp_state + (j ^ 0x20))) + 1);
+				  (ulong)(hp_state + (j ^ 0x10)) ^= hi;
+				  *(((ulong)(hp_state + (j ^ 0x10))) + 1) ^= lo;
+				  hi ^= (ulong)(hp_state + (j ^ 0x20));
+				  lo ^= *(((ulong)(hp_state + (j ^ 0x20))) + 1);
 				  }
 			  } while (0 != 0);
 			  do
@@ -16520,7 +16520,7 @@ private static int check_aes_hw_supported = -1;
 			  } while (0 != 0);
 			  a[0] += hi;
 			  a[1] += lo;
-			  p = ((uint64_t)(hp_state[j]));
+			  p = ((ulong)(hp_state[j]));
 			  p[0] = a[0];
 			  p[1] = a[1];
 			  a[0] ^= b[0];
@@ -16529,7 +16529,7 @@ private static int check_aes_hw_supported = -1;
 			  {
 				  if (variant == 1)
 				  {
-				  xor64(p + 1, new uint64_t(tweak1_2));
+				  xor64(p + 1, new ulong(tweak1_2));
 				  }
 			  } while (0 != 0);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -16582,7 +16582,7 @@ private static int check_aes_hw_supported = -1;
 	  memcpy(state.init, text, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	  hash_permutation(state.hs);
 	  extra_hashes[state.hs.b[0] & 3](state, 200, hash);
-	  slow_hash_free_state(new uint32_t(PAGE_SIZE));
+	  slow_hash_free_state(new uint(PAGE_SIZE));
 	}
 
 	public delegate void extra_hashesDelegate(object UnnamedParameter, size_t UnnamedParameter2, ref string UnnamedParameter3);
@@ -16621,12 +16621,12 @@ private static int check_aes_hw_supported = -1;
 
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U64(x) ((uint64_t *) (x))
+	//ORIGINAL LINE: #define U64(x) ((ulong *) (x))
 	#define U64
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void xor64(uint64_t a, uint64_t b)
+	public static STATIC INLINE void xor64(ulong a, ulong b)
 	{
 		a ^= b;
 	}
@@ -16634,8 +16634,8 @@ private static int check_aes_hw_supported = -1;
 	//	union hash_state hs;
 	//	struct
 	//	{
-	//		uint8_t k[64];
-	//		uint8_t init[(DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)];
+	//		ushort k[64];
+	//		ushort init[(DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)];
 	//	};
 	//};
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent to most C++ 'pragma' directives in C#:
@@ -16651,7 +16651,7 @@ private static int check_aes_hw_supported = -1;
 
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define state_index(x,div) (((*((uint64_t *)x) >> 4) & (TOTALBLOCKS /(div) - 1)) << 4)
+	//ORIGINAL LINE: #define state_index(x,div) (((*((ulong *)x) >> 4) & (TOTALBLOCKS /(div) - 1)) << 4)
 	#define state_index
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -16660,18 +16660,18 @@ private static int check_aes_hw_supported = -1;
 
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define pre_aes() j = state_index(a,lightFlag); _c = vld1q_u8(&hp_state[j]); _a = vld1q_u8((const uint8_t *)a);
+	//ORIGINAL LINE: #define pre_aes() j = state_index(a,lightFlag); _c = vld1q_u8(&hp_state[j]); _a = vld1q_u8((const ushort *)a);
 	#define pre_aes
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define post_aes() VARIANT2_SHUFFLE_ADD_NEON(hp_state, j); vst1q_u8((uint8_t *)c, _c); vst1q_u8(&hp_state[j], veorq_u8(_b, _c)); VARIANT1_1(&hp_state[j]); j = state_index(c,lightFlag); p = U64(&hp_state[j]); b[0] = p[0]; b[1] = p[1]; VARIANT2_PORTABLE_INTEGER_MATH(b, c); __mul(); VARIANT2_2(); VARIANT2_SHUFFLE_ADD_NEON(hp_state, j); a[0] += hi; a[1] += lo; p = U64(&hp_state[j]); p[0] = a[0]; p[1] = a[1]; a[0] ^= b[0]; a[1] ^= b[1]; VARIANT1_2(p + 1); _b1 = _b; _b = _c;
+	//ORIGINAL LINE: #define post_aes() VARIANT2_SHUFFLE_ADD_NEON(hp_state, j); vst1q_u8((ushort *)c, _c); vst1q_u8(&hp_state[j], veorq_u8(_b, _c)); VARIANT1_1(&hp_state[j]); j = state_index(c,lightFlag); p = U64(&hp_state[j]); b[0] = p[0]; b[1] = p[1]; VARIANT2_PORTABLE_INTEGER_MATH(b, c); __mul(); VARIANT2_2(); VARIANT2_SHUFFLE_ADD_NEON(hp_state, j); a[0] += hi; a[1] += lo; p = U64(&hp_state[j]); p[0] = a[0]; p[1] = a[1]; a[0] ^= b[0]; a[1] ^= b[1]; VARIANT1_2(p + 1); _b1 = _b; _b = _c;
 	#define post_aes
 
 	/* Note: this was based on a standard 256bit key schedule but
 	 * it's been shortened since Cryptonight doesn't use the full
 	 * key schedule. Don't try to use this for vanilla AES.
 	*/
-	internal static void aes_expand_key(uint8_t key, uint8_t expandedKey)
+	internal static void aes_expand_key(ushort key, ushort expandedKey)
 	{
 	int[] rcon = {0x01, 0x01, 0x01, 0x01, 0x0c0f0e0d, 0x0c0f0e0d, 0x0c0f0e0d, 0x0c0f0e0d, 0x1b, 0x1b, 0x1b, 0x1b};
 	__asm__("	eor	v0.16b,v0.16b,v0.16b\n" + "	ld1	{v3.16b},[%0],#16\n" + "	ld1	{v1.4s,v2.4s},[%2],#32\n" + "	ld1	{v4.16b},[%0]\n" + "	mov	w2,#5\n" + "	st1	{v3.4s},[%1],#16\n" + "\n" + "1:\n" + "	tbl	v6.16b,{v4.16b},v2.16b\n" + "	ext	v5.16b,v0.16b,v3.16b,#12\n" + "	st1	{v4.4s},[%1],#16\n" + "	aese	v6.16b,v0.16b\n" + "	subs	w2,w2,#1\n" + "\n" + "	eor	v3.16b,v3.16b,v5.16b\n" + "	ext	v5.16b,v0.16b,v5.16b,#12\n" + "	eor	v3.16b,v3.16b,v5.16b\n" + "	ext	v5.16b,v0.16b,v5.16b,#12\n" + "	eor	v6.16b,v6.16b,v1.16b\n" + "	eor	v3.16b,v3.16b,v5.16b\n" + "	shl	v1.16b,v1.16b,#1\n" + "	eor	v3.16b,v3.16b,v6.16b\n" + "	st1	{v3.4s},[%1],#16\n" + "	b.eq	2f\n" + "\n" + "	dup	v6.4s,v3.s[3]		// just splat\n" + "	ext	v5.16b,v0.16b,v4.16b,#12\n" + "	aese	v6.16b,v0.16b\n" + "\n" + "	eor	v4.16b,v4.16b,v5.16b\n" + "	ext	v5.16b,v0.16b,v5.16b,#12\n" + "	eor	v4.16b,v4.16b,v5.16b\n" + "	ext	v5.16b,v0.16b,v5.16b,#12\n" + "	eor	v4.16b,v4.16b,v5.16b\n" + "\n" + "	eor	v4.16b,v4.16b,v6.16b\n" + "	b	1b\n" + "\n" + "2:\n" : : "r"(key), "r"(expandedKey), "r"(rcon));
@@ -16687,7 +16687,7 @@ private static int check_aes_hw_supported = -1;
 	 */
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void aes_pseudo_round(uint8_t in, uint8_t @out, uint8_t expandedKey, int nblocks)
+	public static STATIC INLINE void aes_pseudo_round(ushort in, ushort @out, ushort expandedKey, int nblocks)
 	{
 		uint8x16_t[] k = (uint8x16_t)expandedKey;
 		uint8x16_t zero = new uint8x16_t();
@@ -16724,7 +16724,7 @@ private static int check_aes_hw_supported = -1;
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void aes_pseudo_round_xor(uint8_t in, uint8_t @out, uint8_t expandedKey, uint8_t xor, int nblocks)
+	public static STATIC INLINE void aes_pseudo_round_xor(ushort in, ushort @out, ushort expandedKey, ushort xor, int nblocks)
 	{
 		uint8x16_t[] k = (uint8x16_t)expandedKey;
 		uint8x16_t[] x = (uint8x16_t)xor;
@@ -16789,42 +16789,42 @@ private static int check_aes_hw_supported = -1;
 	}
 	#endif
 
-	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint32_t PAGE_SIZE, uint32_t scratchpad, uint32_t iterations)
+	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
 	{
-	  uint32_t TOTALBLOCKS = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
-	  uint32_t init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
-	  uint32_t aes_rounds = (iterations / 2);
+	  uint TOTALBLOCKS = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
+	  uint init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
+	  uint aes_rounds = (iterations / 2);
 	  size_t lightFlag = (light != 0 ? 2: 1);
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint8_t expandedKey[240];
+	  RDATA_ALIGN16 ushort expandedKey[240];
 
 	#if ! FORCE_USE_HEAP
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint8_t hp_state[PAGE_SIZE];
+	  RDATA_ALIGN16 ushort hp_state[PAGE_SIZE];
 	#else
-	  uint8_t hp_state = (uint8_t)aligned_malloc(new uint32_t(PAGE_SIZE), 16);
+	  ushort hp_state = (ushort)aligned_malloc(new uint(PAGE_SIZE), 16);
 	#endif
 
-	  uint8_t[] text = Arrays.InitializeWithDefaultInstances<uint8_t>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
+	  ushort[] text = Arrays.InitializeWithDefaultInstances<ushort>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint64_t a[2];
+	  RDATA_ALIGN16 ulong a[2];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint64_t b[4];
+	  RDATA_ALIGN16 ulong b[4];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint64_t c[2];
+	  RDATA_ALIGN16 ulong c[2];
 	  cn_slow_hash_state state = new cn_slow_hash_state();
 	  uint8x16_t _a = new uint8x16_t();
 	  uint8x16_t _b = new uint8x16_t();
 	  uint8x16_t _b1 = new uint8x16_t();
 	  uint8x16_t _c = new uint8x16_t();
 	  uint8x16_t zero = new uint8x16_t();
-	  uint64_t hi = new uint64_t();
-	  uint64_t lo = new uint64_t();
+	  ulong hi = new ulong();
+	  ulong lo = new ulong();
 
 	  size_t i = new size_t();
 	  size_t j = new size_t();
-	  uint64_t p = null;
+	  ulong p = null;
 
 	  static[] extra_hashesDelegate extra_hashes = new extra_hashesDelegate(hash_extra_blake, hash_extra_groestl, hash_extra_jh, hash_extra_skein);
 
@@ -16853,15 +16853,15 @@ private static int check_aes_hw_supported = -1;
 			  }
 		  } while (0 != 0);
 	  }
-	  uint64_t tweak1_2 = (variant == 1) ? (state.hs.w[24] ^ ((uint64_t)(((uint8_t)data) + 35))) : 0;
-	  uint64_t division_result = 0;
-	  uint64_t sqrt_result = 0;
+	  ulong tweak1_2 = (variant == 1) ? (state.hs.w[24] ^ ((ulong)(((ushort)data) + 35))) : 0;
+	  ulong division_result = 0;
+	  ulong sqrt_result = 0;
 	  do
 	  {
 		  if (variant == 2)
 		  {
-		  ((uint64_t)(b))[2] = state.hs.w[8] ^ state.hs.w[10];
-		  ((uint64_t)(b))[3] = state.hs.w[9] ^ state.hs.w[11];
+		  ((ulong)(b))[2] = state.hs.w[8] ^ state.hs.w[10];
+		  ((ulong)(b))[3] = state.hs.w[9] ^ state.hs.w[11];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: division_result = state.hs.w[12];
 		  division_result.CopyFrom(state.hs.w[12]);
@@ -16883,24 +16883,24 @@ private static int check_aes_hw_supported = -1;
 		  memcpy(hp_state[i * (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)], text, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	  }
 
-	  ((uint64_t)(a))[0] = ((uint64_t)(state.k[0]))[0] ^ ((uint64_t)(state.k[32]))[0];
-	  ((uint64_t)(a))[1] = ((uint64_t)(state.k[0]))[1] ^ ((uint64_t)(state.k[32]))[1];
-	  ((uint64_t)(b))[0] = ((uint64_t)(state.k[16]))[0] ^ ((uint64_t)(state.k[48]))[0];
-	  ((uint64_t)(b))[1] = ((uint64_t)(state.k[16]))[1] ^ ((uint64_t)(state.k[48]))[1];
+	  ((ulong)(a))[0] = ((ulong)(state.k[0]))[0] ^ ((ulong)(state.k[32]))[0];
+	  ((ulong)(a))[1] = ((ulong)(state.k[0]))[1] ^ ((ulong)(state.k[32]))[1];
+	  ((ulong)(b))[0] = ((ulong)(state.k[16]))[0] ^ ((ulong)(state.k[48]))[0];
+	  ((ulong)(b))[1] = ((ulong)(state.k[16]))[1] ^ ((ulong)(state.k[48]))[1];
 
 	  /* CryptoNight Step 3:  Bounce randomly 1,048,576 times (1<<20) through the mixing buffer,
 	   * using 524,288 iterations of the following mixing function.  Each execution
 	   * performs two reads and writes from the mixing buffer.
 	   */
 
-	  _b = vld1q_u8((uint8_t)b);
-	  _b1 = vld1q_u8(((uint8_t)b) + DefineConstants.AES_BLOCK_SIZE);
+	  _b = vld1q_u8((ushort)b);
+	  _b1 = vld1q_u8(((ushort)b) + DefineConstants.AES_BLOCK_SIZE);
 
 	  for (i = 0; i < aes_rounds; i++)
 	  {
-		  j = ((((uint64_t)a >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
+		  j = ((((ulong)a >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
 		  _c = vld1q_u8(hp_state[j]);
-		  _a = vld1q_u8((uint8_t)a);
+		  _a = vld1q_u8((ushort)a);
 		  _c = vaeseq_u8(_c, zero);
 		  _c = vaesmcq_u8(_c);
 		  _c = veorq_u8(_c, _a);
@@ -16912,22 +16912,22 @@ private static int check_aes_hw_supported = -1;
 			  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  uint64x2_t chunk1 = vld1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x10))));
+			  uint64x2_t chunk1 = vld1q_u64(((ulong)((hp_state) + ((j) ^ 0x10))));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  uint64x2_t chunk2 = vld1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x20))));
+			  uint64x2_t chunk2 = vld1q_u64(((ulong)((hp_state) + ((j) ^ 0x20))));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  uint64x2_t chunk3 = vld1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x30))));
+			  uint64x2_t chunk3 = vld1q_u64(((ulong)((hp_state) + ((j) ^ 0x30))));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  vst1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x10))), vaddq_u64(chunk3, vreinterpretq_u64_u8(_b1)));
+			  vst1q_u64(((ulong)((hp_state) + ((j) ^ 0x10))), vaddq_u64(chunk3, vreinterpretq_u64_u8(_b1)));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  vst1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x20))), vaddq_u64(chunk1, vreinterpretq_u64_u8(_b)));
+			  vst1q_u64(((ulong)((hp_state) + ((j) ^ 0x20))), vaddq_u64(chunk1, vreinterpretq_u64_u8(_b)));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  vst1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x30))), vaddq_u64(chunk2, vreinterpretq_u64_u8(_a)));
+			  vst1q_u64(((ulong)((hp_state) + ((j) ^ 0x30))), vaddq_u64(chunk2, vreinterpretq_u64_u8(_a)));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			  }
 		  } while (0 != 0);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-		  vst1q_u8((uint8_t)c, _c);
+		  vst1q_u8((ushort)c, _c);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		  vst1q_u8(hp_state[j], veorq_u8(_b, _c));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -16938,20 +16938,20 @@ private static int check_aes_hw_supported = -1;
 			  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  uint8_t tmp = ((uint8_t)(hp_state[j]))[11];
+			  ushort tmp = ((ushort)(hp_state[j]))[11];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  const uint32_t table = 0x75310;
+			  const uint table = 0x75310;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  uint8_t index = (((tmp >> 3) & 6) | (tmp & 1)) << 1;
+			  ushort index = (((tmp >> 3) & 6) | (tmp & 1)) << 1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-			  ((uint8_t)(hp_state[j]))[11] = tmp ^ ((table >> index) & 0x30);
+			  ((ushort)(hp_state[j]))[11] = tmp ^ ((table >> index) & 0x30);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			  }
 		  } while (0 != 0);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-		  j = ((((uint64_t)c >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
+		  j = ((((ulong)c >> 4) & (TOTALBLOCKS / (lightFlag) - 1)) << 4);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-		  p = ((uint64_t)(hp_state[j]));
+		  p = ((ulong)(hp_state[j]));
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		  b[0] = p[0];
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'VARIANT2_PORTABLE_INTEGER_MATH' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -16965,27 +16965,27 @@ private static int check_aes_hw_supported = -1;
 		  {
 			  if (variant == 2)
 			  {
-			  (uint64_t)(hp_state + (j ^ 0x10)) ^= hi;
-			  *(((uint64_t)(hp_state + (j ^ 0x10))) + 1) ^= lo;
-			  hi ^= (uint64_t)(hp_state + (j ^ 0x20));
-			  lo ^= *(((uint64_t)(hp_state + (j ^ 0x20))) + 1);
+			  (ulong)(hp_state + (j ^ 0x10)) ^= hi;
+			  *(((ulong)(hp_state + (j ^ 0x10))) + 1) ^= lo;
+			  hi ^= (ulong)(hp_state + (j ^ 0x20));
+			  lo ^= *(((ulong)(hp_state + (j ^ 0x20))) + 1);
 			  }
 		  } while (0 != 0);
 		  do
 		  {
 			  if (variant == 2)
 			  {
-			  uint64x2_t chunk1 = vld1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x10))));
-			  uint64x2_t chunk2 = vld1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x20))));
-			  uint64x2_t chunk3 = vld1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x30))));
-			  vst1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x10))), vaddq_u64(chunk3, vreinterpretq_u64_u8(_b1)));
-			  vst1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x20))), vaddq_u64(chunk1, vreinterpretq_u64_u8(_b)));
-			  vst1q_u64(((uint64_t)((hp_state) + ((j) ^ 0x30))), vaddq_u64(chunk2, vreinterpretq_u64_u8(_a)));
+			  uint64x2_t chunk1 = vld1q_u64(((ulong)((hp_state) + ((j) ^ 0x10))));
+			  uint64x2_t chunk2 = vld1q_u64(((ulong)((hp_state) + ((j) ^ 0x20))));
+			  uint64x2_t chunk3 = vld1q_u64(((ulong)((hp_state) + ((j) ^ 0x30))));
+			  vst1q_u64(((ulong)((hp_state) + ((j) ^ 0x10))), vaddq_u64(chunk3, vreinterpretq_u64_u8(_b1)));
+			  vst1q_u64(((ulong)((hp_state) + ((j) ^ 0x20))), vaddq_u64(chunk1, vreinterpretq_u64_u8(_b)));
+			  vst1q_u64(((ulong)((hp_state) + ((j) ^ 0x30))), vaddq_u64(chunk2, vreinterpretq_u64_u8(_a)));
 			  }
 		  } while (0 != 0);
 		  a[0] += hi;
 		  a[1] += lo;
-		  p = ((uint64_t)(hp_state[j]));
+		  p = ((ulong)(hp_state[j]));
 		  p[0] = a[0];
 		  p[1] = a[1];
 		  a[0] ^= b[0];
@@ -16994,7 +16994,7 @@ private static int check_aes_hw_supported = -1;
 		  {
 			  if (variant == 1)
 			  {
-			  xor64(p + 1, new uint64_t(tweak1_2));
+			  xor64(p + 1, new ulong(tweak1_2));
 			  }
 		  } while (0 != 0);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -17046,29 +17046,29 @@ private static int check_aes_hw_supported = -1;
 	/* The asm corresponds to this C code */
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SHORT uint32_t
+	//ORIGINAL LINE: #define SHORT uint
 	#define SHORT
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define LONG uint64_t
+	//ORIGINAL LINE: #define LONG ulong
 	#define LONG
 
-	public static void mul(uint8_t ca, uint8_t cb, uint8_t cres)
+	public static void mul(ushort ca, ushort cb, ushort cres)
 	{
-	  uint32_t aa = (uint32_t)ca;
-	  uint32_t bb = (uint32_t)cb;
-	  uint32_t res = (uint32_t)cres;
+	  uint aa = (uint)ca;
+	  uint bb = (uint)cb;
+	  uint res = (uint)cres;
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//  union
 	//  {
-	//	uint32_t tmp[8];
-	//	uint64_t ltmp[4];
+	//	uint tmp[8];
+	//	ulong ltmp[4];
 	//  }
 	//  t;
-	  uint64_t A = aa[1];
-	  uint64_t a = aa[0];
-	  uint64_t B = bb[1];
-	  uint64_t b = bb[0];
+	  ulong A = aa[1];
+	  ulong a = aa[0];
+	  ulong B = bb[1];
+	  ulong b = bb[0];
 
 	  // Aa * Bb = ab + aB_ + Ab_ + AB__
 	  t.ltmp[0] = a * b;
@@ -17090,13 +17090,13 @@ private static int check_aes_hw_supported = -1;
 	#if __aarch64__
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define mul(a, b, c) cn_mul128((const uint64_t *)a, (const uint64_t *)b, (uint64_t *)c)
+	//ORIGINAL LINE: #define mul(a, b, c) cn_mul128((const ulong *)a, (const ulong *)b, (ulong *)c)
 	#define mul
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC void cn_mul128(uint64_t[] a, uint64_t[] b, uint64_t[] r)
+	public static STATIC void cn_mul128(ulong[] a, ulong[] b, ulong[] r)
 	{
-	  uint64_t lo = new uint64_t();
-	  uint64_t hi = new uint64_t();
+	  ulong lo = new ulong();
+	  ulong hi = new ulong();
 	  __asm__("mul %0, %1, %2\n\t" : "=r"(lo) : "r"(a[0]), "r"(b[0]));
 	  __asm__("umulh %0, %1, %2\n\t" : "=r"(hi) : "r"(a[0]), "r"(b[0]));
 	  r[0] = hi;
@@ -17105,15 +17105,15 @@ private static int check_aes_hw_supported = -1;
 	#else
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define mul(a, b, c) cn_mul128((const uint32_t *)a, (const uint32_t *)b, (uint32_t *)c)
+	//ORIGINAL LINE: #define mul(a, b, c) cn_mul128((const uint *)a, (const uint *)b, (uint *)c)
 	#define mul
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC void cn_mul128(uint32_t[] aa, uint32_t[] bb, uint32_t[] r)
+	public static STATIC void cn_mul128(uint[] aa, uint[] bb, uint[] r)
 	{
-	  uint32_t t0 = new uint32_t();
-	  uint32_t t1 = new uint32_t();
-	  uint32_t t2 = 0;
-	  uint32_t t3 = 0;
+	  uint t0 = new uint();
+	  uint t1 = new uint();
+	  uint t2 = 0;
+	  uint t3 = 0;
 	__asm__ __volatile__ = new __asm__("umull %[t0], %[t1], %[a], %[b]\n\t" + "str   %[t0], %[ll]\n\t" + "eor   %[t0], %[t0]\n\t" + "umlal %[t1], %[t0], %[a], %[B]\n\t" + "umlal %[t1], %[t2], %[A], %[b]\n\t" + "str   %[t1], %[lh]\n\t" + "umlal %[t0], %[t3], %[A], %[B]\n\t" + "adds  %[t0], %[t0], %[t2]\n\t" + "adc   %[t1], %[t3], #0\n\t" + "str   %[t0], %[hl]\n\t" + "str   %[t1], %[hh]\n\t" : [t0]"=&r"(t0), [t1]"=&r"(t1), [t2]"+r"(t2), [t3]"+r"(t3), [hl]"=m"(r[0]), [hh]"=m"(r[1]), [ll]"=m"(r[2]), [lh]"=m"(r[3]) : [A]"r"(aa[1]), [a]"r"(aa[0]), [B]"r"(bb[1]), [b]"r"(bb[0]) : "cc");
 	}
 	#endif
@@ -17121,7 +17121,7 @@ private static int check_aes_hw_supported = -1;
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void copy_block(uint8_t dst, uint8_t src)
+	public static STATIC INLINE void copy_block(ushort dst, ushort src)
 	{
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(dst, src, DefineConstants.AES_BLOCK_SIZE);
@@ -17129,73 +17129,73 @@ private static int check_aes_hw_supported = -1;
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void sum_half_blocks(uint8_t a, uint8_t b)
+	public static STATIC INLINE void sum_half_blocks(ushort a, ushort b)
 	{
-	  uint64_t a0 = new uint64_t();
-	  uint64_t a1 = new uint64_t();
-	  uint64_t b0 = new uint64_t();
-	  uint64_t b1 = new uint64_t();
-	  a0 = ((uint64_t)(a))[0];
-	  a1 = ((uint64_t)(a))[1];
-	  b0 = ((uint64_t)(b))[0];
-	  b1 = ((uint64_t)(b))[1];
+	  ulong a0 = new ulong();
+	  ulong a1 = new ulong();
+	  ulong b0 = new ulong();
+	  ulong b1 = new ulong();
+	  a0 = ((ulong)(a))[0];
+	  a1 = ((ulong)(a))[1];
+	  b0 = ((ulong)(b))[0];
+	  b1 = ((ulong)(b))[1];
 	  a0 += b0;
 	  a1 += b1;
-	  ((uint64_t)(a))[0] = a0;
-	  ((uint64_t)(a))[1] = a1;
+	  ((ulong)(a))[0] = a0;
+	  ((ulong)(a))[1] = a1;
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void swap_blocks(uint8_t a, uint8_t b)
+	public static STATIC INLINE void swap_blocks(ushort a, ushort b)
 	{
-	  uint64_t[] t = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
-	  ((uint64_t)(t))[0] = ((uint64_t)(a))[0];
-	  ((uint64_t)(t))[1] = ((uint64_t)(a))[1];
-	  ((uint64_t)(a))[0] = ((uint64_t)(b))[0];
-	  ((uint64_t)(a))[1] = ((uint64_t)(b))[1];
-	  ((uint64_t)(b))[0] = ((uint64_t)(t))[0];
-	  ((uint64_t)(b))[1] = ((uint64_t)(t))[1];
+	  ulong[] t = Arrays.InitializeWithDefaultInstances<ulong>(2);
+	  ((ulong)(t))[0] = ((ulong)(a))[0];
+	  ((ulong)(t))[1] = ((ulong)(a))[1];
+	  ((ulong)(a))[0] = ((ulong)(b))[0];
+	  ((ulong)(a))[1] = ((ulong)(b))[1];
+	  ((ulong)(b))[0] = ((ulong)(t))[0];
+	  ((ulong)(b))[1] = ((ulong)(t))[1];
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE void xor_blocks(uint8_t a, uint8_t b)
+	public static STATIC INLINE void xor_blocks(ushort a, ushort b)
 	{
-	  ((uint64_t)(a))[0] ^= ((uint64_t)(b))[0];
-	  ((uint64_t)(a))[1] ^= ((uint64_t)(b))[1];
+	  ((ulong)(a))[0] ^= ((ulong)(b))[0];
+	  ((ulong)(a))[1] ^= ((ulong)(b))[1];
 	}
 
-	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint32_t PAGE_SIZE, uint32_t scratchpad, uint32_t iterations)
+	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
 	{
-	  uint32_t init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
-	  uint32_t aes_rounds = (iterations / 2);
+	  uint init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
+	  uint aes_rounds = (iterations / 2);
 	  size_t lightFlag = (light != 0 ? 2: 1);
 
-	  uint8_t[] text = Arrays.InitializeWithDefaultInstances<uint8_t>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
-	  uint8_t[] a = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE);
-	  uint8_t[] b = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE * 2);
-	  uint8_t[] c = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE);
-	  uint8_t[] c1 = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE);
-	  uint8_t[] d = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE);
-	  uint8_t[] aes_key = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_KEY_SIZE);
+	  ushort[] text = Arrays.InitializeWithDefaultInstances<ushort>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
+	  ushort[] a = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
+	  ushort[] b = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE * 2);
+	  ushort[] c = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
+	  ushort[] c1 = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
+	  ushort[] d = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
+	  ushort[] aes_key = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_KEY_SIZE);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	  RDATA_ALIGN16 uint8_t expandedKey[256];
+	  RDATA_ALIGN16 ushort expandedKey[256];
 
 	  cn_slow_hash_state state = new cn_slow_hash_state();
 
 	  size_t i = new size_t();
 	  size_t j = new size_t();
-	  uint8_t p = null;
+	  ushort p = null;
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  oaes_ctx aes_ctx;
 	  static[] extra_hashesDelegate extra_hashes = new extra_hashesDelegate(hash_extra_blake, hash_extra_groestl, hash_extra_jh, hash_extra_skein);
 
 	#if ! FORCE_USE_HEAP
-	  uint8_t[] long_state = Arrays.InitializeWithDefaultInstances<uint8_t>(PAGE_SIZE);
+	  ushort[] long_state = Arrays.InitializeWithDefaultInstances<ushort>(PAGE_SIZE);
 	#else
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'malloc' has no equivalent in C#:
-	  uint8_t long_state = (uint8_t)malloc(PAGE_SIZE);
+	  ushort long_state = (ushort)malloc(PAGE_SIZE);
 	#endif
 
 	  if (prehashed != 0)
@@ -17225,15 +17225,15 @@ private static int check_aes_hw_supported = -1;
 			  }
 		  } while (0 != 0);
 	  }
-	  uint64_t tweak1_2 = (variant == 1) ? (state.hs.w[24] ^ ((uint64_t)(((uint8_t)data) + 35))) : 0;
-	  uint64_t division_result = 0;
-	  uint64_t sqrt_result = 0;
+	  ulong tweak1_2 = (variant == 1) ? (state.hs.w[24] ^ ((ulong)(((ushort)data) + 35))) : 0;
+	  ulong division_result = 0;
+	  ulong sqrt_result = 0;
 	  do
 	  {
 		  if (variant == 2)
 		  {
-		  ((uint64_t)(b))[2] = state.hs.w[8] ^ state.hs.w[10];
-		  ((uint64_t)(b))[3] = state.hs.w[9] ^ state.hs.w[11];
+		  ((ulong)(b))[2] = state.hs.w[8] ^ state.hs.w[10];
+		  ((ulong)(b))[3] = state.hs.w[9] ^ state.hs.w[11];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: division_result = state.hs.w[12];
 		  division_result.CopyFrom(state.hs.w[12]);
@@ -17256,24 +17256,24 @@ private static int check_aes_hw_supported = -1;
 		  memcpy(long_state[i * (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)], text, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	  }
 
-	  ((uint64_t)(a))[0] = ((uint64_t)(state.k[0]))[0] ^ ((uint64_t)(state.k[32]))[0];
-	  ((uint64_t)(a))[1] = ((uint64_t)(state.k[0]))[1] ^ ((uint64_t)(state.k[32]))[1];
-	  ((uint64_t)(b))[0] = ((uint64_t)(state.k[16]))[0] ^ ((uint64_t)(state.k[48]))[0];
-	  ((uint64_t)(b))[1] = ((uint64_t)(state.k[16]))[1] ^ ((uint64_t)(state.k[48]))[1];
+	  ((ulong)(a))[0] = ((ulong)(state.k[0]))[0] ^ ((ulong)(state.k[32]))[0];
+	  ((ulong)(a))[1] = ((ulong)(state.k[0]))[1] ^ ((ulong)(state.k[32]))[1];
+	  ((ulong)(b))[0] = ((ulong)(state.k[16]))[0] ^ ((ulong)(state.k[48]))[0];
+	  ((ulong)(b))[1] = ((ulong)(state.k[16]))[1] ^ ((ulong)(state.k[48]))[1];
 
 	  for (i = 0; i < aes_rounds; i++)
 	  {
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define MASK(div) ((uint32_t)(((PAGE_SIZE / AES_BLOCK_SIZE) / (div) - 1) << 4))
+	//ORIGINAL LINE: #define MASK(div) ((uint)(((PAGE_SIZE / AES_BLOCK_SIZE) / (div) - 1) << 4))
 		#define MASK
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define state_index(x,div) ((*(uint32_t *) x) & MASK(div))
+	//ORIGINAL LINE: #define state_index(x,div) ((*(uint *) x) & MASK(div))
 		#define state_index
 
 		// Iteration 1
-		j = (((uint32_t) a) & ((uint32_t)(((PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE) / (lightFlag) - 1) << 4)));
+		j = (((uint) a) & ((uint)(((PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE) / (lightFlag) - 1) << 4)));
 		p = long_state[j];
 		aesb_single_round(p, p, a);
 		copy_block(c1, p);
@@ -17282,21 +17282,21 @@ private static int check_aes_hw_supported = -1;
 		{
 			if (variant == 2)
 			{
-			uint64_t[] chunk1 = ((uint64_t)((long_state) + ((j) ^ 0x10)));
-			uint64_t[] chunk2 = ((uint64_t)((long_state) + ((j) ^ 0x20)));
-			uint64_t[] chunk3 = ((uint64_t)((long_state) + ((j) ^ 0x30)));
-			uint64_t[] chunk1_old = {chunk1[0], chunk1[1]};
-			uint64_t[] b1 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] chunk1 = ((ulong)((long_state) + ((j) ^ 0x10)));
+			ulong[] chunk2 = ((ulong)((long_state) + ((j) ^ 0x20)));
+			ulong[] chunk3 = ((ulong)((long_state) + ((j) ^ 0x30)));
+			ulong[] chunk1_old = {chunk1[0], chunk1[1]};
+			ulong[] b1 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(b1, b + 16, 16);
 			chunk1[0] = chunk3[0] + b1[0];
 			chunk1[1] = chunk3[1] + b1[1];
-			uint64_t[] a0 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] a0 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(a0, a, 16);
 			chunk3[0] = chunk2[0] + a0[0];
 			chunk3[1] = chunk2[1] + a0[1];
-			uint64_t[] b0 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] b0 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(b0, b, 16);
 			chunk2[0] = chunk1_old[0] + b0[0];
@@ -17308,15 +17308,15 @@ private static int check_aes_hw_supported = -1;
 		{
 			if (variant == 1)
 			{
-			uint8_t tmp = ((uint8_t)(p))[11];
-			const uint32_t table = 0x75310;
-			uint8_t index = (((tmp >> 3) & 6) | (tmp & 1)) << 1;
-			((uint8_t)(p))[11] = tmp ^ ((table >> index) & 0x30);
+			ushort tmp = ((ushort)(p))[11];
+			const uint table = 0x75310;
+			ushort index = (((tmp >> 3) & 6) | (tmp & 1)) << 1;
+			((ushort)(p))[11] = tmp ^ ((table >> index) & 0x30);
 			}
 		} while (0 != 0);
 
 		// Iteration 2
-		j = (((uint32_t) c1) & ((uint32_t)(((PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE) / (lightFlag) - 1) << 4)));
+		j = (((uint) c1) & ((uint)(((PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE) / (lightFlag) - 1) << 4)));
 		p = long_state[j];
 		copy_block(c, p);
 
@@ -17333,21 +17333,21 @@ private static int check_aes_hw_supported = -1;
 		{
 			if (variant == 2)
 			{
-			uint64_t[] chunk1 = ((uint64_t)((long_state) + ((j) ^ 0x10)));
-			uint64_t[] chunk2 = ((uint64_t)((long_state) + ((j) ^ 0x20)));
-			uint64_t[] chunk3 = ((uint64_t)((long_state) + ((j) ^ 0x30)));
-			uint64_t[] chunk1_old = {chunk1[0], chunk1[1]};
-			uint64_t[] b1 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] chunk1 = ((ulong)((long_state) + ((j) ^ 0x10)));
+			ulong[] chunk2 = ((ulong)((long_state) + ((j) ^ 0x20)));
+			ulong[] chunk3 = ((ulong)((long_state) + ((j) ^ 0x30)));
+			ulong[] chunk1_old = {chunk1[0], chunk1[1]};
+			ulong[] b1 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(b1, b + 16, 16);
 			chunk1[0] = chunk3[0] + b1[0];
 			chunk1[1] = chunk3[1] + b1[1];
-			uint64_t[] a0 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] a0 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(a0, a, 16);
 			chunk3[0] = chunk2[0] + a0[0];
 			chunk3[1] = chunk2[1] + a0[1];
-			uint64_t[] b0 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] b0 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(b0, b, 16);
 			chunk2[0] = chunk1_old[0] + b0[0];
@@ -17361,7 +17361,7 @@ private static int check_aes_hw_supported = -1;
 		{
 			if (variant == 1)
 			{
-			xor64(((uint64_t)(c)) + 1, new uint64_t(tweak1_2));
+			xor64(((ulong)(c)) + 1, new ulong(tweak1_2));
 			}
 		} while (0 != 0);
 		copy_block(p, c);
@@ -17419,70 +17419,70 @@ private static int check_aes_hw_supported = -1;
 	public delegate void extra_hashesDelegate(object UnnamedParameter, size_t UnnamedParameter2, ref string UnnamedParameter3);
 	internal static extra_hashesDelegate[] extra_hashes = new extra_hashesDelegate(hash_extra_blake, hash_extra_groestl, hash_extra_jh, hash_extra_skein);
 
-	//int aesb_single_round(uint8_t in, uint8_t @out, uint8_t expandedKey);Tangible Method Implementation Not Found-aesb_single_round
-	//int aesb_pseudo_round(uint8_t in, uint8_t @out, uint8_t expandedKey);Tangible Method Implementation Not Found-aesb_pseudo_round
+	//int aesb_single_round(ushort in, ushort @out, ushort expandedKey);Tangible Method Implementation Not Found-aesb_single_round
+	//int aesb_pseudo_round(ushort in, ushort @out, ushort expandedKey);Tangible Method Implementation Not Found-aesb_pseudo_round
 
-	internal static size_t e2i(uint8_t a, size_t count)
+	internal static size_t e2i(ushort a, size_t count)
 	{
-		return ((uint64_t)a / DefineConstants.AES_BLOCK_SIZE) & (count - 1);
+		return ((ulong)a / DefineConstants.AES_BLOCK_SIZE) & (count - 1);
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	internal static void mul(uint8_t a, uint8_t b, uint8_t res)
+	internal static void mul(ushort a, ushort b, ushort res)
 	{
-	  uint64_t a0 = new uint64_t();
-	  uint64_t b0 = new uint64_t();
-	  uint64_t hi = new uint64_t();
-	  uint64_t lo = new uint64_t();
+	  ulong a0 = new ulong();
+	  ulong b0 = new ulong();
+	  ulong hi = new ulong();
+	  ulong lo = new ulong();
 
-	  a0 = SWAP64LE(((uint64_t)a)[0]);
-	  b0 = SWAP64LE(((uint64_t)b)[0]);
+	  a0 = SWAP64LE(((ulong)a)[0]);
+	  b0 = SWAP64LE(((ulong)b)[0]);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: lo = mul128(a0, b0, &hi);
-	  lo.CopyFrom(mul128(new uint64_t(a0), new uint64_t(b0), hi));
-	  ((uint64_t)res)[0] = SWAP64LE(hi);
-	  ((uint64_t)res)[1] = SWAP64LE(lo);
+	  lo.CopyFrom(mul128(new ulong(a0), new ulong(b0), hi));
+	  ((ulong)res)[0] = SWAP64LE(hi);
+	  ((ulong)res)[1] = SWAP64LE(lo);
 	}
 
-	internal static void sum_half_blocks(uint8_t a, uint8_t b)
+	internal static void sum_half_blocks(ushort a, ushort b)
 	{
-	  uint64_t a0 = new uint64_t();
-	  uint64_t a1 = new uint64_t();
-	  uint64_t b0 = new uint64_t();
-	  uint64_t b1 = new uint64_t();
+	  ulong a0 = new ulong();
+	  ulong a1 = new ulong();
+	  ulong b0 = new ulong();
+	  ulong b1 = new ulong();
 
-	  a0 = SWAP64LE(((uint64_t)a)[0]);
-	  a1 = SWAP64LE(((uint64_t)a)[1]);
-	  b0 = SWAP64LE(((uint64_t)b)[0]);
-	  b1 = SWAP64LE(((uint64_t)b)[1]);
+	  a0 = SWAP64LE(((ulong)a)[0]);
+	  a1 = SWAP64LE(((ulong)a)[1]);
+	  b0 = SWAP64LE(((ulong)b)[0]);
+	  b1 = SWAP64LE(((ulong)b)[1]);
 	  a0 += b0;
 	  a1 += b1;
-	  ((uint64_t)a)[0] = SWAP64LE(a0);
-	  ((uint64_t)a)[1] = SWAP64LE(a1);
+	  ((ulong)a)[0] = SWAP64LE(a0);
+	  ((ulong)a)[1] = SWAP64LE(a1);
 	}
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define U64(x) ((uint64_t *) (x))
+	//ORIGINAL LINE: #define U64(x) ((ulong *) (x))
 	#define U64
 
-	internal static void copy_block(uint8_t dst, uint8_t src)
+	internal static void copy_block(ushort dst, ushort src)
 	{
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(dst, src, DefineConstants.AES_BLOCK_SIZE);
 	}
 
-	internal static void swap_blocks(uint8_t a, uint8_t b)
+	internal static void swap_blocks(ushort a, ushort b)
 	{
-	  uint64_t[] t = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
-	  ((uint64_t)(t))[0] = ((uint64_t)(a))[0];
-	  ((uint64_t)(t))[1] = ((uint64_t)(a))[1];
-	  ((uint64_t)(a))[0] = ((uint64_t)(b))[0];
-	  ((uint64_t)(a))[1] = ((uint64_t)(b))[1];
-	  ((uint64_t)(b))[0] = ((uint64_t)(t))[0];
-	  ((uint64_t)(b))[1] = ((uint64_t)(t))[1];
+	  ulong[] t = Arrays.InitializeWithDefaultInstances<ulong>(2);
+	  ((ulong)(t))[0] = ((ulong)(a))[0];
+	  ((ulong)(t))[1] = ((ulong)(a))[1];
+	  ((ulong)(a))[0] = ((ulong)(b))[0];
+	  ((ulong)(a))[1] = ((ulong)(b))[1];
+	  ((ulong)(b))[0] = ((ulong)(t))[0];
+	  ((ulong)(b))[1] = ((ulong)(t))[1];
 	}
 
-	internal static void xor_blocks(uint8_t[] a, uint8_t[] b)
+	internal static void xor_blocks(ushort[] a, ushort[] b)
 	{
 	  size_t i = new size_t();
 	  for (i = 0; i < DefineConstants.AES_BLOCK_SIZE; i++)
@@ -17491,7 +17491,7 @@ private static int check_aes_hw_supported = -1;
 	  }
 	}
 
-	internal static void xor64(uint8_t[] left, uint8_t[] right)
+	internal static void xor64(ushort[] left, ushort[] right)
 	{
 	  size_t i = new size_t();
 	  for (i = 0; i < 8; ++i)
@@ -17503,36 +17503,36 @@ private static int check_aes_hw_supported = -1;
 	//  union hash_state hs;
 	//  struct
 	//  {
-	//	uint8_t k[64];
-	//	uint8_t init[(DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)];
+	//	ushort k[64];
+	//	ushort init[(DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)];
 	//  };
 	//};
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent to most C++ 'pragma' directives in C#:
 	//#pragma pack(pop)
 
-	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint32_t PAGE_SIZE, uint32_t scratchpad, uint32_t iterations)
+	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
 	{
-	  uint32_t init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
-	  uint32_t aes_rounds = (iterations / 2);
+	  uint init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
+	  uint aes_rounds = (iterations / 2);
 	  size_t aes_init = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
 
 	#if ! FORCE_USE_HEAP
-	  uint8_t[] long_state = Arrays.InitializeWithDefaultInstances<uint8_t>(PAGE_SIZE);
+	  ushort[] long_state = Arrays.InitializeWithDefaultInstances<ushort>(PAGE_SIZE);
 	#else
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'malloc' has no equivalent in C#:
-	  uint8_t long_state = (uint8_t)malloc(PAGE_SIZE);
+	  ushort long_state = (ushort)malloc(PAGE_SIZE);
 	#endif
 
 	  cn_slow_hash_state state = new cn_slow_hash_state();
-	  uint8_t[] text = Arrays.InitializeWithDefaultInstances<uint8_t>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
-	  uint8_t[] a = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE);
-	  uint8_t[] b = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE * 2);
-	  uint8_t[] c1 = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE);
-	  uint8_t[] c2 = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE);
-	  uint8_t[] d = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_BLOCK_SIZE);
+	  ushort[] text = Arrays.InitializeWithDefaultInstances<ushort>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
+	  ushort[] a = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
+	  ushort[] b = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE * 2);
+	  ushort[] c1 = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
+	  ushort[] c2 = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
+	  ushort[] d = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
 	  size_t i = new size_t();
 	  size_t j = new size_t();
-	  uint8_t[] aes_key = Arrays.InitializeWithDefaultInstances<uint8_t>(DefineConstants.AES_KEY_SIZE);
+	  ushort[] aes_key = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_KEY_SIZE);
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  oaes_ctx aes_ctx;
 
@@ -17552,7 +17552,7 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  aes_ctx = (oaes_ctx) oaes_alloc();
 
-	  uint8_t[] tweak1_2 = Arrays.InitializeWithDefaultInstances<uint8_t>(8);
+	  ushort[] tweak1_2 = Arrays.InitializeWithDefaultInstances<ushort>(8);
 	  do
 	  {
 		  if (variant == 1)
@@ -17566,12 +17566,12 @@ private static int check_aes_hw_supported = -1;
 			  }
 		  } while (0 != 0);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-		  memcpy(tweak1_2, state.hs.b[192], sizeof(uint8_t));
-		  xor64(tweak1_2, (((uint8_t)data) + 35));
+		  memcpy(tweak1_2, state.hs.b[192], sizeof(ushort));
+		  xor64(tweak1_2, (((ushort)data) + 35));
 		  }
 	  } while (0 != 0);
-	  uint64_t division_result = 0;
-	  uint64_t sqrt_result = 0;
+	  ulong division_result = 0;
+	  ulong sqrt_result = 0;
 	  do
 	  {
 		  if (variant == 2)
@@ -17622,21 +17622,21 @@ private static int check_aes_hw_supported = -1;
 		{
 			if (variant == 2)
 			{
-			uint64_t[] chunk1 = ((uint64_t)((long_state) + ((j) ^ 0x10)));
-			uint64_t[] chunk2 = ((uint64_t)((long_state) + ((j) ^ 0x20)));
-			uint64_t[] chunk3 = ((uint64_t)((long_state) + ((j) ^ 0x30)));
-			uint64_t[] chunk1_old = {chunk1[0], chunk1[1]};
-			uint64_t[] b1 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] chunk1 = ((ulong)((long_state) + ((j) ^ 0x10)));
+			ulong[] chunk2 = ((ulong)((long_state) + ((j) ^ 0x20)));
+			ulong[] chunk3 = ((ulong)((long_state) + ((j) ^ 0x30)));
+			ulong[] chunk1_old = {chunk1[0], chunk1[1]};
+			ulong[] b1 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(b1, b + 16, 16);
 			chunk1[0] = chunk3[0] + b1[0];
 			chunk1[1] = chunk3[1] + b1[1];
-			uint64_t[] a0 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] a0 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(a0, a, 16);
 			chunk3[0] = chunk2[0] + a0[0];
 			chunk3[1] = chunk2[1] + a0[1];
-			uint64_t[] b0 = Arrays.InitializeWithDefaultInstances<uint64_t>(2);
+			ulong[] b0 = Arrays.InitializeWithDefaultInstances<ulong>(2);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(b0, b, 16);
 			chunk2[0] = chunk1_old[0] + b0[0];
@@ -17702,9 +17702,9 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-		assert(j == e2i(a, new size_t(aes_init)); do if (variant == 1) {const uint8_t tmp = ((const uint8_t*)(long_state[j]))[11]; static const uint32_t table = 0x75310; const uint8_t index = (((tmp >> 3) & 6) | (tmp & 1)) << 1; ((uint8_t*)(long_state[j]))[11] = tmp ^ ((table >> index) & 0x30);} while (0); j = e2i(c1, new size_t(aes_init)); copy_block(c2, long_state[j]); VARIANT2_PORTABLE_INTEGER_MATH(c2, c1); mul(c1, c2, d); if (variant == 2) {xor_blocks(long_state + (j ^ 0x10), d); xor_blocks(d, long_state + (j ^ 0x20));}; do if (variant == 2)
+		assert(j == e2i(a, new size_t(aes_init)); do if (variant == 1) {const ushort tmp = ((const ushort*)(long_state[j]))[11]; static const uint table = 0x75310; const ushort index = (((tmp >> 3) & 6) | (tmp & 1)) << 1; ((ushort*)(long_state[j]))[11] = tmp ^ ((table >> index) & 0x30);} while (0); j = e2i(c1, new size_t(aes_init)); copy_block(c2, long_state[j]); VARIANT2_PORTABLE_INTEGER_MATH(c2, c1); mul(c1, c2, d); if (variant == 2) {xor_blocks(long_state + (j ^ 0x10), d); xor_blocks(d, long_state + (j ^ 0x20));}; do if (variant == 2)
 		{
-			uint64_t * chunk1 = ((uint64_t *)((long_state) + ((j) ^ 0x10))); uint64_t * chunk2 = ((uint64_t *)((long_state) + ((j) ^ 0x20))); uint64_t * chunk3 = ((uint64_t *)((long_state) + ((j) ^ 0x30))); const uint64_t chunk1_old[2] = {chunk1[0], chunk1[1]}; uint64_t b1[2]; memcpy(b1, b + 16, 16); chunk1[0] = chunk3[0] + b1[0]; chunk1[1] = chunk3[1] + b1[1]; uint64_t a0[2]; memcpy(a0, a, 16); chunk3[0] = chunk2[0] + a0[0]; chunk3[1] = chunk2[1] + a0[1]; uint64_t b0[2]; memcpy(b0, b, 16); chunk2[0] = chunk1_old[0] + b0[0]; chunk2[1] = chunk1_old[1] + b0[1];
+			ulong * chunk1 = ((ulong *)((long_state) + ((j) ^ 0x10))); ulong * chunk2 = ((ulong *)((long_state) + ((j) ^ 0x20))); ulong * chunk3 = ((ulong *)((long_state) + ((j) ^ 0x30))); const ulong chunk1_old[2] = {chunk1[0], chunk1[1]}; ulong b1[2]; memcpy(b1, b + 16, 16); chunk1[0] = chunk3[0] + b1[0]; chunk1[1] = chunk3[1] + b1[1]; ulong a0[2]; memcpy(a0, a, 16); chunk3[0] = chunk2[0] + a0[0]; chunk3[1] = chunk2[1] + a0[1]; ulong b0[2]; memcpy(b0, b, 16); chunk2[0] = chunk1_old[0] + b0[0]; chunk2[1] = chunk1_old[1] + b0[1];
 		} while (0); swap_blocks(a, c1); sum_half_blocks(c1, d); swap_blocks(c1, c2); xor_blocks(c1, c2); do if(variant == 1) { xor64(c2 + 8, tweak1_2); } while(0); copy_block(long_state[j], c2); assert(j == e2i(a, new size_t(aes_init)); if(variant == 2) { copy_block(b + DefineConstants.AES_BLOCK_SIZE, b); } copy_block(b, a); copy_block(a, c1);
 		}
 		memcpy(text, state.init, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)); oaes_key_import_data(aes_ctx, state.hs.b[32], DefineConstants.AES_KEY_SIZE); for (i = 0; i < init_rounds; i++)
@@ -17740,13 +17740,13 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define inline __inline
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+	//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+	//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+	//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+	//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define SWAP32LE IDENT32
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -17968,16 +17968,16 @@ private static int check_aes_hw_supported = -1;
 	  return Common.GlobalMembers.podFromHex(str_hash, hash);
 	}
 
-	public static uint64_t getSignaturesCount(TransactionInput input)
+	public static ulong getSignaturesCount(TransactionInput input)
 	{
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
-	//  struct txin_signature_size_visitor : public boost::static_visitor < uint64_t >
+	//  struct txin_signature_size_visitor : public boost::static_visitor < ulong >
 	//  {
-	//	uint64_t operator ()(const BaseInput& txin) const
+	//	ulong operator ()(const BaseInput& txin) const
 	//	{
 	//		return 0;
 	//	}
-	//	uint64_t operator ()(const KeyInput& txin) const
+	//	ulong operator ()(const KeyInput& txin) const
 	//	{
 	//		return txin.outputIndexes.size();
 	//	}
@@ -17986,7 +17986,7 @@ private static int check_aes_hw_supported = -1;
 	  return boost::apply_visitor(txin_signature_size_visitor(), input);
 	}
 
-	public static void getVariantValue(CryptoNote.ISerializer serializer, uint8_t tag, ref CryptoNote.TransactionInput in)
+	public static void getVariantValue(CryptoNote.ISerializer serializer, ushort tag, ref CryptoNote.TransactionInput in)
 	{
 	  switch (tag)
 	  {
@@ -18009,7 +18009,7 @@ private static int check_aes_hw_supported = -1;
 	  }
 	}
 
-	public static void getVariantValue(CryptoNote.ISerializer serializer, uint8_t tag, ref CryptoNote.TransactionOutputTarget @out)
+	public static void getVariantValue(CryptoNote.ISerializer serializer, ushort tag, ref CryptoNote.TransactionOutputTarget @out)
 	{
 	  switch (tag)
 	  {
@@ -18032,9 +18032,9 @@ private static int check_aes_hw_supported = -1;
 	  return serializer.binary(v, sizeof(T), new Common.StringView(name));
 	}
 
-	public static bool serializeVarintVector(List<uint32_t> vector, CryptoNote.ISerializer serializer, Common.StringView name)
+	public static bool serializeVarintVector(List<uint> vector, CryptoNote.ISerializer serializer, Common.StringView name)
 	{
-	  uint64_t size = vector.Count;
+	  ulong size = vector.Count;
 
 	  if (!serializer.beginArray(size, new Common.StringView(name)))
 	  {
@@ -18044,7 +18044,7 @@ private static int check_aes_hw_supported = -1;
 
 	  vector.Resize(size);
 
-	  for (uint64_t i = 0; i < size; ++i)
+	  for (ulong i = 0; i < size; ++i)
 	  {
 		serializer.functorMethod(vector[i], "");
 	  }
@@ -18052,7 +18052,7 @@ private static int check_aes_hw_supported = -1;
 	  serializer.endArray();
 	  return true;
 	}
-	  public static readonly uint64_t MEGABYTE = 1024 * 1024;
+	  public static readonly ulong MEGABYTE = 1024 * 1024;
 
 
 	public static std::error_code make_error_code(CryptoNote.error.DataBaseErrorCodes e)
@@ -18075,17 +18075,17 @@ private static int check_aes_hw_supported = -1;
 	// Please see the included LICENSE file for more information.
 
 
-	public static uint64_t nextDifficultyV6(List<uint64_t> timestamps, List<uint64_t> cumulativeDifficulties)
+	public static ulong nextDifficultyV6(List<ulong> timestamps, List<ulong> cumulativeDifficulties)
 	{
-		uint64_t T = CryptoNote.parameters.DIFFICULTY_TARGET;
-		uint64_t N = CryptoNote.parameters.DIFFICULTY_WINDOW_V3;
-		uint64_t L = new uint64_t(0);
-		uint64_t ST = new uint64_t();
-		uint64_t sum_3_ST = new uint64_t(0);
-		uint64_t next_D = new uint64_t();
-		uint64_t prev_D = new uint64_t();
-		uint64_t thisTimestamp = new uint64_t();
-		uint64_t previousTimestamp = new uint64_t();
+		ulong T = CryptoNote.parameters.DIFFICULTY_TARGET;
+		ulong N = CryptoNote.parameters.DIFFICULTY_WINDOW_V3;
+		ulong L = new ulong(0);
+		ulong ST = new ulong();
+		ulong sum_3_ST = new ulong(0);
+		ulong next_D = new ulong();
+		ulong prev_D = new ulong();
+		ulong thisTimestamp = new ulong();
+		ulong previousTimestamp = new ulong();
 
 		/* If we are starting up, returning a difficulty guess. If you are a
 		   new coin, you might want to set this to a decent estimate of your
@@ -18105,7 +18105,7 @@ private static int check_aes_hw_supported = -1;
 //ORIGINAL LINE: previousTimestamp = timestamps[0];
 		previousTimestamp.CopyFrom(timestamps[0]);
 
-		for (uint64_t i = 1; i <= N; i++)
+		for (ulong i = 1; i <= N; i++)
 		{
 			if (timestamps[i] > previousTimestamp)
 			{
@@ -18156,29 +18156,29 @@ private static int check_aes_hw_supported = -1;
 // Copyright (c) 2017-2018 Zawy, MIT License
 // https://github.com/zawy12/difficulty-algorithms/issues/3
 
-	public static uint64_t nextDifficultyV5(List<uint64_t> timestamps, List<uint64_t> cumulativeDifficulties)
+	public static ulong nextDifficultyV5(List<ulong> timestamps, List<ulong> cumulativeDifficulties)
 	{
-		int64_t T = CryptoNote.parameters.DIFFICULTY_TARGET;
-		int64_t N = CryptoNote.parameters.DIFFICULTY_WINDOW_V3;
-		int64_t L = new int64_t(0);
-		int64_t ST = new int64_t();
-		int64_t sum_3_ST = new int64_t(0);
-		int64_t next_D = new int64_t();
-		int64_t prev_D = new int64_t();
+		long T = CryptoNote.parameters.DIFFICULTY_TARGET;
+		long N = CryptoNote.parameters.DIFFICULTY_WINDOW_V3;
+		long L = new long(0);
+		long ST = new long();
+		long sum_3_ST = new long(0);
+		long next_D = new long();
+		long prev_D = new long();
 
 		/* If we are starting up, returning a difficulty guess. If you are a
 		   new coin, you might want to set this to a decent estimate of your
 		   hashrate */
-		if (timestamps.Count < (uint64_t)(N + 1))
+		if (timestamps.Count < (ulong)(N + 1))
 		{
 			return 10000;
 		}
 
-		for (int64_t i = 1; i <= N; i++)
+		for (long i = 1; i <= N; i++)
 		{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: ST = static_cast<int64_t>(timestamps[i]) - static_cast<int64_t>(timestamps[i-1]);
-			ST.CopyFrom((int64_t)timestamps[i] - (int64_t)timestamps[i - 1]);
+//ORIGINAL LINE: ST = static_cast<long>(timestamps[i]) - static_cast<long>(timestamps[i-1]);
+			ST.CopyFrom((long)timestamps[i] - (long)timestamps[i - 1]);
 
 			ST = Math.Max(-4 * T, Math.Min(ST, 6 * T));
 
@@ -18191,8 +18191,8 @@ private static int check_aes_hw_supported = -1;
 		}
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: next_D = (static_cast<int64_t>(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N+1) * 99) / (100 * 2 * L);
-		next_D.CopyFrom(((int64_t)(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N + 1) * 99) / (100 * 2 * L));
+//ORIGINAL LINE: next_D = (static_cast<long>(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N+1) * 99) / (100 * 2 * L);
+		next_D.CopyFrom(((long)(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N + 1) * 99) / (100 * 2 * L));
 
 		prev_D = cumulativeDifficulties[N] - cumulativeDifficulties[N - 1];
 
@@ -18203,31 +18203,31 @@ private static int check_aes_hw_supported = -1;
 			next_D = Math.Max(next_D, (prev_D * 108) / 100);
 		}
 
-		return (uint64_t)next_D;
+		return (ulong)next_D;
 	}
 
 // LWMA-2 difficulty algorithm 
 // Copyright (c) 2017-2018 Zawy, MIT License
 // https://github.com/zawy12/difficulty-algorithms/issues/3
 
-	public static uint64_t nextDifficultyV4(List<uint64_t> timestamps, List<uint64_t> cumulativeDifficulties)
+	public static ulong nextDifficultyV4(List<ulong> timestamps, List<ulong> cumulativeDifficulties)
 	{
-		int64_t T = CryptoNote.parameters.DIFFICULTY_TARGET;
-		int64_t N = CryptoNote.parameters.DIFFICULTY_WINDOW_V3;
-		int64_t L = new int64_t(0);
-		int64_t ST = new int64_t();
-		int64_t sum_3_ST = new int64_t(0);
-		int64_t next_D = new int64_t();
-		int64_t prev_D = new int64_t();
+		long T = CryptoNote.parameters.DIFFICULTY_TARGET;
+		long N = CryptoNote.parameters.DIFFICULTY_WINDOW_V3;
+		long L = new long(0);
+		long ST = new long();
+		long sum_3_ST = new long(0);
+		long next_D = new long();
+		long prev_D = new long();
 
-		if (timestamps.Count <= (uint64_t)N)
+		if (timestamps.Count <= (ulong)N)
 		{
 			return 1000;
 		}
 
-		for (int64_t i = 1; i <= N; i++)
+		for (long i = 1; i <= N; i++)
 		{
-			ST = clamp(-6 * T, (int64_t)timestamps[i] - (int64_t)timestamps[i - 1], 6 * T);
+			ST = clamp(-6 * T, (long)timestamps[i] - (long)timestamps[i - 1], 6 * T);
 
 			L += ST * i;
 
@@ -18238,8 +18238,8 @@ private static int check_aes_hw_supported = -1;
 		}
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: next_D = (static_cast<int64_t>(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N+1) * 99) / (100 * 2 * L);
-		next_D.CopyFrom(((int64_t)(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N + 1) * 99) / (100 * 2 * L));
+//ORIGINAL LINE: next_D = (static_cast<long>(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N+1) * 99) / (100 * 2 * L);
+		next_D.CopyFrom(((long)(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N + 1) * 99) / (100 * 2 * L));
 		prev_D = cumulativeDifficulties[N] - cumulativeDifficulties[N - 1];
 
 		/* Make sure we don't divide by zero if 50x attacker (thanks fireice) */
@@ -18250,32 +18250,32 @@ private static int check_aes_hw_supported = -1;
 			next_D = Math.Max(next_D, (prev_D * 110) / 100);
 		}
 
-		return (uint64_t)next_D;
+		return (ulong)next_D;
 	}
 
 // LWMA-2 difficulty algorithm 
 // Copyright (c) 2017-2018 Zawy, MIT License
 // https://github.com/zawy12/difficulty-algorithms/issues/3
 
-	public static uint64_t nextDifficultyV3(List<uint64_t> timestamps, List<uint64_t> cumulativeDifficulties)
+	public static ulong nextDifficultyV3(List<ulong> timestamps, List<ulong> cumulativeDifficulties)
 	{
-		int64_t T = CryptoNote.parameters.DIFFICULTY_TARGET;
-		int64_t N = CryptoNote.parameters.DIFFICULTY_WINDOW_V3;
-		int64_t FTL = CryptoNote.parameters.CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3;
-		int64_t L = new int64_t(0);
-		int64_t ST = new int64_t();
-		int64_t sum_3_ST = new int64_t(0);
-		int64_t next_D = new int64_t();
-		int64_t prev_D = new int64_t();
+		long T = CryptoNote.parameters.DIFFICULTY_TARGET;
+		long N = CryptoNote.parameters.DIFFICULTY_WINDOW_V3;
+		long FTL = CryptoNote.parameters.CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3;
+		long L = new long(0);
+		long ST = new long();
+		long sum_3_ST = new long(0);
+		long next_D = new long();
+		long prev_D = new long();
 
-		if (timestamps.Count <= (uint64_t)N)
+		if (timestamps.Count <= (ulong)N)
 		{
 			return 1000;
 		}
 
-		for (int64_t i = 1; i <= N; i++)
+		for (long i = 1; i <= N; i++)
 		{
-			ST = Math.Max(-FTL, Math.Min((int64_t)timestamps[i] - (int64_t)timestamps[i - 1], 6 * T));
+			ST = Math.Max(-FTL, Math.Min((long)timestamps[i] - (long)timestamps[i - 1], 6 * T));
 
 			L += ST * i;
 
@@ -18286,8 +18286,8 @@ private static int check_aes_hw_supported = -1;
 		}
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: next_D = (static_cast<int64_t>(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N+1) * 99) / (100 * 2 * L);
-		next_D.CopyFrom(((int64_t)(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N + 1) * 99) / (100 * 2 * L));
+//ORIGINAL LINE: next_D = (static_cast<long>(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N+1) * 99) / (100 * 2 * L);
+		next_D.CopyFrom(((long)(cumulativeDifficulties[N] - cumulativeDifficulties[0]) * T * (N + 1) * 99) / (100 * 2 * L));
 		prev_D = cumulativeDifficulties[N] - cumulativeDifficulties[N - 1];
 
 		/* Make sure we don't divide by zero if 50x attacker (thanks fireice) */
@@ -18300,7 +18300,7 @@ private static int check_aes_hw_supported = -1;
 			next_D.CopyFrom((prev_D * 110) / 100);
 		}
 
-		return (uint64_t)next_D;
+		return (ulong)next_D;
 	}
 
 	/* TODO: This has been added in the stdlib in c++17 */
@@ -18486,9 +18486,9 @@ private static int check_aes_hw_supported = -1;
 
 		  Console.Write("\n");
 
-		  for (uint32_t height = 0; height <= 8192; height = height + 512)
+		  for (uint height = 0; height <= 8192; height = height + 512)
 		  {
-			Crypto.GlobalMembers.cn_soft_shell_slow_hash_v0(rawData.data(), rawData.size(), hash, new uint32_t(height));
+			Crypto.GlobalMembers.cn_soft_shell_slow_hash_v0(rawData.data(), rawData.size(), hash, new uint(height));
 			Console.Write("cn_soft_shell_slow_hash_v0 (");
 			Console.Write(height);
 			Console.Write("): ");
@@ -18501,9 +18501,9 @@ private static int check_aes_hw_supported = -1;
 
 		  Console.Write("\n");
 
-		  for (uint32_t height = 0; height <= 8192; height = height + 512)
+		  for (uint height = 0; height <= 8192; height = height + 512)
 		  {
-			Crypto.GlobalMembers.cn_soft_shell_slow_hash_v1(rawData.data(), rawData.size(), hash, new uint32_t(height));
+			Crypto.GlobalMembers.cn_soft_shell_slow_hash_v1(rawData.data(), rawData.size(), hash, new uint(height));
 			Console.Write("cn_soft_shell_slow_hash_v1 (");
 			Console.Write(height);
 			Console.Write("): ");
@@ -18516,9 +18516,9 @@ private static int check_aes_hw_supported = -1;
 
 		  Console.Write("\n");
 
-		  for (uint32_t height = 0; height <= 8192; height = height + 512)
+		  for (uint height = 0; height <= 8192; height = height + 512)
 		  {
-			Crypto.GlobalMembers.cn_soft_shell_slow_hash_v2(rawData.data(), rawData.size(), hash, new uint32_t(height));
+			Crypto.GlobalMembers.cn_soft_shell_slow_hash_v2(rawData.data(), rawData.size(), hash, new uint(height));
 			Console.Write("cn_soft_shell_slow_hash_v2 (");
 			Console.Write(height);
 			Console.Write("): ");
@@ -19104,18 +19104,18 @@ private static int check_aes_hw_supported = -1;
 	public static JsonValue buildLoggerConfiguration(Level level, string logfile)
 	{
 	  JsonValue loggerConfiguration = new JsonValue(JsonValue.OBJECT);
-	  loggerConfiguration.insert("globalLevel", (int64_t)level);
+	  loggerConfiguration.insert("globalLevel", (long)level);
 
 	  JsonValue cfgLoggers = loggerConfiguration.insert("loggers", JsonValue.ARRAY);
 
 	  JsonValue fileLogger = cfgLoggers.pushBack(JsonValue.OBJECT);
 	  fileLogger.insert("type", "file");
 	  fileLogger.insert("filename", logfile);
-	  fileLogger.insert("level", (int64_t)TRACE);
+	  fileLogger.insert("level", (long)TRACE);
 
 	  JsonValue consoleLogger = cfgLoggers.pushBack(JsonValue.OBJECT);
 	  consoleLogger.insert("type", "console");
-	  consoleLogger.insert("level", (int64_t)TRACE);
+	  consoleLogger.insert("level", (long)TRACE);
 	  consoleLogger.insert("pattern", "%D %T %L ");
 
 	  return loggerConfiguration;
@@ -19501,11 +19501,11 @@ private static int check_aes_hw_supported = -1;
 	  return std::error_code((int)e, CryptoNote.error.NodeErrorCategory.INSTANCE);
 	}
 
-	public static readonly uint64_t LEVIN_SIGNATURE = 0x0101010101012101L; //Bender's nightmare
-	public static readonly uint32_t LEVIN_PACKET_REQUEST = 0x00000001;
-	public static readonly uint32_t LEVIN_PACKET_RESPONSE = 0x00000002;
-	public static readonly uint32_t LEVIN_DEFAULT_MAX_PACKET_SIZE = 100000000; //100MB by default
-	public static readonly uint32_t LEVIN_PROTOCOL_VER_1 = 1;
+	public static readonly ulong LEVIN_SIGNATURE = 0x0101010101012101L; //Bender's nightmare
+	public static readonly uint LEVIN_PACKET_REQUEST = 0x00000001;
+	public static readonly uint LEVIN_PACKET_RESPONSE = 0x00000002;
+	public static readonly uint LEVIN_DEFAULT_MAX_PACKET_SIZE = 100000000; //100MB by default
+	public static readonly uint LEVIN_PROTOCOL_VER_1 = 1;
 
 	public static size_t get_random_index_with_fixed_probability(size_t max_index)
 	{
@@ -19519,7 +19519,7 @@ private static int check_aes_hw_supported = -1;
 	}
 
 
-	public static void addPortMapping(Logging.LoggerRef logger, uint32_t port)
+	public static void addPortMapping(Logging.LoggerRef logger, uint port)
 	{
 	  // Add UPnP port mapping
 	  logger.functorMethod(INFO) << "Attempting to add IGD port mapping.";
@@ -19662,14 +19662,14 @@ private delegate void funcDelegate();
 //ORIGINAL LINE: template <typename T>
 	public static JsonValue readIntegerJson<T>(Common.IInputStream s)
 	{
-	  return readPodJson<T, int64_t>(s);
+	  return readPodJson<T, long>(s);
 	}
 
-	public static uint64_t readVarint(Common.IInputStream s)
+	public static ulong readVarint(Common.IInputStream s)
 	{
-	  uint8_t b = read<uint8_t>(s);
-	  uint8_t size_mask = b & GlobalMembers.PORTABLE_RAW_SIZE_MARK_MASK;
-	  uint64_t bytesLeft = 0;
+	  ushort b = read<ushort>(s);
+	  ushort size_mask = b & GlobalMembers.PORTABLE_RAW_SIZE_MARK_MASK;
+	  ulong bytesLeft = 0;
 
 	  switch (size_mask)
 	  {
@@ -19687,11 +19687,11 @@ private delegate void funcDelegate();
 		break;
 	  }
 
-	  uint64_t value = b;
+	  ulong value = b;
 
-	  for (uint64_t i = 1; i <= bytesLeft; ++i)
+	  for (ulong i = 1; i <= bytesLeft; ++i)
 	  {
-		uint64_t n = read<uint8_t>(s);
+		ulong n = read<ushort>(s);
 		value |= n << (i * 8);
 	  }
 
@@ -19718,7 +19718,7 @@ private delegate void funcDelegate();
 
 	public static void readName(Common.IInputStream s, string name)
 	{
-	  uint8_t len = readPod<uint8_t>(s);
+	  ushort len = readPod<ushort>(s);
 	  if (len != null)
 	  {
 		name.resize(len);
@@ -19726,36 +19726,36 @@ private delegate void funcDelegate();
 	  }
 	}
 
-	public static JsonValue loadValue(Common.IInputStream stream, uint8_t type)
+	public static JsonValue loadValue(Common.IInputStream stream, ushort type)
 	{
 	  switch (type)
 	  {
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT64:
-		  return readIntegerJson<int64_t>(stream);
+		  return readIntegerJson<long>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT32:
-		  return readIntegerJson<int32_t>(stream);
+		  return readIntegerJson<int>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT16:
-		  return readIntegerJson<int16_t>(stream);
+		  return readIntegerJson<short>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT8:
-		  return readIntegerJson<int8_t>(stream);
+		  return readIntegerJson<short>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT64:
-		  return readIntegerJson<uint64_t>(stream);
+		  return readIntegerJson<ulong>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT32:
-		  return readIntegerJson<uint32_t>(stream);
+		  return readIntegerJson<uint>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT16:
-		  return readIntegerJson<uint16_t>(stream);
+		  return readIntegerJson<ushort>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT8:
-		  return readIntegerJson<uint8_t>(stream);
+		  return readIntegerJson<ushort>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_DOUBLE:
 		  return readPodJson<double>(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_BOOL:
-		  return new JsonValue(read<uint8_t>(stream) != 0);
+		  return new JsonValue(read<ushort>(stream) != 0);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_STRING:
 		  return readStringJson(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_OBJECT:
 		  return loadSection(stream);
 	  case GlobalMembers.BIN_KV_SERIALIZE_TYPE_ARRAY:
-		  return loadArray(stream, new uint8_t(type));
+		  return loadArray(stream, new ushort(type));
 	  default:
 		throw new System.Exception("Unknown data type");
 		break;
@@ -19764,7 +19764,7 @@ private delegate void funcDelegate();
 	public static JsonValue loadSection(Common.IInputStream stream)
 	{
 	  JsonValue sec = new JsonValue(JsonValue.OBJECT);
-	  uint64_t count = readVarint(stream);
+	  ulong count = readVarint(stream);
 	  string name;
 
 	  while (count-- != null)
@@ -19777,24 +19777,24 @@ private delegate void funcDelegate();
 	}
 	public static JsonValue loadEntry(Common.IInputStream stream)
 	{
-	  uint8_t type = readPod<uint8_t>(stream);
+	  ushort type = readPod<ushort>(stream);
 
 	  if (type & GlobalMembers.BIN_KV_SERIALIZE_FLAG_ARRAY != null)
 	  {
 		type &= ~GlobalMembers.BIN_KV_SERIALIZE_FLAG_ARRAY;
-		return loadArray(stream, new uint8_t(type));
+		return loadArray(stream, new ushort(type));
 	  }
 
-	  return loadValue(stream, new uint8_t(type));
+	  return loadValue(stream, new ushort(type));
 	}
-	public static JsonValue loadArray(Common.IInputStream stream, uint8_t itemType)
+	public static JsonValue loadArray(Common.IInputStream stream, ushort itemType)
 	{
 	  JsonValue arr = new JsonValue(JsonValue.ARRAY);
-	  uint64_t count = readVarint(stream);
+	  ulong count = readVarint(stream);
 
 	  while (count-- != null)
 	  {
-		arr.pushBack.functorMethod(loadValue(stream, new uint8_t(itemType)));
+		arr.pushBack.functorMethod(loadValue(stream, new ushort(itemType)));
 	  }
 
 	  return arr.functorMethod;
@@ -19827,7 +19827,7 @@ private delegate void funcDelegate();
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<class T>
-	public static uint64_t packVarint<T>(IOutputStream s, uint8_t type_or, uint64_t pv)
+	public static ulong packVarint<T>(IOutputStream s, ushort type_or, ulong pv)
 	{
 	  T v = (T)(pv << 2);
 	  v |= type_or;
@@ -19837,29 +19837,29 @@ private delegate void funcDelegate();
 
 	public static void writeElementName(IOutputStream s, Common.StringView name)
 	{
-	  if (name.getSize() > uint8_t.MaxValue)
+	  if (name.getSize() > ushort.MaxValue)
 	  {
 		throw new System.Exception("Element name is too long");
 	  }
 
-	  uint8_t len = (uint8_t)name.getSize();
-	  write(s, len, sizeof(uint8_t));
+	  ushort len = (ushort)name.getSize();
+	  write(s, len, sizeof(ushort));
 	  write(s, name.getData(), len);
 	}
 
-	public static uint64_t writeArraySize(IOutputStream s, uint64_t val)
+	public static ulong writeArraySize(IOutputStream s, ulong val)
 	{
 	  if (val <= 63)
 	  {
-		return packVarint<uint8_t>(s, new uint8_t(GlobalMembers.PORTABLE_RAW_SIZE_MARK_BYTE), new uint64_t(val));
+		return packVarint<ushort>(s, new ushort(GlobalMembers.PORTABLE_RAW_SIZE_MARK_BYTE), new ulong(val));
 	  }
 	  else if (val <= 16383)
 	  {
-		return packVarint<uint16_t>(s, new uint8_t(GlobalMembers.PORTABLE_RAW_SIZE_MARK_WORD), new uint64_t(val));
+		return packVarint<ushort>(s, new ushort(GlobalMembers.PORTABLE_RAW_SIZE_MARK_WORD), new ulong(val));
 	  }
 	  else if (val <= 1073741823)
 	  {
-		return packVarint<uint32_t>(s, new uint8_t(GlobalMembers.PORTABLE_RAW_SIZE_MARK_DWORD), new uint64_t(val));
+		return packVarint<uint>(s, new ushort(GlobalMembers.PORTABLE_RAW_SIZE_MARK_DWORD), new ulong(val));
 	  }
 	  else
 	  {
@@ -19867,7 +19867,7 @@ private delegate void funcDelegate();
 		{
 		  throw new System.Exception("failed to pack varint - too big amount");
 		}
-		return packVarint<uint64_t>(s, new uint8_t(GlobalMembers.PORTABLE_RAW_SIZE_MARK_INT64), new uint64_t(val));
+		return packVarint<ulong>(s, new ushort(GlobalMembers.PORTABLE_RAW_SIZE_MARK_INT64), new ulong(val));
 	  }
 	}
 	#if MSVC
@@ -25159,19 +25159,19 @@ namespace Tools.Base58
 			return string();
 		  }
 
-		  uint64_t full_block_count = data.Length / GlobalMembers.full_block_size;
-		  uint64_t last_block_size = data.Length % GlobalMembers.full_block_size;
-		  uint64_t res_size = full_block_count * GlobalMembers.full_encoded_block_size + GlobalMembers.encoded_block_sizes[last_block_size];
+		  ulong full_block_count = data.Length / GlobalMembers.full_block_size;
+		  ulong last_block_size = data.Length % GlobalMembers.full_block_size;
+		  ulong res_size = full_block_count * GlobalMembers.full_encoded_block_size + GlobalMembers.encoded_block_sizes[last_block_size];
 
 		  string res = new string(res_size, GlobalMembers.alphabet[0]);
-		  for (uint64_t i = 0; i < full_block_count; ++i)
+		  for (ulong i = 0; i < full_block_count; ++i)
 		  {
-			GlobalMembers.encode_block(data.data() + i * GlobalMembers.full_block_size, new uint64_t(GlobalMembers.full_block_size), ref res[i * GlobalMembers.full_encoded_block_size]);
+			GlobalMembers.encode_block(data.data() + i * GlobalMembers.full_block_size, new ulong(GlobalMembers.full_block_size), ref res[i * GlobalMembers.full_encoded_block_size]);
 		  }
 
 		  if (0 < last_block_size)
 		  {
-			GlobalMembers.encode_block(data.data() + full_block_count * GlobalMembers.full_block_size, new uint64_t(last_block_size), ref res[full_block_count * GlobalMembers.full_encoded_block_size]);
+			GlobalMembers.encode_block(data.data() + full_block_count * GlobalMembers.full_block_size, new ulong(last_block_size), ref res[full_block_count * GlobalMembers.full_encoded_block_size]);
 		  }
 
 		  return res;
@@ -25184,19 +25184,19 @@ namespace Tools.Base58
 			return true;
 		  }
 
-		  uint64_t full_block_count = enc.Length / GlobalMembers.full_encoded_block_size;
-		  uint64_t last_block_size = enc.Length % GlobalMembers.full_encoded_block_size;
+		  ulong full_block_count = enc.Length / GlobalMembers.full_encoded_block_size;
+		  ulong last_block_size = enc.Length % GlobalMembers.full_encoded_block_size;
 		  int last_block_decoded_size = decoded_block_sizes.instance(last_block_size);
 		  if (last_block_decoded_size < 0)
 		  {
 			return false; // Invalid enc length
 		  }
-		  uint64_t data_size = full_block_count * GlobalMembers.full_block_size + last_block_decoded_size;
+		  ulong data_size = full_block_count * GlobalMembers.full_block_size + last_block_decoded_size;
 
 		  data.resize(data_size, 0);
-		  for (uint64_t i = 0; i < full_block_count; ++i)
+		  for (ulong i = 0; i < full_block_count; ++i)
 		  {
-			if (!GlobalMembers.decode_block(enc.data() + i * GlobalMembers.full_encoded_block_size, new uint64_t(GlobalMembers.full_encoded_block_size), ref data[i * GlobalMembers.full_block_size]))
+			if (!GlobalMembers.decode_block(enc.data() + i * GlobalMembers.full_encoded_block_size, new ulong(GlobalMembers.full_encoded_block_size), ref data[i * GlobalMembers.full_block_size]))
 			{
 			  return false;
 			}
@@ -25204,7 +25204,7 @@ namespace Tools.Base58
 
 		  if (0 < last_block_size)
 		  {
-			if (!GlobalMembers.decode_block(enc.data() + full_block_count * GlobalMembers.full_encoded_block_size, new uint64_t(last_block_size), ref data[full_block_count * GlobalMembers.full_block_size]))
+			if (!GlobalMembers.decode_block(enc.data() + full_block_count * GlobalMembers.full_encoded_block_size, new ulong(last_block_size), ref data[full_block_count * GlobalMembers.full_block_size]))
 			{
 			  return false;
 			}
@@ -25213,7 +25213,7 @@ namespace Tools.Base58
 		  return true;
 		}
 
-		public static string encode_addr(uint64_t tag, string data)
+		public static string encode_addr(ulong tag, string data)
 		{
 		  string buf = Tools.GlobalMembers.get_varint_data(tag);
 		  buf += data;
@@ -25225,7 +25225,7 @@ namespace Tools.Base58
 		  buf.append(hash_data, GlobalMembers.addr_checksum_size);
 		  return Base58.GlobalMembers.encode(buf);
 		}
-		public static bool decode_addr(string addr, uint64_t tag, ref string data)
+		public static bool decode_addr(string addr, ulong tag, ref string data)
 		{
 		  string addr_data;
 		  bool r = Base58.GlobalMembers.decode(addr, addr_data);
@@ -25260,21 +25260,21 @@ namespace Tools.Base58
 		  return true;
 		}
 		  public const string alphabet = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
-		  public static readonly uint64_t alphabet_size = sizeof(alphabet) - 1;
-		  public static readonly uint64_t[] encoded_block_sizes = {0, 2, 3, 5, 6, 7, 9, 10, 11};
+		  public static readonly ulong alphabet_size = sizeof(alphabet) - 1;
+		  public static readonly ulong[] encoded_block_sizes = {0, 2, 3, 5, 6, 7, 9, 10, 11};
 //C++ TO C# CONVERTER WARNING: This 'sizeof' ratio was replaced with a direct reference to the array length:
-//ORIGINAL LINE: const uint64_t full_block_size = sizeof(encoded_block_sizes) / sizeof(encoded_block_sizes[0]) - 1;
-		  public static readonly uint64_t full_block_size = encoded_block_sizes.Length - 1;
-		  public static readonly uint64_t full_encoded_block_size = encoded_block_sizes[full_block_size];
-		  public static readonly uint64_t addr_checksum_size = 4;
+//ORIGINAL LINE: const ulong full_block_size = sizeof(encoded_block_sizes) / sizeof(encoded_block_sizes[0]) - 1;
+		  public static readonly ulong full_block_size = encoded_block_sizes.Length - 1;
+		  public static readonly ulong full_encoded_block_size = encoded_block_sizes[full_block_size];
+		  public static readonly ulong addr_checksum_size = 4;
 
 
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'data', so pointers on this parameter are left unchanged:
-		  public static uint64_t uint_8be_to_64(uint8_t * data, uint64_t size)
+		  public static ulong uint_8be_to_64(ushort * data, ulong size)
 		  {
-			Debug.Assert(1 <= size != null && size <= sizeof(uint64_t));
+			Debug.Assert(1 <= size != null && size <= sizeof(ulong));
 
-			uint64_t res = 0;
+			ulong res = 0;
 			switch (9 - size)
 			{
 			case 1:
@@ -25316,33 +25316,33 @@ namespace Tools.Base58
 			return res;
 		  }
 
-		  public static void uint_64_to_8be(uint64_t num, uint64_t size, uint8_t data)
+		  public static void uint_64_to_8be(ulong num, ulong size, ushort data)
 		  {
-			Debug.Assert(1 <= size != null && size <= sizeof(uint64_t));
+			Debug.Assert(1 <= size != null && size <= sizeof(ulong));
 
-			uint64_t num_be = SWAP64BE(num);
+			ulong num_be = SWAP64BE(num);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(data, reinterpret_cast<uint8_t>(num_be) + sizeof(uint64_t) - size, size);
+			memcpy(data, reinterpret_cast<ushort>(num_be) + sizeof(ulong) - size, size);
 		  }
 
-		  public static void encode_block(string block, uint64_t size, ref string res)
+		  public static void encode_block(string block, ulong size, ref string res)
 		  {
 			Debug.Assert(1 <= size != null && size <= GlobalMembers.full_block_size);
 
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-			uint64_t num = GlobalMembers.uint_8be_to_64(reinterpret_cast<const uint8_t>(block), new uint64_t(size));
+			ulong num = GlobalMembers.uint_8be_to_64(reinterpret_cast<const ushort>(block), new ulong(size));
 			int i = (int)GlobalMembers.encoded_block_sizes[size] - 1;
 			while (0 < num)
 			{
-			  uint64_t remainder = num % GlobalMembers.alphabet_size;
+			  ulong remainder = num % GlobalMembers.alphabet_size;
 			  num /= GlobalMembers.alphabet_size;
 			  res[i] = GlobalMembers.alphabet[remainder];
 			  --i;
 			}
 		  }
 
-		  public static bool decode_block(string block, uint64_t size, ref string res)
+		  public static bool decode_block(string block, ulong size, ref string res)
 		  {
 			Debug.Assert(1 <= size != null && size <= GlobalMembers.full_encoded_block_size);
 
@@ -25352,9 +25352,9 @@ namespace Tools.Base58
 			  return false; // Invalid block size
 			}
 
-			uint64_t res_num = 0;
-			uint64_t order = 1;
-			for (uint64_t i = size - 1; i < size; --i)
+			ulong res_num = 0;
+			ulong order = 1;
+			for (ulong i = size - 1; i < size; --i)
 			{
 			  int digit = reverse_alphabet.instance(block[i]);
 			  if (digit < 0)
@@ -25362,8 +25362,8 @@ namespace Tools.Base58
 				return false; // Invalid symbol
 			  }
 
-			  uint64_t product_hi = new uint64_t();
-			  uint64_t tmp = res_num + GlobalMembers.mul128(new uint64_t(order), digit, product_hi);
+			  ulong product_hi = new ulong();
+			  ulong tmp = res_num + GlobalMembers.mul128(new ulong(order), digit, product_hi);
 			  if (tmp < res_num || 0 != product_hi)
 			  {
 				return false; // Overflow
@@ -25375,13 +25375,13 @@ namespace Tools.Base58
 			  order *= GlobalMembers.alphabet_size; // Never overflows, 58^10 < 2^64
 			}
 
-			if ((uint64_t)res_size < GlobalMembers.full_block_size && (UINT64_C(1) << (8 * res_size)) <= res_num)
+			if ((ulong)res_size < GlobalMembers.full_block_size && (UINT64_C(1) << (8 * res_size)) <= res_num)
 			{
 			  return false; // Overflow
 			}
 
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-			GlobalMembers.uint_64_to_8be(new uint64_t(res_num), res_size, reinterpret_cast<uint8_t>(res));
+			GlobalMembers.uint_64_to_8be(new ulong(res_num), res_size, reinterpret_cast<ushort>(res));
 
 			return true;
 		  }
@@ -25562,13 +25562,13 @@ private static ushort[] setTextColor_winColors = {FOREGROUND_RED | FOREGROUND_GR
 	//C++ TO C# CONVERTER NOTE: This static local variable declaration (not allowed in C#) has been moved just prior to the method:
 	//  static ushort winColors[] = { FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE, FOREGROUND_BLUE, FOREGROUND_GREEN, FOREGROUND_RED, FOREGROUND_RED | FOREGROUND_GREEN, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE, FOREGROUND_GREEN | FOREGROUND_BLUE, FOREGROUND_RED | FOREGROUND_BLUE, FOREGROUND_BLUE | FOREGROUND_INTENSITY, FOREGROUND_GREEN | FOREGROUND_INTENSITY, FOREGROUND_RED | FOREGROUND_INTENSITY, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY };
 
-	  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), setTextColor_winColors[(uint64_t)color]);
+	  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), setTextColor_winColors[(ulong)color]);
 
 	#else
 
 	  string[] ansiColors = {"\x001B[0m", "\x001B[0;34m", "\x001B[0;32m", "\x001B[0;31m", "\x001B[0;33m", "\x001B[0;37m", "\x001B[0;36m", "\x001B[0;35m", "\x001B[1;34m", "\x001B[1;32m", "\x001B[1;31m", "\x001B[1;33m", "\x001B[1;37m", "\x001B[1;36m", "\x001B[1;35m"};
 
-	  Console.Write(ansiColors[(uint64_t)color]);
+	  Console.Write(ansiColors[(ulong)color]);
 
 	#endif
 
@@ -25598,7 +25598,7 @@ namespace Common
 
 
   //--------------------------------------------------------------------------------
-	  public static string get_mining_speed(uint32_t hr)
+	  public static string get_mining_speed(uint hr)
 	  {
 		if (hr > 1e9)
 		{
@@ -25617,7 +25617,7 @@ namespace Common
 	  }
 
   //--------------------------------------------------------------------------------
-	  public static string get_sync_percentage(uint64_t height, uint64_t target_height)
+	  public static string get_sync_percentage(ulong height, ulong target_height)
 	  {
 		/* Don't divide by zero */
 		if (height == 0 || target_height == 0)
@@ -25642,26 +25642,26 @@ namespace Common
 
 		return (boost::format("%.2f") % pc).str();
 	  }
-	//  string get_upgrade_time(uint64_t height, uint64_t upgrade_height);Tangible Method Implementation Not FoundCommon-get_upgrade_time
+	//  string get_upgrade_time(ulong height, ulong upgrade_height);Tangible Method Implementation Not FoundCommon-get_upgrade_time
 
   //--------------------------------------------------------------------------------
 	  public static string get_status_string(CryptoNote.COMMAND_RPC_GET_INFO.response iresp)
 	  {
 		std::stringstream ss = new std::stringstream();
 		std::time_t uptime = std::time(null) - iresp.start_time;
-		var forkStatus = get_fork_status(new uint32_t(iresp.network_height), new List<uint64_t>(iresp.upgrade_heights), new uint64_t(iresp.supported_height));
+		var forkStatus = get_fork_status(new uint(iresp.network_height), new List<ulong>(iresp.upgrade_heights), new ulong(iresp.supported_height));
 
-		ss << "Height: " << iresp.height << "/" << iresp.network_height << " (" << get_sync_percentage(new uint64_t(iresp.height), new uint32_t(iresp.network_height)) << "%) " << "on " << (iresp.testnet ? "testnet, " : "mainnet, ") << (iresp.synced ? "synced, " : "syncing, ") << "net hash " << get_mining_speed(new uint32_t(iresp.hashrate)) << ", " << "v" << +iresp.major_version << "," << get_update_status(forkStatus, new uint32_t(iresp.network_height), new List<uint64_t>(iresp.upgrade_heights)) << ", " << iresp.outgoing_connections_count << "(out)+" << iresp.incoming_connections_count << "(in) connections, " << "uptime " << (uint)Math.Floor(uptime / 60.0 / 60.0 / 24.0) << "d " << (uint)Math.Floor(fmod((uptime / 60.0 / 60.0), 24.0)) << "h " << (uint)Math.Floor(fmod((uptime / 60.0), 60.0)) << "m " << (uint)fmod(uptime, 60.0) << "s";
+		ss << "Height: " << iresp.height << "/" << iresp.network_height << " (" << get_sync_percentage(new ulong(iresp.height), new uint(iresp.network_height)) << "%) " << "on " << (iresp.testnet ? "testnet, " : "mainnet, ") << (iresp.synced ? "synced, " : "syncing, ") << "net hash " << get_mining_speed(new uint(iresp.hashrate)) << ", " << "v" << +iresp.major_version << "," << get_update_status(forkStatus, new uint(iresp.network_height), new List<ulong>(iresp.upgrade_heights)) << ", " << iresp.outgoing_connections_count << "(out)+" << iresp.incoming_connections_count << "(in) connections, " << "uptime " << (uint)Math.Floor(uptime / 60.0 / 60.0 / 24.0) << "d " << (uint)Math.Floor(fmod((uptime / 60.0 / 60.0), 24.0)) << "h " << (uint)Math.Floor(fmod((uptime / 60.0), 60.0)) << "m " << (uint)fmod(uptime, 60.0) << "s";
 
 		if (forkStatus == ForkStatus.OutOfDate)
 		{
-			ss << std::endl << get_upgrade_info(new uint64_t(iresp.supported_height), new List<uint64_t>(iresp.upgrade_heights));
+			ss << std::endl << get_upgrade_info(new ulong(iresp.supported_height), new List<ulong>(iresp.upgrade_heights));
 		}
 
 		return ss.str();
 	  }
 
-	public static ForkStatus get_fork_status(uint64_t height, List<uint64_t> upgrade_heights, uint64_t supported_height)
+	public static ForkStatus get_fork_status(ulong height, List<ulong> upgrade_heights, ulong supported_height)
 	{
 		/* Allow fork heights to be empty */
 		if (upgrade_heights.Count == 0)
@@ -25669,7 +25669,7 @@ namespace Common
 			return ForkStatus.UpToDate;
 		}
 
-		uint64_t next_fork = 0;
+		ulong next_fork = 0;
 
 		foreach (var upgrade in upgrade_heights)
 		{
@@ -25713,9 +25713,9 @@ namespace Common
 		return ForkStatus.ForkLater;
 	}
 
-	public static string get_fork_time(uint64_t height, List<uint64_t> upgrade_heights)
+	public static string get_fork_time(ulong height, List<ulong> upgrade_heights)
 	{
-		uint64_t next_fork = 0;
+		ulong next_fork = 0;
 
 		foreach (var upgrade in upgrade_heights)
 		{
@@ -25745,7 +25745,7 @@ namespace Common
 		}
 	}
 
-	public static string get_update_status(ForkStatus forkStatus, uint64_t height, List<uint64_t> upgrade_heights)
+	public static string get_update_status(ForkStatus forkStatus, ulong height, List<ulong> upgrade_heights)
 	{
 		switch (forkStatus)
 		{
@@ -25756,11 +25756,11 @@ namespace Common
 			}
 			case ForkStatus.ForkSoonReady:
 			{
-				return get_fork_time(new uint64_t(height), new List<uint64_t>(upgrade_heights)) + " up to date";
+				return get_fork_time(new ulong(height), new List<ulong>(upgrade_heights)) + " up to date";
 			}
 			case ForkStatus.ForkSoonNotReady:
 			{
-				return get_fork_time(new uint64_t(height), new List<uint64_t>(upgrade_heights)) + " update needed";
+				return get_fork_time(new ulong(height), new List<ulong>(upgrade_heights)) + " update needed";
 			}
 			case ForkStatus.OutOfDate:
 			{
@@ -25774,7 +25774,7 @@ namespace Common
 	}
 
 	//--------------------------------------------------------------------------------
-	public static string get_upgrade_info(uint64_t supported_height, List<uint64_t> upgrade_heights)
+	public static string get_upgrade_info(ulong supported_height, List<ulong> upgrade_heights)
 	{
 		foreach (var upgrade in upgrade_heights)
 		{
@@ -26113,83 +26113,83 @@ namespace Common
 	  return path.IndexOf(GlobalMembers.GENERIC_PATH_SEPARATOR) != -1;
 	}
 
-	public static void read(IInputStream in, object data, uint64_t size)
+	public static void read(IInputStream in, object data, ulong size)
 	{
 	  while (size > 0)
 	  {
-		uint64_t readSize = in.readSome(data, new uint64_t(size));
+		ulong readSize = in.readSome(data, new ulong(size));
 		if (readSize == 0)
 		{
 		  throw new System.Exception("Failed to read from IInputStream");
 		}
 
-		data = (uint8_t)data + readSize;
+		data = (ushort)data + readSize;
 		size -= readSize;
 	  }
 	}
-	public static void read(IInputStream in, int8_t value)
+	public static void read(IInputStream in, short value)
 	{
-	  read(in, value, sizeof(int8_t));
+	  read(in, value, sizeof(short));
 	}
-	public static void read(IInputStream in, int16_t value)
-	{
-	  // TODO: Convert from little endian on big endian platforms
-	  read(in, value, sizeof(int16_t));
-	}
-	public static void read(IInputStream in, int32_t value)
+	public static void read(IInputStream in, short value)
 	{
 	  // TODO: Convert from little endian on big endian platforms
-	  read(in, value, sizeof(int32_t));
+	  read(in, value, sizeof(short));
 	}
-	public static void read(IInputStream in, int64_t value)
+	public static void read(IInputStream in, int value)
 	{
 	  // TODO: Convert from little endian on big endian platforms
-	  read(in, value, sizeof(int64_t));
+	  read(in, value, sizeof(int));
 	}
-	public static void read(IInputStream in, uint8_t value)
-	{
-	  read(in, value, sizeof(uint8_t));
-	}
-	public static void read(IInputStream in, uint16_t value)
+	public static void read(IInputStream in, long value)
 	{
 	  // TODO: Convert from little endian on big endian platforms
-	  read(in, value, sizeof(uint16_t));
+	  read(in, value, sizeof(long));
 	}
-	public static void read(IInputStream in, uint32_t value)
+	public static void read(IInputStream in, ushort value)
+	{
+	  read(in, value, sizeof(ushort));
+	}
+	public static void read(IInputStream in, ushort value)
 	{
 	  // TODO: Convert from little endian on big endian platforms
-	  read(in, value, sizeof(uint32_t));
+	  read(in, value, sizeof(ushort));
 	}
-	public static T read(IInputStream in, uint64_t size)
+	public static void read(IInputStream in, uint value)
+	{
+	  // TODO: Convert from little endian on big endian platforms
+	  read(in, value, sizeof(uint));
+	}
+	public static T read(IInputStream in, ulong size)
 	{
 	  T value = new T();
-	  read(in, value, new uint64_t(size));
+	  read(in, value, new ulong(size));
 	  return value;
 	}
-	public static void read(IInputStream in, List<uint8_t> data, uint64_t size)
+	public static void read(IInputStream in, List<ushort> data, ulong size)
 	{
 	  data.Resize(size);
-	  read(in, data.data(), new uint64_t(size));
+	  read(in, data.data(), new ulong(size));
 	}
-	public static void read(IInputStream in, string data, uint64_t size)
+	public static void read(IInputStream in, string data, ulong size)
 	{
 	  List<char> temp = new List<char>(size);
-	  read(in, temp.data(), new uint64_t(size));
+	  read(in, temp.data(), new ulong(size));
 	  data.assign(temp.data(), size);
 	}
-	public static void readVarint(IInputStream in, ref uint8_t value)
+	public static void readVarint(IInputStream in, ref ushort value)
 	{
-	  uint8_t temp = 0;
-	  for (uint8_t shift = 0;; shift += 7)
+	  ushort temp = 0;
+	  for (ushort shift = 0;; shift += 7)
 	  {
-		uint8_t piece = new uint8_t();
+		ushort piece = new ushort();
 		read(in, piece);
-		if (shift >= sizeof(uint8_t) * 8 - 7 && piece >= 1 << (sizeof(uint8_t) * 8 - shift))
+		if (shift >= sizeof(ushort) * 8 - 7 && piece >= 1 << (sizeof(ushort) * 8 - shift))
 		{
 		  throw new System.Exception("readVarint, value overflow");
 		}
 
-		temp |= (uint64_t)(piece & 0x7f) << shift;
+		temp |= (ulong)(piece & 0x7f) << shift;
 		if ((piece & 0x80) == 0)
 		{
 		  if (piece == 0 && shift != 0)
@@ -26203,19 +26203,19 @@ namespace Common
 
 	  value = temp;
 	}
-	public static void readVarint(IInputStream in, ref uint16_t value)
+	public static void readVarint(IInputStream in, ref ushort value)
 	{
-	  uint16_t temp = 0;
-	  for (uint8_t shift = 0;; shift += 7)
+	  ushort temp = 0;
+	  for (ushort shift = 0;; shift += 7)
 	  {
-		uint8_t piece = new uint8_t();
+		ushort piece = new ushort();
 		read(in, piece);
-		if (shift >= sizeof(uint16_t) * 8 - 7 && piece >= 1 << (sizeof(uint16_t) * 8 - shift))
+		if (shift >= sizeof(ushort) * 8 - 7 && piece >= 1 << (sizeof(ushort) * 8 - shift))
 		{
 		  throw new System.Exception("readVarint, value overflow");
 		}
 
-		temp |= (uint64_t)(piece & 0x7f) << shift;
+		temp |= (ulong)(piece & 0x7f) << shift;
 		if ((piece & 0x80) == 0)
 		{
 		  if (piece == 0 && shift != 0)
@@ -26229,19 +26229,19 @@ namespace Common
 
 	  value = temp;
 	}
-	public static void readVarint(IInputStream in, ref uint32_t value)
+	public static void readVarint(IInputStream in, ref uint value)
 	{
-	  uint32_t temp = 0;
-	  for (uint8_t shift = 0;; shift += 7)
+	  uint temp = 0;
+	  for (ushort shift = 0;; shift += 7)
 	  {
-		uint8_t piece = new uint8_t();
+		ushort piece = new ushort();
 		read(in, piece);
-		if (shift >= sizeof(uint32_t) * 8 - 7 && piece >= 1 << (sizeof(uint32_t) * 8 - shift))
+		if (shift >= sizeof(uint) * 8 - 7 && piece >= 1 << (sizeof(uint) * 8 - shift))
 		{
 		  throw new System.Exception("readVarint, value overflow");
 		}
 
-		temp |= (uint64_t)(piece & 0x7f) << shift;
+		temp |= (ulong)(piece & 0x7f) << shift;
 		if ((piece & 0x80) == 0)
 		{
 		  if (piece == 0 && shift != 0)
@@ -26255,19 +26255,19 @@ namespace Common
 
 	  value = temp;
 	}
-	public static void readVarint(IInputStream in, ref uint64_t value)
+	public static void readVarint(IInputStream in, ref ulong value)
 	{
-	  uint64_t temp = 0;
-	  for (uint8_t shift = 0;; shift += 7)
+	  ulong temp = 0;
+	  for (ushort shift = 0;; shift += 7)
 	  {
-		uint8_t piece = new uint8_t();
+		ushort piece = new ushort();
 		read(in, piece);
-		if (shift >= sizeof(uint64_t) * 8 - 7 && piece >= 1 << (sizeof(uint64_t) * 8 - shift))
+		if (shift >= sizeof(ulong) * 8 - 7 && piece >= 1 << (sizeof(ulong) * 8 - shift))
 		{
 		  throw new System.Exception("readVarint, value overflow");
 		}
 
-		temp |= (uint64_t)(piece & 0x7f) << shift;
+		temp |= (ulong)(piece & 0x7f) << shift;
 		if ((piece & 0x80) == 0)
 		{
 		  if (piece == 0 && shift != 0)
@@ -26282,59 +26282,59 @@ namespace Common
 	  value = temp;
 	}
 
-	public static void write(IOutputStream @out, object data, uint64_t size)
+	public static void write(IOutputStream @out, object data, ulong size)
 	{
 	  while (size > 0)
 	  {
-		uint64_t writtenSize = @out.writeSome(data, new uint64_t(size));
+		ulong writtenSize = @out.writeSome(data, new ulong(size));
 		if (writtenSize == 0)
 		{
 		  throw new System.Exception("Failed to write to IOutputStream");
 		}
 
-		data = (uint8_t)data + writtenSize;
+		data = (ushort)data + writtenSize;
 		size -= writtenSize;
 	  }
 	}
-	public static void write(IOutputStream @out, int8_t value)
+	public static void write(IOutputStream @out, short value)
 	{
-	  write(@out, value, sizeof(int8_t));
+	  write(@out, value, sizeof(short));
 	}
-	public static void write(IOutputStream @out, int16_t value)
-	{
-	  // TODO: Convert to little endian on big endian platforms
-	  write(@out, value, sizeof(int16_t));
-	}
-	public static void write(IOutputStream @out, int32_t value)
+	public static void write(IOutputStream @out, short value)
 	{
 	  // TODO: Convert to little endian on big endian platforms
-	  write(@out, value, sizeof(int32_t));
+	  write(@out, value, sizeof(short));
 	}
-	public static void write(IOutputStream @out, int64_t value)
+	public static void write(IOutputStream @out, int value)
 	{
 	  // TODO: Convert to little endian on big endian platforms
-	  write(@out, value, sizeof(int64_t));
+	  write(@out, value, sizeof(int));
 	}
-	public static void write(IOutputStream @out, uint8_t value)
-	{
-	  write(@out, value, sizeof(uint8_t));
-	}
-	public static void write(IOutputStream @out, uint16_t value)
+	public static void write(IOutputStream @out, long value)
 	{
 	  // TODO: Convert to little endian on big endian platforms
-	  write(@out, value, sizeof(uint16_t));
+	  write(@out, value, sizeof(long));
 	}
-	public static void write(IOutputStream @out, uint32_t value)
+	public static void write(IOutputStream @out, ushort value)
+	{
+	  write(@out, value, sizeof(ushort));
+	}
+	public static void write(IOutputStream @out, ushort value)
 	{
 	  // TODO: Convert to little endian on big endian platforms
-	  write(@out, value, sizeof(uint32_t));
+	  write(@out, value, sizeof(ushort));
 	}
-	public static void write(IOutputStream @out, uint64_t value)
+	public static void write(IOutputStream @out, uint value)
 	{
 	  // TODO: Convert to little endian on big endian platforms
-	  write(@out, value, sizeof(uint64_t));
+	  write(@out, value, sizeof(uint));
 	}
-	public static void write(IOutputStream @out, List<uint8_t> data)
+	public static void write(IOutputStream @out, ulong value)
+	{
+	  // TODO: Convert to little endian on big endian platforms
+	  write(@out, value, sizeof(ulong));
+	}
+	public static void write(IOutputStream @out, List<ushort> data)
 	{
 	  write(@out, data.data(), data.Count);
 	}
@@ -26342,15 +26342,15 @@ namespace Common
 	{
 	  write(@out, data.data(), data.Length);
 	}
-	public static void writeVarint(IOutputStream @out, uint64_t value)
+	public static void writeVarint(IOutputStream @out, ulong value)
 	{
 	  while (value >= 0x80)
 	  {
-		write(@out, (uint8_t)(value | 0x80));
+		write(@out, (ushort)(value | 0x80));
 		value >>= 7;
 	  }
 
-	  write(@out, (uint8_t)value);
+	  write(@out, (ushort)value);
 	}
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
@@ -26378,42 +26378,42 @@ namespace Common
 	  return new ContainerFormatter<T>(container);
 	}
 
-	public static void read(IInputStream in, uint64_t value)
+	public static void read(IInputStream in, ulong value)
 	{
 	  // TODO: Convert from little endian on big endian platforms
-	  read(in, value, sizeof(uint64_t));
+	  read(in, value, sizeof(ulong));
 	}
 
-	public static void writeVarint(IOutputStream @out, uint32_t value)
+	public static void writeVarint(IOutputStream @out, uint value)
 	{
 	  while (value >= 0x80)
 	  {
-		write(@out, (uint8_t)(value | 0x80));
+		write(@out, (ushort)(value | 0x80));
 		value >>= 7;
 	  }
 
-	  write(@out, (uint8_t)value);
+	  write(@out, (ushort)value);
 	}
 
-	public static string asString(object data, uint64_t size)
+	public static string asString(object data, ulong size)
 	{
 	  return (string)((char)data, size);
 	}
-	public static string asString(List<uint8_t> data)
+	public static string asString(List<ushort> data)
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  return (string)(reinterpret_cast<const char>(data.data()), data.Count);
 	}
-	public static List<uint8_t> asBinaryArray(string data)
+	public static List<ushort> asBinaryArray(string data)
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  var dataPtr = reinterpret_cast<uint8_t>(data.data());
-	  return new List<uint8_t>(dataPtr, dataPtr + data.Length);
+	  var dataPtr = reinterpret_cast<ushort>(data.data());
+	  return new List<ushort>(dataPtr, dataPtr + data.Length);
 	}
 
-	public static uint8_t fromHex(char character)
+	public static ushort fromHex(char character)
 	{
-	  uint8_t value = GlobalMembers.characterValues[(byte)character];
+	  ushort value = GlobalMembers.characterValues[(byte)character];
 	  if (value > 0x0f)
 	  {
 		throw new System.Exception("fromHex: invalid character");
@@ -26421,7 +26421,7 @@ namespace Common
 
 	  return value;
 	}
-	public static bool fromHex(char character, ref uint8_t value)
+	public static bool fromHex(char character, ref ushort value)
 	{
 	  if (GlobalMembers.characterValues[(byte)character] > 0x0f)
 	  {
@@ -26431,7 +26431,7 @@ namespace Common
 	  value = GlobalMembers.characterValues[(byte)character];
 	  return true;
 	}
-	public static uint64_t fromHex(string text, object data, uint64_t bufferSize)
+	public static ulong fromHex(string text, object data, ulong bufferSize)
 	{
 	  if ((text.Length & 1) != 0)
 	  {
@@ -26443,14 +26443,14 @@ namespace Common
 		throw new System.Exception("fromHex: invalid buffer size");
 	  }
 
-	  for (uint64_t i = 0; i < text.Length >> 1; ++i)
+	  for (ulong i = 0; i < text.Length >> 1; ++i)
 	  {
-		(uint8_t)data[i] = fromHex(text[i << 1]) << 4 | fromHex(text[(i << 1) + 1]);
+		(ushort)data[i] = fromHex(text[i << 1]) << 4 | fromHex(text[(i << 1) + 1]);
 	  }
 
 	  return text.Length >> 1;
 	}
-	public static bool fromHex(string text, object data, uint64_t bufferSize, ref uint64_t size)
+	public static bool fromHex(string text, object data, ulong bufferSize, ref ulong size)
 	{
 	  if ((text.Length & 1) != 0)
 	  {
@@ -26462,57 +26462,57 @@ namespace Common
 		return false;
 	  }
 
-	  for (uint64_t i = 0; i < text.Length >> 1; ++i)
+	  for (ulong i = 0; i < text.Length >> 1; ++i)
 	  {
-		uint8_t value1 = new uint8_t();
+		ushort value1 = new ushort();
 		if (!fromHex(text[i << 1], ref value1))
 		{
 		  return false;
 		}
 
-		uint8_t value2 = new uint8_t();
+		ushort value2 = new ushort();
 		if (!fromHex(text[(i << 1) + 1], ref value2))
 		{
 		  return false;
 		}
 
-		(uint8_t)data[i] = value1 << 4 | value2;
+		(ushort)data[i] = value1 << 4 | value2;
 	  }
 
 	  size = text.Length >> 1;
 	  return true;
 	}
-	public static List<uint8_t> fromHex(string text)
+	public static List<ushort> fromHex(string text)
 	{
 	  if ((text.Length & 1) != 0)
 	  {
 		throw new System.Exception("fromHex: invalid string size");
 	  }
 
-	  List<uint8_t> data = new List<uint8_t>(text.Length >> 1);
-	  for (uint64_t i = 0; i < data.Count; ++i)
+	  List<ushort> data = new List<ushort>(text.Length >> 1);
+	  for (ulong i = 0; i < data.Count; ++i)
 	  {
 		data[i] = fromHex(text[i << 1]) << 4 | fromHex(text[(i << 1) + 1]);
 	  }
 
 	  return data;
 	}
-	public static bool fromHex(string text, List<uint8_t> data)
+	public static bool fromHex(string text, List<ushort> data)
 	{
 	  if ((text.Length & 1) != 0)
 	  {
 		return false;
 	  }
 
-	  for (uint64_t i = 0; i < text.Length >> 1; ++i)
+	  for (ulong i = 0; i < text.Length >> 1; ++i)
 	  {
-		uint8_t value1 = new uint8_t();
+		ushort value1 = new ushort();
 		if (!fromHex(text[i << 1], ref value1))
 		{
 		  return false;
 		}
 
-		uint8_t value2 = new uint8_t();
+		ushort value2 = new ushort();
 		if (!fromHex(text[(i << 1) + 1], ref value2))
 		{
 		  return false;
@@ -26528,33 +26528,33 @@ namespace Common
 //ORIGINAL LINE: template <typename T>
 	public static bool podFromHex<T>(string text, T val)
 	{
-	  uint64_t outSize = new uint64_t();
+	  ulong outSize = new ulong();
 	  return fromHex(text, val, sizeof(T), ref outSize) && outSize == sizeof(T);
 	}
 
-	public static string toHex(object data, uint64_t size)
+	public static string toHex(object data, ulong size)
 	{
 	  string text;
-	  for (uint64_t i = 0; i < size; ++i)
+	  for (ulong i = 0; i < size; ++i)
 	  {
-		text += "0123456789abcdef"[(uint8_t)data[i] >> 4];
-		text += "0123456789abcdef"[(uint8_t)data[i] & 15];
+		text += "0123456789abcdef"[(ushort)data[i] >> 4];
+		text += "0123456789abcdef"[(ushort)data[i] & 15];
 	  }
 
 	  return text;
 	}
-	public static void toHex(object data, uint64_t size, string text)
+	public static void toHex(object data, ulong size, string text)
 	{
-	  for (uint64_t i = 0; i < size; ++i)
+	  for (ulong i = 0; i < size; ++i)
 	  {
-		text += "0123456789abcdef"[(uint8_t)data[i] >> 4];
-		text += "0123456789abcdef"[(uint8_t)data[i] & 15];
+		text += "0123456789abcdef"[(ushort)data[i] >> 4];
+		text += "0123456789abcdef"[(ushort)data[i] & 15];
 	  }
 	}
-	public static string toHex(List<uint8_t> data)
+	public static string toHex(List<ushort> data)
 	{
 	  string text;
-	  for (uint64_t i = 0; i < data.Count; ++i)
+	  for (ulong i = 0; i < data.Count; ++i)
 	  {
 		text += "0123456789abcdef"[data[i] >> 4];
 		text += "0123456789abcdef"[data[i] & 15];
@@ -26562,9 +26562,9 @@ namespace Common
 
 	  return text;
 	}
-	public static void toHex(List<uint8_t> data, string text)
+	public static void toHex(List<ushort> data, string text)
 	{
-	  for (uint64_t i = 0; i < data.Count; ++i)
+	  for (ulong i = 0; i < data.Count; ++i)
 	  {
 		text += "0123456789abcdef"[data[i] >> 4];
 		text += "0123456789abcdef"[data[i] & 15];
@@ -26580,7 +26580,7 @@ namespace Common
 
 	public static string extract(ref string text, char delimiter)
 	{
-	  uint64_t delimiterPosition = text.IndexOf(delimiter);
+	  ulong delimiterPosition = text.IndexOf(delimiter);
 	  string subText;
 	  if (delimiterPosition != -1)
 	  {
@@ -26594,9 +26594,9 @@ namespace Common
 
 	  return subText;
 	}
-	public static string extract(string text, char delimiter, ref uint64_t offset)
+	public static string extract(string text, char delimiter, ref ulong offset)
 	{
-	  uint64_t delimiterPosition = text.IndexOf(delimiter, offset);
+	  ulong delimiterPosition = text.IndexOf(delimiter, offset);
 	  if (delimiterPosition != -1)
 	  {
 		offset = delimiterPosition + 1;
@@ -26638,7 +26638,7 @@ namespace Common
 	public static List<T> fromDelimitedString<T>(string source, char delimiter)
 	{ // Throws on error
 	  List<T> data = new List<T>();
-	  for (uint64_t offset = 0; offset != source.Length;)
+	  for (ulong offset = 0; offset != source.Length;)
 	  {
 		data.emplace_back(fromString<T>(extract(source, delimiter, ref offset)));
 	  }
@@ -26650,7 +26650,7 @@ namespace Common
 //ORIGINAL LINE: template<typename T>
 	public static bool fromDelimitedString<T>(string source, char delimiter, List<T> data)
 	{ // Does not throw
-	  for (uint64_t offset = 0; offset != source.Length;)
+	  for (ulong offset = 0; offset != source.Length;)
 	  {
 		T value = new default(T);
 		if (!fromString<T>(extract(source, delimiter, ref offset), value))
@@ -26690,7 +26690,7 @@ namespace Common
 		fstream.exceptions(std::ifstream.failbit | std::ifstream.badbit);
 		fstream.open(filepath, std::ios_base.binary | std::ios_base.in | std::ios.ate);
 
-		uint64_t fileSize = (uint64_t)fstream.tellg();
+		ulong fileSize = (ulong)fstream.tellg();
 		buf.resize(fileSize);
 
 		if (fileSize > 0)
@@ -26726,10 +26726,10 @@ namespace Common
 
 	public static string base64Decode(string encoded_string)
 	{
-	  uint64_t in_len = encoded_string.Length;
-	  uint64_t i = 0;
-	  uint64_t j = 0;
-	  uint64_t in_ = 0;
+	  ulong in_len = encoded_string.Length;
+	  ulong i = 0;
+	  ulong j = 0;
+	  ulong in_ = 0;
 	  byte[] char_array_4 = new byte[4];
 	  byte[] char_array_3 = new byte[3];
 	  string ret;
@@ -26782,9 +26782,9 @@ namespace Common
 	  return ret;
 	}
 
-	public static string ipAddressToString(uint32_t ip)
+	public static string ipAddressToString(uint ip)
 	{
-	  uint8_t[] bytes = Arrays.InitializeWithDefaultInstances<uint8_t>(4);
+	  ushort[] bytes = Arrays.InitializeWithDefaultInstances<ushort>(4);
 	  bytes[0] = ip & 0xFF;
 	  bytes[1] = (ip >> 8) & 0xFF;
 	  bytes[2] = (ip >> 16) & 0xFF;
@@ -26795,10 +26795,10 @@ namespace Common
 
 	  return (string)buf;
 	}
-	public static bool parseIpAddressAndPort(ref uint32_t ip, ref uint32_t port, string addr)
+	public static bool parseIpAddressAndPort(ref uint ip, ref uint port, string addr)
 	{
-	  uint32_t[] v = Arrays.InitializeWithDefaultInstances<uint32_t>(4);
-	  uint32_t localPort = new uint32_t();
+	  uint[] v = Arrays.InitializeWithDefaultInstances<uint>(4);
+	  uint localPort = new uint();
 
 	  if (sscanf(addr, "%d.%d.%d.%d:%d", v[0], v[1], v[2], v[3], localPort) != 5)
 	  {
@@ -26818,7 +26818,7 @@ namespace Common
 	  return true;
 	}
 
-	public static string timeIntervalToString(uint64_t intervalInSeconds)
+	public static string timeIntervalToString(ulong intervalInSeconds)
 	{
 	  var tail = intervalInSeconds;
 
@@ -26842,7 +26842,7 @@ namespace Common
 	  return ss.str();
 	}
 
-	public static readonly uint8_t[] characterValues = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
+	public static readonly ushort[] characterValues = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 
 	internal const string base64chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz" + "0123456789+/";
 
@@ -26876,10 +26876,10 @@ namespace Common
 	}
 
 //C++ TO C# CONVERTER TODO TASK: C++ template specialization was removed by C++ to C# Converter:
-//ORIGINAL LINE: inline uint64_t getValueAs<uint64_t>(const JsonValue& js)
-	public static uint64_t getValueAs(JsonValue js)
+//ORIGINAL LINE: inline ulong getValueAs<ulong>(const JsonValue& js)
+	public static ulong getValueAs(JsonValue js)
 	{
-		return (uint64_t)js.getInteger();
+		return (ulong)js.getInteger();
 	}
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to templates on variables:
 	public static readonly Size ArrayView<Object, Size>.INVALID = Size.MaxValue;
@@ -27419,40 +27419,40 @@ namespace Crypto
 	public static class GlobalMembers
 	{
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'cipher', so pointers on this parameter are left unchanged:
-		public static void chacha8(object data, size_t length, uint8_t key, uint8_t iv, char * cipher)
+		public static void chacha8(object data, size_t length, ushort key, ushort iv, char * cipher)
 		{
-		  uint32_t x0 = new uint32_t();
-		  uint32_t x1 = new uint32_t();
-		  uint32_t x2 = new uint32_t();
-		  uint32_t x3 = new uint32_t();
-		  uint32_t x4 = new uint32_t();
-		  uint32_t x5 = new uint32_t();
-		  uint32_t x6 = new uint32_t();
-		  uint32_t x7 = new uint32_t();
-		  uint32_t x8 = new uint32_t();
-		  uint32_t x9 = new uint32_t();
-		  uint32_t x10 = new uint32_t();
-		  uint32_t x11 = new uint32_t();
-		  uint32_t x12 = new uint32_t();
-		  uint32_t x13 = new uint32_t();
-		  uint32_t x14 = new uint32_t();
-		  uint32_t x15 = new uint32_t();
-		  uint32_t j0 = new uint32_t();
-		  uint32_t j1 = new uint32_t();
-		  uint32_t j2 = new uint32_t();
-		  uint32_t j3 = new uint32_t();
-		  uint32_t j4 = new uint32_t();
-		  uint32_t j5 = new uint32_t();
-		  uint32_t j6 = new uint32_t();
-		  uint32_t j7 = new uint32_t();
-		  uint32_t j8 = new uint32_t();
-		  uint32_t j9 = new uint32_t();
-		  uint32_t j10 = new uint32_t();
-		  uint32_t j11 = new uint32_t();
-		  uint32_t j12 = new uint32_t();
-		  uint32_t j13 = new uint32_t();
-		  uint32_t j14 = new uint32_t();
-		  uint32_t j15 = new uint32_t();
+		  uint x0 = new uint();
+		  uint x1 = new uint();
+		  uint x2 = new uint();
+		  uint x3 = new uint();
+		  uint x4 = new uint();
+		  uint x5 = new uint();
+		  uint x6 = new uint();
+		  uint x7 = new uint();
+		  uint x8 = new uint();
+		  uint x9 = new uint();
+		  uint x10 = new uint();
+		  uint x11 = new uint();
+		  uint x12 = new uint();
+		  uint x13 = new uint();
+		  uint x14 = new uint();
+		  uint x15 = new uint();
+		  uint j0 = new uint();
+		  uint j1 = new uint();
+		  uint j2 = new uint();
+		  uint j3 = new uint();
+		  uint j4 = new uint();
+		  uint j5 = new uint();
+		  uint j6 = new uint();
+		  uint j7 = new uint();
+		  uint j8 = new uint();
+		  uint j9 = new uint();
+		  uint j10 = new uint();
+		  uint j11 = new uint();
+		  uint j12 = new uint();
+		  uint j13 = new uint();
+		  uint j14 = new uint();
+		  uint j15 = new uint();
 		  string ctarget = null;
 		  string tmp = new string(new char[64]);
 		  int i;
@@ -27462,22 +27462,22 @@ namespace Crypto
 			  return;
 		  }
 
-		  j0 = SWAP32LE(((uint32_t)(GlobalMembers.sigma.Substring(0)))[0]);
-		  j1 = SWAP32LE(((uint32_t)(GlobalMembers.sigma.Substring(4)))[0]);
-		  j2 = SWAP32LE(((uint32_t)(GlobalMembers.sigma.Substring(8)))[0]);
-		  j3 = SWAP32LE(((uint32_t)(GlobalMembers.sigma.Substring(12)))[0]);
-		  j4 = SWAP32LE(((uint32_t)(key + 0))[0]);
-		  j5 = SWAP32LE(((uint32_t)(key + 4))[0]);
-		  j6 = SWAP32LE(((uint32_t)(key + 8))[0]);
-		  j7 = SWAP32LE(((uint32_t)(key + 12))[0]);
-		  j8 = SWAP32LE(((uint32_t)(key + 16))[0]);
-		  j9 = SWAP32LE(((uint32_t)(key + 20))[0]);
-		  j10 = SWAP32LE(((uint32_t)(key + 24))[0]);
-		  j11 = SWAP32LE(((uint32_t)(key + 28))[0]);
+		  j0 = SWAP32LE(((uint)(GlobalMembers.sigma.Substring(0)))[0]);
+		  j1 = SWAP32LE(((uint)(GlobalMembers.sigma.Substring(4)))[0]);
+		  j2 = SWAP32LE(((uint)(GlobalMembers.sigma.Substring(8)))[0]);
+		  j3 = SWAP32LE(((uint)(GlobalMembers.sigma.Substring(12)))[0]);
+		  j4 = SWAP32LE(((uint)(key + 0))[0]);
+		  j5 = SWAP32LE(((uint)(key + 4))[0]);
+		  j6 = SWAP32LE(((uint)(key + 8))[0]);
+		  j7 = SWAP32LE(((uint)(key + 12))[0]);
+		  j8 = SWAP32LE(((uint)(key + 16))[0]);
+		  j9 = SWAP32LE(((uint)(key + 20))[0]);
+		  j10 = SWAP32LE(((uint)(key + 24))[0]);
+		  j11 = SWAP32LE(((uint)(key + 28))[0]);
 		  j12 = 0;
 		  j13 = 0;
-		  j14 = SWAP32LE(((uint32_t)(iv + 0))[0]);
-		  j15 = SWAP32LE(((uint32_t)(iv + 4))[0]);
+		  j14 = SWAP32LE(((uint)(iv + 0))[0]);
+		  j15 = SWAP32LE(((uint)(iv + 4))[0]);
 
 		  for (;;)
 		  {
@@ -27539,224 +27539,224 @@ namespace Crypto
 			x15.CopyFrom(j15);
 			for (i = 8;i > 0;i -= 2)
 			{
-			  x0 = (((uint32_t)((x0) + (x4)) & UINT32_C(0xFFFFFFFF)));
+			  x0 = (((uint)((x0) + (x4)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x12 = (rol32(((x12) ^ (x0)),16));
 			  x12.CopyFrom(GlobalMembers.rol32(((x12) ^ (x0)), 16));
-			  x8 = (((uint32_t)((x8) + (x12)) & UINT32_C(0xFFFFFFFF)));
+			  x8 = (((uint)((x8) + (x12)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x4 = (rol32(((x4) ^ (x8)),12));
 			  x4.CopyFrom(GlobalMembers.rol32(((x4) ^ (x8)), 12));
-			  x0 = (((uint32_t)((x0) + (x4)) & UINT32_C(0xFFFFFFFF)));
+			  x0 = (((uint)((x0) + (x4)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x12 = (rol32(((x12) ^ (x0)),8));
 			  x12.CopyFrom(GlobalMembers.rol32(((x12) ^ (x0)), 8));
-			  x8 = (((uint32_t)((x8) + (x12)) & UINT32_C(0xFFFFFFFF)));
+			  x8 = (((uint)((x8) + (x12)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x4 = (rol32(((x4) ^ (x8)),7));
 			  x4.CopyFrom(GlobalMembers.rol32(((x4) ^ (x8)), 7));
-			  x1 = (((uint32_t)((x1) + (x5)) & UINT32_C(0xFFFFFFFF)));
+			  x1 = (((uint)((x1) + (x5)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x13 = (rol32(((x13) ^ (x1)),16));
 			  x13.CopyFrom(GlobalMembers.rol32(((x13) ^ (x1)), 16));
-			  x9 = (((uint32_t)((x9) + (x13)) & UINT32_C(0xFFFFFFFF)));
+			  x9 = (((uint)((x9) + (x13)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x5 = (rol32(((x5) ^ (x9)),12));
 			  x5.CopyFrom(GlobalMembers.rol32(((x5) ^ (x9)), 12));
-			  x1 = (((uint32_t)((x1) + (x5)) & UINT32_C(0xFFFFFFFF)));
+			  x1 = (((uint)((x1) + (x5)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x13 = (rol32(((x13) ^ (x1)),8));
 			  x13.CopyFrom(GlobalMembers.rol32(((x13) ^ (x1)), 8));
-			  x9 = (((uint32_t)((x9) + (x13)) & UINT32_C(0xFFFFFFFF)));
+			  x9 = (((uint)((x9) + (x13)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x5 = (rol32(((x5) ^ (x9)),7));
 			  x5.CopyFrom(GlobalMembers.rol32(((x5) ^ (x9)), 7));
-			  x2 = (((uint32_t)((x2) + (x6)) & UINT32_C(0xFFFFFFFF)));
+			  x2 = (((uint)((x2) + (x6)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x14 = (rol32(((x14) ^ (x2)),16));
 			  x14.CopyFrom(GlobalMembers.rol32(((x14) ^ (x2)), 16));
-			  x10 = (((uint32_t)((x10) + (x14)) & UINT32_C(0xFFFFFFFF)));
+			  x10 = (((uint)((x10) + (x14)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x6 = (rol32(((x6) ^ (x10)),12));
 			  x6.CopyFrom(GlobalMembers.rol32(((x6) ^ (x10)), 12));
-			  x2 = (((uint32_t)((x2) + (x6)) & UINT32_C(0xFFFFFFFF)));
+			  x2 = (((uint)((x2) + (x6)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x14 = (rol32(((x14) ^ (x2)),8));
 			  x14.CopyFrom(GlobalMembers.rol32(((x14) ^ (x2)), 8));
-			  x10 = (((uint32_t)((x10) + (x14)) & UINT32_C(0xFFFFFFFF)));
+			  x10 = (((uint)((x10) + (x14)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x6 = (rol32(((x6) ^ (x10)),7));
 			  x6.CopyFrom(GlobalMembers.rol32(((x6) ^ (x10)), 7));
-			  x3 = (((uint32_t)((x3) + (x7)) & UINT32_C(0xFFFFFFFF)));
+			  x3 = (((uint)((x3) + (x7)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x15 = (rol32(((x15) ^ (x3)),16));
 			  x15.CopyFrom(GlobalMembers.rol32(((x15) ^ (x3)), 16));
-			  x11 = (((uint32_t)((x11) + (x15)) & UINT32_C(0xFFFFFFFF)));
+			  x11 = (((uint)((x11) + (x15)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x7 = (rol32(((x7) ^ (x11)),12));
 			  x7.CopyFrom(GlobalMembers.rol32(((x7) ^ (x11)), 12));
-			  x3 = (((uint32_t)((x3) + (x7)) & UINT32_C(0xFFFFFFFF)));
+			  x3 = (((uint)((x3) + (x7)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x15 = (rol32(((x15) ^ (x3)),8));
 			  x15.CopyFrom(GlobalMembers.rol32(((x15) ^ (x3)), 8));
-			  x11 = (((uint32_t)((x11) + (x15)) & UINT32_C(0xFFFFFFFF)));
+			  x11 = (((uint)((x11) + (x15)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x7 = (rol32(((x7) ^ (x11)),7));
 			  x7.CopyFrom(GlobalMembers.rol32(((x7) ^ (x11)), 7));
-			  x0 = (((uint32_t)((x0) + (x5)) & UINT32_C(0xFFFFFFFF)));
+			  x0 = (((uint)((x0) + (x5)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x15 = (rol32(((x15) ^ (x0)),16));
 			  x15.CopyFrom(GlobalMembers.rol32(((x15) ^ (x0)), 16));
-			  x10 = (((uint32_t)((x10) + (x15)) & UINT32_C(0xFFFFFFFF)));
+			  x10 = (((uint)((x10) + (x15)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x5 = (rol32(((x5) ^ (x10)),12));
 			  x5.CopyFrom(GlobalMembers.rol32(((x5) ^ (x10)), 12));
-			  x0 = (((uint32_t)((x0) + (x5)) & UINT32_C(0xFFFFFFFF)));
+			  x0 = (((uint)((x0) + (x5)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x15 = (rol32(((x15) ^ (x0)),8));
 			  x15.CopyFrom(GlobalMembers.rol32(((x15) ^ (x0)), 8));
-			  x10 = (((uint32_t)((x10) + (x15)) & UINT32_C(0xFFFFFFFF)));
+			  x10 = (((uint)((x10) + (x15)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x5 = (rol32(((x5) ^ (x10)),7));
 			  x5.CopyFrom(GlobalMembers.rol32(((x5) ^ (x10)), 7));
-			  x1 = (((uint32_t)((x1) + (x6)) & UINT32_C(0xFFFFFFFF)));
+			  x1 = (((uint)((x1) + (x6)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x12 = (rol32(((x12) ^ (x1)),16));
 			  x12.CopyFrom(GlobalMembers.rol32(((x12) ^ (x1)), 16));
-			  x11 = (((uint32_t)((x11) + (x12)) & UINT32_C(0xFFFFFFFF)));
+			  x11 = (((uint)((x11) + (x12)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x6 = (rol32(((x6) ^ (x11)),12));
 			  x6.CopyFrom(GlobalMembers.rol32(((x6) ^ (x11)), 12));
-			  x1 = (((uint32_t)((x1) + (x6)) & UINT32_C(0xFFFFFFFF)));
+			  x1 = (((uint)((x1) + (x6)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x12 = (rol32(((x12) ^ (x1)),8));
 			  x12.CopyFrom(GlobalMembers.rol32(((x12) ^ (x1)), 8));
-			  x11 = (((uint32_t)((x11) + (x12)) & UINT32_C(0xFFFFFFFF)));
+			  x11 = (((uint)((x11) + (x12)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x6 = (rol32(((x6) ^ (x11)),7));
 			  x6.CopyFrom(GlobalMembers.rol32(((x6) ^ (x11)), 7));
-			  x2 = (((uint32_t)((x2) + (x7)) & UINT32_C(0xFFFFFFFF)));
+			  x2 = (((uint)((x2) + (x7)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x13 = (rol32(((x13) ^ (x2)),16));
 			  x13.CopyFrom(GlobalMembers.rol32(((x13) ^ (x2)), 16));
-			  x8 = (((uint32_t)((x8) + (x13)) & UINT32_C(0xFFFFFFFF)));
+			  x8 = (((uint)((x8) + (x13)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x7 = (rol32(((x7) ^ (x8)),12));
 			  x7.CopyFrom(GlobalMembers.rol32(((x7) ^ (x8)), 12));
-			  x2 = (((uint32_t)((x2) + (x7)) & UINT32_C(0xFFFFFFFF)));
+			  x2 = (((uint)((x2) + (x7)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x13 = (rol32(((x13) ^ (x2)),8));
 			  x13.CopyFrom(GlobalMembers.rol32(((x13) ^ (x2)), 8));
-			  x8 = (((uint32_t)((x8) + (x13)) & UINT32_C(0xFFFFFFFF)));
+			  x8 = (((uint)((x8) + (x13)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x7 = (rol32(((x7) ^ (x8)),7));
 			  x7.CopyFrom(GlobalMembers.rol32(((x7) ^ (x8)), 7));
-			  x3 = (((uint32_t)((x3) + (x4)) & UINT32_C(0xFFFFFFFF)));
+			  x3 = (((uint)((x3) + (x4)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x14 = (rol32(((x14) ^ (x3)),16));
 			  x14.CopyFrom(GlobalMembers.rol32(((x14) ^ (x3)), 16));
-			  x9 = (((uint32_t)((x9) + (x14)) & UINT32_C(0xFFFFFFFF)));
+			  x9 = (((uint)((x9) + (x14)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x4 = (rol32(((x4) ^ (x9)),12));
 			  x4.CopyFrom(GlobalMembers.rol32(((x4) ^ (x9)), 12));
-			  x3 = (((uint32_t)((x3) + (x4)) & UINT32_C(0xFFFFFFFF)));
+			  x3 = (((uint)((x3) + (x4)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x14 = (rol32(((x14) ^ (x3)),8));
 			  x14.CopyFrom(GlobalMembers.rol32(((x14) ^ (x3)), 8));
-			  x9 = (((uint32_t)((x9) + (x14)) & UINT32_C(0xFFFFFFFF)));
+			  x9 = (((uint)((x9) + (x14)) & UINT32_C(0xFFFFFFFF)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: x4 = (rol32(((x4) ^ (x9)),7));
 			  x4.CopyFrom(GlobalMembers.rol32(((x4) ^ (x9)), 7));
 			}
-			x0 = (((uint32_t)((x0) + (j0)) & UINT32_C(0xFFFFFFFF)));
-			x1 = (((uint32_t)((x1) + (j1)) & UINT32_C(0xFFFFFFFF)));
-			x2 = (((uint32_t)((x2) + (j2)) & UINT32_C(0xFFFFFFFF)));
-			x3 = (((uint32_t)((x3) + (j3)) & UINT32_C(0xFFFFFFFF)));
-			x4 = (((uint32_t)((x4) + (j4)) & UINT32_C(0xFFFFFFFF)));
-			x5 = (((uint32_t)((x5) + (j5)) & UINT32_C(0xFFFFFFFF)));
-			x6 = (((uint32_t)((x6) + (j6)) & UINT32_C(0xFFFFFFFF)));
-			x7 = (((uint32_t)((x7) + (j7)) & UINT32_C(0xFFFFFFFF)));
-			x8 = (((uint32_t)((x8) + (j8)) & UINT32_C(0xFFFFFFFF)));
-			x9 = (((uint32_t)((x9) + (j9)) & UINT32_C(0xFFFFFFFF)));
-			x10 = (((uint32_t)((x10) + (j10)) & UINT32_C(0xFFFFFFFF)));
-			x11 = (((uint32_t)((x11) + (j11)) & UINT32_C(0xFFFFFFFF)));
-			x12 = (((uint32_t)((x12) + (j12)) & UINT32_C(0xFFFFFFFF)));
-			x13 = (((uint32_t)((x13) + (j13)) & UINT32_C(0xFFFFFFFF)));
-			x14 = (((uint32_t)((x14) + (j14)) & UINT32_C(0xFFFFFFFF)));
-			x15 = (((uint32_t)((x15) + (j15)) & UINT32_C(0xFFFFFFFF)));
+			x0 = (((uint)((x0) + (j0)) & UINT32_C(0xFFFFFFFF)));
+			x1 = (((uint)((x1) + (j1)) & UINT32_C(0xFFFFFFFF)));
+			x2 = (((uint)((x2) + (j2)) & UINT32_C(0xFFFFFFFF)));
+			x3 = (((uint)((x3) + (j3)) & UINT32_C(0xFFFFFFFF)));
+			x4 = (((uint)((x4) + (j4)) & UINT32_C(0xFFFFFFFF)));
+			x5 = (((uint)((x5) + (j5)) & UINT32_C(0xFFFFFFFF)));
+			x6 = (((uint)((x6) + (j6)) & UINT32_C(0xFFFFFFFF)));
+			x7 = (((uint)((x7) + (j7)) & UINT32_C(0xFFFFFFFF)));
+			x8 = (((uint)((x8) + (j8)) & UINT32_C(0xFFFFFFFF)));
+			x9 = (((uint)((x9) + (j9)) & UINT32_C(0xFFFFFFFF)));
+			x10 = (((uint)((x10) + (j10)) & UINT32_C(0xFFFFFFFF)));
+			x11 = (((uint)((x11) + (j11)) & UINT32_C(0xFFFFFFFF)));
+			x12 = (((uint)((x12) + (j12)) & UINT32_C(0xFFFFFFFF)));
+			x13 = (((uint)((x13) + (j13)) & UINT32_C(0xFFFFFFFF)));
+			x14 = (((uint)((x14) + (j14)) & UINT32_C(0xFFFFFFFF)));
+			x15 = (((uint)((x15) + (j15)) & UINT32_C(0xFFFFFFFF)));
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x0 = ((x0) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 0))[0])));
-			x0.CopyFrom(((x0) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 0))[0]))));
+//ORIGINAL LINE: x0 = ((x0) ^ (SWAP32LE(((uint*)((ushort*)data + 0))[0])));
+			x0.CopyFrom(((x0) ^ (SWAP32LE(((uint)((ushort)data + 0))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x1 = ((x1) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 4))[0])));
-			x1.CopyFrom(((x1) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 4))[0]))));
+//ORIGINAL LINE: x1 = ((x1) ^ (SWAP32LE(((uint*)((ushort*)data + 4))[0])));
+			x1.CopyFrom(((x1) ^ (SWAP32LE(((uint)((ushort)data + 4))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x2 = ((x2) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 8))[0])));
-			x2.CopyFrom(((x2) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 8))[0]))));
+//ORIGINAL LINE: x2 = ((x2) ^ (SWAP32LE(((uint*)((ushort*)data + 8))[0])));
+			x2.CopyFrom(((x2) ^ (SWAP32LE(((uint)((ushort)data + 8))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x3 = ((x3) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 12))[0])));
-			x3.CopyFrom(((x3) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 12))[0]))));
+//ORIGINAL LINE: x3 = ((x3) ^ (SWAP32LE(((uint*)((ushort*)data + 12))[0])));
+			x3.CopyFrom(((x3) ^ (SWAP32LE(((uint)((ushort)data + 12))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x4 = ((x4) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 16))[0])));
-			x4.CopyFrom(((x4) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 16))[0]))));
+//ORIGINAL LINE: x4 = ((x4) ^ (SWAP32LE(((uint*)((ushort*)data + 16))[0])));
+			x4.CopyFrom(((x4) ^ (SWAP32LE(((uint)((ushort)data + 16))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x5 = ((x5) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 20))[0])));
-			x5.CopyFrom(((x5) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 20))[0]))));
+//ORIGINAL LINE: x5 = ((x5) ^ (SWAP32LE(((uint*)((ushort*)data + 20))[0])));
+			x5.CopyFrom(((x5) ^ (SWAP32LE(((uint)((ushort)data + 20))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x6 = ((x6) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 24))[0])));
-			x6.CopyFrom(((x6) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 24))[0]))));
+//ORIGINAL LINE: x6 = ((x6) ^ (SWAP32LE(((uint*)((ushort*)data + 24))[0])));
+			x6.CopyFrom(((x6) ^ (SWAP32LE(((uint)((ushort)data + 24))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x7 = ((x7) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 28))[0])));
-			x7.CopyFrom(((x7) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 28))[0]))));
+//ORIGINAL LINE: x7 = ((x7) ^ (SWAP32LE(((uint*)((ushort*)data + 28))[0])));
+			x7.CopyFrom(((x7) ^ (SWAP32LE(((uint)((ushort)data + 28))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x8 = ((x8) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 32))[0])));
-			x8.CopyFrom(((x8) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 32))[0]))));
+//ORIGINAL LINE: x8 = ((x8) ^ (SWAP32LE(((uint*)((ushort*)data + 32))[0])));
+			x8.CopyFrom(((x8) ^ (SWAP32LE(((uint)((ushort)data + 32))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x9 = ((x9) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 36))[0])));
-			x9.CopyFrom(((x9) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 36))[0]))));
+//ORIGINAL LINE: x9 = ((x9) ^ (SWAP32LE(((uint*)((ushort*)data + 36))[0])));
+			x9.CopyFrom(((x9) ^ (SWAP32LE(((uint)((ushort)data + 36))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x10 = ((x10) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 40))[0])));
-			x10.CopyFrom(((x10) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 40))[0]))));
+//ORIGINAL LINE: x10 = ((x10) ^ (SWAP32LE(((uint*)((ushort*)data + 40))[0])));
+			x10.CopyFrom(((x10) ^ (SWAP32LE(((uint)((ushort)data + 40))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x11 = ((x11) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 44))[0])));
-			x11.CopyFrom(((x11) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 44))[0]))));
+//ORIGINAL LINE: x11 = ((x11) ^ (SWAP32LE(((uint*)((ushort*)data + 44))[0])));
+			x11.CopyFrom(((x11) ^ (SWAP32LE(((uint)((ushort)data + 44))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x12 = ((x12) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 48))[0])));
-			x12.CopyFrom(((x12) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 48))[0]))));
+//ORIGINAL LINE: x12 = ((x12) ^ (SWAP32LE(((uint*)((ushort*)data + 48))[0])));
+			x12.CopyFrom(((x12) ^ (SWAP32LE(((uint)((ushort)data + 48))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x13 = ((x13) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 52))[0])));
-			x13.CopyFrom(((x13) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 52))[0]))));
+//ORIGINAL LINE: x13 = ((x13) ^ (SWAP32LE(((uint*)((ushort*)data + 52))[0])));
+			x13.CopyFrom(((x13) ^ (SWAP32LE(((uint)((ushort)data + 52))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x14 = ((x14) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 56))[0])));
-			x14.CopyFrom(((x14) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 56))[0]))));
+//ORIGINAL LINE: x14 = ((x14) ^ (SWAP32LE(((uint*)((ushort*)data + 56))[0])));
+			x14.CopyFrom(((x14) ^ (SWAP32LE(((uint)((ushort)data + 56))[0]))));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: x15 = ((x15) ^ (SWAP32LE(((uint32_t*)((uint8_t*)data + 60))[0])));
-			x15.CopyFrom(((x15) ^ (SWAP32LE(((uint32_t)((uint8_t)data + 60))[0]))));
+//ORIGINAL LINE: x15 = ((x15) ^ (SWAP32LE(((uint*)((ushort*)data + 60))[0])));
+			x15.CopyFrom(((x15) ^ (SWAP32LE(((uint)((ushort)data + 60))[0]))));
 
-			j12 = ((((uint32_t)(((j12)) + (1)) & UINT32_C(0xFFFFFFFF))));
+			j12 = ((((uint)(((j12)) + (1)) & UINT32_C(0xFFFFFFFF))));
 			if (j12 == null)
 			{
-			  j13 = ((((uint32_t)(((j13)) + (1)) & UINT32_C(0xFFFFFFFF))));
+			  j13 = ((((uint)(((j13)) + (1)) & UINT32_C(0xFFFFFFFF))));
 			  /* stopping at 2^70 bytes per iv is user's responsibility */
 			}
 
-			(((uint32_t)(cipher.Substring(0)))[0] = SWAP32LE(x0));
-			(((uint32_t)(cipher.Substring(4)))[0] = SWAP32LE(x1));
-			(((uint32_t)(cipher.Substring(8)))[0] = SWAP32LE(x2));
-			(((uint32_t)(cipher.Substring(12)))[0] = SWAP32LE(x3));
-			(((uint32_t)(cipher.Substring(16)))[0] = SWAP32LE(x4));
-			(((uint32_t)(cipher.Substring(20)))[0] = SWAP32LE(x5));
-			(((uint32_t)(cipher.Substring(24)))[0] = SWAP32LE(x6));
-			(((uint32_t)(cipher.Substring(28)))[0] = SWAP32LE(x7));
-			(((uint32_t)(cipher.Substring(32)))[0] = SWAP32LE(x8));
-			(((uint32_t)(cipher.Substring(36)))[0] = SWAP32LE(x9));
-			(((uint32_t)(cipher.Substring(40)))[0] = SWAP32LE(x10));
-			(((uint32_t)(cipher.Substring(44)))[0] = SWAP32LE(x11));
-			(((uint32_t)(cipher.Substring(48)))[0] = SWAP32LE(x12));
-			(((uint32_t)(cipher.Substring(52)))[0] = SWAP32LE(x13));
-			(((uint32_t)(cipher.Substring(56)))[0] = SWAP32LE(x14));
-			(((uint32_t)(cipher.Substring(60)))[0] = SWAP32LE(x15));
+			(((uint)(cipher.Substring(0)))[0] = SWAP32LE(x0));
+			(((uint)(cipher.Substring(4)))[0] = SWAP32LE(x1));
+			(((uint)(cipher.Substring(8)))[0] = SWAP32LE(x2));
+			(((uint)(cipher.Substring(12)))[0] = SWAP32LE(x3));
+			(((uint)(cipher.Substring(16)))[0] = SWAP32LE(x4));
+			(((uint)(cipher.Substring(20)))[0] = SWAP32LE(x5));
+			(((uint)(cipher.Substring(24)))[0] = SWAP32LE(x6));
+			(((uint)(cipher.Substring(28)))[0] = SWAP32LE(x7));
+			(((uint)(cipher.Substring(32)))[0] = SWAP32LE(x8));
+			(((uint)(cipher.Substring(36)))[0] = SWAP32LE(x9));
+			(((uint)(cipher.Substring(40)))[0] = SWAP32LE(x10));
+			(((uint)(cipher.Substring(44)))[0] = SWAP32LE(x11));
+			(((uint)(cipher.Substring(48)))[0] = SWAP32LE(x12));
+			(((uint)(cipher.Substring(52)))[0] = SWAP32LE(x13));
+			(((uint)(cipher.Substring(56)))[0] = SWAP32LE(x14));
+			(((uint)(cipher.Substring(60)))[0] = SWAP32LE(x15));
 
 			if (length <= 64)
 			{
@@ -27769,7 +27769,7 @@ namespace Crypto
 			}
 			length -= 64;
 			cipher += 64;
-			data = (uint8_t)data + 64;
+			data = (ushort)data + 64;
 		  }
 		}
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent to most C++ 'pragma' directives in C#:
@@ -27781,7 +27781,7 @@ namespace Crypto
 	  public static void chacha8(object data, size_t length, chacha8_key key, chacha8_iv iv, ref string cipher)
 	  {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-		chacha8(data, new size_t(length), reinterpret_cast<const uint8_t>(key), reinterpret_cast<const uint8_t>(iv), ref cipher);
+		chacha8(data, new size_t(length), reinterpret_cast<const ushort>(key), reinterpret_cast<const ushort>(iv), ref cipher);
 	  }
 
 	  public static void generate_chacha8_key(string password, chacha8_key key)
@@ -27814,7 +27814,7 @@ namespace Crypto
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <typename T>
 
-	  public static void derive_secret_key(KeyDerivation derivation, uint output_index, SecretKey @base, uint8_t prefix, size_t prefixLength, SecretKey derived_key)
+	  public static void derive_secret_key(KeyDerivation derivation, uint output_index, SecretKey @base, ushort prefix, size_t prefixLength, SecretKey derived_key)
 	  {
 		crypto_ops.derive_secret_key(derivation, output_index, @base, prefix, prefixLength, derived_key);
 	  }
@@ -27931,7 +27931,7 @@ namespace Crypto
 		hash_to_scalar(buf, end - reinterpret_cast<char>(buf), res);
 	  }
 
-	  internal static void derivation_to_scalar(KeyDerivation derivation, size_t output_index, uint8_t suffix, size_t suffixLength, EllipticCurveScalar res)
+	  internal static void derivation_to_scalar(KeyDerivation derivation, size_t output_index, ushort suffix, size_t suffixLength, EllipticCurveScalar res)
 	  {
 		Debug.Assert(suffixLength <= 32);
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
@@ -28208,17 +28208,17 @@ namespace CryptoNote
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <class T, class F>
-	public static void splitGlobalIndexes<T, F>(T sourceContainer, T destinationContainer, uint32_t splitBlockIndex, F lowerBoundFunction)
+	public static void splitGlobalIndexes<T, F>(T sourceContainer, T destinationContainer, uint splitBlockIndex, F lowerBoundFunction)
 	{
 	  for (var it = sourceContainer.begin(); it != sourceContainer.end();)
 	  {
 		var newCacheOutputsIteratorStart = lowerBoundFunction(it.second.outputs.begin(), it.second.outputs.end(), splitBlockIndex);
 
 		auto indexesForAmount = destinationContainer[it.first];
-		var newCacheOutputsCount = (uint32_t)std::distance(newCacheOutputsIteratorStart, it.second.outputs.end());
+		var newCacheOutputsCount = (uint)std::distance(newCacheOutputsIteratorStart, it.second.outputs.end());
 		indexesForAmount.outputs.reserve(newCacheOutputsCount);
 
-		indexesForAmount.startIndex = it.second.startIndex + (uint32_t)it.second.outputs.size() - newCacheOutputsCount;
+		indexesForAmount.startIndex = it.second.startIndex + (uint)it.second.outputs.size() - newCacheOutputsCount;
 
 		std::move(newCacheOutputsIteratorStart, it.second.outputs.end(), std::back_inserter(indexesForAmount.outputs));
 		it.second.outputs.erase(newCacheOutputsIteratorStart, it.second.outputs.end());
@@ -28242,21 +28242,21 @@ namespace CryptoNote
 
 	// factory functions
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-	public static BlockchainMessage makeChainSwitchMessage(uint32_t index, List<Crypto.Hash>&& hashes)
+	public static BlockchainMessage makeChainSwitchMessage(uint index, List<Crypto.Hash>&& hashes)
 	{
 	  return BlockchainMessage
 	  {
 		  Messages.ChainSwitch{index, std::move(hashes)}
 	  };
 	}
-	public static BlockchainMessage makeNewAlternativeBlockMessage(uint32_t index, Crypto.Hash hash)
+	public static BlockchainMessage makeNewAlternativeBlockMessage(uint index, Crypto.Hash hash)
 	{
 	  return BlockchainMessage
 	  {
 		  Messages.NewAlternativeBlock{index, std::move(hash)}
 	  };
 	}
-	public static BlockchainMessage makeNewBlockMessage(uint32_t index, Crypto.Hash hash)
+	public static BlockchainMessage makeNewBlockMessage(uint index, Crypto.Hash hash)
 	{
 	  return BlockchainMessage
 	  {
@@ -28279,58 +28279,58 @@ namespace CryptoNote
 		  Messages.DeleteTransaction{std::move(hashes), reason}
 	  };
 	}
-	public static bool check_hash(Crypto.Hash hash, uint64_t difficulty)
+	public static bool check_hash(Crypto.Hash hash, ulong difficulty)
 	{
-	  uint64_t low = new uint64_t();
-	  uint64_t high = new uint64_t();
-	  uint64_t top = new uint64_t();
-	  uint64_t cur = new uint64_t();
+	  ulong low = new ulong();
+	  ulong high = new ulong();
+	  ulong top = new ulong();
+	  ulong cur = new ulong();
 	  // First check the highest word, this will most likely fail for a random hash.
-	  mul(swap64le(((uint64_t) hash)[3]), new uint64_t(difficulty), ref top, ref high);
+	  mul(swap64le(((ulong) hash)[3]), new ulong(difficulty), ref top, ref high);
 	  if (high != 0)
 	  {
 		return false;
 	  }
-	  mul(swap64le(((uint64_t) hash)[0]), new uint64_t(difficulty), ref low, ref cur);
-	  mul(swap64le(((uint64_t) hash)[1]), new uint64_t(difficulty), ref low, ref high);
-	  bool carry = cadd(new uint64_t(cur), new uint64_t(low));
+	  mul(swap64le(((ulong) hash)[0]), new ulong(difficulty), ref low, ref cur);
+	  mul(swap64le(((ulong) hash)[1]), new ulong(difficulty), ref low, ref high);
+	  bool carry = cadd(new ulong(cur), new ulong(low));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: cur = high;
 	  cur.CopyFrom(high);
-	  mul(swap64le(((uint64_t) hash)[2]), new uint64_t(difficulty), ref low, ref high);
-	  carry = cadc(new uint64_t(cur), new uint64_t(low), carry);
-	  carry = cadc(new uint64_t(high), new uint64_t(top), carry);
+	  mul(swap64le(((ulong) hash)[2]), new ulong(difficulty), ref low, ref high);
+	  carry = cadc(new ulong(cur), new ulong(low), carry);
+	  carry = cadc(new ulong(high), new ulong(top), carry);
 	  return !carry;
 	}
 
 	#if __SIZEOF_INT128__
 
-	  internal static void mul(uint64_t a, uint64_t b, ref uint64_t low, ref uint64_t high)
+	  internal static void mul(ulong a, ulong b, ref ulong low, ref ulong high)
 	  {
 	//C++ TO C# CONVERTER TODO TASK: Typedefs defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//	typedef uint __int128 uint128_t;
 		uint __int128 res = (uint __int128) a * (uint __int128) b;
-		low = (uint64_t) res;
-		high = (uint64_t)(res >> 64);
+		low = (ulong) res;
+		high = (ulong)(res >> 64);
 	  }
 
 	#else
 
-	  internal static void mul(uint64_t a, uint64_t b, ref uint64_t low, uint64_t high)
+	  internal static void mul(ulong a, ulong b, ref ulong low, ulong high)
 	  {
-		low = GlobalMembers.mul128(new uint64_t(a), new uint64_t(b), high);
+		low = GlobalMembers.mul128(new ulong(a), new ulong(b), high);
 	  }
 
 	#endif
 
-	  internal static bool cadd(uint64_t a, uint64_t b)
+	  internal static bool cadd(ulong a, ulong b)
 	  {
 		return a + b < a;
 	  }
 
-	  internal static bool cadc(uint64_t a, uint64_t b, bool c)
+	  internal static bool cadc(ulong a, ulong b, bool c)
 	  {
-		return a + b < a || (c && a + b == (uint64_t) - 1);
+		return a + b < a || (c && a + b == (ulong) - 1);
 	  }
 	public static List<T> preallocateVector<T>(size_t elements)
 	{
@@ -28356,7 +28356,7 @@ namespace CryptoNote
 	  return null;
 	}
 
-	public static IBlockchainCache findIndexInChain(IBlockchainCache blockSegment, uint32_t blockIndex)
+	public static IBlockchainCache findIndexInChain(IBlockchainCache blockSegment, uint blockIndex)
 	{
 	  Debug.Assert(blockSegment != null);
 	  while (blockSegment != null)
@@ -28434,17 +28434,17 @@ namespace CryptoNote
 	  return resultOutputs;
 	}
 
-	public static int64_t getEmissionChange(Currency currency, IBlockchainCache segment, uint32_t previousBlockIndex, CachedBlock cachedBlock, uint64_t cumulativeSize, uint64_t cumulativeFee)
+	public static long getEmissionChange(Currency currency, IBlockchainCache segment, uint previousBlockIndex, CachedBlock cachedBlock, ulong cumulativeSize, ulong cumulativeFee)
 	{
 
-	  uint64_t reward = 0;
-	  int64_t emissionChange = 0;
-	  var alreadyGeneratedCoins = segment.getAlreadyGeneratedCoins(new uint32_t(previousBlockIndex));
+	  ulong reward = 0;
+	  long emissionChange = 0;
+	  var alreadyGeneratedCoins = segment.getAlreadyGeneratedCoins(new uint(previousBlockIndex));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
 //ORIGINAL LINE: auto lastBlocksSizes = segment.getLastBlocksSizes(currency.rewardBlocksWindow(), previousBlockIndex, addGenesisBlock);
-	  var lastBlocksSizes = segment.getLastBlocksSizes(currency.rewardBlocksWindow(), new uint32_t(previousBlockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
+	  var lastBlocksSizes = segment.getLastBlocksSizes(currency.rewardBlocksWindow(), new uint(previousBlockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
 	  var blocksSizeMedian = Common.GlobalMembers.medianValue(lastBlocksSizes);
-	  if (!currency.getBlockReward(new uint8_t(cachedBlock.getBlock().majorVersion), blocksSizeMedian, new uint64_t(cumulativeSize), new uint64_t(alreadyGeneratedCoins), new uint64_t(cumulativeFee), reward, emissionChange))
+	  if (!currency.getBlockReward(new ushort(cachedBlock.getBlock().majorVersion), blocksSizeMedian, new ulong(cumulativeSize), new ulong(alreadyGeneratedCoins), new ulong(cumulativeFee), reward, emissionChange))
 	  {
 		throw std::system_error(error.GlobalMembers.make_error_code(error.BlockValidationError.CUMULATIVE_BLOCK_SIZE_TOO_BIG));
 	  }
@@ -28452,20 +28452,20 @@ namespace CryptoNote
 	  return emissionChange;
 	}
 
-	public static uint32_t findCommonRoot(IMainChainStorage storage, IBlockchainCache rootSegment)
+	public static uint findCommonRoot(IMainChainStorage storage, IBlockchainCache rootSegment)
 	{
 	  Debug.Assert(storage.getBlockCount());
 	  Debug.Assert(rootSegment.getBlockCount());
 	  Debug.Assert(rootSegment.getStartBlockIndex() == 0);
 	  Debug.Assert(GlobalMembers.getBlockHash(storage.getBlockByIndex(0)) == rootSegment.getBlockHash(0));
 
-	  uint32_t left = 0;
-	  uint32_t right = Math.Min(storage.getBlockCount() - 1, rootSegment.getBlockCount() - 1);
+	  uint left = 0;
+	  uint right = Math.Min(storage.getBlockCount() - 1, rootSegment.getBlockCount() - 1);
 	  while (left != right)
 	  {
 		Debug.Assert(right >= left);
-		uint32_t checkElement = left + (right - left) / 2 + 1;
-		if (GlobalMembers.getBlockHash(storage.getBlockByIndex(new uint32_t(checkElement))) == rootSegment.getBlockHash(new uint32_t(checkElement)))
+		uint checkElement = left + (right - left) / 2 + 1;
+		if (GlobalMembers.getBlockHash(storage.getBlockByIndex(new uint(checkElement))) == rootSegment.getBlockHash(new uint(checkElement)))
 		{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: left = checkElement;
@@ -28508,13 +28508,13 @@ namespace CryptoNote
 	  /************************************************************************/
 	  /* CryptoNote helper functions                                          */
 	  /************************************************************************/
-	  public static uint64_t getPenalizedAmount(uint64_t amount, size_t medianSize, size_t currentBlockSize)
+	  public static ulong getPenalizedAmount(ulong amount, size_t medianSize, size_t currentBlockSize)
 	  {
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
-	//	static_assert(sizeof(size_t) >= sizeof(uint32_t), "size_t is too small");
+	//	static_assert(sizeof(size_t) >= sizeof(uint), "size_t is too small");
 		Debug.Assert(currentBlockSize <= 2 * medianSize);
-		Debug.Assert(medianSize <= uint32_t.MaxValue);
-		Debug.Assert(currentBlockSize <= uint32_t.MaxValue);
+		Debug.Assert(medianSize <= uint.MaxValue);
+		Debug.Assert(currentBlockSize <= uint.MaxValue);
 
 		if (amount == 0)
 		{
@@ -28526,13 +28526,13 @@ namespace CryptoNote
 		  return amount;
 		}
 
-		uint64_t productHi = new uint64_t();
-		uint64_t productLo = GlobalMembers.mul128(new uint64_t(amount), currentBlockSize * (UINT64_C(2) * medianSize - currentBlockSize), productHi);
+		ulong productHi = new ulong();
+		ulong productLo = GlobalMembers.mul128(new ulong(amount), currentBlockSize * (UINT64_C(2) * medianSize - currentBlockSize), productHi);
 
-		uint64_t penalizedAmountHi = new uint64_t();
-		uint64_t penalizedAmountLo = new uint64_t();
-		GlobalMembers.div128_32(new uint64_t(productHi), new uint64_t(productLo), (uint32_t)medianSize, penalizedAmountHi, penalizedAmountLo);
-		GlobalMembers.div128_32(new uint64_t(penalizedAmountHi), new uint64_t(penalizedAmountLo), (uint32_t)medianSize, penalizedAmountHi, penalizedAmountLo);
+		ulong penalizedAmountHi = new ulong();
+		ulong penalizedAmountLo = new ulong();
+		GlobalMembers.div128_32(new ulong(productHi), new ulong(productLo), (uint)medianSize, penalizedAmountHi, penalizedAmountLo);
+		GlobalMembers.div128_32(new ulong(penalizedAmountHi), new ulong(penalizedAmountLo), (uint)medianSize, penalizedAmountHi, penalizedAmountLo);
 
 		Debug.Assert(0 == penalizedAmountHi);
 		Debug.Assert(penalizedAmountLo < amount);
@@ -28540,7 +28540,7 @@ namespace CryptoNote
 		return penalizedAmountLo;
 	  }
   //-----------------------------------------------------------------------
-	  public static string getAccountAddressAsStr(uint64_t prefix, AccountPublicAddress adr)
+	  public static string getAccountAddressAsStr(ulong prefix, AccountPublicAddress adr)
 	  {
 		BinaryArray ba = new BinaryArray();
 		bool r = toBinaryArray(adr, ref ba);
@@ -28551,7 +28551,7 @@ namespace CryptoNote
 		return Tools.Base58.encode_addr(prefix, Common.asString(ba));
 	  }
   //-----------------------------------------------------------------------
-	  public static bool parseAccountAddressString(uint64_t prefix, AccountPublicAddress adr, string str)
+	  public static bool parseAccountAddressString(ulong prefix, AccountPublicAddress adr, string str)
 	  {
 		string data;
 
@@ -28574,7 +28574,7 @@ namespace CryptoNote
 		return true;
 	  }
 
-//std::string print_money(uint64_t amount, unsigned int decimal_point)
+//std::string print_money(ulong amount, unsigned int decimal_point)
 //{
 //	/*if (decimal_point == (unsigned int)-1)
 //		decimal_point = default_decimal_point;*/
@@ -28590,7 +28590,7 @@ namespace CryptoNote
 //	return s;
 //}
 
-	//std::string print_money(uint64_t amount, unsigned int decimal_point = -1);
+	//std::string print_money(ulong amount, unsigned int decimal_point = -1);
 
 	public static bool parseAndValidateTransactionFromBinaryArray(BinaryArray tx_blob, Transaction tx, Hash tx_hash, Hash tx_prefix_hash)
 	{
@@ -28606,7 +28606,7 @@ namespace CryptoNote
 	}
 
 
-	public static bool constructTransaction(AccountKeys sender_account_keys, List<TransactionSourceEntry> sources, List<TransactionDestinationEntry> destinations, List<uint8_t> extra, Transaction tx, uint64_t unlock_time, Logging.ILogger log)
+	public static bool constructTransaction(AccountKeys sender_account_keys, List<TransactionSourceEntry> sources, List<TransactionDestinationEntry> destinations, List<ushort> extra, Transaction tx, ulong unlock_time, Logging.ILogger log)
 	{
 	  LoggerRef logger = new LoggerRef(log, "construct_tx");
 
@@ -28628,7 +28628,7 @@ namespace CryptoNote
 	//  };
 
 	  List<input_generation_context_data> in_contexts = new List<input_generation_context_data>();
-	  uint64_t summary_inputs_money = 0;
+	  ulong summary_inputs_money = 0;
 	  //fill inputs
 	  foreach (TransactionSourceEntry src_entr in sources)
 	  {
@@ -28661,7 +28661,7 @@ namespace CryptoNote
 		input_to_key.keyImage = img;
 
 		//fill outputs array and use relative offsets
-		foreach (Tuple <uint32_t in :PublicKey>& out_entry : src_entr.outputs)
+		foreach (Tuple <uint in :PublicKey>& out_entry : src_entr.outputs)
 		Tuple Crypto = new Tuple();
 		{
 		  input_to_key.outputIndexes.push_back(out_entry.first);
@@ -28680,7 +28680,7 @@ namespace CryptoNote
 	  return de1.amount < de2.amount;
   });
 
-	  uint64_t summary_outs_money = 0;
+	  ulong summary_outs_money = 0;
 	  //fill outputs
 	  size_t output_index = 0;
 	  foreach (TransactionDestinationEntry dst_entr in shuffled_dsts)
@@ -28732,7 +28732,7 @@ namespace CryptoNote
 	  foreach (TransactionSourceEntry src_entr in sources)
 	  {
 		List<PublicKey> keys_ptrs = new List<PublicKey>();
-		foreach (Tuple <uint32_t in :PublicKey>& o : src_entr.outputs)
+		foreach (Tuple <uint in :PublicKey>& o : src_entr.outputs)
 		Tuple Crypto = new Tuple();
 		{
 		  keys_ptrs.Add(o.second);
@@ -28761,7 +28761,7 @@ namespace CryptoNote
 	  derive_public_key(derivation, keyIndex, acc.address.spendPublicKey, pk);
 	  return pk == out_key.key;
 	}
-	public static bool lookup_acc_outs(AccountKeys acc, Transaction tx, PublicKey tx_pub_key, List<size_t> outs, ref uint64_t money_transfered)
+	public static bool lookup_acc_outs(AccountKeys acc, Transaction tx, PublicKey tx_pub_key, List<size_t> outs, ref ulong money_transfered)
 	{
 	  money_transfered = 0;
 	  size_t keyIndex = 0;
@@ -28790,7 +28790,7 @@ namespace CryptoNote
 	  }
 	  return true;
 	}
-	public static bool lookup_acc_outs(AccountKeys acc, Transaction tx, List<size_t> outs, uint64_t money_transfered)
+	public static bool lookup_acc_outs(AccountKeys acc, Transaction tx, List<size_t> outs, ulong money_transfered)
 	{
 	  PublicKey transactionPublicKey = getTransactionPublicKeyFromExtra(tx.extra);
 	  if (transactionPublicKey == NULL_PUBLIC_KEY)
@@ -28799,10 +28799,10 @@ namespace CryptoNote
 	  }
 	  return lookup_acc_outs(acc, tx, transactionPublicKey, outs, ref money_transfered);
 	}
-	public static bool get_tx_fee(Transaction tx, ref uint64_t fee)
+	public static bool get_tx_fee(Transaction tx, ref ulong fee)
 	{
-	  uint64_t amount_in = 0;
-	  uint64_t amount_out = 0;
+	  ulong amount_in = 0;
+	  ulong amount_out = 0;
 
 	  foreach (var in in tx.inputs)
 	  {
@@ -28826,9 +28826,9 @@ namespace CryptoNote
 	  fee = amount_in - amount_out;
 	  return true;
 	}
-	public static uint64_t get_tx_fee(Transaction tx)
+	public static ulong get_tx_fee(Transaction tx)
 	{
-	  uint64_t r = 0;
+	  ulong r = 0;
 	  if (!get_tx_fee(tx, ref r))
 	  {
 		return 0;
@@ -28860,13 +28860,13 @@ namespace CryptoNote
 	  generate_key_image(in_ephemeral.publicKey, in_ephemeral.secretKey, ki);
 	  return true;
 	}
-	public static bool getInputsMoneyAmount(Transaction tx, ref uint64_t money)
+	public static bool getInputsMoneyAmount(Transaction tx, ref ulong money)
 	{
 	  money = 0;
 
 	  foreach (var in in tx.inputs)
 	  {
-		uint64_t amount = 0;
+		ulong amount = 0;
 
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
 		if (in.type() == typeid(KeyInput))
@@ -28934,11 +28934,11 @@ namespace CryptoNote
 	}
 	public static bool checkInputsOverflow(TransactionPrefix tx)
 	{
-	  uint64_t money = 0;
+	  ulong money = 0;
 
 	  foreach (var in in tx.inputs)
 	  {
-		uint64_t amount = 0;
+		ulong amount = 0;
 
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
 		if (in.type() == typeid(KeyInput))
@@ -28957,7 +28957,7 @@ namespace CryptoNote
 	}
 	public static bool checkOutsOverflow(TransactionPrefix tx)
 	{
-	  uint64_t money = 0;
+	  ulong money = 0;
 	  foreach (var o in tx.outputs)
 	  {
 		if (money > o.amount + money)
@@ -28968,9 +28968,9 @@ namespace CryptoNote
 	  }
 	  return true;
 	}
-	public static uint64_t get_outs_money_amount(Transaction tx)
+	public static ulong get_outs_money_amount(Transaction tx)
 	{
-	  uint64_t outputs_amount = 0;
+	  ulong outputs_amount = 0;
 	  foreach (var o in tx.outputs)
 	  {
 		outputs_amount += o.amount;
@@ -28991,20 +28991,20 @@ namespace CryptoNote
 	  return res;
 	}
 
-	public static List<uint32_t> relativeOutputOffsetsToAbsolute(List<uint32_t> off)
+	public static List<uint> relativeOutputOffsetsToAbsolute(List<uint> off)
 	{
-	  List<uint32_t> res = new List(off);
+	  List<uint> res = new List(off);
 	  for (size_t i = 1; i < res.Count; i++)
 	  {
 		res[i] += res[i - 1];
 	  }
 	  return res;
 	}
-	public static List<uint32_t> absolute_output_offsets_to_relative(List<uint32_t> off)
+	public static List<uint> absolute_output_offsets_to_relative(List<uint> off)
 	{
 	  if (off.Count == 0)
 	  {
-		  return new List<uint32_t>();
+		  return new List<uint>();
 	  }
 	  var copy = off;
 	  for (size_t i = 1; i < copy.Count; ++i)
@@ -29018,7 +29018,7 @@ namespace CryptoNote
 	// 62387455827 -> 455827 + 7000000 + 80000000 + 300000000 + 2000000000 + 60000000000, where 455827 <= dust_threshold
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<typename chunk_handler_t, typename dust_handler_t>
-	public static void decompose_amount_into_digits<chunk_handler_t, dust_handler_t>(uint64_t amount, uint64_t dust_threshold, chunk_handler_t chunk_handler, dust_handler_t dust_handler)
+	public static void decompose_amount_into_digits<chunk_handler_t, dust_handler_t>(ulong amount, ulong dust_threshold, chunk_handler_t chunk_handler, dust_handler_t dust_handler)
 	{
 	  if (0 == amount)
 	  {
@@ -29026,11 +29026,11 @@ namespace CryptoNote
 	  }
 
 	  bool is_dust_handled = false;
-	  uint64_t dust = 0;
-	  uint64_t order = 1;
+	  ulong dust = 0;
+	  ulong order = 1;
 	  while (0 != amount)
 	  {
-		uint64_t chunk = (amount % 10) * order;
+		ulong chunk = (amount % 10) * order;
 		amount /= 10;
 		order *= 10;
 
@@ -29058,14 +29058,14 @@ namespace CryptoNote
 	  }
 	}
 
-	public static uint64_t power_integral(uint64_t a, uint64_t b)
+	public static ulong power_integral(ulong a, ulong b)
 	{
 	  if (b == 0)
 	  {
 		return 1;
 	  }
-	  uint64_t total = new uint64_t(a);
-	  for (uint64_t i = 1; i != b; i++)
+	  ulong total = new ulong(a);
+	  for (ulong i = 1; i != b; i++)
 	  {
 		total *= a;
 	  }
@@ -29090,7 +29090,7 @@ namespace CryptoNote
 	{
 	  serialize((TransactionPrefix)tx, serializer.functorMethod);
 
-	  uint64_t sigSize = tx.inputs.size();
+	  ulong sigSize = tx.inputs.size();
 	  //TODO: make arrays without sizes
 	//  serializer.beginArray(sigSize, "signatures");
 
@@ -29107,9 +29107,9 @@ namespace CryptoNote
 		throw new System.Exception("Serialization error: unexpected signatures size");
 	  }
 
-	  for (uint64_t i = 0; i < tx.inputs.size(); ++i)
+	  for (ulong i = 0; i < tx.inputs.size(); ++i)
 	  {
-		uint64_t signatureSize = GlobalMembers.getSignaturesCount(tx.inputs[i]);
+		ulong signatureSize = GlobalMembers.getSignaturesCount(tx.inputs[i]);
 		if (signaturesNotExpected)
 		{
 		  if (signatureSize == 0)
@@ -29158,7 +29158,7 @@ namespace CryptoNote
 
 	  if (tx.version >= TRANSACTION_VERSION_2)
 	  {
-		uint64_t ignored = 0;
+		ulong ignored = 0;
 		serializer.functorMethod(ignored, "ignored");
 	  }
 	}
@@ -29167,18 +29167,18 @@ namespace CryptoNote
 	  if (serializer.type() == ISerializer.OUTPUT)
 	  {
 		BinaryVariantTagGetter tagGetter = new BinaryVariantTagGetter();
-		uint8_t tag = boost::apply_visitor(tagGetter.functorMethod, in);
-		serializer.binary(tag, sizeof(uint8_t), "type");
+		ushort tag = boost::apply_visitor(tagGetter.functorMethod, in);
+		serializer.binary(tag, sizeof(ushort), "type");
 
 		VariantSerializer visitor = new VariantSerializer(serializer.functorMethod, "value");
 		boost::apply_visitor(visitor.functorMethod, in);
 	  }
 	  else
 	  {
-		uint8_t tag = new uint8_t();
-		serializer.binary(tag, sizeof(uint8_t), "type");
+		ushort tag = new ushort();
+		serializer.binary(tag, sizeof(ushort), "type");
 
-		GlobalMembers.getVariantValue(serializer.functorMethod, new uint8_t(tag), ref in);
+		GlobalMembers.getVariantValue(serializer.functorMethod, new ushort(tag), ref in);
 	  }
 	}
 	public static void serialize(TransactionOutput output, ISerializer serializer)
@@ -29204,18 +29204,18 @@ namespace CryptoNote
 	  if (serializer.type() == ISerializer.OUTPUT)
 	  {
 		BinaryVariantTagGetter tagGetter = new BinaryVariantTagGetter();
-		uint8_t tag = boost::apply_visitor(tagGetter.functorMethod, output);
-		serializer.binary(tag, sizeof(uint8_t), "type");
+		ushort tag = boost::apply_visitor(tagGetter.functorMethod, output);
+		serializer.binary(tag, sizeof(ushort), "type");
 
 		VariantSerializer visitor = new VariantSerializer(serializer.functorMethod, "data");
 		boost::apply_visitor(visitor.functorMethod, output);
 	  }
 	  else
 	  {
-		uint8_t tag = new uint8_t();
-		serializer.binary(tag, sizeof(uint8_t), "type");
+		ushort tag = new ushort();
+		serializer.binary(tag, sizeof(ushort), "type");
 
-		GlobalMembers.getVariantValue(serializer.functorMethod, new uint8_t(tag), ref output);
+		GlobalMembers.getVariantValue(serializer.functorMethod, new ushort(tag), ref output);
 	  }
 	}
 	public static void serialize(KeyOutput key, ISerializer serializer)
@@ -29247,7 +29247,7 @@ namespace CryptoNote
 	  serializer.functorMethod(pbs.m_parentBlock.minorVersion, "minorVersion");
 	  serializer.functorMethod(pbs.m_timestamp, "timestamp");
 	  serializer.functorMethod(pbs.m_parentBlock.previousBlockHash, "prevId");
-	  serializer.binary(pbs.m_nonce, sizeof(uint32_t), "nonce");
+	  serializer.binary(pbs.m_nonce, sizeof(uint), "nonce");
 
 	  if (pbs.m_hashingSerialization)
 	  {
@@ -29263,9 +29263,9 @@ namespace CryptoNote
 		serializer.functorMethod(merkleRoot, "merkleRoot");
 	  }
 
-	  uint64_t txNum = (uint64_t)pbs.m_parentBlock.transactionCount;
+	  ulong txNum = (ulong)pbs.m_parentBlock.transactionCount;
 	  serializer.functorMethod(txNum, "numberOfTransactions");
-	  pbs.m_parentBlock.transactionCount = (uint16_t)txNum;
+	  pbs.m_parentBlock.transactionCount = (ushort)txNum;
 	  if (pbs.m_parentBlock.transactionCount < 1)
 	  {
 		throw new System.Exception("Wrong transactions number");
@@ -29276,7 +29276,7 @@ namespace CryptoNote
 		return;
 	  }
 
-	  uint64_t branchSize = Crypto.tree_depth(pbs.m_parentBlock.transactionCount);
+	  ulong branchSize = Crypto.tree_depth(pbs.m_parentBlock.transactionCount);
 	  if (serializer.type() == ISerializer.OUTPUT)
 	  {
 		if (pbs.m_parentBlock.baseTransactionBranch.size() != branchSize)
@@ -29371,13 +29371,13 @@ namespace CryptoNote
 	{
 	  if (serializer.type() == ISerializer.INPUT)
 	  {
-		uint64_t blockSize = new uint64_t();
+		ulong blockSize = new ulong();
 		serializer.functorMethod(blockSize, "block_size");
-		rawBlock.block.resize((uint64_t)blockSize);
+		rawBlock.block.resize((ulong)blockSize);
 	  }
 	  else
 	  {
-		uint64_t blockSize = rawBlock.block.size();
+		ulong blockSize = rawBlock.block.size();
 		serializer.functorMethod(blockSize, "block_size");
 	  }
 
@@ -29385,13 +29385,13 @@ namespace CryptoNote
 
 	  if (serializer.type() == ISerializer.INPUT)
 	  {
-		uint64_t txCount = new uint64_t();
+		ulong txCount = new ulong();
 		serializer.functorMethod(txCount, "tx_count");
-		rawBlock.transactions.resize((uint64_t)txCount);
+		rawBlock.transactions.resize((ulong)txCount);
 
 		foreach (var txBlob in rawBlock.transactions)
 		{
-		  uint64_t txSize = new uint64_t();
+		  ulong txSize = new ulong();
 		  serializer.functorMethod(txSize, "tx_size");
 		  txBlob.resize(txSize);
 		  serializer.binary(txBlob.data(), txBlob.size(), "transaction");
@@ -29399,12 +29399,12 @@ namespace CryptoNote
 	  }
 	  else
 	  {
-		uint64_t txCount = rawBlock.transactions.size();
+		ulong txCount = rawBlock.transactions.size();
 		serializer.functorMethod(txCount, "tx_count");
 
 		foreach (var txBlob in rawBlock.transactions)
 		{
-		  uint64_t txSize = txBlob.size();
+		  ulong txSize = txBlob.size();
 		  serializer.functorMethod(txSize, "tx_size");
 		  serializer.binary(txBlob.data(), txBlob.size(), "transaction");
 		}
@@ -29438,9 +29438,9 @@ namespace CryptoNote
 
 	public static void doSerialize(TransactionExtraMergeMiningTag tag, ISerializer serializer)
 	{
-	  uint64_t depth = (uint64_t)tag.depth;
+	  ulong depth = (ulong)tag.depth;
 	  serializer.functorMethod(depth, "depth");
-	  tag.depth = (uint64_t)depth;
+	  tag.depth = (ulong)depth;
 	  serializer.functorMethod(tag.merkleRoot, "merkle_root");
 	}
 
@@ -29621,9 +29621,9 @@ namespace CryptoNote
 	  }
 	}
 
-	public static uint64_t getInputAmount(Transaction transaction)
+	public static ulong getInputAmount(Transaction transaction)
 	{
-	  uint64_t amount = 0;
+	  ulong amount = 0;
 	  foreach (var input in transaction.inputs)
 	  {
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
@@ -29635,9 +29635,9 @@ namespace CryptoNote
 
 	  return amount;
 	}
-	public static List<uint64_t> getInputsAmounts(Transaction transaction)
+	public static List<ulong> getInputsAmounts(Transaction transaction)
 	{
-	  List<uint64_t> inputsAmounts = new List<uint64_t>();
+	  List<ulong> inputsAmounts = new List<ulong>();
 	  inputsAmounts.Capacity = transaction.inputs.size();
 
 	  foreach (var input in transaction.inputs)
@@ -29651,9 +29651,9 @@ namespace CryptoNote
 
 	  return inputsAmounts;
 	}
-	public static uint64_t getOutputAmount(Transaction transaction)
+	public static ulong getOutputAmount(Transaction transaction)
 	{
-	  uint64_t amount = 0;
+	  ulong amount = 0;
 	  foreach (var output in transaction.outputs)
 	  {
 		amount += output.amount;
@@ -29661,18 +29661,18 @@ namespace CryptoNote
 
 	  return amount;
 	}
-	public static void decomposeAmount(uint64_t amount, uint64_t dustThreshold, List<uint64_t> decomposedAmounts)
+	public static void decomposeAmount(ulong amount, ulong dustThreshold, List<ulong> decomposedAmounts)
 	{
-  decompose_amount_into_digits(new uint64_t(amount), new uint64_t(dustThreshold), (uint64_t amount) =>
+  decompose_amount_into_digits(new ulong(amount), new ulong(dustThreshold), (ulong amount) =>
   {
 	decomposedAmounts.Add(amount);
-  }, (uint64_t dust) =>
+  }, (ulong dust) =>
   {
 	decomposedAmounts.Add(dust);
   });
 	}
 
-	public static readonly List<uint64_t> Currency.PRETTY_AMOUNTS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000, 20000000, 30000000, 40000000, 50000000, 60000000, 70000000, 80000000, 90000000, 100000000, 200000000, 300000000, 400000000, 500000000, 600000000, 700000000, 800000000, 900000000, 1000000000, 2000000000, 3000000000, 4000000000, 5000000000, 6000000000, 7000000000, 8000000000, 9000000000, 10000000000, 20000000000, 30000000000, 40000000000, 50000000000, 60000000000, 70000000000, 80000000000, 90000000000, 100000000000, 200000000000, 300000000000, 400000000000, 500000000000, 600000000000, 700000000000, 800000000000, 900000000000, 1000000000000, 2000000000000, 3000000000000, 4000000000000, 5000000000000, 6000000000000, 7000000000000, 8000000000000, 9000000000000, 10000000000000, 20000000000000, 30000000000000, 40000000000000, 50000000000000, 60000000000000, 70000000000000, 80000000000000, 90000000000000, 100000000000000, 200000000000000, 300000000000000, 400000000000000, 500000000000000, 600000000000000, 700000000000000, 800000000000000, 900000000000000, 1000000000000000, 2000000000000000, 3000000000000000, 4000000000000000, 5000000000000000, 6000000000000000, 7000000000000000, 8000000000000000, 9000000000000000, 10000000000000000, 20000000000000000, 30000000000000000, 40000000000000000, 50000000000000000, 60000000000000000, 70000000000000000, 80000000000000000, 90000000000000000, 100000000000000000, 200000000000000000, 300000000000000000, 400000000000000000, 500000000000000000, 600000000000000000, 700000000000000000, 800000000000000000, 900000000000000000, 1000000000000000000, 2000000000000000000, 3000000000000000000, 4000000000000000000, 5000000000000000000, 6000000000000000000, 7000000000000000000, 8000000000000000000, 9000000000000000000, 10000000000000000000Ul};
+	public static readonly List<ulong> Currency.PRETTY_AMOUNTS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000, 20000000, 30000000, 40000000, 50000000, 60000000, 70000000, 80000000, 90000000, 100000000, 200000000, 300000000, 400000000, 500000000, 600000000, 700000000, 800000000, 900000000, 1000000000, 2000000000, 3000000000, 4000000000, 5000000000, 6000000000, 7000000000, 8000000000, 9000000000, 10000000000, 20000000000, 30000000000, 40000000000, 50000000000, 60000000000, 70000000000, 80000000000, 90000000000, 100000000000, 200000000000, 300000000000, 400000000000, 500000000000, 600000000000, 700000000000, 800000000000, 900000000000, 1000000000000, 2000000000000, 3000000000000, 4000000000000, 5000000000000, 6000000000000, 7000000000000, 8000000000000, 9000000000000, 10000000000000, 20000000000000, 30000000000000, 40000000000000, 50000000000000, 60000000000000, 70000000000000, 80000000000000, 90000000000000, 100000000000000, 200000000000000, 300000000000000, 400000000000000, 500000000000000, 600000000000000, 700000000000000, 800000000000000, 900000000000000, 1000000000000000, 2000000000000000, 3000000000000000, 4000000000000000, 5000000000000000, 6000000000000000, 7000000000000000, 8000000000000000, 9000000000000000, 10000000000000000, 20000000000000000, 30000000000000000, 40000000000000000, 50000000000000000, 60000000000000000, 70000000000000000, 80000000000000000, 90000000000000000, 100000000000000000, 200000000000000000, 300000000000000000, 400000000000000000, 500000000000000000, 600000000000000000, 700000000000000000, 800000000000000000, 900000000000000000, 1000000000000000000, 2000000000000000000, 3000000000000000000, 4000000000000000000, 5000000000000000000, 6000000000000000000, 7000000000000000000, 8000000000000000000, 9000000000000000000, 10000000000000000000Ul};
 	public static bool findTransactionExtraFieldByType<T>(List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields, ref T field)
 	{
 //C++ TO C# CONVERTER TODO TASK: Lambda expressions cannot be assigned to 'var':
@@ -29690,26 +29690,26 @@ namespace CryptoNote
 	  return true;
 	}
 
-	//bool parseTransactionExtra(ClassicVector<uint8_t> tx_extra, ClassicVector<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields);Tangible Method Implementation Not FoundCryptoNote-parseTransactionExtra
-	//bool writeTransactionExtra(ClassicVector<uint8_t> tx_extra, ClassicVector<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields);Tangible Method Implementation Not FoundCryptoNote-writeTransactionExtra
+	//bool parseTransactionExtra(ClassicVector<ushort> tx_extra, ClassicVector<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields);Tangible Method Implementation Not FoundCryptoNote-parseTransactionExtra
+	//bool writeTransactionExtra(ClassicVector<ushort> tx_extra, ClassicVector<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields);Tangible Method Implementation Not FoundCryptoNote-writeTransactionExtra
 
-	//Crypto::PublicKey getTransactionPublicKeyFromExtra(ClassicVector<uint8_t> tx_extra);Tangible Method Implementation Not FoundCryptoNote-getTransactionPublicKeyFromExtra
-	//bool addTransactionPublicKeyToExtra(ClassicVector<uint8_t> tx_extra, Crypto::PublicKey tx_pub_key);Tangible Method Implementation Not FoundCryptoNote-addTransactionPublicKeyToExtra
-	//bool addExtraNonceToTransactionExtra(ClassicVector<uint8_t> tx_extra, ClassicVector<uint8_t> extra_nonce);Tangible Method Implementation Not FoundCryptoNote-addExtraNonceToTransactionExtra
-	//void setPaymentIdToTransactionExtraNonce(ClassicVector<uint8_t> extra_nonce, Crypto::Hash payment_id);Tangible Method Implementation Not FoundCryptoNote-setPaymentIdToTransactionExtraNonce
-	//bool getPaymentIdFromTransactionExtraNonce(ClassicVector<uint8_t> extra_nonce, Crypto::Hash payment_id);Tangible Method Implementation Not FoundCryptoNote-getPaymentIdFromTransactionExtraNonce
-	//bool appendMergeMiningTagToExtra(ClassicVector<uint8_t> tx_extra, TransactionExtraMergeMiningTag mm_tag);Tangible Method Implementation Not FoundCryptoNote-appendMergeMiningTagToExtra
-	//bool getMergeMiningTagFromExtra(ClassicVector<uint8_t> tx_extra, TransactionExtraMergeMiningTag mm_tag);Tangible Method Implementation Not FoundCryptoNote-getMergeMiningTagFromExtra
+	//Crypto::PublicKey getTransactionPublicKeyFromExtra(ClassicVector<ushort> tx_extra);Tangible Method Implementation Not FoundCryptoNote-getTransactionPublicKeyFromExtra
+	//bool addTransactionPublicKeyToExtra(ClassicVector<ushort> tx_extra, Crypto::PublicKey tx_pub_key);Tangible Method Implementation Not FoundCryptoNote-addTransactionPublicKeyToExtra
+	//bool addExtraNonceToTransactionExtra(ClassicVector<ushort> tx_extra, ClassicVector<ushort> extra_nonce);Tangible Method Implementation Not FoundCryptoNote-addExtraNonceToTransactionExtra
+	//void setPaymentIdToTransactionExtraNonce(ClassicVector<ushort> extra_nonce, Crypto::Hash payment_id);Tangible Method Implementation Not FoundCryptoNote-setPaymentIdToTransactionExtraNonce
+	//bool getPaymentIdFromTransactionExtraNonce(ClassicVector<ushort> extra_nonce, Crypto::Hash payment_id);Tangible Method Implementation Not FoundCryptoNote-getPaymentIdFromTransactionExtraNonce
+	//bool appendMergeMiningTagToExtra(ClassicVector<ushort> tx_extra, TransactionExtraMergeMiningTag mm_tag);Tangible Method Implementation Not FoundCryptoNote-appendMergeMiningTagToExtra
+	//bool getMergeMiningTagFromExtra(ClassicVector<ushort> tx_extra, TransactionExtraMergeMiningTag mm_tag);Tangible Method Implementation Not FoundCryptoNote-getMergeMiningTagFromExtra
 
-	//bool createTxExtraWithPaymentId(string paymentIdString, ClassicVector<uint8_t> extra);Tangible Method Implementation Not FoundCryptoNote-createTxExtraWithPaymentId
+	//bool createTxExtraWithPaymentId(string paymentIdString, ClassicVector<ushort> extra);Tangible Method Implementation Not FoundCryptoNote-createTxExtraWithPaymentId
 	//returns false if payment id is not found or parse error
-	//bool getPaymentIdFromTxExtra(ClassicVector<uint8_t> extra, Crypto::Hash paymentId);Tangible Method Implementation Not FoundCryptoNote-getPaymentIdFromTxExtra
+	//bool getPaymentIdFromTxExtra(ClassicVector<ushort> extra, Crypto::Hash paymentId);Tangible Method Implementation Not FoundCryptoNote-getPaymentIdFromTxExtra
 	//bool parsePaymentId(string paymentIdString, Crypto::Hash paymentId);Tangible Method Implementation Not FoundCryptoNote-parsePaymentId
 
-	public static readonly uint32_t ONE_DAY_SECONDS = 60 * 60 * 24;
+	public static readonly uint ONE_DAY_SECONDS = 60 * 60 * 24;
 	public static readonly CachedBlockInfo NULL_CACHED_BLOCK_INFO = new CachedBlockInfo(NULL_HASH, 0, 0, 0, 0, 0);
 
-	public static bool requestPackedOutputs(IBlockchainCache.Amount amount, Common.ArrayView<uint32_t> globalIndexes, IDataBase database, List<PackedOutIndex> result)
+	public static bool requestPackedOutputs(IBlockchainCache.Amount amount, Common.ArrayView<uint> globalIndexes, IDataBase database, List<PackedOutIndex> result)
 	{
 	  BlockchainReadBatch readBatch = new BlockchainReadBatch();
 	  result.Capacity = result.Count + globalIndexes.getSize();
@@ -29746,12 +29746,12 @@ namespace CryptoNote
 	{
 	  BlockchainReadBatch readHashesBatch = new BlockchainReadBatch();
 
-	  SortedSet<uint32_t> blockIndexes = new SortedSet<uint32_t>();
+	  SortedSet<uint> blockIndexes = new SortedSet<uint>();
   packedOuts.ForEach((PackedOutIndex @out) =>
   {
 	  blockIndexes.Add(@out.blockIndex);
   });
-  blockIndexes.ForEach((uint32_t blockIndex) =>
+  blockIndexes.ForEach((uint blockIndex) =>
   {
 	  readHashesBatch.requestTransactionHashesByBlock(blockIndex);
   });
@@ -29870,19 +29870,19 @@ namespace CryptoNote
 	  return GlobalMembers.requestExtendedTransactionInfos(transactionHashes, database, result);
 	}
 
-	public static uint64_t roundToMidnight(uint64_t timestamp)
+	public static ulong roundToMidnight(ulong timestamp)
 	{
-	  if (timestamp > (uint64_t)(time_t.MaxValue))
+	  if (timestamp > (ulong)(time_t.MaxValue))
 	  {
 		throw new System.Exception("Timestamp is too big");
 	  }
 
-	  return (uint64_t)((timestamp / GlobalMembers.ONE_DAY_SECONDS) * GlobalMembers.ONE_DAY_SECONDS);
+	  return (ulong)((timestamp / GlobalMembers.ONE_DAY_SECONDS) * GlobalMembers.ONE_DAY_SECONDS);
 	}
 
-	public static Tuple<boost.optional<uint32_t>, bool> requestClosestBlockIndexByTimestamp(uint64_t timestamp, IDataBase database)
+	public static Tuple<boost.optional<uint>, bool> requestClosestBlockIndexByTimestamp(ulong timestamp, IDataBase database)
 	{
-	  Tuple<boost.optional<uint32_t>, bool> result = new Tuple<boost.optional<uint32_t>, bool>({}, false);
+	  Tuple<boost.optional<uint>, bool> result = new Tuple<boost.optional<uint>, bool>({}, false);
 
 	  BlockchainReadBatch readBatch = new BlockchainReadBatch();
 	  readBatch.requestClosestTimestampBlockIndex(timestamp);
@@ -29902,7 +29902,7 @@ namespace CryptoNote
 	  return result;
 	}
 
-	public static bool requestRawBlock(IDataBase database, uint32_t blockIndex, ref RawBlock block)
+	public static bool requestRawBlock(IDataBase database, uint blockIndex, ref RawBlock block)
 	{
 	  var batch = BlockchainReadBatch().requestRawBlock(blockIndex);
 
@@ -29923,7 +29923,7 @@ namespace CryptoNote
 	  return true;
 	}
 
-	public static Transaction extractTransaction(RawBlock block, uint32_t transactionIndex)
+	public static Transaction extractTransaction(RawBlock block, uint transactionIndex)
 	{
 	  Debug.Assert(transactionIndex < block.transactions.Count + 1);
 
@@ -29991,7 +29991,7 @@ namespace CryptoNote
 	  return getPaymentIdFromTxExtra(transaction.extra, paymentId);
 	}
 
-	public static uint32_t requestKeyOutputGlobalIndexesCountForAmount(IBlockchainCache.Amount amount, IDataBase database)
+	public static uint requestKeyOutputGlobalIndexesCountForAmount(IBlockchainCache.Amount amount, IDataBase database)
 	{
 	  var batch = BlockchainReadBatch().requestKeyOutputGlobalIndexesCountForAmount(amount);
 	  var dbError = database.read(batch);
@@ -30012,7 +30012,7 @@ namespace CryptoNote
 	  }
 	}
 
-	public static PackedOutIndex retrieveKeyOutput(IBlockchainCache.Amount amount, uint32_t globalOutputIndex, IDataBase database)
+	public static PackedOutIndex retrieveKeyOutput(IBlockchainCache.Amount amount, uint globalOutputIndex, IDataBase database)
 	{
 	  BlockchainReadBatch batch = new BlockchainReadBatch();
 	  var dbError = database.read(batch.requestKeyOutputGlobalIndexForAmount(amount, globalOutputIndex));
@@ -30086,7 +30086,7 @@ namespace CryptoNote
 
 	public static readonly string DB_VERSION_KEY = "db_scheme_version";
 
-	public static readonly uint32_t CURRENT_DB_SCHEME_VERSION = 2;
+	public static readonly uint CURRENT_DB_SCHEME_VERSION = 2;
 
 	public static std::unique_ptr<IMainChainStorage> createSwappedMainChainStorage(string dataDir, Currency currency)
 	{
@@ -30110,7 +30110,7 @@ namespace CryptoNote
 
 	// TransactionInput helper functions
 	//size_t getRequiredSignaturesCount(boost::variant<BaseInput, KeyInput> in);Tangible Method Implementation Not FoundCryptoNote-getRequiredSignaturesCount
-	//uint64_t getTransactionInputAmount(boost::variant<BaseInput, KeyInput> in);Tangible Method Implementation Not FoundCryptoNote-getTransactionInputAmount
+	//ulong getTransactionInputAmount(boost::variant<BaseInput, KeyInput> in);Tangible Method Implementation Not FoundCryptoNote-getTransactionInputAmount
 	//TransactionTypes::InputType getTransactionInputType(boost::variant<BaseInput, KeyInput> in);Tangible Method Implementation Not FoundCryptoNote-getTransactionInputType
 	//boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote::TransactionPrefix transaction, size_t index);Tangible Method Implementation Not FoundCryptoNote-getInputChecked
 	//boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote::TransactionPrefix transaction, size_t index, TransactionTypes::InputType type);Tangible Method Implementation Not FoundCryptoNote-getInputChecked
@@ -30122,7 +30122,7 @@ namespace CryptoNote
 	//TransactionOutput getOutputChecked(CryptoNote::TransactionPrefix transaction, size_t index);Tangible Method Implementation Not FoundCryptoNote-getOutputChecked
 	//TransactionOutput getOutputChecked(CryptoNote::TransactionPrefix transaction, size_t index, TransactionTypes::OutputType type);Tangible Method Implementation Not FoundCryptoNote-getOutputChecked
 
-	//bool findOutputsToAccount(CryptoNote::TransactionPrefix transaction, AccountPublicAddress addr, Crypto::SecretKey viewSecretKey, ClassicVector<uint32_t> @out, uint64_t amount);Tangible Method Implementation Not FoundCryptoNote-findOutputsToAccount
+	//bool findOutputsToAccount(CryptoNote::TransactionPrefix transaction, AccountPublicAddress addr, Crypto::SecretKey viewSecretKey, ClassicVector<uint> @out, ulong amount);Tangible Method Implementation Not FoundCryptoNote-findOutputsToAccount
 
 
 	  ////////////////////////////////////////////////////////////////////////
@@ -30134,7 +30134,7 @@ namespace CryptoNote
 		return std::unique_ptr<ITransaction>(new TransactionImpl());
 	  }
 
-	  public static std::unique_ptr<ITransaction> createTransaction(List<uint8_t> transactionBlob)
+	  public static std::unique_ptr<ITransaction> createTransaction(List<ushort> transactionBlob)
 	  {
 		return std::unique_ptr<ITransaction>(new TransactionImpl(transactionBlob));
 	  }
@@ -30160,7 +30160,7 @@ namespace CryptoNote
 	  return true;
 	}
 
-	public static bool parseTransactionExtra(List<uint8_t> transactionExtra, List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> transactionExtraFields)
+	public static bool parseTransactionExtra(List<ushort> transactionExtra, List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> transactionExtraFields)
 	{
 	  transactionExtraFields.Clear();
 
@@ -30183,7 +30183,7 @@ namespace CryptoNote
 
 		while (!iss.endOfStream())
 		{
-		  c = Common.GlobalMembers.read<uint8_t>(iss);
+		  c = Common.GlobalMembers.read<ushort>(iss);
 		  switch (c)
 		  {
 		  case DefineConstants.TX_EXTRA_TAG_PADDING:
@@ -30198,7 +30198,7 @@ namespace CryptoNote
 			size_t size = 1;
 			for (; !iss.endOfStream() && size <= DefineConstants.TX_EXTRA_PADDING_MAX_COUNT; ++size)
 			{
-			  if (Common.GlobalMembers.read<uint8_t>(iss) != 0)
+			  if (Common.GlobalMembers.read<ushort>(iss) != 0)
 			  {
 				return false; // all bytes should be zero
 			  }
@@ -30238,7 +30238,7 @@ namespace CryptoNote
 			seen_tx_extra_nonce = true;
 
 			TransactionExtraNonce extraNonce = new TransactionExtraNonce();
-			uint8_t size = Common.GlobalMembers.read<uint8_t>(iss);
+			ushort size = Common.GlobalMembers.read<ushort>(iss);
 			if (size > 0)
 			{
 			  extraNonce.nonce.Resize(size);
@@ -30273,7 +30273,7 @@ namespace CryptoNote
 
 	  return true;
 	}
-	public static bool writeTransactionExtra(List<uint8_t> tx_extra, List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields)
+	public static bool writeTransactionExtra(List<ushort> tx_extra, List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields)
 	{
 	  ExtraSerializerVisitor visitor = new ExtraSerializerVisitor(tx_extra);
 
@@ -30288,7 +30288,7 @@ namespace CryptoNote
 	  return true;
 	}
 
-	public static PublicKey getTransactionPublicKeyFromExtra(List<uint8_t> tx_extra)
+	public static PublicKey getTransactionPublicKeyFromExtra(List<ushort> tx_extra)
 	{
 	  List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields = new List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>>();
 	  parseTransactionExtra(tx_extra, tx_extra_fields);
@@ -30301,7 +30301,7 @@ namespace CryptoNote
 
 	  return pub_key_field.publicKey;
 	}
-	public static bool addTransactionPublicKeyToExtra(List<uint8_t> tx_extra, PublicKey tx_pub_key)
+	public static bool addTransactionPublicKeyToExtra(List<ushort> tx_extra, PublicKey tx_pub_key)
 	{
 	  tx_extra.Resize(tx_extra.Count + 1 + sizeof(PublicKey));
 	  tx_extra[tx_extra.Count - 1 - sizeof(PublicKey)] = DefineConstants.TX_EXTRA_TAG_PUBKEY;
@@ -30309,7 +30309,7 @@ namespace CryptoNote
 	  *reinterpret_cast<PublicKey>(tx_extra[tx_extra.Count - sizeof(PublicKey)]) = tx_pub_key;
 	  return true;
 	}
-	public static bool addExtraNonceToTransactionExtra(List<uint8_t> tx_extra, BinaryArray extra_nonce)
+	public static bool addExtraNonceToTransactionExtra(List<ushort> tx_extra, BinaryArray extra_nonce)
 	{
 	  if (extra_nonce.size() > DefineConstants.TX_EXTRA_NONCE_MAX_COUNT)
 	  {
@@ -30322,7 +30322,7 @@ namespace CryptoNote
 	  tx_extra[start_pos] = DefineConstants.TX_EXTRA_NONCE;
 	  //write len
 	  ++start_pos;
-	  tx_extra[start_pos] = (uint8_t)extra_nonce.size();
+	  tx_extra[start_pos] = (ushort)extra_nonce.size();
 	  //write data
 	  ++start_pos;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
@@ -30331,7 +30331,7 @@ namespace CryptoNote
 	}
 	//void setPaymentIdToTransactionExtraNonce(BinaryArray extra_nonce, Crypto::Hash payment_id);Tangible Method Implementation Not FoundCryptoNote-setPaymentIdToTransactionExtraNonce
 	//bool getPaymentIdFromTransactionExtraNonce(BinaryArray extra_nonce, Crypto::Hash payment_id);Tangible Method Implementation Not FoundCryptoNote-getPaymentIdFromTransactionExtraNonce
-	public static bool appendMergeMiningTagToExtra(List<uint8_t> tx_extra, TransactionExtraMergeMiningTag mm_tag)
+	public static bool appendMergeMiningTagToExtra(List<ushort> tx_extra, TransactionExtraMergeMiningTag mm_tag)
 	{
 	  BinaryArray blob = new BinaryArray();
 	  if (!toBinaryArray(mm_tag, ref blob))
@@ -30341,10 +30341,10 @@ namespace CryptoNote
 
 	  tx_extra.Add(DefineConstants.TX_EXTRA_MERGE_MINING_TAG);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  std::copy(reinterpret_cast<const uint8_t>(blob.data()), reinterpret_cast<const uint8_t>(blob.data() + blob.size()), std::back_inserter(tx_extra));
+	  std::copy(reinterpret_cast<const ushort>(blob.data()), reinterpret_cast<const ushort>(blob.data() + blob.size()), std::back_inserter(tx_extra));
 	  return true;
 	}
-	public static bool getMergeMiningTagFromExtra(List<uint8_t> tx_extra, TransactionExtraMergeMiningTag mm_tag)
+	public static bool getMergeMiningTagFromExtra(List<ushort> tx_extra, TransactionExtraMergeMiningTag mm_tag)
 	{
 	  List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields = new List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>>();
 	  parseTransactionExtra(tx_extra, tx_extra_fields);
@@ -30352,7 +30352,7 @@ namespace CryptoNote
 	  return findTransactionExtraFieldByType(tx_extra_fields, ref mm_tag);
 	}
 
-	public static bool createTxExtraWithPaymentId(string paymentIdString, List<uint8_t> extra)
+	public static bool createTxExtraWithPaymentId(string paymentIdString, List<ushort> extra)
 	{
 	  Hash paymentIdBin = new Hash();
 
@@ -30361,7 +30361,7 @@ namespace CryptoNote
 		return false;
 	  }
 
-	  List<uint8_t> extraNonce = new List<uint8_t>();
+	  List<ushort> extraNonce = new List<ushort>();
 	  CryptoNote.GlobalMembers.setPaymentIdToTransactionExtraNonce(extraNonce, paymentIdBin);
 
 	  if (!CryptoNote.GlobalMembers.addExtraNonceToTransactionExtra(extra, extraNonce))
@@ -30372,7 +30372,7 @@ namespace CryptoNote
 	  return true;
 	}
 	//returns false if payment id is not found or parse error
-	public static bool getPaymentIdFromTxExtra(List<uint8_t> extra, Hash paymentId)
+	public static bool getPaymentIdFromTxExtra(List<ushort> extra, Hash paymentId)
 	{
 	  List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>> tx_extra_fields = new List<boost::variant<TransactionExtraPadding, TransactionExtraPublicKey, TransactionExtraNonce, TransactionExtraMergeMiningTag>>();
 	  if (!parseTransactionExtra(extra, tx_extra_fields))
@@ -30400,16 +30400,16 @@ namespace CryptoNote
 	  return Common.GlobalMembers.podFromHex(paymentIdString, paymentId);
 	}
 
-	public static void setPaymentIdToTransactionExtraNonce(List<uint8_t> extra_nonce, Hash payment_id)
+	public static void setPaymentIdToTransactionExtraNonce(List<ushort> extra_nonce, Hash payment_id)
 	{
 	  extra_nonce.Clear();
 	  extra_nonce.Add(DefineConstants.TX_EXTRA_NONCE_PAYMENT_ID);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	  uint8_t payment_id_ptr = reinterpret_cast<const uint8_t>(payment_id);
+	  ushort payment_id_ptr = reinterpret_cast<const ushort>(payment_id);
 	  std::copy(payment_id_ptr, payment_id_ptr + sizeof(Hash), std::back_inserter(extra_nonce));
 	}
 
-	public static bool getPaymentIdFromTransactionExtraNonce(List<uint8_t> extra_nonce, ref Hash payment_id)
+	public static bool getPaymentIdFromTransactionExtraNonce(List<ushort> extra_nonce, ref Hash payment_id)
 	{
 	  if (sizeof(Hash) + 1 != extra_nonce.Count)
 	  {
@@ -30483,7 +30483,7 @@ namespace CryptoNote
 
 	  return 0;
 	}
-	public static uint64_t getTransactionInputAmount(boost::variant<BaseInput, KeyInput> in)
+	public static ulong getTransactionInputAmount(boost::variant<BaseInput, KeyInput> in)
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
 	  if (in.type() == typeid(KeyInput))
@@ -30570,7 +30570,7 @@ namespace CryptoNote
 	  return output;
 	}
 
-	public static bool findOutputsToAccount(CryptoNote.TransactionPrefix transaction, AccountPublicAddress addr, SecretKey viewSecretKey, List<uint32_t> @out, ref uint64_t amount)
+	public static bool findOutputsToAccount(CryptoNote.TransactionPrefix transaction, AccountPublicAddress addr, SecretKey viewSecretKey, List<uint> @out, ref ulong amount)
 	{
 	  AccountKeys keys = new AccountKeys();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -30583,7 +30583,7 @@ namespace CryptoNote
 
 	  amount = 0;
 	  size_t keyIndex = 0;
-	  uint32_t outputIndex = 0;
+	  uint outputIndex = 0;
 
 	  Crypto.KeyDerivation derivation = new Crypto.KeyDerivation();
 	  generate_key_derivation(txPubKey, keys.viewSecretKey, derivation);
@@ -30640,9 +30640,9 @@ namespace CryptoNote
 	  }
 	}
 
-	public static std::unique_ptr<IUpgradeDetector> makeUpgradeDetector(uint8_t targetVersion, uint32_t upgradeIndex)
+	public static std::unique_ptr<IUpgradeDetector> makeUpgradeDetector(ushort targetVersion, uint upgradeIndex)
 	{
-	  return std::unique_ptr<SimpleUpgradeDetector>(new SimpleUpgradeDetector(new uint8_t(targetVersion), new uint32_t(upgradeIndex)));
+	  return std::unique_ptr<SimpleUpgradeDetector>(new SimpleUpgradeDetector(new ushort(targetVersion), new uint(upgradeIndex)));
 	}
 	public static bool post_notify<t_parametr>(IP2pEndpoint p2p, t_parametr.request arg, CryptoNoteConnectionContext context)
 	{
@@ -30697,7 +30697,7 @@ namespace CryptoNote
 		std::copy(block.GetEnumerator(), block.end(), std::back_inserter(rawBlock.block));
 	std::transform(transactions.GetEnumerator(), transactions.end(), std::back_inserter(rawBlock.transactions), (string s) =>
 	{
-	  return new List<uint8_t>(s.GetEnumerator(), s.end());
+	  return new List<ushort>(s.GetEnumerator(), s.end());
 	});
 	  }
 	  else
@@ -30705,7 +30705,7 @@ namespace CryptoNote
 		block.reserve(rawBlock.block.size());
 		transactions.Capacity = rawBlock.transactions.Count;
 		std::copy(rawBlock.block.begin(), rawBlock.block.end(), std::back_inserter(block));
-	std::transform(rawBlock.transactions.GetEnumerator(), rawBlock.transactions.end(), std::back_inserter(transactions), (List<uint8_t> s) =>
+	std::transform(rawBlock.transactions.GetEnumerator(), rawBlock.transactions.end(), std::back_inserter(transactions), (List<ushort> s) =>
 	{
 	  return (string)(s.GetEnumerator(), s.end());
 	});
@@ -30731,13 +30731,13 @@ namespace CryptoNote
 		request.txs.Capacity = transactions.Count;
 	std::transform(transactions.GetEnumerator(), transactions.end(), std::back_inserter(request.txs), (string s) =>
 	{
-	  return new List<uint8_t>(s.GetEnumerator(), s.end());
+	  return new List<ushort>(s.GetEnumerator(), s.end());
 	});
 	  }
 	  else
 	  {
 		transactions.Capacity = request.txs.Count;
-	std::transform(request.txs.GetEnumerator(), request.txs.end(), std::back_inserter(transactions), (List<uint8_t> s) =>
+	std::transform(request.txs.GetEnumerator(), request.txs.end(), std::back_inserter(transactions), (List<ushort> s) =>
 	{
 	  return (string)(s.GetEnumerator(), s.end());
 	});
@@ -30755,7 +30755,7 @@ namespace CryptoNote
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <typename Command, typename Handler>
-	public static int notifyAdaptor<Command, Handler>(List<uint8_t> reqBuf, CryptoNoteConnectionContext ctx, Handler handler)
+	public static int notifyAdaptor<Command, Handler>(List<ushort> reqBuf, CryptoNoteConnectionContext ctx, Handler handler)
 	{
 
 	  int command = Command.ID;
@@ -30781,10 +30781,10 @@ namespace CryptoNote
 	}
 
 	/* WARNING: If you get a compiler error pointing to this line, when serializing
-	   a uint64_t, or other numeric type, this is due to your compiler treating some
+	   a ulong, or other numeric type, this is due to your compiler treating some
 	   typedef's differently, so it does not correspond to one of the numeric
 	   types above. I tried using some template hackery to get around this, but
-	   it did not work. I resorted to just using a uint64_t instead. */
+	   it did not work. I resorted to just using a ulong instead. */
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<typename T>
 	public static void serialize<T>(T value, ISerializer serializer)
@@ -30824,7 +30824,7 @@ namespace CryptoNote
 	  {
 		serializer.binary(blob, new Common.StringView(name));
 
-		uint64_t count = blob.Length / sizeof(T);
+		ulong count = blob.Length / sizeof(T);
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on this variable, so pointers on this variable are left unchanged:
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 		T * ptr = reinterpret_cast<const T>(blob.data());
@@ -30856,7 +30856,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template <typename Cont>
 	public static bool serializeContainer<Cont>(Cont value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-	  uint64_t size = value.size();
+	  ulong size = value.size();
 	  if (!serializer.beginArray(size, new Common.StringView(name)))
 	  {
 		if (serializer.type() == ISerializer.INPUT)
@@ -30920,7 +30920,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template<typename MapT, typename ReserveOp>
 	public static bool serializeMap<MapT, ReserveOp>(MapT value, Common.StringView name, CryptoNote.ISerializer serializer, ReserveOp reserve)
 	{
-	  uint64_t size = value.size();
+	  ulong size = value.size();
 
 	  if (!serializer.beginArray(size, new Common.StringView(name)))
 	  {
@@ -30936,7 +30936,7 @@ namespace CryptoNote
 	  {
 		reserve(size);
 
-		for (uint64_t i = 0; i < size; ++i)
+		for (ulong i = 0; i < size; ++i)
 		{
 		  MapT.key_type key = new MapT.key_type();
 		  MapT.mapped_type v = new MapT.mapped_type();
@@ -30969,7 +30969,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template<typename SetT>
 	public static bool serializeSet<SetT>(SetT value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-	  uint64_t size = value.size();
+	  ulong size = value.size();
 
 	  if (!serializer.beginArray(size, new Common.StringView(name)))
 	  {
@@ -30983,7 +30983,7 @@ namespace CryptoNote
 
 	  if (serializer.type() == CryptoNote.ISerializer.INPUT)
 	  {
-		for (uint64_t i = 0; i < size; ++i)
+		for (ulong i = 0; i < size; ++i)
 		{
 		  SetT.value_type key = new SetT.value_type();
 		  serializer.functorMethod(key, "");
@@ -31021,7 +31021,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template<typename K, typename V, typename Hash>
 	public static bool serialize<K, V, Hash>(Dictionary<K, V, Hash> value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (uint64_t size) =>
+  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (ulong size) =>
   {
 	  value.reserve(size);
   });
@@ -31031,7 +31031,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template<typename K, typename V, typename Hash>
 	public static bool serialize<K, V, Hash>(std::unordered_multimap<K, V, Hash> value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (uint64_t size) =>
+  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (ulong size) =>
   {
 	  value.reserve(size);
   });
@@ -31041,7 +31041,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template<typename K, typename V, typename Hash>
 	public static bool serialize<K, V, Hash>(SortedDictionary<K, V, Hash> value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (uint64_t size) =>
+  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (ulong size) =>
   {
   });
 	}
@@ -31050,16 +31050,16 @@ namespace CryptoNote
 //ORIGINAL LINE: template<typename K, typename V, typename Hash>
 	public static bool serialize<K, V, Hash>(std::multimap<K, V, Hash> value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (uint64_t size) =>
+  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (ulong size) =>
   {
   });
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: C++ 'constraints' are not converted by C++ to C# Converter:
-	//ORIGINAL LINE: template<uint64_t size>
+	//ORIGINAL LINE: template<ulong size>
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<typename size>
-	public static bool serialize<size>(List<uint8_t> value, Common.StringView name, CryptoNote.ISerializer s)
+	public static bool serialize<size>(List<ushort> value, Common.StringView name, CryptoNote.ISerializer s)
 	{
 	  return s.binary(value.data(), value.Count, new Common.StringView(name));
 	}
@@ -31076,7 +31076,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template <typename Element, typename Iterator>
 	public static void writeSequence<Element, Iterator>(Iterator begin, Iterator end, Common.StringView name, ISerializer s)
 	{
-	  uint64_t size = std::distance(begin, end);
+	  ulong size = std::distance(begin, end);
 	  s.beginArray(size, new Common.StringView(name));
 	  for (Iterator i = begin; i != end; ++i)
 	  {
@@ -31090,7 +31090,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template <typename Element, typename Iterator>
 	public static void readSequence<Element, Iterator>(Iterator outputIterator, Common.StringView name, ISerializer s)
 	{
-	  uint64_t size = 0;
+	  ulong size = 0;
 	  // array of zero size is not written in KVBinaryOutputStreamSerializer
 	  if (!s.beginArray(size, new Common.StringView(name)))
 	  {
@@ -31108,10 +31108,10 @@ namespace CryptoNote
 	}
 
 	//convinience function since we change block height type
-	//void serializeBlockHeight(ISerializer s, uint32_t blockHeight, Common::StringView name);Tangible Method Implementation Not FoundCryptoNote-serializeBlockHeight
+	//void serializeBlockHeight(ISerializer s, uint blockHeight, Common::StringView name);Tangible Method Implementation Not FoundCryptoNote-serializeBlockHeight
 
 	//convinience function since we change global output index type
-	//void serializeGlobalOutputIndex(ISerializer s, uint32_t globalOutputIndex, Common::StringView name);Tangible Method Implementation Not FoundCryptoNote-serializeGlobalOutputIndex
+	//void serializeGlobalOutputIndex(ISerializer s, uint globalOutputIndex, Common::StringView name);Tangible Method Implementation Not FoundCryptoNote-serializeGlobalOutputIndex
 
 	//void serialize(TransactionOutputDetails output, ISerializer serializer);Tangible Method Implementation Not FoundCryptoNote-serialize
 	//void serialize(TransactionOutputReferenceDetails outputReference, ISerializer serializer);Tangible Method Implementation Not FoundCryptoNote-serialize
@@ -31185,7 +31185,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template <typename T>
 	public static void loadFromJsonValue<T>(List<T> v, Common.JsonValue js)
 	{
-	  for (uint64_t i = 0; i < js.size(); ++i)
+	  for (ulong i = 0; i < js.size(); ++i)
 	  {
 		v.Add(Common.GlobalMembers.getValueAs<T>(js.functorMethod[i]));
 	  }
@@ -31193,7 +31193,7 @@ namespace CryptoNote
 
 	public static void loadFromJsonValue(AddressBook v, Common.JsonValue js)
 	{
-	  for (uint64_t i = 0; i < js.size(); ++i)
+	  for (ulong i = 0; i < js.size(); ++i)
 	  {
 		AddressBookEntry type = new AddressBookEntry();
 		loadFromJsonValue(type, js.functorMethod[i]);
@@ -31205,7 +31205,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template <typename T>
 	public static void loadFromJsonValue<T>(LinkedList<T> v, Common.JsonValue js)
 	{
-	  for (uint64_t i = 0; i < js.size(); ++i)
+	  for (ulong i = 0; i < js.size(); ++i)
 	  {
 		v.AddLast(Common.GlobalMembers.getValueAs<T>(js.functorMethod[i]));
 	  }
@@ -31269,7 +31269,7 @@ namespace CryptoNote
 	  }
 	}
 
-	public static readonly int32_t LEVIN_PROTOCOL_RETCODE_SUCCESS = 1;
+	public static readonly int LEVIN_PROTOCOL_RETCODE_SUCCESS = 1;
 
 	public static readonly size_t CONCURRENCY_LEVEL = std::thread.hardware_concurrency();
 
@@ -31335,11 +31335,11 @@ namespace CryptoNote
 	  s.functorMethod(response.status, "response.status");
 	}
 
-	public static readonly int32_t LEVIN_PROTOCOL_RETCODE_SUCCESS = 1;
+	public static readonly int LEVIN_PROTOCOL_RETCODE_SUCCESS = 1;
 
 	public static readonly command_line.arg_descriptor<string> arg_p2p_bind_ip = new command_line.arg_descriptor<string>("p2p-bind-ip", "Interface for p2p network protocol", "0.0.0.0");
 	public static readonly command_line.arg_descriptor<string> arg_p2p_bind_port = new command_line.arg_descriptor<string>("p2p-bind-port", "Port for p2p network protocol", std::to_string(CryptoNote.P2P_DEFAULT_PORT));
-	public static readonly command_line.arg_descriptor<uint32_t> arg_p2p_external_port = new command_line.arg_descriptor<uint32_t>("p2p-external-port", "External port for p2p network protocol (if port forwarding used with NAT)", 0);
+	public static readonly command_line.arg_descriptor<uint> arg_p2p_external_port = new command_line.arg_descriptor<uint>("p2p-external-port", "External port for p2p network protocol (if port forwarding used with NAT)", 0);
 	public static readonly command_line.arg_descriptor<bool> arg_p2p_allow_local_ip = new command_line.arg_descriptor<bool>("allow-local-ip", "Allow local ip add to peer list, mostly in debug purposes");
 	public static readonly command_line.arg_descriptor<List<string>> arg_p2p_add_peer = new command_line.arg_descriptor<List<string>>("add-peer", "Manually add peer to local peerlist");
 	public static readonly command_line.arg_descriptor<List<string>> arg_p2p_add_priority_node = new command_line.arg_descriptor<List<string>>("add-priority-node", "Specify list of peers to connect to and attempt to keep the connection open");
@@ -31359,7 +31359,7 @@ namespace CryptoNote
 	  }
 	  return ss.str();
 	}
-	  public static int invokeAdaptor<Command, Handler>(List<uint8_t> reqBuf, ref List<uint8_t> resBuf, P2pConnectionContext ctx, Handler handler)
+	  public static int invokeAdaptor<Command, Handler>(List<ushort> reqBuf, ref List<ushort> resBuf, P2pConnectionContext ctx, Handler handler)
 	  {
 		int command = Command.ID;
 
@@ -31400,7 +31400,7 @@ namespace CryptoNote
 	  foreach (string peer in peerList)
 	  {
 		PeerlistEntry peerListEntry = new PeerlistEntry();
-		peerListEntry.id = Crypto.GlobalMembers.rand<uint64_t>();
+		peerListEntry.id = Crypto.GlobalMembers.rand<ulong>();
 		if (!GlobalMembers.parsePeerFromString(peerListEntry.adr, peer))
 		{
 		  return false;
@@ -31410,11 +31410,11 @@ namespace CryptoNote
 	  return true;
 	}
 
-	public static P2pContext.Message makeReply(uint32_t command, List<uint8_t> data, uint32_t returnCode)
+	public static P2pContext.Message makeReply(uint command, List<ushort> data, uint returnCode)
 	{
-	  return new P2pContext.Message(new P2pMessage({command, data}), P2pContext.Message.REPLY, new uint32_t(returnCode));
+	  return new P2pContext.Message(new P2pMessage({command, data}), P2pContext.Message.REPLY, new uint(returnCode));
 	}
-	public static P2pContext.Message makeRequest(uint32_t command, List<uint8_t> data)
+	public static P2pContext.Message makeRequest(uint command, List<ushort> data)
 	{
 	  return new P2pContext.Message(new P2pMessage({command, data}), P2pContext.Message.REQUEST);
 	}
@@ -31468,12 +31468,12 @@ namespace CryptoNote
 	public static LinkedList<PeerlistEntry> fixTimeDelta(LinkedList<PeerlistEntry> peerlist, time_t remoteTime)
 	{
 	  //fix time delta
-	  int64_t delta = time(null) - remoteTime;
+	  long delta = time(null) - remoteTime;
 	  LinkedList<PeerlistEntry> peerlistCopy = new LinkedList<PeerlistEntry>(peerlist);
 
 	  foreach (PeerlistEntry be in peerlistCopy)
 	  {
-		if (be.last_seen > uint64_t(remoteTime))
+		if (be.last_seen > ulong(remoteTime))
 		{
 		  throw new System.Exception("Invalid peerlist entry (time in future)");
 		}
@@ -31657,7 +31657,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 			"/json_rpc", {std::bind(RpcServer.processJsonRpcRequest, std::placeholders._1, std::placeholders._2, std::placeholders._3), true}
 		}
 	};
-	  public static uint64_t slow_memmem(object start_buff, size_t buflen, object pat, size_t patlen)
+	  public static ulong slow_memmem(object start_buff, size_t buflen, object pat, size_t patlen)
 	  {
 		object buf = start_buff;
 		object end = (string)buf + buflen - patlen;
@@ -31678,9 +31678,9 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 		return 0;
 	  }
 
-	public static uint64_t get_block_reward(BlockTemplate blk)
+	public static ulong get_block_reward(BlockTemplate blk)
 	{
-	  uint64_t reward = 0;
+	  ulong reward = 0;
 	  foreach (TransactionOutput @out in blk.baseTransaction.outputs)
 	  {
 		reward += @out.amount;
@@ -31723,18 +31723,18 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 	  if (serializer.type() == ISerializer.OUTPUT)
 	  {
 		BinaryVariantTagGetter tagGetter = new BinaryVariantTagGetter();
-		uint8_t tag = boost::apply_visitor(tagGetter.functorMethod, input);
-		serializer.binary(tag, sizeof(uint8_t), "type");
+		ushort tag = boost::apply_visitor(tagGetter.functorMethod, input);
+		serializer.binary(tag, sizeof(ushort), "type");
 
 		VariantSerializer visitor = new VariantSerializer(serializer.functorMethod, "data");
 		boost::apply_visitor(visitor.functorMethod, input);
 	  }
 	  else
 	  {
-		uint8_t tag = new uint8_t();
-		serializer.binary(tag, sizeof(uint8_t), "type");
+		ushort tag = new ushort();
+		serializer.binary(tag, sizeof(ushort), "type");
 
-		GlobalMembers.getVariantValue(serializer.functorMethod, new uint8_t(tag), ref input);
+		GlobalMembers.getVariantValue(serializer.functorMethod, new ushort(tag), ref input);
 	  }
 	}
 
@@ -31765,9 +31765,9 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 	  //serializer(transaction.signatures, "signatures");
 	  if (serializer.type() == ISerializer.OUTPUT)
 	  {
-		List<Tuple<uint64_t, Crypto.Signature>> signaturesForSerialization = new List<Tuple<uint64_t, Crypto.Signature>>();
+		List<Tuple<ulong, Crypto.Signature>> signaturesForSerialization = new List<Tuple<ulong, Crypto.Signature>>();
 		signaturesForSerialization.Capacity = transaction.signatures.Count;
-		uint64_t ctr = 0;
+		ulong ctr = 0;
 		foreach (var signaturesV in transaction.signatures)
 		{
 		  foreach (var signature in signaturesV)
@@ -31776,17 +31776,17 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 		  }
 		  ++ctr;
 		}
-		uint64_t size = transaction.signatures.Count;
+		ulong size = transaction.signatures.Count;
 		serializer.functorMethod(size, "signaturesSize");
 		serializer.functorMethod(signaturesForSerialization, "signatures");
 	  }
 	  else
 	  {
-		uint64_t size = 0;
+		ulong size = 0;
 		serializer.functorMethod(size, "signaturesSize");
 		transaction.signatures.Resize(size);
 
-		List<Tuple<uint64_t, Crypto.Signature>> signaturesForSerialization = new List<Tuple<uint64_t, Crypto.Signature>>();
+		List<Tuple<ulong, Crypto.Signature>> signaturesForSerialization = new List<Tuple<ulong, Crypto.Signature>>();
 		serializer.functorMethod(signaturesForSerialization, "signatures");
 
 		foreach (var signatureWithIndex in signaturesForSerialization)
@@ -31821,7 +31821,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 	  serializer.functorMethod(block.transactions, "transactions");
 	}
 
-	public static void getVariantValue(CryptoNote.ISerializer serializer, uint8_t tag, ref boost::variant<CryptoNote.BaseInputDetails, CryptoNote.KeyInputDetails> in)
+	public static void getVariantValue(CryptoNote.ISerializer serializer, ushort tag, ref boost::variant<CryptoNote.BaseInputDetails, CryptoNote.KeyInputDetails> in)
 	{
 	  switch ((SerializationTag)tag)
 	  {
@@ -31890,7 +31890,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 	  {
 		serializer.binary(blob, new Common.StringView(name));
 
-		uint64_t count = blob.Length / sizeof(T);
+		ulong count = blob.Length / sizeof(T);
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on this variable, so pointers on this variable are left unchanged:
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 		T * ptr = reinterpret_cast<const T>(blob.data());
@@ -31922,7 +31922,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template <typename Cont>
 	public static bool serializeContainer<Cont>(Cont value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-	  uint64_t size = value.size();
+	  ulong size = value.size();
 	  if (!serializer.beginArray(size, new Common.StringView(name)))
 	  {
 		if (serializer.type() == ISerializer.INPUT)
@@ -31986,7 +31986,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template<typename MapT, typename ReserveOp>
 	public static bool serializeMap<MapT, ReserveOp>(MapT value, Common.StringView name, CryptoNote.ISerializer serializer, ReserveOp reserve)
 	{
-	  uint64_t size = value.size();
+	  ulong size = value.size();
 
 	  if (!serializer.beginArray(size, new Common.StringView(name)))
 	  {
@@ -32002,7 +32002,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 	  {
 		reserve(size);
 
-		for (uint64_t i = 0; i < size; ++i)
+		for (ulong i = 0; i < size; ++i)
 		{
 		  MapT.key_type key = new MapT.key_type();
 		  MapT.mapped_type v = new MapT.mapped_type();
@@ -32035,7 +32035,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template<typename SetT>
 	public static bool serializeSet<SetT>(SetT value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-	  uint64_t size = value.size();
+	  ulong size = value.size();
 
 	  if (!serializer.beginArray(size, new Common.StringView(name)))
 	  {
@@ -32049,7 +32049,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 
 	  if (serializer.type() == CryptoNote.ISerializer.INPUT)
 	  {
-		for (uint64_t i = 0; i < size; ++i)
+		for (ulong i = 0; i < size; ++i)
 		{
 		  SetT.value_type key = new SetT.value_type();
 		  serializer.functorMethod(key, "");
@@ -32087,7 +32087,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template<typename K, typename V, typename Hash>
 	public static bool serialize<K, V, Hash>(Dictionary<K, V, Hash> value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (uint64_t size) =>
+  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (ulong size) =>
   {
 	  value.reserve(size);
   });
@@ -32097,7 +32097,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template<typename K, typename V, typename Hash>
 	public static bool serialize<K, V, Hash>(std::unordered_multimap<K, V, Hash> value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (uint64_t size) =>
+  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (ulong size) =>
   {
 	  value.reserve(size);
   });
@@ -32107,7 +32107,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template<typename K, typename V, typename Hash>
 	public static bool serialize<K, V, Hash>(SortedDictionary<K, V, Hash> value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (uint64_t size) =>
+  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (ulong size) =>
   {
   });
 	}
@@ -32116,16 +32116,16 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template<typename K, typename V, typename Hash>
 	public static bool serialize<K, V, Hash>(std::multimap<K, V, Hash> value, Common.StringView name, CryptoNote.ISerializer serializer)
 	{
-  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (uint64_t size) =>
+  return serializeMap(value, new Common.StringView(name), serializer.functorMethod, (ulong size) =>
   {
   });
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: C++ 'constraints' are not converted by C++ to C# Converter:
-	//ORIGINAL LINE: template<uint64_t size>
+	//ORIGINAL LINE: template<ulong size>
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<typename size>
-	public static bool serialize<size>(List<uint8_t> value, Common.StringView name, CryptoNote.ISerializer s)
+	public static bool serialize<size>(List<ushort> value, Common.StringView name, CryptoNote.ISerializer s)
 	{
 	  return s.binary(value.data(), value.Count, new Common.StringView(name));
 	}
@@ -32142,7 +32142,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template <typename Element, typename Iterator>
 	public static void writeSequence<Element, Iterator>(Iterator begin, Iterator end, Common.StringView name, ISerializer s)
 	{
-	  uint64_t size = std::distance(begin, end);
+	  ulong size = std::distance(begin, end);
 	  s.beginArray(size, new Common.StringView(name));
 	  for (Iterator i = begin; i != end; ++i)
 	  {
@@ -32156,7 +32156,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 //ORIGINAL LINE: template <typename Element, typename Iterator>
 	public static void readSequence<Element, Iterator>(Iterator outputIterator, Common.StringView name, ISerializer s)
 	{
-	  uint64_t size = 0;
+	  ulong size = 0;
 	  // array of zero size is not written in KVBinaryOutputStreamSerializer
 	  if (!s.beginArray(size, new Common.StringView(name)))
 	  {
@@ -32174,24 +32174,24 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 	}
 
 	//convinience function since we change block height type
-	public static void serializeBlockHeight(ISerializer s, ref uint32_t blockHeight, Common.StringView name)
+	public static void serializeBlockHeight(ISerializer s, ref uint blockHeight, Common.StringView name)
 	{
 	  if (s.type() == ISerializer.INPUT)
 	  {
-		uint64_t height = new uint64_t();
+		ulong height = new ulong();
 		s.functorMethod(height, name);
 
-		if (height == uint64_t.MaxValue)
+		if (height == ulong.MaxValue)
 		{
-		  blockHeight = uint32_t.MaxValue;
+		  blockHeight = uint.MaxValue;
 		}
-		else if (height > uint32_t.MaxValue && height < uint64_t.MaxValue)
+		else if (height > uint.MaxValue && height < ulong.MaxValue)
 		{
 		  throw new System.Exception("Deserialization error: wrong value");
 		}
 		else
 		{
-		  blockHeight = (uint32_t)height;
+		  blockHeight = (uint)height;
 		}
 	  }
 	  else
@@ -32201,7 +32201,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 	}
 
 	//convinience function since we change global output index type
-	public static void serializeGlobalOutputIndex(ISerializer s, uint32_t globalOutputIndex, Common.StringView name)
+	public static void serializeGlobalOutputIndex(ISerializer s, uint globalOutputIndex, Common.StringView name)
 	{
 	  serializeBlockHeight(s.functorMethod, ref globalOutputIndex, new Common.StringView(name));
 	}
@@ -33256,20 +33256,20 @@ namespace Mnemonics
 
 			var wordIndexes = GetWordIndexes(new List<string>(words));
 
-			List<uint8_t> data = new List<uint8_t>();
+			List<ushort> data = new List<ushort>();
 
 			for (size_t i = 0; i < words.Count - 1; i += 3)
 			{
 				/* Take the indexes of these three words in the word list */
-				uint32_t w1 = wordIndexes[i];
-				uint32_t w2 = wordIndexes[i + 1];
-				uint32_t w3 = wordIndexes[i + 2];
+				uint w1 = wordIndexes[i];
+				uint w2 = wordIndexes[i + 1];
+				uint w3 = wordIndexes[i + 2];
 
 				/* Word list length */
 				size_t wlLen = WordList.English.size();
 
 				/* no idea what this does lol */
-				uint32_t val = (uint32_t)(w1 + wlLen * (((wlLen - w1) + w2) % wlLen) + wlLen * wlLen * (((wlLen - w2) + w3) % wlLen));
+				uint val = (uint)(w1 + wlLen * (((wlLen - w1) + w2) % wlLen) + wlLen * wlLen * (((wlLen - w2) + w3) % wlLen));
 
 				/* Don't know what this is testing either */
 				if ((val % wlLen == w1) == null)
@@ -33277,9 +33277,9 @@ namespace Mnemonics
 					return new Tuple<string, Crypto.SecretKey>("Mnemonic seed is invalid!", key);
 				}
 
-				/* Interpret val as 4 uint8_t's */
+				/* Interpret val as 4 ushort's */
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-				var ptr = reinterpret_cast<const uint8_t>(val);
+				var ptr = reinterpret_cast<const ushort>(val);
 
 				/* Append to private key */
 				for (int j = 0; j < 4; j++)
@@ -33300,18 +33300,18 @@ namespace Mnemonics
 
 			for (int i = 0; i < 32 - 1; i += 4)
 			{
-				/* Read the array as a uint32_t array */
-				var ptr = (uint32_t) privateKey.data[i];
+				/* Read the array as a uint array */
+				var ptr = (uint) privateKey.data[i];
 
 				/* Take the first element of the array (since we have already 
 				   done the offset */
-				uint32_t val = ptr[0];
+				uint val = ptr[0];
 
-				uint32_t wlLen = WordList.English.size();
+				uint wlLen = WordList.English.size();
 
-				uint32_t w1 = val % wlLen;
-				uint32_t w2 = ((val / wlLen) + w1) % wlLen;
-				uint32_t w3 = (((val / wlLen) / wlLen) + w2) % wlLen;
+				uint w1 = val % wlLen;
+				uint w2 = ((val / wlLen) + w1) % wlLen;
+				uint w3 = (((val / wlLen) / wlLen) + w2) % wlLen;
 
 				words.Add(WordList.English[w1]);
 				words.Add(WordList.English[w2]);
@@ -33361,7 +33361,7 @@ namespace Mnemonics
 			}
 
 			/* Hash the data */
-			uint64_t hash = CRC32.crc32(trimmed);
+			ulong hash = CRC32.crc32(trimmed);
 
 			/* Modulus the hash by the word length to get the index of the 
 			   checksum word */
@@ -33664,14 +33664,14 @@ namespace System
 	  return this;
 	}
 
-	public static uint8_t readUint8(string source, ref size_t offset)
+	public static ushort readUint8(string source, ref size_t offset)
 	{
 	  if (offset == source.Length || source[offset] < '0' || source[offset] > '9')
 	  {
 		throw new System.Exception("Unable to read value from string");
 	  }
 
-	  uint8_t value = source[offset] - '0';
+	  ushort value = source[offset] - '0';
 	  if (offset + 1 == source.Length || source[offset + 1] < '0' || source[offset + 1] > '9')
 	  {
 		offset = offset + 1;

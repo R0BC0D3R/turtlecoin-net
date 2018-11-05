@@ -19,13 +19,13 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define inline __inline
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define SWAP32LE IDENT32
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -104,10 +104,10 @@ namespace Tools
 		{
 		  m_data.Resize(GlobalMembers.alphabet[GlobalMembers.alphabet_size - 1] - GlobalMembers.alphabet[0] + 1, -1);
 
-		  for (uint64_t i = 0; i < GlobalMembers.alphabet_size; ++i)
+		  for (ulong i = 0; i < GlobalMembers.alphabet_size; ++i)
 		  {
-			uint64_t idx = (uint64_t)(GlobalMembers.alphabet[i] - GlobalMembers.alphabet[0]);
-			m_data[idx] = (int8_t)i;
+			ulong idx = (ulong)(GlobalMembers.alphabet[i] - GlobalMembers.alphabet[0]);
+			m_data[idx] = (short)i;
 		  }
 		}
 
@@ -115,13 +115,13 @@ namespace Tools
 //ORIGINAL LINE: int operator ()(char letter) const
 		public static int functorMethod(char letter)
 		{
-		  uint64_t idx = (uint64_t)(letter - GlobalMembers.alphabet[0]);
+		  ulong idx = (ulong)(letter - GlobalMembers.alphabet[0]);
 		  return idx < m_data.Count ? m_data[idx] : -1;
 		}
 
 		public static reverse_alphabet instance = new reverse_alphabet();
 
-		private List<int8_t> m_data = new List<int8_t>();
+		private List<short> m_data = new List<short>();
 	  }
 
 
@@ -130,15 +130,15 @@ namespace Tools
 		public decoded_block_sizes()
 		{
 		  m_data.Resize(GlobalMembers.encoded_block_sizes[GlobalMembers.full_block_size] + 1, -1);
-		  for (uint64_t i = 0; i <= GlobalMembers.full_block_size; ++i)
+		  for (ulong i = 0; i <= GlobalMembers.full_block_size; ++i)
 		  {
 			m_data[GlobalMembers.encoded_block_sizes[i]] = (int)i;
 		  }
 		}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: int operator ()(uint64_t encoded_block_size) const
-		public static int functorMethod(uint64_t encoded_block_size)
+//ORIGINAL LINE: int operator ()(ulong encoded_block_size) const
+		public static int functorMethod(ulong encoded_block_size)
 		{
 		  Debug.Assert(encoded_block_size <= GlobalMembers.full_encoded_block_size);
 		  return m_data[encoded_block_size];

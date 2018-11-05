@@ -30,15 +30,15 @@ namespace CryptoNote
 //C++ TO C# CONVERTER NOTE: C# does not allow anonymous namespaces:
 //namespace
 
-public class BinaryVariantTagGetter: boost::static_visitor<uint8_t>
+public class BinaryVariantTagGetter: boost::static_visitor<ushort>
 {
-  public static uint8_t functorMethod(CryptoNote.BaseInputDetails UnnamedParameter)
+  public static ushort functorMethod(CryptoNote.BaseInputDetails UnnamedParameter)
   {
-	  return (uint8_t)SerializationTag.Base;
+	  return (ushort)SerializationTag.Base;
   }
-  public static uint8_t functorMethod(CryptoNote.KeyInputDetails UnnamedParameter)
+  public static ushort functorMethod(CryptoNote.KeyInputDetails UnnamedParameter)
   {
-	  return (uint8_t)SerializationTag.Key;
+	  return (ushort)SerializationTag.Key;
   }
 }
 

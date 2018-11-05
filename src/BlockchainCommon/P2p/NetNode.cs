@@ -58,7 +58,7 @@ namespace CryptoNote
 	  NOTIFY
 	}
 
-	public P2pMessage(Type type, uint32_t command, BinaryArray buffer, int32_t returnCode = 0)
+	public P2pMessage(Type type, uint command, BinaryArray buffer, int returnCode = 0)
 	{
 		this.type = new CryptoNote.P2pMessage.Type(type);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -87,16 +87,16 @@ namespace CryptoNote
 	}
 
 	public Type type;
-	public uint32_t command = new uint32_t();
+	public uint command = new uint();
 	public readonly BinaryArray buffer = new BinaryArray();
-	public int32_t returnCode = new int32_t();
+	public int returnCode = new int();
   }
 
   public class P2pConnectionContext : CryptoNoteConnectionContext
   {
 
 	public System.Context context;
-	public uint64_t peerId = new uint64_t();
+	public ulong peerId = new ulong();
 	public System.TcpConnection connection = new System.TcpConnection();
 
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
@@ -168,9 +168,9 @@ namespace CryptoNote
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t writeDuration(std::chrono::steady_clock::time_point now) const;
+//ORIGINAL LINE: ulong writeDuration(std::chrono::steady_clock::time_point now) const;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	uint64_t writeDuration(std::chrono::steady_clock::time_point now);
+//	ulong writeDuration(std::chrono::steady_clock::time_point now);
 
 	private Logging.LoggerRef logger = new Logging.LoggerRef();
 	private std::chrono.steady_clock.time_point writeOperationStartTime = new std::chrono.steady_clock.time_point();
@@ -293,9 +293,9 @@ namespace CryptoNote
 
 	  //try to bind
 	  logger.functorMethod(INFO) << "Binding on " << m_bind_ip << ":" << m_port;
-	  m_listeningPort = Common.GlobalMembers.fromString<uint16_t>(m_port);
+	  m_listeningPort = Common.GlobalMembers.fromString<ushort>(m_port);
 
-	  m_listener = System.TcpListener(m_dispatcher, System.Ipv4Address(m_bind_ip), (uint16_t)m_listeningPort);
+	  m_listener = System.TcpListener(m_dispatcher, System.Ipv4Address(m_bind_ip), (ushort)m_listeningPort);
 
 	  logger.functorMethod(INFO) << "Net service binded on " << m_bind_ip << ":" << m_listeningPort;
 
@@ -304,7 +304,7 @@ namespace CryptoNote
 		logger.functorMethod(INFO) << "External port defined as " << m_external_port;
 	  }
 
-	  GlobalMembers.addPortMapping(logger.functorMethod, new uint32_t(m_listeningPort));
+	  GlobalMembers.addPortMapping(logger.functorMethod, new uint(m_listeningPort));
 
 	  return true;
 	}
@@ -331,7 +331,7 @@ namespace CryptoNote
 	  logger.functorMethod(INFO, BRIGHT_YELLOW) << "Stop signal sent, please only EXIT or CTRL+C one time to avoid stalling the shutdown process.";
 	  return true;
 	}
-	public uint32_t get_this_peer_port()
+	public uint get_this_peer_port()
 	{
 		return m_listeningPort;
 	}
@@ -344,7 +344,7 @@ namespace CryptoNote
 
 	public void serialize(ISerializer s)
 	{
-	  uint8_t version = 1;
+	  ushort version = 1;
 	  s.functorMethod(version, "version");
 
 	  if (version != 1)
@@ -377,7 +377,7 @@ namespace CryptoNote
 
 	//-----------------------------------------------------------------------------------
 
-	public uint64_t get_connections_count()
+	public ulong get_connections_count()
 	{
 	  return m_connections.Count;
 	}
@@ -459,8 +459,8 @@ namespace CryptoNote
 
 	  if (arg.node_data.peer_id != m_config.m_peer_id && arg.node_data.my_port != null)
 	  {
-		uint64_t peer_id_l = new uint64_t(arg.node_data.peer_id);
-		uint32_t port_l = new uint32_t(arg.node_data.my_port);
+		ulong peer_id_l = new ulong(arg.node_data.peer_id);
+		uint port_l = new uint(arg.node_data.my_port);
 
 		if (try_ping(arg.node_data, context))
 		{
@@ -581,8 +581,8 @@ namespace CryptoNote
 #if ALLOW_DEBUG_COMMANDS
 	private bool check_trust(proof_of_trust tr)
 	{
-	  uint64_t local_time = time(null);
-	  uint64_t time_delata = local_time > tr.time != null ? local_time - tr.time : tr.time - local_time;
+	  ulong local_time = time(null);
+	  ulong time_delata = local_time > tr.time != null ? local_time - tr.time : tr.time - local_time;
 
 	  if (time_delata > 24 * 60 * 60)
 	  {
@@ -674,7 +674,7 @@ namespace CryptoNote
 	//-----------------------------------------------------------------------------------
 	private bool make_default_config()
 	{
-	  m_config.m_peer_id = Crypto.GlobalMembers.rand<uint64_t>();
+	  m_config.m_peer_id = Crypto.GlobalMembers.rand<ulong>();
 	  logger.functorMethod(INFO, BRIGHT_WHITE) << "Generated new peer ID: " << m_config.m_peer_id;
 	  return true;
 	}
@@ -750,7 +750,7 @@ namespace CryptoNote
 		logger.functorMethod(Logging.Level.WARNING) << context << "COMMAND_HANDSHAKE Warning, your software may be out of date. Please visit: " << CryptoNote.LATEST_VERSION_URL << " for the latest version.";
 	  }
 
-	  if (!handle_remote_peerlist(rsp.local_peerlist, new uint64_t(rsp.node_data.local_time), context))
+	  if (!handle_remote_peerlist(rsp.local_peerlist, new ulong(rsp.node_data.local_time), context))
 	  {
 		logger.functorMethod(Logging.Level.ERROR) << context << "COMMAND_HANDSHAKE: failed to handle_remote_peerlist(...), closing connection.";
 		return false;
@@ -770,7 +770,7 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: context.peerId = rsp.node_data.peer_id;
 	  context.peerId.CopyFrom(rsp.node_data.peer_id);
-	  m_peerlist.set_peer_just_seen(new uint64_t(rsp.node_data.peer_id), new uint32_t(context.m_remote_ip), new uint32_t(context.m_remote_port));
+	  m_peerlist.set_peer_just_seen(new ulong(rsp.node_data.peer_id), new uint(context.m_remote_ip), new uint(context.m_remote_port));
 
 	  if (rsp.node_data.peer_id == m_config.m_peer_id)
 	  {
@@ -844,7 +844,7 @@ namespace CryptoNote
 //	bool invoke_notify_to_peer(int command, BinaryArray req_buff, CryptoNoteConnectionContext context);
 
 	//-----------------------------------------------------------------------------------
-	private void for_each_connection(Action<CryptoNoteConnectionContext , uint64_t> f)
+	private void for_each_connection(Action<CryptoNoteConnectionContext , ulong> f)
 	{
 	  foreach (var ctx in m_connections)
 	  {
@@ -871,7 +871,7 @@ namespace CryptoNote
 		foreach (string pr_str in perrs)
 		{
 		  PeerlistEntry pe = boost::value_initialized<PeerlistEntry>();
-		  pe.id = Crypto.GlobalMembers.rand<uint64_t>();
+		  pe.id = Crypto.GlobalMembers.rand<ulong>();
 		  bool r = GlobalMembers.parse_peer_from_string(pe.adr, pr_str);
 		  if (!(r))
 		  {
@@ -946,7 +946,7 @@ namespace CryptoNote
 
 	  try
 	  {
-		uint32_t port = Common.GlobalMembers.fromString<uint32_t>(addr.Substring(pos + 1));
+		uint port = Common.GlobalMembers.fromString<uint>(addr.Substring(pos + 1));
 
 		System.Ipv4Resolver resolver = new System.Ipv4Resolver(m_dispatcher);
 		var addr = resolver.resolve(host);
@@ -983,7 +983,7 @@ namespace CryptoNote
 
 	private bool handle_remote_peerlist(LinkedList<PeerlistEntry> peerlist, time_t local_time, CryptoNoteConnectionContext context)
 	{
-	  int64_t delta = 0;
+	  long delta = 0;
 	  LinkedList<PeerlistEntry> peerlist_ = new LinkedList(peerlist);
 	  if (!fix_time_delta(peerlist_, new time_t(local_time), ref delta))
 	  {
@@ -1024,7 +1024,7 @@ namespace CryptoNote
 //	bool merge_peerlist_with_local(ClassicLinkedList<PeerlistEntry> bs);
 
 	//-----------------------------------------------------------------------------------
-	private bool fix_time_delta(LinkedList<PeerlistEntry> local_peerlist, time_t local_time, ref int64_t delta)
+	private bool fix_time_delta(LinkedList<PeerlistEntry> local_peerlist, time_t local_time, ref long delta)
 	{
 	  //fix time delta
 	  time_t now = 0;
@@ -1033,7 +1033,7 @@ namespace CryptoNote
 
 	  foreach (PeerlistEntry be in local_peerlist)
 	  {
-		if (be.last_seen > uint64_t(local_time))
+		if (be.last_seen > ulong(local_time))
 		{
 		  logger.functorMethod(ERROR) << "FOUND FUTURE peerlist for entry " << be.adr << " last_seen: " << be.last_seen << ", local_time(on remote node):" << local_time;
 		  return false;
@@ -1099,7 +1099,7 @@ namespace CryptoNote
 			return false;
 		  }
 		  //and then do grey list
-		  if (!make_expected_connections_count(false, new uint32_t(m_config.m_net_config.connections_count)))
+		  if (!make_expected_connections_count(false, new uint(m_config.m_net_config.connections_count)))
 		  {
 			return false;
 		  }
@@ -1107,12 +1107,12 @@ namespace CryptoNote
 		else
 		{
 		  //start from grey list
-		  if (!make_expected_connections_count(false, new uint32_t(m_config.m_net_config.connections_count)))
+		  if (!make_expected_connections_count(false, new uint(m_config.m_net_config.connections_count)))
 		  {
 			return false;
 		  }
 		  //and then do white list
-		  if (!make_expected_connections_count(true, new uint32_t(m_config.m_net_config.connections_count)))
+		  if (!make_expected_connections_count(true, new uint(m_config.m_net_config.connections_count)))
 		  {
 			return false;
 		  }
@@ -1131,7 +1131,7 @@ namespace CryptoNote
 		return false; //no peers
 	  }
 
-	  size_t max_random_index = Math.Min<uint64_t>(local_peers_count - 1, 20);
+	  size_t max_random_index = Math.Min<ulong>(local_peers_count - 1, 20);
 
 	  SortedSet<size_t> tried_peers = new SortedSet<size_t>();
 
@@ -1170,7 +1170,7 @@ namespace CryptoNote
 
 		logger.functorMethod(DEBUGGING) << "Selected peer: " << pe.id << " " << pe.adr << " [white=" << use_white_list << "] last_seen: " << (pe.last_seen != null ? Common.timeIntervalToString(time(null) - pe.last_seen) : "never");
 
-		if (!try_to_connect_and_handshake_with_new_peer(pe.adr, false, new uint64_t(pe.last_seen), use_white_list))
+		if (!try_to_connect_and_handshake_with_new_peer(pe.adr, false, new ulong(pe.last_seen), use_white_list))
 		{
 		  continue;
 		}
@@ -1179,7 +1179,7 @@ namespace CryptoNote
 	  }
 	  return false;
 	}
-	private bool try_to_connect_and_handshake_with_new_peer(NetworkAddress na, bool just_take_peerlist = false, uint64_t last_seen_stamp = 0, bool white = true)
+	private bool try_to_connect_and_handshake_with_new_peer(NetworkAddress na, bool just_take_peerlist = false, ulong last_seen_stamp = 0, bool white = true)
 	{
 
 	  logger.functorMethod(DEBUGGING) << "Connecting to " << na << " (white=" << white << ", last_seen: " << (last_seen_stamp != null ? Common.timeIntervalToString(time(null) - last_seen_stamp) : "never") << ")...";
@@ -1193,7 +1193,7 @@ namespace CryptoNote
 		  System.Context<System.TcpConnection> connectionContext(m_dispatcher, () =>
 		  {
 			System.TcpConnector connector = new System.TcpConnector(m_dispatcher);
-			return connector.connect(System.Ipv4Address(Common.ipAddressToString(na.ip)), (uint16_t)na.port);
+			return connector.connect(System.Ipv4Address(Common.ipAddressToString(na.ip)), (ushort)na.port);
 		  });
 
 		  System.Context<> timeoutContext(m_dispatcher, () =>
@@ -1334,8 +1334,8 @@ namespace CryptoNote
 		return false;
 	  }
 
-	  uint32_t actual_ip = new uint32_t(context.m_remote_ip);
-	  if (!m_peerlist.is_ip_allowed(new uint32_t(actual_ip)))
+	  uint actual_ip = new uint(context.m_remote_ip);
+	  if (!m_peerlist.is_ip_allowed(new uint(actual_ip)))
 	  {
 		return false;
 	  }
@@ -1351,7 +1351,7 @@ namespace CryptoNote
 		System.Context<> pingContext(m_dispatcher, () =>
 		{
 		  System.TcpConnector connector = new System.TcpConnector(m_dispatcher);
-		  var connection = connector.connect(System.Ipv4Address(ip), (uint16_t)port);
+		  var connection = connector.connect(System.Ipv4Address(ip), (ushort)port);
 		  LevinProtocol(connection).invoke(COMMAND_PING.ID, req, rsp);
 		});
 
@@ -1525,7 +1525,7 @@ namespace CryptoNote
 			  break;
 			}
 
-			List<uint8_t> response = new List<uint8_t>();
+			List<ushort> response = new List<ushort>();
 			bool handled = false;
 			var retcode = handleCommand(cmd, response, ctx, ref handled);
 
@@ -1534,11 +1534,11 @@ namespace CryptoNote
 			{
 			  if (!handled)
 			  {
-				retcode = (int32_t)LevinError.ERROR_CONNECTION_HANDLER_NOT_DEFINED;
+				retcode = (int)LevinError.ERROR_CONNECTION_HANDLER_NOT_DEFINED;
 				response.Clear();
 			  }
 
-			  ctx.pushMessage(new P2pMessage(P2pMessage.REPLY, new uint32_t(cmd.command), std::move(response), retcode));
+			  ctx.pushMessage(new P2pMessage(P2pMessage.REPLY, new uint(cmd.command), std::move(response), retcode));
 			}
 
 			if (ctx.m_state == CryptoNoteConnectionContext.state_shutdown)
@@ -1605,13 +1605,13 @@ namespace CryptoNote
 			switch (msg.type)
 			{
 			case P2pMessage.COMMAND:
-			  proto.sendMessage(new uint32_t(msg.command), msg.buffer, true);
+			  proto.sendMessage(new uint(msg.command), msg.buffer, true);
 			  break;
 			case P2pMessage.NOTIFY:
-			  proto.sendMessage(new uint32_t(msg.command), msg.buffer, false);
+			  proto.sendMessage(new uint(msg.command), msg.buffer, false);
 			  break;
 			case P2pMessage.REPLY:
-			  proto.sendReply(new uint32_t(msg.command), msg.buffer, new int32_t(msg.returnCode));
+			  proto.sendReply(new uint(msg.command), msg.buffer, new int(msg.returnCode));
 			  break;
 			default:
 			  Debug.Assert(false);
@@ -1733,7 +1733,7 @@ namespace CryptoNote
 	private class config
 	{
 	  public network_config m_net_config = new network_config();
-	  public uint64_t m_peer_id = new uint64_t();
+	  public ulong m_peer_id = new ulong();
 
 	  public void serialize(ISerializer s)
 	  {
@@ -1747,9 +1747,9 @@ namespace CryptoNote
 
 	private bool m_have_address;
 	private bool m_first_connection_maker_call;
-	private uint32_t m_listeningPort = new uint32_t();
-	private uint32_t m_external_port = new uint32_t();
-	private uint32_t m_ip_address = new uint32_t();
+	private uint m_listeningPort = new uint();
+	private uint m_external_port = new uint();
+	private uint m_ip_address = new uint();
 	private bool m_allow_local_ip;
 	private bool m_hide_my_port;
 	private string m_p2p_state_filename;
@@ -1774,13 +1774,13 @@ namespace CryptoNote
 	private string m_bind_ip;
 	private string m_port;
 #if ALLOW_DEBUG_COMMANDS
-	private uint64_t m_last_stat_request_time = new uint64_t();
+	private ulong m_last_stat_request_time = new ulong();
 #endif
 	private List<NetworkAddress> m_priority_peers = new List<NetworkAddress>();
 	private List<NetworkAddress> m_exclusive_peers = new List<NetworkAddress>();
 	private List<NetworkAddress> m_seed_nodes = new List<NetworkAddress>();
 	private LinkedList<PeerlistEntry> m_command_line_peers = new LinkedList<PeerlistEntry>();
-	private uint64_t m_peer_livetime = new uint64_t();
+	private ulong m_peer_livetime = new ulong();
 	private boost::uuids.uuid m_network_id = new boost::uuids.uuid();
   }
 }
@@ -1797,7 +1797,7 @@ namespace CryptoNote
 
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t P2pConnectionContext::writeDuration(TimePoint now) const
+//ORIGINAL LINE: ulong P2pConnectionContext::writeDuration(TimePoint now) const
 
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:

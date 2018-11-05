@@ -24,12 +24,12 @@ namespace Crypto
 
 public class EllipticCurvePoint
 {
-  public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+  public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(32);
 }
 
 public class EllipticCurveScalar
 {
-  public uint8_t[] data = Arrays.InitializeWithDefaultInstances<uint8_t>(32);
+  public ushort[] data = Arrays.InitializeWithDefaultInstances<ushort>(32);
 }
 
   public class crypto_ops : System.IDisposable
@@ -201,11 +201,11 @@ public class EllipticCurveScalar
 	{
 	  return this.derive_public_key(derivation, new size_t(output_index), @base, derived_key);
 	}
-	private bool derive_public_key(KeyDerivation derivation, size_t output_index, PublicKey @base, uint8_t prefix, size_t prefixLength, PublicKey derived_key)
+	private bool derive_public_key(KeyDerivation derivation, size_t output_index, PublicKey @base, ushort prefix, size_t prefixLength, PublicKey derived_key)
 	{
 	  return this.derive_public_key(derivation, new size_t(output_index), @base, prefix, new size_t(prefixLength), derived_key);
 	}
-	private static bool derive_public_key(KeyDerivation derivation, size_t output_index, PublicKey @base, uint8_t suffix, size_t suffixLength, PublicKey derived_key)
+	private static bool derive_public_key(KeyDerivation derivation, size_t output_index, PublicKey @base, ushort suffix, size_t suffixLength, PublicKey derived_key)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 	  ge_p3 point1 = new ge_p3();
@@ -260,7 +260,7 @@ public class EllipticCurveScalar
 //ORIGINAL LINE: friend void derive_secret_key(const KeyDerivation &, size_t, const SecretKey &, SecretKey &);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	void derive_secret_key(KeyDerivation UnnamedParameter, size_t UnnamedParameter2, SecretKey UnnamedParameter3, SecretKey UnnamedParameter4);
-	private static void derive_secret_key(KeyDerivation derivation, size_t output_index, SecretKey @base, uint8_t suffix, size_t suffixLength, SecretKey derived_key)
+	private static void derive_secret_key(KeyDerivation derivation, size_t output_index, SecretKey @base, ushort suffix, size_t suffixLength, SecretKey derived_key)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
@@ -270,9 +270,9 @@ public class EllipticCurveScalar
 	  sc_add(reinterpret_cast<byte>(derived_key), reinterpret_cast<const byte>(@base), reinterpret_cast<byte>(scalar));
 	}
 //C++ TO C# CONVERTER TODO TASK: C# has no concept of a 'friend' function:
-//ORIGINAL LINE: friend void derive_secret_key(const KeyDerivation &, size_t, const SecretKey &, const uint8_t*, size_t, SecretKey &);
+//ORIGINAL LINE: friend void derive_secret_key(const KeyDerivation &, size_t, const SecretKey &, const ushort*, size_t, SecretKey &);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	void derive_secret_key(KeyDerivation UnnamedParameter, size_t UnnamedParameter2, SecretKey UnnamedParameter3, uint8_t UnnamedParameter4, size_t UnnamedParameter5, SecretKey UnnamedParameter6);
+//	void derive_secret_key(KeyDerivation UnnamedParameter, size_t UnnamedParameter2, SecretKey UnnamedParameter3, ushort UnnamedParameter4, size_t UnnamedParameter5, SecretKey UnnamedParameter6);
 	private static bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, PublicKey @base)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
@@ -300,7 +300,7 @@ public class EllipticCurveScalar
 	{
 	  return this.underive_public_key(derivation, new size_t(output_index), derived_key, @base);
 	}
-	private static bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, uint8_t suffix, size_t suffixLength, PublicKey @base)
+	private static bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, ushort suffix, size_t suffixLength, PublicKey @base)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 	  ge_p3 point1 = new ge_p3();
@@ -327,7 +327,7 @@ public class EllipticCurveScalar
 
 	/* Inverse function of derive_public_key. It can be used by the receiver to find which "spend" key was used to generate a transaction. This may be useful if the receiver used multiple addresses which only differ in "spend" key.
 	 */
-	private bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, uint8_t prefix, size_t prefixLength, PublicKey @base)
+	private bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, ushort prefix, size_t prefixLength, PublicKey @base)
 	{
 	  return this.underive_public_key(derivation, new size_t(output_index), derived_key, prefix, new size_t(prefixLength), @base);
 	}
@@ -449,7 +449,7 @@ public class EllipticCurveScalar
 	{
 	  return this.scalarmultKey(P, a);
 	}
-	private static void hash_data_to_ec(uint8_t data, uint len, PublicKey key)
+	private static void hash_data_to_ec(ushort data, uint len, PublicKey key)
 	{
 	  Hash h = new Hash();
 	  ge_p2 point = new ge_p2();
@@ -462,7 +462,7 @@ public class EllipticCurveScalar
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  ge_tobytes(reinterpret_cast<byte>(key), point);
 	}
-	private void hash_data_to_ec(uint8_t data, uint len, PublicKey key)
+	private void hash_data_to_ec(ushort data, uint len, PublicKey key)
 	{
 	  this.hash_data_to_ec(data, len, key);
 	}

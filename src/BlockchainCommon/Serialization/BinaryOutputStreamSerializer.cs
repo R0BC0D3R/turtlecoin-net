@@ -38,7 +38,7 @@ public class BinaryOutputStreamSerializer : ISerializer
   {
   }
 
-  public override bool beginArray(uint64_t size, Common.StringView name)
+  public override bool beginArray(ulong size, Common.StringView name)
   {
 	writeVarint(stream, size);
 	return true;
@@ -47,37 +47,37 @@ public class BinaryOutputStreamSerializer : ISerializer
   {
   }
 
-  public static override bool functorMethod(uint8_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
 	writeVarint(stream, value);
 	return true;
   }
-  public static override bool functorMethod(int16_t value, Common.StringView name)
+  public static override bool functorMethod(short value, Common.StringView name)
   {
-	writeVarint(stream, (uint16_t)value);
+	writeVarint(stream, (ushort)value);
 	return true;
   }
-  public static override bool functorMethod(uint16_t value, Common.StringView name)
-  {
-	writeVarint(stream, value);
-	return true;
-  }
-  public static override bool functorMethod(int32_t value, Common.StringView name)
-  {
-	writeVarint(stream, (uint32_t)value);
-	return true;
-  }
-  public static override bool functorMethod(uint32_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
 	writeVarint(stream, value);
 	return true;
   }
-  public static override bool functorMethod(int64_t value, Common.StringView name)
+  public static override bool functorMethod(int value, Common.StringView name)
   {
-	writeVarint(stream, (uint64_t)value);
+	writeVarint(stream, (uint)value);
 	return true;
   }
-  public static override bool functorMethod(uint64_t value, Common.StringView name)
+  public static override bool functorMethod(uint value, Common.StringView name)
+  {
+	writeVarint(stream, value);
+	return true;
+  }
+  public static override bool functorMethod(long value, Common.StringView name)
+  {
+	writeVarint(stream, (ulong)value);
+	return true;
+  }
+  public static override bool functorMethod(ulong value, Common.StringView name)
   {
 	writeVarint(stream, value);
 	return true;
@@ -100,9 +100,9 @@ public class BinaryOutputStreamSerializer : ISerializer
 	checkedWrite(value.data(), value.Length);
 	return true;
   }
-  public override bool binary(object value, uint64_t size, Common.StringView name)
+  public override bool binary(object value, ulong size, Common.StringView name)
   {
-	checkedWrite((char)value, new uint64_t(size));
+	checkedWrite((char)value, new ulong(size));
 	return true;
   }
   public override bool binary(string value, Common.StringView name)
@@ -118,7 +118,7 @@ public class BinaryOutputStreamSerializer : ISerializer
 	return base  .functorMethod(value, name);
   }
 
-  private void checkedWrite(string buf, uint64_t size)
+  private void checkedWrite(string buf, ulong size)
   {
 	write(stream, buf, size);
   }

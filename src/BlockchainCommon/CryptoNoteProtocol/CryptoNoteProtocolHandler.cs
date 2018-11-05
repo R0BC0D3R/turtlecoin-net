@@ -97,7 +97,7 @@ namespace CryptoNote
 
 	  ss << std::setw(25) << std::left << "Remote Host" << std::setw(20) << "Peer ID" << std::setw(25) << "Recv/Sent (inactive,sec)" << std::setw(25) << "State" << std::setw(20) << "Lifetime(seconds)" << std::endl;
 
-	  m_p2p.for_each_connection((CryptoNoteConnectionContext cntxt, uint64_t peer_id) =>
+	  m_p2p.for_each_connection((CryptoNoteConnectionContext cntxt, ulong peer_id) =>
 	  {
 		ss << std::setw(25) << std::left << (string)(cntxt.m_is_income ? "[INCOMING]" : "[OUTGOING]") + Common.ipAddressToString(cntxt.m_remote_ip) + ":" + Convert.ToString(cntxt.m_remote_port) << std::setw(20) << std::hex << peer_id << std::setw(25) << get_protocol_state_string(cntxt.m_state) << std::setw(20) << Convert.ToString(time(null) - cntxt.m_started) << std::endl;
 	  });
@@ -134,7 +134,7 @@ namespace CryptoNote
 	  bool updated = false;
 	  lock (m_observedHeightMutex)
 	  {
-		uint64_t prevHeight = m_observedHeight;
+		ulong prevHeight = m_observedHeight;
 		recalculateMaxObservedHeight(context);
 		if (prevHeight != m_observedHeight)
 		{
@@ -192,15 +192,15 @@ namespace CryptoNote
 	  }
 	  else
 	  {
-		uint64_t currentHeight = get_current_blockchain_height();
+		ulong currentHeight = get_current_blockchain_height();
 
-		uint64_t remoteHeight = hshd.current_height;
+		ulong remoteHeight = hshd.current_height;
 
 		/* Find the difference between the remote and the local height */
-		int64_t diff = (int64_t)remoteHeight - (int64_t)currentHeight;
+		long diff = (long)remoteHeight - (long)currentHeight;
 
 		/* Find out how many days behind/ahead we are from the remote height */
-		uint64_t days = Math.Abs(diff) / (24 * 60 * 60 / m_currency.difficultyTarget());
+		ulong days = Math.Abs(diff) / (24 * 60 * 60 / m_currency.difficultyTarget());
 
 		std::stringstream ss = new std::stringstream();
 
@@ -243,7 +243,7 @@ namespace CryptoNote
 		context.m_state = CryptoNoteConnectionContext.state_sync_required;
 	  }
 
-	  updateObservedHeight(new uint32_t(hshd.current_height), context);
+	  updateObservedHeight(new uint(hshd.current_height), context);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: context.m_remote_blockchain_height = hshd.current_height;
 	  context.m_remote_blockchain_height.CopyFrom(hshd.current_height);
@@ -265,8 +265,8 @@ namespace CryptoNote
 	  return m_peersCount;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getObservedHeight() const override
-	public override uint32_t getObservedHeight()
+//ORIGINAL LINE: virtual uint getObservedHeight() const override
+	public override uint getObservedHeight()
 	{
 	  lock (m_observedHeightMutex)
 	  {
@@ -274,8 +274,8 @@ namespace CryptoNote
 	  }
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getBlockchainHeight() const override
-	public override uint32_t getBlockchainHeight()
+//ORIGINAL LINE: virtual uint getBlockchainHeight() const override
+	public override uint getBlockchainHeight()
 	{
 	  lock (m_blockchainHeightMutex)
 	  {
@@ -533,7 +533,7 @@ namespace CryptoNote
 	  }
 
 	  context.m_remote_blockchain_height = arg.total_height;
-	  context.m_last_response_height = arg.start_height + (uint32_t)arg.m_block_ids.size() - 1;
+	  context.m_last_response_height = arg.start_height + (uint)arg.m_block_ids.size() - 1;
 
 	  if (context.m_last_response_height > context.m_remote_blockchain_height)
 	  {
@@ -585,14 +585,14 @@ namespace CryptoNote
 	  var buf = LevinProtocol.encode(arg);
 	  m_p2p.externalRelayNotifyToAll(NOTIFY_NEW_BLOCK.ID, buf, null);
 	}
-	private override void relayTransactions(List<List<uint8_t>> transactions)
+	private override void relayTransactions(List<List<ushort>> transactions)
 	{
 	  var buf = LevinProtocol.encode(new NOTIFY_NEW_TRANSACTIONS.request({transactions}));
 	  m_p2p.externalRelayNotifyToAll(NOTIFY_NEW_TRANSACTIONS.ID, buf, null);
 	}
 
 	//----------------------------------------------------------------------------------
-	private uint32_t get_current_blockchain_height()
+	private uint get_current_blockchain_height()
 	{
 	  return m_core.getTopBlockIndex() + 1;
 	}
@@ -662,13 +662,13 @@ namespace CryptoNote
 	  }
 	  return true;
 	}
-	private void updateObservedHeight(uint32_t peerHeight, CryptoNoteConnectionContext context)
+	private void updateObservedHeight(uint peerHeight, CryptoNoteConnectionContext context)
 	{
 	  bool updated = false;
 	  lock (m_observedHeightMutex)
 	  {
 
-		uint32_t height = new uint32_t(m_observedHeight);
+		uint height = new uint(m_observedHeight);
 		if (context.m_remote_blockchain_height != 0 && context.m_last_response_height <= context.m_remote_blockchain_height - 1)
 		{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -719,8 +719,8 @@ namespace CryptoNote
 	private void recalculateMaxObservedHeight(CryptoNoteConnectionContext context)
 	{
 	  //should be locked outside
-	  uint32_t peerHeight = 0;
-	  m_p2p.for_each_connection((CryptoNoteConnectionContext ctx, uint64_t peerId) =>
+	  uint peerHeight = 0;
+	  m_p2p.for_each_connection((CryptoNoteConnectionContext ctx, ulong peerId) =>
 	  {
 		if (ctx.m_connection_id != context.m_connection_id)
 		{
@@ -787,10 +787,10 @@ namespace CryptoNote
 	private std::atomic<bool> m_stop = new std::atomic<bool>();
 
 	private object m_observedHeightMutex = new object();
-	private uint32_t m_observedHeight = new uint32_t();
+	private uint m_observedHeight = new uint();
 
 	private object m_blockchainHeightMutex = new object();
-	private uint32_t m_blockchainHeight = new uint32_t();
+	private uint m_blockchainHeight = new uint();
 
 	private std::atomic<size_t> m_peersCount = new std::atomic<size_t>();
 	private Tools.ObserverManager<ICryptoNoteProtocolObserver> m_observerManager = new Tools.ObserverManager<ICryptoNoteProtocolObserver>();

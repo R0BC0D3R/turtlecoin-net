@@ -8,7 +8,7 @@ namespace Common
 	namespace Console
 	{
 
-public enum Color : uint8_t
+public enum Color : ushort
 {
   Default,
 

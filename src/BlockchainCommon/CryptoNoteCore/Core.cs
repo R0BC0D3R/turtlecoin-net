@@ -69,8 +69,8 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getTopBlockIndex() const override
-  public override uint32_t getTopBlockIndex()
+//ORIGINAL LINE: virtual uint getTopBlockIndex() const override
+  public override uint getTopBlockIndex()
   {
 	Debug.Assert(chainsStorage.Count > 0);
 	Debug.Assert(chainsLeaves.Count > 0);
@@ -90,8 +90,8 @@ public class Core : ICore, ICoreInformation
 	return chainsLeaves[0].getTopBlockHash();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual Crypto::Hash getBlockHashByIndex(uint32_t blockIndex) const override
-  public override Crypto.Hash getBlockHashByIndex(uint32_t blockIndex)
+//ORIGINAL LINE: virtual Crypto::Hash getBlockHashByIndex(uint blockIndex) const override
+  public override Crypto.Hash getBlockHashByIndex(uint blockIndex)
   {
 	Debug.Assert(chainsStorage.Count > 0);
 	Debug.Assert(chainsLeaves.Count > 0);
@@ -99,11 +99,11 @@ public class Core : ICore, ICoreInformation
 
 	throwIfNotInitialized();
 
-	return chainsLeaves[0].getBlockHash(new uint32_t(blockIndex));
+	return chainsLeaves[0].getBlockHash(new uint(blockIndex));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getBlockTimestampByIndex(uint32_t blockIndex) const override
-  public override uint64_t getBlockTimestampByIndex(uint32_t blockIndex)
+//ORIGINAL LINE: virtual ulong getBlockTimestampByIndex(uint blockIndex) const override
+  public override ulong getBlockTimestampByIndex(uint blockIndex)
   {
 	Debug.Assert(chainsStorage.Count > 0);
 	Debug.Assert(chainsLeaves.Count > 0);
@@ -113,7 +113,7 @@ public class Core : ICore, ICoreInformation
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
 //ORIGINAL LINE: auto timestamps = chainsLeaves[0]->getLastTimestamps(1, blockIndex, addGenesisBlock);
-	var timestamps = chainsLeaves[0].getLastTimestamps(1, new uint32_t(blockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
+	var timestamps = chainsLeaves[0].getLastTimestamps(1, new uint(blockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
 	Debug.Assert(!(timestamps.Count == 1));
 
 	return timestamps[0];
@@ -129,18 +129,18 @@ public class Core : ICore, ICoreInformation
 	return findSegmentContainingBlock(new Crypto.Hash(blockHash)) != null;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual BlockTemplate getBlockByIndex(uint32_t index) const override
-  public override BlockTemplate getBlockByIndex(uint32_t index)
+//ORIGINAL LINE: virtual BlockTemplate getBlockByIndex(uint index) const override
+  public override BlockTemplate getBlockByIndex(uint index)
   {
 	Debug.Assert(chainsStorage.Count > 0);
 	Debug.Assert(chainsLeaves.Count > 0);
 	Debug.Assert(index <= getTopBlockIndex());
 
 	throwIfNotInitialized();
-	IBlockchainCache segment = findMainChainSegmentContainingBlock(new uint32_t(index));
+	IBlockchainCache segment = findMainChainSegmentContainingBlock(new uint(index));
 	Debug.Assert(segment != null);
 
-	return restoreBlockTemplate(segment, new uint32_t(index));
+	return restoreBlockTemplate(segment, new uint(index));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual BlockTemplate getBlockByHash(const Crypto::Hash& blockHash) const override
@@ -158,9 +158,9 @@ public class Core : ICore, ICoreInformation
 	  throw new System.Exception("Requested hash wasn't found in main blockchain");
 	}
 
-	uint32_t blockIndex = segment.getBlockIndex(blockHash);
+	uint blockIndex = segment.getBlockIndex(blockHash);
 
-	return restoreBlockTemplate(segment, new uint32_t(blockIndex));
+	return restoreBlockTemplate(segment, new uint(blockIndex));
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
@@ -172,8 +172,8 @@ public class Core : ICore, ICoreInformation
 	return doBuildSparseChain(topBlockHash);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> findBlockchainSupplement(const ClassicVector<Crypto::Hash>& remoteBlockIds, size_t maxCount, uint32_t& totalBlockCount, uint32_t& startBlockIndex) const override
-  public override List<Crypto.Hash> findBlockchainSupplement(List<Crypto.Hash> remoteBlockIds, size_t maxCount, ref uint32_t totalBlockCount, ref uint32_t startBlockIndex)
+//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> findBlockchainSupplement(const ClassicVector<Crypto::Hash>& remoteBlockIds, size_t maxCount, uint& totalBlockCount, uint& startBlockIndex) const override
+  public override List<Crypto.Hash> findBlockchainSupplement(List<Crypto.Hash> remoteBlockIds, size_t maxCount, ref uint totalBlockCount, ref uint startBlockIndex)
   {
 	Debug.Assert(remoteBlockIds.Count > 0);
 	Debug.Assert(remoteBlockIds[remoteBlockIds.Count - 1] == getBlockHashByIndex(0));
@@ -182,12 +182,12 @@ public class Core : ICore, ICoreInformation
 	totalBlockCount = getTopBlockIndex() + 1;
 	startBlockIndex = findBlockchainSupplement(remoteBlockIds);
 
-	return getBlockHashes(new uint32_t(startBlockIndex), (uint32_t)maxCount);
+	return getBlockHashes(new uint(startBlockIndex), (uint)maxCount);
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<RawBlock> getBlocks(uint32_t minIndex, uint32_t count) const override
-  public override List<RawBlock> getBlocks(uint32_t minIndex, uint32_t count)
+//ORIGINAL LINE: virtual ClassicVector<RawBlock> getBlocks(uint minIndex, uint count) const override
+  public override List<RawBlock> getBlocks(uint minIndex, uint count)
   {
 	Debug.Assert(chainsStorage.Count > 0);
 	Debug.Assert(chainsLeaves.Count > 0);
@@ -246,16 +246,16 @@ public class Core : ICore, ICoreInformation
 	  }
 	  else
 	  {
-		uint32_t blockIndex = blockchainSegment.getBlockIndex(hash);
+		uint blockIndex = blockchainSegment.getBlockIndex(hash);
 		Debug.Assert(blockIndex <= blockchainSegment.getTopBlockIndex());
 
-		blocks.Add(blockchainSegment.getBlockByIndex(new uint32_t(blockIndex)));
+		blocks.Add(blockchainSegment.getBlockByIndex(new uint(blockIndex)));
 	  }
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool queryBlocks(const ClassicVector<Crypto::Hash>& blockHashes, uint64_t timestamp, uint32_t& startIndex, uint32_t& currentIndex, uint32_t& fullOffset, ClassicVector<BlockFullInfo>& entries) const override
-  public override bool queryBlocks(List<Crypto.Hash> blockHashes, uint64_t timestamp, ref uint32_t startIndex, ref uint32_t currentIndex, ref uint32_t fullOffset, List<BlockFullInfo> entries)
+//ORIGINAL LINE: virtual bool queryBlocks(const ClassicVector<Crypto::Hash>& blockHashes, ulong timestamp, uint& startIndex, uint& currentIndex, uint& fullOffset, ClassicVector<BlockFullInfo>& entries) const override
+  public override bool queryBlocks(List<Crypto.Hash> blockHashes, ulong timestamp, ref uint startIndex, ref uint currentIndex, ref uint fullOffset, List<BlockFullInfo> entries)
   {
 	Debug.Assert(entries.Count == 0);
 	Debug.Assert(chainsLeaves.Count > 0);
@@ -269,20 +269,20 @@ public class Core : ICore, ICoreInformation
 
 	  startIndex = findBlockchainSupplement(blockHashes); // throws
 
-	  fullOffset = mainChain.getTimestampLowerBoundBlockIndex(new uint64_t(timestamp));
+	  fullOffset = mainChain.getTimestampLowerBoundBlockIndex(new ulong(timestamp));
 	  if (fullOffset < startIndex)
 	  {
 		fullOffset = startIndex;
 	  }
 
-	  size_t hashesPushed = pushBlockHashes(new uint32_t(startIndex), new uint32_t(fullOffset), BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT, entries);
+	  size_t hashesPushed = pushBlockHashes(new uint(startIndex), new uint(fullOffset), BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT, entries);
 
 	  if (startIndex + hashesPushed != fullOffset != null)
 	  {
 		return true;
 	  }
 
-	  fillQueryBlockFullInfo(new uint32_t(fullOffset), new uint32_t(currentIndex), BLOCKS_SYNCHRONIZING_DEFAULT_COUNT, entries);
+	  fillQueryBlockFullInfo(new uint(fullOffset), new uint(currentIndex), BLOCKS_SYNCHRONIZING_DEFAULT_COUNT, entries);
 
 	  return true;
 	}
@@ -293,8 +293,8 @@ public class Core : ICore, ICoreInformation
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool queryBlocksLite(const ClassicVector<Crypto::Hash>& knownBlockHashes, uint64_t timestamp, uint32_t& startIndex, uint32_t& currentIndex, uint32_t& fullOffset, ClassicVector<BlockShortInfo>& entries) const override
-  public override bool queryBlocksLite(List<Crypto.Hash> knownBlockHashes, uint64_t timestamp, ref uint32_t startIndex, ref uint32_t currentIndex, ref uint32_t fullOffset, List<BlockShortInfo> entries)
+//ORIGINAL LINE: virtual bool queryBlocksLite(const ClassicVector<Crypto::Hash>& knownBlockHashes, ulong timestamp, uint& startIndex, uint& currentIndex, uint& fullOffset, ClassicVector<BlockShortInfo>& entries) const override
+  public override bool queryBlocksLite(List<Crypto.Hash> knownBlockHashes, ulong timestamp, ref uint startIndex, ref uint currentIndex, ref uint fullOffset, List<BlockShortInfo> entries)
   {
 	Debug.Assert(entries.Count == 0);
 	Debug.Assert(chainsLeaves.Count > 0);
@@ -318,26 +318,26 @@ public class Core : ICore, ICoreInformation
 	  {
 		if (startIndex <= mainChain.getTopBlockIndex())
 		{
-		  RawBlock block = mainChain.getBlockByIndex(new uint32_t(startIndex));
+		  RawBlock block = mainChain.getBlockByIndex(new uint(startIndex));
 		  var blockTemplate = GlobalMembers.extractBlockTemplate(block);
 		  timestamp = blockTemplate.timestamp;
 		}
 	  }
 
-	  fullOffset = mainChain.getTimestampLowerBoundBlockIndex(new uint64_t(timestamp));
+	  fullOffset = mainChain.getTimestampLowerBoundBlockIndex(new ulong(timestamp));
 	  if (fullOffset < startIndex)
 	  {
 		fullOffset = startIndex;
 	  }
 
-	  size_t hashesPushed = pushBlockHashes(new uint32_t(startIndex), new uint32_t(fullOffset), BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT, entries);
+	  size_t hashesPushed = pushBlockHashes(new uint(startIndex), new uint(fullOffset), BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT, entries);
 
-	  if (startIndex + (uint32_t)hashesPushed != fullOffset != null)
+	  if (startIndex + (uint)hashesPushed != fullOffset != null)
 	  {
 		return true;
 	  }
 
-	  fillQueryBlockShortInfo(new uint32_t(fullOffset), new uint32_t(currentIndex), BLOCKS_SYNCHRONIZING_DEFAULT_COUNT, entries);
+	  fillQueryBlockShortInfo(new uint(fullOffset), new uint(currentIndex), BLOCKS_SYNCHRONIZING_DEFAULT_COUNT, entries);
 
 	  return true;
 	}
@@ -356,8 +356,8 @@ public class Core : ICore, ICoreInformation
 	return findSegmentContainingTransaction(transactionHash) != null || transactionPool.checkIfTransactionPresent(transactionHash);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual void getTransactions(const ClassicVector<Crypto::Hash>& transactionHashes, ClassicVector<ClassicVector<uint8_t>>& transactions, ClassicVector<Crypto::Hash>& missedHashes) const override
-  public override void getTransactions(List<Crypto.Hash> transactionHashes, List<List<uint8_t>> transactions, List<Crypto.Hash> missedHashes)
+//ORIGINAL LINE: virtual void getTransactions(const ClassicVector<Crypto::Hash>& transactionHashes, ClassicVector<ClassicVector<ushort>>& transactions, ClassicVector<Crypto::Hash>& missedHashes) const override
+  public override void getTransactions(List<Crypto.Hash> transactionHashes, List<List<ushort>> transactions, List<Crypto.Hash> missedHashes)
   {
 	Debug.Assert(chainsLeaves.Count > 0);
 	Debug.Assert(chainsStorage.Count > 0);
@@ -402,14 +402,14 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getBlockDifficulty(uint32_t blockIndex) const override
-  public override uint64_t getBlockDifficulty(uint32_t blockIndex)
+//ORIGINAL LINE: virtual ulong getBlockDifficulty(uint blockIndex) const override
+  public override ulong getBlockDifficulty(uint blockIndex)
   {
 	throwIfNotInitialized();
 	IBlockchainCache mainChain = chainsLeaves[0];
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
 //ORIGINAL LINE: auto difficulties = mainChain->getLastCumulativeDifficulties(2, blockIndex, addGenesisBlock);
-	var difficulties = mainChain.getLastCumulativeDifficulties(2, new uint32_t(blockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
+	var difficulties = mainChain.getLastCumulativeDifficulties(2, new uint(blockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
 	if (difficulties.Count == 2)
 	{
 	  return difficulties[1] - difficulties[0];
@@ -421,29 +421,29 @@ public class Core : ICore, ICoreInformation
 
   // TODO: just use mainChain->getDifficultyForNextBlock() ?
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getDifficultyForNextBlock() const override
-  public override uint64_t getDifficultyForNextBlock()
+//ORIGINAL LINE: virtual ulong getDifficultyForNextBlock() const override
+  public override ulong getDifficultyForNextBlock()
   {
 	throwIfNotInitialized();
 	IBlockchainCache mainChain = chainsLeaves[0];
 
-	uint32_t topBlockIndex = mainChain.getTopBlockIndex();
+	uint topBlockIndex = mainChain.getTopBlockIndex();
 
-	uint8_t nextBlockMajorVersion = getBlockMajorVersionForHeight(new uint32_t(topBlockIndex));
+	ushort nextBlockMajorVersion = getBlockMajorVersionForHeight(new uint(topBlockIndex));
 
-	size_t blocksCount = Math.Min((size_t)topBlockIndex, currency.difficultyBlocksCountByBlockVersion(new uint8_t(nextBlockMajorVersion), new uint32_t(topBlockIndex)));
+	size_t blocksCount = Math.Min((size_t)topBlockIndex, currency.difficultyBlocksCountByBlockVersion(new ushort(nextBlockMajorVersion), new uint(topBlockIndex)));
 
 	var timestamps = mainChain.getLastTimestamps(new size_t(blocksCount));
 	var difficulties = mainChain.getLastCumulativeDifficulties(new size_t(blocksCount));
 
-	return currency.getNextDifficulty(new uint8_t(nextBlockMajorVersion), new uint32_t(topBlockIndex), new List<uint64_t>(timestamps), new List<uint64_t>(difficulties));
+	return currency.getNextDifficulty(new ushort(nextBlockMajorVersion), new uint(topBlockIndex), new List<ulong>(timestamps), new List<ulong>(difficulties));
   }
 
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
   public override std::error_code addBlock(CachedBlock cachedBlock, RawBlock && rawBlock)
   {
 	throwIfNotInitialized();
-	uint32_t blockIndex = cachedBlock.getBlockIndex();
+	uint blockIndex = cachedBlock.getBlockIndex();
 	Crypto.Hash blockHash = cachedBlock.getBlockHash();
 	std::ostringstream os = new std::ostringstream();
 	os << blockIndex << " (" << blockHash << ")";
@@ -469,7 +469,7 @@ public class Core : ICore, ICoreInformation
 	}
 
 	List<CachedTransaction> transactions = new List<CachedTransaction>();
-	uint64_t cumulativeSize = 0;
+	ulong cumulativeSize = 0;
 	if (!extractTransactions(rawBlock.transactions, transactions, cumulativeSize))
 	{
 	  logger.functorMethod(Logging.Level.DEBUGGING) << "Couldn't deserialize raw block transactions in block " << blockStr;
@@ -491,7 +491,7 @@ public class Core : ICore, ICoreInformation
 	  return error.BlockValidationError.CUMULATIVE_BLOCK_SIZE_TOO_BIG;
 	}
 
-	uint64_t minerReward = 0;
+	ulong minerReward = 0;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
 //ORIGINAL LINE: auto blockValidationResult = validateBlock(cachedBlock, cache, minerReward);
 	var blockValidationResult = validateBlock(cachedBlock, new CryptoNote.IBlockchainCache(cache), ref minerReward);
@@ -501,7 +501,7 @@ public class Core : ICore, ICoreInformation
 	  return blockValidationResult;
 	}
 
-	var currentDifficulty = cache.getDifficultyForNextBlock(new uint32_t(previousBlockIndex));
+	var currentDifficulty = cache.getDifficultyForNextBlock(new uint(previousBlockIndex));
 	if (currentDifficulty == 0)
 	{
 	  logger.functorMethod(Logging.Level.DEBUGGING) << "Block " << blockStr << " has difficulty overhead";
@@ -511,7 +511,7 @@ public class Core : ICore, ICoreInformation
 	// This allows us to accept blocks with transaction mixins for the mined money unlock window
 	// that may be using older mixin rules on the network. This helps to clear out the transaction
 	// pool during a network soft fork that requires a mixin lower or upper bound change
-	uint32_t mixinChangeWindow = new uint32_t(blockIndex);
+	uint mixinChangeWindow = new uint(blockIndex);
 	if (mixinChangeWindow > CryptoNote.parameters.CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW)
 	{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -519,12 +519,12 @@ public class Core : ICore, ICoreInformation
 	  mixinChangeWindow.CopyFrom(mixinChangeWindow - CryptoNote.parameters.CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW);
 	}
 
-	var (success, error) = Mixins.validate(new List<CachedTransaction>(transactions), new uint32_t(blockIndex));
+	var (success, error) = Mixins.validate(new List<CachedTransaction>(transactions), new uint(blockIndex));
 
 	if (!success)
 	{
 	  /* Warning, this shadows the above variables */
-	  var (success, error) = Mixins.validate(new List<CachedTransaction>(transactions), new uint32_t(mixinChangeWindow));
+	  var (success, error) = Mixins.validate(new List<CachedTransaction>(transactions), new uint(mixinChangeWindow));
 
 	  if (!success)
 	  {
@@ -533,14 +533,14 @@ public class Core : ICore, ICoreInformation
 	  }
 	}
 
-	uint64_t cumulativeFee = 0;
+	ulong cumulativeFee = 0;
 
 	foreach (var transaction in transactions)
 	{
-	  uint64_t fee = 0;
+	  ulong fee = 0;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
 //ORIGINAL LINE: auto transactionValidationResult = validateTransaction(transaction, validatorState, cache, fee, previousBlockIndex);
-	  var transactionValidationResult = validateTransaction(transaction, validatorState, new CryptoNote.IBlockchainCache(cache), fee, new uint32_t(previousBlockIndex));
+	  var transactionValidationResult = validateTransaction(transaction, validatorState, new CryptoNote.IBlockchainCache(cache), fee, new uint(previousBlockIndex));
 	  if (transactionValidationResult != null)
 	  {
 		logger.functorMethod(Logging.Level.DEBUGGING) << "Failed to validate transaction " << transaction.getTransactionHash() << ": " << transactionValidationResult.message();
@@ -550,15 +550,15 @@ public class Core : ICore, ICoreInformation
 	  cumulativeFee += fee;
 	}
 
-	uint64_t reward = 0;
-	int64_t emissionChange = 0;
-	var alreadyGeneratedCoins = cache.getAlreadyGeneratedCoins(new uint32_t(previousBlockIndex));
+	ulong reward = 0;
+	long emissionChange = 0;
+	var alreadyGeneratedCoins = cache.getAlreadyGeneratedCoins(new uint(previousBlockIndex));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
 //ORIGINAL LINE: auto lastBlocksSizes = cache->getLastBlocksSizes(currency.rewardBlocksWindow(), previousBlockIndex, addGenesisBlock);
-	var lastBlocksSizes = cache.getLastBlocksSizes(currency.rewardBlocksWindow(), new uint32_t(previousBlockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
+	var lastBlocksSizes = cache.getLastBlocksSizes(currency.rewardBlocksWindow(), new uint(previousBlockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
 	var blocksSizeMedian = Common.GlobalMembers.medianValue(lastBlocksSizes);
 
-	if (!currency.getBlockReward(new uint8_t(cachedBlock.getBlock().majorVersion), blocksSizeMedian, cumulativeBlockSize, new uint64_t(alreadyGeneratedCoins), new uint64_t(cumulativeFee), reward, emissionChange))
+	if (!currency.getBlockReward(new ushort(cachedBlock.getBlock().majorVersion), blocksSizeMedian, cumulativeBlockSize, new ulong(alreadyGeneratedCoins), new ulong(cumulativeFee), reward, emissionChange))
 	{
 	  logger.functorMethod(Logging.Level.DEBUGGING) << "Block " << blockStr << " has too big cumulative size";
 	  return error.BlockValidationError.CUMULATIVE_BLOCK_SIZE_TOO_BIG;
@@ -578,7 +578,7 @@ public class Core : ICore, ICoreInformation
 		return error.BlockValidationError.CHECKPOINT_BLOCK_HASH_MISMATCH;
 	  }
 	}
-	else if (!currency.checkProofOfWork(cachedBlock, new uint64_t(currentDifficulty)))
+	else if (!currency.checkProofOfWork(cachedBlock, new ulong(currentDifficulty)))
 	{
 	  logger.functorMethod(Logging.Level.WARNING) << "Proof of work too weak for block " << blockStr;
 	  return error.BlockValidationError.PROOF_OF_WORK_TOO_WEAK;
@@ -598,7 +598,7 @@ public class Core : ICore, ICoreInformation
 		{
 		  mainChainStorage.pushBlock(rawBlock);
 
-		  cache.pushBlock(cachedBlock, transactions, validatorState, cumulativeBlockSize, new int64_t(emissionChange), new uint64_t(currentDifficulty), std::move(rawBlock));
+		  cache.pushBlock(cachedBlock, transactions, validatorState, cumulativeBlockSize, new long(emissionChange), new ulong(currentDifficulty), std::move(rawBlock));
 
 		  updateBlockMedianSize();
 		  actualizePoolTransactionsLite(validatorState);
@@ -614,7 +614,7 @@ public class Core : ICore, ICoreInformation
 		}
 		else
 		{
-		  cache.pushBlock(cachedBlock, transactions, validatorState, cumulativeBlockSize, new int64_t(emissionChange), new uint64_t(currentDifficulty), std::move(rawBlock));
+		  cache.pushBlock(cachedBlock, transactions, validatorState, cumulativeBlockSize, new long(emissionChange), new ulong(currentDifficulty), std::move(rawBlock));
 		  logger.functorMethod(Logging.Level.DEBUGGING) << "Block " << blockStr << " added to alternative chain.";
 
 		  var mainChainCache = chainsLeaves[0];
@@ -691,7 +691,7 @@ public class Core : ICore, ICoreInformation
 	}
 
 	logger.functorMethod(Logging.Level.DEBUGGING) << "Block: " << blockStr << " successfully added";
-	notifyOnSuccess(ret, new uint32_t(previousBlockIndex), cachedBlock, *cache);
+	notifyOnSuccess(ret, new uint(previousBlockIndex), cachedBlock, *cache);
 
 	return ret;
   }
@@ -716,8 +716,8 @@ public class Core : ICore, ICoreInformation
 //  override std::error_code submitBlock(BinaryArray&& rawBlockTemplate);
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool getTransactionGlobalIndexes(const Crypto::Hash& transactionHash, ClassicVector<uint32_t>& globalIndexes) const override
-  public override bool getTransactionGlobalIndexes(Crypto.Hash transactionHash, List<uint32_t> globalIndexes)
+//ORIGINAL LINE: virtual bool getTransactionGlobalIndexes(const Crypto::Hash& transactionHash, ClassicVector<uint>& globalIndexes) const override
+  public override bool getTransactionGlobalIndexes(Crypto.Hash transactionHash, List<uint> globalIndexes)
   {
 	throwIfNotInitialized();
 	IBlockchainCache segment = chainsLeaves[0];
@@ -747,8 +747,8 @@ public class Core : ICore, ICoreInformation
 	return found;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool getRandomOutputs(uint64_t amount, uint16_t count, ClassicVector<uint32_t>& globalIndexes, ClassicVector<Crypto::PublicKey>& publicKeys) const override
-  public override bool getRandomOutputs(uint64_t amount, uint16_t count, ref List<uint32_t> globalIndexes, List<Crypto.PublicKey> publicKeys)
+//ORIGINAL LINE: virtual bool getRandomOutputs(ulong amount, ushort count, ClassicVector<uint>& globalIndexes, ClassicVector<Crypto::PublicKey>& publicKeys) const override
+  public override bool getRandomOutputs(ulong amount, ushort count, ref List<uint> globalIndexes, List<Crypto.PublicKey> publicKeys)
   {
 	throwIfNotInitialized();
 
@@ -764,7 +764,7 @@ public class Core : ICore, ICoreInformation
 	  return false;
 	}
 
-	globalIndexes = chainsLeaves[0].getRandomOutsByAmount(new uint64_t(amount), new uint16_t(count), getTopBlockIndex());
+	globalIndexes = chainsLeaves[0].getRandomOutsByAmount(new ulong(amount), new ushort(count), getTopBlockIndex());
 	if (globalIndexes.Count == 0)
 	{
 	  return false;
@@ -772,7 +772,7 @@ public class Core : ICore, ICoreInformation
 
 	globalIndexes.Sort();
 
-	switch (chainsLeaves[0].extractKeyOutputKeys(new uint64_t(amount), getTopBlockIndex(), new Common.ArrayView<uint32_t>(globalIndexes.data(), globalIndexes.Count), publicKeys))
+	switch (chainsLeaves[0].extractKeyOutputKeys(new ulong(amount), getTopBlockIndex(), new Common.ArrayView<uint>(globalIndexes.data(), globalIndexes.Count), publicKeys))
 	{
 	  case ExtractOutputKeysResult.SUCCESS:
 		return true;
@@ -799,8 +799,8 @@ public class Core : ICore, ICoreInformation
 	return transactionPool.getTransactionHashes();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool getPoolChanges(const Crypto::Hash& lastBlockHash, const ClassicVector<Crypto::Hash>& knownHashes, ClassicVector<ClassicVector<uint8_t>>& addedTransactions, ClassicVector<Crypto::Hash>& deletedTransactions) const override
-  public override bool getPoolChanges(Crypto.Hash lastBlockHash, List<Crypto.Hash> knownHashes, List<List<uint8_t>> addedTransactions, List<Crypto.Hash> deletedTransactions)
+//ORIGINAL LINE: virtual bool getPoolChanges(const Crypto::Hash& lastBlockHash, const ClassicVector<Crypto::Hash>& knownHashes, ClassicVector<ClassicVector<ushort>>& addedTransactions, ClassicVector<Crypto::Hash>& deletedTransactions) const override
+  public override bool getPoolChanges(Crypto.Hash lastBlockHash, List<Crypto.Hash> knownHashes, List<List<ushort>> addedTransactions, List<Crypto.Hash> deletedTransactions)
   {
 	throwIfNotInitialized();
 
@@ -839,9 +839,9 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual bool getBlockTemplate(BlockTemplate& b, const AccountPublicAddress& adr, const BinaryArray& extraNonce, uint64_t& difficulty, uint32_t& height) const override;
+//ORIGINAL LINE: virtual bool getBlockTemplate(BlockTemplate& b, const AccountPublicAddress& adr, const BinaryArray& extraNonce, ulong& difficulty, uint& height) const override;
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  override bool getBlockTemplate(BlockTemplate b, AccountPublicAddress adr, BinaryArray extraNonce, uint64_t difficulty, uint32_t height);
+//  override bool getBlockTemplate(BlockTemplate b, AccountPublicAddress adr, BinaryArray extraNonce, ulong difficulty, uint height);
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual CoreStatistics getCoreStatistics() const override
@@ -851,7 +851,7 @@ public class Core : ICore, ICoreInformation
 	Debug.Assert(false);
 	CoreStatistics result = new CoreStatistics();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-	std::fill(reinterpret_cast<uint8_t>(result), reinterpret_cast<uint8_t>(result) + sizeof(CryptoNote.CoreStatistics), 0);
+	std::fill(reinterpret_cast<ushort>(result), reinterpret_cast<ushort>(result) + sizeof(CryptoNote.CoreStatistics), 0);
 	return result;
   }
 
@@ -890,8 +890,8 @@ public class Core : ICore, ICoreInformation
 	});
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getTotalGeneratedAmount() const override
-  public override uint64_t getTotalGeneratedAmount()
+//ORIGINAL LINE: virtual ulong getTotalGeneratedAmount() const override
+  public override ulong getTotalGeneratedAmount()
   {
 	Debug.Assert(chainsLeaves.Count > 0);
 	throwIfNotInitialized();
@@ -1004,8 +1004,8 @@ public class Core : ICore, ICoreInformation
 	  throw new System.Exception("Requested hash wasn't found in blockchain.");
 	}
 
-	uint32_t blockIndex = segment.getBlockIndex(blockHash);
-	BlockTemplate blockTemplate = restoreBlockTemplate(segment, new uint32_t(blockIndex));
+	uint blockIndex = segment.getBlockIndex(blockHash);
+	BlockTemplate blockTemplate = restoreBlockTemplate(segment, new uint(blockIndex));
 
 	BlockDetails blockDetails = new BlockDetails();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -1040,28 +1040,28 @@ public class Core : ICore, ICoreInformation
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: blockDetails.difficulty = getBlockDifficulty(blockIndex);
-	blockDetails.difficulty.CopyFrom(getBlockDifficulty(new uint32_t(blockIndex)));
+	blockDetails.difficulty.CopyFrom(getBlockDifficulty(new uint(blockIndex)));
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
-//ORIGINAL LINE: ClassicVector<uint64_t> sizes = segment->getLastBlocksSizes(1, blockDetails.index, addGenesisBlock);
-	List<uint64_t> sizes = segment.getLastBlocksSizes(1, new uint32_t(blockDetails.index), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
+//ORIGINAL LINE: ClassicVector<ulong> sizes = segment->getLastBlocksSizes(1, blockDetails.index, addGenesisBlock);
+	List<ulong> sizes = segment.getLastBlocksSizes(1, new uint(blockDetails.index), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
 	Debug.Assert(sizes.Count == 1);
 	blockDetails.transactionsCumulativeSize = sizes[0];
 
-	uint64_t blockBlobSize = CryptoNote.GlobalMembers.getObjectBinarySize(blockTemplate);
-	uint64_t coinbaseTransactionSize = CryptoNote.GlobalMembers.getObjectBinarySize(blockTemplate.baseTransaction);
+	ulong blockBlobSize = CryptoNote.GlobalMembers.getObjectBinarySize(blockTemplate);
+	ulong coinbaseTransactionSize = CryptoNote.GlobalMembers.getObjectBinarySize(blockTemplate.baseTransaction);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: blockDetails.blockSize = blockBlobSize + blockDetails.transactionsCumulativeSize - coinbaseTransactionSize;
 	blockDetails.blockSize.CopyFrom(blockBlobSize + blockDetails.transactionsCumulativeSize - coinbaseTransactionSize);
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: blockDetails.alreadyGeneratedCoins = segment->getAlreadyGeneratedCoins(blockDetails.index);
-	blockDetails.alreadyGeneratedCoins.CopyFrom(segment.getAlreadyGeneratedCoins(new uint32_t(blockDetails.index)));
+	blockDetails.alreadyGeneratedCoins.CopyFrom(segment.getAlreadyGeneratedCoins(new uint(blockDetails.index)));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: blockDetails.alreadyGeneratedTransactions = segment->getAlreadyGeneratedTransactions(blockDetails.index);
-	blockDetails.alreadyGeneratedTransactions.CopyFrom(segment.getAlreadyGeneratedTransactions(new uint32_t(blockDetails.index)));
+	blockDetails.alreadyGeneratedTransactions.CopyFrom(segment.getAlreadyGeneratedTransactions(new uint(blockDetails.index)));
 
-	uint64_t prevBlockGeneratedCoins = 0;
+	ulong prevBlockGeneratedCoins = 0;
 	blockDetails.sizeMedian = 0;
 	if (blockDetails.index > 0)
 	{
@@ -1074,15 +1074,15 @@ public class Core : ICore, ICoreInformation
 	  prevBlockGeneratedCoins.CopyFrom(segment.getAlreadyGeneratedCoins(blockDetails.index - 1));
 	}
 
-	int64_t emissionChange = 0;
-	bool result = currency.getBlockReward(new uint8_t(blockDetails.majorVersion), new uint64_t(blockDetails.sizeMedian), 0, new uint64_t(prevBlockGeneratedCoins), 0, blockDetails.baseReward, emissionChange);
+	long emissionChange = 0;
+	bool result = currency.getBlockReward(new ushort(blockDetails.majorVersion), new ulong(blockDetails.sizeMedian), 0, new ulong(prevBlockGeneratedCoins), 0, blockDetails.baseReward, emissionChange);
 	if (result)
 	{
 	}
 	Debug.Assert(result);
 
-	uint64_t currentReward = 0;
-	result = currency.getBlockReward(new uint8_t(blockDetails.majorVersion), new uint64_t(blockDetails.sizeMedian), new uint64_t(blockDetails.transactionsCumulativeSize), new uint64_t(prevBlockGeneratedCoins), 0, currentReward, emissionChange);
+	ulong currentReward = 0;
+	result = currency.getBlockReward(new ushort(blockDetails.majorVersion), new ulong(blockDetails.sizeMedian), new ulong(blockDetails.transactionsCumulativeSize), new ulong(prevBlockGeneratedCoins), 0, currentReward, emissionChange);
 	Debug.Assert(result);
 
 	if (blockDetails.baseReward == 0 && currentReward == 0)
@@ -1109,18 +1109,18 @@ public class Core : ICore, ICoreInformation
 	return blockDetails;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: BlockDetails getBlockDetails(const uint32_t blockHeight) const
-  public BlockDetails getBlockDetails(uint32_t blockHeight)
+//ORIGINAL LINE: BlockDetails getBlockDetails(const uint blockHeight) const
+  public BlockDetails getBlockDetails(uint blockHeight)
   {
 	throwIfNotInitialized();
 
-	IBlockchainCache segment = findSegmentContainingBlock(new uint32_t(blockHeight));
+	IBlockchainCache segment = findSegmentContainingBlock(new uint(blockHeight));
 	if (segment == null)
 	{
 	  throw new System.Exception("Requested block height wasn't found in blockchain.");
 	}
 
-	return getBlockDetails(segment.getBlockHash(new uint32_t(blockHeight)));
+	return getBlockDetails(segment.getBlockHash(new uint(blockHeight)));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual TransactionDetails getTransactionDetails(const Crypto::Hash& transactionHash) const override
@@ -1138,8 +1138,8 @@ public class Core : ICore, ICoreInformation
 	return getTransactionDetails(transactionHash, segment, foundInPool);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getAlternativeBlockHashesByIndex(uint32_t blockIndex) const override
-  public override List<Crypto.Hash> getAlternativeBlockHashesByIndex(uint32_t blockIndex)
+//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getAlternativeBlockHashesByIndex(uint blockIndex) const override
+  public override List<Crypto.Hash> getAlternativeBlockHashesByIndex(uint blockIndex)
   {
 	throwIfNotInitialized();
 
@@ -1156,7 +1156,7 @@ public class Core : ICore, ICoreInformation
 	  {
 		if (segment.getTopBlockIndex() - segment.getBlockCount() + 1 <= blockIndex != null)
 		{
-		  alternativeBlockHashes.Add(segment.getBlockHash(new uint32_t(blockIndex)));
+		  alternativeBlockHashes.Add(segment.getBlockHash(new uint(blockIndex)));
 		  break;
 		}
 		else if (segment.getTopBlockIndex() - segment.getBlockCount() - 1 > blockIndex)
@@ -1169,8 +1169,8 @@ public class Core : ICore, ICoreInformation
 	return alternativeBlockHashes;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getBlockHashesByTimestamps(uint64_t timestampBegin, size_t secondsCount) const override
-  public override List<Crypto.Hash> getBlockHashesByTimestamps(uint64_t timestampBegin, size_t secondsCount)
+//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount) const override
+  public override List<Crypto.Hash> getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount)
   {
 	throwIfNotInitialized();
 
@@ -1178,14 +1178,14 @@ public class Core : ICore, ICoreInformation
 
 	var mainChain = chainsLeaves[0];
 
-	if (timestampBegin + (uint64_t)secondsCount < timestampBegin != null)
+	if (timestampBegin + (ulong)secondsCount < timestampBegin != null)
 	{
-	  logger.functorMethod(Logging.Level.WARNING) << "Timestamp overflow occured. Timestamp begin: " << timestampBegin << ", timestamp end: " << (timestampBegin + (uint64_t)secondsCount);
+	  logger.functorMethod(Logging.Level.WARNING) << "Timestamp overflow occured. Timestamp begin: " << timestampBegin << ", timestamp end: " << (timestampBegin + (ulong)secondsCount);
 
 	  throw new System.Exception("Timestamp overflow");
 	}
 
-	return mainChain.getBlockHashesByTimestamps(new uint64_t(timestampBegin), new size_t(secondsCount));
+	return mainChain.getBlockHashesByTimestamps(new ulong(timestampBegin), new size_t(secondsCount));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getTransactionHashesByPaymentId(const Hash& paymentId) const override
@@ -1207,8 +1207,8 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t get_current_blockchain_height() const
-  public virtual uint64_t get_current_blockchain_height()
+//ORIGINAL LINE: virtual ulong get_current_blockchain_height() const
+  public virtual ulong get_current_blockchain_height()
   {
 	// TODO: remove when GetCoreStatistics is implemented
 	return mainChainStorage.getBlockCount();
@@ -1245,7 +1245,7 @@ public class Core : ICore, ICoreInformation
 	  throw std::system_error(error.GlobalMembers.make_error_code(error.CoreErrorCode.NOT_INITIALIZED));
 	}
   }
-  private bool extractTransactions(List<List<uint8_t>> rawTransactions, List<CachedTransaction> transactions, uint64_t cumulativeSize)
+  private bool extractTransactions(List<List<ushort>> rawTransactions, List<CachedTransaction> transactions, ulong cumulativeSize)
   {
 	try
 	{
@@ -1270,14 +1270,14 @@ public class Core : ICore, ICoreInformation
 	return true;
   }
 
-  private std::error_code validateSemantic(Transaction transaction, ref uint64_t fee, uint32_t blockIndex)
+  private std::error_code validateSemantic(Transaction transaction, ref ulong fee, uint blockIndex)
   {
 	if (transaction.inputs.Count == 0)
 	{
 	  return error.TransactionValidationError.EMPTY_INPUTS;
 	}
 
-	uint64_t summaryOutputAmount = 0;
+	ulong summaryOutputAmount = 0;
 	foreach (var output in transaction.outputs)
 	{
 	  if (output.amount == 0)
@@ -1298,7 +1298,7 @@ public class Core : ICore, ICoreInformation
 		return error.TransactionValidationError.OUTPUT_UNKNOWN_TYPE;
 	  }
 
-	  if (uint64_t.MaxValue - output.amount < summaryOutputAmount)
+	  if (ulong.MaxValue - output.amount < summaryOutputAmount)
 	  {
 		return error.TransactionValidationError.OUTPUTS_AMOUNT_OVERFLOW;
 	  }
@@ -1314,12 +1314,12 @@ public class Core : ICore, ICoreInformation
 	  Crypto.KeyImage I = new Crypto.KeyImage({0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00});
 	  Crypto.KeyImage L = new Crypto.KeyImage({0xed, 0xd3, 0xf5, 0x5c, 0x1a, 0x63, 0x12, 0x58, 0xd6, 0x9c, 0xf7, 0xa2, 0xde, 0xf9, 0xde, 0x14, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10});
 
-	uint64_t summaryInputAmount = 0;
+	ulong summaryInputAmount = 0;
 	HashSet<Crypto.KeyImage> ki = new HashSet<Crypto.KeyImage>();
-	SortedSet<Tuple<uint64_t, uint32_t>> outputsUsage = new SortedSet<Tuple<uint64_t, uint32_t>>();
+	SortedSet<Tuple<ulong, uint>> outputsUsage = new SortedSet<Tuple<ulong, uint>>();
 	foreach (var input in transaction.inputs)
 	{
-	  uint64_t amount = 0;
+	  ulong amount = 0;
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
 	  if (input.type() == typeid(KeyInput))
 	  {
@@ -1355,7 +1355,7 @@ public class Core : ICore, ICoreInformation
 		return error.TransactionValidationError.INPUT_UNKNOWN_TYPE;
 	  }
 
-	  if (uint64_t.MaxValue - amount < summaryInputAmount)
+	  if (ulong.MaxValue - amount < summaryInputAmount)
 	  {
 		return error.TransactionValidationError.INPUTS_AMOUNT_OVERFLOW;
 	  }
@@ -1372,11 +1372,11 @@ public class Core : ICore, ICoreInformation
 	fee = summaryInputAmount - summaryOutputAmount;
 	return error.TransactionValidationError.VALIDATION_SUCCESS;
   }
-  private std::error_code validateTransaction(CachedTransaction cachedTransaction, TransactionValidatorState state, IBlockchainCache cache, uint64_t fee, uint32_t blockIndex)
+  private std::error_code validateTransaction(CachedTransaction cachedTransaction, TransactionValidatorState state, IBlockchainCache cache, ulong fee, uint blockIndex)
   {
 	// TransactionValidatorState currentState;
 	auto transaction = cachedTransaction.getTransaction();
-  var error = validateSemantic(transaction, ref fee, new uint32_t(blockIndex));
+  var error = validateSemantic(transaction, ref fee, new uint(blockIndex));
 	if (error != error.TransactionValidationError.VALIDATION_SUCCESS)
 	{
 	  return error;
@@ -1396,7 +1396,7 @@ public class Core : ICore, ICoreInformation
 
 		if (!checkpoints.isInCheckpointZone(blockIndex + 1))
 		{
-		  if (cache.checkIfSpent(in.keyImage, new uint32_t(blockIndex)))
+		  if (cache.checkIfSpent(in.keyImage, new uint(blockIndex)))
 		  {
 			return error.TransactionValidationError.INPUT_KEYIMAGE_ALREADY_SPENT;
 		  }
@@ -1404,14 +1404,14 @@ public class Core : ICore, ICoreInformation
 		  List<PublicKey> outputKeys = new List<PublicKey>();
 		  Debug.Assert(in.outputIndexes.Count > 0);
 
-		  List<uint32_t> globalIndexes = new List<uint32_t>(in.outputIndexes.Count);
+		  List<uint> globalIndexes = new List<uint>(in.outputIndexes.Count);
 		  globalIndexes[0] = in.outputIndexes[0];
 		  for (size_t i = 1; i < in.outputIndexes.Count; ++i)
 		  {
 			globalIndexes[i] = globalIndexes[i - 1] + in.outputIndexes[i];
 		  }
 
-		  var result = cache.extractKeyOutputKeys(new uint64_t(in.amount), new uint32_t(blockIndex), new Common.ArrayView<uint32_t>(globalIndexes.data(), globalIndexes.Count), outputKeys);
+		  var result = cache.extractKeyOutputKeys(new ulong(in.amount), new uint(blockIndex), new Common.ArrayView<uint>(globalIndexes.data(), globalIndexes.Count), outputKeys);
 		  if (result == ExtractOutputKeysResult.INVALID_GLOBAL_INDEX)
 		  {
 			return error.TransactionValidationError.INPUT_INVALID_GLOBAL_INDEX;
@@ -1448,8 +1448,8 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t findBlockchainSupplement(const ClassicVector<Crypto::Hash>& remoteBlockIds) const
-  private uint32_t findBlockchainSupplement(List<Crypto.Hash> remoteBlockIds)
+//ORIGINAL LINE: uint findBlockchainSupplement(const ClassicVector<Crypto::Hash>& remoteBlockIds) const
+  private uint findBlockchainSupplement(List<Crypto.Hash> remoteBlockIds)
   {
 	// TODO: check for genesis blocks match
 	foreach (var hash in remoteBlockIds)
@@ -1466,13 +1466,13 @@ public class Core : ICore, ICoreInformation
 	throw new System.Exception("Genesis block hash was not found.");
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<Crypto::Hash> getBlockHashes(uint32_t startBlockIndex, uint32_t maxCount) const
-  private List<Crypto.Hash> getBlockHashes(uint32_t startBlockIndex, uint32_t maxCount)
+//ORIGINAL LINE: ClassicVector<Crypto::Hash> getBlockHashes(uint startBlockIndex, uint maxCount) const
+  private List<Crypto.Hash> getBlockHashes(uint startBlockIndex, uint maxCount)
   {
-	return chainsLeaves[0].getBlockHashes(new uint32_t(startBlockIndex), new uint32_t(maxCount));
+	return chainsLeaves[0].getBlockHashes(new uint(startBlockIndex), new uint(maxCount));
   }
 
-  private std::error_code validateBlock(CachedBlock cachedBlock, IBlockchainCache cache, ref uint64_t minerReward)
+  private std::error_code validateBlock(CachedBlock cachedBlock, IBlockchainCache cache, ref ulong minerReward)
   {
 	auto block = cachedBlock.getBlock();
 	var previousBlockIndex = cache.getBlockIndex(block.previousBlockHash);
@@ -1506,7 +1506,7 @@ public class Core : ICore, ICoreInformation
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
 //ORIGINAL LINE: auto timestamps = cache->getLastTimestamps(currency.timestampCheckWindow(previousBlockIndex+1), previousBlockIndex, addGenesisBlock);
-	var timestamps = cache.getLastTimestamps(currency.timestampCheckWindow(previousBlockIndex + 1), new uint32_t(previousBlockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
+	var timestamps = cache.getLastTimestamps(currency.timestampCheckWindow(previousBlockIndex + 1), new uint(previousBlockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
 	if (timestamps.Count >= currency.timestampCheckWindow(previousBlockIndex + 1))
 	{
 	  var median_ts = Common.GlobalMembers.medianValue(timestamps);
@@ -1557,7 +1557,7 @@ public class Core : ICore, ICoreInformation
 		return error.TransactionValidationError.OUTPUT_UNKNOWN_TYPE;
 	  }
 
-	  if (uint64_t.MaxValue - output.amount < minerReward)
+	  if (ulong.MaxValue - output.amount < minerReward)
 	  {
 		return error.TransactionValidationError.OUTPUTS_AMOUNT_OVERFLOW;
 	  }
@@ -1569,8 +1569,8 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getAdjustedTime() const
-  private uint64_t getAdjustedTime()
+//ORIGINAL LINE: ulong getAdjustedTime() const
+  private ulong getAdjustedTime()
   {
 	return time(null);
   }
@@ -1606,20 +1606,20 @@ public class Core : ICore, ICoreInformation
 	return findAlternativeSegmentContainingBlock(new Crypto.Hash(blockHash));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: IBlockchainCache* findSegmentContainingBlock(uint32_t blockHeight) const
-  private IBlockchainCache findSegmentContainingBlock(uint32_t blockHeight)
+//ORIGINAL LINE: IBlockchainCache* findSegmentContainingBlock(uint blockHeight) const
+  private IBlockchainCache findSegmentContainingBlock(uint blockHeight)
   {
 	Debug.Assert(chainsLeaves.Count > 0);
 
 	// first search in main chain
-	var blockSegment = findMainChainSegmentContainingBlock(new uint32_t(blockHeight));
+	var blockSegment = findMainChainSegmentContainingBlock(new uint(blockHeight));
 	if (blockSegment != null)
 	{
 	  return blockSegment;
 	}
 
 	// than search in alternative chains
-	return findAlternativeSegmentContainingBlock(new uint32_t(blockHeight));
+	return findAlternativeSegmentContainingBlock(new uint(blockHeight));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: IBlockchainCache* findMainChainSegmentContainingBlock(const Crypto::Hash& blockHash) const
@@ -1640,16 +1640,16 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: IBlockchainCache* findMainChainSegmentContainingBlock(uint32_t blockIndex) const
-  private IBlockchainCache findMainChainSegmentContainingBlock(uint32_t blockIndex)
+//ORIGINAL LINE: IBlockchainCache* findMainChainSegmentContainingBlock(uint blockIndex) const
+  private IBlockchainCache findMainChainSegmentContainingBlock(uint blockIndex)
   {
 	return GlobalMembers.findIndexInChain(new List<IBlockchainCache>(chainsLeaves[0]), blockIndex);
   }
 
   // WTF?! this function returns first chain it is able to find..
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: IBlockchainCache* findAlternativeSegmentContainingBlock(uint32_t blockIndex) const
-  private IBlockchainCache findAlternativeSegmentContainingBlock(uint32_t blockIndex)
+//ORIGINAL LINE: IBlockchainCache* findAlternativeSegmentContainingBlock(uint blockIndex) const
+  private IBlockchainCache findAlternativeSegmentContainingBlock(uint blockIndex)
   {
 	IBlockchainCache cache = null;
 	std::find_if(++chainsLeaves.GetEnumerator(), chainsLeaves.end(), (IBlockchainCache chain) =>
@@ -1700,10 +1700,10 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: BlockTemplate restoreBlockTemplate(IBlockchainCache* blockchainCache, uint32_t blockIndex) const
-  private BlockTemplate restoreBlockTemplate(IBlockchainCache blockchainCache, uint32_t blockIndex)
+//ORIGINAL LINE: BlockTemplate restoreBlockTemplate(IBlockchainCache* blockchainCache, uint blockIndex) const
+  private BlockTemplate restoreBlockTemplate(IBlockchainCache blockchainCache, uint blockIndex)
   {
-	RawBlock rawBlock = blockchainCache.getBlockByIndex(new uint32_t(blockIndex));
+	RawBlock rawBlock = blockchainCache.getBlockByIndex(new uint(blockIndex));
 
 	BlockTemplate block = new BlockTemplate();
 	if (!CryptoNote.GlobalMembers.fromBinaryArray(ref block, rawBlock.block))
@@ -1721,13 +1721,13 @@ public class Core : ICore, ICoreInformation
 //ORIGINAL LINE: IBlockchainCache* chain = findSegmentContainingBlock(blockHash);
 	IBlockchainCache chain = findSegmentContainingBlock(new Crypto.Hash(blockHash));
 
-	uint32_t blockIndex = chain.getBlockIndex(blockHash);
+	uint blockIndex = chain.getBlockIndex(blockHash);
 
 	// TODO reserve ceil(log(blockIndex))
 	List<Crypto.Hash> sparseChain = new List<Crypto.Hash>();
 	sparseChain.Add(blockHash);
 
-	for (uint32_t i = 1; i < blockIndex; i *= 2)
+	for (uint i = 1; i < blockIndex; i *= 2)
 	{
 	  sparseChain.Add(chain.getBlockHash(blockIndex - i));
 	}
@@ -1742,29 +1742,29 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: RawBlock getRawBlock(IBlockchainCache* segment, uint32_t blockIndex) const
-  private RawBlock getRawBlock(IBlockchainCache segment, uint32_t blockIndex)
+//ORIGINAL LINE: RawBlock getRawBlock(IBlockchainCache* segment, uint blockIndex) const
+  private RawBlock getRawBlock(IBlockchainCache segment, uint blockIndex)
   {
 	Debug.Assert(blockIndex >= segment.getStartBlockIndex() != null && blockIndex <= segment.getTopBlockIndex());
 
-	return segment.getBlockByIndex(new uint32_t(blockIndex));
+	return segment.getBlockByIndex(new uint(blockIndex));
   }
 
 
   //TODO: decompose these two methods
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t pushBlockHashes(uint32_t startIndex, uint32_t fullOffset, size_t maxItemsCount, ClassicVector<BlockShortInfo>& entries) const
-  private size_t pushBlockHashes(uint32_t startIndex, uint32_t fullOffset, size_t maxItemsCount, List<BlockShortInfo> entries)
+//ORIGINAL LINE: size_t pushBlockHashes(uint startIndex, uint fullOffset, size_t maxItemsCount, ClassicVector<BlockShortInfo>& entries) const
+  private size_t pushBlockHashes(uint startIndex, uint fullOffset, size_t maxItemsCount, List<BlockShortInfo> entries)
   {
 	Debug.Assert(fullOffset >= startIndex);
 
-	uint32_t itemsCount = Math.Min(fullOffset - startIndex, (uint32_t)maxItemsCount);
+	uint itemsCount = Math.Min(fullOffset - startIndex, (uint)maxItemsCount);
 	if (itemsCount == 0)
 	{
 	  return 0;
 	}
 
-	List<Crypto.Hash> blockIds = getBlockHashes(new uint32_t(startIndex), new uint32_t(itemsCount));
+	List<Crypto.Hash> blockIds = getBlockHashes(new uint(startIndex), new uint(itemsCount));
 
 	entries.Capacity = entries.Count + blockIds.Count;
 	foreach (var blockHash in blockIds)
@@ -1779,18 +1779,18 @@ public class Core : ICore, ICoreInformation
 
   //TODO: decompose these two methods
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t pushBlockHashes(uint32_t startIndex, uint32_t fullOffset, size_t maxItemsCount, ClassicVector<BlockFullInfo>& entries) const
-  private size_t pushBlockHashes(uint32_t startIndex, uint32_t fullOffset, size_t maxItemsCount, List<BlockFullInfo> entries)
+//ORIGINAL LINE: size_t pushBlockHashes(uint startIndex, uint fullOffset, size_t maxItemsCount, ClassicVector<BlockFullInfo>& entries) const
+  private size_t pushBlockHashes(uint startIndex, uint fullOffset, size_t maxItemsCount, List<BlockFullInfo> entries)
   {
 	Debug.Assert(fullOffset >= startIndex);
 
-	uint32_t itemsCount = Math.Min(fullOffset - startIndex, (uint32_t)maxItemsCount);
+	uint itemsCount = Math.Min(fullOffset - startIndex, (uint)maxItemsCount);
 	if (itemsCount == 0)
 	{
 	  return 0;
 	}
 
-	List<Crypto.Hash> blockIds = getBlockHashes(new uint32_t(startIndex), new uint32_t(itemsCount));
+	List<Crypto.Hash> blockIds = getBlockHashes(new uint(startIndex), new uint(itemsCount));
 
 	entries.Capacity = entries.Count + blockIds.Count;
 	foreach (var blockHash in blockIds)
@@ -1820,46 +1820,46 @@ public class Core : ICore, ICoreInformation
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: void fillQueryBlockFullInfo(uint32_t fullOffset, uint32_t currentIndex, size_t maxItemsCount, ClassicVector<BlockFullInfo>& entries) const
-  private void fillQueryBlockFullInfo(uint32_t fullOffset, uint32_t currentIndex, size_t maxItemsCount, List<BlockFullInfo> entries)
+//ORIGINAL LINE: void fillQueryBlockFullInfo(uint fullOffset, uint currentIndex, size_t maxItemsCount, ClassicVector<BlockFullInfo>& entries) const
+  private void fillQueryBlockFullInfo(uint fullOffset, uint currentIndex, size_t maxItemsCount, List<BlockFullInfo> entries)
   {
 	Debug.Assert(currentIndex >= fullOffset);
 
-	uint32_t fullBlocksCount = (uint32_t)Math.Min((uint32_t)maxItemsCount, currentIndex - fullOffset);
+	uint fullBlocksCount = (uint)Math.Min((uint)maxItemsCount, currentIndex - fullOffset);
 	entries.Capacity = entries.Count + fullBlocksCount;
 
-	for (uint32_t blockIndex = fullOffset; blockIndex < fullOffset + fullBlocksCount; ++blockIndex)
+	for (uint blockIndex = fullOffset; blockIndex < fullOffset + fullBlocksCount; ++blockIndex)
 	{
-	  IBlockchainCache segment = findMainChainSegmentContainingBlock(new uint32_t(blockIndex));
+	  IBlockchainCache segment = findMainChainSegmentContainingBlock(new uint(blockIndex));
 
 	  BlockFullInfo blockFullInfo = new BlockFullInfo();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: blockFullInfo.block_id = segment->getBlockHash(blockIndex);
-	  blockFullInfo.block_id.CopyFrom(segment.getBlockHash(new uint32_t(blockIndex)));
-	  (RawBlock)blockFullInfo = getRawBlock(segment, new uint32_t(blockIndex));
+	  blockFullInfo.block_id.CopyFrom(segment.getBlockHash(new uint(blockIndex)));
+	  (RawBlock)blockFullInfo = getRawBlock(segment, new uint(blockIndex));
 
 	  entries.emplace_back(std::move(blockFullInfo));
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: void fillQueryBlockShortInfo(uint32_t fullOffset, uint32_t currentIndex, size_t maxItemsCount, ClassicVector<BlockShortInfo>& entries) const
-  private void fillQueryBlockShortInfo(uint32_t fullOffset, uint32_t currentIndex, size_t maxItemsCount, List<BlockShortInfo> entries)
+//ORIGINAL LINE: void fillQueryBlockShortInfo(uint fullOffset, uint currentIndex, size_t maxItemsCount, ClassicVector<BlockShortInfo>& entries) const
+  private void fillQueryBlockShortInfo(uint fullOffset, uint currentIndex, size_t maxItemsCount, List<BlockShortInfo> entries)
   {
 	Debug.Assert(currentIndex >= fullOffset);
 
-	uint32_t fullBlocksCount = (uint32_t)Math.Min((uint32_t)maxItemsCount, currentIndex - fullOffset + 1);
+	uint fullBlocksCount = (uint)Math.Min((uint)maxItemsCount, currentIndex - fullOffset + 1);
 	entries.Capacity = entries.Count + fullBlocksCount;
 
-	for (uint32_t blockIndex = fullOffset; blockIndex < fullOffset + fullBlocksCount; ++blockIndex)
+	for (uint blockIndex = fullOffset; blockIndex < fullOffset + fullBlocksCount; ++blockIndex)
 	{
-	  IBlockchainCache segment = findMainChainSegmentContainingBlock(new uint32_t(blockIndex));
-	  RawBlock rawBlock = getRawBlock(segment, new uint32_t(blockIndex));
+	  IBlockchainCache segment = findMainChainSegmentContainingBlock(new uint(blockIndex));
+	  RawBlock rawBlock = getRawBlock(segment, new uint(blockIndex));
 
 	  BlockShortInfo blockShortInfo = new BlockShortInfo();
 	  blockShortInfo.block = std::move(rawBlock.block);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: blockShortInfo.blockId = segment->getBlockHash(blockIndex);
-	  blockShortInfo.blockId.CopyFrom(segment.getBlockHash(new uint32_t(blockIndex)));
+	  blockShortInfo.blockId.CopyFrom(segment.getBlockHash(new uint(blockIndex)));
 
 	  blockShortInfo.txPrefixes.Capacity = rawBlock.transactions.Count;
 	  foreach (var rawTransaction in rawBlock.transactions)
@@ -1910,23 +1910,23 @@ public class Core : ICore, ICoreInformation
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint8_t getBlockMajorVersionForHeight(uint32_t height) const
-  private uint8_t getBlockMajorVersionForHeight(uint32_t height)
+//ORIGINAL LINE: ushort getBlockMajorVersionForHeight(uint height) const
+  private ushort getBlockMajorVersionForHeight(uint height)
   {
 	return upgradeManager.getBlockMajorVersion(height);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t calculateCumulativeBlocksizeLimit(uint32_t height) const
-  private size_t calculateCumulativeBlocksizeLimit(uint32_t height)
+//ORIGINAL LINE: size_t calculateCumulativeBlocksizeLimit(uint height) const
+  private size_t calculateCumulativeBlocksizeLimit(uint height)
   {
-	uint8_t nextBlockMajorVersion = getBlockMajorVersionForHeight(new uint32_t(height));
-	size_t nextBlockGrantedFullRewardZone = currency.blockGrantedFullRewardZoneByBlockVersion(new uint8_t(nextBlockMajorVersion));
+	ushort nextBlockMajorVersion = getBlockMajorVersionForHeight(new uint(height));
+	size_t nextBlockGrantedFullRewardZone = currency.blockGrantedFullRewardZoneByBlockVersion(new ushort(nextBlockMajorVersion));
 
 	Debug.Assert(chainsStorage.Count > 0);
 	Debug.Assert(chainsLeaves.Count > 0);
 	// FIXME: skip gensis here?
 	var sizes = chainsLeaves[0].getLastBlocksSizes(currency.rewardBlocksWindow());
-	uint64_t median = Common.GlobalMembers.medianValue(sizes);
+	ulong median = Common.GlobalMembers.medianValue(sizes);
 	if (median <= nextBlockGrantedFullRewardZone)
 	{
 	  median = nextBlockGrantedFullRewardZone;
@@ -1935,8 +1935,8 @@ public class Core : ICore, ICoreInformation
 	return median * 2;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: void fillBlockTemplate(BlockTemplate& block, size_t medianSize, size_t maxCumulativeSize, size_t& transactionsSize, uint64_t& fee) const
-  private void fillBlockTemplate(BlockTemplate block, size_t medianSize, size_t maxCumulativeSize, ref size_t transactionsSize, ref uint64_t fee)
+//ORIGINAL LINE: void fillBlockTemplate(BlockTemplate& block, size_t medianSize, size_t maxCumulativeSize, size_t& transactionsSize, ulong& fee) const
+  private void fillBlockTemplate(BlockTemplate block, size_t medianSize, size_t maxCumulativeSize, ref size_t transactionsSize, ref ulong fee)
   {
 	transactionsSize = 0;
 	fee = 0;
@@ -2106,7 +2106,7 @@ public class Core : ICore, ICoreInformation
 		throw new System.Exception("Couldn't deserialize transactions");
 	  }
 
-	  acceptingSegment.pushBlock(new CachedBlock(block), transactions, info.validatorState, new size_t(info.blockSize), new uint64_t(info.generatedCoins), new uint64_t(info.blockDifficulty), std::move(info.rawBlock));
+	  acceptingSegment.pushBlock(new CachedBlock(block), transactions, info.validatorState, new size_t(info.blockSize), new ulong(info.generatedCoins), new ulong(info.blockDifficulty), std::move(info.rawBlock));
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
@@ -2125,7 +2125,7 @@ public class Core : ICore, ICoreInformation
 	if (!foundInPool)
 	{
 	  List<Crypto.Hash> transactionsHashes = new List<Crypto.Hash>();
-	  List<List<uint8_t>> rawTransactions = new List<List<uint8_t>>();
+	  List<List<ushort>> rawTransactions = new List<List<ushort>>();
 	  List<Crypto.Hash> missedTransactionsHashes = new List<Crypto.Hash>();
 	  transactionsHashes.Add(transactionHash);
 
@@ -2143,11 +2143,11 @@ public class Core : ICore, ICoreInformation
 	  transactionDetails.blockIndex.CopyFrom(segment.getBlockIndexContainingTx(transactionHash));
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: transactionDetails.blockHash = segment->getBlockHash(transactionDetails.blockIndex);
-	  transactionDetails.blockHash.CopyFrom(segment.getBlockHash(new uint32_t(transactionDetails.blockIndex)));
+	  transactionDetails.blockHash.CopyFrom(segment.getBlockHash(new uint(transactionDetails.blockIndex)));
 
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to contain a copy constructor call - this should be verified and a copy constructor should be created:
 //ORIGINAL LINE: auto timestamps = segment->getLastTimestamps(1, transactionDetails.blockIndex, addGenesisBlock);
-	  var timestamps = segment.getLastTimestamps(1, new uint32_t(transactionDetails.blockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
+	  var timestamps = segment.getLastTimestamps(1, new uint(transactionDetails.blockIndex), new CryptoNote.UseGenesis(GlobalMembers.addGenesisBlock));
 	  Debug.Assert(timestamps.Count == 1);
 	  transactionDetails.timestamp = timestamps[timestamps.Count - 1];
 
@@ -2187,7 +2187,7 @@ public class Core : ICore, ICoreInformation
 
 	  KeyInput input = new KeyInput();
 	  transaction.getInput(i, input);
-	  uint64_t currentMixin = input.outputIndexes.Count;
+	  ulong currentMixin = input.outputIndexes.Count;
 	  if (currentMixin > transactionDetails.mixin)
 	  {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -2224,8 +2224,8 @@ public class Core : ICore, ICoreInformation
 		txInToKeyDetails.input = boost::get<KeyInput>(rawTransaction.inputs[i]);
 		List<Tuple<Crypto.Hash, size_t>> outputReferences = new List<Tuple<Crypto.Hash, size_t>>();
 		outputReferences.Capacity = txInToKeyDetails.input.outputIndexes.Count;
-		List<uint32_t> globalIndexes = relativeOutputOffsetsToAbsolute(txInToKeyDetails.input.outputIndexes);
-		ExtractOutputKeysResult result = segment.extractKeyOtputReferences(new uint64_t(txInToKeyDetails.input.amount), new Common.ArrayView<uint32_t>(globalIndexes.data(), globalIndexes.Count), outputReferences);
+		List<uint> globalIndexes = relativeOutputOffsetsToAbsolute(txInToKeyDetails.input.outputIndexes);
+		ExtractOutputKeysResult result = segment.extractKeyOtputReferences(new ulong(txInToKeyDetails.input.amount), new Common.ArrayView<uint>(globalIndexes.data(), globalIndexes.Count), outputReferences);
 		if (result == result)
 		{
 		}
@@ -2243,7 +2243,7 @@ public class Core : ICore, ICoreInformation
 	}
 
 	transactionDetails.outputs.Capacity = transaction.getOutputCount();
-	List<uint32_t> globalIndexes = new List<uint32_t>();
+	List<uint> globalIndexes = new List<uint>();
 	globalIndexes.Capacity = transaction.getOutputCount();
 	if (!transactionDetails.inBlockchain || !getTransactionGlobalIndexes(transactionDetails.hash, globalIndexes))
 	{
@@ -2264,7 +2264,7 @@ public class Core : ICore, ICoreInformation
 
 	return transactionDetails;
   }
-  private void notifyOnSuccess(error.AddBlockErrorCode opResult, uint32_t previousBlockIndex, CachedBlock cachedBlock, IBlockchainCache cache)
+  private void notifyOnSuccess(error.AddBlockErrorCode opResult, uint previousBlockIndex, CachedBlock cachedBlock, IBlockchainCache cache)
   {
 	switch (opResult)
 	{
@@ -2375,7 +2375,7 @@ public class Core : ICore, ICoreInformation
 
 	var lastBlockSizes = mainChain.getLastBlocksSizes(currency.rewardBlocksWindow());
 
-	blockMedianSize = Math.Max(Common.GlobalMembers.medianValue(lastBlockSizes), (uint64_t)nextBlockGrantedFullRewardZone);
+	blockMedianSize = Math.Max(Common.GlobalMembers.medianValue(lastBlockSizes), (ulong)nextBlockGrantedFullRewardZone);
   }
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
   private bool addTransactionToPool(CachedTransaction && cachedTransaction)
@@ -2400,14 +2400,14 @@ public class Core : ICore, ICoreInformation
   }
   private bool isTransactionValidForPool(CachedTransaction cachedTransaction, TransactionValidatorState validatorState)
   {
-	var (success, err) = Mixins.validate(new uint32_t(cachedTransaction), getTopBlockIndex());
+	var (success, err) = Mixins.validate(new uint(cachedTransaction), getTopBlockIndex());
 
 	if (!success)
 	{
 		return false;
 	}
 
-	uint64_t fee = new uint64_t();
+	ulong fee = new ulong();
 
 	if (auto validationResult = validateTransaction(cachedTransaction, validatorState, new List<IBlockchainCache>(chainsLeaves[0]), fee, getTopBlockIndex()))
 	{
@@ -2450,14 +2450,14 @@ public class Core : ICore, ICoreInformation
   }
   private void importBlocksFromStorage()
   {
-	uint32_t commonIndex = GlobalMembers.findCommonRoot(*mainChainStorage, *chainsLeaves[0]);
+	uint commonIndex = GlobalMembers.findCommonRoot(*mainChainStorage, *chainsLeaves[0]);
 	Debug.Assert(commonIndex <= mainChainStorage.getBlockCount());
 
 	cutSegment(*chainsLeaves[0], commonIndex + 1);
 
 	var previousBlockHash = GlobalMembers.getBlockHash(mainChainStorage.getBlockByIndex(commonIndex));
 	var blockCount = mainChainStorage.getBlockCount();
-	for (uint32_t i = commonIndex + 1; i < blockCount; ++i)
+	for (uint i = commonIndex + 1; i < blockCount; ++i)
 	{
 	  RawBlock rawBlock = mainChainStorage.getBlockByIndex(i);
 	  var blockTemplate = GlobalMembers.extractBlockTemplate(rawBlock);
@@ -2472,7 +2472,7 @@ public class Core : ICore, ICoreInformation
 	  previousBlockHash = cachedBlock.getBlockHash();
 
 	  List<CachedTransaction> transactions = new List<CachedTransaction>();
-	  uint64_t cumulativeSize = 0;
+	  ulong cumulativeSize = 0;
 	  if (!extractTransactions(rawBlock.transactions, transactions, cumulativeSize))
 	  {
 		logger.functorMethod(Logging.Level.ERROR) << "Couldn't deserialize raw block transactions in block " << cachedBlock.getBlockHash();
@@ -2483,13 +2483,13 @@ public class Core : ICore, ICoreInformation
 	  TransactionValidatorState spentOutputs = GlobalMembers.extractSpentOutputs(transactions);
 	  var currentDifficulty = chainsLeaves[0].getDifficultyForNextBlock(i - 1);
 
-	  uint64_t cumulativeFee = std::accumulate(transactions.GetEnumerator(), transactions.end(), UINT64_C(0), (uint64_t fee, CachedTransaction transaction) =>
+	  ulong cumulativeFee = std::accumulate(transactions.GetEnumerator(), transactions.end(), UINT64_C(0), (ulong fee, CachedTransaction transaction) =>
 	  {
 		return fee + transaction.getTransactionFee();
 	  });
 
-	  int64_t emissionChange = GlobalMembers.getEmissionChange(currency, *chainsLeaves[0], i - 1, cachedBlock, new uint64_t(cumulativeSize), new uint64_t(cumulativeFee));
-	  chainsLeaves[0].pushBlock(cachedBlock, transactions, spentOutputs, new uint64_t(cumulativeSize), new int64_t(emissionChange), new uint64_t(currentDifficulty), std::move(rawBlock));
+	  long emissionChange = GlobalMembers.getEmissionChange(currency, *chainsLeaves[0], i - 1, cachedBlock, new ulong(cumulativeSize), new ulong(cumulativeFee));
+	  chainsLeaves[0].pushBlock(cachedBlock, transactions, spentOutputs, new ulong(cumulativeSize), new long(emissionChange), new ulong(currentDifficulty), std::move(rawBlock));
 
 	  if (i % 1000 == 0 != null)
 	  {
@@ -2497,7 +2497,7 @@ public class Core : ICore, ICoreInformation
 	  }
 	}
   }
-  private void cutSegment(IBlockchainCache segment, uint32_t startIndex)
+  private void cutSegment(IBlockchainCache segment, uint startIndex)
   {
 	if (segment.getTopBlockIndex() < startIndex)
 	{
@@ -2505,11 +2505,11 @@ public class Core : ICore, ICoreInformation
 	}
 
 	logger.functorMethod(Logging.Level.INFO) << "Cutting root segment from index " << startIndex;
-	var childCache = segment.split(new uint32_t(startIndex));
+	var childCache = segment.split(new uint(startIndex));
 	segment.deleteChild(childCache.get());
   }
 
-  private void switchMainChainStorage(uint32_t splitBlockIndex, IBlockchainCache newChain)
+  private void switchMainChainStorage(uint splitBlockIndex, IBlockchainCache newChain)
   {
 	Debug.Assert(mainChainStorage.getBlockCount() > splitBlockIndex);
 
@@ -2519,9 +2519,9 @@ public class Core : ICore, ICoreInformation
 	  mainChainStorage.popBlock();
 	}
 
-	for (uint32_t index = splitBlockIndex; index <= newChain.getTopBlockIndex(); ++index)
+	for (uint index = splitBlockIndex; index <= newChain.getTopBlockIndex(); ++index)
 	{
-	  mainChainStorage.pushBlock(newChain.getBlockByIndex(new uint32_t(index)));
+	  mainChainStorage.pushBlock(newChain.getBlockByIndex(new uint(index)));
 	}
   }
 }
@@ -2565,7 +2565,7 @@ public class TransactionSpentInputsChecker
 
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool Core::getBlockTemplate(BlockTemplate& b, const AccountPublicAddress& adr, const ClassicVector<uint8_t>& extraNonce, uint64_t& difficulty, uint32_t& height) const
+//ORIGINAL LINE: bool Core::getBlockTemplate(BlockTemplate& b, const AccountPublicAddress& adr, const ClassicVector<ushort>& extraNonce, ulong& difficulty, uint& height) const
 
 }
 

@@ -43,7 +43,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 	hdr.m_ver.CopyFrom(GlobalMembers.PORTABLE_STORAGE_FORMAT_VER);
 
 	Common.write(target, hdr, sizeof(CryptoNote.KVBinaryStorageBlockHeader));
-	GlobalMembers.writeArraySize(target, new uint64_t(m_stack[0].count));
+	GlobalMembers.writeArraySize(target, new ulong(m_stack[0].count));
 	write(target, stream().data(), stream().size());
   }
 
@@ -56,7 +56,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 
   public override bool beginObject(Common.StringView name)
   {
-	checkArrayPreamble(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_OBJECT));
+	checkArrayPreamble(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_OBJECT));
 
 	m_stack.Add(new Level(new Common.StringView(name)));
 	m_objectsStack.Add(new MemoryStream());
@@ -75,15 +75,15 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 
 	auto @out = stream();
 
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_OBJECT), level.name);
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_OBJECT), level.name);
 
 	GlobalMembers.writeArraySize(@out, level.count);
 	write(@out, objStream.data(), objStream.size());
   }
 
-  public override bool beginArray(uint64_t size, Common.StringView name)
+  public override bool beginArray(ulong size, Common.StringView name)
   {
-	m_stack.Add(new Level(new Common.StringView(name), new uint64_t(size)));
+	m_stack.Add(new Level(new Common.StringView(name), new ulong(size)));
 	return true;
   }
   public override void endArray()
@@ -97,76 +97,76 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 	}
   }
 
-  public static override bool functorMethod(uint8_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT8), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT8), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
-  public static override bool functorMethod(int16_t value, Common.StringView name)
+  public static override bool functorMethod(short value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT16), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT16), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
-  public static override bool functorMethod(uint16_t value, Common.StringView name)
+  public static override bool functorMethod(ushort value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT16), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT16), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
-  public static override bool functorMethod(int32_t value, Common.StringView name)
+  public static override bool functorMethod(int value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT32), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT32), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
-  public static override bool functorMethod(uint32_t value, Common.StringView name)
+  public static override bool functorMethod(uint value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT32), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT32), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
-  public static override bool functorMethod(int64_t value, Common.StringView name)
+  public static override bool functorMethod(long value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT64), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_INT64), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
-  public static override bool functorMethod(uint64_t value, Common.StringView name)
+  public static override bool functorMethod(ulong value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT64), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_UINT64), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
   public static override bool functorMethod(ref double value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_DOUBLE), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_DOUBLE), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
   public static override bool functorMethod(ref bool value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_BOOL), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_BOOL), new Common.StringView(name));
 	GlobalMembers.writePod(stream(), value);
 	return true;
   }
   public static override bool functorMethod(string value, Common.StringView name)
   {
-	writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_STRING), new Common.StringView(name));
+	writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_STRING), new Common.StringView(name));
 
 	auto @out = stream();
 	GlobalMembers.writeArraySize(@out, value.Length);
 	write(@out, value.data(), value.Length);
 	return true;
   }
-  public override bool binary(object value, uint64_t size, Common.StringView name)
+  public override bool binary(object value, ulong size, Common.StringView name)
   {
 	if (size > 0)
 	{
-	  writeElementPrefix(new uint8_t(GlobalMembers.BIN_KV_SERIALIZE_TYPE_STRING), new Common.StringView(name));
+	  writeElementPrefix(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_STRING), new Common.StringView(name));
 	  auto @out = stream();
-	  GlobalMembers.writeArraySize(@out, new uint64_t(size));
+	  GlobalMembers.writeArraySize(@out, new ulong(size));
 	  write(@out, value, size);
 	}
 	return true;
@@ -185,11 +185,11 @@ public class KVBinaryOutputStreamSerializer : ISerializer
   }
 
 
-  private void writeElementPrefix(uint8_t type, Common.StringView name)
+  private void writeElementPrefix(ushort type, Common.StringView name)
   {
 	Debug.Assert(m_stack.Count);
 
-	checkArrayPreamble(new uint8_t(type));
+	checkArrayPreamble(new ushort(type));
 	Level level = m_stack[m_stack.Count - 1];
 
 	if (level.state != State.Array)
@@ -203,7 +203,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 	  ++level.count;
 	}
   }
-  private void checkArrayPreamble(uint8_t type)
+  private void checkArrayPreamble(ushort type)
   {
 	if (m_stack.Count == 0)
 	{
@@ -218,12 +218,12 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 	  GlobalMembers.writeElementName(s, level.name);
 	  char c = GlobalMembers.BIN_KV_SERIALIZE_FLAG_ARRAY | type;
 	  write(s, c, 1);
-	  GlobalMembers.writeArraySize(s, new uint64_t(level.count));
+	  GlobalMembers.writeArraySize(s, new ulong(level.count));
 	  level.state = State.Array;
 	}
   }
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void updateState(uint8_t type);
+//  void updateState(ushort type);
   private MemoryStream stream()
   {
 	Debug.Assert(m_objectsStack.Count);
@@ -242,7 +242,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
   {
 	public State state;
 	public string name;
-	public uint64_t count = new uint64_t();
+	public ulong count = new ulong();
 
 	public Level(Common.StringView nm)
 	{
@@ -251,7 +251,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 		this.count = 0;
 	}
 
-	public Level(Common.StringView nm, uint64_t arraySize)
+	public Level(Common.StringView nm, ulong arraySize)
 	{
 		this.name = nm;
 		this.state = new CryptoNote.KVBinaryOutputStreamSerializer.State.ArrayPrefix;

@@ -85,7 +85,7 @@ public class DaemonCommandsHandler
   }
 
   //--------------------------------------------------------------------------------
-  private bool print_block_by_height(uint32_t height)
+  private bool print_block_by_height(uint height)
   {
 	if (height - 1 > m_core.getTopBlockIndex() != null)
 	{
@@ -184,9 +184,9 @@ public class DaemonCommandsHandler
 		  return false;
 	  }
 
-	  uint32_t start_index = 0;
-	  uint32_t end_index = 0;
-	  uint32_t end_block_parametr = m_core.getTopBlockIndex();
+	  uint start_index = 0;
+	  uint end_index = 0;
+	  uint end_block_parametr = m_core.getTopBlockIndex();
 
 	  if (!Common.GlobalMembers.fromString(args[0], start_index))
 	  {
@@ -298,7 +298,7 @@ public class DaemonCommandsHandler
 	  return true;
 	}
 
-	uint16_t l = 0;
+	ushort l = 0;
 	if (!Common.GlobalMembers.fromString(args[0], l))
 	{
 	  Console.Write("wrong number format, use: set_log <log_level_number_0-4>");
@@ -331,8 +331,8 @@ public class DaemonCommandsHandler
 	string arg = args[0];
 	try
 	{
-	  uint32_t height = boost::lexical_cast<uint32_t>(arg);
-	  print_block_by_height(new uint32_t(height));
+	  uint height = boost::lexical_cast<uint>(arg);
+	  print_block_by_height(new uint(height));
 	}
 	catch (boost::bad_lexical_cast)
 	{
@@ -360,13 +360,13 @@ public class DaemonCommandsHandler
 
 	List<Crypto.Hash> tx_ids = new List<Crypto.Hash>();
 	tx_ids.Add(tx_hash);
-	List<List<uint8_t>> txs = new List<List<uint8_t>>();
+	List<List<ushort>> txs = new List<List<ushort>>();
 	List<Crypto.Hash> missed_ids = new List<Crypto.Hash>();
 	m_core.getTransactions(tx_ids, txs, missed_ids);
 
 	if (1 == txs.Count)
 	{
-	  CryptoNote.CachedTransaction tx = new CryptoNote.CachedTransaction(new List<List<uint8_t>>(txs[0]));
+	  CryptoNote.CachedTransaction tx = new CryptoNote.CachedTransaction(new List<List<ushort>>(txs[0]));
 	  GlobalMembers.print_as_json(tx.getTransaction());
 	}
 	else

@@ -10,7 +10,7 @@ namespace System
 
 public class Ipv4Address
 {
-  public Ipv4Address(uint32_t value)
+  public Ipv4Address(uint value)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this.value = value;
@@ -59,8 +59,8 @@ public class Ipv4Address
 	return ImpliedObject.value == other.value;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t getValue() const
-  public uint32_t getValue()
+//ORIGINAL LINE: uint getValue() const
+  public uint getValue()
   {
 	return value;
   }
@@ -92,7 +92,7 @@ public class Ipv4Address
 	return result;
   }
 
-  private uint32_t value = new uint32_t();
+  private uint value = new uint();
 }
 
 }

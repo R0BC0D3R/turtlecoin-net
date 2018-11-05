@@ -35,16 +35,16 @@ namespace CryptoNote
 public class TransactionSourceEntry
 {
 
-  public List<Tuple<uint32_t, Crypto.PublicKey>> outputs = new List<Tuple<uint32_t, Crypto.PublicKey>>(); //index + key
+  public List<Tuple<uint, Crypto.PublicKey>> outputs = new List<Tuple<uint, Crypto.PublicKey>>(); //index + key
   public size_t realOutput = new size_t(); //index in outputs vector of real output_entry
   public Crypto.PublicKey realTransactionPublicKey = new Crypto.PublicKey(); //incoming real tx public key
   public size_t realOutputIndexInTransaction = new size_t(); //index in transaction outputs vector
-  public uint64_t amount = new uint64_t(); //money
+  public ulong amount = new ulong(); //money
 }
 
 public class TransactionDestinationEntry
 {
-  public uint64_t amount = new uint64_t(); //money
+  public ulong amount = new ulong(); //money
   public AccountPublicAddress addr = new AccountPublicAddress(); //destination address
 
   public TransactionDestinationEntry()
@@ -52,7 +52,7 @@ public class TransactionDestinationEntry
 	  this.amount = 0;
 	  this.addr = boost::value_initialized<AccountPublicAddress>();
   }
-  public TransactionDestinationEntry(uint64_t amount, AccountPublicAddress addr)
+  public TransactionDestinationEntry(ulong amount, AccountPublicAddress addr)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this.amount = amount;

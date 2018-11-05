@@ -19,7 +19,7 @@ public class ConnectException : System.Exception
 public class HttpClient : System.IDisposable
 {
 
-  public HttpClient(System.Dispatcher dispatcher, string address, uint16_t port)
+  public HttpClient(System.Dispatcher dispatcher, string address, ushort port)
   {
 	  this.m_dispatcher = dispatcher;
 	  this.m_address = address;
@@ -102,7 +102,7 @@ public class HttpClient : System.IDisposable
   }
 
   private readonly string m_address;
-  private readonly uint16_t m_port = new uint16_t();
+  private readonly ushort m_port = new ushort();
 
   private bool m_connected = false;
   private System.Dispatcher m_dispatcher;

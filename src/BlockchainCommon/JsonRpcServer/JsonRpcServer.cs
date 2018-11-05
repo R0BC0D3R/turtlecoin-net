@@ -43,9 +43,9 @@ public abstract class JsonRpcServer : HttpServer
 //C++ TO C# CONVERTER TODO TASK: C# has no equivalent to ' = delete':
 //  JsonRpcServer(const JsonRpcServer&) = delete;
 
-  public new void start(string bindAddress, uint16_t bindPort)
+  public new void start(string bindAddress, ushort bindPort)
   {
-	base.start(bindAddress, new uint16_t(bindPort));
+	base.start(bindAddress, new ushort(bindPort));
 	stopEvent.wait();
 	base.stop();
   }
@@ -56,14 +56,14 @@ public abstract class JsonRpcServer : HttpServer
 	JsonValue error = new JsonValue(JsonValue.OBJECT);
 
 	JsonValue code = new JsonValue();
-	code = (int64_t)CryptoNote.JsonRpc.errParseError; //Application specific error code
+	code = (long)CryptoNote.JsonRpc.errParseError; //Application specific error code
 
 	JsonValue message = new JsonValue();
 	message = ec.message();
 
 	JsonValue data = new JsonValue(JsonValue.OBJECT);
 	JsonValue appCode = new JsonValue();
-	appCode = (int64_t)ec.value();
+	appCode = (long)ec.value();
 	data.insert("application_code", appCode);
 
 	error.insert("code", code);
@@ -78,7 +78,7 @@ public abstract class JsonRpcServer : HttpServer
 	JsonValue error = new JsonValue(JsonValue.OBJECT);
 
 	JsonValue code = new JsonValue();
-	code = (int64_t)CryptoNote.JsonRpc.errMethodNotFound; //ambigous declaration of JsonValue::operator= (between int and JsonValue)
+	code = (long)CryptoNote.JsonRpc.errMethodNotFound; //ambigous declaration of JsonValue::operator= (between int and JsonValue)
 
 	JsonValue message = new JsonValue();
 	message = "Method not found";
@@ -94,7 +94,7 @@ public abstract class JsonRpcServer : HttpServer
 	JsonValue error = new JsonValue(JsonValue.OBJECT);
 
 	JsonValue code = new JsonValue();
-	code = (int64_t)CryptoNote.JsonRpc.errInvalidPassword;
+	code = (long)CryptoNote.JsonRpc.errInvalidPassword;
 
 	JsonValue message = new JsonValue();
 	message = "Invalid or no rpc password";
@@ -110,7 +110,7 @@ public abstract class JsonRpcServer : HttpServer
 	JsonValue error = new JsonValue(JsonValue.OBJECT);
 
 	JsonValue code = new JsonValue();
-	code = (int64_t)errorCode;
+	code = (long)errorCode;
 
 	string msg;
 	if (what != null)
@@ -154,7 +154,7 @@ public abstract class JsonRpcServer : HttpServer
 
 	JsonValue error = new JsonValue(JsonValue.OBJECT);
 	JsonValue code = new JsonValue();
-	code = (int64_t)CryptoNote.JsonRpc.errParseError; //ambigous declaration of JsonValue::operator= (between int and JsonValue)
+	code = (long)CryptoNote.JsonRpc.errParseError; //ambigous declaration of JsonValue::operator= (between int and JsonValue)
 
 	JsonValue message = "Parse error";
 

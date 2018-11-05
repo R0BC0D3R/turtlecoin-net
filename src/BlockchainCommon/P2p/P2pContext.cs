@@ -34,10 +34,10 @@ public class P2pContext : System.IDisposable
 	}
 
 	public Type messageType;
-	public uint32_t returnCode = new uint32_t();
+	public uint returnCode = new uint();
 
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
-	public Message(P2pMessage && msg, Type messageType, uint32_t returnCode = 0)
+	public Message(P2pMessage && msg, Type messageType, uint returnCode = 0)
 	{
 		this.messageType = new CryptoNote.P2pContext.Message.Type(messageType);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -89,14 +89,14 @@ public class P2pContext : System.IDisposable
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getPeerId() const
-  public uint64_t getPeerId()
+//ORIGINAL LINE: ulong getPeerId() const
+  public ulong getPeerId()
   {
 	return peerId;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint16_t getPeerPort() const
-  public uint16_t getPeerPort()
+//ORIGINAL LINE: ushort getPeerPort() const
+  public ushort getPeerPort()
   {
 	return peerPort;
   }
@@ -113,7 +113,7 @@ public class P2pContext : System.IDisposable
 	return incoming;
   }
 
-  public void setPeerInfo(uint8_t protocolVersion, uint64_t id, uint16_t port)
+  public void setPeerInfo(ushort protocolVersion, ulong id, ushort port)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: version = protocolVersion;
@@ -153,13 +153,13 @@ public class P2pContext : System.IDisposable
 	switch (msg.messageType)
 	{
 	case P2pContext.Message.NOTIFY:
-	  proto.sendMessage(new uint32_t(msg.type), msg.data, false);
+	  proto.sendMessage(new uint(msg.type), msg.data, false);
 	  break;
 	case P2pContext.Message.REQUEST:
-	  proto.sendMessage(new uint32_t(msg.type), msg.data, true);
+	  proto.sendMessage(new uint(msg.type), msg.data, true);
 	  break;
 	case P2pContext.Message.REPLY:
-	  proto.sendReply(new uint32_t(msg.type), msg.data, new uint32_t(msg.returnCode));
+	  proto.sendReply(new uint(msg.type), msg.data, new uint(msg.returnCode));
 	  break;
 	}
   }
@@ -178,11 +178,11 @@ public class P2pContext : System.IDisposable
   }
 
 
-  private uint8_t version = 0;
+  private ushort version = 0;
   private readonly bool incoming;
   private readonly NetworkAddress remoteAddress = new NetworkAddress();
-  private uint64_t peerId = 0;
-  private uint16_t peerPort = 0;
+  private ulong peerId = 0;
+  private ushort peerPort = 0;
 
   private System.Dispatcher dispatcher;
   private System.ContextGroup contextGroup = new System.ContextGroup();

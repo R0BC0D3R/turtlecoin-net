@@ -112,7 +112,7 @@ public class MinerManager : System.IDisposable
 
   private CryptoNote.BlockTemplate m_minedBlock = new CryptoNote.BlockTemplate();
 
-  private uint64_t m_lastBlockTimestamp = new uint64_t();
+  private ulong m_lastBlockTimestamp = new ulong();
 
   private void eventLoop()
   {
@@ -186,12 +186,12 @@ public class MinerManager : System.IDisposable
   private void pushEvent(MinerEvent && event);
   private void printHashRate()
   {
-	uint64_t last_hash_count = m_miner.getHashCount();
+	ulong last_hash_count = m_miner.getHashCount();
 
 	while (isRunning)
 	{
 	  std::this_thread.sleep_for(std::chrono.seconds(60));
-	  uint64_t current_hash_count = m_miner.getHashCount();
+	  ulong current_hash_count = m_miner.getHashCount();
 	  double hashes = (double)((current_hash_count - last_hash_count) / 60);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: last_hash_count = current_hash_count;
@@ -250,13 +250,13 @@ public class MinerManager : System.IDisposable
 	m_blockchainMonitor.stop();
   }
 
-  private bool submitBlock(BlockTemplate minedBlock, string daemonHost, uint16_t daemonPort)
+  private bool submitBlock(BlockTemplate minedBlock, string daemonHost, ushort daemonPort)
   {
 	CachedBlock cachedBlock = new CachedBlock(minedBlock);
 
 	try
 	{
-	  HttpClient client = new HttpClient(m_dispatcher, daemonHost, new uint16_t(daemonPort));
+	  HttpClient client = new HttpClient(m_dispatcher, daemonHost, new ushort(daemonPort));
 
 	  COMMAND_RPC_SUBMITBLOCK.request request = new COMMAND_RPC_SUBMITBLOCK.request();
 	  request.emplace_back(Common.toHex(CryptoNote.GlobalMembers.toBinaryArray(minedBlock)));
@@ -275,11 +275,11 @@ public class MinerManager : System.IDisposable
 	  return false;
 	}
   }
-  private BlockMiningParameters requestMiningParameters(System.Dispatcher dispatcher, string daemonHost, uint16_t daemonPort, string miningAddress)
+  private BlockMiningParameters requestMiningParameters(System.Dispatcher dispatcher, string daemonHost, ushort daemonPort, string miningAddress)
   {
 	try
 	{
-	  HttpClient client = new HttpClient(dispatcher, daemonHost, new uint16_t(daemonPort));
+	  HttpClient client = new HttpClient(dispatcher, daemonHost, new ushort(daemonPort));
 
 	  COMMAND_RPC_GETBLOCKTEMPLATE.request request = new COMMAND_RPC_GETBLOCKTEMPLATE.request();
 	  request.wallet_address = miningAddress;

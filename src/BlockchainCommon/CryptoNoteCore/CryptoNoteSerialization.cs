@@ -29,7 +29,7 @@ namespace CryptoNote
 //C++ TO C# CONVERTER NOTE: C# has no need of forward class declarations:
 //struct TransactionExtraMergeMiningTag;
 
-public enum SerializationTag : uint8_t
+public enum SerializationTag : ushort
 {
 	Base = 0xff,
 	Key = 0x2,
@@ -42,25 +42,25 @@ public enum SerializationTag : uint8_t
 //C++ TO C# CONVERTER NOTE: C# does not allow anonymous namespaces:
 //namespace
 
-public class BinaryVariantTagGetter: boost::static_visitor<uint8_t>
+public class BinaryVariantTagGetter: boost::static_visitor<ushort>
 {
-  public static uint8_t functorMethod(CryptoNote.BaseInput UnnamedParameter)
+  public static ushort functorMethod(CryptoNote.BaseInput UnnamedParameter)
   {
 	  return 0xff;
   }
-  public static uint8_t functorMethod(CryptoNote.KeyInput UnnamedParameter)
+  public static ushort functorMethod(CryptoNote.KeyInput UnnamedParameter)
   {
 	  return 0x2;
   }
-  public static uint8_t functorMethod(CryptoNote.KeyOutput UnnamedParameter)
+  public static ushort functorMethod(CryptoNote.KeyOutput UnnamedParameter)
   {
 	  return 0x2;
   }
-  public static uint8_t functorMethod(CryptoNote.Transaction UnnamedParameter)
+  public static ushort functorMethod(CryptoNote.Transaction UnnamedParameter)
   {
 	  return 0xcc;
   }
-  public static uint8_t functorMethod(CryptoNote.BlockTemplate UnnamedParameter)
+  public static ushort functorMethod(CryptoNote.BlockTemplate UnnamedParameter)
   {
 	  return 0xbb;
   }

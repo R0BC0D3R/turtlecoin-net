@@ -35,10 +35,10 @@ public class MemoryBlockchainCacheFactory: IBlockchainCacheFactory
   {
 	return createBlockchainCache(currency, null, 0);
   }
-  public override std::unique_ptr<IBlockchainCache> createBlockchainCache(Currency currency, IBlockchainCache parent, uint32_t startIndex = 0)
+  public override std::unique_ptr<IBlockchainCache> createBlockchainCache(Currency currency, IBlockchainCache parent, uint startIndex = 0)
   {
 
-	return std::unique_ptr<IBlockchainCache>(new BlockchainCache(filename, currency, logger, parent, new uint32_t(startIndex)));
+	return std::unique_ptr<IBlockchainCache>(new BlockchainCache(filename, currency, logger, parent, new uint(startIndex)));
   }
 
   private string filename;

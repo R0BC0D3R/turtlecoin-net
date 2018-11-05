@@ -11,7 +11,7 @@ public abstract class IOutputStream : System.IDisposable
   public virtual void Dispose()
   {
   }
-  public abstract uint64_t writeSome(object data, uint64_t size);
+  public abstract ulong writeSome(object data, ulong size);
 }
 
 }

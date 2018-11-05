@@ -13,7 +13,7 @@ public class StringInputStream : IInputStream
 	  this.in = in;
 	  this.offset = 0;
   }
-  public override uint64_t readSome(object data, uint64_t size)
+  public override ulong readSome(object data, ulong size)
   {
 	if (size > in.Length - offset)
 	{
@@ -27,7 +27,7 @@ public class StringInputStream : IInputStream
   }
 
   private readonly string in;
-  private uint64_t offset = new uint64_t();
+  private ulong offset = new ulong();
 }
 
 }

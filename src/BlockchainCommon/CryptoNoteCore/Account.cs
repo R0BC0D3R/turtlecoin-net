@@ -50,7 +50,7 @@ namespace CryptoNote
 	{
 	  Crypto.SecretKey viewKeySeed = new Crypto.SecretKey();
 
-	  GlobalMembers.keccak((uint8_t) spend, sizeof(Crypto.SecretKey), (uint8_t) viewKeySeed, sizeof(Crypto.SecretKey));
+	  GlobalMembers.keccak((ushort) spend, sizeof(Crypto.SecretKey), (ushort) viewKeySeed, sizeof(Crypto.SecretKey));
 
 	  Crypto.generate_deterministic_keys(viewPublic, viewSecret, viewKeySeed);
 	}
@@ -75,12 +75,12 @@ namespace CryptoNote
 	  m_keys.CopyFrom(keys);
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t get_createtime() const
-	public uint64_t get_createtime()
+//ORIGINAL LINE: ulong get_createtime() const
+	public ulong get_createtime()
 	{
 		return m_creation_timestamp;
 	}
-	public void set_createtime(uint64_t val)
+	public void set_createtime(ulong val)
 	{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: m_creation_timestamp = val;
@@ -108,7 +108,7 @@ namespace CryptoNote
 	  m_keys = new AccountKeys();
 	}
 	private AccountKeys m_keys = new AccountKeys();
-	private uint64_t m_creation_timestamp = new uint64_t();
+	private ulong m_creation_timestamp = new ulong();
   }
 }
 

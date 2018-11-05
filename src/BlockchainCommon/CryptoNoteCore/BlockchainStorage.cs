@@ -26,19 +26,19 @@ public class BlockchainStorage : System.IDisposable
 
 	//Returns IBlockchainStorageInternal with elements from [splitIndex, blocks.size() - 1].
 	//Original IBlockchainStorageInternal will contain elements from [0, splitIndex - 1].
-	public abstract std::unique_ptr<IBlockchainStorageInternal> splitStorage(uint32_t splitIndex);
+	public abstract std::unique_ptr<IBlockchainStorageInternal> splitStorage(uint splitIndex);
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint32_t index) const = 0;
-	public abstract RawBlock getBlockByIndex(uint32_t index);
+//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint index) const = 0;
+	public abstract RawBlock getBlockByIndex(uint index);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getBlockCount() const = 0;
-	public abstract uint32_t getBlockCount();
+//ORIGINAL LINE: virtual uint getBlockCount() const = 0;
+	public abstract uint getBlockCount();
   }
 
-  public BlockchainStorage(uint32_t reserveSize)
+  public BlockchainStorage(uint reserveSize)
   {
-	  this.internalStorage = new MemoryBlockchainStorage(new uint32_t(reserveSize));
+	  this.internalStorage = new MemoryBlockchainStorage(new uint(reserveSize));
   }
   public BlockchainStorage(string indexFileName, string dataFileName)
   {
@@ -59,21 +59,21 @@ public class BlockchainStorage : System.IDisposable
 
   //Returns MemoryBlockchainStorage with elements from [splitIndex, blocks.size() - 1].
   //Original MemoryBlockchainStorage will contain elements from [0, splitIndex - 1].
-  public virtual std::unique_ptr<BlockchainStorage> splitStorage(uint32_t splitIndex)
+  public virtual std::unique_ptr<BlockchainStorage> splitStorage(uint splitIndex)
   {
 	std::unique_ptr<BlockchainStorage> newStorage = new std::unique_ptr<BlockchainStorage>(new BlockchainStorage(internalStorage.splitStorage(splitIndex)));
 	return newStorage;
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint32_t index) const
-  public virtual RawBlock getBlockByIndex(uint32_t index)
+//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint index) const
+  public virtual RawBlock getBlockByIndex(uint index)
   {
 	return internalStorage.getBlockByIndex(index);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getBlockCount() const
-  public virtual uint32_t getBlockCount()
+//ORIGINAL LINE: virtual uint getBlockCount() const
+  public virtual uint getBlockCount()
   {
 	return internalStorage.getBlockCount();
   }

@@ -11,7 +11,7 @@ public abstract class IInputStream : System.IDisposable
   public virtual void Dispose()
   {
   }
-  public abstract uint64_t readSome(object data, uint64_t size);
+  public abstract ulong readSome(object data, ulong size);
 }
 
 }

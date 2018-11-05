@@ -8,7 +8,7 @@ namespace CryptoNote
 
 public class P2pMessage
 {
-  public uint32_t type = new uint32_t();
+  public uint type = new uint();
   public BinaryArray data = new BinaryArray();
 }
 

@@ -73,13 +73,13 @@
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define inline __inline
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define SWAP32LE IDENT32
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -207,28 +207,28 @@ public class Skein_Ctxt_Hdr_t
 {
   public size_t hashBitLen = new size_t(); // size of hash result, in bits
   public size_t bCnt = new size_t(); // current byte count in buffer b[]
-  public uint64_t[] T = Arrays.InitializeWithDefaultInstances<uint64_t>(DefineConstants.SKEIN_MODIFIER_WORDS); // tweak words: T[0]=byte cnt, T[1]=flags
+  public ulong[] T = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN_MODIFIER_WORDS); // tweak words: T[0]=byte cnt, T[1]=flags
 }
 
 public class Skein_256_Ctxt_t //  256-bit Skein hash context structure
 {
   public Skein_Ctxt_Hdr_t h = new Skein_Ctxt_Hdr_t(); // common header context variables
-  public uint64_t[] X = Arrays.InitializeWithDefaultInstances<uint64_t>(DefineConstants.SKEIN_256_STATE_WORDS); // chaining variables
-  uint8_t b[(8 * DefineConstants.SKEIN_256_STATE_WORDS)]; // partial block buffer (8-byte aligned)
+  public ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN_256_STATE_WORDS); // chaining variables
+  ushort b[(8 * DefineConstants.SKEIN_256_STATE_WORDS)]; // partial block buffer (8-byte aligned)
 }
 
 public class Skein_512_Ctxt_t //  512-bit Skein hash context structure
 {
   public Skein_Ctxt_Hdr_t h = new Skein_Ctxt_Hdr_t(); // common header context variables
-  public uint64_t[] X = Arrays.InitializeWithDefaultInstances<uint64_t>(DefineConstants.SKEIN_512_STATE_WORDS); // chaining variables
-  uint8_t b[(8 * DefineConstants.SKEIN_512_STATE_WORDS)]; // partial block buffer (8-byte aligned)
+  public ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN_512_STATE_WORDS); // chaining variables
+  ushort b[(8 * DefineConstants.SKEIN_512_STATE_WORDS)]; // partial block buffer (8-byte aligned)
 }
 
 public class Skein1024_Ctxt_t // 1024-bit Skein hash context structure
 {
   public Skein_Ctxt_Hdr_t h = new Skein_Ctxt_Hdr_t(); // common header context variables
-  public uint64_t[] X = Arrays.InitializeWithDefaultInstances<uint64_t>(DefineConstants.SKEIN1024_STATE_WORDS); // chaining variables
-  uint8_t b[(8 * DefineConstants.SKEIN1024_STATE_WORDS)]; // partial block buffer (8-byte aligned)
+  public ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN1024_STATE_WORDS); // chaining variables
+  ushort b[(8 * DefineConstants.SKEIN1024_STATE_WORDS)]; // partial block buffer (8-byte aligned)
 }
 
 /*****************************************************************

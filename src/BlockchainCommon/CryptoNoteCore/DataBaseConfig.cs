@@ -60,26 +60,26 @@ public class DataBaseConfig
 	return dataDir;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint16_t getBackgroundThreadsCount() const
-  public uint16_t getBackgroundThreadsCount()
+//ORIGINAL LINE: ushort getBackgroundThreadsCount() const
+  public ushort getBackgroundThreadsCount()
   {
 	return backgroundThreadsCount;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t getMaxOpenFiles() const
-  public uint32_t getMaxOpenFiles()
+//ORIGINAL LINE: uint getMaxOpenFiles() const
+  public uint getMaxOpenFiles()
   {
 	return maxOpenFiles;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getWriteBufferSize() const
-  public uint64_t getWriteBufferSize()
+//ORIGINAL LINE: ulong getWriteBufferSize() const
+  public ulong getWriteBufferSize()
   {
 	return writeBufferSize;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getReadCacheSize() const
-  public uint64_t getReadCacheSize()
+//ORIGINAL LINE: ulong getReadCacheSize() const
+  public ulong getReadCacheSize()
   {
 	return readCacheSize;
   }
@@ -98,25 +98,25 @@ public class DataBaseConfig
   {
 	this.dataDir = dataDir;
   }
-  public void setBackgroundThreadsCount(uint16_t backgroundThreadsCount)
+  public void setBackgroundThreadsCount(ushort backgroundThreadsCount)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this->backgroundThreadsCount = backgroundThreadsCount;
 	this.backgroundThreadsCount.CopyFrom(backgroundThreadsCount);
   }
-  public void setMaxOpenFiles(uint32_t maxOpenFiles)
+  public void setMaxOpenFiles(uint maxOpenFiles)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this->maxOpenFiles = maxOpenFiles;
 	this.maxOpenFiles.CopyFrom(maxOpenFiles);
   }
-  public void setWriteBufferSize(uint64_t writeBufferSize)
+  public void setWriteBufferSize(ulong writeBufferSize)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this->writeBufferSize = writeBufferSize;
 	this.writeBufferSize.CopyFrom(writeBufferSize);
   }
-  public void setReadCacheSize(uint64_t readCacheSize)
+  public void setReadCacheSize(ulong readCacheSize)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this->readCacheSize = readCacheSize;
@@ -129,10 +129,10 @@ public class DataBaseConfig
 
   private bool configFolderDefaulted;
   private string dataDir;
-  private uint16_t backgroundThreadsCount = new uint16_t();
-  private uint32_t maxOpenFiles = new uint32_t();
-  private uint64_t writeBufferSize = new uint64_t();
-  private uint64_t readCacheSize = new uint64_t();
+  private ushort backgroundThreadsCount = new ushort();
+  private uint maxOpenFiles = new uint();
+  private ulong writeBufferSize = new ulong();
+  private ulong readCacheSize = new ulong();
   private bool testnet;
 }
 } //namespace CryptoNote

@@ -84,13 +84,13 @@ public class CachedTransaction
 	return transactionBinaryArray.get();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getTransactionFee() const
-  public uint64_t getTransactionFee()
+//ORIGINAL LINE: ulong getTransactionFee() const
+  public ulong getTransactionFee()
   {
 	if (!transactionFee.is_initialized())
 	{
-	  uint64_t summaryInputAmount = 0;
-	  uint64_t summaryOutputAmount = 0;
+	  ulong summaryInputAmount = 0;
+	  ulong summaryOutputAmount = 0;
 	  foreach (var @out in transaction.outputs)
 	  {
 		summaryOutputAmount += @out.amount;
@@ -124,7 +124,7 @@ public class CachedTransaction
   private boost.optional<BinaryArray> transactionBinaryArray;
   private boost.optional<Crypto.Hash> transactionHash;
   private boost.optional<Crypto.Hash> transactionPrefixHash;
-  private boost.optional<uint64_t> transactionFee;
+  private boost.optional<ulong> transactionFee;
 }
 
 }

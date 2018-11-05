@@ -35,7 +35,7 @@ public class TransactionPool : ITransactionPool
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:
   public bool pushTransaction(CachedTransaction && transaction, TransactionValidatorState && transactionState)
   {
-	var pendingTx = new PendingTransactionInfo({(uint64_t)time(null), std::move(transaction)});
+	var pendingTx = new PendingTransactionInfo({(ulong)time(null), std::move(transaction)});
 
 	Crypto.Hash paymentId = new Crypto.Hash();
 	if (getPaymentIdFromTxExtra(pendingTx.cachedTransaction.getTransaction().extra, paymentId))
@@ -132,8 +132,8 @@ public class TransactionPool : ITransactionPool
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getTransactionReceiveTime(const Crypto::Hash& hash) const override
-  public uint64_t getTransactionReceiveTime(Crypto.Hash hash)
+//ORIGINAL LINE: virtual ulong getTransactionReceiveTime(const Crypto::Hash& hash) const override
+  public ulong getTransactionReceiveTime(Crypto.Hash hash)
   {
 	var it = transactionHashIndex.find(hash);
 	Debug.Assert(it != transactionHashIndex.end());
@@ -160,7 +160,7 @@ public class TransactionPool : ITransactionPool
 
   private class PendingTransactionInfo
   {
-	public uint64_t receiveTime = new uint64_t();
+	public ulong receiveTime = new ulong();
 	public CachedTransaction cachedTransaction = new CachedTransaction();
 	public boost.optional<Crypto.Hash> paymentId;
 
@@ -188,10 +188,10 @@ public class TransactionPool : ITransactionPool
 	  // price(lhs) > price(rhs) -->
 	  // lhs.fee / lhs.blobSize > rhs.fee / rhs.blobSize -->
 	  // lhs.fee * rhs.blobSize > rhs.fee * lhs.blobSize
-	  uint64_t lhs_hi = new uint64_t();
-	  uint64_t lhs_lo = GlobalMembers.mul128(left.getTransactionFee(), right.getTransactionBinaryArray().size(), lhs_hi);
-	  uint64_t rhs_hi = new uint64_t();
-	  uint64_t rhs_lo = GlobalMembers.mul128(right.getTransactionFee(), left.getTransactionBinaryArray().size(), rhs_hi);
+	  ulong lhs_hi = new ulong();
+	  ulong lhs_lo = GlobalMembers.mul128(left.getTransactionFee(), right.getTransactionBinaryArray().size(), lhs_hi);
+	  ulong rhs_hi = new ulong();
+	  ulong rhs_lo = GlobalMembers.mul128(right.getTransactionFee(), left.getTransactionBinaryArray().size(), rhs_hi);
 
 	  return (lhs_hi > rhs_hi) || (lhs_hi == rhs_hi && lhs_lo > rhs_lo) || (lhs_hi == rhs_hi && lhs_lo == rhs_lo && left.getTransactionBinaryArray().size() < right.getTransactionBinaryArray().size()) || (lhs_hi == rhs_hi && lhs_lo == rhs_lo && left.getTransactionBinaryArray().size() == right.getTransactionBinaryArray().size() && lhs.receiveTime < rhs.receiveTime);
 	}
@@ -241,13 +241,13 @@ public class TransactionPool : ITransactionPool
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define inline __inline
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT32(x) ((uint32_t) (x))
+//ORIGINAL LINE: #define IDENT32(x) ((uint) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define IDENT64(x) ((uint64_t) (x))
+//ORIGINAL LINE: #define IDENT64(x) ((ulong) (x))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP32(x) ((((uint32_t) (x) & 0x000000ff) << 24) | (((uint32_t) (x) & 0x0000ff00) << 8) | (((uint32_t) (x) & 0x00ff0000) >> 8) | (((uint32_t) (x) & 0xff000000) >> 24))
+//ORIGINAL LINE: #define SWAP32(x) ((((uint) (x) & 0x000000ff) << 24) | (((uint) (x) & 0x0000ff00) << 8) | (((uint) (x) & 0x00ff0000) >> 8) | (((uint) (x) & 0xff000000) >> 24))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define SWAP64(x) ((((uint64_t) (x) & 0x00000000000000ff) << 56) | (((uint64_t) (x) & 0x000000000000ff00) << 40) | (((uint64_t) (x) & 0x0000000000ff0000) << 24) | (((uint64_t) (x) & 0x00000000ff000000) << 8) | (((uint64_t) (x) & 0x000000ff00000000) >> 8) | (((uint64_t) (x) & 0x0000ff0000000000) >> 24) | (((uint64_t) (x) & 0x00ff000000000000) >> 40) | (((uint64_t) (x) & 0xff00000000000000) >> 56))
+//ORIGINAL LINE: #define SWAP64(x) ((((ulong) (x) & 0x00000000000000ff) << 56) | (((ulong) (x) & 0x000000000000ff00) << 40) | (((ulong) (x) & 0x0000000000ff0000) << 24) | (((ulong) (x) & 0x00000000ff000000) << 8) | (((ulong) (x) & 0x000000ff00000000) >> 8) | (((ulong) (x) & 0x0000ff0000000000) >> 24) | (((ulong) (x) & 0x00ff000000000000) >> 40) | (((ulong) (x) & 0xff00000000000000) >> 56))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define SWAP32LE IDENT32
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:

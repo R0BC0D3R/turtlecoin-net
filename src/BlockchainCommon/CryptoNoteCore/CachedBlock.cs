@@ -207,8 +207,8 @@ public class CachedBlock
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t getBlockIndex() const
-  public uint32_t getBlockIndex()
+//ORIGINAL LINE: uint getBlockIndex() const
+  public uint getBlockIndex()
   {
 	if (!blockIndex.is_initialized())
 	{
@@ -240,7 +240,7 @@ public class CachedBlock
   private boost.optional<BinaryArray> parentBlockHashingBinaryArray;
   private boost.optional<BinaryArray> parentBlockBinaryArrayHeaderOnly;
   private boost.optional<BinaryArray> parentBlockHashingBinaryArrayHeaderOnly;
-  private boost.optional<uint32_t> blockIndex;
+  private boost.optional<uint> blockIndex;
   private boost.optional<Crypto.Hash> transactionTreeHash;
   private boost.optional<Crypto.Hash> blockHash;
   private boost.optional<Crypto.Hash> blockLongHash;

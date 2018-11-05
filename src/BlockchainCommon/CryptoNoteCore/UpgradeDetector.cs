@@ -27,9 +27,9 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: The following statement was not recognized, possibly due to an unrecognized macro:
 	enum :
 //C++ TO C# CONVERTER TODO TASK: The following method format was not recognized, possibly due to an unrecognized macro:
-	uint32_t
+	uint
 	{
-	  UNDEF_HEIGHT = (uint32_t) - 1,
+	  UNDEF_HEIGHT = (uint) - 1,
 	}
   }
 
@@ -40,7 +40,7 @@ namespace CryptoNote
 //ORIGINAL LINE: template <typename BC>
   public class BasicUpgradeDetector <BC>: UpgradeDetectorBase
   {
-	public BasicUpgradeDetector(Currency currency, BC blockchain, uint8_t targetVersion, Logging.ILogger log)
+	public BasicUpgradeDetector(Currency currency, BC blockchain, ushort targetVersion, Logging.ILogger log)
 	{
 //C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		this.m_currency = new CryptoNote.Currency(currency);
@@ -54,7 +54,7 @@ namespace CryptoNote
 
 	public bool init()
 	{
-	  uint32_t upgradeHeight = m_currency.upgradeHeight(new uint8_t(m_targetVersion));
+	  uint upgradeHeight = m_currency.upgradeHeight(new ushort(m_targetVersion));
 	  if (upgradeHeight == UNDEF_HEIGHT)
 	  {
 		if (m_blockchain.empty())
@@ -65,14 +65,14 @@ namespace CryptoNote
 		else if (m_targetVersion - 1 == m_blockchain.back().bl.majorVersion)
 		{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: m_votingCompleteHeight = findVotingCompleteHeight(static_cast<uint32_t>(m_blockchain.size() - 1));
-		  m_votingCompleteHeight.CopyFrom(findVotingCompleteHeight((uint32_t)(m_blockchain.size() - 1)));
+//ORIGINAL LINE: m_votingCompleteHeight = findVotingCompleteHeight(static_cast<uint>(m_blockchain.size() - 1));
+		  m_votingCompleteHeight.CopyFrom(findVotingCompleteHeight((uint)(m_blockchain.size() - 1)));
 
 		}
 		else if (m_targetVersion <= m_blockchain.back().bl.majorVersion)
 		{
 //C++ TO C# CONVERTER TODO TASK: Lambda expressions cannot be assigned to 'var':
-		  var it = std::lower_bound(m_blockchain.begin(), m_blockchain.end(), m_targetVersion, (BC.value_type b, uint8_t v) =>
+		  var it = std::lower_bound(m_blockchain.begin(), m_blockchain.end(), m_targetVersion, (BC.value_type b, ushort v) =>
 		  {
 			  return b.bl.majorVersion < v;
 		  });
@@ -82,10 +82,10 @@ namespace CryptoNote
 			return false;
 		  }
 
-		  uint32_t upgradeHeight = (uint32_t)(it - m_blockchain.begin());
+		  uint upgradeHeight = (uint)(it - m_blockchain.begin());
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: m_votingCompleteHeight = findVotingCompleteHeight(upgradeHeight);
-		  m_votingCompleteHeight.CopyFrom(findVotingCompleteHeight(new uint32_t(upgradeHeight)));
+		  m_votingCompleteHeight.CopyFrom(findVotingCompleteHeight(new uint(upgradeHeight)));
 		  if (m_votingCompleteHeight == UNDEF_HEIGHT)
 		  {
 			logger.functorMethod(Logging.Level.ERROR, Logging.BRIGHT_RED) << "Internal error: voting complete height isn't found, upgrade height = " << upgradeHeight;
@@ -129,29 +129,29 @@ namespace CryptoNote
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint8_t targetVersion() const
-	public uint8_t targetVersion()
+//ORIGINAL LINE: ushort targetVersion() const
+	public ushort targetVersion()
 	{
 		return m_targetVersion;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t votingCompleteHeight() const
-	public uint32_t votingCompleteHeight()
+//ORIGINAL LINE: uint votingCompleteHeight() const
+	public uint votingCompleteHeight()
 	{
 		return m_votingCompleteHeight;
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t upgradeHeight() const
-	public uint32_t upgradeHeight()
+//ORIGINAL LINE: uint upgradeHeight() const
+	public uint upgradeHeight()
 	{
-	  if (m_currency.upgradeHeight(new uint8_t(m_targetVersion)) == UNDEF_HEIGHT)
+	  if (m_currency.upgradeHeight(new ushort(m_targetVersion)) == UNDEF_HEIGHT)
 	  {
-		return m_votingCompleteHeight == UNDEF_HEIGHT ? UNDEF_HEIGHT : m_currency.calculateUpgradeHeight(new uint32_t(m_votingCompleteHeight));
+		return m_votingCompleteHeight == UNDEF_HEIGHT ? UNDEF_HEIGHT : m_currency.calculateUpgradeHeight(new uint(m_votingCompleteHeight));
 	  }
 	  else
 	  {
-		return m_currency.upgradeHeight(new uint8_t(m_targetVersion));
+		return m_currency.upgradeHeight(new ushort(m_targetVersion));
 	  }
 	}
 
@@ -159,9 +159,9 @@ namespace CryptoNote
 	{
 	  Debug.Assert(!m_blockchain.empty());
 
-	  if (m_currency.upgradeHeight(new uint8_t(m_targetVersion)) != UNDEF_HEIGHT)
+	  if (m_currency.upgradeHeight(new ushort(m_targetVersion)) != UNDEF_HEIGHT)
 	  {
-		if (m_blockchain.size() <= m_currency.upgradeHeight(new uint8_t(m_targetVersion)) + 1)
+		if (m_blockchain.size() <= m_currency.upgradeHeight(new ushort(m_targetVersion)) + 1)
 		{
 		  Debug.Assert(m_blockchain.back().bl.majorVersion <= m_targetVersion - 1);
 		}
@@ -205,8 +205,8 @@ namespace CryptoNote
 	  }
 	  else
 	  {
-		uint32_t lastBlockHeight = (uint32_t)(m_blockchain.size() - 1);
-		if (isVotingComplete(new uint32_t(lastBlockHeight)))
+		uint lastBlockHeight = (uint)(m_blockchain.size() - 1);
+		if (isVotingComplete(new uint(lastBlockHeight)))
 		{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: m_votingCompleteHeight = lastBlockHeight;
@@ -220,7 +220,7 @@ namespace CryptoNote
 	{
 	  if (m_votingCompleteHeight != UNDEF_HEIGHT)
 	  {
-		Debug.Assert(m_currency.upgradeHeight(new uint8_t(m_targetVersion)) == UNDEF_HEIGHT);
+		Debug.Assert(m_currency.upgradeHeight(new ushort(m_targetVersion)) == UNDEF_HEIGHT);
 
 		if (m_blockchain.size() == m_votingCompleteHeight)
 		{
@@ -234,7 +234,7 @@ namespace CryptoNote
 	  }
 	}
 
-	public size_t getNumberOfVotes(uint32_t height)
+	public size_t getNumberOfVotes(uint height)
 	{
 	  if (height < m_currency.upgradeVotingWindow() - 1)
 	  {
@@ -251,14 +251,14 @@ namespace CryptoNote
 	  return voteCounter;
 	}
 
-	private uint32_t findVotingCompleteHeight(uint32_t probableUpgradeHeight)
+	private uint findVotingCompleteHeight(uint probableUpgradeHeight)
 	{
-	  Debug.Assert(m_currency.upgradeHeight(new uint8_t(m_targetVersion)) == UNDEF_HEIGHT);
+	  Debug.Assert(m_currency.upgradeHeight(new ushort(m_targetVersion)) == UNDEF_HEIGHT);
 
-	  uint32_t probableVotingCompleteHeight = probableUpgradeHeight > m_currency.maxUpgradeDistance() != null ? probableUpgradeHeight - m_currency.maxUpgradeDistance() : 0;
-	  for (uint32_t i = probableVotingCompleteHeight; i <= probableUpgradeHeight; ++i)
+	  uint probableVotingCompleteHeight = probableUpgradeHeight > m_currency.maxUpgradeDistance() != null ? probableUpgradeHeight - m_currency.maxUpgradeDistance() : 0;
+	  for (uint i = probableVotingCompleteHeight; i <= probableUpgradeHeight; ++i)
 	  {
-		if (isVotingComplete(new uint32_t(i)))
+		if (isVotingComplete(new uint(i)))
 		{
 		  return i;
 		}
@@ -267,21 +267,21 @@ namespace CryptoNote
 	  return UNDEF_HEIGHT;
 	}
 
-	private bool isVotingComplete(uint32_t height)
+	private bool isVotingComplete(uint height)
 	{
-	  Debug.Assert(m_currency.upgradeHeight(new uint8_t(m_targetVersion)) == UNDEF_HEIGHT);
+	  Debug.Assert(m_currency.upgradeHeight(new ushort(m_targetVersion)) == UNDEF_HEIGHT);
 	  Debug.Assert(m_currency.upgradeVotingWindow() > 1);
 	  Debug.Assert(m_currency.upgradeVotingThreshold() > 0 && m_currency.upgradeVotingThreshold() <= 100);
 
-	  size_t voteCounter = getNumberOfVotes(new uint32_t(height));
+	  size_t voteCounter = getNumberOfVotes(new uint(height));
 	  return m_currency.upgradeVotingThreshold() * m_currency.upgradeVotingWindow() <= 100 * voteCounter;
 	}
 
 	private Logging.LoggerRef logger = new Logging.LoggerRef();
 	private readonly Currency m_currency;
 	private BC m_blockchain;
-	private uint8_t m_targetVersion = new uint8_t();
-	private uint32_t m_votingCompleteHeight = new uint32_t();
+	private ushort m_targetVersion = new ushort();
+	private uint m_votingCompleteHeight = new uint();
   }
 }
 
@@ -291,7 +291,7 @@ namespace CryptoNote
 
 public class SimpleUpgradeDetector : IUpgradeDetector
 {
-  public SimpleUpgradeDetector(uint8_t targetVersion, uint32_t upgradeIndex)
+  public SimpleUpgradeDetector(ushort targetVersion, uint upgradeIndex)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this.m_targetVersion = targetVersion;
@@ -302,15 +302,15 @@ public class SimpleUpgradeDetector : IUpgradeDetector
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint8_t targetVersion() const override
-  public override uint8_t targetVersion()
+//ORIGINAL LINE: ushort targetVersion() const override
+  public override ushort targetVersion()
   {
 	return m_targetVersion;
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t upgradeIndex() const override
-  public override uint32_t upgradeIndex()
+//ORIGINAL LINE: uint upgradeIndex() const override
+  public override uint upgradeIndex()
   {
 	return m_upgradeIndex;
   }
@@ -320,8 +320,8 @@ public class SimpleUpgradeDetector : IUpgradeDetector
 	  base.Dispose();
   }
 
-  private uint8_t m_targetVersion = new uint8_t();
-  private uint32_t m_upgradeIndex = new uint32_t();
+  private ushort m_targetVersion = new ushort();
+  private uint m_upgradeIndex = new uint();
 }
 
 }

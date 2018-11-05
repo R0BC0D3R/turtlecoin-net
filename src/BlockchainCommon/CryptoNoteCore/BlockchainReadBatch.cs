@@ -27,13 +27,13 @@ using System.Diagnostics;
 namespace std
 {
 //C++ TO C# CONVERTER TODO TASK: C++ template specialization was removed by C++ to C# Converter:
-//ORIGINAL LINE: struct hash<System.Tuple<CryptoNote::IBlockchainCache::Amount, uint32_t>>
+//ORIGINAL LINE: struct hash<System.Tuple<CryptoNote::IBlockchainCache::Amount, uint>>
 public partial class hash
 {
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t operator ()(const System.Tuple<CryptoNote::IBlockchainCache::Amount, uint32_t>& arg) const
-  public static size_t functorMethod(Tuple<CryptoNote.IBlockchainCache.Amount, uint32_t> arg)
+//ORIGINAL LINE: size_t operator ()(const System.Tuple<CryptoNote::IBlockchainCache::Amount, uint>& arg) const
+  public static size_t functorMethod(Tuple<CryptoNote.IBlockchainCache.Amount, uint> arg)
   {
 	size_t hashValue = boost::hash_value(arg.Item1);
 	boost::hash_combine(hashValue, arg.Item2);
@@ -42,7 +42,7 @@ public partial class hash
 }
 
 //C++ TO C# CONVERTER TODO TASK: C++ template specialization was removed by C++ to C# Converter:
-//ORIGINAL LINE: struct hash<System.Tuple<Crypto::Hash, uint32_t>>
+//ORIGINAL LINE: struct hash<System.Tuple<Crypto::Hash, uint>>
 public partial class hash
 {
 
@@ -65,25 +65,25 @@ namespace CryptoNote
 
 public class BlockchainReadState
 {
-  public Dictionary<uint32_t, List<Crypto.KeyImage>> spentKeyImagesByBlock = new Dictionary<uint32_t, List<Crypto.KeyImage>>();
-  public Dictionary<Crypto.KeyImage, uint32_t> blockIndexesBySpentKeyImages = new Dictionary<Crypto.KeyImage, uint32_t>();
+  public Dictionary<uint, List<Crypto.KeyImage>> spentKeyImagesByBlock = new Dictionary<uint, List<Crypto.KeyImage>>();
+  public Dictionary<Crypto.KeyImage, uint> blockIndexesBySpentKeyImages = new Dictionary<Crypto.KeyImage, uint>();
   public Dictionary<Crypto.Hash, ExtendedTransactionInfo> cachedTransactions = new Dictionary<Crypto.Hash, ExtendedTransactionInfo>();
-  public Dictionary<uint32_t, List<Crypto.Hash>> transactionHashesByBlocks = new Dictionary<uint32_t, List<Crypto.Hash>>();
-  public Dictionary<uint32_t, CachedBlockInfo> cachedBlocks = new Dictionary<uint32_t, CachedBlockInfo>();
-  public Dictionary<Crypto.Hash, uint32_t> blockIndexesByBlockHashes = new Dictionary<Crypto.Hash, uint32_t>();
-  public Dictionary<uint64_t, uint32_t> keyOutputGlobalIndexesCountForAmounts = new Dictionary<uint64_t, uint32_t>();
-  public Dictionary<Tuple<uint64_t, uint32_t>, PackedOutIndex> keyOutputGlobalIndexesForAmounts = new Dictionary<Tuple<uint64_t, uint32_t>, PackedOutIndex>();
-  public Dictionary<uint32_t, RawBlock> rawBlocks = new Dictionary<uint32_t, RawBlock>();
-  public Dictionary<uint64_t, uint32_t> closestTimestampBlockIndex = new Dictionary<uint64_t, uint32_t>();
-  public Dictionary<uint32_t, uint64_t> keyOutputAmounts = new Dictionary<uint32_t, uint64_t>();
-  public Dictionary<Crypto.Hash, uint32_t> transactionCountsByPaymentIds = new Dictionary<Crypto.Hash, uint32_t>();
-  public Dictionary<Tuple<Crypto.Hash, uint32_t>, Crypto.Hash> transactionHashesByPaymentIds = new Dictionary<Tuple<Crypto.Hash, uint32_t>, Crypto.Hash>();
-  public Dictionary<uint64_t, List<Crypto.Hash>> blockHashesByTimestamp = new Dictionary<uint64_t, List<Crypto.Hash>>();
+  public Dictionary<uint, List<Crypto.Hash>> transactionHashesByBlocks = new Dictionary<uint, List<Crypto.Hash>>();
+  public Dictionary<uint, CachedBlockInfo> cachedBlocks = new Dictionary<uint, CachedBlockInfo>();
+  public Dictionary<Crypto.Hash, uint> blockIndexesByBlockHashes = new Dictionary<Crypto.Hash, uint>();
+  public Dictionary<ulong, uint> keyOutputGlobalIndexesCountForAmounts = new Dictionary<ulong, uint>();
+  public Dictionary<Tuple<ulong, uint>, PackedOutIndex> keyOutputGlobalIndexesForAmounts = new Dictionary<Tuple<ulong, uint>, PackedOutIndex>();
+  public Dictionary<uint, RawBlock> rawBlocks = new Dictionary<uint, RawBlock>();
+  public Dictionary<ulong, uint> closestTimestampBlockIndex = new Dictionary<ulong, uint>();
+  public Dictionary<uint, ulong> keyOutputAmounts = new Dictionary<uint, ulong>();
+  public Dictionary<Crypto.Hash, uint> transactionCountsByPaymentIds = new Dictionary<Crypto.Hash, uint>();
+  public Dictionary<Tuple<Crypto.Hash, uint>, Crypto.Hash> transactionHashesByPaymentIds = new Dictionary<Tuple<Crypto.Hash, uint>, Crypto.Hash>();
+  public Dictionary<ulong, List<Crypto.Hash>> blockHashesByTimestamp = new Dictionary<ulong, List<Crypto.Hash>>();
   public KeyOutputKeyResult keyOutputKeys = new KeyOutputKeyResult();
 
-  public Tuple<uint32_t, bool> lastBlockIndex = new Tuple<uint32_t, bool>(0, false);
-  public Tuple<uint32_t, bool> keyOutputAmountsCount = new Tuple<uint32_t, bool>({}, false);
-  public Tuple<uint64_t, bool> transactionsCount = new Tuple<uint64_t, bool>(0, false);
+  public Tuple<uint, bool> lastBlockIndex = new Tuple<uint, bool>(0, false);
+  public Tuple<uint, bool> keyOutputAmountsCount = new Tuple<uint, bool>({}, false);
+  public Tuple<ulong, bool> transactionsCount = new Tuple<ulong, bool>(0, false);
 
 //C++ TO C# CONVERTER TODO TASK: C# has no equivalent to ' = default':
 //  BlockchainReadState() = default;
@@ -139,14 +139,14 @@ public class BlockchainReadResult : System.IDisposable
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<uint32_t, ClassicVector<Crypto::KeyImage>>& getSpentKeyImagesByBlock() const
-  public Dictionary<uint32_t, List<Crypto.KeyImage>> getSpentKeyImagesByBlock()
+//ORIGINAL LINE: const ClassicUnorderedMap<uint, ClassicVector<Crypto::KeyImage>>& getSpentKeyImagesByBlock() const
+  public Dictionary<uint, List<Crypto.KeyImage>> getSpentKeyImagesByBlock()
   {
 	return state.spentKeyImagesByBlock;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<Crypto::KeyImage, uint32_t>& getBlockIndexesBySpentKeyImages() const
-  public Dictionary<Crypto.KeyImage, uint32_t> getBlockIndexesBySpentKeyImages()
+//ORIGINAL LINE: const ClassicUnorderedMap<Crypto::KeyImage, uint>& getBlockIndexesBySpentKeyImages() const
+  public Dictionary<Crypto.KeyImage, uint> getBlockIndexesBySpentKeyImages()
   {
 	return state.blockIndexesBySpentKeyImages;
   }
@@ -157,86 +157,86 @@ public class BlockchainReadResult : System.IDisposable
 	return state.cachedTransactions;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<uint32_t, ClassicVector<Crypto::Hash>>& getTransactionHashesByBlocks() const
-  public Dictionary<uint32_t, List<Crypto.Hash>> getTransactionHashesByBlocks()
+//ORIGINAL LINE: const ClassicUnorderedMap<uint, ClassicVector<Crypto::Hash>>& getTransactionHashesByBlocks() const
+  public Dictionary<uint, List<Crypto.Hash>> getTransactionHashesByBlocks()
   {
 	return state.transactionHashesByBlocks;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<uint32_t, CachedBlockInfo>& getCachedBlocks() const
-  public Dictionary<uint32_t, CachedBlockInfo> getCachedBlocks()
+//ORIGINAL LINE: const ClassicUnorderedMap<uint, CachedBlockInfo>& getCachedBlocks() const
+  public Dictionary<uint, CachedBlockInfo> getCachedBlocks()
   {
 	return state.cachedBlocks;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<Crypto::Hash, uint32_t>& getBlockIndexesByBlockHashes() const
-  public Dictionary<Crypto.Hash, uint32_t> getBlockIndexesByBlockHashes()
+//ORIGINAL LINE: const ClassicUnorderedMap<Crypto::Hash, uint>& getBlockIndexesByBlockHashes() const
+  public Dictionary<Crypto.Hash, uint> getBlockIndexesByBlockHashes()
   {
 	return state.blockIndexesByBlockHashes;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<uint64_t, uint32_t>& getKeyOutputGlobalIndexesCountForAmounts() const
-  public Dictionary<uint64_t, uint32_t> getKeyOutputGlobalIndexesCountForAmounts()
+//ORIGINAL LINE: const ClassicUnorderedMap<ulong, uint>& getKeyOutputGlobalIndexesCountForAmounts() const
+  public Dictionary<ulong, uint> getKeyOutputGlobalIndexesCountForAmounts()
   {
 	return state.keyOutputGlobalIndexesCountForAmounts;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<System.Tuple<uint64_t, uint32_t>, PackedOutIndex>& getKeyOutputGlobalIndexesForAmounts() const
-  public Dictionary<Tuple<uint64_t, uint32_t>, PackedOutIndex> getKeyOutputGlobalIndexesForAmounts()
+//ORIGINAL LINE: const ClassicUnorderedMap<System.Tuple<ulong, uint>, PackedOutIndex>& getKeyOutputGlobalIndexesForAmounts() const
+  public Dictionary<Tuple<ulong, uint>, PackedOutIndex> getKeyOutputGlobalIndexesForAmounts()
   {
 	return state.keyOutputGlobalIndexesForAmounts;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<uint32_t, RawBlock>& getRawBlocks() const
-  public Dictionary<uint32_t, RawBlock> getRawBlocks()
+//ORIGINAL LINE: const ClassicUnorderedMap<uint, RawBlock>& getRawBlocks() const
+  public Dictionary<uint, RawBlock> getRawBlocks()
   {
 	return state.rawBlocks;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const System.Tuple<uint32_t, bool>& getLastBlockIndex() const
-  public Tuple<uint32_t, bool> getLastBlockIndex()
+//ORIGINAL LINE: const System.Tuple<uint, bool>& getLastBlockIndex() const
+  public Tuple<uint, bool> getLastBlockIndex()
   {
 	return state.lastBlockIndex;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<uint64_t, uint32_t>& getClosestTimestampBlockIndex() const
-  public Dictionary<uint64_t, uint32_t> getClosestTimestampBlockIndex()
+//ORIGINAL LINE: const ClassicUnorderedMap<ulong, uint>& getClosestTimestampBlockIndex() const
+  public Dictionary<ulong, uint> getClosestTimestampBlockIndex()
   {
 	return state.closestTimestampBlockIndex;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint32_t getKeyOutputAmountsCount() const
-  public uint32_t getKeyOutputAmountsCount()
+//ORIGINAL LINE: uint getKeyOutputAmountsCount() const
+  public uint getKeyOutputAmountsCount()
   {
 	return state.keyOutputAmountsCount.Item1;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<uint32_t, uint64_t>& getKeyOutputAmounts() const
-  public Dictionary<uint32_t, uint64_t> getKeyOutputAmounts()
+//ORIGINAL LINE: const ClassicUnorderedMap<uint, ulong>& getKeyOutputAmounts() const
+  public Dictionary<uint, ulong> getKeyOutputAmounts()
   {
 	return state.keyOutputAmounts;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<Crypto::Hash, uint32_t>& getTransactionCountByPaymentIds() const
-  public Dictionary<Crypto.Hash, uint32_t> getTransactionCountByPaymentIds()
+//ORIGINAL LINE: const ClassicUnorderedMap<Crypto::Hash, uint>& getTransactionCountByPaymentIds() const
+  public Dictionary<Crypto.Hash, uint> getTransactionCountByPaymentIds()
   {
 	return state.transactionCountsByPaymentIds;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<System.Tuple<Crypto::Hash, uint32_t>, Crypto::Hash>& getTransactionHashesByPaymentIds() const
-  public Dictionary<Tuple<Crypto.Hash, uint32_t>, Crypto.Hash> getTransactionHashesByPaymentIds()
+//ORIGINAL LINE: const ClassicUnorderedMap<System.Tuple<Crypto::Hash, uint>, Crypto::Hash>& getTransactionHashesByPaymentIds() const
+  public Dictionary<Tuple<Crypto.Hash, uint>, Crypto.Hash> getTransactionHashesByPaymentIds()
   {
 	return state.transactionHashesByPaymentIds;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const ClassicUnorderedMap<uint64_t, ClassicVector<Crypto::Hash>>& getBlockHashesByTimestamp() const
-  public Dictionary<uint64_t, List<Crypto.Hash>> getBlockHashesByTimestamp()
+//ORIGINAL LINE: const ClassicUnorderedMap<ulong, ClassicVector<Crypto::Hash>>& getBlockHashesByTimestamp() const
+  public Dictionary<ulong, List<Crypto.Hash>> getBlockHashesByTimestamp()
   {
 	return state.blockHashesByTimestamp;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: const System.Tuple<uint64_t, bool>& getTransactionsCount() const
-  public Tuple<uint64_t, bool> getTransactionsCount()
+//ORIGINAL LINE: const System.Tuple<ulong, bool>& getTransactionsCount() const
+  public Tuple<ulong, bool> getTransactionsCount()
   {
 	return state.transactionsCount;
   }
@@ -261,7 +261,7 @@ public class BlockchainReadBatch : IReadBatch, System.IDisposable
 
   }
 
-  public BlockchainReadBatch requestSpentKeyImagesByBlock(uint32_t blockIndex)
+  public BlockchainReadBatch requestSpentKeyImagesByBlock(uint blockIndex)
   {
 	state.spentKeyImagesByBlock.Add(blockIndex, new List<Crypto.KeyImage>());
 	return this;
@@ -276,12 +276,12 @@ public class BlockchainReadBatch : IReadBatch, System.IDisposable
 	state.cachedTransactions.Add(txHash, new ExtendedTransactionInfo());
 	return this;
   }
-  public BlockchainReadBatch requestTransactionHashesByBlock(uint32_t blockIndex)
+  public BlockchainReadBatch requestTransactionHashesByBlock(uint blockIndex)
   {
 	state.transactionHashesByBlocks.Add(blockIndex, new List<Crypto.Hash>());
 	return this;
   }
-  public BlockchainReadBatch requestCachedBlock(uint32_t blockIndex)
+  public BlockchainReadBatch requestCachedBlock(uint blockIndex)
   {
 	state.cachedBlocks.Add(blockIndex, new CachedBlockInfo());
 	return this;
@@ -291,17 +291,17 @@ public class BlockchainReadBatch : IReadBatch, System.IDisposable
 	state.blockIndexesByBlockHashes.Add(blockHash, 0);
 	return this;
   }
-  public BlockchainReadBatch requestKeyOutputGlobalIndexesCountForAmount(uint64_t amount)
+  public BlockchainReadBatch requestKeyOutputGlobalIndexesCountForAmount(ulong amount)
   {
 	state.keyOutputGlobalIndexesCountForAmounts.Add(amount, 0);
 	return this;
   }
-  public BlockchainReadBatch requestKeyOutputGlobalIndexForAmount(uint64_t amount, uint32_t outputIndexWithinAmout)
+  public BlockchainReadBatch requestKeyOutputGlobalIndexForAmount(ulong amount, uint outputIndexWithinAmout)
   {
 	state.keyOutputGlobalIndexesForAmounts.Add(Tuple.Create(amount, outputIndexWithinAmout), new PackedOutIndex());
 	return this;
   }
-  public BlockchainReadBatch requestRawBlock(uint32_t blockIndex)
+  public BlockchainReadBatch requestRawBlock(uint blockIndex)
   {
 	state.rawBlocks.Add(blockIndex, new RawBlock());
 	return this;
@@ -311,7 +311,7 @@ public class BlockchainReadBatch : IReadBatch, System.IDisposable
 	state.lastBlockIndex.Item2 = true;
 	return this;
   }
-  public BlockchainReadBatch requestClosestTimestampBlockIndex(uint64_t timestamp)
+  public BlockchainReadBatch requestClosestTimestampBlockIndex(ulong timestamp)
   {
 	state.closestTimestampBlockIndex[timestamp];
 	return this;
@@ -321,7 +321,7 @@ public class BlockchainReadBatch : IReadBatch, System.IDisposable
 	state.keyOutputAmountsCount.Item2 = true;
 	return this;
   }
-  public BlockchainReadBatch requestKeyOutputAmount(uint32_t index)
+  public BlockchainReadBatch requestKeyOutputAmount(uint index)
   {
 	state.keyOutputAmounts.Add(index, 0);
 	return this;
@@ -331,12 +331,12 @@ public class BlockchainReadBatch : IReadBatch, System.IDisposable
 	state.transactionCountsByPaymentIds.Add(paymentId, 0);
 	return this;
   }
-  public BlockchainReadBatch requestTransactionHashByPaymentId(Crypto.Hash paymentId, uint32_t transactionIndexWithinPaymentId)
+  public BlockchainReadBatch requestTransactionHashByPaymentId(Crypto.Hash paymentId, uint transactionIndexWithinPaymentId)
   {
 	state.transactionHashesByPaymentIds.Add(Tuple.Create(paymentId, transactionIndexWithinPaymentId), GlobalMembers.NULL_HASH);
 	return this;
   }
-  public BlockchainReadBatch requestBlockHashesByTimestamp(uint64_t timestamp)
+  public BlockchainReadBatch requestBlockHashesByTimestamp(ulong timestamp)
   {
 	state.blockHashesByTimestamp.Add(timestamp, new List<Crypto.Hash>());
 	return this;
@@ -346,7 +346,7 @@ public class BlockchainReadBatch : IReadBatch, System.IDisposable
 	state.transactionsCount.Item2 = true;
 	return this;
   }
-  public BlockchainReadBatch requestKeyOutputInfo(uint64_t amount, uint32_t globalIndex)
+  public BlockchainReadBatch requestKeyOutputInfo(ulong amount, uint globalIndex)
   {
 	state.keyOutputKeys.emplace(Tuple.Create(amount, globalIndex), new KeyOutputInfo({}));
 	return this;
@@ -429,8 +429,8 @@ public class BlockchainReadBatch : IReadBatch, System.IDisposable
   {
 	Debug.Assert(resultSubmitted);
 	var st = std::move(state);
-	state.lastBlockIndex = new Tuple<uint32_t, bool>(0, false);
-	state.keyOutputAmountsCount = new Tuple<uint32_t, bool>({}, false);
+	state.lastBlockIndex = new Tuple<uint, bool>(0, false);
+	state.keyOutputAmountsCount = new Tuple<uint, bool>({}, false);
 
 	resultSubmitted = false;
 	return new BlockchainReadResult(st);

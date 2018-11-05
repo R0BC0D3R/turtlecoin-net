@@ -15,7 +15,7 @@ namespace CryptoNote
 
 public class MemoryBlockchainStorage : BlockchainStorage.IBlockchainStorageInternal, System.IDisposable
 {
-  public MemoryBlockchainStorage(uint32_t reserveSize)
+  public MemoryBlockchainStorage(uint reserveSize)
   {
 	blocks.Capacity = reserveSize;
   }
@@ -34,11 +34,11 @@ public class MemoryBlockchainStorage : BlockchainStorage.IBlockchainStorageInter
 
   //Returns MemoryBlockchainStorage with elements from [splitIndex, blocks.size() - 1].
   //Original MemoryBlockchainStorage will contain elements from [0, splitIndex - 1].
-  public override std::unique_ptr<BlockchainStorage.IBlockchainStorageInternal> splitStorage(uint32_t splitIndex)
+  public override std::unique_ptr<BlockchainStorage.IBlockchainStorageInternal> splitStorage(uint splitIndex)
   {
 	Debug.Assert(splitIndex > 0);
 	Debug.Assert(splitIndex < blocks.Count);
-	std::unique_ptr<MemoryBlockchainStorage> newStorage = new std::unique_ptr<MemoryBlockchainStorage>(new MemoryBlockchainStorage(new uint32_t(splitIndex)));
+	std::unique_ptr<MemoryBlockchainStorage> newStorage = new std::unique_ptr<MemoryBlockchainStorage>(new MemoryBlockchainStorage(new uint(splitIndex)));
 	std::move(blocks.GetEnumerator() + splitIndex, blocks.end(), std::back_inserter(newStorage.blocks));
 	blocks.Resize(splitIndex);
 	blocks.shrink_to_fit();
@@ -46,17 +46,17 @@ public class MemoryBlockchainStorage : BlockchainStorage.IBlockchainStorageInter
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint32_t index) const override
-  public override RawBlock getBlockByIndex(uint32_t index)
+//ORIGINAL LINE: virtual RawBlock getBlockByIndex(uint index) const override
+  public override RawBlock getBlockByIndex(uint index)
   {
 	Debug.Assert(index < getBlockCount());
 	return blocks[index];
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint32_t getBlockCount() const override
-  public override uint32_t getBlockCount()
+//ORIGINAL LINE: virtual uint getBlockCount() const override
+  public override uint getBlockCount()
   {
-	return (uint32_t)blocks.Count;
+	return (uint)blocks.Count;
   }
 
   private List<RawBlock> blocks = new List<RawBlock>();

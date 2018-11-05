@@ -20,15 +20,15 @@ public class UpgradeManager: IUpgradeManager
 	  base.Dispose();
   }
 
-  public override void addMajorBlockVersion(uint8_t targetVersion, uint32_t upgradeHeight)
+  public override void addMajorBlockVersion(ushort targetVersion, uint upgradeHeight)
   {
 	Debug.Assert(m_upgradeDetectors.Count == 0 || m_upgradeDetectors[m_upgradeDetectors.Count - 1].targetVersion() < targetVersion);
 	m_upgradeDetectors.emplace_back(makeUpgradeDetector(targetVersion, upgradeHeight));
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint8_t getBlockMajorVersion(uint32_t blockIndex) const override
-  public override uint8_t getBlockMajorVersion(uint32_t blockIndex)
+//ORIGINAL LINE: virtual ushort getBlockMajorVersion(uint blockIndex) const override
+  public override ushort getBlockMajorVersion(uint blockIndex)
   {
 	for (var it = m_upgradeDetectors.rbegin(); it != m_upgradeDetectors.rend(); ++it)
 	{

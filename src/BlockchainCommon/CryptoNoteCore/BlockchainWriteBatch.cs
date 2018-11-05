@@ -38,7 +38,7 @@ public class BlockchainWriteBatch : IWriteBatch, System.IDisposable
 
   }
 
-  public BlockchainWriteBatch insertSpentKeyImages(uint32_t blockIndex, HashSet<Crypto.KeyImage> spentKeyImages)
+  public BlockchainWriteBatch insertSpentKeyImages(uint blockIndex, HashSet<Crypto.KeyImage> spentKeyImages)
   {
 	rawDataToInsert.Capacity = rawDataToInsert.Count + spentKeyImages.Count + 1;
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.BLOCK_INDEX_TO_KEY_IMAGE_PREFIX, blockIndex, spentKeyImages));
@@ -48,19 +48,19 @@ public class BlockchainWriteBatch : IWriteBatch, System.IDisposable
 	}
 	return this;
   }
-  public BlockchainWriteBatch insertCachedTransaction(ExtendedTransactionInfo transaction, uint64_t totalTxsCount)
+  public BlockchainWriteBatch insertCachedTransaction(ExtendedTransactionInfo transaction, ulong totalTxsCount)
   {
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.TRANSACTION_HASH_TO_TRANSACTION_INFO_PREFIX, transaction.transactionHash, transaction));
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.TRANSACTION_HASH_TO_TRANSACTION_INFO_PREFIX, DB.GlobalMembers.TRANSACTIONS_COUNT_KEY, totalTxsCount));
 	return this;
   }
-  public BlockchainWriteBatch insertPaymentId(Crypto.Hash transactionHash, Crypto.Hash paymentId, uint32_t totalTxsCountForPaymentId)
+  public BlockchainWriteBatch insertPaymentId(Crypto.Hash transactionHash, Crypto.Hash paymentId, uint totalTxsCountForPaymentId)
   {
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.PAYMENT_ID_TO_TX_HASH_PREFIX, paymentId, totalTxsCountForPaymentId));
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.PAYMENT_ID_TO_TX_HASH_PREFIX, Tuple.Create(paymentId, totalTxsCountForPaymentId - 1), transactionHash));
 	return this;
   }
-  public BlockchainWriteBatch insertCachedBlock(CachedBlockInfo block, uint32_t blockIndex, List<Crypto.Hash> blockTxs)
+  public BlockchainWriteBatch insertCachedBlock(CachedBlockInfo block, uint blockIndex, List<Crypto.Hash> blockTxs)
   {
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.BLOCK_INDEX_TO_BLOCK_INFO_PREFIX, blockIndex, block));
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.BLOCK_INDEX_TO_TX_HASHES_PREFIX, blockIndex, blockTxs));
@@ -68,12 +68,12 @@ public class BlockchainWriteBatch : IWriteBatch, System.IDisposable
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.BLOCK_INDEX_TO_BLOCK_HASH_PREFIX, DB.GlobalMembers.LAST_BLOCK_INDEX_KEY, blockIndex));
 	return this;
   }
-  public BlockchainWriteBatch insertKeyOutputGlobalIndexes(uint64_t amount, List<PackedOutIndex> outputs, uint32_t totalOutputsCountForAmount)
+  public BlockchainWriteBatch insertKeyOutputGlobalIndexes(ulong amount, List<PackedOutIndex> outputs, uint totalOutputsCountForAmount)
   {
 	Debug.Assert(totalOutputsCountForAmount >= outputs.Count);
 	rawDataToInsert.Capacity = rawDataToInsert.Count + outputs.Count + 1;
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.KEY_OUTPUT_AMOUNT_PREFIX, amount, totalOutputsCountForAmount));
-	uint32_t currentOutputId = totalOutputsCountForAmount - (uint32_t)outputs.Count;
+	uint currentOutputId = totalOutputsCountForAmount - (uint)outputs.Count;
 
 	foreach (PackedOutIndex outIndex in outputs)
 	{
@@ -82,42 +82,42 @@ public class BlockchainWriteBatch : IWriteBatch, System.IDisposable
 
 	return this;
   }
-  public BlockchainWriteBatch insertRawBlock(uint32_t blockIndex, RawBlock block)
+  public BlockchainWriteBatch insertRawBlock(uint blockIndex, RawBlock block)
   {
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.BLOCK_INDEX_TO_RAW_BLOCK_PREFIX, blockIndex, block));
 	return this;
   }
-  public BlockchainWriteBatch insertClosestTimestampBlockIndex(uint64_t timestamp, uint32_t blockIndex)
+  public BlockchainWriteBatch insertClosestTimestampBlockIndex(ulong timestamp, uint blockIndex)
   {
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.CLOSEST_TIMESTAMP_BLOCK_INDEX_PREFIX, timestamp, blockIndex));
 	return this;
   }
-  public BlockchainWriteBatch insertKeyOutputAmounts(SortedSet<uint64_t> amounts, uint32_t totalKeyOutputAmountsCount)
+  public BlockchainWriteBatch insertKeyOutputAmounts(SortedSet<ulong> amounts, uint totalKeyOutputAmountsCount)
   {
 	Debug.Assert(totalKeyOutputAmountsCount >= amounts.Count);
 	rawDataToInsert.Capacity = rawDataToInsert.Count + amounts.Count + 1;
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.KEY_OUTPUT_AMOUNTS_COUNT_PREFIX, DB.GlobalMembers.KEY_OUTPUT_AMOUNTS_COUNT_KEY, totalKeyOutputAmountsCount));
-	uint32_t currentAmountId = totalKeyOutputAmountsCount - (uint32_t)amounts.Count;
+	uint currentAmountId = totalKeyOutputAmountsCount - (uint)amounts.Count;
 
-	foreach (uint64_t amount in amounts)
+	foreach (ulong amount in amounts)
 	{
 	  rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.KEY_OUTPUT_AMOUNTS_COUNT_PREFIX, currentAmountId++, amount));
 	}
 
 	return this;
   }
-  public BlockchainWriteBatch insertTimestamp(uint64_t timestamp, List<Crypto.Hash> blockHashes)
+  public BlockchainWriteBatch insertTimestamp(ulong timestamp, List<Crypto.Hash> blockHashes)
   {
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.TIMESTAMP_TO_BLOCKHASHES_PREFIX, timestamp, blockHashes));
 	return this;
   }
-  public BlockchainWriteBatch insertKeyOutputInfo(uint64_t amount, uint32_t globalIndex, KeyOutputInfo outputInfo)
+  public BlockchainWriteBatch insertKeyOutputInfo(ulong amount, uint globalIndex, KeyOutputInfo outputInfo)
   {
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.KEY_OUTPUT_KEY_PREFIX, Tuple.Create(amount, globalIndex), outputInfo));
 	return this;
   }
 
-  public BlockchainWriteBatch removeSpentKeyImages(uint32_t blockIndex, List<Crypto.KeyImage> spentKeyImages)
+  public BlockchainWriteBatch removeSpentKeyImages(uint blockIndex, List<Crypto.KeyImage> spentKeyImages)
   {
 	rawKeysToRemove.Capacity = rawKeysToRemove.Count + spentKeyImages.Count + 1;
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.BLOCK_INDEX_TO_KEY_IMAGE_PREFIX, blockIndex));
@@ -129,19 +129,19 @@ public class BlockchainWriteBatch : IWriteBatch, System.IDisposable
 
 	return this;
   }
-  public BlockchainWriteBatch removeCachedTransaction(Crypto.Hash transactionHash, uint64_t totalTxsCount)
+  public BlockchainWriteBatch removeCachedTransaction(Crypto.Hash transactionHash, ulong totalTxsCount)
   {
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.TRANSACTION_HASH_TO_TRANSACTION_INFO_PREFIX, transactionHash));
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.TRANSACTION_HASH_TO_TRANSACTION_INFO_PREFIX, DB.GlobalMembers.TRANSACTIONS_COUNT_KEY, totalTxsCount));
 	return this;
   }
-  public BlockchainWriteBatch removePaymentId(Crypto.Hash paymentId, uint32_t totalTxsCountForPaymentId)
+  public BlockchainWriteBatch removePaymentId(Crypto.Hash paymentId, uint totalTxsCountForPaymentId)
   {
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.PAYMENT_ID_TO_TX_HASH_PREFIX, paymentId, totalTxsCountForPaymentId));
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.PAYMENT_ID_TO_TX_HASH_PREFIX, Tuple.Create(paymentId, totalTxsCountForPaymentId)));
 	return this;
   }
-  public BlockchainWriteBatch removeCachedBlock(Crypto.Hash blockHash, uint32_t blockIndex)
+  public BlockchainWriteBatch removeCachedBlock(Crypto.Hash blockHash, uint blockIndex)
   {
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.BLOCK_INDEX_TO_BLOCK_INFO_PREFIX, blockIndex));
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.BLOCK_INDEX_TO_TX_HASHES_PREFIX, blockIndex));
@@ -149,43 +149,43 @@ public class BlockchainWriteBatch : IWriteBatch, System.IDisposable
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.BLOCK_INDEX_TO_BLOCK_HASH_PREFIX, DB.GlobalMembers.LAST_BLOCK_INDEX_KEY, blockIndex - 1));
 	return this;
   }
-  public BlockchainWriteBatch removeKeyOutputGlobalIndexes(uint64_t amount, uint32_t outputsToRemoveCount, uint32_t totalOutputsCountForAmount)
+  public BlockchainWriteBatch removeKeyOutputGlobalIndexes(ulong amount, uint outputsToRemoveCount, uint totalOutputsCountForAmount)
   {
 	rawKeysToRemove.Capacity = rawKeysToRemove.Count + outputsToRemoveCount;
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.KEY_OUTPUT_AMOUNT_PREFIX, amount, totalOutputsCountForAmount));
-	for (uint32_t i = 0; i < outputsToRemoveCount; ++i)
+	for (uint i = 0; i < outputsToRemoveCount; ++i)
 	{
 	  rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.KEY_OUTPUT_AMOUNT_PREFIX, Tuple.Create(amount, totalOutputsCountForAmount + i)));
 	}
 	return this;
   }
-  public BlockchainWriteBatch removeRawBlock(uint32_t blockIndex)
+  public BlockchainWriteBatch removeRawBlock(uint blockIndex)
   {
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.BLOCK_INDEX_TO_RAW_BLOCK_PREFIX, blockIndex));
 	return this;
   }
-  public BlockchainWriteBatch removeClosestTimestampBlockIndex(uint64_t timestamp)
+  public BlockchainWriteBatch removeClosestTimestampBlockIndex(ulong timestamp)
   {
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.CLOSEST_TIMESTAMP_BLOCK_INDEX_PREFIX, timestamp));
 	return this;
   }
-  public BlockchainWriteBatch removeTimestamp(uint64_t timestamp)
+  public BlockchainWriteBatch removeTimestamp(ulong timestamp)
   {
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.TIMESTAMP_TO_BLOCKHASHES_PREFIX, timestamp));
 	return this;
   }
-  public BlockchainWriteBatch removeKeyOutputAmounts(uint32_t keyOutputAmountsToRemoveCount, uint32_t totalKeyOutputAmountsCount)
+  public BlockchainWriteBatch removeKeyOutputAmounts(uint keyOutputAmountsToRemoveCount, uint totalKeyOutputAmountsCount)
   {
 	rawKeysToRemove.Capacity = rawKeysToRemove.Count + keyOutputAmountsToRemoveCount;
 	rawDataToInsert.emplace_back(DB.GlobalMembers.serialize(DB.GlobalMembers.KEY_OUTPUT_AMOUNTS_COUNT_PREFIX, DB.GlobalMembers.KEY_OUTPUT_AMOUNTS_COUNT_KEY, totalKeyOutputAmountsCount));
-	for (uint32_t i = 0; i < keyOutputAmountsToRemoveCount; ++i)
+	for (uint i = 0; i < keyOutputAmountsToRemoveCount; ++i)
 	{
 	  rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.KEY_OUTPUT_AMOUNTS_COUNT_PREFIX, totalKeyOutputAmountsCount + i));
 	}
 
 	return this;
   }
-  public BlockchainWriteBatch removeKeyOutputInfo(uint64_t amount, uint32_t globalIndex)
+  public BlockchainWriteBatch removeKeyOutputInfo(ulong amount, uint globalIndex)
   {
 	rawKeysToRemove.emplace_back(DB.GlobalMembers.serializeKey(DB.GlobalMembers.KEY_OUTPUT_KEY_PREFIX, Tuple.Create(amount, globalIndex)));
 	return this;

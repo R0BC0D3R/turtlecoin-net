@@ -36,7 +36,7 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 {
 
 
-  public P2pNode(P2pNodeConfig cfg, Dispatcher dispatcher, Logging.ILogger log, Crypto.Hash genesisHash, uint64_t peerId)
+  public P2pNode(P2pNodeConfig cfg, Dispatcher dispatcher, Logging.ILogger log, Crypto.Hash genesisHash, ulong peerId)
   {
 	  this.logger = new Logging.LoggerRef(log, "P2pNode:" + Convert.ToString(cfg.getBindPort()));
 	  this.m_stopRequested = false;
@@ -121,7 +121,7 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
   }
   public void serialize(ISerializer s)
   {
-	uint8_t version = 1;
+	ushort version = 1;
 	s.functorMethod(version, "version");
 
 	if (version != 1)
@@ -136,7 +136,7 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
   private Logging.LoggerRef logger = new Logging.LoggerRef();
   private bool m_stopRequested;
   private readonly P2pNodeConfig m_cfg = new P2pNodeConfig();
-  private readonly uint64_t m_myPeerId = new uint64_t();
+  private readonly ulong m_myPeerId = new ulong();
   private readonly CORE_SYNC_DATA m_genesisPayload = new CORE_SYNC_DATA();
 
   private System.Dispatcher m_dispatcher;
@@ -185,8 +185,8 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 	return nodeData;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual uint64_t getPeerId() const override
-  private uint64_t getPeerId()
+//ORIGINAL LINE: virtual ulong getPeerId() const override
+  private ulong getPeerId()
   {
 	return m_myPeerId;
   }
@@ -212,7 +212,7 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 	  throw new System.Exception("Connection to self detected");
 	}
 
-	context.setPeerInfo(new uint8_t(node.version), new uint64_t(node.peer_id), (uint16_t)node.my_port);
+	context.setPeerInfo(new ushort(node.version), new ulong(node.peer_id), (ushort)node.my_port);
 	if (!context.isIncoming())
 	{
 	  m_peerlist.set_peer_just_seen(node.peer_id, context.getRemoteAddress());
@@ -242,7 +242,7 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 
 	  GlobalMembers.doWithTimeoutAndThrow(m_dispatcher, m_cfg.getConnectTimeout(), () =>
 	  {
-		connection = connector.connect(Ipv4Address(Common.ipAddressToString(peerAddress.ip)), (uint16_t)peerAddress.port);
+		connection = connector.connect(Ipv4Address(Common.ipAddressToString(peerAddress.ip)), (ushort)peerAddress.port);
 	  });
 
 	  GlobalMembers.doWithTimeoutAndThrow(m_dispatcher, m_cfg.getHandshakeTimeout(), () =>
@@ -421,7 +421,7 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 
 	  GlobalMembers.doWithTimeoutAndThrow(m_dispatcher, m_cfg.getConnectTimeout(), () =>
 	  {
-		tcpConnection = connector.connect(Ipv4Address(Common.ipAddressToString(address.ip)), (uint16_t)address.port);
+		tcpConnection = connector.connect(Ipv4Address(Common.ipAddressToString(address.ip)), (ushort)address.port);
 	  });
 
 	  logger(DEBUGGING) << "connection established to " << address;
@@ -473,7 +473,7 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
   private bool makeNewConnectionFromPeerlist(Peerlist peerlist)
   {
 	size_t peerIndex = new size_t();
-	PeerIndexGenerator idxGen = new PeerIndexGenerator(Math.Min<uint64_t>(peerlist.count() - 1, m_cfg.getPeerListConnectRange()));
+	PeerIndexGenerator idxGen = new PeerIndexGenerator(Math.Min<ulong>(peerlist.count() - 1, m_cfg.getPeerListConnectRange()));
 
 	for (size_t tryCount = 0; idxGen.generate(ref peerIndex) && tryCount < m_cfg.getPeerListGetTryCount(); ++tryCount)
 	{

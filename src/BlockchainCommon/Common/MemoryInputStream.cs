@@ -11,7 +11,7 @@ namespace Common
 
   public class MemoryInputStream : IInputStream
   {
-	public MemoryInputStream(object buffer, uint64_t bufferSize)
+	public MemoryInputStream(object buffer, ulong bufferSize)
 	{
 		this.buffer = (char)buffer;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -20,8 +20,8 @@ namespace Common
 		this.position = 0;
 	}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t getPosition() const
-	public uint64_t getPosition()
+//ORIGINAL LINE: ulong getPosition() const
+	public ulong getPosition()
 	{
 	  return position;
 	}
@@ -33,10 +33,10 @@ namespace Common
 	}
 
 	// IInputStream
-	public override uint64_t readSome(object data, uint64_t size)
+	public override ulong readSome(object data, ulong size)
 	{
 	  Debug.Assert(position <= bufferSize);
-	  uint64_t readSize = Math.Min(size, bufferSize - position);
+	  ulong readSize = Math.Min(size, bufferSize - position);
 
 	  if (readSize > 0)
 	  {
@@ -49,8 +49,8 @@ namespace Common
 	}
 
 	private readonly string buffer;
-	private uint64_t bufferSize = new uint64_t();
-	private uint64_t position = new uint64_t();
+	private ulong bufferSize = new ulong();
+	private ulong position = new ulong();
   }
 }
 

@@ -11,7 +11,7 @@ public class BlockingQueue < T, Container = LinkedList<T>>
 {
 
 
-  public BlockingQueue(uint64_t maxSize = 1)
+  public BlockingQueue(ulong maxSize = 1)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this.m_maxSize = maxSize;
@@ -87,21 +87,21 @@ public class BlockingQueue < T, Container = LinkedList<T>>
 	}
   }
 
-  public uint64_t size()
+  public ulong size()
   {
 	std::unique_lock<object> lk = new std::unique_lock<object>(m_mutex);
 	return m_queue.size();
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: uint64_t capacity() const
-  public uint64_t capacity()
+//ORIGINAL LINE: ulong capacity() const
+  public ulong capacity()
   {
 	return m_maxSize;
   }
 
 
-  private readonly uint64_t m_maxSize = new uint64_t();
+  private readonly ulong m_maxSize = new ulong();
   private Container m_queue = new Container();
   private bool m_closed;
 
@@ -115,7 +115,7 @@ public class BlockingQueue < T, Container = LinkedList<T>>
 public class GroupClose <QueueT>
 {
 
-  public GroupClose(QueueT queue, uint64_t groupSize)
+  public GroupClose(QueueT queue, ulong groupSize)
   {
 	  this.m_queue = queue;
 	  this.m_count = groupSize;
@@ -134,7 +134,7 @@ public class GroupClose <QueueT>
   }
 
 
-  private std::atomic<uint64_t> m_count = new std::atomic<uint64_t>();
+  private std::atomic<ulong> m_count = new std::atomic<ulong>();
   private QueueT m_queue;
 
 }

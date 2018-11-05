@@ -14,7 +14,7 @@ public class StdInputStream : IInputStream
   }
 //C++ TO C# CONVERTER TODO TASK: C# has no equivalent to ' = delete':
 //  StdInputStream& operator =(const StdInputStream&) = delete;
-  public override uint64_t readSome(object data, uint64_t size)
+  public override ulong readSome(object data, ulong size)
   {
 	in.read((char)data, size);
 	return in.gcount();

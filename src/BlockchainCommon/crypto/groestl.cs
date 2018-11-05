@@ -14,9 +14,9 @@
 #include "crypto_uint64.h"
 #include "crypto_hash.h" 
 
-typedef crypto_uint8 uint8_t; 
-typedef crypto_uint32 uint32_t; 
-typedef crypto_uint64 uint64_t;
+typedef crypto_uint8 ushort; 
+typedef crypto_uint32 uint; 
+typedef crypto_uint64 ulong;
 */
 
 /* some sizes (number of bytes) */
@@ -34,7 +34,7 @@ typedef crypto_uint64 uint64_t;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define li_32(h) 0x##h##u
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define EXT_BYTE(var,n) ((uint8_t)((uint32_t)(var) >> (8*n)))
+//ORIGINAL LINE: #define EXT_BYTE(var,n) ((ushort)((uint)(var) >> (8*n)))
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define u32BIG(a) ((ROTL32(a,8) & li_32(00FF00FF)) | (ROTL32(a,24) & li_32(FF00FF00)))
 
@@ -43,9 +43,9 @@ typedef crypto_uint64 uint64_t;
 public class hashState
 {
 //C++ TO C# CONVERTER TODO TASK: The following statement was not recognized, possibly due to an unrecognized macro:
-  uint32_t chaining[(DefineConstants.ROWS * DefineConstants.COLS512) / sizeof(uint32_t)]; // actual state
-  public uint32_t block_counter1 = new uint32_t(); // message block counter(s)
-  public uint32_t block_counter2 = new uint32_t();
+  uint chaining[(DefineConstants.ROWS * DefineConstants.COLS512) / sizeof(uint)]; // actual state
+  public uint block_counter1 = new uint(); // message block counter(s)
+  public uint block_counter2 = new uint();
 //C++ TO C# CONVERTER TODO TASK: The following statement was not recognized, possibly due to an unrecognized macro:
   byte buffer[(DefineConstants.ROWS * DefineConstants.COLS512)]; // data buffer
   public int buf_ptr; // data buffer pointer

@@ -12,7 +12,7 @@ public class StringOutputStream : IOutputStream
   {
 	  this.@out = @out;
   }
-  public override uint64_t writeSome(object data, uint64_t size)
+  public override ulong writeSome(object data, ulong size)
   {
 	@out.append((char)data, size);
 	return size;
