@@ -1,4 +1,10 @@
-﻿//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
+﻿// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
+// Copyright (c) 2018, The TurtleCoin Developers
+//
+// Please see the included LICENSE.txt file for more information.
+
+
+//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define __ROCKSDB_MAJOR__ ROCKSDB_MAJOR
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define __ROCKSDB_MINOR__ ROCKSDB_MINOR
@@ -13,20 +19,6 @@ using CryptoNote;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-
-// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
-// Copyright (c) 2018, The TurtleCoin Developers
-//
-// Please see the included LICENSE file for more information.
-
-// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
-// Copyright (c) 2018, The TurtleCoin Developers
-//
-// Please see the included LICENSE file for more information.
-
-
-
-
 
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define KV_MEMBER(member) s(member, #member);

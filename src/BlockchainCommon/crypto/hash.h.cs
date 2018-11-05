@@ -1,13 +1,12 @@
-﻿#define CN_PAGE_SIZE
-
-// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
+﻿// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2014-2018, The Aeon Project
 // Copyright (c) 2018, The TurtleCoin Developers
 //
-// Please see the included LICENSE file for more information.
+// Please see the included LICENSE.txt file for more information.
 
 
+#define CN_PAGE_SIZE
 
 
 // Standard Cryptonight Definitions
@@ -15,7 +14,7 @@
 // Standard CryptoNight Lite Definitions
 
 // CryptoNight Soft Shell Definitions
-										  // ultimately determines how big our sine wave is. A smaller value means a bigger wave
+// ultimately determines how big our sine wave is. A smaller value means a bigger wave
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:

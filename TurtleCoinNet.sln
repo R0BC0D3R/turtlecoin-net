@@ -9,11 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daemon", "src\Daemon\Daemon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miner", "src\Miner\Miner.csproj", "{5A2088B7-DF5D-409A-AB2A-D12803FB3FE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletService", "src\WalletService\WalletService.csproj", "{CB4C7203-EDB9-4B86-9BC7-F07F558888BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletService", "src\WalletService\WalletService.csproj", "{CB4C7203-EDB9-4B86-9BC7-F07F558888BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet", "src\Wallet\Wallet.csproj", "{AD5F6F3C-443B-4B9C-9226-616F64241F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallet", "src\Wallet\Wallet.csproj", "{AD5F6F3C-443B-4B9C-9226-616F64241F22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZedWallet", "src\ZedWallet\ZedWallet.csproj", "{960AB25F-71BF-4B50-B00C-6140367D7774}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZedWallet", "src\ZedWallet\ZedWallet.csproj", "{960AB25F-71BF-4B50-B00C-6140367D7774}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3AB8E8CC-E391-40C5-B1C5-0F5DC707A820}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

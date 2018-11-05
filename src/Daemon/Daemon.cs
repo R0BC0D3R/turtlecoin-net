@@ -2,14 +2,7 @@
 // Copyright (c) 2018, The TurtleCoin Developers
 // Copyright (c) 2018, The Karai Developers
 //
-// Please see the included LICENSE file for more information.
-
-
-// Copyright (c) 2018, The TurtleCoin Developers
-//
-// Please see the included LICENSE file for more information.
-
-
+// Please see the included LICENSE.txt file for more information.
 
 
 using json = nlohmann.json;

@@ -1,19 +1,6 @@
 ﻿// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 //
-// This file is part of Bytecoin.
-//
-// Bytecoin is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Bytecoin is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public License
-// along with Bytecoin.  If not, see <http://www.gnu.org/licenses/>.
+// Please see the included LICENSE.txt file for more information.
 
 
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -209,7 +196,7 @@
 //ORIGINAL LINE: #define ptr_cast(x,size) ((ui_type(size)*)(x))
 
 
-#if ! RotL_64
+#if !RotL_64
 //C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define RotL_64(x,N) (((x) << (N)) | ((x) >> (64-(N))))
@@ -235,7 +222,7 @@
  * platform-specific code instead (e.g., for big-endian CPUs).
  *
  */
-#if ! SKEIN_NEED_SWAP
+#if !SKEIN_NEED_SWAP
 
 
 
@@ -273,7 +260,7 @@
 
 //C++ TO C# CONVERTER TODO TASK: C# does not allow setting or comparing #define constants:
 #if PLATFORM_BYTE_ORDER == IS_BIG_ENDIAN
-	/* here for big-endian CPUs */
+/* here for big-endian CPUs */
 #define SKEIN_NEED_SWAP
 //C++ TO C# CONVERTER TODO TASK: C# does not allow setting or comparing #define constants:
 #elif PLATFORM_BYTE_ORDER == IS_LITTLE_ENDIAN
@@ -301,7 +288,7 @@
  *      Provide any definitions still needed.
  ******************************************************************
  */
-#if ! Skein_Swap64
+#if !Skein_Swap64
 #if SKEIN_NEED_SWAP
 //C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:

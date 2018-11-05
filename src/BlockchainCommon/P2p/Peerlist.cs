@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-
-// Copyright (c) 2018, The TurtleCoin Developers
-// 
-// Please see the included LICENSE file for more information.
+﻿// Copyright (c) 2018, The TurtleCoin Developers
+//
+// Please see the included LICENSE.txt file for more information.
 
 
-
+using System.Collections.Generic;
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: size_t Peerlist::count() const
