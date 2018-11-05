@@ -18,7 +18,7 @@ public enum WalletErrorCodes
   INTERNAL_WALLET_ERROR,
   MIXIN_COUNT_TOO_BIG,
   BAD_ADDRESS,
-  TRANSACTION_SIZE_TOO_BIG,
+  TRANSACTION_uintOO_BIG,
   WRONG_AMOUNT,
   SUM_OVERFLOW,
   ZERO_DESTINATION,
@@ -83,7 +83,7 @@ public class WalletErrorCategory : std::error_category
 		return "MixIn count is too big";
 	case BAD_ADDRESS:
 		return "Bad address";
-	case TRANSACTION_SIZE_TOO_BIG:
+	case TRANSACTION_uintOO_BIG:
 		return "Transaction size is too big";
 	case WRONG_AMOUNT:
 		return "Wrong amount";

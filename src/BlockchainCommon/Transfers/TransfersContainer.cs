@@ -13,7 +13,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -91,7 +91,7 @@ public class SpentOutputDescriptor
 	if (m_type == TransactionTypes.OutputType.Key)
 	{
   //C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
-  //	static_assert(sizeof(uint) < sizeof(*m_keyImage), "sizeof(size_t) < sizeof(*m_keyImage)");
+  //	static_assert(sizeof(uint) < sizeof(*m_keyImage), "sizeof(uint) < sizeof(*m_keyImage)");
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  return *reinterpret_cast<const uint>(m_keyImage.data);
 	}
@@ -247,10 +247,10 @@ public class TransfersContainer : ITransfersContainer
 		throw new System.ArgumentException(message);
 	  }
 
-	  if (m_transactions.count(tx.getTransactionHash()) > 0)
+	  if (m_transactions.count(tx.GetTransactionHash()) > 0)
 	  {
 		var message = "Transaction is already added";
-		m_logger.functorMethod(ERROR, BRIGHT_RED) << message << ", hash " << tx.getTransactionHash();
+		m_logger.functorMethod(ERROR, BRIGHT_RED) << message << ", hash " << tx.GetTransactionHash();
 		throw new System.ArgumentException(message);
 	  }
 
@@ -271,10 +271,10 @@ public class TransfersContainer : ITransfersContainer
 	}
 	catch
 	{
-	  if (m_transactions.count(tx.getTransactionHash()) == 0)
+	  if (m_transactions.count(tx.GetTransactionHash()) == 0)
 	  {
-		m_logger.functorMethod(ERROR, BRIGHT_RED) << "Failed to add transaction, remove transaction transfers, block " << (int)block.height << ", transaction hash " << tx.getTransactionHash();
-		deleteTransactionTransfers(tx.getTransactionHash());
+		m_logger.functorMethod(ERROR, BRIGHT_RED) << "Failed to add transaction, remove transaction transfers, block " << (int)block.height << ", transaction hash " << tx.GetTransactionHash();
+		deleteTransactionTransfers(tx.GetTransactionHash());
 	  }
 
 	  throw;
@@ -816,7 +816,7 @@ public class TransfersContainer : ITransfersContainer
    */
   private void addTransaction(TransactionBlockInfo block, ITransactionReader tx)
   {
-	var txHash = tx.getTransactionHash();
+	var txHash = tx.GetTransactionHash();
 
 	TransactionInformation txInfo = new TransactionInformation();
 	txInfo.blockHeight = block.height;
@@ -824,15 +824,15 @@ public class TransfersContainer : ITransfersContainer
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: txInfo.transactionHash = txHash;
 	txInfo.transactionHash.CopyFrom(txHash);
-	txInfo.unlockTime = tx.getUnlockTime();
+	txInfo.unlockTime = tx.GetUnlockTime();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: txInfo.publicKey = tx.getTransactionPublicKey();
-	txInfo.publicKey.CopyFrom(tx.getTransactionPublicKey());
-	txInfo.totalAmountIn = tx.getInputTotalAmount();
-	txInfo.totalAmountOut = tx.getOutputTotalAmount();
-	txInfo.extra = tx.getExtra();
+	txInfo.publicKey.CopyFrom(tx.GetTransactionPublicKey());
+	txInfo.totalAmountIn = tx.GetInputTotalAmount();
+	txInfo.totalAmountOut = tx.GetOutputTotalAmount();
+	txInfo.extra = tx.GetExtra();
 
-	if (!tx.getPaymentId(txInfo.paymentId))
+	if (!tx.GetPaymentId(txInfo.paymentId))
 	{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: txInfo.paymentId = NULL_HASH;
@@ -851,12 +851,12 @@ public class TransfersContainer : ITransfersContainer
   {
 	bool outputsAdded = false;
 
-	var txHash = tx.getTransactionHash();
+	var txHash = tx.GetTransactionHash();
 	bool transactionIsUnconfimed = (block.height == GlobalMembers.WALLET_UNCONFIRMED_TRANSACTION_HEIGHT);
 	foreach (var transfer in transfers)
 	{
-	  Debug.Assert(transfer.outputInTransaction < tx.getOutputCount());
-	  Debug.Assert(transfer.type == tx.getOutputType(transfer.outputInTransaction));
+	  Debug.Assert(transfer.outputInTransaction < tx.GetOutputCount());
+	  Debug.Assert(transfer.type == tx.GetOutputType(transfer.outputInTransaction));
 	  Debug.Assert(transfer.amount > 0);
 
 	  bool transferIsUnconfirmed = (transfer.globalOutputIndex == GlobalMembers.UNCONFIRMED_TRANSACTION_GLOBAL_OUTPUT_INDEX);
@@ -871,7 +871,7 @@ public class TransfersContainer : ITransfersContainer
 	  (TransactionOutputInformationIn)info = transfer;
 	  info.blockHeight = block.height;
 	  info.transactionIndex = block.transactionIndex;
-	  info.unlockTime = tx.getUnlockTime();
+	  info.unlockTime = tx.GetUnlockTime();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: info.transactionHash = txHash;
 	  info.transactionHash.CopyFrom(txHash);
@@ -939,14 +939,14 @@ public class TransfersContainer : ITransfersContainer
   {
 	bool inputsAdded = false;
 
-	for (uint i = 0; i < tx.getInputCount(); ++i)
+	for (uint i = 0; i < tx.GetInputCount(); ++i)
 	{
-	  var inputType = tx.getInputType(i);
+	  var inputType = tx.GetInputType(i);
 
 	  if (inputType == TransactionTypes.InputType.Key)
 	  {
 		KeyInput input = new KeyInput();
-		tx.getInput(i, input);
+		tx.GetInput(i, input);
 
 		SpentOutputDescriptor descriptor = new SpentOutputDescriptor(input.keyImage);
 		var spentRange = m_spentTransfers.get<SpentOutputDescriptorIndex>().equal_range(descriptor);
@@ -955,7 +955,7 @@ public class TransfersContainer : ITransfersContainer
 		  Debug.Assert(std::distance(spentRange.first, spentRange.second) == 1);
 		  auto spentOutput = spentRange.first;
 		  var message = "Failed add key input: key image already spent";
-		  m_logger.functorMethod(ERROR, BRIGHT_RED) << message << ", key image " << input.keyImage << '\n' << "    rejected transaction" << ": hash " << tx.getTransactionHash() << ", block " << (int)block.height << ", transaction index " << (int)block.transactionIndex << ", input " << (int)i << '\n' << "    spending transaction" << ": hash " << spentOutput.spendingTransactionHash << ", block " << spentOutput.spendingBlock.height << ", input " << spentOutput.inputInTransaction << '\n' << "    spent output        " << ": hash " << spentOutput.transactionHash << ", block " << spentOutput.blockHeight << ", transaction index " << spentOutput.transactionIndex << ", output " << spentOutput.outputInTransaction << ", amount " << m_currency.formatAmount(spentOutput.amount);
+		  m_logger.functorMethod(ERROR, BRIGHT_RED) << message << ", key image " << input.keyImage << '\n' << "    rejected transaction" << ": hash " << tx.GetTransactionHash() << ", block " << (int)block.height << ", transaction index " << (int)block.transactionIndex << ", input " << (int)i << '\n' << "    spending transaction" << ": hash " << spentOutput.spendingTransactionHash << ", block " << spentOutput.spendingBlock.height << ", input " << spentOutput.inputInTransaction << '\n' << "    spent output        " << ": hash " << spentOutput.transactionHash << ", block " << spentOutput.blockHeight << ", transaction index " << spentOutput.transactionIndex << ", output " << spentOutput.outputInTransaction << ", amount " << m_currency.formatAmount(spentOutput.amount);
 		  throw new System.Exception(message);
 		}
 
@@ -1166,7 +1166,7 @@ public class TransfersContainer : ITransfersContainer
 	spentOutput.spendingBlock.CopyFrom(block);
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: spentOutput.spendingTransactionHash = tx.getTransactionHash();
-	spentOutput.spendingTransactionHash.CopyFrom(tx.getTransactionHash());
+	spentOutput.spendingTransactionHash.CopyFrom(tx.GetTransactionHash());
 	spentOutput.inputInTransaction = (uint)inputIndex;
 	var result = m_spentTransfers.insert(std::move(spentOutput));
 	result; // Disable unused warning

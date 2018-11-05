@@ -13,7 +13,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -172,8 +172,8 @@ public class Core : ICore, ICoreInformation
 	return doBuildSparseChain(topBlockHash);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> findBlockchainSupplement(const ClassicVector<Crypto::Hash>& remoteBlockIds, size_t maxCount, uint& totalBlockCount, uint& startBlockIndex) const override
-  public override List<Crypto.Hash> findBlockchainSupplement(List<Crypto.Hash> remoteBlockIds, size_t maxCount, ref uint totalBlockCount, ref uint startBlockIndex)
+//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> findBlockchainSupplement(const ClassicVector<Crypto::Hash>& remoteBlockIds, uint maxCount, uint& totalBlockCount, uint& startBlockIndex) const override
+  public override List<Crypto.Hash> findBlockchainSupplement(List<Crypto.Hash> remoteBlockIds, uint maxCount, ref uint totalBlockCount, ref uint startBlockIndex)
   {
 	Debug.Assert(remoteBlockIds.Count > 0);
 	Debug.Assert(remoteBlockIds[remoteBlockIds.Count - 1] == getBlockHashByIndex(0));
@@ -275,7 +275,7 @@ public class Core : ICore, ICoreInformation
 		fullOffset = startIndex;
 	  }
 
-	  size_t hashesPushed = pushBlockHashes(new uint(startIndex), new uint(fullOffset), BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT, entries);
+	  uint hashesPushed = pushBlockHashes(new uint(startIndex), new uint(fullOffset), BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT, entries);
 
 	  if (startIndex + hashesPushed != fullOffset != null)
 	  {
@@ -330,7 +330,7 @@ public class Core : ICore, ICoreInformation
 		fullOffset = startIndex;
 	  }
 
-	  size_t hashesPushed = pushBlockHashes(new uint(startIndex), new uint(fullOffset), BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT, entries);
+	  uint hashesPushed = pushBlockHashes(new uint(startIndex), new uint(fullOffset), BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT, entries);
 
 	  if (startIndex + (uint)hashesPushed != fullOffset != null)
 	  {
@@ -384,7 +384,7 @@ public class Core : ICore, ICoreInformation
 	}
 
 	// find in alternative chains
-	for (size_t chain = 1; chain < chainsLeaves.Count; ++chain)
+	for (uint chain = 1; chain < chainsLeaves.Count; ++chain)
 	{
 	  segment = chainsLeaves[chain];
 
@@ -431,10 +431,10 @@ public class Core : ICore, ICoreInformation
 
 	ushort nextBlockMajorVersion = getBlockMajorVersionForHeight(new uint(topBlockIndex));
 
-	size_t blocksCount = Math.Min((size_t)topBlockIndex, currency.difficultyBlocksCountByBlockVersion(new ushort(nextBlockMajorVersion), new uint(topBlockIndex)));
+	uint blocksCount = Math.Min((uint)topBlockIndex, currency.difficultyBlocksCountByBlockVersion(new ushort(nextBlockMajorVersion), new uint(topBlockIndex)));
 
-	var timestamps = mainChain.getLastTimestamps(new size_t(blocksCount));
-	var difficulties = mainChain.getLastCumulativeDifficulties(new size_t(blocksCount));
+	var timestamps = mainChain.getLastTimestamps(new uint(blocksCount));
+	var difficulties = mainChain.getLastCumulativeDifficulties(new uint(blocksCount));
 
 	return currency.getNextDifficulty(new ushort(nextBlockMajorVersion), new uint(topBlockIndex), new List<ulong>(timestamps), new List<ulong>(difficulties));
   }
@@ -488,7 +488,7 @@ public class Core : ICore, ICoreInformation
 	if (cumulativeBlockSize > maxBlockCumulativeSize)
 	{
 	  logger.functorMethod(Logging.Level.DEBUGGING) << "Block " << blockStr << " has too big cumulative size";
-	  return error.BlockValidationError.CUMULATIVE_BLOCK_SIZE_TOO_BIG;
+	  return error.BlockValidationError.CUMULATIVE_BLOCK_uintOO_BIG;
 	}
 
 	ulong minerReward = 0;
@@ -561,7 +561,7 @@ public class Core : ICore, ICoreInformation
 	if (!currency.getBlockReward(new ushort(cachedBlock.getBlock().majorVersion), blocksSizeMedian, cumulativeBlockSize, new ulong(alreadyGeneratedCoins), new ulong(cumulativeFee), reward, emissionChange))
 	{
 	  logger.functorMethod(Logging.Level.DEBUGGING) << "Block " << blockStr << " has too big cumulative size";
-	  return error.BlockValidationError.CUMULATIVE_BLOCK_SIZE_TOO_BIG;
+	  return error.BlockValidationError.CUMULATIVE_BLOCK_uintOO_BIG;
 	}
 
 	if (minerReward != reward)
@@ -620,7 +620,7 @@ public class Core : ICore, ICoreInformation
 		  var mainChainCache = chainsLeaves[0];
 		  if (cache.getCurrentCumulativeDifficulty() > mainChainCache.getCurrentCumulativeDifficulty())
 		  {
-			size_t endpointIndex = std::distance(chainsLeaves.GetEnumerator(), std::find(chainsLeaves.GetEnumerator(), chainsLeaves.end(), cache));
+			uint endpointIndex = std::distance(chainsLeaves.GetEnumerator(), std::find(chainsLeaves.GetEnumerator(), chainsLeaves.end(), cache));
 			Debug.Assert(endpointIndex != chainsStorage.Count);
 			Debug.Assert(endpointIndex != 0);
 			std::swap(chainsLeaves[0], chainsLeaves[endpointIndex]);
@@ -734,7 +734,7 @@ public class Core : ICore, ICoreInformation
 	  return true;
 	}
 
-	for (size_t i = 1; i < chainsLeaves.Count && found == false; ++i)
+	for (uint i = 1; i < chainsLeaves.Count && found == false; ++i)
 	{
 	  segment = chainsLeaves[i];
 	  while (found == false && mainChainSet.count(segment) == 0)
@@ -864,27 +864,27 @@ public class Core : ICore, ICoreInformation
 
   //ICoreInformation
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getPoolTransactionCount() const override
-  public override size_t getPoolTransactionCount()
+//ORIGINAL LINE: virtual uint getPoolTransactionCount() const override
+  public override uint getPoolTransactionCount()
   {
 	throwIfNotInitialized();
 	return transactionPool.getTransactionCount();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getBlockchainTransactionCount() const override
-  public override size_t getBlockchainTransactionCount()
+//ORIGINAL LINE: virtual uint getBlockchainTransactionCount() const override
+  public override uint getBlockchainTransactionCount()
   {
 	throwIfNotInitialized();
 	IBlockchainCache mainChain = chainsLeaves[0];
 	return mainChain.getTransactionCount();
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getAlternativeBlockCount() const override
-  public override size_t getAlternativeBlockCount()
+//ORIGINAL LINE: virtual uint getAlternativeBlockCount() const override
+  public override uint getAlternativeBlockCount()
   {
 	throwIfNotInitialized();
 
-	return std::accumulate(chainsStorage.GetEnumerator(), chainsStorage.end(), size_t(0), (size_t sum, Ptr ptr) =>
+	return std::accumulate(chainsStorage.GetEnumerator(), chainsStorage.end(), uint(0), (uint sum, Ptr ptr) =>
 	{
 	  return mainChainSet.count(ptr.get()) == 0 ? sum + ptr.getBlockCount() : sum;
 	});
@@ -1144,7 +1144,7 @@ public class Core : ICore, ICoreInformation
 	throwIfNotInitialized();
 
 	List<Crypto.Hash> alternativeBlockHashes = new List<Crypto.Hash>();
-	for (size_t chain = 1; chain < chainsLeaves.Count; ++chain)
+	for (uint chain = 1; chain < chainsLeaves.Count; ++chain)
 	{
 	  IBlockchainCache segment = chainsLeaves[chain];
 	  if (segment.getTopBlockIndex() < blockIndex)
@@ -1169,8 +1169,8 @@ public class Core : ICore, ICoreInformation
 	return alternativeBlockHashes;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount) const override
-  public override List<Crypto.Hash> getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount)
+//ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getBlockHashesByTimestamps(ulong timestampBegin, uint secondsCount) const override
+  public override List<Crypto.Hash> getBlockHashesByTimestamps(ulong timestampBegin, uint secondsCount)
   {
 	throwIfNotInitialized();
 
@@ -1185,7 +1185,7 @@ public class Core : ICore, ICoreInformation
 	  throw new System.Exception("Timestamp overflow");
 	}
 
-	return mainChain.getBlockHashesByTimestamps(new ulong(timestampBegin), new size_t(secondsCount));
+	return mainChain.getBlockHashesByTimestamps(new ulong(timestampBegin), new uint(secondsCount));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ClassicVector<Crypto::Hash> getTransactionHashesByPaymentId(const Hash& paymentId) const override
@@ -1234,7 +1234,7 @@ public class Core : ICore, ICoreInformation
 
   private time_t start_time = new time_t();
 
-  private size_t blockMedianSize = new size_t();
+  private uint blockMedianSize = new uint();
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: void throwIfNotInitialized() const
@@ -1382,7 +1382,7 @@ public class Core : ICore, ICoreInformation
 	  return error;
 	}
 
-	size_t inputIndex = 0;
+	uint inputIndex = 0;
 	foreach (var input in transaction.inputs)
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
@@ -1406,7 +1406,7 @@ public class Core : ICore, ICoreInformation
 
 		  List<uint> globalIndexes = new List<uint>(in.outputIndexes.Count);
 		  globalIndexes[0] = in.outputIndexes[0];
-		  for (size_t i = 1; i < in.outputIndexes.Count; ++i)
+		  for (uint i = 1; i < in.outputIndexes.Count; ++i)
 		  {
 			globalIndexes[i] = globalIndexes[i - 1] + in.outputIndexes[i];
 		  }
@@ -1495,7 +1495,7 @@ public class Core : ICore, ICoreInformation
 
 	  if (cachedBlock.getParentBlockBinaryArray(false).size() > 2048)
 	  {
-		return error.BlockValidationError.PARENT_BLOCK_SIZE_TOO_BIG;
+		return error.BlockValidationError.PARENT_BLOCK_uintOO_BIG;
 	  }
 	}
 
@@ -1681,7 +1681,7 @@ public class Core : ICore, ICoreInformation
 	} while (segment != null);
 
 	//find in alternative chains
-	for (size_t chain = 1; chain < chainsLeaves.Count; ++chain)
+	for (uint chain = 1; chain < chainsLeaves.Count; ++chain)
 	{
 	  segment = chainsLeaves[chain];
 
@@ -1753,8 +1753,8 @@ public class Core : ICore, ICoreInformation
 
   //TODO: decompose these two methods
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t pushBlockHashes(uint startIndex, uint fullOffset, size_t maxItemsCount, ClassicVector<BlockShortInfo>& entries) const
-  private size_t pushBlockHashes(uint startIndex, uint fullOffset, size_t maxItemsCount, List<BlockShortInfo> entries)
+//ORIGINAL LINE: uint pushBlockHashes(uint startIndex, uint fullOffset, uint maxItemsCount, ClassicVector<BlockShortInfo>& entries) const
+  private uint pushBlockHashes(uint startIndex, uint fullOffset, uint maxItemsCount, List<BlockShortInfo> entries)
   {
 	Debug.Assert(fullOffset >= startIndex);
 
@@ -1779,8 +1779,8 @@ public class Core : ICore, ICoreInformation
 
   //TODO: decompose these two methods
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t pushBlockHashes(uint startIndex, uint fullOffset, size_t maxItemsCount, ClassicVector<BlockFullInfo>& entries) const
-  private size_t pushBlockHashes(uint startIndex, uint fullOffset, size_t maxItemsCount, List<BlockFullInfo> entries)
+//ORIGINAL LINE: uint pushBlockHashes(uint startIndex, uint fullOffset, uint maxItemsCount, ClassicVector<BlockFullInfo>& entries) const
+  private uint pushBlockHashes(uint startIndex, uint fullOffset, uint maxItemsCount, List<BlockFullInfo> entries)
   {
 	Debug.Assert(fullOffset >= startIndex);
 
@@ -1820,8 +1820,8 @@ public class Core : ICore, ICoreInformation
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: void fillQueryBlockFullInfo(uint fullOffset, uint currentIndex, size_t maxItemsCount, ClassicVector<BlockFullInfo>& entries) const
-  private void fillQueryBlockFullInfo(uint fullOffset, uint currentIndex, size_t maxItemsCount, List<BlockFullInfo> entries)
+//ORIGINAL LINE: void fillQueryBlockFullInfo(uint fullOffset, uint currentIndex, uint maxItemsCount, ClassicVector<BlockFullInfo>& entries) const
+  private void fillQueryBlockFullInfo(uint fullOffset, uint currentIndex, uint maxItemsCount, List<BlockFullInfo> entries)
   {
 	Debug.Assert(currentIndex >= fullOffset);
 
@@ -1842,8 +1842,8 @@ public class Core : ICore, ICoreInformation
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: void fillQueryBlockShortInfo(uint fullOffset, uint currentIndex, size_t maxItemsCount, ClassicVector<BlockShortInfo>& entries) const
-  private void fillQueryBlockShortInfo(uint fullOffset, uint currentIndex, size_t maxItemsCount, List<BlockShortInfo> entries)
+//ORIGINAL LINE: void fillQueryBlockShortInfo(uint fullOffset, uint currentIndex, uint maxItemsCount, ClassicVector<BlockShortInfo>& entries) const
+  private void fillQueryBlockShortInfo(uint fullOffset, uint currentIndex, uint maxItemsCount, List<BlockShortInfo> entries)
   {
 	Debug.Assert(currentIndex >= fullOffset);
 
@@ -1916,11 +1916,11 @@ public class Core : ICore, ICoreInformation
 	return upgradeManager.getBlockMajorVersion(height);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t calculateCumulativeBlocksizeLimit(uint height) const
-  private size_t calculateCumulativeBlocksizeLimit(uint height)
+//ORIGINAL LINE: uint calculateCumulativeBlocksizeLimit(uint height) const
+  private uint calculateCumulativeBlocksizeLimit(uint height)
   {
 	ushort nextBlockMajorVersion = getBlockMajorVersionForHeight(new uint(height));
-	size_t nextBlockGrantedFullRewardZone = currency.blockGrantedFullRewardZoneByBlockVersion(new ushort(nextBlockMajorVersion));
+	uint nextBlockGrantedFullRewardZone = currency.blockGrantedFullRewardZoneByBlockVersion(new ushort(nextBlockMajorVersion));
 
 	Debug.Assert(chainsStorage.Count > 0);
 	Debug.Assert(chainsLeaves.Count > 0);
@@ -1935,13 +1935,13 @@ public class Core : ICore, ICoreInformation
 	return median * 2;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: void fillBlockTemplate(BlockTemplate& block, size_t medianSize, size_t maxCumulativeSize, size_t& transactionsSize, ulong& fee) const
-  private void fillBlockTemplate(BlockTemplate block, size_t medianSize, size_t maxCumulativeSize, ref size_t transactionsSize, ref ulong fee)
+//ORIGINAL LINE: void fillBlockTemplate(BlockTemplate& block, uint medianSize, uint maxCumulativeSize, uint& transactionsSize, ulong& fee) const
+  private void fillBlockTemplate(BlockTemplate block, uint medianSize, uint maxCumulativeSize, ref uint transactionsSize, ref ulong fee)
   {
 	transactionsSize = 0;
 	fee = 0;
 
-	size_t maxTotalSize = (125 * medianSize) / 100;
+	uint maxTotalSize = (125 * medianSize) / 100;
 	maxTotalSize = Math.Min(maxTotalSize, maxCumulativeSize) - currency.minerTxBlobReservedSize();
 
 	TransactionSpentInputsChecker spentInputsChecker = new TransactionSpentInputsChecker();
@@ -1969,7 +1969,7 @@ public class Core : ICore, ICoreInformation
 
 	foreach (var cachedTransaction in poolTransactions)
 	{
-	  size_t blockSizeLimit = (cachedTransaction.getTransactionFee() == 0) ? medianSize : maxTotalSize;
+	  uint blockSizeLimit = (cachedTransaction.getTransactionFee() == 0) ? medianSize : maxTotalSize;
 
 	  if (blockSizeLimit < transactionsSize + cachedTransaction.getTransactionBinaryArray().size())
 	  {
@@ -1996,7 +1996,7 @@ public class Core : ICore, ICoreInformation
 	  deleteLeaf(1);
 	}
   }
-  private void deleteLeaf(size_t leafIndex)
+  private void deleteLeaf(uint leafIndex)
   {
 	Debug.Assert(leafIndex < chainsLeaves.Count);
 
@@ -2106,7 +2106,7 @@ public class Core : ICore, ICoreInformation
 		throw new System.Exception("Couldn't deserialize transactions");
 	  }
 
-	  acceptingSegment.pushBlock(new CachedBlock(block), transactions, info.validatorState, new size_t(info.blockSize), new ulong(info.generatedCoins), new ulong(info.blockDifficulty), std::move(info.rawBlock));
+	  acceptingSegment.pushBlock(new CachedBlock(block), transactions, info.validatorState, new uint(info.blockSize), new ulong(info.generatedCoins), new ulong(info.blockDifficulty), std::move(info.rawBlock));
 	}
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
@@ -2178,7 +2178,7 @@ public class Core : ICore, ICoreInformation
 	transactionDetails.totalInputsAmount = transaction.getInputTotalAmount();
 
 	transactionDetails.mixin = 0;
-	for (size_t i = 0; i < transaction.getInputCount(); ++i)
+	for (uint i = 0; i < transaction.getInputCount(); ++i)
 	{
 	  if (transaction.getInputType(i) != TransactionTypes.InputType.Key)
 	  {
@@ -2207,7 +2207,7 @@ public class Core : ICore, ICoreInformation
 	transactionDetails.signatures = new List<List<Crypto.Signature>>(rawTransaction.signatures);
 
 	transactionDetails.inputs.Capacity = transaction.getInputCount();
-	for (size_t i = 0; i < transaction.getInputCount(); ++i)
+	for (uint i = 0; i < transaction.getInputCount(); ++i)
 	{
 	  boost::variant<BaseInputDetails, KeyInputDetails> txInDetails = new boost::variant<BaseInputDetails, KeyInputDetails>();
 
@@ -2222,7 +2222,7 @@ public class Core : ICore, ICoreInformation
 	  {
 		KeyInputDetails txInToKeyDetails = new KeyInputDetails();
 		txInToKeyDetails.input = boost::get<KeyInput>(rawTransaction.inputs[i]);
-		List<Tuple<Crypto.Hash, size_t>> outputReferences = new List<Tuple<Crypto.Hash, size_t>>();
+		List<Tuple<Crypto.Hash, uint>> outputReferences = new List<Tuple<Crypto.Hash, uint>>();
 		outputReferences.Capacity = txInToKeyDetails.input.outputIndexes.Count;
 		List<uint> globalIndexes = relativeOutputOffsetsToAbsolute(txInToKeyDetails.input.outputIndexes);
 		ExtractOutputKeysResult result = segment.extractKeyOtputReferences(new ulong(txInToKeyDetails.input.amount), new Common.ArrayView<uint>(globalIndexes.data(), globalIndexes.Count), outputReferences);
@@ -2247,14 +2247,14 @@ public class Core : ICore, ICoreInformation
 	globalIndexes.Capacity = transaction.getOutputCount();
 	if (!transactionDetails.inBlockchain || !getTransactionGlobalIndexes(transactionDetails.hash, globalIndexes))
 	{
-	  for (size_t i = 0; i < transaction.getOutputCount(); ++i)
+	  for (uint i = 0; i < transaction.getOutputCount(); ++i)
 	  {
 		globalIndexes.Add(0);
 	  }
 	}
 
 	Debug.Assert(transaction.getOutputCount() == globalIndexes.Count);
-	for (size_t i = 0; i < transaction.getOutputCount(); ++i)
+	for (uint i = 0; i < transaction.getOutputCount(); ++i)
 	{
 	  TransactionOutputDetails txOutDetails = new TransactionOutputDetails();
 	  txOutDetails.output = rawTransaction.outputs[i];
@@ -2336,7 +2336,7 @@ public class Core : ICore, ICoreInformation
 
 	  var txState = GlobalMembers.extractSpentOutputs(tx);
 
-	  if (hasIntersections(validatorState, txState) || tx.getTransactionBinaryArray().size() > GlobalMembers.getMaximumTransactionAllowedSize(new size_t(blockMedianSize), currency))
+	  if (hasIntersections(validatorState, txState) || tx.getTransactionBinaryArray().size() > GlobalMembers.getMaximumTransactionAllowedSize(new uint(blockMedianSize), currency))
 	  {
 		pool.removeTransaction(hash);
 		notifyObservers(makeDelTransactionMessage({hash}, Messages.DeleteTransaction.Reason.NotActual));
@@ -2371,7 +2371,7 @@ public class Core : ICore, ICoreInformation
   {
 	var mainChain = chainsLeaves[0];
 
-	size_t nextBlockGrantedFullRewardZone = currency.blockGrantedFullRewardZoneByBlockVersion(upgradeManager.getBlockMajorVersion(mainChain.getTopBlockIndex() + 1));
+	uint nextBlockGrantedFullRewardZone = currency.blockGrantedFullRewardZoneByBlockVersion(upgradeManager.getBlockMajorVersion(mainChain.getTopBlockIndex() + 1));
 
 	var lastBlockSizes = mainChain.getLastBlocksSizes(currency.rewardBlocksWindow());
 
@@ -2415,7 +2415,7 @@ public class Core : ICore, ICoreInformation
 	  return false;
 	}
 
-	var maxTransactionSize = GlobalMembers.getMaximumTransactionAllowedSize(new size_t(blockMedianSize), currency);
+	var maxTransactionSize = GlobalMembers.getMaximumTransactionAllowedSize(new uint(blockMedianSize), currency);
 	if (cachedTransaction.getTransactionBinaryArray().size() > maxTransactionSize)
 	{
 	  logger.functorMethod(Logging.Level.WARNING) << "Transaction " << cachedTransaction.getTransactionHash() << " is not valid. Reason: transaction is too big (" << cachedTransaction.getTransactionBinaryArray().size() << "). Maximum allowed size is " << maxTransactionSize;
@@ -2514,7 +2514,7 @@ public class Core : ICore, ICoreInformation
 	Debug.Assert(mainChainStorage.getBlockCount() > splitBlockIndex);
 
 	var blocksToPop = mainChainStorage.getBlockCount() - splitBlockIndex;
-	for (size_t i = 0; i < blocksToPop; ++i)
+	for (uint i = 0; i < blocksToPop; ++i)
 	{
 	  mainChainStorage.popBlock();
 	}

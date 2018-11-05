@@ -14,7 +14,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -32,10 +32,10 @@ public partial class hash
 {
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t operator ()(const System.Tuple<CryptoNote::IBlockchainCache::Amount, uint>& arg) const
-  public static size_t functorMethod(Tuple<CryptoNote.IBlockchainCache.Amount, uint> arg)
+//ORIGINAL LINE: uint operator ()(const System.Tuple<CryptoNote::IBlockchainCache::Amount, uint>& arg) const
+  public static uint functorMethod(Tuple<CryptoNote.IBlockchainCache.Amount, uint> arg)
   {
-	size_t hashValue = boost::hash_value(arg.Item1);
+	uint hashValue = boost::hash_value(arg.Item1);
 	boost::hash_combine(hashValue, arg.Item2);
 	return hashValue;
   }
@@ -52,7 +52,7 @@ public partial class hash
 //ORIGINAL LINE: result_type operator ()(const argment_type& arg) const
   public static result_type functorMethod(argment_type arg)
   {
-	size_t hashValue = new std::hash<Crypto.Hash>({})(arg.first);
+	uint hashValue = new std::hash<Crypto.Hash>({})(arg.first);
 	boost::hash_combine(hashValue, arg.second);
 	return hashValue;
   }
@@ -113,8 +113,8 @@ public class BlockchainReadState
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t size() const
-  public size_t size()
+//ORIGINAL LINE: uint size() const
+  public uint size()
   {
 	return spentKeyImagesByBlock.Count + blockIndexesBySpentKeyImages.Count + cachedTransactions.Count + transactionHashesByBlocks.Count + cachedBlocks.Count + blockIndexesByBlockHashes.Count + keyOutputGlobalIndexesCountForAmounts.Count + keyOutputGlobalIndexesForAmounts.Count + rawBlocks.Count + closestTimestampBlockIndex.Count + keyOutputAmounts.Count + transactionCountsByPaymentIds.Count + transactionHashesByPaymentIds.Count + blockHashesByTimestamp.Count + keyOutputKeys.size() + (lastBlockIndex.Item2 ? 1 : 0) + (keyOutputAmountsCount.Item2 ? 1 : 0) + (transactionsCount.Item2 ? 1 : 0);
   }

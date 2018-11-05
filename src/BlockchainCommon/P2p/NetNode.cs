@@ -25,7 +25,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -81,7 +81,7 @@ namespace CryptoNote
 		this.returnCode = msg.returnCode;
 	}
 
-	public size_t size()
+	public uint size()
 	{
 	  return buffer.size();
 	}
@@ -176,7 +176,7 @@ namespace CryptoNote
 	private std::chrono.steady_clock.time_point writeOperationStartTime = new std::chrono.steady_clock.time_point();
 	private System.Event queueEvent = new System.Event();
 	private List<P2pMessage> writeQueue = new List<P2pMessage>();
-	private size_t writeQueueSize = 0;
+	private uint writeQueueSize = 0;
 	private bool stopped;
   }
 
@@ -383,9 +383,9 @@ namespace CryptoNote
 	}
 
 	//-----------------------------------------------------------------------------------
-	public size_t get_outgoing_connections_count()
+	public uint get_outgoing_connections_count()
 	{
-	  size_t count = 0;
+	  uint count = 0;
 	  foreach (var cntxt in m_connections)
 	  {
 		if (!cntxt.second.m_is_income)
@@ -935,7 +935,7 @@ namespace CryptoNote
 	}
 	private bool append_net_address(List<NetworkAddress> nodes, string addr)
 	{
-	  size_t pos = addr.LastIndexOfAny((Convert.ToString(':')).ToCharArray());
+	  uint pos = addr.LastIndexOfAny((Convert.ToString(':')).ToCharArray());
 	  if (!(-1 != pos && addr.Length - 1 != pos && 0 != pos))
 	  {
 		logger.functorMethod(ERROR, BRIGHT_RED) << "Failed to parse seed address from string: '" << addr << '\'';
@@ -1059,8 +1059,8 @@ namespace CryptoNote
 
 	  if (m_peerlist.get_white_peers_count() == null && m_seed_nodes.Count)
 	  {
-		size_t try_count = 0;
-		size_t current_index = Crypto.GlobalMembers.rand<size_t>() % m_seed_nodes.Count;
+		uint try_count = 0;
+		uint current_index = Crypto.GlobalMembers.rand<uint>() % m_seed_nodes.Count;
 
 		while (true)
 		{
@@ -1086,15 +1086,15 @@ namespace CryptoNote
 		  return false;
 	  }
 
-	  size_t expected_white_connections = (m_config.m_net_config.connections_count * CryptoNote.P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT) / 100;
+	  uint expected_white_connections = (m_config.m_net_config.connections_count * CryptoNote.P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT) / 100;
 
-	  size_t conn_count = get_outgoing_connections_count();
+	  uint conn_count = get_outgoing_connections_count();
 	  if (conn_count < m_config.m_net_config.connections_count)
 	  {
 		if (conn_count < expected_white_connections)
 		{
 		  //start from white list
-		  if (!make_expected_connections_count(true, new size_t(expected_white_connections)))
+		  if (!make_expected_connections_count(true, new uint(expected_white_connections)))
 		  {
 			return false;
 		  }
@@ -1125,22 +1125,22 @@ namespace CryptoNote
 	//-----------------------------------------------------------------------------------
 	private bool make_new_connection_from_peerlist(bool use_white_list)
 	{
-	  size_t local_peers_count = use_white_list ? m_peerlist.get_white_peers_count():m_peerlist.get_gray_peers_count();
+	  uint local_peers_count = use_white_list ? m_peerlist.get_white_peers_count():m_peerlist.get_gray_peers_count();
 	  if (local_peers_count == null)
 	  {
 		return false; //no peers
 	  }
 
-	  size_t max_random_index = Math.Min<ulong>(local_peers_count - 1, 20);
+	  uint max_random_index = Math.Min<ulong>(local_peers_count - 1, 20);
 
-	  SortedSet<size_t> tried_peers = new SortedSet<size_t>();
+	  SortedSet<uint> tried_peers = new SortedSet<uint>();
 
-	  size_t try_count = 0;
-	  size_t rand_count = 0;
+	  uint try_count = 0;
+	  uint rand_count = 0;
 	  while (rand_count < (max_random_index + 1) * 3 && try_count < 10 && m_stop == null)
 	  {
 		++rand_count;
-		size_t random_index = GlobalMembers.get_random_index_with_fixed_probability(new size_t(max_random_index));
+		uint random_index = GlobalMembers.get_random_index_with_fixed_probability(new uint(max_random_index));
 		if (!(random_index < local_peers_count))
 		{
 			logger.functorMethod(ERROR, BRIGHT_RED) << "random_starter_index < peers_local.size() failed!!";
@@ -1154,7 +1154,7 @@ namespace CryptoNote
 
 		tried_peers.Add(random_index);
 		PeerlistEntry pe = boost::value_initialized<PeerlistEntry>();
-		bool r = use_white_list ? m_peerlist.get_white_peer_by_index(pe, new size_t(random_index)):m_peerlist.get_gray_peer_by_index(pe, new size_t(random_index));
+		bool r = use_white_list ? m_peerlist.get_white_peer_by_index(pe, new uint(random_index)):m_peerlist.get_gray_peer_by_index(pe, new uint(random_index));
 		if (!(r))
 		{
 			logger.functorMethod(ERROR, BRIGHT_RED) << "Failed to get random peer from peerlist(white:" << use_white_list << ")";
@@ -1380,9 +1380,9 @@ namespace CryptoNote
 	}
 	//-----------------------------------------------------------------------------------
 
-	private bool make_expected_connections_count(bool white_list, size_t expected_connections)
+	private bool make_expected_connections_count(bool white_list, uint expected_connections)
 	{
-	  size_t conn_count = get_outgoing_connections_count();
+	  uint conn_count = get_outgoing_connections_count();
 	  //add new connections from white peers
 	  while (conn_count < expected_connections)
 	  {

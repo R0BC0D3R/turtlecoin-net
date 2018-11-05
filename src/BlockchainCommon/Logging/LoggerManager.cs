@@ -46,8 +46,8 @@ public class LoggerManager : LoggerGroup
 	  var globalDisabledCategoriesList = val("globalDisabledCategories");
 	  if (globalDisabledCategoriesList.isArray())
 	  {
-		size_t countOfCategories = globalDisabledCategoriesList.size();
-		for (size_t i = 0; i < countOfCategories; ++i)
+		uint countOfCategories = globalDisabledCategoriesList.size();
+		for (uint i = 0; i < countOfCategories; ++i)
 		{
 		  var categoryVal = globalDisabledCategoriesList[i];
 		  if (categoryVal.isString())
@@ -67,8 +67,8 @@ public class LoggerManager : LoggerGroup
 	  var loggersList = val("loggers");
 	  if (loggersList.isArray())
 	  {
-		size_t countOfLoggers = loggersList.size();
-		for (size_t i = 0; i < countOfLoggers; ++i)
+		uint countOfLoggers = loggersList.size();
+		for (uint i = 0; i < countOfLoggers; ++i)
 		{
 		  var loggerConfiguration = loggersList[i];
 		  if (!loggerConfiguration.isObject())
@@ -110,8 +110,8 @@ public class LoggerManager : LoggerGroup
 		  if (loggerConfiguration.contains("disabledCategories"))
 		  {
 			var disabledCategoriesVal = loggerConfiguration("disabledCategories");
-			size_t countOfCategories = disabledCategoriesVal.size();
-			for (size_t i = 0; i < countOfCategories; ++i)
+			uint countOfCategories = disabledCategoriesVal.size();
+			for (uint i = 0; i < countOfCategories; ++i)
 			{
 			  var categoryVal = disabledCategoriesVal[i];
 			  if (categoryVal.isString())

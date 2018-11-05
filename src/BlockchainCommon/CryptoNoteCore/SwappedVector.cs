@@ -20,7 +20,7 @@ public class SwappedVector <T> : System.IDisposable
 	{
 	}
 
-	public const_iterator(SwappedVector swappedVector, size_t index)
+	public const_iterator(SwappedVector swappedVector, uint index)
 	{
 		this.m_swappedVector = swappedVector;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -171,14 +171,14 @@ public class SwappedVector <T> : System.IDisposable
 	}
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t index() const
-	public size_t index()
+//ORIGINAL LINE: uint index() const
+	public uint index()
 	{
 	  return m_index;
 	}
 
 	private SwappedVector m_swappedVector;
-	private size_t m_index = new size_t();
+	private uint m_index = new uint();
   }
 
   public SwappedVector()
@@ -191,7 +191,7 @@ public class SwappedVector <T> : System.IDisposable
   }
   //SwappedVector& operator=(const SwappedVector&) = delete;
 
-  public bool open(string itemFileName, string indexFileName, size_t poolSize)
+  public bool open(string itemFileName, string indexFileName, uint poolSize)
   {
 	if (poolSize == 0)
 	{
@@ -462,7 +462,7 @@ public class SwappedVector <T> : System.IDisposable
 
   private std::fstream m_itemsFile = new std::fstream();
   private std::fstream m_indexesFile = new std::fstream();
-  private size_t m_poolSize = new size_t();
+  private uint m_poolSize = new uint();
   private List<ulong> m_offsets = new List<ulong>();
   private ulong m_itemsFileSize = new ulong();
   private SortedDictionary<ulong, ItemEntry> m_items = new SortedDictionary<ulong, ItemEntry>();

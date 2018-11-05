@@ -16,7 +16,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -131,8 +131,8 @@ public class NodeRpcProxy : CryptoNote.INode
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getPeerCount() const override
-  public override size_t getPeerCount()
+//ORIGINAL LINE: virtual uint getPeerCount() const override
+  public override uint getPeerCount()
   {
 	return m_peerCount.load(std::memory_order_relaxed);
   }
@@ -215,7 +215,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	return;
   }
 
-  public override void getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount, List<Crypto.Hash> blockHashes, Callback callback)
+  public override void getBlockHashesByTimestamps(ulong timestampBegin, uint secondsCount, List<Crypto.Hash> blockHashes, Callback callback)
   {
 	lock (m_mutex)
 	{
@@ -625,7 +625,7 @@ public class NodeRpcProxy : CryptoNote.INode
 
 	return true;
   }
-  private void updatePeerCount(size_t peerCount)
+  private void updatePeerCount(uint peerCount)
   {
 	if (peerCount != m_peerCount)
 	{
@@ -647,7 +647,7 @@ public class NodeRpcProxy : CryptoNote.INode
 	}
   }
 
-  private std::error_code doGetBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount, ref List<Crypto.Hash> blockHashes)
+  private std::error_code doGetBlockHashesByTimestamps(ulong timestampBegin, uint secondsCount, ref List<Crypto.Hash> blockHashes)
   {
 	COMMAND_RPC_GET_BLOCKS_HASHES_BY_TIMESTAMPS.request req = boost::value_initialized<decltype(req)>();
 	COMMAND_RPC_GET_BLOCKS_HASHES_BY_TIMESTAMPS.response rsp = boost::value_initialized<decltype(rsp)>();
@@ -1118,7 +1118,7 @@ public class NodeRpcProxy : CryptoNote.INode
 
   // Internal state
   private bool m_stop = false;
-  private std::atomic<size_t> m_peerCount = new std::atomic<size_t>();
+  private std::atomic<uint> m_peerCount = new std::atomic<uint>();
   private std::atomic<uint> m_networkHeight = new std::atomic<uint>();
   private std::atomic<ulong> m_nodeHeight = new std::atomic<ulong>();
 

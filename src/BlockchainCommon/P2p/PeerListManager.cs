@@ -19,14 +19,14 @@ public class PeerlistManager
 		  return true;
 		}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t get_white_peers_count() const
-		public size_t get_white_peers_count()
+//ORIGINAL LINE: uint get_white_peers_count() const
+		public uint get_white_peers_count()
 		{
 			return m_peers_white.Count;
 		}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t get_gray_peers_count() const
-		public size_t get_gray_peers_count()
+//ORIGINAL LINE: uint get_gray_peers_count() const
+		public uint get_gray_peers_count()
 		{
 			return m_peers_gray.Count;
 		}
@@ -82,14 +82,14 @@ public class PeerlistManager
 			return true;
 		}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool get_white_peer_by_index(PeerlistEntry& p, size_t i) const
-		public bool get_white_peer_by_index(PeerlistEntry p, size_t i)
+//ORIGINAL LINE: bool get_white_peer_by_index(PeerlistEntry& p, uint i) const
+		public bool get_white_peer_by_index(PeerlistEntry p, uint i)
 		{
 		  return m_whitePeerlist.get(p, i);
 		}
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: bool get_gray_peer_by_index(PeerlistEntry& p, size_t i) const
-		public bool get_gray_peer_by_index(PeerlistEntry p, size_t i)
+//ORIGINAL LINE: bool get_gray_peer_by_index(PeerlistEntry& p, uint i) const
+		public bool get_gray_peer_by_index(PeerlistEntry p, uint i)
 		{
 		  return m_grayPeerlist.get(p, i);
 		}

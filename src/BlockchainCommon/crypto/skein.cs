@@ -205,8 +205,8 @@ public enum HashReturn
 
 public class Skein_Ctxt_Hdr_t
 {
-  public size_t hashBitLen = new size_t(); // size of hash result, in bits
-  public size_t bCnt = new size_t(); // current byte count in buffer b[]
+  public uint hashBitLen = new uint(); // size of hash result, in bits
+  public uint bCnt = new uint(); // current byte count in buffer b[]
   public ulong[] T = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN_MODIFIER_WORDS); // tweak words: T[0]=byte cnt, T[1]=flags
 }
 

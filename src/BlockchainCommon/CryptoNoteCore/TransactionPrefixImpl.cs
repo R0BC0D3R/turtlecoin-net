@@ -6,7 +6,7 @@
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -44,19 +44,19 @@ public class TransactionPrefixImpl : ITransactionReader
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual Hash getTransactionHash() const override
-  public override Hash getTransactionHash()
+  public override Hash GetTransactionHash()
   {
 	return m_txHash;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual Hash getTransactionPrefixHash() const override
-  public override Hash getTransactionPrefixHash()
+  public override Hash GetTransactionPrefixHash()
   {
 	return CryptoNote.GlobalMembers.getObjectHash(m_txPrefix);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual PublicKey getTransactionPublicKey() const override
-  public override PublicKey getTransactionPublicKey()
+  public override PublicKey GetTransactionPublicKey()
   {
 	Crypto.PublicKey pk = new Crypto.PublicKey(GlobalMembers.NULL_PUBLIC_KEY);
 	m_extra.getPublicKey(ref pk);
@@ -64,7 +64,7 @@ public class TransactionPrefixImpl : ITransactionReader
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ulong getUnlockTime() const override
-  public override ulong getUnlockTime()
+  public override ulong GetUnlockTime()
   {
 	return m_txPrefix.unlockTime;
   }
@@ -95,21 +95,21 @@ public class TransactionPrefixImpl : ITransactionReader
 //  override bool getExtraNonce(BinaryArray nonce);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ClassicVector<ushort> getExtra() const override
-  public override List<ushort> getExtra()
+  public override List<ushort> GetExtra()
   {
 	return m_txPrefix.extra;
   }
 
   // inputs
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getInputCount() const override
-  public override size_t getInputCount()
+//ORIGINAL LINE: virtual uint getInputCount() const override
+  public override uint GetInputCount()
   {
 	return m_txPrefix.inputs.Count;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ulong getInputTotalAmount() const override
-  public override ulong getInputTotalAmount()
+  public override ulong GetInputTotalAmount()
   {
 	return std::accumulate(m_txPrefix.inputs.GetEnumerator(), m_txPrefix.inputs.end(), 0UL, (ulong val, boost::variant<BaseInput, KeyInput> in) =>
 	{
@@ -117,28 +117,28 @@ public class TransactionPrefixImpl : ITransactionReader
 	});
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual TransactionTypes::InputType getInputType(size_t index) const override
-  public override TransactionTypes.InputType getInputType(size_t index)
+//ORIGINAL LINE: virtual TransactionTypes::InputType getInputType(uint index) const override
+  public override TransactionTypes.InputType GetInputType(uint index)
   {
 	return getTransactionInputType(getInputChecked(m_txPrefix, index));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual void getInput(size_t index, KeyInput& input) const override
-  public override void getInput(size_t index, ref KeyInput input)
+//ORIGINAL LINE: virtual void getInput(uint index, KeyInput& input) const override
+  public override void getInput(uint index, ref KeyInput input)
   {
 	input = boost::get<KeyInput>(getInputChecked(m_txPrefix, index, TransactionTypes.InputType.Key));
   }
 
   // outputs
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getOutputCount() const override
-  public override size_t getOutputCount()
+//ORIGINAL LINE: virtual uint getOutputCount() const override
+  public override uint GetOutputCount()
   {
 	return m_txPrefix.outputs.Count;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ulong getOutputTotalAmount() const override
-  public override ulong getOutputTotalAmount()
+  public override ulong GetOutputTotalAmount()
   {
 	return std::accumulate(m_txPrefix.outputs.GetEnumerator(), m_txPrefix.outputs.end(), 0UL, (ulong val, TransactionOutput @out) =>
 	{
@@ -146,14 +146,14 @@ public class TransactionPrefixImpl : ITransactionReader
 	});
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual TransactionTypes::OutputType getOutputType(size_t index) const override
-  public override TransactionTypes.OutputType getOutputType(size_t index)
+//ORIGINAL LINE: virtual TransactionTypes::OutputType getOutputType(uint index) const override
+  public override TransactionTypes.OutputType GetOutputType(uint index)
   {
 	return getTransactionOutputType(getOutputChecked(m_txPrefix, index).target);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual void getOutput(size_t index, KeyOutput& output, ulong& amount) const override
-  public override void getOutput(size_t index, ref KeyOutput output, ref ulong amount)
+//ORIGINAL LINE: virtual void getOutput(uint index, KeyOutput& output, ulong& amount) const override
+  public override void getOutput(uint index, ref KeyOutput output, ref ulong amount)
   {
 	auto @out = getOutputChecked(m_txPrefix, index, TransactionTypes.OutputType.Key);
 	output = boost::get<KeyOutput>(@out.target);
@@ -162,14 +162,14 @@ public class TransactionPrefixImpl : ITransactionReader
 
   // signatures
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getRequiredSignaturesCount(size_t inputIndex) const override
-  public override size_t getRequiredSignaturesCount(size_t inputIndex)
+//ORIGINAL LINE: virtual uint getRequiredSignaturesCount(uint inputIndex) const override
+  public override uint GetRequiredSignaturesCount(uint inputIndex)
   {
 	return global::CryptoNote.getRequiredSignaturesCount(getInputChecked(m_txPrefix, inputIndex));
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual bool findOutputsToAccount(const AccountPublicAddress& addr, const SecretKey& viewSecretKey, ClassicVector<uint>& outs, ulong& outputAmount) const override
-  public override bool findOutputsToAccount(AccountPublicAddress addr, SecretKey viewSecretKey, List<uint> outs, ulong outputAmount)
+  public override bool FindOutputsToAccount(AccountPublicAddress addr, SecretKey viewSecretKey, List<uint> outs, ulong outputAmount)
   {
 	return global::CryptoNote.findOutputsToAccount(m_txPrefix, addr, viewSecretKey, outs, outputAmount);
   }
@@ -177,19 +177,19 @@ public class TransactionPrefixImpl : ITransactionReader
   // various checks
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual bool validateInputs() const override
-  public override bool validateInputs()
+  public override bool ValidateInputs()
   {
 	return checkInputTypesSupported(m_txPrefix) && checkInputsOverflow(m_txPrefix) && checkInputsKeyimagesDiff(m_txPrefix);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual bool validateOutputs() const override
-  public override bool validateOutputs()
+  public override bool ValidateOutputs()
   {
 	return checkOutsValid(m_txPrefix) && checkOutsOverflow(m_txPrefix);
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual bool validateSignatures() const override
-  public override bool validateSignatures()
+  public override bool ValidateSignatures()
   {
 	throw std::system_error(std::make_error_code(std::errc.function_not_supported), "Validating signatures is not supported for transaction prefix");
   }
@@ -197,14 +197,14 @@ public class TransactionPrefixImpl : ITransactionReader
   // serialized transaction
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual ClassicVector<ushort> getTransactionData() const override
-  public override List<ushort> getTransactionData()
+  public override List<ushort> GetTransactionData()
   {
 	return CryptoNote.GlobalMembers.toBinaryArray(m_txPrefix);
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: virtual bool getTransactionSecretKey(SecretKey& key) const override
-  public override bool getTransactionSecretKey(SecretKey key)
+  public override bool GetTransactionSecretKey(SecretKey key)
   {
 	return false;
   }

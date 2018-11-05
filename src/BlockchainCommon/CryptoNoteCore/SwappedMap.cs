@@ -93,7 +93,7 @@ public class SwappedMap <Key, T> : System.IDisposable
   }
   //SwappedMap& operator=(const SwappedMap&) = delete;
 
-  public bool open(string itemFileName, string indexFileName, size_t poolSize)
+  public bool open(string itemFileName, string indexFileName, uint poolSize)
   {
 	if (poolSize == 0)
 	{
@@ -213,8 +213,8 @@ public class SwappedMap <Key, T> : System.IDisposable
 	return new const_iterator(this, m_descriptors.cend());
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t count(const Key& key) const
-  public size_t count(Key key)
+//ORIGINAL LINE: uint count(const Key& key) const
+  public uint count(Key key)
   {
 	return m_descriptors.count(key);
   }
@@ -358,7 +358,7 @@ public class SwappedMap <Key, T> : System.IDisposable
 
   private std::fstream m_itemsFile = new std::fstream();
   private std::fstream m_indexesFile = new std::fstream();
-  private size_t m_poolSize = new size_t();
+  private uint m_poolSize = new uint();
   private Dictionary<Key, Descriptor> m_descriptors = new Dictionary<Key, Descriptor>();
   private ulong m_itemsFileSize = new ulong();
   private Dictionary<Key, T> m_items = new Dictionary<Key, T>();

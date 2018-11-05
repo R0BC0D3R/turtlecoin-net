@@ -208,12 +208,12 @@ public class LevinProtocol
   }
 
 
-  private bool readStrict(ushort ptr, size_t size)
+  private bool readStrict(ushort ptr, uint size)
   {
-	size_t offset = 0;
+	uint offset = 0;
 	while (offset < size)
 	{
-	  size_t read = m_conn.read(ptr + offset, size - offset);
+	  uint read = m_conn.read(ptr + offset, size - offset);
 	  if (read == 0)
 	  {
 		return false;
@@ -224,9 +224,9 @@ public class LevinProtocol
 
 	return true;
   }
-  private void writeStrict(ushort ptr, size_t size)
+  private void writeStrict(ushort ptr, uint size)
   {
-	size_t offset = 0;
+	uint offset = 0;
 	while (offset < size)
 	{
 	  offset += m_conn.write(ptr + offset, size - offset);

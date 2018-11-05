@@ -9,7 +9,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -86,8 +86,8 @@ public class TransactionPool : ITransactionPool
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getTransactionCount() const override
-  public size_t getTransactionCount()
+//ORIGINAL LINE: virtual uint getTransactionCount() const override
+  public uint getTransactionCount()
   {
 	return transactionHashIndex.size();
   }
@@ -212,12 +212,12 @@ public class TransactionPool : ITransactionPool
   private class PaymentIdHasher
   {
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t operator ()(const boost::optional<Crypto::Hash>& paymentId) const
-	public static size_t functorMethod(boost.optional<Crypto.Hash> paymentId)
+//ORIGINAL LINE: uint operator ()(const boost::optional<Crypto::Hash>& paymentId) const
+	public static uint functorMethod(boost.optional<Crypto.Hash> paymentId)
 	{
 	  if (!paymentId)
 	  {
-		return size_t.MaxValue;
+		return uint.MaxValue;
 	  }
 
 	  return new std::hash<Crypto.Hash>({})(*paymentId);

@@ -63,7 +63,7 @@ public class TcpStreambuf : std::streambuf, System.IDisposable
 	  return traits_type.to_int_type(*gptr());
 	}
 
-	size_t bytesRead = new size_t();
+	uint bytesRead = new uint();
 	try
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
@@ -86,13 +86,13 @@ public class TcpStreambuf : std::streambuf, System.IDisposable
   {
 	try
 	{
-	  size_t count = pptr() - pbase();
+	  uint count = pptr() - pbase();
 	  if (count == 0)
 	  {
 		return true;
 	  }
 
-	  size_t transferred = connection.write(writeBuf[0], count);
+	  uint transferred = connection.write(writeBuf[0], count);
 	  if (transferred == count)
 	  {
 		pbump(-(int)count);
@@ -101,8 +101,8 @@ public class TcpStreambuf : std::streambuf, System.IDisposable
 	  {
 		if (!finalize)
 		{
-		  size_t front = 0;
-		  for (size_t pos = transferred; pos < count; ++pos, ++front)
+		  uint front = 0;
+		  for (uint pos = transferred; pos < count; ++pos, ++front)
 		  {
 			writeBuf[front] = writeBuf[pos];
 		  }
@@ -111,7 +111,7 @@ public class TcpStreambuf : std::streambuf, System.IDisposable
 		}
 		else
 		{
-		  size_t offset = new size_t(transferred);
+		  uint offset = new uint(transferred);
 		  while (offset != count)
 		  {
 			offset += connection.write(writeBuf[0] + offset, count - offset);

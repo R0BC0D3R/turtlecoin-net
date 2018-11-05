@@ -1,9 +1,10 @@
-﻿using System;
+﻿#define SKEIN_USE_ASM
+#define SKEIN_LOOP
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-#define SKEIN_USE_ASM
-#define SKEIN_LOOP
 
 public static class GlobalMembers
 {
@@ -191,6 +192,7 @@ public static class GlobalMembers
 	//ORIGINAL LINE: #define four_tables(x,tab,vf,rf,c) (tab[0][bval(vf(x,0,c),rf(0,c))] ^ tab[1][bval(vf(x,1,c),rf(1,c))] ^ tab[2][bval(vf(x,2,c),rf(2,c))] ^ tab[3][bval(vf(x,3,c),rf(3,c))])
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'ALIGN' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
+    /*
 	public static readonly ALIGN[,] uint t_fn =
 	{
 		{(((uint)((f2(0x63) ^ 0x63)) << 24) | ((uint)(0x63) << 16) | ((uint)(0x63) << 8) | (((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7c) ^ 0x7c)) << 24) | ((uint)(0x7c) << 16) | ((uint)(0x7c) << 8) | (((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x77) ^ 0x77)) << 24) | ((uint)(0x77) << 16) | ((uint)(0x77) << 8) | (((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7b) ^ 0x7b)) << 24) | ((uint)(0x7b) << 16) | ((uint)(0x7b) << 8) | (((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf2) ^ 0xf2)) << 24) | ((uint)(0xf2) << 16) | ((uint)(0xf2) << 8) | (((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6b) ^ 0x6b)) << 24) | ((uint)(0x6b) << 16) | ((uint)(0x6b) << 8) | (((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6f) ^ 0x6f)) << 24) | ((uint)(0x6f) << 16) | ((uint)(0x6f) << 8) | (((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc5) ^ 0xc5)) << 24) | ((uint)(0xc5) << 16) | ((uint)(0xc5) << 8) | (((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x30) ^ 0x30)) << 24) | ((uint)(0x30) << 16) | ((uint)(0x30) << 8) | (((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x01) ^ 0x01)) << 24) | ((uint)(0x01) << 16) | ((uint)(0x01) << 8) | (((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x67) ^ 0x67)) << 24) | ((uint)(0x67) << 16) | ((uint)(0x67) << 8) | (((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2b) ^ 0x2b)) << 24) | ((uint)(0x2b) << 16) | ((uint)(0x2b) << 8) | (((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfe) ^ 0xfe)) << 24) | ((uint)(0xfe) << 16) | ((uint)(0xfe) << 8) | (((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd7) ^ 0xd7)) << 24) | ((uint)(0xd7) << 16) | ((uint)(0xd7) << 8) | (((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xab) ^ 0xab)) << 24) | ((uint)(0xab) << 16) | ((uint)(0xab) << 8) | (((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x76) ^ 0x76)) << 24) | ((uint)(0x76) << 16) | ((uint)(0x76) << 8) | (((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xca) ^ 0xca)) << 24) | ((uint)(0xca) << 16) | ((uint)(0xca) << 8) | (((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x82) ^ 0x82)) << 24) | ((uint)(0x82) << 16) | ((uint)(0x82) << 8) | (((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc9) ^ 0xc9)) << 24) | ((uint)(0xc9) << 16) | ((uint)(0xc9) << 8) | (((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7d) ^ 0x7d)) << 24) | ((uint)(0x7d) << 16) | ((uint)(0x7d) << 8) | (((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfa) ^ 0xfa)) << 24) | ((uint)(0xfa) << 16) | ((uint)(0xfa) << 8) | (((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x59) ^ 0x59)) << 24) | ((uint)(0x59) << 16) | ((uint)(0x59) << 8) | (((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x47) ^ 0x47)) << 24) | ((uint)(0x47) << 16) | ((uint)(0x47) << 8) | (((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf0) ^ 0xf0)) << 24) | ((uint)(0xf0) << 16) | ((uint)(0xf0) << 8) | (((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xad) ^ 0xad)) << 24) | ((uint)(0xad) << 16) | ((uint)(0xad) << 8) | (((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd4) ^ 0xd4)) << 24) | ((uint)(0xd4) << 16) | ((uint)(0xd4) << 8) | (((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa2) ^ 0xa2)) << 24) | ((uint)(0xa2) << 16) | ((uint)(0xa2) << 8) | (((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xaf) ^ 0xaf)) << 24) | ((uint)(0xaf) << 16) | ((uint)(0xaf) << 8) | (((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9c) ^ 0x9c)) << 24) | ((uint)(0x9c) << 16) | ((uint)(0x9c) << 8) | (((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa4) ^ 0xa4)) << 24) | ((uint)(0xa4) << 16) | ((uint)(0xa4) << 8) | (((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x72) ^ 0x72)) << 24) | ((uint)(0x72) << 16) | ((uint)(0x72) << 8) | (((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc0) ^ 0xc0)) << 24) | ((uint)(0xc0) << 16) | ((uint)(0xc0) << 8) | (((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb7) ^ 0xb7)) << 24) | ((uint)(0xb7) << 16) | ((uint)(0xb7) << 8) | (((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfd) ^ 0xfd)) << 24) | ((uint)(0xfd) << 16) | ((uint)(0xfd) << 8) | (((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x93) ^ 0x93)) << 24) | ((uint)(0x93) << 16) | ((uint)(0x93) << 8) | (((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x26) ^ 0x26)) << 24) | ((uint)(0x26) << 16) | ((uint)(0x26) << 8) | (((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x36) ^ 0x36)) << 24) | ((uint)(0x36) << 16) | ((uint)(0x36) << 8) | (((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3f) ^ 0x3f)) << 24) | ((uint)(0x3f) << 16) | ((uint)(0x3f) << 8) | (((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf7) ^ 0xf7)) << 24) | ((uint)(0xf7) << 16) | ((uint)(0xf7) << 8) | (((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xcc) ^ 0xcc)) << 24) | ((uint)(0xcc) << 16) | ((uint)(0xcc) << 8) | (((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x34) ^ 0x34)) << 24) | ((uint)(0x34) << 16) | ((uint)(0x34) << 8) | (((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa5) ^ 0xa5)) << 24) | ((uint)(0xa5) << 16) | ((uint)(0xa5) << 8) | (((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe5) ^ 0xe5)) << 24) | ((uint)(0xe5) << 16) | ((uint)(0xe5) << 8) | (((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf1) ^ 0xf1)) << 24) | ((uint)(0xf1) << 16) | ((uint)(0xf1) << 8) | (((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x71) ^ 0x71)) << 24) | ((uint)(0x71) << 16) | ((uint)(0x71) << 8) | (((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd8) ^ 0xd8)) << 24) | ((uint)(0xd8) << 16) | ((uint)(0xd8) << 8) | (((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x31) ^ 0x31)) << 24) | ((uint)(0x31) << 16) | ((uint)(0x31) << 8) | (((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x15) ^ 0x15)) << 24) | ((uint)(0x15) << 16) | ((uint)(0x15) << 8) | (((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x04) ^ 0x04)) << 24) | ((uint)(0x04) << 16) | ((uint)(0x04) << 8) | (((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc7) ^ 0xc7)) << 24) | ((uint)(0xc7) << 16) | ((uint)(0xc7) << 8) | (((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x23) ^ 0x23)) << 24) | ((uint)(0x23) << 16) | ((uint)(0x23) << 8) | (((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc3) ^ 0xc3)) << 24) | ((uint)(0xc3) << 16) | ((uint)(0xc3) << 8) | (((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x18) ^ 0x18)) << 24) | ((uint)(0x18) << 16) | ((uint)(0x18) << 8) | (((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x96) ^ 0x96)) << 24) | ((uint)(0x96) << 16) | ((uint)(0x96) << 8) | (((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x05) ^ 0x05)) << 24) | ((uint)(0x05) << 16) | ((uint)(0x05) << 8) | (((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9a) ^ 0x9a)) << 24) | ((uint)(0x9a) << 16) | ((uint)(0x9a) << 8) | (((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x07) ^ 0x07)) << 24) | ((uint)(0x07) << 16) | ((uint)(0x07) << 8) | (((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x12) ^ 0x12)) << 24) | ((uint)(0x12) << 16) | ((uint)(0x12) << 8) | (((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x80) ^ 0x80)) << 24) | ((uint)(0x80) << 16) | ((uint)(0x80) << 8) | (((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe2) ^ 0xe2)) << 24) | ((uint)(0xe2) << 16) | ((uint)(0xe2) << 8) | (((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xeb) ^ 0xeb)) << 24) | ((uint)(0xeb) << 16) | ((uint)(0xeb) << 8) | (((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x27) ^ 0x27)) << 24) | ((uint)(0x27) << 16) | ((uint)(0x27) << 8) | (((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb2) ^ 0xb2)) << 24) | ((uint)(0xb2) << 16) | ((uint)(0xb2) << 8) | (((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x75) ^ 0x75)) << 24) | ((uint)(0x75) << 16) | ((uint)(0x75) << 8) | (((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x09) ^ 0x09)) << 24) | ((uint)(0x09) << 16) | ((uint)(0x09) << 8) | (((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x83) ^ 0x83)) << 24) | ((uint)(0x83) << 16) | ((uint)(0x83) << 8) | (((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2c) ^ 0x2c)) << 24) | ((uint)(0x2c) << 16) | ((uint)(0x2c) << 8) | (((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1a) ^ 0x1a)) << 24) | ((uint)(0x1a) << 16) | ((uint)(0x1a) << 8) | (((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1b) ^ 0x1b)) << 24) | ((uint)(0x1b) << 16) | ((uint)(0x1b) << 8) | (((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6e) ^ 0x6e)) << 24) | ((uint)(0x6e) << 16) | ((uint)(0x6e) << 8) | (((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5a) ^ 0x5a)) << 24) | ((uint)(0x5a) << 16) | ((uint)(0x5a) << 8) | (((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa0) ^ 0xa0)) << 24) | ((uint)(0xa0) << 16) | ((uint)(0xa0) << 8) | (((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x52) ^ 0x52)) << 24) | ((uint)(0x52) << 16) | ((uint)(0x52) << 8) | (((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3b) ^ 0x3b)) << 24) | ((uint)(0x3b) << 16) | ((uint)(0x3b) << 8) | (((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd6) ^ 0xd6)) << 24) | ((uint)(0xd6) << 16) | ((uint)(0xd6) << 8) | (((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb3) ^ 0xb3)) << 24) | ((uint)(0xb3) << 16) | ((uint)(0xb3) << 8) | (((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x29) ^ 0x29)) << 24) | ((uint)(0x29) << 16) | ((uint)(0x29) << 8) | (((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe3) ^ 0xe3)) << 24) | ((uint)(0xe3) << 16) | ((uint)(0xe3) << 8) | (((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2f) ^ 0x2f)) << 24) | ((uint)(0x2f) << 16) | ((uint)(0x2f) << 8) | (((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x84) ^ 0x84)) << 24) | ((uint)(0x84) << 16) | ((uint)(0x84) << 8) | (((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x53) ^ 0x53)) << 24) | ((uint)(0x53) << 16) | ((uint)(0x53) << 8) | (((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd1) ^ 0xd1)) << 24) | ((uint)(0xd1) << 16) | ((uint)(0xd1) << 8) | (((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x00) ^ 0x00)) << 24) | ((uint)(0x00) << 16) | ((uint)(0x00) << 8) | (((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xed) ^ 0xed)) << 24) | ((uint)(0xed) << 16) | ((uint)(0xed) << 8) | (((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x20) ^ 0x20)) << 24) | ((uint)(0x20) << 16) | ((uint)(0x20) << 8) | (((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfc) ^ 0xfc)) << 24) | ((uint)(0xfc) << 16) | ((uint)(0xfc) << 8) | (((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb1) ^ 0xb1)) << 24) | ((uint)(0xb1) << 16) | ((uint)(0xb1) << 8) | (((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5b) ^ 0x5b)) << 24) | ((uint)(0x5b) << 16) | ((uint)(0x5b) << 8) | (((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6a) ^ 0x6a)) << 24) | ((uint)(0x6a) << 16) | ((uint)(0x6a) << 8) | (((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xcb) ^ 0xcb)) << 24) | ((uint)(0xcb) << 16) | ((uint)(0xcb) << 8) | (((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbe) ^ 0xbe)) << 24) | ((uint)(0xbe) << 16) | ((uint)(0xbe) << 8) | (((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x39) ^ 0x39)) << 24) | ((uint)(0x39) << 16) | ((uint)(0x39) << 8) | (((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4a) ^ 0x4a)) << 24) | ((uint)(0x4a) << 16) | ((uint)(0x4a) << 8) | (((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4c) ^ 0x4c)) << 24) | ((uint)(0x4c) << 16) | ((uint)(0x4c) << 8) | (((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x58) ^ 0x58)) << 24) | ((uint)(0x58) << 16) | ((uint)(0x58) << 8) | (((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xcf) ^ 0xcf)) << 24) | ((uint)(0xcf) << 16) | ((uint)(0xcf) << 8) | (((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd0) ^ 0xd0)) << 24) | ((uint)(0xd0) << 16) | ((uint)(0xd0) << 8) | (((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xef) ^ 0xef)) << 24) | ((uint)(0xef) << 16) | ((uint)(0xef) << 8) | (((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xaa) ^ 0xaa)) << 24) | ((uint)(0xaa) << 16) | ((uint)(0xaa) << 8) | (((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xfb) ^ 0xfb)) << 24) | ((uint)(0xfb) << 16) | ((uint)(0xfb) << 8) | (((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x43) ^ 0x43)) << 24) | ((uint)(0x43) << 16) | ((uint)(0x43) << 8) | (((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4d) ^ 0x4d)) << 24) | ((uint)(0x4d) << 16) | ((uint)(0x4d) << 8) | (((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x33) ^ 0x33)) << 24) | ((uint)(0x33) << 16) | ((uint)(0x33) << 8) | (((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x85) ^ 0x85)) << 24) | ((uint)(0x85) << 16) | ((uint)(0x85) << 8) | (((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x45) ^ 0x45)) << 24) | ((uint)(0x45) << 16) | ((uint)(0x45) << 8) | (((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf9) ^ 0xf9)) << 24) | ((uint)(0xf9) << 16) | ((uint)(0xf9) << 8) | (((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x02) ^ 0x02)) << 24) | ((uint)(0x02) << 16) | ((uint)(0x02) << 8) | (((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7f) ^ 0x7f)) << 24) | ((uint)(0x7f) << 16) | ((uint)(0x7f) << 8) | (((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x50) ^ 0x50)) << 24) | ((uint)(0x50) << 16) | ((uint)(0x50) << 8) | (((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3c) ^ 0x3c)) << 24) | ((uint)(0x3c) << 16) | ((uint)(0x3c) << 8) | (((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9f) ^ 0x9f)) << 24) | ((uint)(0x9f) << 16) | ((uint)(0x9f) << 8) | (((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa8) ^ 0xa8)) << 24) | ((uint)(0xa8) << 16) | ((uint)(0xa8) << 8) | (((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x51) ^ 0x51)) << 24) | ((uint)(0x51) << 16) | ((uint)(0x51) << 8) | (((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa3) ^ 0xa3)) << 24) | ((uint)(0xa3) << 16) | ((uint)(0xa3) << 8) | (((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x40) ^ 0x40)) << 24) | ((uint)(0x40) << 16) | ((uint)(0x40) << 8) | (((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8f) ^ 0x8f)) << 24) | ((uint)(0x8f) << 16) | ((uint)(0x8f) << 8) | (((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x92) ^ 0x92)) << 24) | ((uint)(0x92) << 16) | ((uint)(0x92) << 8) | (((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9d) ^ 0x9d)) << 24) | ((uint)(0x9d) << 16) | ((uint)(0x9d) << 8) | (((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x38) ^ 0x38)) << 24) | ((uint)(0x38) << 16) | ((uint)(0x38) << 8) | (((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf5) ^ 0xf5)) << 24) | ((uint)(0xf5) << 16) | ((uint)(0xf5) << 8) | (((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbc) ^ 0xbc)) << 24) | ((uint)(0xbc) << 16) | ((uint)(0xbc) << 8) | (((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb6) ^ 0xb6)) << 24) | ((uint)(0xb6) << 16) | ((uint)(0xb6) << 8) | (((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xda) ^ 0xda)) << 24) | ((uint)(0xda) << 16) | ((uint)(0xda) << 8) | (((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x21) ^ 0x21)) << 24) | ((uint)(0x21) << 16) | ((uint)(0x21) << 8) | (((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x10) ^ 0x10)) << 24) | ((uint)(0x10) << 16) | ((uint)(0x10) << 8) | (((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xff) ^ 0xff)) << 24) | ((uint)(0xff) << 16) | ((uint)(0xff) << 8) | (((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf3) ^ 0xf3)) << 24) | ((uint)(0xf3) << 16) | ((uint)(0xf3) << 8) | (((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd2) ^ 0xd2)) << 24) | ((uint)(0xd2) << 16) | ((uint)(0xd2) << 8) | (((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xcd) ^ 0xcd)) << 24) | ((uint)(0xcd) << 16) | ((uint)(0xcd) << 8) | (((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0c) ^ 0x0c)) << 24) | ((uint)(0x0c) << 16) | ((uint)(0x0c) << 8) | (((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x13) ^ 0x13)) << 24) | ((uint)(0x13) << 16) | ((uint)(0x13) << 8) | (((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xec) ^ 0xec)) << 24) | ((uint)(0xec) << 16) | ((uint)(0xec) << 8) | (((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5f) ^ 0x5f)) << 24) | ((uint)(0x5f) << 16) | ((uint)(0x5f) << 8) | (((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x97) ^ 0x97)) << 24) | ((uint)(0x97) << 16) | ((uint)(0x97) << 8) | (((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x44) ^ 0x44)) << 24) | ((uint)(0x44) << 16) | ((uint)(0x44) << 8) | (((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x17) ^ 0x17)) << 24) | ((uint)(0x17) << 16) | ((uint)(0x17) << 8) | (((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc4) ^ 0xc4)) << 24) | ((uint)(0xc4) << 16) | ((uint)(0xc4) << 8) | (((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa7) ^ 0xa7)) << 24) | ((uint)(0xa7) << 16) | ((uint)(0xa7) << 8) | (((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7e) ^ 0x7e)) << 24) | ((uint)(0x7e) << 16) | ((uint)(0x7e) << 8) | (((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3d) ^ 0x3d)) << 24) | ((uint)(0x3d) << 16) | ((uint)(0x3d) << 8) | (((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x64) ^ 0x64)) << 24) | ((uint)(0x64) << 16) | ((uint)(0x64) << 8) | (((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5d) ^ 0x5d)) << 24) | ((uint)(0x5d) << 16) | ((uint)(0x5d) << 8) | (((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x19) ^ 0x19)) << 24) | ((uint)(0x19) << 16) | ((uint)(0x19) << 8) | (((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x73) ^ 0x73)) << 24) | ((uint)(0x73) << 16) | ((uint)(0x73) << 8) | (((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x60) ^ 0x60)) << 24) | ((uint)(0x60) << 16) | ((uint)(0x60) << 8) | (((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x81) ^ 0x81)) << 24) | ((uint)(0x81) << 16) | ((uint)(0x81) << 8) | (((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4f) ^ 0x4f)) << 24) | ((uint)(0x4f) << 16) | ((uint)(0x4f) << 8) | (((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xdc) ^ 0xdc)) << 24) | ((uint)(0xdc) << 16) | ((uint)(0xdc) << 8) | (((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x22) ^ 0x22)) << 24) | ((uint)(0x22) << 16) | ((uint)(0x22) << 8) | (((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2a) ^ 0x2a)) << 24) | ((uint)(0x2a) << 16) | ((uint)(0x2a) << 8) | (((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x90) ^ 0x90)) << 24) | ((uint)(0x90) << 16) | ((uint)(0x90) << 8) | (((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x88) ^ 0x88)) << 24) | ((uint)(0x88) << 16) | ((uint)(0x88) << 8) | (((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x46) ^ 0x46)) << 24) | ((uint)(0x46) << 16) | ((uint)(0x46) << 8) | (((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xee) ^ 0xee)) << 24) | ((uint)(0xee) << 16) | ((uint)(0xee) << 8) | (((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb8) ^ 0xb8)) << 24) | ((uint)(0xb8) << 16) | ((uint)(0xb8) << 8) | (((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x14) ^ 0x14)) << 24) | ((uint)(0x14) << 16) | ((uint)(0x14) << 8) | (((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xde) ^ 0xde)) << 24) | ((uint)(0xde) << 16) | ((uint)(0xde) << 8) | (((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5e) ^ 0x5e)) << 24) | ((uint)(0x5e) << 16) | ((uint)(0x5e) << 8) | (((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0b) ^ 0x0b)) << 24) | ((uint)(0x0b) << 16) | ((uint)(0x0b) << 8) | (((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xdb) ^ 0xdb)) << 24) | ((uint)(0xdb) << 16) | ((uint)(0xdb) << 8) | (((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe0) ^ 0xe0)) << 24) | ((uint)(0xe0) << 16) | ((uint)(0xe0) << 8) | (((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x32) ^ 0x32)) << 24) | ((uint)(0x32) << 16) | ((uint)(0x32) << 8) | (((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3a) ^ 0x3a)) << 24) | ((uint)(0x3a) << 16) | ((uint)(0x3a) << 8) | (((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0a) ^ 0x0a)) << 24) | ((uint)(0x0a) << 16) | ((uint)(0x0a) << 8) | (((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x49) ^ 0x49)) << 24) | ((uint)(0x49) << 16) | ((uint)(0x49) << 8) | (((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x06) ^ 0x06)) << 24) | ((uint)(0x06) << 16) | ((uint)(0x06) << 8) | (((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x24) ^ 0x24)) << 24) | ((uint)(0x24) << 16) | ((uint)(0x24) << 8) | (((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x5c) ^ 0x5c)) << 24) | ((uint)(0x5c) << 16) | ((uint)(0x5c) << 8) | (((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc2) ^ 0xc2)) << 24) | ((uint)(0xc2) << 16) | ((uint)(0xc2) << 8) | (((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd3) ^ 0xd3)) << 24) | ((uint)(0xd3) << 16) | ((uint)(0xd3) << 8) | (((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xac) ^ 0xac)) << 24) | ((uint)(0xac) << 16) | ((uint)(0xac) << 8) | (((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x62) ^ 0x62)) << 24) | ((uint)(0x62) << 16) | ((uint)(0x62) << 8) | (((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x91) ^ 0x91)) << 24) | ((uint)(0x91) << 16) | ((uint)(0x91) << 8) | (((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x95) ^ 0x95)) << 24) | ((uint)(0x95) << 16) | ((uint)(0x95) << 8) | (((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe4) ^ 0xe4)) << 24) | ((uint)(0xe4) << 16) | ((uint)(0xe4) << 8) | (((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x79) ^ 0x79)) << 24) | ((uint)(0x79) << 16) | ((uint)(0x79) << 8) | (((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe7) ^ 0xe7)) << 24) | ((uint)(0xe7) << 16) | ((uint)(0xe7) << 8) | (((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc8) ^ 0xc8)) << 24) | ((uint)(0xc8) << 16) | ((uint)(0xc8) << 8) | (((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x37) ^ 0x37)) << 24) | ((uint)(0x37) << 16) | ((uint)(0x37) << 8) | (((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6d) ^ 0x6d)) << 24) | ((uint)(0x6d) << 16) | ((uint)(0x6d) << 8) | (((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8d) ^ 0x8d)) << 24) | ((uint)(0x8d) << 16) | ((uint)(0x8d) << 8) | (((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd5) ^ 0xd5)) << 24) | ((uint)(0xd5) << 16) | ((uint)(0xd5) << 8) | (((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4e) ^ 0x4e)) << 24) | ((uint)(0x4e) << 16) | ((uint)(0x4e) << 8) | (((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa9) ^ 0xa9)) << 24) | ((uint)(0xa9) << 16) | ((uint)(0xa9) << 8) | (((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x6c) ^ 0x6c)) << 24) | ((uint)(0x6c) << 16) | ((uint)(0x6c) << 8) | (((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x56) ^ 0x56)) << 24) | ((uint)(0x56) << 16) | ((uint)(0x56) << 8) | (((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf4) ^ 0xf4)) << 24) | ((uint)(0xf4) << 16) | ((uint)(0xf4) << 8) | (((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xea) ^ 0xea)) << 24) | ((uint)(0xea) << 16) | ((uint)(0xea) << 8) | (((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x65) ^ 0x65)) << 24) | ((uint)(0x65) << 16) | ((uint)(0x65) << 8) | (((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x7a) ^ 0x7a)) << 24) | ((uint)(0x7a) << 16) | ((uint)(0x7a) << 8) | (((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xae) ^ 0xae)) << 24) | ((uint)(0xae) << 16) | ((uint)(0xae) << 8) | (((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x08) ^ 0x08)) << 24) | ((uint)(0x08) << 16) | ((uint)(0x08) << 8) | (((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xba) ^ 0xba)) << 24) | ((uint)(0xba) << 16) | ((uint)(0xba) << 8) | (((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x78) ^ 0x78)) << 24) | ((uint)(0x78) << 16) | ((uint)(0x78) << 8) | (((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x25) ^ 0x25)) << 24) | ((uint)(0x25) << 16) | ((uint)(0x25) << 8) | (((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2e) ^ 0x2e)) << 24) | ((uint)(0x2e) << 16) | ((uint)(0x2e) << 8) | (((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1c) ^ 0x1c)) << 24) | ((uint)(0x1c) << 16) | ((uint)(0x1c) << 8) | (((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa6) ^ 0xa6)) << 24) | ((uint)(0xa6) << 16) | ((uint)(0xa6) << 8) | (((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb4) ^ 0xb4)) << 24) | ((uint)(0xb4) << 16) | ((uint)(0xb4) << 8) | (((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc6) ^ 0xc6)) << 24) | ((uint)(0xc6) << 16) | ((uint)(0xc6) << 8) | (((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe8) ^ 0xe8)) << 24) | ((uint)(0xe8) << 16) | ((uint)(0xe8) << 8) | (((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xdd) ^ 0xdd)) << 24) | ((uint)(0xdd) << 16) | ((uint)(0xdd) << 8) | (((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x74) ^ 0x74)) << 24) | ((uint)(0x74) << 16) | ((uint)(0x74) << 8) | (((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1f) ^ 0x1f)) << 24) | ((uint)(0x1f) << 16) | ((uint)(0x1f) << 8) | (((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x4b) ^ 0x4b)) << 24) | ((uint)(0x4b) << 16) | ((uint)(0x4b) << 8) | (((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbd) ^ 0xbd)) << 24) | ((uint)(0xbd) << 16) | ((uint)(0xbd) << 8) | (((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8b) ^ 0x8b)) << 24) | ((uint)(0x8b) << 16) | ((uint)(0x8b) << 8) | (((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8a) ^ 0x8a)) << 24) | ((uint)(0x8a) << 16) | ((uint)(0x8a) << 8) | (((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x70) ^ 0x70)) << 24) | ((uint)(0x70) << 16) | ((uint)(0x70) << 8) | (((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x3e) ^ 0x3e)) << 24) | ((uint)(0x3e) << 16) | ((uint)(0x3e) << 8) | (((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb5) ^ 0xb5)) << 24) | ((uint)(0xb5) << 16) | ((uint)(0xb5) << 8) | (((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x66) ^ 0x66)) << 24) | ((uint)(0x66) << 16) | ((uint)(0x66) << 8) | (((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x48) ^ 0x48)) << 24) | ((uint)(0x48) << 16) | ((uint)(0x48) << 8) | (((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x03) ^ 0x03)) << 24) | ((uint)(0x03) << 16) | ((uint)(0x03) << 8) | (((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf6) ^ 0xf6)) << 24) | ((uint)(0xf6) << 16) | ((uint)(0xf6) << 8) | (((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0e) ^ 0x0e)) << 24) | ((uint)(0x0e) << 16) | ((uint)(0x0e) << 8) | (((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x61) ^ 0x61)) << 24) | ((uint)(0x61) << 16) | ((uint)(0x61) << 8) | (((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x35) ^ 0x35)) << 24) | ((uint)(0x35) << 16) | ((uint)(0x35) << 8) | (((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x57) ^ 0x57)) << 24) | ((uint)(0x57) << 16) | ((uint)(0x57) << 8) | (((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb9) ^ 0xb9)) << 24) | ((uint)(0xb9) << 16) | ((uint)(0xb9) << 8) | (((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x86) ^ 0x86)) << 24) | ((uint)(0x86) << 16) | ((uint)(0x86) << 8) | (((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xc1) ^ 0xc1)) << 24) | ((uint)(0xc1) << 16) | ((uint)(0xc1) << 8) | (((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1d) ^ 0x1d)) << 24) | ((uint)(0x1d) << 16) | ((uint)(0x1d) << 8) | (((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9e) ^ 0x9e)) << 24) | ((uint)(0x9e) << 16) | ((uint)(0x9e) << 8) | (((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe1) ^ 0xe1)) << 24) | ((uint)(0xe1) << 16) | ((uint)(0xe1) << 8) | (((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xf8) ^ 0xf8)) << 24) | ((uint)(0xf8) << 16) | ((uint)(0xf8) << 8) | (((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x98) ^ 0x98)) << 24) | ((uint)(0x98) << 16) | ((uint)(0x98) << 8) | (((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x11) ^ 0x11)) << 24) | ((uint)(0x11) << 16) | ((uint)(0x11) << 8) | (((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x69) ^ 0x69)) << 24) | ((uint)(0x69) << 16) | ((uint)(0x69) << 8) | (((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xd9) ^ 0xd9)) << 24) | ((uint)(0xd9) << 16) | ((uint)(0xd9) << 8) | (((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8e) ^ 0x8e)) << 24) | ((uint)(0x8e) << 16) | ((uint)(0x8e) << 8) | (((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x94) ^ 0x94)) << 24) | ((uint)(0x94) << 16) | ((uint)(0x94) << 8) | (((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x9b) ^ 0x9b)) << 24) | ((uint)(0x9b) << 16) | ((uint)(0x9b) << 8) | (((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x1e) ^ 0x1e)) << 24) | ((uint)(0x1e) << 16) | ((uint)(0x1e) << 8) | (((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x87) ^ 0x87)) << 24) | ((uint)(0x87) << 16) | ((uint)(0x87) << 8) | (((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe9) ^ 0xe9)) << 24) | ((uint)(0xe9) << 16) | ((uint)(0xe9) << 8) | (((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xce) ^ 0xce)) << 24) | ((uint)(0xce) << 16) | ((uint)(0xce) << 8) | (((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x55) ^ 0x55)) << 24) | ((uint)(0x55) << 16) | ((uint)(0x55) << 8) | (((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x28) ^ 0x28)) << 24) | ((uint)(0x28) << 16) | ((uint)(0x28) << 8) | (((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xdf) ^ 0xdf)) << 24) | ((uint)(0xdf) << 16) | ((uint)(0xdf) << 8) | (((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x8c) ^ 0x8c)) << 24) | ((uint)(0x8c) << 16) | ((uint)(0x8c) << 8) | (((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xa1) ^ 0xa1)) << 24) | ((uint)(0xa1) << 16) | ((uint)(0xa1) << 8) | (((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x89) ^ 0x89)) << 24) | ((uint)(0x89) << 16) | ((uint)(0x89) << 8) | (((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0d) ^ 0x0d)) << 24) | ((uint)(0x0d) << 16) | ((uint)(0x0d) << 8) | (((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbf) ^ 0xbf)) << 24) | ((uint)(0xbf) << 16) | ((uint)(0xbf) << 8) | (((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xe6) ^ 0xe6)) << 24) | ((uint)(0xe6) << 16) | ((uint)(0xe6) << 8) | (((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x42) ^ 0x42)) << 24) | ((uint)(0x42) << 16) | ((uint)(0x42) << 8) | (((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x68) ^ 0x68)) << 24) | ((uint)(0x68) << 16) | ((uint)(0x68) << 8) | (((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x41) ^ 0x41)) << 24) | ((uint)(0x41) << 16) | ((uint)(0x41) << 8) | (((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x99) ^ 0x99)) << 24) | ((uint)(0x99) << 16) | ((uint)(0x99) << 8) | (((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x2d) ^ 0x2d)) << 24) | ((uint)(0x2d) << 16) | ((uint)(0x2d) << 8) | (((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x0f) ^ 0x0f)) << 24) | ((uint)(0x0f) << 16) | ((uint)(0x0f) << 8) | (((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xb0) ^ 0xb0)) << 24) | ((uint)(0xb0) << 16) | ((uint)(0xb0) << 8) | (((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x54) ^ 0x54)) << 24) | ((uint)(0x54) << 16) | ((uint)(0x54) << 8) | (((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0xbb) ^ 0xbb)) << 24) | ((uint)(0xbb) << 16) | ((uint)(0xbb) << 8) | (((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY)))), (((uint)((f2(0x16) ^ 0x16)) << 24) | ((uint)(0x16) << 16) | ((uint)(0x16) << 8) | (((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))))},
@@ -198,7 +200,7 @@ public static class GlobalMembers
 		{(((uint)(0x63) << 24) | ((uint)(((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x63) ^ 0x63)) << 8) | (0x63)), (((uint)(0x7c) << 24) | ((uint)(((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7c) ^ 0x7c)) << 8) | (0x7c)), (((uint)(0x77) << 24) | ((uint)(((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x77) ^ 0x77)) << 8) | (0x77)), (((uint)(0x7b) << 24) | ((uint)(((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7b) ^ 0x7b)) << 8) | (0x7b)), (((uint)(0xf2) << 24) | ((uint)(((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf2) ^ 0xf2)) << 8) | (0xf2)), (((uint)(0x6b) << 24) | ((uint)(((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6b) ^ 0x6b)) << 8) | (0x6b)), (((uint)(0x6f) << 24) | ((uint)(((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6f) ^ 0x6f)) << 8) | (0x6f)), (((uint)(0xc5) << 24) | ((uint)(((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc5) ^ 0xc5)) << 8) | (0xc5)), (((uint)(0x30) << 24) | ((uint)(((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x30) ^ 0x30)) << 8) | (0x30)), (((uint)(0x01) << 24) | ((uint)(((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x01) ^ 0x01)) << 8) | (0x01)), (((uint)(0x67) << 24) | ((uint)(((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x67) ^ 0x67)) << 8) | (0x67)), (((uint)(0x2b) << 24) | ((uint)(((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2b) ^ 0x2b)) << 8) | (0x2b)), (((uint)(0xfe) << 24) | ((uint)(((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfe) ^ 0xfe)) << 8) | (0xfe)), (((uint)(0xd7) << 24) | ((uint)(((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd7) ^ 0xd7)) << 8) | (0xd7)), (((uint)(0xab) << 24) | ((uint)(((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xab) ^ 0xab)) << 8) | (0xab)), (((uint)(0x76) << 24) | ((uint)(((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x76) ^ 0x76)) << 8) | (0x76)), (((uint)(0xca) << 24) | ((uint)(((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xca) ^ 0xca)) << 8) | (0xca)), (((uint)(0x82) << 24) | ((uint)(((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x82) ^ 0x82)) << 8) | (0x82)), (((uint)(0xc9) << 24) | ((uint)(((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc9) ^ 0xc9)) << 8) | (0xc9)), (((uint)(0x7d) << 24) | ((uint)(((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7d) ^ 0x7d)) << 8) | (0x7d)), (((uint)(0xfa) << 24) | ((uint)(((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfa) ^ 0xfa)) << 8) | (0xfa)), (((uint)(0x59) << 24) | ((uint)(((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x59) ^ 0x59)) << 8) | (0x59)), (((uint)(0x47) << 24) | ((uint)(((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x47) ^ 0x47)) << 8) | (0x47)), (((uint)(0xf0) << 24) | ((uint)(((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf0) ^ 0xf0)) << 8) | (0xf0)), (((uint)(0xad) << 24) | ((uint)(((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xad) ^ 0xad)) << 8) | (0xad)), (((uint)(0xd4) << 24) | ((uint)(((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd4) ^ 0xd4)) << 8) | (0xd4)), (((uint)(0xa2) << 24) | ((uint)(((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa2) ^ 0xa2)) << 8) | (0xa2)), (((uint)(0xaf) << 24) | ((uint)(((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xaf) ^ 0xaf)) << 8) | (0xaf)), (((uint)(0x9c) << 24) | ((uint)(((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9c) ^ 0x9c)) << 8) | (0x9c)), (((uint)(0xa4) << 24) | ((uint)(((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa4) ^ 0xa4)) << 8) | (0xa4)), (((uint)(0x72) << 24) | ((uint)(((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x72) ^ 0x72)) << 8) | (0x72)), (((uint)(0xc0) << 24) | ((uint)(((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc0) ^ 0xc0)) << 8) | (0xc0)), (((uint)(0xb7) << 24) | ((uint)(((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb7) ^ 0xb7)) << 8) | (0xb7)), (((uint)(0xfd) << 24) | ((uint)(((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfd) ^ 0xfd)) << 8) | (0xfd)), (((uint)(0x93) << 24) | ((uint)(((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x93) ^ 0x93)) << 8) | (0x93)), (((uint)(0x26) << 24) | ((uint)(((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x26) ^ 0x26)) << 8) | (0x26)), (((uint)(0x36) << 24) | ((uint)(((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x36) ^ 0x36)) << 8) | (0x36)), (((uint)(0x3f) << 24) | ((uint)(((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3f) ^ 0x3f)) << 8) | (0x3f)), (((uint)(0xf7) << 24) | ((uint)(((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf7) ^ 0xf7)) << 8) | (0xf7)), (((uint)(0xcc) << 24) | ((uint)(((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xcc) ^ 0xcc)) << 8) | (0xcc)), (((uint)(0x34) << 24) | ((uint)(((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x34) ^ 0x34)) << 8) | (0x34)), (((uint)(0xa5) << 24) | ((uint)(((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa5) ^ 0xa5)) << 8) | (0xa5)), (((uint)(0xe5) << 24) | ((uint)(((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe5) ^ 0xe5)) << 8) | (0xe5)), (((uint)(0xf1) << 24) | ((uint)(((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf1) ^ 0xf1)) << 8) | (0xf1)), (((uint)(0x71) << 24) | ((uint)(((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x71) ^ 0x71)) << 8) | (0x71)), (((uint)(0xd8) << 24) | ((uint)(((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd8) ^ 0xd8)) << 8) | (0xd8)), (((uint)(0x31) << 24) | ((uint)(((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x31) ^ 0x31)) << 8) | (0x31)), (((uint)(0x15) << 24) | ((uint)(((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x15) ^ 0x15)) << 8) | (0x15)), (((uint)(0x04) << 24) | ((uint)(((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x04) ^ 0x04)) << 8) | (0x04)), (((uint)(0xc7) << 24) | ((uint)(((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc7) ^ 0xc7)) << 8) | (0xc7)), (((uint)(0x23) << 24) | ((uint)(((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x23) ^ 0x23)) << 8) | (0x23)), (((uint)(0xc3) << 24) | ((uint)(((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc3) ^ 0xc3)) << 8) | (0xc3)), (((uint)(0x18) << 24) | ((uint)(((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x18) ^ 0x18)) << 8) | (0x18)), (((uint)(0x96) << 24) | ((uint)(((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x96) ^ 0x96)) << 8) | (0x96)), (((uint)(0x05) << 24) | ((uint)(((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x05) ^ 0x05)) << 8) | (0x05)), (((uint)(0x9a) << 24) | ((uint)(((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9a) ^ 0x9a)) << 8) | (0x9a)), (((uint)(0x07) << 24) | ((uint)(((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x07) ^ 0x07)) << 8) | (0x07)), (((uint)(0x12) << 24) | ((uint)(((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x12) ^ 0x12)) << 8) | (0x12)), (((uint)(0x80) << 24) | ((uint)(((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x80) ^ 0x80)) << 8) | (0x80)), (((uint)(0xe2) << 24) | ((uint)(((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe2) ^ 0xe2)) << 8) | (0xe2)), (((uint)(0xeb) << 24) | ((uint)(((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xeb) ^ 0xeb)) << 8) | (0xeb)), (((uint)(0x27) << 24) | ((uint)(((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x27) ^ 0x27)) << 8) | (0x27)), (((uint)(0xb2) << 24) | ((uint)(((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb2) ^ 0xb2)) << 8) | (0xb2)), (((uint)(0x75) << 24) | ((uint)(((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x75) ^ 0x75)) << 8) | (0x75)), (((uint)(0x09) << 24) | ((uint)(((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x09) ^ 0x09)) << 8) | (0x09)), (((uint)(0x83) << 24) | ((uint)(((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x83) ^ 0x83)) << 8) | (0x83)), (((uint)(0x2c) << 24) | ((uint)(((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2c) ^ 0x2c)) << 8) | (0x2c)), (((uint)(0x1a) << 24) | ((uint)(((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1a) ^ 0x1a)) << 8) | (0x1a)), (((uint)(0x1b) << 24) | ((uint)(((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1b) ^ 0x1b)) << 8) | (0x1b)), (((uint)(0x6e) << 24) | ((uint)(((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6e) ^ 0x6e)) << 8) | (0x6e)), (((uint)(0x5a) << 24) | ((uint)(((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5a) ^ 0x5a)) << 8) | (0x5a)), (((uint)(0xa0) << 24) | ((uint)(((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa0) ^ 0xa0)) << 8) | (0xa0)), (((uint)(0x52) << 24) | ((uint)(((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x52) ^ 0x52)) << 8) | (0x52)), (((uint)(0x3b) << 24) | ((uint)(((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3b) ^ 0x3b)) << 8) | (0x3b)), (((uint)(0xd6) << 24) | ((uint)(((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd6) ^ 0xd6)) << 8) | (0xd6)), (((uint)(0xb3) << 24) | ((uint)(((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb3) ^ 0xb3)) << 8) | (0xb3)), (((uint)(0x29) << 24) | ((uint)(((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x29) ^ 0x29)) << 8) | (0x29)), (((uint)(0xe3) << 24) | ((uint)(((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe3) ^ 0xe3)) << 8) | (0xe3)), (((uint)(0x2f) << 24) | ((uint)(((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2f) ^ 0x2f)) << 8) | (0x2f)), (((uint)(0x84) << 24) | ((uint)(((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x84) ^ 0x84)) << 8) | (0x84)), (((uint)(0x53) << 24) | ((uint)(((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x53) ^ 0x53)) << 8) | (0x53)), (((uint)(0xd1) << 24) | ((uint)(((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd1) ^ 0xd1)) << 8) | (0xd1)), (((uint)(0x00) << 24) | ((uint)(((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x00) ^ 0x00)) << 8) | (0x00)), (((uint)(0xed) << 24) | ((uint)(((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xed) ^ 0xed)) << 8) | (0xed)), (((uint)(0x20) << 24) | ((uint)(((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x20) ^ 0x20)) << 8) | (0x20)), (((uint)(0xfc) << 24) | ((uint)(((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfc) ^ 0xfc)) << 8) | (0xfc)), (((uint)(0xb1) << 24) | ((uint)(((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb1) ^ 0xb1)) << 8) | (0xb1)), (((uint)(0x5b) << 24) | ((uint)(((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5b) ^ 0x5b)) << 8) | (0x5b)), (((uint)(0x6a) << 24) | ((uint)(((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6a) ^ 0x6a)) << 8) | (0x6a)), (((uint)(0xcb) << 24) | ((uint)(((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xcb) ^ 0xcb)) << 8) | (0xcb)), (((uint)(0xbe) << 24) | ((uint)(((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbe) ^ 0xbe)) << 8) | (0xbe)), (((uint)(0x39) << 24) | ((uint)(((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x39) ^ 0x39)) << 8) | (0x39)), (((uint)(0x4a) << 24) | ((uint)(((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4a) ^ 0x4a)) << 8) | (0x4a)), (((uint)(0x4c) << 24) | ((uint)(((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4c) ^ 0x4c)) << 8) | (0x4c)), (((uint)(0x58) << 24) | ((uint)(((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x58) ^ 0x58)) << 8) | (0x58)), (((uint)(0xcf) << 24) | ((uint)(((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xcf) ^ 0xcf)) << 8) | (0xcf)), (((uint)(0xd0) << 24) | ((uint)(((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd0) ^ 0xd0)) << 8) | (0xd0)), (((uint)(0xef) << 24) | ((uint)(((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xef) ^ 0xef)) << 8) | (0xef)), (((uint)(0xaa) << 24) | ((uint)(((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xaa) ^ 0xaa)) << 8) | (0xaa)), (((uint)(0xfb) << 24) | ((uint)(((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xfb) ^ 0xfb)) << 8) | (0xfb)), (((uint)(0x43) << 24) | ((uint)(((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x43) ^ 0x43)) << 8) | (0x43)), (((uint)(0x4d) << 24) | ((uint)(((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4d) ^ 0x4d)) << 8) | (0x4d)), (((uint)(0x33) << 24) | ((uint)(((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x33) ^ 0x33)) << 8) | (0x33)), (((uint)(0x85) << 24) | ((uint)(((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x85) ^ 0x85)) << 8) | (0x85)), (((uint)(0x45) << 24) | ((uint)(((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x45) ^ 0x45)) << 8) | (0x45)), (((uint)(0xf9) << 24) | ((uint)(((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf9) ^ 0xf9)) << 8) | (0xf9)), (((uint)(0x02) << 24) | ((uint)(((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x02) ^ 0x02)) << 8) | (0x02)), (((uint)(0x7f) << 24) | ((uint)(((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7f) ^ 0x7f)) << 8) | (0x7f)), (((uint)(0x50) << 24) | ((uint)(((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x50) ^ 0x50)) << 8) | (0x50)), (((uint)(0x3c) << 24) | ((uint)(((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3c) ^ 0x3c)) << 8) | (0x3c)), (((uint)(0x9f) << 24) | ((uint)(((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9f) ^ 0x9f)) << 8) | (0x9f)), (((uint)(0xa8) << 24) | ((uint)(((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa8) ^ 0xa8)) << 8) | (0xa8)), (((uint)(0x51) << 24) | ((uint)(((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x51) ^ 0x51)) << 8) | (0x51)), (((uint)(0xa3) << 24) | ((uint)(((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa3) ^ 0xa3)) << 8) | (0xa3)), (((uint)(0x40) << 24) | ((uint)(((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x40) ^ 0x40)) << 8) | (0x40)), (((uint)(0x8f) << 24) | ((uint)(((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8f) ^ 0x8f)) << 8) | (0x8f)), (((uint)(0x92) << 24) | ((uint)(((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x92) ^ 0x92)) << 8) | (0x92)), (((uint)(0x9d) << 24) | ((uint)(((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9d) ^ 0x9d)) << 8) | (0x9d)), (((uint)(0x38) << 24) | ((uint)(((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x38) ^ 0x38)) << 8) | (0x38)), (((uint)(0xf5) << 24) | ((uint)(((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf5) ^ 0xf5)) << 8) | (0xf5)), (((uint)(0xbc) << 24) | ((uint)(((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbc) ^ 0xbc)) << 8) | (0xbc)), (((uint)(0xb6) << 24) | ((uint)(((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb6) ^ 0xb6)) << 8) | (0xb6)), (((uint)(0xda) << 24) | ((uint)(((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xda) ^ 0xda)) << 8) | (0xda)), (((uint)(0x21) << 24) | ((uint)(((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x21) ^ 0x21)) << 8) | (0x21)), (((uint)(0x10) << 24) | ((uint)(((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x10) ^ 0x10)) << 8) | (0x10)), (((uint)(0xff) << 24) | ((uint)(((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xff) ^ 0xff)) << 8) | (0xff)), (((uint)(0xf3) << 24) | ((uint)(((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf3) ^ 0xf3)) << 8) | (0xf3)), (((uint)(0xd2) << 24) | ((uint)(((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd2) ^ 0xd2)) << 8) | (0xd2)), (((uint)(0xcd) << 24) | ((uint)(((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xcd) ^ 0xcd)) << 8) | (0xcd)), (((uint)(0x0c) << 24) | ((uint)(((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0c) ^ 0x0c)) << 8) | (0x0c)), (((uint)(0x13) << 24) | ((uint)(((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x13) ^ 0x13)) << 8) | (0x13)), (((uint)(0xec) << 24) | ((uint)(((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xec) ^ 0xec)) << 8) | (0xec)), (((uint)(0x5f) << 24) | ((uint)(((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5f) ^ 0x5f)) << 8) | (0x5f)), (((uint)(0x97) << 24) | ((uint)(((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x97) ^ 0x97)) << 8) | (0x97)), (((uint)(0x44) << 24) | ((uint)(((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x44) ^ 0x44)) << 8) | (0x44)), (((uint)(0x17) << 24) | ((uint)(((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x17) ^ 0x17)) << 8) | (0x17)), (((uint)(0xc4) << 24) | ((uint)(((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc4) ^ 0xc4)) << 8) | (0xc4)), (((uint)(0xa7) << 24) | ((uint)(((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa7) ^ 0xa7)) << 8) | (0xa7)), (((uint)(0x7e) << 24) | ((uint)(((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7e) ^ 0x7e)) << 8) | (0x7e)), (((uint)(0x3d) << 24) | ((uint)(((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3d) ^ 0x3d)) << 8) | (0x3d)), (((uint)(0x64) << 24) | ((uint)(((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x64) ^ 0x64)) << 8) | (0x64)), (((uint)(0x5d) << 24) | ((uint)(((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5d) ^ 0x5d)) << 8) | (0x5d)), (((uint)(0x19) << 24) | ((uint)(((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x19) ^ 0x19)) << 8) | (0x19)), (((uint)(0x73) << 24) | ((uint)(((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x73) ^ 0x73)) << 8) | (0x73)), (((uint)(0x60) << 24) | ((uint)(((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x60) ^ 0x60)) << 8) | (0x60)), (((uint)(0x81) << 24) | ((uint)(((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x81) ^ 0x81)) << 8) | (0x81)), (((uint)(0x4f) << 24) | ((uint)(((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4f) ^ 0x4f)) << 8) | (0x4f)), (((uint)(0xdc) << 24) | ((uint)(((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xdc) ^ 0xdc)) << 8) | (0xdc)), (((uint)(0x22) << 24) | ((uint)(((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x22) ^ 0x22)) << 8) | (0x22)), (((uint)(0x2a) << 24) | ((uint)(((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2a) ^ 0x2a)) << 8) | (0x2a)), (((uint)(0x90) << 24) | ((uint)(((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x90) ^ 0x90)) << 8) | (0x90)), (((uint)(0x88) << 24) | ((uint)(((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x88) ^ 0x88)) << 8) | (0x88)), (((uint)(0x46) << 24) | ((uint)(((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x46) ^ 0x46)) << 8) | (0x46)), (((uint)(0xee) << 24) | ((uint)(((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xee) ^ 0xee)) << 8) | (0xee)), (((uint)(0xb8) << 24) | ((uint)(((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb8) ^ 0xb8)) << 8) | (0xb8)), (((uint)(0x14) << 24) | ((uint)(((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x14) ^ 0x14)) << 8) | (0x14)), (((uint)(0xde) << 24) | ((uint)(((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xde) ^ 0xde)) << 8) | (0xde)), (((uint)(0x5e) << 24) | ((uint)(((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5e) ^ 0x5e)) << 8) | (0x5e)), (((uint)(0x0b) << 24) | ((uint)(((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0b) ^ 0x0b)) << 8) | (0x0b)), (((uint)(0xdb) << 24) | ((uint)(((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xdb) ^ 0xdb)) << 8) | (0xdb)), (((uint)(0xe0) << 24) | ((uint)(((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe0) ^ 0xe0)) << 8) | (0xe0)), (((uint)(0x32) << 24) | ((uint)(((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x32) ^ 0x32)) << 8) | (0x32)), (((uint)(0x3a) << 24) | ((uint)(((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3a) ^ 0x3a)) << 8) | (0x3a)), (((uint)(0x0a) << 24) | ((uint)(((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0a) ^ 0x0a)) << 8) | (0x0a)), (((uint)(0x49) << 24) | ((uint)(((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x49) ^ 0x49)) << 8) | (0x49)), (((uint)(0x06) << 24) | ((uint)(((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x06) ^ 0x06)) << 8) | (0x06)), (((uint)(0x24) << 24) | ((uint)(((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x24) ^ 0x24)) << 8) | (0x24)), (((uint)(0x5c) << 24) | ((uint)(((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x5c) ^ 0x5c)) << 8) | (0x5c)), (((uint)(0xc2) << 24) | ((uint)(((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc2) ^ 0xc2)) << 8) | (0xc2)), (((uint)(0xd3) << 24) | ((uint)(((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd3) ^ 0xd3)) << 8) | (0xd3)), (((uint)(0xac) << 24) | ((uint)(((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xac) ^ 0xac)) << 8) | (0xac)), (((uint)(0x62) << 24) | ((uint)(((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x62) ^ 0x62)) << 8) | (0x62)), (((uint)(0x91) << 24) | ((uint)(((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x91) ^ 0x91)) << 8) | (0x91)), (((uint)(0x95) << 24) | ((uint)(((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x95) ^ 0x95)) << 8) | (0x95)), (((uint)(0xe4) << 24) | ((uint)(((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe4) ^ 0xe4)) << 8) | (0xe4)), (((uint)(0x79) << 24) | ((uint)(((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x79) ^ 0x79)) << 8) | (0x79)), (((uint)(0xe7) << 24) | ((uint)(((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe7) ^ 0xe7)) << 8) | (0xe7)), (((uint)(0xc8) << 24) | ((uint)(((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc8) ^ 0xc8)) << 8) | (0xc8)), (((uint)(0x37) << 24) | ((uint)(((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x37) ^ 0x37)) << 8) | (0x37)), (((uint)(0x6d) << 24) | ((uint)(((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6d) ^ 0x6d)) << 8) | (0x6d)), (((uint)(0x8d) << 24) | ((uint)(((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8d) ^ 0x8d)) << 8) | (0x8d)), (((uint)(0xd5) << 24) | ((uint)(((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd5) ^ 0xd5)) << 8) | (0xd5)), (((uint)(0x4e) << 24) | ((uint)(((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4e) ^ 0x4e)) << 8) | (0x4e)), (((uint)(0xa9) << 24) | ((uint)(((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa9) ^ 0xa9)) << 8) | (0xa9)), (((uint)(0x6c) << 24) | ((uint)(((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x6c) ^ 0x6c)) << 8) | (0x6c)), (((uint)(0x56) << 24) | ((uint)(((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x56) ^ 0x56)) << 8) | (0x56)), (((uint)(0xf4) << 24) | ((uint)(((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf4) ^ 0xf4)) << 8) | (0xf4)), (((uint)(0xea) << 24) | ((uint)(((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xea) ^ 0xea)) << 8) | (0xea)), (((uint)(0x65) << 24) | ((uint)(((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x65) ^ 0x65)) << 8) | (0x65)), (((uint)(0x7a) << 24) | ((uint)(((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x7a) ^ 0x7a)) << 8) | (0x7a)), (((uint)(0xae) << 24) | ((uint)(((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xae) ^ 0xae)) << 8) | (0xae)), (((uint)(0x08) << 24) | ((uint)(((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x08) ^ 0x08)) << 8) | (0x08)), (((uint)(0xba) << 24) | ((uint)(((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xba) ^ 0xba)) << 8) | (0xba)), (((uint)(0x78) << 24) | ((uint)(((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x78) ^ 0x78)) << 8) | (0x78)), (((uint)(0x25) << 24) | ((uint)(((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x25) ^ 0x25)) << 8) | (0x25)), (((uint)(0x2e) << 24) | ((uint)(((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2e) ^ 0x2e)) << 8) | (0x2e)), (((uint)(0x1c) << 24) | ((uint)(((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1c) ^ 0x1c)) << 8) | (0x1c)), (((uint)(0xa6) << 24) | ((uint)(((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa6) ^ 0xa6)) << 8) | (0xa6)), (((uint)(0xb4) << 24) | ((uint)(((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb4) ^ 0xb4)) << 8) | (0xb4)), (((uint)(0xc6) << 24) | ((uint)(((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc6) ^ 0xc6)) << 8) | (0xc6)), (((uint)(0xe8) << 24) | ((uint)(((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe8) ^ 0xe8)) << 8) | (0xe8)), (((uint)(0xdd) << 24) | ((uint)(((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xdd) ^ 0xdd)) << 8) | (0xdd)), (((uint)(0x74) << 24) | ((uint)(((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x74) ^ 0x74)) << 8) | (0x74)), (((uint)(0x1f) << 24) | ((uint)(((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1f) ^ 0x1f)) << 8) | (0x1f)), (((uint)(0x4b) << 24) | ((uint)(((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x4b) ^ 0x4b)) << 8) | (0x4b)), (((uint)(0xbd) << 24) | ((uint)(((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbd) ^ 0xbd)) << 8) | (0xbd)), (((uint)(0x8b) << 24) | ((uint)(((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8b) ^ 0x8b)) << 8) | (0x8b)), (((uint)(0x8a) << 24) | ((uint)(((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8a) ^ 0x8a)) << 8) | (0x8a)), (((uint)(0x70) << 24) | ((uint)(((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x70) ^ 0x70)) << 8) | (0x70)), (((uint)(0x3e) << 24) | ((uint)(((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x3e) ^ 0x3e)) << 8) | (0x3e)), (((uint)(0xb5) << 24) | ((uint)(((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb5) ^ 0xb5)) << 8) | (0xb5)), (((uint)(0x66) << 24) | ((uint)(((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x66) ^ 0x66)) << 8) | (0x66)), (((uint)(0x48) << 24) | ((uint)(((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x48) ^ 0x48)) << 8) | (0x48)), (((uint)(0x03) << 24) | ((uint)(((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x03) ^ 0x03)) << 8) | (0x03)), (((uint)(0xf6) << 24) | ((uint)(((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf6) ^ 0xf6)) << 8) | (0xf6)), (((uint)(0x0e) << 24) | ((uint)(((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0e) ^ 0x0e)) << 8) | (0x0e)), (((uint)(0x61) << 24) | ((uint)(((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x61) ^ 0x61)) << 8) | (0x61)), (((uint)(0x35) << 24) | ((uint)(((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x35) ^ 0x35)) << 8) | (0x35)), (((uint)(0x57) << 24) | ((uint)(((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x57) ^ 0x57)) << 8) | (0x57)), (((uint)(0xb9) << 24) | ((uint)(((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb9) ^ 0xb9)) << 8) | (0xb9)), (((uint)(0x86) << 24) | ((uint)(((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x86) ^ 0x86)) << 8) | (0x86)), (((uint)(0xc1) << 24) | ((uint)(((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xc1) ^ 0xc1)) << 8) | (0xc1)), (((uint)(0x1d) << 24) | ((uint)(((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1d) ^ 0x1d)) << 8) | (0x1d)), (((uint)(0x9e) << 24) | ((uint)(((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9e) ^ 0x9e)) << 8) | (0x9e)), (((uint)(0xe1) << 24) | ((uint)(((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe1) ^ 0xe1)) << 8) | (0xe1)), (((uint)(0xf8) << 24) | ((uint)(((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xf8) ^ 0xf8)) << 8) | (0xf8)), (((uint)(0x98) << 24) | ((uint)(((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x98) ^ 0x98)) << 8) | (0x98)), (((uint)(0x11) << 24) | ((uint)(((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x11) ^ 0x11)) << 8) | (0x11)), (((uint)(0x69) << 24) | ((uint)(((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x69) ^ 0x69)) << 8) | (0x69)), (((uint)(0xd9) << 24) | ((uint)(((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xd9) ^ 0xd9)) << 8) | (0xd9)), (((uint)(0x8e) << 24) | ((uint)(((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8e) ^ 0x8e)) << 8) | (0x8e)), (((uint)(0x94) << 24) | ((uint)(((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x94) ^ 0x94)) << 8) | (0x94)), (((uint)(0x9b) << 24) | ((uint)(((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x9b) ^ 0x9b)) << 8) | (0x9b)), (((uint)(0x1e) << 24) | ((uint)(((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x1e) ^ 0x1e)) << 8) | (0x1e)), (((uint)(0x87) << 24) | ((uint)(((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x87) ^ 0x87)) << 8) | (0x87)), (((uint)(0xe9) << 24) | ((uint)(((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe9) ^ 0xe9)) << 8) | (0xe9)), (((uint)(0xce) << 24) | ((uint)(((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xce) ^ 0xce)) << 8) | (0xce)), (((uint)(0x55) << 24) | ((uint)(((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x55) ^ 0x55)) << 8) | (0x55)), (((uint)(0x28) << 24) | ((uint)(((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x28) ^ 0x28)) << 8) | (0x28)), (((uint)(0xdf) << 24) | ((uint)(((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xdf) ^ 0xdf)) << 8) | (0xdf)), (((uint)(0x8c) << 24) | ((uint)(((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x8c) ^ 0x8c)) << 8) | (0x8c)), (((uint)(0xa1) << 24) | ((uint)(((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xa1) ^ 0xa1)) << 8) | (0xa1)), (((uint)(0x89) << 24) | ((uint)(((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x89) ^ 0x89)) << 8) | (0x89)), (((uint)(0x0d) << 24) | ((uint)(((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0d) ^ 0x0d)) << 8) | (0x0d)), (((uint)(0xbf) << 24) | ((uint)(((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbf) ^ 0xbf)) << 8) | (0xbf)), (((uint)(0xe6) << 24) | ((uint)(((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xe6) ^ 0xe6)) << 8) | (0xe6)), (((uint)(0x42) << 24) | ((uint)(((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x42) ^ 0x42)) << 8) | (0x42)), (((uint)(0x68) << 24) | ((uint)(((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x68) ^ 0x68)) << 8) | (0x68)), (((uint)(0x41) << 24) | ((uint)(((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x41) ^ 0x41)) << 8) | (0x41)), (((uint)(0x99) << 24) | ((uint)(((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x99) ^ 0x99)) << 8) | (0x99)), (((uint)(0x2d) << 24) | ((uint)(((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x2d) ^ 0x2d)) << 8) | (0x2d)), (((uint)(0x0f) << 24) | ((uint)(((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x0f) ^ 0x0f)) << 8) | (0x0f)), (((uint)(0xb0) << 24) | ((uint)(((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xb0) ^ 0xb0)) << 8) | (0xb0)), (((uint)(0x54) << 24) | ((uint)(((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x54) ^ 0x54)) << 8) | (0x54)), (((uint)(0xbb) << 24) | ((uint)(((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0xbb) ^ 0xbb)) << 8) | (0xbb)), (((uint)(0x16) << 24) | ((uint)(((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))) << 16) | ((uint)((f2(0x16) ^ 0x16)) << 8) | (0x16))},
 		{(((uint)(((0x63 << 1) ^ (((0x63>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x63) ^ 0x63)) << 16) | ((uint)(0x63) << 8) | (0x63)), (((uint)(((0x7c << 1) ^ (((0x7c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7c) ^ 0x7c)) << 16) | ((uint)(0x7c) << 8) | (0x7c)), (((uint)(((0x77 << 1) ^ (((0x77>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x77) ^ 0x77)) << 16) | ((uint)(0x77) << 8) | (0x77)), (((uint)(((0x7b << 1) ^ (((0x7b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7b) ^ 0x7b)) << 16) | ((uint)(0x7b) << 8) | (0x7b)), (((uint)(((0xf2 << 1) ^ (((0xf2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf2) ^ 0xf2)) << 16) | ((uint)(0xf2) << 8) | (0xf2)), (((uint)(((0x6b << 1) ^ (((0x6b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6b) ^ 0x6b)) << 16) | ((uint)(0x6b) << 8) | (0x6b)), (((uint)(((0x6f << 1) ^ (((0x6f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6f) ^ 0x6f)) << 16) | ((uint)(0x6f) << 8) | (0x6f)), (((uint)(((0xc5 << 1) ^ (((0xc5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc5) ^ 0xc5)) << 16) | ((uint)(0xc5) << 8) | (0xc5)), (((uint)(((0x30 << 1) ^ (((0x30>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x30) ^ 0x30)) << 16) | ((uint)(0x30) << 8) | (0x30)), (((uint)(((0x01 << 1) ^ (((0x01>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x01) ^ 0x01)) << 16) | ((uint)(0x01) << 8) | (0x01)), (((uint)(((0x67 << 1) ^ (((0x67>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x67) ^ 0x67)) << 16) | ((uint)(0x67) << 8) | (0x67)), (((uint)(((0x2b << 1) ^ (((0x2b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2b) ^ 0x2b)) << 16) | ((uint)(0x2b) << 8) | (0x2b)), (((uint)(((0xfe << 1) ^ (((0xfe>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfe) ^ 0xfe)) << 16) | ((uint)(0xfe) << 8) | (0xfe)), (((uint)(((0xd7 << 1) ^ (((0xd7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd7) ^ 0xd7)) << 16) | ((uint)(0xd7) << 8) | (0xd7)), (((uint)(((0xab << 1) ^ (((0xab>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xab) ^ 0xab)) << 16) | ((uint)(0xab) << 8) | (0xab)), (((uint)(((0x76 << 1) ^ (((0x76>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x76) ^ 0x76)) << 16) | ((uint)(0x76) << 8) | (0x76)), (((uint)(((0xca << 1) ^ (((0xca>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xca) ^ 0xca)) << 16) | ((uint)(0xca) << 8) | (0xca)), (((uint)(((0x82 << 1) ^ (((0x82>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x82) ^ 0x82)) << 16) | ((uint)(0x82) << 8) | (0x82)), (((uint)(((0xc9 << 1) ^ (((0xc9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc9) ^ 0xc9)) << 16) | ((uint)(0xc9) << 8) | (0xc9)), (((uint)(((0x7d << 1) ^ (((0x7d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7d) ^ 0x7d)) << 16) | ((uint)(0x7d) << 8) | (0x7d)), (((uint)(((0xfa << 1) ^ (((0xfa>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfa) ^ 0xfa)) << 16) | ((uint)(0xfa) << 8) | (0xfa)), (((uint)(((0x59 << 1) ^ (((0x59>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x59) ^ 0x59)) << 16) | ((uint)(0x59) << 8) | (0x59)), (((uint)(((0x47 << 1) ^ (((0x47>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x47) ^ 0x47)) << 16) | ((uint)(0x47) << 8) | (0x47)), (((uint)(((0xf0 << 1) ^ (((0xf0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf0) ^ 0xf0)) << 16) | ((uint)(0xf0) << 8) | (0xf0)), (((uint)(((0xad << 1) ^ (((0xad>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xad) ^ 0xad)) << 16) | ((uint)(0xad) << 8) | (0xad)), (((uint)(((0xd4 << 1) ^ (((0xd4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd4) ^ 0xd4)) << 16) | ((uint)(0xd4) << 8) | (0xd4)), (((uint)(((0xa2 << 1) ^ (((0xa2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa2) ^ 0xa2)) << 16) | ((uint)(0xa2) << 8) | (0xa2)), (((uint)(((0xaf << 1) ^ (((0xaf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xaf) ^ 0xaf)) << 16) | ((uint)(0xaf) << 8) | (0xaf)), (((uint)(((0x9c << 1) ^ (((0x9c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9c) ^ 0x9c)) << 16) | ((uint)(0x9c) << 8) | (0x9c)), (((uint)(((0xa4 << 1) ^ (((0xa4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa4) ^ 0xa4)) << 16) | ((uint)(0xa4) << 8) | (0xa4)), (((uint)(((0x72 << 1) ^ (((0x72>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x72) ^ 0x72)) << 16) | ((uint)(0x72) << 8) | (0x72)), (((uint)(((0xc0 << 1) ^ (((0xc0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc0) ^ 0xc0)) << 16) | ((uint)(0xc0) << 8) | (0xc0)), (((uint)(((0xb7 << 1) ^ (((0xb7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb7) ^ 0xb7)) << 16) | ((uint)(0xb7) << 8) | (0xb7)), (((uint)(((0xfd << 1) ^ (((0xfd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfd) ^ 0xfd)) << 16) | ((uint)(0xfd) << 8) | (0xfd)), (((uint)(((0x93 << 1) ^ (((0x93>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x93) ^ 0x93)) << 16) | ((uint)(0x93) << 8) | (0x93)), (((uint)(((0x26 << 1) ^ (((0x26>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x26) ^ 0x26)) << 16) | ((uint)(0x26) << 8) | (0x26)), (((uint)(((0x36 << 1) ^ (((0x36>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x36) ^ 0x36)) << 16) | ((uint)(0x36) << 8) | (0x36)), (((uint)(((0x3f << 1) ^ (((0x3f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3f) ^ 0x3f)) << 16) | ((uint)(0x3f) << 8) | (0x3f)), (((uint)(((0xf7 << 1) ^ (((0xf7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf7) ^ 0xf7)) << 16) | ((uint)(0xf7) << 8) | (0xf7)), (((uint)(((0xcc << 1) ^ (((0xcc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xcc) ^ 0xcc)) << 16) | ((uint)(0xcc) << 8) | (0xcc)), (((uint)(((0x34 << 1) ^ (((0x34>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x34) ^ 0x34)) << 16) | ((uint)(0x34) << 8) | (0x34)), (((uint)(((0xa5 << 1) ^ (((0xa5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa5) ^ 0xa5)) << 16) | ((uint)(0xa5) << 8) | (0xa5)), (((uint)(((0xe5 << 1) ^ (((0xe5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe5) ^ 0xe5)) << 16) | ((uint)(0xe5) << 8) | (0xe5)), (((uint)(((0xf1 << 1) ^ (((0xf1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf1) ^ 0xf1)) << 16) | ((uint)(0xf1) << 8) | (0xf1)), (((uint)(((0x71 << 1) ^ (((0x71>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x71) ^ 0x71)) << 16) | ((uint)(0x71) << 8) | (0x71)), (((uint)(((0xd8 << 1) ^ (((0xd8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd8) ^ 0xd8)) << 16) | ((uint)(0xd8) << 8) | (0xd8)), (((uint)(((0x31 << 1) ^ (((0x31>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x31) ^ 0x31)) << 16) | ((uint)(0x31) << 8) | (0x31)), (((uint)(((0x15 << 1) ^ (((0x15>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x15) ^ 0x15)) << 16) | ((uint)(0x15) << 8) | (0x15)), (((uint)(((0x04 << 1) ^ (((0x04>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x04) ^ 0x04)) << 16) | ((uint)(0x04) << 8) | (0x04)), (((uint)(((0xc7 << 1) ^ (((0xc7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc7) ^ 0xc7)) << 16) | ((uint)(0xc7) << 8) | (0xc7)), (((uint)(((0x23 << 1) ^ (((0x23>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x23) ^ 0x23)) << 16) | ((uint)(0x23) << 8) | (0x23)), (((uint)(((0xc3 << 1) ^ (((0xc3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc3) ^ 0xc3)) << 16) | ((uint)(0xc3) << 8) | (0xc3)), (((uint)(((0x18 << 1) ^ (((0x18>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x18) ^ 0x18)) << 16) | ((uint)(0x18) << 8) | (0x18)), (((uint)(((0x96 << 1) ^ (((0x96>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x96) ^ 0x96)) << 16) | ((uint)(0x96) << 8) | (0x96)), (((uint)(((0x05 << 1) ^ (((0x05>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x05) ^ 0x05)) << 16) | ((uint)(0x05) << 8) | (0x05)), (((uint)(((0x9a << 1) ^ (((0x9a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9a) ^ 0x9a)) << 16) | ((uint)(0x9a) << 8) | (0x9a)), (((uint)(((0x07 << 1) ^ (((0x07>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x07) ^ 0x07)) << 16) | ((uint)(0x07) << 8) | (0x07)), (((uint)(((0x12 << 1) ^ (((0x12>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x12) ^ 0x12)) << 16) | ((uint)(0x12) << 8) | (0x12)), (((uint)(((0x80 << 1) ^ (((0x80>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x80) ^ 0x80)) << 16) | ((uint)(0x80) << 8) | (0x80)), (((uint)(((0xe2 << 1) ^ (((0xe2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe2) ^ 0xe2)) << 16) | ((uint)(0xe2) << 8) | (0xe2)), (((uint)(((0xeb << 1) ^ (((0xeb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xeb) ^ 0xeb)) << 16) | ((uint)(0xeb) << 8) | (0xeb)), (((uint)(((0x27 << 1) ^ (((0x27>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x27) ^ 0x27)) << 16) | ((uint)(0x27) << 8) | (0x27)), (((uint)(((0xb2 << 1) ^ (((0xb2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb2) ^ 0xb2)) << 16) | ((uint)(0xb2) << 8) | (0xb2)), (((uint)(((0x75 << 1) ^ (((0x75>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x75) ^ 0x75)) << 16) | ((uint)(0x75) << 8) | (0x75)), (((uint)(((0x09 << 1) ^ (((0x09>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x09) ^ 0x09)) << 16) | ((uint)(0x09) << 8) | (0x09)), (((uint)(((0x83 << 1) ^ (((0x83>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x83) ^ 0x83)) << 16) | ((uint)(0x83) << 8) | (0x83)), (((uint)(((0x2c << 1) ^ (((0x2c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2c) ^ 0x2c)) << 16) | ((uint)(0x2c) << 8) | (0x2c)), (((uint)(((0x1a << 1) ^ (((0x1a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1a) ^ 0x1a)) << 16) | ((uint)(0x1a) << 8) | (0x1a)), (((uint)(((0x1b << 1) ^ (((0x1b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1b) ^ 0x1b)) << 16) | ((uint)(0x1b) << 8) | (0x1b)), (((uint)(((0x6e << 1) ^ (((0x6e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6e) ^ 0x6e)) << 16) | ((uint)(0x6e) << 8) | (0x6e)), (((uint)(((0x5a << 1) ^ (((0x5a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5a) ^ 0x5a)) << 16) | ((uint)(0x5a) << 8) | (0x5a)), (((uint)(((0xa0 << 1) ^ (((0xa0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa0) ^ 0xa0)) << 16) | ((uint)(0xa0) << 8) | (0xa0)), (((uint)(((0x52 << 1) ^ (((0x52>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x52) ^ 0x52)) << 16) | ((uint)(0x52) << 8) | (0x52)), (((uint)(((0x3b << 1) ^ (((0x3b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3b) ^ 0x3b)) << 16) | ((uint)(0x3b) << 8) | (0x3b)), (((uint)(((0xd6 << 1) ^ (((0xd6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd6) ^ 0xd6)) << 16) | ((uint)(0xd6) << 8) | (0xd6)), (((uint)(((0xb3 << 1) ^ (((0xb3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb3) ^ 0xb3)) << 16) | ((uint)(0xb3) << 8) | (0xb3)), (((uint)(((0x29 << 1) ^ (((0x29>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x29) ^ 0x29)) << 16) | ((uint)(0x29) << 8) | (0x29)), (((uint)(((0xe3 << 1) ^ (((0xe3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe3) ^ 0xe3)) << 16) | ((uint)(0xe3) << 8) | (0xe3)), (((uint)(((0x2f << 1) ^ (((0x2f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2f) ^ 0x2f)) << 16) | ((uint)(0x2f) << 8) | (0x2f)), (((uint)(((0x84 << 1) ^ (((0x84>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x84) ^ 0x84)) << 16) | ((uint)(0x84) << 8) | (0x84)), (((uint)(((0x53 << 1) ^ (((0x53>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x53) ^ 0x53)) << 16) | ((uint)(0x53) << 8) | (0x53)), (((uint)(((0xd1 << 1) ^ (((0xd1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd1) ^ 0xd1)) << 16) | ((uint)(0xd1) << 8) | (0xd1)), (((uint)(((0x00 << 1) ^ (((0x00>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x00) ^ 0x00)) << 16) | ((uint)(0x00) << 8) | (0x00)), (((uint)(((0xed << 1) ^ (((0xed>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xed) ^ 0xed)) << 16) | ((uint)(0xed) << 8) | (0xed)), (((uint)(((0x20 << 1) ^ (((0x20>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x20) ^ 0x20)) << 16) | ((uint)(0x20) << 8) | (0x20)), (((uint)(((0xfc << 1) ^ (((0xfc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfc) ^ 0xfc)) << 16) | ((uint)(0xfc) << 8) | (0xfc)), (((uint)(((0xb1 << 1) ^ (((0xb1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb1) ^ 0xb1)) << 16) | ((uint)(0xb1) << 8) | (0xb1)), (((uint)(((0x5b << 1) ^ (((0x5b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5b) ^ 0x5b)) << 16) | ((uint)(0x5b) << 8) | (0x5b)), (((uint)(((0x6a << 1) ^ (((0x6a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6a) ^ 0x6a)) << 16) | ((uint)(0x6a) << 8) | (0x6a)), (((uint)(((0xcb << 1) ^ (((0xcb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xcb) ^ 0xcb)) << 16) | ((uint)(0xcb) << 8) | (0xcb)), (((uint)(((0xbe << 1) ^ (((0xbe>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbe) ^ 0xbe)) << 16) | ((uint)(0xbe) << 8) | (0xbe)), (((uint)(((0x39 << 1) ^ (((0x39>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x39) ^ 0x39)) << 16) | ((uint)(0x39) << 8) | (0x39)), (((uint)(((0x4a << 1) ^ (((0x4a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4a) ^ 0x4a)) << 16) | ((uint)(0x4a) << 8) | (0x4a)), (((uint)(((0x4c << 1) ^ (((0x4c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4c) ^ 0x4c)) << 16) | ((uint)(0x4c) << 8) | (0x4c)), (((uint)(((0x58 << 1) ^ (((0x58>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x58) ^ 0x58)) << 16) | ((uint)(0x58) << 8) | (0x58)), (((uint)(((0xcf << 1) ^ (((0xcf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xcf) ^ 0xcf)) << 16) | ((uint)(0xcf) << 8) | (0xcf)), (((uint)(((0xd0 << 1) ^ (((0xd0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd0) ^ 0xd0)) << 16) | ((uint)(0xd0) << 8) | (0xd0)), (((uint)(((0xef << 1) ^ (((0xef>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xef) ^ 0xef)) << 16) | ((uint)(0xef) << 8) | (0xef)), (((uint)(((0xaa << 1) ^ (((0xaa>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xaa) ^ 0xaa)) << 16) | ((uint)(0xaa) << 8) | (0xaa)), (((uint)(((0xfb << 1) ^ (((0xfb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xfb) ^ 0xfb)) << 16) | ((uint)(0xfb) << 8) | (0xfb)), (((uint)(((0x43 << 1) ^ (((0x43>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x43) ^ 0x43)) << 16) | ((uint)(0x43) << 8) | (0x43)), (((uint)(((0x4d << 1) ^ (((0x4d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4d) ^ 0x4d)) << 16) | ((uint)(0x4d) << 8) | (0x4d)), (((uint)(((0x33 << 1) ^ (((0x33>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x33) ^ 0x33)) << 16) | ((uint)(0x33) << 8) | (0x33)), (((uint)(((0x85 << 1) ^ (((0x85>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x85) ^ 0x85)) << 16) | ((uint)(0x85) << 8) | (0x85)), (((uint)(((0x45 << 1) ^ (((0x45>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x45) ^ 0x45)) << 16) | ((uint)(0x45) << 8) | (0x45)), (((uint)(((0xf9 << 1) ^ (((0xf9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf9) ^ 0xf9)) << 16) | ((uint)(0xf9) << 8) | (0xf9)), (((uint)(((0x02 << 1) ^ (((0x02>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x02) ^ 0x02)) << 16) | ((uint)(0x02) << 8) | (0x02)), (((uint)(((0x7f << 1) ^ (((0x7f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7f) ^ 0x7f)) << 16) | ((uint)(0x7f) << 8) | (0x7f)), (((uint)(((0x50 << 1) ^ (((0x50>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x50) ^ 0x50)) << 16) | ((uint)(0x50) << 8) | (0x50)), (((uint)(((0x3c << 1) ^ (((0x3c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3c) ^ 0x3c)) << 16) | ((uint)(0x3c) << 8) | (0x3c)), (((uint)(((0x9f << 1) ^ (((0x9f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9f) ^ 0x9f)) << 16) | ((uint)(0x9f) << 8) | (0x9f)), (((uint)(((0xa8 << 1) ^ (((0xa8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa8) ^ 0xa8)) << 16) | ((uint)(0xa8) << 8) | (0xa8)), (((uint)(((0x51 << 1) ^ (((0x51>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x51) ^ 0x51)) << 16) | ((uint)(0x51) << 8) | (0x51)), (((uint)(((0xa3 << 1) ^ (((0xa3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa3) ^ 0xa3)) << 16) | ((uint)(0xa3) << 8) | (0xa3)), (((uint)(((0x40 << 1) ^ (((0x40>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x40) ^ 0x40)) << 16) | ((uint)(0x40) << 8) | (0x40)), (((uint)(((0x8f << 1) ^ (((0x8f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8f) ^ 0x8f)) << 16) | ((uint)(0x8f) << 8) | (0x8f)), (((uint)(((0x92 << 1) ^ (((0x92>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x92) ^ 0x92)) << 16) | ((uint)(0x92) << 8) | (0x92)), (((uint)(((0x9d << 1) ^ (((0x9d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9d) ^ 0x9d)) << 16) | ((uint)(0x9d) << 8) | (0x9d)), (((uint)(((0x38 << 1) ^ (((0x38>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x38) ^ 0x38)) << 16) | ((uint)(0x38) << 8) | (0x38)), (((uint)(((0xf5 << 1) ^ (((0xf5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf5) ^ 0xf5)) << 16) | ((uint)(0xf5) << 8) | (0xf5)), (((uint)(((0xbc << 1) ^ (((0xbc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbc) ^ 0xbc)) << 16) | ((uint)(0xbc) << 8) | (0xbc)), (((uint)(((0xb6 << 1) ^ (((0xb6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb6) ^ 0xb6)) << 16) | ((uint)(0xb6) << 8) | (0xb6)), (((uint)(((0xda << 1) ^ (((0xda>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xda) ^ 0xda)) << 16) | ((uint)(0xda) << 8) | (0xda)), (((uint)(((0x21 << 1) ^ (((0x21>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x21) ^ 0x21)) << 16) | ((uint)(0x21) << 8) | (0x21)), (((uint)(((0x10 << 1) ^ (((0x10>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x10) ^ 0x10)) << 16) | ((uint)(0x10) << 8) | (0x10)), (((uint)(((0xff << 1) ^ (((0xff>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xff) ^ 0xff)) << 16) | ((uint)(0xff) << 8) | (0xff)), (((uint)(((0xf3 << 1) ^ (((0xf3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf3) ^ 0xf3)) << 16) | ((uint)(0xf3) << 8) | (0xf3)), (((uint)(((0xd2 << 1) ^ (((0xd2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd2) ^ 0xd2)) << 16) | ((uint)(0xd2) << 8) | (0xd2)), (((uint)(((0xcd << 1) ^ (((0xcd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xcd) ^ 0xcd)) << 16) | ((uint)(0xcd) << 8) | (0xcd)), (((uint)(((0x0c << 1) ^ (((0x0c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0c) ^ 0x0c)) << 16) | ((uint)(0x0c) << 8) | (0x0c)), (((uint)(((0x13 << 1) ^ (((0x13>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x13) ^ 0x13)) << 16) | ((uint)(0x13) << 8) | (0x13)), (((uint)(((0xec << 1) ^ (((0xec>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xec) ^ 0xec)) << 16) | ((uint)(0xec) << 8) | (0xec)), (((uint)(((0x5f << 1) ^ (((0x5f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5f) ^ 0x5f)) << 16) | ((uint)(0x5f) << 8) | (0x5f)), (((uint)(((0x97 << 1) ^ (((0x97>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x97) ^ 0x97)) << 16) | ((uint)(0x97) << 8) | (0x97)), (((uint)(((0x44 << 1) ^ (((0x44>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x44) ^ 0x44)) << 16) | ((uint)(0x44) << 8) | (0x44)), (((uint)(((0x17 << 1) ^ (((0x17>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x17) ^ 0x17)) << 16) | ((uint)(0x17) << 8) | (0x17)), (((uint)(((0xc4 << 1) ^ (((0xc4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc4) ^ 0xc4)) << 16) | ((uint)(0xc4) << 8) | (0xc4)), (((uint)(((0xa7 << 1) ^ (((0xa7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa7) ^ 0xa7)) << 16) | ((uint)(0xa7) << 8) | (0xa7)), (((uint)(((0x7e << 1) ^ (((0x7e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7e) ^ 0x7e)) << 16) | ((uint)(0x7e) << 8) | (0x7e)), (((uint)(((0x3d << 1) ^ (((0x3d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3d) ^ 0x3d)) << 16) | ((uint)(0x3d) << 8) | (0x3d)), (((uint)(((0x64 << 1) ^ (((0x64>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x64) ^ 0x64)) << 16) | ((uint)(0x64) << 8) | (0x64)), (((uint)(((0x5d << 1) ^ (((0x5d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5d) ^ 0x5d)) << 16) | ((uint)(0x5d) << 8) | (0x5d)), (((uint)(((0x19 << 1) ^ (((0x19>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x19) ^ 0x19)) << 16) | ((uint)(0x19) << 8) | (0x19)), (((uint)(((0x73 << 1) ^ (((0x73>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x73) ^ 0x73)) << 16) | ((uint)(0x73) << 8) | (0x73)), (((uint)(((0x60 << 1) ^ (((0x60>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x60) ^ 0x60)) << 16) | ((uint)(0x60) << 8) | (0x60)), (((uint)(((0x81 << 1) ^ (((0x81>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x81) ^ 0x81)) << 16) | ((uint)(0x81) << 8) | (0x81)), (((uint)(((0x4f << 1) ^ (((0x4f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4f) ^ 0x4f)) << 16) | ((uint)(0x4f) << 8) | (0x4f)), (((uint)(((0xdc << 1) ^ (((0xdc>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xdc) ^ 0xdc)) << 16) | ((uint)(0xdc) << 8) | (0xdc)), (((uint)(((0x22 << 1) ^ (((0x22>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x22) ^ 0x22)) << 16) | ((uint)(0x22) << 8) | (0x22)), (((uint)(((0x2a << 1) ^ (((0x2a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2a) ^ 0x2a)) << 16) | ((uint)(0x2a) << 8) | (0x2a)), (((uint)(((0x90 << 1) ^ (((0x90>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x90) ^ 0x90)) << 16) | ((uint)(0x90) << 8) | (0x90)), (((uint)(((0x88 << 1) ^ (((0x88>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x88) ^ 0x88)) << 16) | ((uint)(0x88) << 8) | (0x88)), (((uint)(((0x46 << 1) ^ (((0x46>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x46) ^ 0x46)) << 16) | ((uint)(0x46) << 8) | (0x46)), (((uint)(((0xee << 1) ^ (((0xee>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xee) ^ 0xee)) << 16) | ((uint)(0xee) << 8) | (0xee)), (((uint)(((0xb8 << 1) ^ (((0xb8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb8) ^ 0xb8)) << 16) | ((uint)(0xb8) << 8) | (0xb8)), (((uint)(((0x14 << 1) ^ (((0x14>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x14) ^ 0x14)) << 16) | ((uint)(0x14) << 8) | (0x14)), (((uint)(((0xde << 1) ^ (((0xde>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xde) ^ 0xde)) << 16) | ((uint)(0xde) << 8) | (0xde)), (((uint)(((0x5e << 1) ^ (((0x5e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5e) ^ 0x5e)) << 16) | ((uint)(0x5e) << 8) | (0x5e)), (((uint)(((0x0b << 1) ^ (((0x0b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0b) ^ 0x0b)) << 16) | ((uint)(0x0b) << 8) | (0x0b)), (((uint)(((0xdb << 1) ^ (((0xdb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xdb) ^ 0xdb)) << 16) | ((uint)(0xdb) << 8) | (0xdb)), (((uint)(((0xe0 << 1) ^ (((0xe0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe0) ^ 0xe0)) << 16) | ((uint)(0xe0) << 8) | (0xe0)), (((uint)(((0x32 << 1) ^ (((0x32>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x32) ^ 0x32)) << 16) | ((uint)(0x32) << 8) | (0x32)), (((uint)(((0x3a << 1) ^ (((0x3a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3a) ^ 0x3a)) << 16) | ((uint)(0x3a) << 8) | (0x3a)), (((uint)(((0x0a << 1) ^ (((0x0a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0a) ^ 0x0a)) << 16) | ((uint)(0x0a) << 8) | (0x0a)), (((uint)(((0x49 << 1) ^ (((0x49>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x49) ^ 0x49)) << 16) | ((uint)(0x49) << 8) | (0x49)), (((uint)(((0x06 << 1) ^ (((0x06>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x06) ^ 0x06)) << 16) | ((uint)(0x06) << 8) | (0x06)), (((uint)(((0x24 << 1) ^ (((0x24>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x24) ^ 0x24)) << 16) | ((uint)(0x24) << 8) | (0x24)), (((uint)(((0x5c << 1) ^ (((0x5c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x5c) ^ 0x5c)) << 16) | ((uint)(0x5c) << 8) | (0x5c)), (((uint)(((0xc2 << 1) ^ (((0xc2>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc2) ^ 0xc2)) << 16) | ((uint)(0xc2) << 8) | (0xc2)), (((uint)(((0xd3 << 1) ^ (((0xd3>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd3) ^ 0xd3)) << 16) | ((uint)(0xd3) << 8) | (0xd3)), (((uint)(((0xac << 1) ^ (((0xac>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xac) ^ 0xac)) << 16) | ((uint)(0xac) << 8) | (0xac)), (((uint)(((0x62 << 1) ^ (((0x62>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x62) ^ 0x62)) << 16) | ((uint)(0x62) << 8) | (0x62)), (((uint)(((0x91 << 1) ^ (((0x91>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x91) ^ 0x91)) << 16) | ((uint)(0x91) << 8) | (0x91)), (((uint)(((0x95 << 1) ^ (((0x95>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x95) ^ 0x95)) << 16) | ((uint)(0x95) << 8) | (0x95)), (((uint)(((0xe4 << 1) ^ (((0xe4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe4) ^ 0xe4)) << 16) | ((uint)(0xe4) << 8) | (0xe4)), (((uint)(((0x79 << 1) ^ (((0x79>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x79) ^ 0x79)) << 16) | ((uint)(0x79) << 8) | (0x79)), (((uint)(((0xe7 << 1) ^ (((0xe7>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe7) ^ 0xe7)) << 16) | ((uint)(0xe7) << 8) | (0xe7)), (((uint)(((0xc8 << 1) ^ (((0xc8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc8) ^ 0xc8)) << 16) | ((uint)(0xc8) << 8) | (0xc8)), (((uint)(((0x37 << 1) ^ (((0x37>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x37) ^ 0x37)) << 16) | ((uint)(0x37) << 8) | (0x37)), (((uint)(((0x6d << 1) ^ (((0x6d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6d) ^ 0x6d)) << 16) | ((uint)(0x6d) << 8) | (0x6d)), (((uint)(((0x8d << 1) ^ (((0x8d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8d) ^ 0x8d)) << 16) | ((uint)(0x8d) << 8) | (0x8d)), (((uint)(((0xd5 << 1) ^ (((0xd5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd5) ^ 0xd5)) << 16) | ((uint)(0xd5) << 8) | (0xd5)), (((uint)(((0x4e << 1) ^ (((0x4e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4e) ^ 0x4e)) << 16) | ((uint)(0x4e) << 8) | (0x4e)), (((uint)(((0xa9 << 1) ^ (((0xa9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa9) ^ 0xa9)) << 16) | ((uint)(0xa9) << 8) | (0xa9)), (((uint)(((0x6c << 1) ^ (((0x6c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x6c) ^ 0x6c)) << 16) | ((uint)(0x6c) << 8) | (0x6c)), (((uint)(((0x56 << 1) ^ (((0x56>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x56) ^ 0x56)) << 16) | ((uint)(0x56) << 8) | (0x56)), (((uint)(((0xf4 << 1) ^ (((0xf4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf4) ^ 0xf4)) << 16) | ((uint)(0xf4) << 8) | (0xf4)), (((uint)(((0xea << 1) ^ (((0xea>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xea) ^ 0xea)) << 16) | ((uint)(0xea) << 8) | (0xea)), (((uint)(((0x65 << 1) ^ (((0x65>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x65) ^ 0x65)) << 16) | ((uint)(0x65) << 8) | (0x65)), (((uint)(((0x7a << 1) ^ (((0x7a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x7a) ^ 0x7a)) << 16) | ((uint)(0x7a) << 8) | (0x7a)), (((uint)(((0xae << 1) ^ (((0xae>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xae) ^ 0xae)) << 16) | ((uint)(0xae) << 8) | (0xae)), (((uint)(((0x08 << 1) ^ (((0x08>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x08) ^ 0x08)) << 16) | ((uint)(0x08) << 8) | (0x08)), (((uint)(((0xba << 1) ^ (((0xba>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xba) ^ 0xba)) << 16) | ((uint)(0xba) << 8) | (0xba)), (((uint)(((0x78 << 1) ^ (((0x78>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x78) ^ 0x78)) << 16) | ((uint)(0x78) << 8) | (0x78)), (((uint)(((0x25 << 1) ^ (((0x25>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x25) ^ 0x25)) << 16) | ((uint)(0x25) << 8) | (0x25)), (((uint)(((0x2e << 1) ^ (((0x2e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2e) ^ 0x2e)) << 16) | ((uint)(0x2e) << 8) | (0x2e)), (((uint)(((0x1c << 1) ^ (((0x1c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1c) ^ 0x1c)) << 16) | ((uint)(0x1c) << 8) | (0x1c)), (((uint)(((0xa6 << 1) ^ (((0xa6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa6) ^ 0xa6)) << 16) | ((uint)(0xa6) << 8) | (0xa6)), (((uint)(((0xb4 << 1) ^ (((0xb4>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb4) ^ 0xb4)) << 16) | ((uint)(0xb4) << 8) | (0xb4)), (((uint)(((0xc6 << 1) ^ (((0xc6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc6) ^ 0xc6)) << 16) | ((uint)(0xc6) << 8) | (0xc6)), (((uint)(((0xe8 << 1) ^ (((0xe8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe8) ^ 0xe8)) << 16) | ((uint)(0xe8) << 8) | (0xe8)), (((uint)(((0xdd << 1) ^ (((0xdd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xdd) ^ 0xdd)) << 16) | ((uint)(0xdd) << 8) | (0xdd)), (((uint)(((0x74 << 1) ^ (((0x74>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x74) ^ 0x74)) << 16) | ((uint)(0x74) << 8) | (0x74)), (((uint)(((0x1f << 1) ^ (((0x1f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1f) ^ 0x1f)) << 16) | ((uint)(0x1f) << 8) | (0x1f)), (((uint)(((0x4b << 1) ^ (((0x4b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x4b) ^ 0x4b)) << 16) | ((uint)(0x4b) << 8) | (0x4b)), (((uint)(((0xbd << 1) ^ (((0xbd>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbd) ^ 0xbd)) << 16) | ((uint)(0xbd) << 8) | (0xbd)), (((uint)(((0x8b << 1) ^ (((0x8b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8b) ^ 0x8b)) << 16) | ((uint)(0x8b) << 8) | (0x8b)), (((uint)(((0x8a << 1) ^ (((0x8a>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8a) ^ 0x8a)) << 16) | ((uint)(0x8a) << 8) | (0x8a)), (((uint)(((0x70 << 1) ^ (((0x70>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x70) ^ 0x70)) << 16) | ((uint)(0x70) << 8) | (0x70)), (((uint)(((0x3e << 1) ^ (((0x3e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x3e) ^ 0x3e)) << 16) | ((uint)(0x3e) << 8) | (0x3e)), (((uint)(((0xb5 << 1) ^ (((0xb5>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb5) ^ 0xb5)) << 16) | ((uint)(0xb5) << 8) | (0xb5)), (((uint)(((0x66 << 1) ^ (((0x66>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x66) ^ 0x66)) << 16) | ((uint)(0x66) << 8) | (0x66)), (((uint)(((0x48 << 1) ^ (((0x48>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x48) ^ 0x48)) << 16) | ((uint)(0x48) << 8) | (0x48)), (((uint)(((0x03 << 1) ^ (((0x03>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x03) ^ 0x03)) << 16) | ((uint)(0x03) << 8) | (0x03)), (((uint)(((0xf6 << 1) ^ (((0xf6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf6) ^ 0xf6)) << 16) | ((uint)(0xf6) << 8) | (0xf6)), (((uint)(((0x0e << 1) ^ (((0x0e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0e) ^ 0x0e)) << 16) | ((uint)(0x0e) << 8) | (0x0e)), (((uint)(((0x61 << 1) ^ (((0x61>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x61) ^ 0x61)) << 16) | ((uint)(0x61) << 8) | (0x61)), (((uint)(((0x35 << 1) ^ (((0x35>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x35) ^ 0x35)) << 16) | ((uint)(0x35) << 8) | (0x35)), (((uint)(((0x57 << 1) ^ (((0x57>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x57) ^ 0x57)) << 16) | ((uint)(0x57) << 8) | (0x57)), (((uint)(((0xb9 << 1) ^ (((0xb9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb9) ^ 0xb9)) << 16) | ((uint)(0xb9) << 8) | (0xb9)), (((uint)(((0x86 << 1) ^ (((0x86>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x86) ^ 0x86)) << 16) | ((uint)(0x86) << 8) | (0x86)), (((uint)(((0xc1 << 1) ^ (((0xc1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xc1) ^ 0xc1)) << 16) | ((uint)(0xc1) << 8) | (0xc1)), (((uint)(((0x1d << 1) ^ (((0x1d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1d) ^ 0x1d)) << 16) | ((uint)(0x1d) << 8) | (0x1d)), (((uint)(((0x9e << 1) ^ (((0x9e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9e) ^ 0x9e)) << 16) | ((uint)(0x9e) << 8) | (0x9e)), (((uint)(((0xe1 << 1) ^ (((0xe1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe1) ^ 0xe1)) << 16) | ((uint)(0xe1) << 8) | (0xe1)), (((uint)(((0xf8 << 1) ^ (((0xf8>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xf8) ^ 0xf8)) << 16) | ((uint)(0xf8) << 8) | (0xf8)), (((uint)(((0x98 << 1) ^ (((0x98>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x98) ^ 0x98)) << 16) | ((uint)(0x98) << 8) | (0x98)), (((uint)(((0x11 << 1) ^ (((0x11>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x11) ^ 0x11)) << 16) | ((uint)(0x11) << 8) | (0x11)), (((uint)(((0x69 << 1) ^ (((0x69>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x69) ^ 0x69)) << 16) | ((uint)(0x69) << 8) | (0x69)), (((uint)(((0xd9 << 1) ^ (((0xd9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xd9) ^ 0xd9)) << 16) | ((uint)(0xd9) << 8) | (0xd9)), (((uint)(((0x8e << 1) ^ (((0x8e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8e) ^ 0x8e)) << 16) | ((uint)(0x8e) << 8) | (0x8e)), (((uint)(((0x94 << 1) ^ (((0x94>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x94) ^ 0x94)) << 16) | ((uint)(0x94) << 8) | (0x94)), (((uint)(((0x9b << 1) ^ (((0x9b>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x9b) ^ 0x9b)) << 16) | ((uint)(0x9b) << 8) | (0x9b)), (((uint)(((0x1e << 1) ^ (((0x1e>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x1e) ^ 0x1e)) << 16) | ((uint)(0x1e) << 8) | (0x1e)), (((uint)(((0x87 << 1) ^ (((0x87>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x87) ^ 0x87)) << 16) | ((uint)(0x87) << 8) | (0x87)), (((uint)(((0xe9 << 1) ^ (((0xe9>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe9) ^ 0xe9)) << 16) | ((uint)(0xe9) << 8) | (0xe9)), (((uint)(((0xce << 1) ^ (((0xce>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xce) ^ 0xce)) << 16) | ((uint)(0xce) << 8) | (0xce)), (((uint)(((0x55 << 1) ^ (((0x55>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x55) ^ 0x55)) << 16) | ((uint)(0x55) << 8) | (0x55)), (((uint)(((0x28 << 1) ^ (((0x28>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x28) ^ 0x28)) << 16) | ((uint)(0x28) << 8) | (0x28)), (((uint)(((0xdf << 1) ^ (((0xdf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xdf) ^ 0xdf)) << 16) | ((uint)(0xdf) << 8) | (0xdf)), (((uint)(((0x8c << 1) ^ (((0x8c>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x8c) ^ 0x8c)) << 16) | ((uint)(0x8c) << 8) | (0x8c)), (((uint)(((0xa1 << 1) ^ (((0xa1>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xa1) ^ 0xa1)) << 16) | ((uint)(0xa1) << 8) | (0xa1)), (((uint)(((0x89 << 1) ^ (((0x89>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x89) ^ 0x89)) << 16) | ((uint)(0x89) << 8) | (0x89)), (((uint)(((0x0d << 1) ^ (((0x0d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0d) ^ 0x0d)) << 16) | ((uint)(0x0d) << 8) | (0x0d)), (((uint)(((0xbf << 1) ^ (((0xbf>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbf) ^ 0xbf)) << 16) | ((uint)(0xbf) << 8) | (0xbf)), (((uint)(((0xe6 << 1) ^ (((0xe6>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xe6) ^ 0xe6)) << 16) | ((uint)(0xe6) << 8) | (0xe6)), (((uint)(((0x42 << 1) ^ (((0x42>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x42) ^ 0x42)) << 16) | ((uint)(0x42) << 8) | (0x42)), (((uint)(((0x68 << 1) ^ (((0x68>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x68) ^ 0x68)) << 16) | ((uint)(0x68) << 8) | (0x68)), (((uint)(((0x41 << 1) ^ (((0x41>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x41) ^ 0x41)) << 16) | ((uint)(0x41) << 8) | (0x41)), (((uint)(((0x99 << 1) ^ (((0x99>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x99) ^ 0x99)) << 16) | ((uint)(0x99) << 8) | (0x99)), (((uint)(((0x2d << 1) ^ (((0x2d>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x2d) ^ 0x2d)) << 16) | ((uint)(0x2d) << 8) | (0x2d)), (((uint)(((0x0f << 1) ^ (((0x0f>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x0f) ^ 0x0f)) << 16) | ((uint)(0x0f) << 8) | (0x0f)), (((uint)(((0xb0 << 1) ^ (((0xb0>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xb0) ^ 0xb0)) << 16) | ((uint)(0xb0) << 8) | (0xb0)), (((uint)(((0x54 << 1) ^ (((0x54>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x54) ^ 0x54)) << 16) | ((uint)(0x54) << 8) | (0x54)), (((uint)(((0xbb << 1) ^ (((0xbb>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0xbb) ^ 0xbb)) << 16) | ((uint)(0xbb) << 8) | (0xbb)), (((uint)(((0x16 << 1) ^ (((0x16>>7) & 1) * DefineConstants.WPOLY))) << 24) | ((uint)((f2(0x16) ^ 0x16)) << 16) | ((uint)(0x16) << 8) | (0x16))}
 	};
-
+    */
 
 
 	public static STATIC INLINE void aesb_single_round(ushort in, ushort @out, ushort expandedKey)
@@ -8880,21 +8882,21 @@ r = 2 * p
 	#endif
 
 
-	internal static object padd(object p, size_t i)
+	internal static object padd(object p, uint i)
 	{
 	  return (string) p + i;
 	}
 
-	internal static object cpadd(object p, size_t i)
+	internal static object cpadd(object p, uint i)
 	{
 	  return (string) p + i;
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
-	//static_assert(sizeof(size_t) == 4 || sizeof(size_t) == 8, "size_t must be 4 or 8 bytes long");
-	internal static void place_length(ushort buffer, size_t bufsize, size_t length)
+	//static_assert(sizeof(uint) == 4 || sizeof(uint) == 8, "uint must be 4 or 8 bytes long");
+	internal static void place_length(ushort buffer, uint bufsize, uint length)
 	{
-	  if (sizeof(size_t) == 4)
+	  if (sizeof(uint) == 4)
 	  {
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'swap32be' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		(uint) padd(buffer, bufsize - 4) = swap32be((uint) length);
@@ -8918,31 +8920,31 @@ r = 2 * p
 	{
 	  keccakf((ulong)state, 24);
 	}
-	public static void hash_process(hash_state state, ushort buf, size_t count)
+	public static void hash_process(hash_state state, ushort buf, uint count)
 	{
 	  keccak1600(buf, (int)count, (ushort)state);
 	}
 
 	#endif
 
-	public static void cn_fast_hash(object data, size_t length, ref string hash)
+	public static void cn_fast_hash(object data, uint length, ref string hash)
 	{
 	  hash_state state = new hash_state();
-	  hash_process(state, data, new size_t(length));
+	  hash_process(state, data, new uint(length));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(hash, state, AnonymousEnum.HASH_SIZE);
 	}
-	//void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint page_size, uint scratchpad, uint iterations);Tangible Method Implementation Not Found-cn_slow_hash
+	//void cn_slow_hash(object data, uint length, ref string hash, int light, int variant, int prehashed, uint page_size, uint scratchpad, uint iterations);Tangible Method Implementation Not Found-cn_slow_hash
 
-	//void hash_extra_blake(object data, size_t length, ref string hash);Tangible Method Implementation Not Found-hash_extra_blake
-	//void hash_extra_groestl(object data, size_t length, ref string hash);Tangible Method Implementation Not Found-hash_extra_groestl
-	//void hash_extra_jh(object data, size_t length, ref string hash);Tangible Method Implementation Not Found-hash_extra_jh
-	//void hash_extra_skein(object data, size_t length, ref string hash);Tangible Method Implementation Not Found-hash_extra_skein
+	//void hash_extra_blake(object data, uint length, ref string hash);Tangible Method Implementation Not Found-hash_extra_blake
+	//void hash_extra_groestl(object data, uint length, ref string hash);Tangible Method Implementation Not Found-hash_extra_groestl
+	//void hash_extra_jh(object data, uint length, ref string hash);Tangible Method Implementation Not Found-hash_extra_jh
+	//void hash_extra_skein(object data, uint length, ref string hash);Tangible Method Implementation Not Found-hash_extra_skein
 
-	//void tree_hash(char(*hashes)[HASH_SIZE] UnnamedParameter, size_t count, ref string root_hash);Tangible Method Implementation Not Found-tree_hash
-	//size_t tree_depth(size_t count);Tangible Method Implementation Not Found-tree_depth
-	//void tree_branch(char(*hashes)[HASH_SIZE] UnnamedParameter, size_t count, string branch);Tangible Method Implementation Not Found-tree_branch
-	//void tree_hash_from_branch(char(*branch)[HASH_SIZE] UnnamedParameter, size_t depth, string leaf, object path, ref string root_hash);Tangible Method Implementation Not Found-tree_hash_from_branch
+	//void tree_hash(char(*hashes)[HASH_SIZE] UnnamedParameter, uint count, ref string root_hash);Tangible Method Implementation Not Found-tree_hash
+	//uint tree_depth(uint count);Tangible Method Implementation Not Found-tree_depth
+	//void tree_branch(char(*hashes)[HASH_SIZE] UnnamedParameter, uint count, string branch);Tangible Method Implementation Not Found-tree_branch
+	//void tree_hash_from_branch(char(*branch)[HASH_SIZE] UnnamedParameter, uint depth, string leaf, object path, ref string root_hash);Tangible Method Implementation Not Found-tree_hash_from_branch
 
 	// keccak.h
 	// 19-Nov-11  Markku-Juhani O. Saarinen <mjos@iki.fi>
@@ -8984,9 +8986,9 @@ r = 2 * p
 
 
 
-	public static void hash_extra_blake(object data, size_t length, ref string hash)
+	public static void hash_extra_blake(object data, uint length, ref string hash)
 	{
-	  blake256_hash((ushort)hash, data, new size_t(length));
+	  blake256_hash((ushort)hash, data, new uint(length));
 	}
 
 	// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
@@ -9020,7 +9022,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define u32BIG(a) ((ROTL32(a,8) & li_32(00FF00FF)) | (ROTL32(a,24) & li_32(FF00FF00)))
 
-	public static void hash_extra_groestl(object data, size_t length, ref string hash)
+	public static void hash_extra_groestl(object data, uint length, ref string hash)
 	{
 	  groestl(data, length * 8, ref (ushort)hash);
 	}
@@ -9103,7 +9105,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define memcpy_swap64le memcpy_swap64
 
-	public static void hash_extra_jh(object data, size_t length, ref string hash)
+	public static void hash_extra_jh(object data, uint length, ref string hash)
 	{
 	  int r = (int)jh_hash(AnonymousEnum.HASH_SIZE * 8, data, 8 * length, ref (ushort)hash);
 	  if (r != 0)
@@ -9116,10 +9118,10 @@ r = 2 * p
 
 	#if ! Skein_Put64_LSB_First
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-	public static void memcpy(ushort[] dst, ulong[] src, size_t bCnt)
+	public static void memcpy(ushort[] dst, ulong[] src, uint bCnt)
 	#if SKEIN_PORT_CODE
 	{ // this version is fully portable (big-endian or little-endian), but slow
-		size_t n = new size_t();
+		uint n = new uint();
 
 		for (n = 0;n < bCnt;n++)
 		{
@@ -9134,10 +9136,10 @@ r = 2 * p
 
 	#if ! Skein_Get64_LSB_First
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-	void memcpy(ulong * dst,const ushort * src,8 * (size_t wCnt))
+	void memcpy(ulong * dst,const ushort * src,8 * (uint wCnt))
 	#if SKEIN_PORT_CODE
 	{ // this version is fully portable (big-endian or little-endian), but slow
-		size_t n = new size_t();
+		uint n = new uint();
 
 		for (n = 0;n < 8 * wCnt;n += 8)
 		{
@@ -9161,11 +9163,11 @@ r = 2 * p
 
 
 	/* "all-in-one" call */
-	HashReturn skein_hash = new HashReturn(int hashbitlen, const ushort * data, size_t databitlen, ushort * hashval);
+	HashReturn skein_hash = new HashReturn(int hashbitlen, const ushort * data, uint databitlen, ushort * hashval);
 
 
 
-	void hash_extra_skein(const object * data, size_t length, char * hash)
+	void hash_extra_skein(const object * data, uint length, char * hash)
 	{
 	  int r = (int)skein_hash(8 * AnonymousEnum.HASH_SIZE, data, 8 * length, (ushort)hash);
 	  if (r != 0)
@@ -10036,29 +10038,29 @@ r = 2 * p
 
 	// export key with header information
 	// set data == NULL to get the required data_len
-	//OAES_API OAES_RET oaes_key_export(object ctx, ushort data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_export
+	//OAES_API OAES_RET oaes_key_export(object ctx, ushort data, uint data_len);Tangible Method Implementation Not Found-oaes_key_export
 
 	// directly export the data from key
 	// set data == NULL to get the required data_len
-	//OAES_API OAES_RET oaes_key_export_data(object ctx, ushort data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_export_data
+	//OAES_API OAES_RET oaes_key_export_data(object ctx, ushort data, uint data_len);Tangible Method Implementation Not Found-oaes_key_export_data
 
 	// import key with header information
-	//OAES_API OAES_RET oaes_key_import(object ctx, ushort data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_import
+	//OAES_API OAES_RET oaes_key_import(object ctx, ushort data, uint data_len);Tangible Method Implementation Not Found-oaes_key_import
 
 	// directly import data into key
-	//OAES_API OAES_RET oaes_key_import_data(object ctx, ushort data, size_t data_len);Tangible Method Implementation Not Found-oaes_key_import_data
+	//OAES_API OAES_RET oaes_key_import_data(object ctx, ushort data, uint data_len);Tangible Method Implementation Not Found-oaes_key_import_data
 
 	// set c == NULL to get the required c_len
-	//OAES_API OAES_RET oaes_encrypt(object ctx, ushort m, size_t m_len, ushort c, size_t c_len);Tangible Method Implementation Not Found-oaes_encrypt
+	//OAES_API OAES_RET oaes_encrypt(object ctx, ushort m, uint m_len, ushort c, uint c_len);Tangible Method Implementation Not Found-oaes_encrypt
 
 	// set m == NULL to get the required m_len
-	//OAES_API OAES_RET oaes_decrypt(object ctx, ushort c, size_t c_len, ushort m, size_t m_len);Tangible Method Implementation Not Found-oaes_decrypt
+	//OAES_API OAES_RET oaes_decrypt(object ctx, ushort c, uint c_len, ushort m, uint m_len);Tangible Method Implementation Not Found-oaes_decrypt
 
 	// set buf == NULL to get the required buf_len
-	public static OAES_RET oaes_sprintf(ref string buf, size_t buf_len, ushort[] data, size_t data_len)
+	public static OAES_RET oaes_sprintf(ref string buf, uint buf_len, ushort[] data, uint data_len)
 	{
-		size_t _i = new size_t();
-		size_t _buf_len_in = new size_t();
+		uint _i = new uint();
+		uint _buf_len_in = new uint();
 		string _temp = new string(new char[4]);
 
 		if (buf_len == null)
@@ -10105,7 +10107,7 @@ r = 2 * p
 
 	public static OAES_API OAES_RET oaes_encryption_round(ushort[] key, ushort[] c)
 	{
-	  size_t _i = new size_t();
+	  uint _i = new uint();
 
 	  if (key == null)
 	  {
@@ -10151,8 +10153,8 @@ r = 2 * p
 	#if OAES_HAVE_ISAAC
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-	//ORIGINAL LINE: #define FIPS_RAND_SIZE_T size_t
-	#define FIPS_RAND_SIZE_T
+	//ORIGINAL LINE: #define FIPS_RAND_uint uint
+	#define FIPS_RAND_uint
 	#define RAND_F_RAND_GET_RAND_METHOD
 	#define RAND_F_RAND_INIT_FIPS
 	#define RAND_F_SSLEAY_RAND_BYTES
@@ -10339,8 +10341,8 @@ r = 2 * p
 
 	internal static OAES_RET oaes_sub_byte(ushort @byte)
 	{
-		size_t _x = new size_t();
-		size_t _y = new size_t();
+		uint _x = new uint();
+		uint _y = new uint();
 
 		if (@byte == null)
 		{
@@ -10360,8 +10362,8 @@ r = 2 * p
 
 	internal static OAES_RET oaes_inv_sub_byte(ushort @byte)
 	{
-		size_t _x = new size_t();
-		size_t _y = new size_t();
+		uint _x = new uint();
+		uint _y = new uint();
 
 		if (@byte == null)
 		{
@@ -10475,8 +10477,8 @@ r = 2 * p
 
 	internal static ushort oaes_gf_mul(ushort left, ushort right)
 	{
-		size_t _x = new size_t();
-		size_t _y = new size_t();
+		uint _x = new uint();
+		uint _y = new uint();
 
 		_x = _y = left;
 		_x &= 0x0f;
@@ -10652,8 +10654,8 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	internal static OAES_RET oaes_key_expand(OAES_CTX ctx)
 	{
-		size_t _i = new size_t();
-		size_t _j = new size_t();
+		uint _i = new uint();
+		uint _j = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 
@@ -10721,9 +10723,9 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	internal static OAES_RET oaes_key_gen(OAES_CTX ctx, size_t key_size)
+	internal static OAES_RET oaes_key_gen(OAES_CTX ctx, uint key_size)
 	{
-		size_t _i = new size_t();
+		uint _i = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_key _key = null;
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
@@ -10799,9 +10801,9 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_key_export(OAES_CTX * ctx, ushort * data, size_t * data_len)
+	OAES_RET oaes_key_export(OAES_CTX * ctx, ushort * data, uint * data_len)
 	{
-		size_t _data_len_in = new size_t();
+		uint _data_len_in = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 
@@ -10846,9 +10848,9 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_key_export_data(OAES_CTX * ctx, ushort * data, size_t * data_len)
+	OAES_RET oaes_key_export_data(OAES_CTX * ctx, ushort * data, uint * data_len)
 	{
-		size_t _data_len_in = new size_t();
+		uint _data_len_in = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 
@@ -10887,7 +10889,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_key_import(OAES_CTX * ctx, const ushort * data, size_t data_len)
+	OAES_RET oaes_key_import(OAES_CTX * ctx, const ushort * data, uint data_len)
 	{
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
@@ -10994,7 +10996,7 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_key_import_data(OAES_CTX * ctx, const ushort * data, size_t data_len)
+	OAES_RET oaes_key_import_data(OAES_CTX * ctx, const ushort * data, uint data_len)
 	{
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
@@ -11095,7 +11097,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	OAES_RET oaes_set_option(OAES_CTX * ctx, OAES_OPTION option, const object * value)
 	{
-		size_t _i = new size_t();
+		uint _i = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 
@@ -11168,10 +11170,10 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	static OAES_RET oaes_encrypt_block(OAES_CTX * ctx, ushort * c, size_t c_len)
+	static OAES_RET oaes_encrypt_block(OAES_CTX * ctx, ushort * c, uint c_len)
 	{
-		size_t _i = new size_t();
-		size_t _j = new size_t();
+		uint _i = new uint();
+		uint _j = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 
@@ -11312,10 +11314,10 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	static OAES_RET oaes_decrypt_block(OAES_CTX * ctx, ushort * c, size_t c_len)
+	static OAES_RET oaes_decrypt_block(OAES_CTX * ctx, ushort * c, uint c_len)
 	{
-		size_t _i = new size_t();
-		size_t _j = new size_t();
+		uint _i = new uint();
+		uint _j = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 
@@ -11455,13 +11457,13 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_encrypt(OAES_CTX * ctx, const ushort * m, size_t m_len, ushort * c, size_t * c_len)
+	OAES_RET oaes_encrypt(OAES_CTX * ctx, const ushort * m, uint m_len, ushort * c, uint * c_len)
 	{
-		size_t _i = new size_t();
-		size_t _j = new size_t();
-		size_t _c_len_in = new size_t();
-		size_t _c_data_len = new size_t();
-		size_t _pad_len = m_len % DefineConstants.OAES_BLOCK_SIZE == 0 ? 0 : DefineConstants.OAES_BLOCK_SIZE - m_len % DefineConstants.OAES_BLOCK_SIZE;
+		uint _i = new uint();
+		uint _j = new uint();
+		uint _c_len_in = new uint();
+		uint _c_data_len = new uint();
+		uint _pad_len = m_len % DefineConstants.OAES_BLOCK_SIZE == 0 ? 0 : DefineConstants.OAES_BLOCK_SIZE - m_len % DefineConstants.OAES_BLOCK_SIZE;
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 		OAES_RET _rc = OAES_RET.OAES_RET_SUCCESS;
@@ -11520,7 +11522,7 @@ r = 2 * p
 		for (_i = 0; _i < _c_data_len; _i += DefineConstants.OAES_BLOCK_SIZE)
 		{
 			ushort[] _block = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.OAES_BLOCK_SIZE);
-			size_t _block_size = (((m_len - _i) < (DefineConstants.OAES_BLOCK_SIZE)) ? (m_len - _i) : (DefineConstants.OAES_BLOCK_SIZE));
+			uint _block_size = (((m_len - _i) < (DefineConstants.OAES_BLOCK_SIZE)) ? (m_len - _i) : (DefineConstants.OAES_BLOCK_SIZE));
 
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(_block, c + 2 * DefineConstants.OAES_BLOCK_SIZE + _i, _block_size);
@@ -11555,11 +11557,11 @@ r = 2 * p
 	}
 
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
-	OAES_RET oaes_decrypt(OAES_CTX * ctx, const ushort * c, size_t c_len, ushort * m, size_t * m_len)
+	OAES_RET oaes_decrypt(OAES_CTX * ctx, const ushort * c, uint c_len, ushort * m, uint * m_len)
 	{
-		size_t _i = new size_t();
-		size_t _j = new size_t();
-		size_t _m_len_in = new size_t();
+		uint _i = new uint();
+		uint _j = new uint();
+		uint _m_len_in = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 		oaes_ctx _ctx = (oaes_ctx) ctx;
 		OAES_RET _rc = OAES_RET.OAES_RET_SUCCESS;
@@ -11693,7 +11695,7 @@ r = 2 * p
 		if (_flags & DefineConstants.OAES_FLAG_PAD != null)
 		{
 			int _is_pad = 1;
-			size_t _temp = (size_t) m[*m_len - 1];
+			uint _temp = (uint) m[*m_len - 1];
 
 			if (_temp <= 0x00 || _temp > 0x0f)
 			{
@@ -11724,7 +11726,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	OAES_API OAES_RET oaes_pseudo_encrypt_ecb(OAES_CTX * ctx, ushort * c)
 	{
-	  size_t _i = new size_t();
+	  uint _i = new uint();
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  oaes_ctx _ctx = (oaes_ctx) ctx;
 
@@ -11752,7 +11754,7 @@ r = 2 * p
 	}
 
 
-	public static void generate_random_bytes(size_t n, object result)
+	public static void generate_random_bytes(uint n, object result)
 	{
 	#if !NDEBUG
 	  Debug.Assert(curstate == 1);
@@ -11793,7 +11795,7 @@ r = 2 * p
 
 
 	#if _WIN32
-	internal static void generate_system_random_bytes(size_t n, object result)
+	internal static void generate_system_random_bytes(uint n, object result)
 	{
 	  HCRYPTPROV prov = new HCRYPTPROV();
 	//C++ TO C# CONVERTER TODO TASK: #define macros defined in multiple preprocessor conditionals can only be replaced within the scope of the preprocessor conditional:
@@ -11829,7 +11831,7 @@ r = 2 * p
 	#if ! _WIN32
 
 
-	internal static void generate_system_random_bytes(size_t n, object result)
+	internal static void generate_system_random_bytes(uint n, object result)
 	{
 	  int fd;
 	  if ((fd = open("/dev/urandom", O_RDONLY | O_NOCTTY | O_CLOEXEC)) < 0)
@@ -11839,7 +11841,7 @@ r = 2 * p
 	  for (;;)
 	  {
 		uint res = read(fd, result, n);
-		if ((size_t) res == n)
+		if ((uint) res == n)
 		{
 		  break;
 		}
@@ -11856,8 +11858,8 @@ r = 2 * p
 		}
 		else
 		{
-		  result = padd(result, (size_t) res);
-		  n -= (size_t) res;
+		  result = padd(result, (uint) res);
+		  n -= (uint) res;
 		}
 	  }
 	  if (close(fd) < 0)
@@ -11918,13 +11920,13 @@ r = 2 * p
 
 
 	/* "all-in-one" call */
-	public static HashReturn skein_hash(int hashbitlen, ushort data, size_t databitlen, ushort hashval)
+	public static HashReturn skein_hash(int hashbitlen, ushort data, uint databitlen, ushort hashval)
 	{
 	  hashState state = new hashState();
 	  HashReturn r = Init(state, hashbitlen);
 	  if (r == HashReturn.SKEIN_SUCCESS)
 	  { // these calls do not fail when called properly
-		r = Update(state, data, new size_t(databitlen));
+		r = Update(state, data, new uint(databitlen));
 		Final(state, hashval);
 	  }
 	  return r;
@@ -11932,7 +11934,7 @@ r = 2 * p
 
 	/*   Skein APIs for (incremental) "straight hashing" */
 	#if SKEIN_256_NIST_MAX_HASHBITS
-	//static int Skein_256_Init(Skein_256_Ctxt_t ctx, size_t hashBitLen);Tangible Method Implementation Not Found-Skein_256_Init
+	//static int Skein_256_Init(Skein_256_Ctxt_t ctx, uint hashBitLen);Tangible Method Implementation Not Found-Skein_256_Init
 	#endif
 
 /*****************************************************************/
@@ -11941,7 +11943,7 @@ r = 2 * p
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* init the context for a straight hashing operation  */
-	internal static int Skein_512_Init(Skein_512_Ctxt_t ctx, size_t hashBitLen)
+	internal static int Skein_512_Init(Skein_512_Ctxt_t ctx, uint hashBitLen)
 	{
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	union
@@ -12029,7 +12031,7 @@ r = 2 * p
 /*****************************************************************/
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* init the context for a straight hashing operation  */
-	internal static int Skein1024_Init(Skein1024_Ctxt_t ctx, size_t hashBitLen)
+	internal static int Skein1024_Init(Skein1024_Ctxt_t ctx, uint hashBitLen)
 	{
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	union
@@ -12118,7 +12120,7 @@ r = 2 * p
 	//
 	// /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	// /* init the context for a straight hashing operation  */
-	//static int Skein_256_Init(Skein_256_Ctxt_t *ctx, size_t hashBitLen)
+	//static int Skein_256_Init(Skein_256_Ctxt_t *ctx, uint hashBitLen)
 	//    {
 	//    union
 	//        {
@@ -12162,7 +12164,7 @@ r = 2 * p
 	// /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	// /* init the context for a MAC and/or tree hash operation */
 	// /* [identical to Skein_256_Init() when keyBytes == 0 && treeInfo == SKEIN_CFG_TREE_INFO_SEQUENTIAL] */
-	//static int Skein_256_InitExt(Skein_256_Ctxt_t *ctx,size_t hashBitLen,u64b_t treeInfo, const u08b_t *key, size_t keyBytes)
+	//static int Skein_256_InitExt(Skein_256_Ctxt_t *ctx,uint hashBitLen,u64b_t treeInfo, const u08b_t *key, uint keyBytes)
 	//    {
 	//    union
 	//        {
@@ -12219,9 +12221,9 @@ r = 2 * p
 	//    }
 	#endif
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'msg', so pointers on this parameter are left unchanged:
-	internal static int Skein_256_Update(Skein_256_Ctxt_t ctx, ushort * msg, size_t msgByteCnt)
+	internal static int Skein_256_Update(Skein_256_Ctxt_t ctx, ushort * msg, uint msgByteCnt)
 	{
-		size_t n = new size_t();
+		uint n = new uint();
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN_256_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
@@ -12237,7 +12239,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					Skein_assert(n < msgByteCnt); // check on our logic here
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(n));
+					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new uint(n));
 					msgByteCnt -= n;
 					msg += n;
 					ctx.h.bCnt += n;
@@ -12253,7 +12255,7 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = (msgByteCnt-1) / (8 *DefineConstants.SKEIN_256_STATE_WORDS);
 				n.CopyFrom((msgByteCnt - 1) / (8 * DefineConstants.SKEIN_256_STATE_WORDS)); // number of full blocks to process
-				Skein_256_Process_Block(ctx, new ushort(msg), new size_t(n), (8 * DefineConstants.SKEIN_256_STATE_WORDS));
+				Skein_256_Process_Block(ctx, new ushort(msg), new uint(n), (8 * DefineConstants.SKEIN_256_STATE_WORDS));
 				msgByteCnt -= n * (8 * DefineConstants.SKEIN_256_STATE_WORDS);
 				msg += n * (8 * DefineConstants.SKEIN_256_STATE_WORDS);
 			}
@@ -12267,7 +12269,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			Skein_assert(msgByteCnt + ctx.h.bCnt <= (8 * DefineConstants.SKEIN_256_STATE_WORDS));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(msgByteCnt));
+			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new uint(msgByteCnt));
 			ctx.h.bCnt += msgByteCnt;
 		}
 
@@ -12280,7 +12282,7 @@ r = 2 * p
 	// /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	// /* init the context for a MAC and/or tree hash operation */
 	// /* [identical to Skein_512_Init() when keyBytes == 0 && treeInfo == SKEIN_CFG_TREE_INFO_SEQUENTIAL] */
-	//static int Skein_512_InitExt(Skein_512_Ctxt_t *ctx,size_t hashBitLen,u64b_t treeInfo, const u08b_t *key, size_t keyBytes)
+	//static int Skein_512_InitExt(Skein_512_Ctxt_t *ctx,uint hashBitLen,u64b_t treeInfo, const u08b_t *key, uint keyBytes)
 	//    {
 	//    union
 	//        {
@@ -12337,9 +12339,9 @@ r = 2 * p
 	//    }
 	#endif
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'msg', so pointers on this parameter are left unchanged:
-	internal static int Skein_512_Update(Skein_512_Ctxt_t ctx, ushort * msg, size_t msgByteCnt)
+	internal static int Skein_512_Update(Skein_512_Ctxt_t ctx, ushort * msg, uint msgByteCnt)
 	{
-		size_t n = new size_t();
+		uint n = new uint();
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN_512_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
@@ -12355,7 +12357,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					Skein_assert(n < msgByteCnt); // check on our logic here
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(n));
+					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new uint(n));
 					msgByteCnt -= n;
 					msg += n;
 					ctx.h.bCnt += n;
@@ -12371,7 +12373,7 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = (msgByteCnt-1) / (8 *DefineConstants.SKEIN_512_STATE_WORDS);
 				n.CopyFrom((msgByteCnt - 1) / (8 * DefineConstants.SKEIN_512_STATE_WORDS)); // number of full blocks to process
-				Skein_512_Process_Block(ctx, new ushort(msg), new size_t(n), (8 * DefineConstants.SKEIN_512_STATE_WORDS));
+				Skein_512_Process_Block(ctx, new ushort(msg), new uint(n), (8 * DefineConstants.SKEIN_512_STATE_WORDS));
 				msgByteCnt -= n * (8 * DefineConstants.SKEIN_512_STATE_WORDS);
 				msg += n * (8 * DefineConstants.SKEIN_512_STATE_WORDS);
 			}
@@ -12385,7 +12387,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			Skein_assert(msgByteCnt + ctx.h.bCnt <= (8 * DefineConstants.SKEIN_512_STATE_WORDS));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(msgByteCnt));
+			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new uint(msgByteCnt));
 			ctx.h.bCnt += msgByteCnt;
 		}
 
@@ -12398,7 +12400,7 @@ r = 2 * p
 	// /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	// /* init the context for a MAC and/or tree hash operation */
 	// /* [identical to Skein1024_Init() when keyBytes == 0 && treeInfo == SKEIN_CFG_TREE_INFO_SEQUENTIAL] */
-	//static int Skein1024_InitExt(Skein1024_Ctxt_t *ctx,size_t hashBitLen,u64b_t treeInfo, const u08b_t *key, size_t keyBytes)
+	//static int Skein1024_InitExt(Skein1024_Ctxt_t *ctx,uint hashBitLen,u64b_t treeInfo, const u08b_t *key, uint keyBytes)
 	//    {
 	//    union
 	//        {
@@ -12455,9 +12457,9 @@ r = 2 * p
 	//    }
 	#endif
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'msg', so pointers on this parameter are left unchanged:
-	internal static int Skein1024_Update(Skein1024_Ctxt_t ctx, ushort * msg, size_t msgByteCnt)
+	internal static int Skein1024_Update(Skein1024_Ctxt_t ctx, ushort * msg, uint msgByteCnt)
 	{
-		size_t n = new size_t();
+		uint n = new uint();
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN1024_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
@@ -12473,7 +12475,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 					Skein_assert(n < msgByteCnt); // check on our logic here
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(n));
+					memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new uint(n));
 					msgByteCnt -= n;
 					msg += n;
 					ctx.h.bCnt += n;
@@ -12489,7 +12491,7 @@ r = 2 * p
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: n = (msgByteCnt-1) / (8 *DefineConstants.SKEIN1024_STATE_WORDS);
 				n.CopyFrom((msgByteCnt - 1) / (8 * DefineConstants.SKEIN1024_STATE_WORDS)); // number of full blocks to process
-				Skein1024_Process_Block(ctx, new ushort(msg), new size_t(n), (8 * DefineConstants.SKEIN1024_STATE_WORDS));
+				Skein1024_Process_Block(ctx, new ushort(msg), new uint(n), (8 * DefineConstants.SKEIN1024_STATE_WORDS));
 				msgByteCnt -= n * (8 * DefineConstants.SKEIN1024_STATE_WORDS);
 				msg += n * (8 * DefineConstants.SKEIN1024_STATE_WORDS);
 			}
@@ -12503,7 +12505,7 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 			Skein_assert(msgByteCnt + ctx.h.bCnt <= (8 * DefineConstants.SKEIN1024_STATE_WORDS));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new size_t(msgByteCnt));
+			memcpy(ctx.b[ctx.h.bCnt], new ushort(msg), new uint(msgByteCnt));
 			ctx.h.bCnt += msgByteCnt;
 		}
 
@@ -12515,9 +12517,9 @@ r = 2 * p
 
 	internal static int Skein_256_Final(Skein_256_Ctxt_t ctx, ushort hashVal)
 	{
-		size_t i = new size_t();
-		size_t n = new size_t();
-		size_t byteCnt = new size_t();
+		uint i = new uint();
+		uint n = new uint();
+		uint byteCnt = new uint();
 		ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN_256_STATE_WORDS);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN_256_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
@@ -12529,7 +12531,7 @@ r = 2 * p
 			memset(ctx.b[ctx.h.bCnt], 0, (8 * DefineConstants.SKEIN_256_STATE_WORDS) - ctx.h.bCnt);
 		}
 
-		Skein_256_Process_Block(ctx, ctx.b, 1, new size_t(ctx.h.bCnt)); // process the final block
+		Skein_256_Process_Block(ctx, ctx.b, 1, new uint(ctx.h.bCnt)); // process the final block
 
 		/* now output the result */
 		byteCnt = (ctx.h.hashBitLen + 7) >> 3; // total number of output bytes
@@ -12562,7 +12564,7 @@ r = 2 * p
 				n = (8 * DefineConstants.SKEIN_256_STATE_WORDS);
 			}
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(hashVal + i * (8 * DefineConstants.SKEIN_256_STATE_WORDS), ctx.X, new size_t(n)); // "output" the ctr mode bytes
+			memcpy(hashVal + i * (8 * DefineConstants.SKEIN_256_STATE_WORDS), ctx.X, new uint(n)); // "output" the ctr mode bytes
 			;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(ctx.X, X, sizeof(ulong)); // restore the counter mode key for next time
@@ -12574,9 +12576,9 @@ r = 2 * p
 /* finalize the hash computation and output the result */
 	internal static int Skein_512_Final(Skein_512_Ctxt_t ctx, ushort hashVal)
 	{
-		size_t i = new size_t();
-		size_t n = new size_t();
-		size_t byteCnt = new size_t();
+		uint i = new uint();
+		uint n = new uint();
+		uint byteCnt = new uint();
 		ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN_512_STATE_WORDS);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN_512_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
@@ -12588,7 +12590,7 @@ r = 2 * p
 			memset(ctx.b[ctx.h.bCnt], 0, (8 * DefineConstants.SKEIN_512_STATE_WORDS) - ctx.h.bCnt);
 		}
 
-		Skein_512_Process_Block(ctx, ctx.b, 1, new size_t(ctx.h.bCnt)); // process the final block
+		Skein_512_Process_Block(ctx, ctx.b, 1, new uint(ctx.h.bCnt)); // process the final block
 
 		/* now output the result */
 		byteCnt = (ctx.h.hashBitLen + 7) >> 3; // total number of output bytes
@@ -12621,7 +12623,7 @@ r = 2 * p
 				n = (8 * DefineConstants.SKEIN_512_STATE_WORDS);
 			}
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(hashVal + i * (8 * DefineConstants.SKEIN_512_STATE_WORDS), ctx.X, new size_t(n)); // "output" the ctr mode bytes
+			memcpy(hashVal + i * (8 * DefineConstants.SKEIN_512_STATE_WORDS), ctx.X, new uint(n)); // "output" the ctr mode bytes
 			;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(ctx.X, X, sizeof(ulong)); // restore the counter mode key for next time
@@ -12633,9 +12635,9 @@ r = 2 * p
 /* finalize the hash computation and output the result */
 	internal static int Skein1024_Final(Skein1024_Ctxt_t ctx, ushort hashVal)
 	{
-		size_t i = new size_t();
-		size_t n = new size_t();
-		size_t byteCnt = new size_t();
+		uint i = new uint();
+		uint n = new uint();
+		uint byteCnt = new uint();
 		ulong[] X = Arrays.InitializeWithDefaultInstances<ulong>(DefineConstants.SKEIN1024_STATE_WORDS);
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(ctx.h.bCnt <= (8 * DefineConstants.SKEIN1024_STATE_WORDS),HashReturn.SKEIN_FAIL); // catch uninitialized context
@@ -12647,7 +12649,7 @@ r = 2 * p
 			memset(ctx.b[ctx.h.bCnt], 0, (8 * DefineConstants.SKEIN1024_STATE_WORDS) - ctx.h.bCnt);
 		}
 
-		Skein1024_Process_Block(ctx, ctx.b, 1, new size_t(ctx.h.bCnt)); // process the final block
+		Skein1024_Process_Block(ctx, ctx.b, 1, new uint(ctx.h.bCnt)); // process the final block
 
 		/* now output the result */
 		byteCnt = (ctx.h.hashBitLen + 7) >> 3; // total number of output bytes
@@ -12680,7 +12682,7 @@ r = 2 * p
 				n = (8 * DefineConstants.SKEIN1024_STATE_WORDS);
 			}
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-			memcpy(hashVal + i * (8 * DefineConstants.SKEIN1024_STATE_WORDS), ctx.X, new size_t(n)); // "output" the ctr mode bytes
+			memcpy(hashVal + i * (8 * DefineConstants.SKEIN1024_STATE_WORDS), ctx.X, new uint(n)); // "output" the ctr mode bytes
 			;
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 			memcpy(ctx.X, X, sizeof(ulong)); // restore the counter mode key for next time
@@ -12703,9 +12705,9 @@ r = 2 * p
 	**              reused for each new MAC computation.
 	**/
 	#if false
-	//static int  Skein_256_InitExt(Skein_256_Ctxt_t *ctx, size_t hashBitLen, u64b_t treeInfo, const u08b_t *key, size_t keyBytes);
-	//static int  Skein_512_InitExt(Skein_512_Ctxt_t *ctx, size_t hashBitLen, u64b_t treeInfo, const u08b_t *key, size_t keyBytes);
-	//static int  Skein1024_InitExt(Skein1024_Ctxt_t *ctx, size_t hashBitLen, u64b_t treeInfo, const u08b_t *key, size_t keyBytes);
+	//static int  Skein_256_InitExt(Skein_256_Ctxt_t *ctx, uint hashBitLen, u64b_t treeInfo, const u08b_t *key, uint keyBytes);
+	//static int  Skein_512_InitExt(Skein_512_Ctxt_t *ctx, uint hashBitLen, u64b_t treeInfo, const u08b_t *key, uint keyBytes);
+	//static int  Skein1024_InitExt(Skein1024_Ctxt_t *ctx, uint hashBitLen, u64b_t treeInfo, const u08b_t *key, uint keyBytes);
 	#endif
 
 	/*
@@ -12982,7 +12984,7 @@ r = 2 * p
 	/*****************************  Skein_256 ******************************/
 	#if !(SKEIN_USE_ASM & 256)
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'blkPtr', so pointers on this parameter are left unchanged:
-	internal static void Skein_256_Process_Block(Skein_256_Ctxt_t ctx, ushort * blkPtr, size_t blkCnt, size_t byteCntAdd)
+	internal static void Skein_256_Process_Block(Skein_256_Ctxt_t ctx, ushort * blkPtr, uint blkCnt, uint byteCntAdd)
 	{ // do it in C
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	enum
@@ -13008,7 +13010,7 @@ r = 2 * p
 	#if (RCNT % SKEIN_UNROLL_256)
 	#error "Invalid SKEIN_UNROLL_256"
 	#endif
-		size_t r = new size_t();
+		uint r = new uint();
 		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS / 100) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
 	#else
 		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4); // key schedule words : chaining vars + tweak
@@ -13591,7 +13593,7 @@ r = 2 * p
 	}
 
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
-	internal static size_t Skein_256_Process_Block_CodeSize()
+	internal static uint Skein_256_Process_Block_CodeSize()
 	{
 		return ((ushort) Skein_256_Process_Block_CodeSize) - ((ushort) Skein_256_Process_Block);
 	}
@@ -13605,7 +13607,7 @@ r = 2 * p
 	/*****************************  Skein_512 ******************************/
 	#if !(SKEIN_USE_ASM & 512)
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'blkPtr', so pointers on this parameter are left unchanged:
-	internal static void Skein_512_Process_Block(Skein_512_Ctxt_t ctx, ushort * blkPtr, size_t blkCnt, size_t byteCntAdd)
+	internal static void Skein_512_Process_Block(Skein_512_Ctxt_t ctx, ushort * blkPtr, uint blkCnt, uint byteCntAdd)
 	{ // do it in C
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	enum
@@ -13631,7 +13633,7 @@ r = 2 * p
 	#if (RCNT % SKEIN_UNROLL_512)
 	#error "Invalid SKEIN_UNROLL_512"
 	#endif
-		size_t r = new size_t();
+		uint r = new uint();
 		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS / 10) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
 	#else
 		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4); // key schedule words : chaining vars + tweak
@@ -14241,7 +14243,7 @@ r = 2 * p
 	}
 
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
-	internal static size_t Skein_512_Process_Block_CodeSize()
+	internal static uint Skein_512_Process_Block_CodeSize()
 	{
 		return ((ushort) Skein_512_Process_Block_CodeSize) - ((ushort) Skein_512_Process_Block);
 	}
@@ -14255,7 +14257,7 @@ r = 2 * p
 	/*****************************  Skein1024 ******************************/
 	#if !(SKEIN_USE_ASM & 1024)
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'blkPtr', so pointers on this parameter are left unchanged:
-	internal static void Skein1024_Process_Block(Skein1024_Ctxt_t ctx, ushort * blkPtr, size_t blkCnt, size_t byteCntAdd)
+	internal static void Skein1024_Process_Block(Skein1024_Ctxt_t ctx, ushort * blkPtr, uint blkCnt, uint byteCntAdd)
 	{ // do it in C, always looping (unrolled is bigger AND slower!)
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	enum
@@ -14282,7 +14284,7 @@ r = 2 * p
 	#if (RCNT % SKEIN_UNROLL_1024)
 	#error "Invalid SKEIN_UNROLL_1024"
 	#endif
-		size_t r = new size_t();
+		uint r = new uint();
 		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4 + ((8 * ((((SKEIN_ROUNDS) + 5) % 10) + 5)) / 8) * 2); // key schedule words : chaining vars + tweak + "rotation"
 	#else
 		ulong[] kw = Arrays.InitializeWithDefaultInstances<ulong>(WCNT + 4); // key schedule words : chaining vars + tweak
@@ -14949,7 +14951,7 @@ r = 2 * p
 	}
 
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
-	internal static size_t Skein1024_Process_Block_CodeSize()
+	internal static uint Skein1024_Process_Block_CodeSize()
 	{
 		return ((ushort) Skein1024_Process_Block_CodeSize) - ((ushort) Skein1024_Process_Block);
 	}
@@ -14963,7 +14965,7 @@ r = 2 * p
 
 
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
-	internal static size_t Skein_256_API_CodeSize()
+	internal static uint Skein_256_API_CodeSize()
 	{
 		return ((ushort) Skein_256_API_CodeSize) - ((ushort) Skein_256_Init);
 	}
@@ -14971,7 +14973,7 @@ r = 2 * p
 
 
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
-	internal static size_t Skein_512_API_CodeSize()
+	internal static uint Skein_512_API_CodeSize()
 	{
 		return ((ushort) Skein_512_API_CodeSize) - ((ushort) Skein_512_Init);
 	}
@@ -14979,7 +14981,7 @@ r = 2 * p
 
 
 	#if SKEIN_CODE_SIZE || SKEIN_PERF
-	internal static size_t Skein1024_API_CodeSize()
+	internal static uint Skein1024_API_CodeSize()
 	{
 		return ((ushort) Skein1024_API_CodeSize) - ((ushort) Skein1024_Init);
 	}
@@ -15043,7 +15045,7 @@ r = 2 * p
 	// /* just do the OUTPUT stage                                       */
 	//static int Skein_256_Output(Skein_256_Ctxt_t *ctx, u08b_t *hashVal)
 	//    {
-	//    size_t i,n,byteCnt;
+	//    uint i,n,byteCnt;
 	//    u64b_t X[SKEIN_256_STATE_WORDS];
 	//    Skein_Assert(ctx->h.bCnt <= SKEIN_256_BLOCK_BYTES,SKEIN_FAIL);    // catch uninitialized context 
 	//
@@ -15072,7 +15074,7 @@ r = 2 * p
 	// /* just do the OUTPUT stage                                       */
 	//static int Skein_512_Output(Skein_512_Ctxt_t *ctx, u08b_t *hashVal)
 	//    {
-	//    size_t i,n,byteCnt;
+	//    uint i,n,byteCnt;
 	//    u64b_t X[SKEIN_512_STATE_WORDS];
 	//    Skein_Assert(ctx->h.bCnt <= SKEIN_512_BLOCK_BYTES,SKEIN_FAIL);    // catch uninitialized context 
 	//
@@ -15101,7 +15103,7 @@ r = 2 * p
 	// /* just do the OUTPUT stage                                       */
 	//static int Skein1024_Output(Skein1024_Ctxt_t *ctx, u08b_t *hashVal)
 	//    {
-	//    size_t i,n,byteCnt;
+	//    uint i,n,byteCnt;
 	//    u64b_t X[SKEIN1024_STATE_WORDS];
 	//    Skein_Assert(ctx->h.bCnt <= SKEIN1024_BLOCK_BYTES,SKEIN_FAIL);    // catch uninitialized context 
 	//
@@ -15140,24 +15142,24 @@ r = 2 * p
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 		Skein_Assert(hashbitlen > 0,BAD_HASHLEN);
 		state.statebits = 64 * DefineConstants.SKEIN_256_STATE_WORDS;
-		return Skein_256_Init(state.u.ctx_256, (size_t) hashbitlen);
+		return Skein_256_Init(state.u.ctx_256, (uint) hashbitlen);
 	  }
 	#endif
 	  if (hashbitlen <= DefineConstants.SKEIN_512_NIST_MAX_HASHBITS)
 	  {
 		state.statebits = 64 * DefineConstants.SKEIN_512_STATE_WORDS;
-		return Skein_512_Init(state.u.ctx_512, (size_t) hashbitlen);
+		return Skein_512_Init(state.u.ctx_512, (uint) hashbitlen);
 	  }
 	  else
 	  {
 		state.statebits = 64 * DefineConstants.SKEIN1024_STATE_WORDS;
-		return Skein1024_Init(state.u.ctx1024, (size_t) hashbitlen);
+		return Skein1024_Init(state.u.ctx1024, (uint) hashbitlen);
 	  }
 	}
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* process data to be hashed */
-	internal static HashReturn Update(hashState state, ushort[] data, size_t databitlen)
+	internal static HashReturn Update(hashState state, ushort[] data, uint databitlen)
 	{
 	  /* only the final Update() call is allowed do partial bytes, else assert an error */
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'Skein_Assert' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
@@ -15181,7 +15183,7 @@ r = 2 * p
 	  }
 	  else
 	  { // handle partial final byte
-		size_t bCnt = (databitlen >> 3) + 1; // number of bytes to handle (nonzero here!)
+		uint bCnt = (databitlen >> 3) + 1; // number of bytes to handle (nonzero here!)
 		ushort b = new ushort();
 		ushort mask = new ushort();
 
@@ -16101,12 +16103,12 @@ private static int check_aes_hw_supported = -1;
 	 * @param length the length in bytes of the data
 	 * @param hash a pointer to a buffer in which the final 256 bit hash will be stored
 	 */
-	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
+	public static void cn_slow_hash(object data, uint length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
 	{
 	  uint TOTALBLOCKS = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
 	  uint init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	  uint aes_rounds = (iterations / 2);
-	  size_t lightFlag = (light != 0 ? 2: 1);
+	  uint lightFlag = (light != 0 ? 2: 1);
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	  RDATA_ALIGN16 ushort expandedKey[240]; // These buffers are aligned to use later with SSE functions
@@ -16126,8 +16128,8 @@ private static int check_aes_hw_supported = -1;
 	  ulong hi = new ulong();
 	  ulong lo = new ulong();
 
-	  size_t i = new size_t();
-	  size_t j = new size_t();
+	  uint i = new uint();
+	  uint j = new uint();
 	  ulong p = null;
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  oaes_ctx aes_ctx = null;
@@ -16145,7 +16147,7 @@ private static int check_aes_hw_supported = -1;
 	  }
 	  else
 	  {
-		  hash_process(state.hs, data, new size_t(length));
+		  hash_process(state.hs, data, new uint(length));
 	  }
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(text, state.init, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
@@ -16585,7 +16587,7 @@ private static int check_aes_hw_supported = -1;
 	  slow_hash_free_state(new uint(PAGE_SIZE));
 	}
 
-	public delegate void extra_hashesDelegate(object UnnamedParameter, size_t UnnamedParameter2, ref string UnnamedParameter3);
+	public delegate void extra_hashesDelegate(object UnnamedParameter, uint UnnamedParameter2, ref string UnnamedParameter3);
 
 	#elif ! NO_AES && (__arm__ || __aarch64__)
 	public static void slow_hash_allocate_state()
@@ -16762,7 +16764,7 @@ private static int check_aes_hw_supported = -1;
 	#if FORCE_USE_HEAP
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'STATIC' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'INLINE' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
-	public static STATIC INLINE object aligned_malloc(size_t size, size_t align)
+	public static STATIC INLINE object aligned_malloc(uint size, uint align)
 	{
 		object result;
 	#if _MSC_VER
@@ -16789,12 +16791,12 @@ private static int check_aes_hw_supported = -1;
 	}
 	#endif
 
-	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
+	public static void cn_slow_hash(object data, uint length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
 	{
 	  uint TOTALBLOCKS = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
 	  uint init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	  uint aes_rounds = (iterations / 2);
-	  size_t lightFlag = (light != 0 ? 2: 1);
+	  uint lightFlag = (light != 0 ? 2: 1);
 
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'RDATA_ALIGN16' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	  RDATA_ALIGN16 ushort expandedKey[240];
@@ -16822,8 +16824,8 @@ private static int check_aes_hw_supported = -1;
 	  ulong hi = new ulong();
 	  ulong lo = new ulong();
 
-	  size_t i = new size_t();
-	  size_t j = new size_t();
+	  uint i = new uint();
+	  uint j = new uint();
 	  ulong p = null;
 
 	  static[] extra_hashesDelegate extra_hashes = new extra_hashesDelegate(hash_extra_blake, hash_extra_groestl, hash_extra_jh, hash_extra_skein);
@@ -16837,7 +16839,7 @@ private static int check_aes_hw_supported = -1;
 	  }
 	  else
 	  {
-		  hash_process(state.hs, data, new size_t(length));
+		  hash_process(state.hs, data, new uint(length));
 	  }
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(text, state.init, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
@@ -17036,7 +17038,7 @@ private static int check_aes_hw_supported = -1;
 	#endif
 	}
 
-	public delegate void extra_hashesDelegate(object UnnamedParameter, size_t UnnamedParameter2, ref string UnnamedParameter3);
+	public delegate void extra_hashesDelegate(object UnnamedParameter, uint UnnamedParameter2, ref string UnnamedParameter3);
 	#else
 
 	// ND: Some minor optimizations for ARMv7 (raspberrry pi 2), effect seems to be ~40-50% faster.
@@ -17166,11 +17168,11 @@ private static int check_aes_hw_supported = -1;
 	  ((ulong)(a))[1] ^= ((ulong)(b))[1];
 	}
 
-	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
+	public static void cn_slow_hash(object data, uint length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
 	{
 	  uint init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	  uint aes_rounds = (iterations / 2);
-	  size_t lightFlag = (light != 0 ? 2: 1);
+	  uint lightFlag = (light != 0 ? 2: 1);
 
 	  ushort[] text = Arrays.InitializeWithDefaultInstances<ushort>((DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	  ushort[] a = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
@@ -17184,8 +17186,8 @@ private static int check_aes_hw_supported = -1;
 
 	  cn_slow_hash_state state = new cn_slow_hash_state();
 
-	  size_t i = new size_t();
-	  size_t j = new size_t();
+	  uint i = new uint();
+	  uint j = new uint();
 	  ushort p = null;
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  oaes_ctx aes_ctx;
@@ -17205,7 +17207,7 @@ private static int check_aes_hw_supported = -1;
 	  }
 	  else
 	  {
-		  hash_process(state.hs, data, new size_t(length));
+		  hash_process(state.hs, data, new uint(length));
 	  }
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(text, state.init, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
@@ -17398,7 +17400,7 @@ private static int check_aes_hw_supported = -1;
 	#endif
 	}
 
-	public delegate void extra_hashesDelegate(object UnnamedParameter, size_t UnnamedParameter2, ref string UnnamedParameter3);
+	public delegate void extra_hashesDelegate(object UnnamedParameter, uint UnnamedParameter2, ref string UnnamedParameter3);
 	#endif
 
 	#else
@@ -17416,13 +17418,13 @@ private static int check_aes_hw_supported = -1;
 	  return;
 	}
 
-	public delegate void extra_hashesDelegate(object UnnamedParameter, size_t UnnamedParameter2, ref string UnnamedParameter3);
+	public delegate void extra_hashesDelegate(object UnnamedParameter, uint UnnamedParameter2, ref string UnnamedParameter3);
 	internal static extra_hashesDelegate[] extra_hashes = new extra_hashesDelegate(hash_extra_blake, hash_extra_groestl, hash_extra_jh, hash_extra_skein);
 
 	//int aesb_single_round(ushort in, ushort @out, ushort expandedKey);Tangible Method Implementation Not Found-aesb_single_round
 	//int aesb_pseudo_round(ushort in, ushort @out, ushort expandedKey);Tangible Method Implementation Not Found-aesb_pseudo_round
 
-	internal static size_t e2i(ushort a, size_t count)
+	internal static uint e2i(ushort a, uint count)
 	{
 		return ((ulong)a / DefineConstants.AES_BLOCK_SIZE) & (count - 1);
 	}
@@ -17484,7 +17486,7 @@ private static int check_aes_hw_supported = -1;
 
 	internal static void xor_blocks(ushort[] a, ushort[] b)
 	{
-	  size_t i = new size_t();
+	  uint i = new uint();
 	  for (i = 0; i < DefineConstants.AES_BLOCK_SIZE; i++)
 	  {
 		a[i] ^= b[i];
@@ -17493,7 +17495,7 @@ private static int check_aes_hw_supported = -1;
 
 	internal static void xor64(ushort[] left, ushort[] right)
 	{
-	  size_t i = new size_t();
+	  uint i = new uint();
 	  for (i = 0; i < 8; ++i)
 	  {
 		left[i] ^= right[i];
@@ -17510,11 +17512,11 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent to most C++ 'pragma' directives in C#:
 	//#pragma pack(pop)
 
-	public static void cn_slow_hash(object data, size_t length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
+	public static void cn_slow_hash(object data, uint length, ref string hash, int light, int variant, int prehashed, uint PAGE_SIZE, uint scratchpad, uint iterations)
 	{
 	  uint init_rounds = (scratchpad / (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
 	  uint aes_rounds = (iterations / 2);
-	  size_t aes_init = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
+	  uint aes_init = (PAGE_SIZE / DefineConstants.AES_BLOCK_SIZE);
 
 	#if ! FORCE_USE_HEAP
 	  ushort[] long_state = Arrays.InitializeWithDefaultInstances<ushort>(PAGE_SIZE);
@@ -17530,8 +17532,8 @@ private static int check_aes_hw_supported = -1;
 	  ushort[] c1 = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
 	  ushort[] c2 = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
 	  ushort[] d = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_BLOCK_SIZE);
-	  size_t i = new size_t();
-	  size_t j = new size_t();
+	  uint i = new uint();
+	  uint j = new uint();
 	  ushort[] aes_key = Arrays.InitializeWithDefaultInstances<ushort>(DefineConstants.AES_KEY_SIZE);
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  oaes_ctx aes_ctx;
@@ -17543,7 +17545,7 @@ private static int check_aes_hw_supported = -1;
 	  }
 	  else
 	  {
-		hash_process(state.hs, data, new size_t(length));
+		hash_process(state.hs, data, new uint(length));
 	  }
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 	  memcpy(text, state.init, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE));
@@ -17615,7 +17617,7 @@ private static int check_aes_hw_supported = -1;
 		/* Iteration 1 */
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: j = e2i(a, aes_init);
-		j.CopyFrom(e2i(a, new size_t(aes_init)));
+		j.CopyFrom(e2i(a, new uint(aes_init)));
 		copy_block(c1, long_state[j]);
 		aesb_single_round(c1, c1, a);
 		do
@@ -17702,10 +17704,10 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER TODO TASK: The #define macro 'mul' was defined in multiple preprocessor conditionals and cannot be replaced in-line:
 	//C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
-		assert(j == e2i(a, new size_t(aes_init)); do if (variant == 1) {const ushort tmp = ((const ushort*)(long_state[j]))[11]; static const uint table = 0x75310; const ushort index = (((tmp >> 3) & 6) | (tmp & 1)) << 1; ((ushort*)(long_state[j]))[11] = tmp ^ ((table >> index) & 0x30);} while (0); j = e2i(c1, new size_t(aes_init)); copy_block(c2, long_state[j]); VARIANT2_PORTABLE_INTEGER_MATH(c2, c1); mul(c1, c2, d); if (variant == 2) {xor_blocks(long_state + (j ^ 0x10), d); xor_blocks(d, long_state + (j ^ 0x20));}; do if (variant == 2)
+		assert(j == e2i(a, new uint(aes_init)); do if (variant == 1) {const ushort tmp = ((const ushort*)(long_state[j]))[11]; static const uint table = 0x75310; const ushort index = (((tmp >> 3) & 6) | (tmp & 1)) << 1; ((ushort*)(long_state[j]))[11] = tmp ^ ((table >> index) & 0x30);} while (0); j = e2i(c1, new uint(aes_init)); copy_block(c2, long_state[j]); VARIANT2_PORTABLE_INTEGER_MATH(c2, c1); mul(c1, c2, d); if (variant == 2) {xor_blocks(long_state + (j ^ 0x10), d); xor_blocks(d, long_state + (j ^ 0x20));}; do if (variant == 2)
 		{
 			ulong * chunk1 = ((ulong *)((long_state) + ((j) ^ 0x10))); ulong * chunk2 = ((ulong *)((long_state) + ((j) ^ 0x20))); ulong * chunk3 = ((ulong *)((long_state) + ((j) ^ 0x30))); const ulong chunk1_old[2] = {chunk1[0], chunk1[1]}; ulong b1[2]; memcpy(b1, b + 16, 16); chunk1[0] = chunk3[0] + b1[0]; chunk1[1] = chunk3[1] + b1[1]; ulong a0[2]; memcpy(a0, a, 16); chunk3[0] = chunk2[0] + a0[0]; chunk3[1] = chunk2[1] + a0[1]; ulong b0[2]; memcpy(b0, b, 16); chunk2[0] = chunk1_old[0] + b0[0]; chunk2[1] = chunk1_old[1] + b0[1];
-		} while (0); swap_blocks(a, c1); sum_half_blocks(c1, d); swap_blocks(c1, c2); xor_blocks(c1, c2); do if(variant == 1) { xor64(c2 + 8, tweak1_2); } while(0); copy_block(long_state[j], c2); assert(j == e2i(a, new size_t(aes_init)); if(variant == 2) { copy_block(b + DefineConstants.AES_BLOCK_SIZE, b); } copy_block(b, a); copy_block(a, c1);
+		} while (0); swap_blocks(a, c1); sum_half_blocks(c1, d); swap_blocks(c1, c2); xor_blocks(c1, c2); do if(variant == 1) { xor64(c2 + 8, tweak1_2); } while(0); copy_block(long_state[j], c2); assert(j == e2i(a, new uint(aes_init)); if(variant == 2) { copy_block(b + DefineConstants.AES_BLOCK_SIZE, b); } copy_block(b, a); copy_block(a, c1);
 		}
 		memcpy(text, state.init, (DefineConstants.INIT_SIZE_BLK * DefineConstants.AES_BLOCK_SIZE)); oaes_key_import_data(aes_ctx, state.hs.b[32], DefineConstants.AES_KEY_SIZE); for (i = 0; i < init_rounds; i++)
 		{
@@ -17812,7 +17814,7 @@ private static int check_aes_hw_supported = -1;
 	//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 	//ORIGINAL LINE: #define memcpy_swap64le memcpy_swap64
 
-	public static void tree_hash(string[](*hashes), size_t count, ref string root_hash)
+	public static void tree_hash(string[](*hashes), uint count, ref string root_hash)
 	{
 	  Debug.Assert(count > 0);
 	  if (count == 1)
@@ -17826,11 +17828,11 @@ private static int check_aes_hw_supported = -1;
 	  }
 	  else
 	  {
-		size_t i = new size_t();
-		size_t j = new size_t();
-		size_t cnt = count - 1;
+		uint i = new uint();
+		uint j = new uint();
+		uint cnt = count - 1;
 		string ints = new string(new char[(int)AnonymousEnum.HASH_SIZE]);
-		for (i = 1; i < 8 * sizeof(size_t); i <<= 1)
+		for (i = 1; i < 8 * sizeof(uint); i <<= 1)
 		{
 		  cnt |= cnt >> i;
 		}
@@ -17856,12 +17858,12 @@ private static int check_aes_hw_supported = -1;
 	  }
 	}
 
-	public static size_t tree_depth(size_t count)
+	public static uint tree_depth(uint count)
 	{
-	  size_t i = new size_t();
-	  size_t depth = 0;
+	  uint i = new uint();
+	  uint depth = 0;
 	  Debug.Assert(count > 0);
-	  for (i = sizeof(size_t) << 2; i > 0; i >>= 1)
+	  for (i = sizeof(uint) << 2; i > 0; i >>= 1)
 	  {
 		if (count >> i > 0)
 		{
@@ -17872,15 +17874,15 @@ private static int check_aes_hw_supported = -1;
 	  return depth;
 	}
 
-	public static void tree_branch(string[](*hashes), size_t count, string branch)
+	public static void tree_branch(string[](*hashes), uint count, string branch)
 	{
-	  size_t i = new size_t();
-	  size_t j = new size_t();
-	  size_t cnt = 1;
-	  size_t depth = 0;
+	  uint i = new uint();
+	  uint j = new uint();
+	  uint cnt = 1;
+	  uint depth = 0;
 	  string ints = new string(new char[(int)AnonymousEnum.HASH_SIZE]);
 	  Debug.Assert(count > 0);
-	  for (i = sizeof(size_t) << 2; i > 0; i >>= 1)
+	  for (i = sizeof(uint) << 2; i > 0; i >>= 1)
 	  {
 		if (cnt << i <= count)
 		{
@@ -17889,7 +17891,7 @@ private static int check_aes_hw_supported = -1;
 		}
 	  }
 	  Debug.Assert(cnt == 1UL << depth);
-	  Debug.Assert(depth == tree_depth(new size_t(count)));
+	  Debug.Assert(depth == tree_depth(new uint(count)));
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'alloca' has no equivalent in C#:
 	  ints = alloca((cnt - 1) * AnonymousEnum.HASH_SIZE);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
@@ -17913,7 +17915,7 @@ private static int check_aes_hw_supported = -1;
 	  }
 	}
 
-	public static void tree_hash_from_branch(string[](*branch), size_t depth, string leaf, object path, ref string root_hash)
+	public static void tree_hash_from_branch(string[](*branch), uint depth, string leaf, object path, ref string root_hash)
 	{
 	  if (depth == 0)
 	  {
@@ -18323,7 +18325,7 @@ private static int check_aes_hw_supported = -1;
 	#endif
 
 
-	  public static void derivePublicKey(AccountPublicAddress to, SecretKey txKey, size_t outputIndex, PublicKey ephemeralKey)
+	  public static void derivePublicKey(AccountPublicAddress to, SecretKey txKey, uint outputIndex, PublicKey ephemeralKey)
 	  {
 		KeyDerivation derivation = new KeyDerivation();
 		generate_key_derivation(to.viewPublicKey, txKey, derivation);
@@ -19507,14 +19509,14 @@ private static int check_aes_hw_supported = -1;
 	public static readonly uint LEVIN_DEFAULT_MAX_PACKET_SIZE = 100000000; //100MB by default
 	public static readonly uint LEVIN_PROTOCOL_VER_1 = 1;
 
-	public static size_t get_random_index_with_fixed_probability(size_t max_index)
+	public static uint get_random_index_with_fixed_probability(uint max_index)
 	{
 	  //divide by zero workaround
 	  if (max_index == null)
 	  {
 		return 0;
 	  }
-	  size_t x = Crypto.GlobalMembers.rand<size_t>() % (max_index + 1);
+	  uint x = Crypto.GlobalMembers.rand<uint>() % (max_index + 1);
 	  return (x * x * x) / (max_index * max_index); //parabola \/
 	}
 
@@ -19912,7 +19914,7 @@ private delegate void funcDelegate();
 	  for (uint idx = 0; idx < outputCount; ++idx)
 	  {
 
-		var outType = tx.getOutputType(size_t(idx));
+		var outType = tx.getOutputType(uint(idx));
 
 		if (outType == CryptoNote.TransactionTypes.OutputType.Key)
 		{
@@ -27419,7 +27421,7 @@ namespace Crypto
 	public static class GlobalMembers
 	{
 //C++ TO C# CONVERTER TODO TASK: Pointer arithmetic is detected on the parameter 'cipher', so pointers on this parameter are left unchanged:
-		public static void chacha8(object data, size_t length, ushort key, ushort iv, char * cipher)
+		public static void chacha8(object data, uint length, ushort key, ushort iv, char * cipher)
 		{
 		  uint x0 = new uint();
 		  uint x1 = new uint();
@@ -27778,10 +27780,10 @@ namespace Crypto
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
 	//  static_assert(sizeof(chacha8_key) == DefineConstants.CHACHA8_KEY_SIZE && sizeof(chacha8_iv) == DefineConstants.CHACHA8_IV_SIZE, "Invalid structure size");
 
-	  public static void chacha8(object data, size_t length, chacha8_key key, chacha8_iv iv, ref string cipher)
+	  public static void chacha8(object data, uint length, chacha8_key key, chacha8_iv iv, ref string cipher)
 	  {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-		chacha8(data, new size_t(length), reinterpret_cast<const ushort>(key), reinterpret_cast<const ushort>(iv), ref cipher);
+		chacha8(data, new uint(length), reinterpret_cast<const ushort>(key), reinterpret_cast<const ushort>(iv), ref cipher);
 	  }
 
 	  public static void generate_chacha8_key(string password, chacha8_key key)
@@ -27814,7 +27816,7 @@ namespace Crypto
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <typename T>
 
-	  public static void derive_secret_key(KeyDerivation derivation, uint output_index, SecretKey @base, ushort prefix, size_t prefixLength, SecretKey derived_key)
+	  public static void derive_secret_key(KeyDerivation derivation, uint output_index, SecretKey @base, ushort prefix, uint prefixLength, SecretKey derived_key)
 	  {
 		crypto_ops.derive_secret_key(derivation, output_index, @base, prefix, prefixLength, derived_key);
 	  }
@@ -27831,9 +27833,9 @@ namespace Crypto
 
 	  /* Variants with vector<const PublicKey *> parameters.
 	   */
-	  public static void generate_ring_signature(Hash prefix_hash, KeyImage image, List<const PublicKey > pubs, SecretKey sec, size_t sec_index, Signature sig)
+	  public static void generate_ring_signature(Hash prefix_hash, KeyImage image, List<const PublicKey > pubs, SecretKey sec, uint sec_index, Signature sig)
 	  {
-		generate_ring_signature(prefix_hash, image, pubs.data(), pubs.Count, sec, new size_t(sec_index), sig);
+		generate_ring_signature(prefix_hash, image, pubs.data(), pubs.Count, sec, new uint(sec_index), sig);
 	  }
 	  public static bool check_ring_signature(Hash prefix_hash, KeyImage image, List<const PublicKey > pubs, Signature sig, bool checkKeyImage)
 	  {
@@ -27850,11 +27852,11 @@ namespace Crypto
 			return memcmp(_v1, _v2, sizeof(PublicKey)) != 0;
 		}
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
-	//	static_assert(sizeof(size_t) <= sizeof(PublicKey), "Size of " "PublicKey" " must be at least that of size_t");
-		public static size_t hash_value(PublicKey _v)
+	//	static_assert(sizeof(uint) <= sizeof(PublicKey), "Size of " "PublicKey" " must be at least that of uint");
+		public static uint hash_value(PublicKey _v)
 		{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-			return reinterpret_cast<const size_t &>(_v);
+			return reinterpret_cast<const uint &>(_v);
 		}
 		public static bool operator == (KeyImage _v1, KeyImage _v2)
 		{
@@ -27867,11 +27869,11 @@ namespace Crypto
 			return memcmp(_v1, _v2, sizeof(KeyImage)) != 0;
 		}
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
-	//	static_assert(sizeof(size_t) <= sizeof(KeyImage), "Size of " "KeyImage" " must be at least that of size_t");
-		public static size_t hash_value(KeyImage _v)
+	//	static_assert(sizeof(uint) <= sizeof(KeyImage), "Size of " "KeyImage" " must be at least that of uint");
+		public static uint hash_value(KeyImage _v)
 		{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-			return reinterpret_cast<const size_t &>(_v);
+			return reinterpret_cast<const uint &>(_v);
 		}
 		public static bool operator == (Signature _v1, Signature _v2)
 		{
@@ -27906,47 +27908,47 @@ namespace Crypto
 		memcpy(res, tmp, 32);
 	  }
 
-	  internal static void hash_to_scalar(object data, size_t length, EllipticCurveScalar res)
+	  internal static void hash_to_scalar(object data, uint length, EllipticCurveScalar res)
 	  {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-		cn_fast_hash(data, new size_t(length), reinterpret_cast<Hash &>(res));
+		cn_fast_hash(data, new uint(length), reinterpret_cast<Hash &>(res));
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 		sc_reduce32(reinterpret_cast<byte>(res));
 	  }
 
-	  internal static void derivation_to_scalar(KeyDerivation derivation, size_t output_index, EllipticCurveScalar res)
+	  internal static void derivation_to_scalar(KeyDerivation derivation, uint output_index, EllipticCurveScalar res)
 	  {
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	struct
 	//	{
 	//	  KeyDerivation derivation;
-	//	  char output_index[(sizeof(size_t) * 8 + 6) / 7];
+	//	  char output_index[(sizeof(uint) * 8 + 6) / 7];
 	//	}
 	//	buf;
 		string end = buf.output_index;
 		buf.derivation = derivation;
-		Tools.GlobalMembers.write_varint(end, new size_t(output_index));
+		Tools.GlobalMembers.write_varint(end, new uint(output_index));
 		Debug.Assert(end <= buf.output_index + sizeof (buf.output_index));
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 		hash_to_scalar(buf, end - reinterpret_cast<char>(buf), res);
 	  }
 
-	  internal static void derivation_to_scalar(KeyDerivation derivation, size_t output_index, ushort suffix, size_t suffixLength, EllipticCurveScalar res)
+	  internal static void derivation_to_scalar(KeyDerivation derivation, uint output_index, ushort suffix, uint suffixLength, EllipticCurveScalar res)
 	  {
 		Debug.Assert(suffixLength <= 32);
 //C++ TO C# CONVERTER TODO TASK: C# does not allow declaring types within methods:
 	//	struct
 	//	{
 	//	  KeyDerivation derivation;
-	//	  char output_index[(sizeof(size_t) * 8 + 6) / 7 + 32];
+	//	  char output_index[(sizeof(uint) * 8 + 6) / 7 + 32];
 	//	}
 	//	buf;
 		string end = buf.output_index;
 		buf.derivation = derivation;
-		Tools.GlobalMembers.write_varint(end, new size_t(output_index));
+		Tools.GlobalMembers.write_varint(end, new uint(output_index));
 		Debug.Assert(end <= buf.output_index + sizeof (buf.output_index));
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-		size_t bufSize = end - reinterpret_cast<char>(buf);
+		uint bufSize = end - reinterpret_cast<char>(buf);
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'memcpy' has no equivalent in C#:
 		memcpy(end, suffix, suffixLength);
 		hash_to_scalar(buf, bufSize + suffixLength, res);
@@ -27969,7 +27971,7 @@ namespace Crypto
 	//#pragma warning(disable: 4200)
 	#endif
 
-	  internal static size_t rs_comm_size(size_t pubs_count)
+	  internal static uint rs_comm_size(uint pubs_count)
 	  {
 		return sizeof(rs_comm) + pubs_count * sizeof(Crypto.rs_comm.AnonymousClass);
 	  }
@@ -28332,7 +28334,7 @@ namespace CryptoNote
 	  {
 		return a + b < a || (c && a + b == (ulong) - 1);
 	  }
-	public static List<T> preallocateVector<T>(size_t elements)
+	public static List<T> preallocateVector<T>(uint elements)
 	{
 	  List<T> vect = new List<T>();
 	  vect.Capacity = elements;
@@ -28372,7 +28374,7 @@ namespace CryptoNote
 	  return null;
 	}
 
-	public static size_t getMaximumTransactionAllowedSize(size_t blockSizeMedian, Currency currency)
+	public static uint getMaximumTransactionAllowedSize(uint blockSizeMedian, Currency currency)
 	{
 	  Debug.Assert(blockSizeMedian * 2 > currency.minerTxBlobReservedSize());
 
@@ -28446,7 +28448,7 @@ namespace CryptoNote
 	  var blocksSizeMedian = Common.GlobalMembers.medianValue(lastBlocksSizes);
 	  if (!currency.getBlockReward(new ushort(cachedBlock.getBlock().majorVersion), blocksSizeMedian, new ulong(cumulativeSize), new ulong(alreadyGeneratedCoins), new ulong(cumulativeFee), reward, emissionChange))
 	  {
-		throw std::system_error(error.GlobalMembers.make_error_code(error.BlockValidationError.CUMULATIVE_BLOCK_SIZE_TOO_BIG));
+		throw std::system_error(error.GlobalMembers.make_error_code(error.BlockValidationError.CUMULATIVE_BLOCK_uintOO_BIG));
 	  }
 
 	  return emissionChange;
@@ -28508,10 +28510,10 @@ namespace CryptoNote
 	  /************************************************************************/
 	  /* CryptoNote helper functions                                          */
 	  /************************************************************************/
-	  public static ulong getPenalizedAmount(ulong amount, size_t medianSize, size_t currentBlockSize)
+	  public static ulong getPenalizedAmount(ulong amount, uint medianSize, uint currentBlockSize)
 	  {
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
-	//	static_assert(sizeof(size_t) >= sizeof(uint), "size_t is too small");
+	//	static_assert(sizeof(uint) >= sizeof(uint), "uint is too small");
 		Debug.Assert(currentBlockSize <= 2 * medianSize);
 		Debug.Assert(medianSize <= uint.MaxValue);
 		Debug.Assert(currentBlockSize <= uint.MaxValue);
@@ -28643,7 +28645,7 @@ namespace CryptoNote
 		in_contexts.Add(input_generation_context_data());
 		KeyPair in_ephemeral = in_contexts[in_contexts.Count - 1].in_ephemeral;
 		KeyImage img = new KeyImage();
-		if (!generate_key_image_helper(sender_account_keys, src_entr.realTransactionPublicKey, new size_t(src_entr.realOutputIndexInTransaction), in_ephemeral, img))
+		if (!generate_key_image_helper(sender_account_keys, src_entr.realTransactionPublicKey, new uint(src_entr.realOutputIndexInTransaction), in_ephemeral, img))
 		{
 		  return false;
 		}
@@ -28682,7 +28684,7 @@ namespace CryptoNote
 
 	  ulong summary_outs_money = 0;
 	  //fill outputs
-	  size_t output_index = 0;
+	  uint output_index = 0;
 	  foreach (TransactionDestinationEntry dst_entr in shuffled_dsts)
 	  {
 		if (!(dst_entr.amount > 0))
@@ -28728,7 +28730,7 @@ namespace CryptoNote
 	  Hash tx_prefix_hash = new Hash();
 	  getObjectHash(*(TransactionPrefix)tx, ref tx_prefix_hash);
 
-	  size_t i = 0;
+	  uint i = 0;
 	  foreach (TransactionSourceEntry src_entr in sources)
 	  {
 		List<PublicKey> keys_ptrs = new List<PublicKey>();
@@ -28741,7 +28743,7 @@ namespace CryptoNote
 		tx.signatures.push_back(new List<Signature>());
 		List<Signature> sigs = tx.signatures.back();
 		sigs.Resize(src_entr.outputs.Count);
-		Crypto.GlobalMembers.generate_ring_signature(tx_prefix_hash, boost::get<KeyInput>(tx.inputs[i]).keyImage, keys_ptrs, in_contexts[i].in_ephemeral.secretKey, new size_t(src_entr.realOutput), sigs.data());
+		Crypto.GlobalMembers.generate_ring_signature(tx_prefix_hash, boost::get<KeyInput>(tx.inputs[i]).keyImage, keys_ptrs, in_contexts[i].in_ephemeral.secretKey, new uint(src_entr.realOutput), sigs.data());
 		i++;
 	  }
 
@@ -28749,23 +28751,23 @@ namespace CryptoNote
 	}
 
 
-	public static bool is_out_to_acc(AccountKeys acc, KeyOutput out_key, PublicKey tx_pub_key, size_t keyIndex)
+	public static bool is_out_to_acc(AccountKeys acc, KeyOutput out_key, PublicKey tx_pub_key, uint keyIndex)
 	{
 	  KeyDerivation derivation = new KeyDerivation();
 	  generate_key_derivation(tx_pub_key, acc.viewSecretKey, derivation);
-	  return is_out_to_acc(acc, out_key, derivation, new size_t(keyIndex));
+	  return is_out_to_acc(acc, out_key, derivation, new uint(keyIndex));
 	}
-	public static bool is_out_to_acc(AccountKeys acc, KeyOutput out_key, KeyDerivation derivation, size_t keyIndex)
+	public static bool is_out_to_acc(AccountKeys acc, KeyOutput out_key, KeyDerivation derivation, uint keyIndex)
 	{
 	  PublicKey pk = new PublicKey();
 	  derive_public_key(derivation, keyIndex, acc.address.spendPublicKey, pk);
 	  return pk == out_key.key;
 	}
-	public static bool lookup_acc_outs(AccountKeys acc, Transaction tx, PublicKey tx_pub_key, List<size_t> outs, ref ulong money_transfered)
+	public static bool lookup_acc_outs(AccountKeys acc, Transaction tx, PublicKey tx_pub_key, List<uint> outs, ref ulong money_transfered)
 	{
 	  money_transfered = 0;
-	  size_t keyIndex = 0;
-	  size_t outputIndex = 0;
+	  uint keyIndex = 0;
+	  uint outputIndex = 0;
 
 	  KeyDerivation derivation = new KeyDerivation();
 	  generate_key_derivation(tx_pub_key, acc.viewSecretKey, derivation);
@@ -28777,7 +28779,7 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
 		if (o.target.type() == typeid(KeyOutput))
 		{
-		  if (is_out_to_acc(acc, boost::get<KeyOutput>(o.target), derivation, new size_t(keyIndex)))
+		  if (is_out_to_acc(acc, boost::get<KeyOutput>(o.target), derivation, new uint(keyIndex)))
 		  {
 			outs.Add(outputIndex);
 			money_transfered += o.amount;
@@ -28790,7 +28792,7 @@ namespace CryptoNote
 	  }
 	  return true;
 	}
-	public static bool lookup_acc_outs(AccountKeys acc, Transaction tx, List<size_t> outs, ulong money_transfered)
+	public static bool lookup_acc_outs(AccountKeys acc, Transaction tx, List<uint> outs, ulong money_transfered)
 	{
 	  PublicKey transactionPublicKey = getTransactionPublicKeyFromExtra(tx.extra);
 	  if (transactionPublicKey == NULL_PUBLIC_KEY)
@@ -28835,7 +28837,7 @@ namespace CryptoNote
 	  }
 	  return r;
 	}
-	public static bool generate_key_image_helper(AccountKeys ack, PublicKey tx_public_key, size_t real_output_index, KeyPair in_ephemeral, KeyImage ki)
+	public static bool generate_key_image_helper(AccountKeys ack, PublicKey tx_public_key, uint real_output_index, KeyPair in_ephemeral, KeyImage ki)
 	{
 	  KeyDerivation recv_derivation = new KeyDerivation();
 	  bool r = generate_key_derivation(tx_public_key, ack.viewSecretKey, recv_derivation);
@@ -28856,7 +28858,7 @@ namespace CryptoNote
 		return false;
 	  }
 
-	  Crypto.GlobalMembers.derive_secret_key(recv_derivation, new size_t(real_output_index), ack.spendSecretKey, in_ephemeral.secretKey);
+	  Crypto.GlobalMembers.derive_secret_key(recv_derivation, new uint(real_output_index), ack.spendSecretKey, in_ephemeral.secretKey);
 	  generate_key_image(in_ephemeral.publicKey, in_ephemeral.secretKey, ki);
 	  return true;
 	}
@@ -28994,7 +28996,7 @@ namespace CryptoNote
 	public static List<uint> relativeOutputOffsetsToAbsolute(List<uint> off)
 	{
 	  List<uint> res = new List(off);
-	  for (size_t i = 1; i < res.Count; i++)
+	  for (uint i = 1; i < res.Count; i++)
 	  {
 		res[i] += res[i - 1];
 	  }
@@ -29007,7 +29009,7 @@ namespace CryptoNote
 		  return new List<uint>();
 	  }
 	  var copy = off;
-	  for (size_t i = 1; i < copy.Count; ++i)
+	  for (uint i = 1; i < copy.Count; ++i)
 	  {
 		copy[i] = off[i] - off[i - 1];
 	  }
@@ -29536,12 +29538,12 @@ namespace CryptoNote
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<class T>
-	public static bool getObjectBinarySize<T>(T @object, ref size_t size)
+	public static bool getObjectBinarySize<T>(T @object, ref uint size)
 	{
 	  BinaryArray ba = new BinaryArray();
 	  if (!toBinaryArray(@object, ref ba))
 	  {
-		size = (numeric_limits<size_t>.max)();
+		size = (numeric_limits<uint>.max)();
 		return false;
 	  }
 
@@ -29551,9 +29553,9 @@ namespace CryptoNote
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<class T>
-	public static size_t getObjectBinarySize<T>(T @object)
+	public static uint getObjectBinarySize<T>(T @object)
 	{
-	  size_t size = new size_t();
+	  uint size = new uint();
 	  getObjectBinarySize(@object, ref size);
 	  return size;
 	}
@@ -29575,13 +29577,13 @@ namespace CryptoNote
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<class T>
-	public static bool getObjectHash<T>(T @object, ref Crypto.Hash hash, ref size_t size)
+	public static bool getObjectHash<T>(T @object, ref Crypto.Hash hash, ref uint size)
 	{
 	  BinaryArray ba = new BinaryArray();
 	  if (!toBinaryArray(@object, ref ba))
 	  {
 		hash = NULL_HASH;
-		size = (numeric_limits<size_t>.max)();
+		size = (numeric_limits<uint>.max)();
 		return false;
 	  }
 
@@ -29949,7 +29951,7 @@ namespace CryptoNote
 	  return blockTemplate.baseTransaction;
 	}
 
-	public static size_t requestPaymentIdTransactionsCount(IDataBase database, Crypto.Hash paymentId)
+	public static uint requestPaymentIdTransactionsCount(IDataBase database, Crypto.Hash paymentId)
 	{
 	  var batch = BlockchainReadBatch().requestTransactionCountByPaymentId(paymentId);
 	  var error = database.read(batch);
@@ -30072,7 +30074,7 @@ namespace CryptoNote
 	  }
 	}
 
-	public static void cutTail(LinkedList<CachedBlockInfo> cache, size_t count)
+	public static void cutTail(LinkedList<CachedBlockInfo> cache, uint count)
 	{
 	  if (count >= cache.Count)
 	  {
@@ -30104,23 +30106,23 @@ namespace CryptoNote
 	  return storage;
 	}
 
-	public static readonly size_t STORAGE_CACHE_SIZE = 100;
+	public static readonly uint STORAGE_CACHE_SIZE = 100;
 
 	//bool checkInputsKeyimagesDiff(CryptoNote::TransactionPrefix tx);Tangible Method Implementation Not FoundCryptoNote-checkInputsKeyimagesDiff
 
 	// TransactionInput helper functions
-	//size_t getRequiredSignaturesCount(boost::variant<BaseInput, KeyInput> in);Tangible Method Implementation Not FoundCryptoNote-getRequiredSignaturesCount
+	//uint getRequiredSignaturesCount(boost::variant<BaseInput, KeyInput> in);Tangible Method Implementation Not FoundCryptoNote-getRequiredSignaturesCount
 	//ulong getTransactionInputAmount(boost::variant<BaseInput, KeyInput> in);Tangible Method Implementation Not FoundCryptoNote-getTransactionInputAmount
 	//TransactionTypes::InputType getTransactionInputType(boost::variant<BaseInput, KeyInput> in);Tangible Method Implementation Not FoundCryptoNote-getTransactionInputType
-	//boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote::TransactionPrefix transaction, size_t index);Tangible Method Implementation Not FoundCryptoNote-getInputChecked
-	//boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote::TransactionPrefix transaction, size_t index, TransactionTypes::InputType type);Tangible Method Implementation Not FoundCryptoNote-getInputChecked
+	//boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote::TransactionPrefix transaction, uint index);Tangible Method Implementation Not FoundCryptoNote-getInputChecked
+	//boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote::TransactionPrefix transaction, uint index, TransactionTypes::InputType type);Tangible Method Implementation Not FoundCryptoNote-getInputChecked
 
-	//bool isOutToKey(Crypto::PublicKey spendPublicKey, Crypto::PublicKey outKey, Crypto::KeyDerivation derivation, size_t keyIndex);Tangible Method Implementation Not FoundCryptoNote-isOutToKey
+	//bool isOutToKey(Crypto::PublicKey spendPublicKey, Crypto::PublicKey outKey, Crypto::KeyDerivation derivation, uint keyIndex);Tangible Method Implementation Not FoundCryptoNote-isOutToKey
 
 	// TransactionOutput helper functions
 	//TransactionTypes::OutputType getTransactionOutputType(boost::variant<KeyOutput> @out);Tangible Method Implementation Not FoundCryptoNote-getTransactionOutputType
-	//TransactionOutput getOutputChecked(CryptoNote::TransactionPrefix transaction, size_t index);Tangible Method Implementation Not FoundCryptoNote-getOutputChecked
-	//TransactionOutput getOutputChecked(CryptoNote::TransactionPrefix transaction, size_t index, TransactionTypes::OutputType type);Tangible Method Implementation Not FoundCryptoNote-getOutputChecked
+	//TransactionOutput getOutputChecked(CryptoNote::TransactionPrefix transaction, uint index);Tangible Method Implementation Not FoundCryptoNote-getOutputChecked
+	//TransactionOutput getOutputChecked(CryptoNote::TransactionPrefix transaction, uint index, TransactionTypes::OutputType type);Tangible Method Implementation Not FoundCryptoNote-getOutputChecked
 
 	//bool findOutputsToAccount(CryptoNote::TransactionPrefix transaction, AccountPublicAddress addr, Crypto::SecretKey viewSecretKey, ClassicVector<uint> @out, ulong amount);Tangible Method Implementation Not FoundCryptoNote-findOutputsToAccount
 
@@ -30195,7 +30197,7 @@ namespace CryptoNote
 
 			seen_tx_extra_tag_padding = true;
 
-			size_t size = 1;
+			uint size = 1;
 			for (; !iss.endOfStream() && size <= DefineConstants.TX_EXTRA_PADDING_MAX_COUNT; ++size)
 			{
 			  if (Common.GlobalMembers.read<ushort>(iss) != 0)
@@ -30316,7 +30318,7 @@ namespace CryptoNote
 		return false;
 	  }
 
-	  size_t start_pos = tx_extra.Count;
+	  uint start_pos = tx_extra.Count;
 	  tx_extra.Resize(tx_extra.Count + 2 + extra_nonce.size());
 	  //write tag
 	  tx_extra[start_pos] = DefineConstants.TX_EXTRA_NONCE;
@@ -30473,7 +30475,7 @@ namespace CryptoNote
 
 
 	// TransactionInput helper functions
-	public static size_t getRequiredSignaturesCount(boost::variant<BaseInput, KeyInput> in)
+	public static uint getRequiredSignaturesCount(boost::variant<BaseInput, KeyInput> in)
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
 	  if (in.type() == typeid(KeyInput))
@@ -30509,7 +30511,7 @@ namespace CryptoNote
 
 	  return TransactionTypes.InputType.Invalid;
 	}
-	public static boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote.TransactionPrefix transaction, size_t index)
+	public static boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote.TransactionPrefix transaction, uint index)
 	{
 	  if (transaction.inputs.Count <= index)
 	  {
@@ -30518,9 +30520,9 @@ namespace CryptoNote
 
 	  return transaction.inputs[index];
 	}
-	public static boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote.TransactionPrefix transaction, size_t index, TransactionTypes.InputType type)
+	public static boost::variant<BaseInput, KeyInput> getInputChecked(CryptoNote.TransactionPrefix transaction, uint index, TransactionTypes.InputType type)
 	{
-	  auto input = getInputChecked(transaction, new size_t(index));
+	  auto input = getInputChecked(transaction, new uint(index));
 	  if (getTransactionInputType(input) != type)
 	  {
 		throw new System.Exception("Unexpected transaction input type");
@@ -30529,7 +30531,7 @@ namespace CryptoNote
 	  return input;
 	}
 
-	public static bool isOutToKey(Crypto.PublicKey spendPublicKey, Crypto.PublicKey outKey, Crypto.KeyDerivation derivation, size_t keyIndex)
+	public static bool isOutToKey(Crypto.PublicKey spendPublicKey, Crypto.PublicKey outKey, Crypto.KeyDerivation derivation, uint keyIndex)
 	{
 	  Crypto.PublicKey pk = new Crypto.PublicKey();
 	  derive_public_key(derivation, keyIndex, spendPublicKey, pk);
@@ -30550,7 +30552,7 @@ namespace CryptoNote
 
 	  return TransactionTypes.OutputType.Invalid;
 	}
-	public static TransactionOutput getOutputChecked(CryptoNote.TransactionPrefix transaction, size_t index)
+	public static TransactionOutput getOutputChecked(CryptoNote.TransactionPrefix transaction, uint index)
 	{
 	  if (transaction.outputs.Count <= index)
 	  {
@@ -30559,9 +30561,9 @@ namespace CryptoNote
 
 	  return transaction.outputs[index];
 	}
-	public static TransactionOutput getOutputChecked(CryptoNote.TransactionPrefix transaction, size_t index, TransactionTypes.OutputType type)
+	public static TransactionOutput getOutputChecked(CryptoNote.TransactionPrefix transaction, uint index, TransactionTypes.OutputType type)
 	{
-	  auto output = getOutputChecked(transaction, new size_t(index));
+	  auto output = getOutputChecked(transaction, new uint(index));
 	  if (getTransactionOutputType(output.target) != type)
 	  {
 		throw new System.Exception("Unexpected transaction output target type");
@@ -30582,7 +30584,7 @@ namespace CryptoNote
 	  Crypto.PublicKey txPubKey = getTransactionPublicKeyFromExtra(transaction.extra);
 
 	  amount = 0;
-	  size_t keyIndex = 0;
+	  uint keyIndex = 0;
 	  uint outputIndex = 0;
 
 	  Crypto.KeyDerivation derivation = new Crypto.KeyDerivation();
@@ -30595,7 +30597,7 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: There is no C# equivalent to the classic C++ 'typeid' operator:
 		if (o.target.type() == typeid(KeyOutput))
 		{
-		  if (is_out_to_acc(keys, boost::get<KeyOutput>(o.target), derivation, new size_t(keyIndex)))
+		  if (is_out_to_acc(keys, boost::get<KeyOutput>(o.target), derivation, new uint(keyIndex)))
 		  {
 			@out.Add(outputIndex);
 			amount += o.amount;
@@ -31271,7 +31273,7 @@ namespace CryptoNote
 
 	public static readonly int LEVIN_PROTOCOL_RETCODE_SUCCESS = 1;
 
-	public static readonly size_t CONCURRENCY_LEVEL = std::thread.hardware_concurrency();
+	public static readonly uint CONCURRENCY_LEVEL = std::thread.hardware_concurrency();
 
 //C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template <class Container>
@@ -31485,8 +31487,8 @@ namespace CryptoNote
 	}
 
 	public static readonly std::chrono.nanoseconds P2P_DEFAULT_CONNECT_INTERVAL = std::chrono.seconds(2);
-	public static readonly size_t P2P_DEFAULT_CONNECT_RANGE = 20;
-	public static readonly size_t P2P_DEFAULT_PEERLIST_GET_TRY_COUNT = 10;
+	public static readonly uint P2P_DEFAULT_CONNECT_RANGE = 20;
+	public static readonly uint P2P_DEFAULT_PEERLIST_GET_TRY_COUNT = 10;
 	public static void invokeJsonCommand<Request, Response>(HttpClient client, string url, Request req, Response res)
 	{
 	  HttpRequest hreq = new HttpRequest();
@@ -31657,7 +31659,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 			"/json_rpc", {std::bind(RpcServer.processJsonRpcRequest, std::placeholders._1, std::placeholders._2, std::placeholders._3), true}
 		}
 	};
-	  public static ulong slow_memmem(object start_buff, size_t buflen, object pat, size_t patlen)
+	  public static ulong slow_memmem(object start_buff, uint buflen, object pat, uint patlen)
 	  {
 		object buf = start_buff;
 		object end = (string)buf + buflen - patlen;
@@ -32223,7 +32225,7 @@ private delegate bool handlerDelegate(Command.request UnnamedParameter, Command.
 			  return std::make_error_code(std::errc.argument_out_of_domain);
 			}
         
-			var outType = tx.getOutputType(size_t(idx));
+			var outType = tx.getOutputType(uint(idx));
         
 			if (outType != CryptoNote.TransactionTypes.OutputType.Key)
 			{
@@ -33218,7 +33220,7 @@ namespace Mnemonics
 		{
 			Crypto.SecretKey key = new Crypto.SecretKey();
 
-			size_t len = words.Count;
+			uint len = words.Count;
 
 			/* Mnemonics must be 25 words long */
 			if (len != 25)
@@ -33258,7 +33260,7 @@ namespace Mnemonics
 
 			List<ushort> data = new List<ushort>();
 
-			for (size_t i = 0; i < words.Count - 1; i += 3)
+			for (uint i = 0; i < words.Count - 1; i += 3)
 			{
 				/* Take the indexes of these three words in the word list */
 				uint w1 = wordIndexes[i];
@@ -33266,7 +33268,7 @@ namespace Mnemonics
 				uint w3 = wordIndexes[i + 2];
 
 				/* Word list length */
-				size_t wlLen = WordList.English.size();
+				uint wlLen = WordList.English.size();
 
 				/* no idea what this does lol */
 				uint val = (uint)(w1 + wlLen * (((wlLen - w1) + w2) % wlLen) + wlLen * wlLen * (((wlLen - w2) + w3) % wlLen));
@@ -33411,7 +33413,7 @@ namespace System
 	//C++ TO C# CONVERTER TODO TASK: There is no equivalent in C# to 'static_assert':
 	//static_assert(Dispatcher::SIZEOF_PTHREAD_MUTEX_T == sizeof(pthread_mutex_t), "invalid pthread mutex size");
 
-	public static readonly size_t STACK_SIZE = 64 * 1024;
+	public static readonly uint STACK_SIZE = 64 * 1024;
 	public static string lastErrorMessage()
 	{
 	  return errorMessage(errno);
@@ -33421,7 +33423,7 @@ namespace System
 	  return "result=" + Convert.ToString(err) + ", " + std::strerror(err);
 	}
 
-	public static readonly size_t STACK_SIZE = 64 * 1024;
+	public static readonly uint STACK_SIZE = 64 * 1024;
 
 	public static string lastErrorMessage()
 	{
@@ -33532,8 +33534,8 @@ namespace System
 	  return this;
 	}
 
-	public static readonly size_t STACK_SIZE = 16384;
-	public static readonly size_t RESERVE_STACK_SIZE = 2097152;
+	public static readonly uint STACK_SIZE = 16384;
+	public static readonly uint RESERVE_STACK_SIZE = 2097152;
 
 	public static string lastErrorMessage()
 	{
@@ -33664,7 +33666,7 @@ namespace System
 	  return this;
 	}
 
-	public static ushort readUint8(string source, ref size_t offset)
+	public static ushort readUint8(string source, ref uint offset)
 	{
 	  if (offset == source.Length || source[offset] < '0' || source[offset] > '9')
 	  {

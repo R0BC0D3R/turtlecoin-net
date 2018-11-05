@@ -223,8 +223,8 @@ public class RocksDBWrapper : IDataBase
 
 	rocksdb.ColumnFamilyOptions fOptions = new rocksdb.ColumnFamilyOptions();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: fOptions.write_buffer_size = static_cast<size_t>(config.getWriteBufferSize());
-	fOptions.write_buffer_size.CopyFrom((size_t)config.getWriteBufferSize());
+//ORIGINAL LINE: fOptions.write_buffer_size = static_cast<uint>(config.getWriteBufferSize());
+	fOptions.write_buffer_size.CopyFrom((uint)config.getWriteBufferSize());
 	// merge two memtables when flushing to L0
 	fOptions.min_write_buffer_number_to_merge = 2;
 	// this means we'll use 50% extra memory in the worst case, but will reduce

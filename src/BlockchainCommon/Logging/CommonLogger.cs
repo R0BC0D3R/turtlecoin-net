@@ -21,10 +21,10 @@ public class CommonLogger : ILogger
 	  string body2 = body;
 	  if (!string.IsNullOrEmpty(pattern))
 	  {
-		size_t insertPos = 0;
+		uint insertPos = 0;
 		if (!string.IsNullOrEmpty(body2) && body2[0] == base.COLOR_DELIMETER)
 		{
-		  size_t delimPos = body2.IndexOf(base.COLOR_DELIMETER, 1);
+		  uint delimPos = body2.IndexOf(base.COLOR_DELIMETER, 1);
 		  if (delimPos != -1)
 		  {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:

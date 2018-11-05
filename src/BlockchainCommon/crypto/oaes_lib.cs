@@ -131,12 +131,12 @@ public delegate int oaes_step_cb(ushort[] state, string step_name, int step_coun
 
 public class _oaes_key
 {
-  public size_t data_len = new size_t();
+  public uint data_len = new uint();
   public ushort[] data;
-  public size_t exp_data_len = new size_t();
+  public uint exp_data_len = new uint();
   public ushort[] exp_data;
-  public size_t num_keys = new size_t();
-  public size_t key_base = new size_t();
+  public uint num_keys = new uint();
+  public uint key_base = new uint();
 }
 
 public class _oaes_ctx

@@ -32,7 +32,7 @@ public class StreamLogger : CommonLogger
 	  {
 		  bool readingText = true;
 	  }
-	  for (size_t charPos = 0; charPos < message.Length; ++charPos)
+	  for (uint charPos = 0; charPos < message.Length; ++charPos)
 	  {
 		if (message[charPos] == base.COLOR_DELIMETER)
 		{

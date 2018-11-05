@@ -56,14 +56,14 @@ public class P2pNodeConfig : NetNodeConfig
 	return connectTimeout;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t getExpectedOutgoingConnectionsCount() const
-  public size_t getExpectedOutgoingConnectionsCount()
+//ORIGINAL LINE: uint getExpectedOutgoingConnectionsCount() const
+  public uint getExpectedOutgoingConnectionsCount()
   {
 	return expectedOutgoingConnectionsCount;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t getWhiteListConnectionsPercent() const
-  public size_t getWhiteListConnectionsPercent()
+//ORIGINAL LINE: uint getWhiteListConnectionsPercent() const
+  public uint getWhiteListConnectionsPercent()
   {
 	return whiteListConnectionsPercent;
   }
@@ -80,14 +80,14 @@ public class P2pNodeConfig : NetNodeConfig
 	return networkId;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t getPeerListConnectRange() const
-  public size_t getPeerListConnectRange()
+//ORIGINAL LINE: uint getPeerListConnectRange() const
+  public uint getPeerListConnectRange()
   {
 	return peerListConnectRange;
   }
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t getPeerListGetTryCount() const
-  public size_t getPeerListGetTryCount()
+//ORIGINAL LINE: uint getPeerListGetTryCount() const
+  public uint getPeerListGetTryCount()
   {
 	return peerListGetTryCount;
   }
@@ -120,13 +120,13 @@ public class P2pNodeConfig : NetNodeConfig
 //ORIGINAL LINE: connectTimeout = timeout;
 	connectTimeout.CopyFrom(timeout);
   }
-  public void setExpectedOutgoingConnectionsCount(size_t count)
+  public void setExpectedOutgoingConnectionsCount(uint count)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: expectedOutgoingConnectionsCount = count;
 	expectedOutgoingConnectionsCount.CopyFrom(count);
   }
-  public void setWhiteListConnectionsPercent(size_t percent)
+  public void setWhiteListConnectionsPercent(uint percent)
   {
 	if (percent > 100)
 	{
@@ -143,13 +143,13 @@ public class P2pNodeConfig : NetNodeConfig
 //ORIGINAL LINE: networkId = id;
 	networkId.CopyFrom(id);
   }
-  public void setPeerListConnectRange(size_t range)
+  public void setPeerListConnectRange(uint range)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: peerListConnectRange = range;
 	peerListConnectRange.CopyFrom(range);
   }
-  public void setPeerListGetTryCount(size_t count)
+  public void setPeerListGetTryCount(uint count)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: peerListGetTryCount = count;
@@ -161,10 +161,10 @@ public class P2pNodeConfig : NetNodeConfig
   private std::chrono.nanoseconds connectInterval = new std::chrono.nanoseconds();
   private std::chrono.nanoseconds connectTimeout = new std::chrono.nanoseconds();
   private boost::uuids.uuid networkId = new boost::uuids.uuid();
-  private size_t expectedOutgoingConnectionsCount = new size_t();
-  private size_t whiteListConnectionsPercent = new size_t();
-  private size_t peerListConnectRange = new size_t();
-  private size_t peerListGetTryCount = new size_t();
+  private uint expectedOutgoingConnectionsCount = new uint();
+  private uint whiteListConnectionsPercent = new uint();
+  private uint peerListConnectRange = new uint();
+  private uint peerListGetTryCount = new uint();
 }
 
 }

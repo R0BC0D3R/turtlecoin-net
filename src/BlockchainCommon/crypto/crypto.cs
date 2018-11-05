@@ -11,7 +11,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -174,7 +174,7 @@ public class EllipticCurveScalar
 	{
 	  return this.generate_key_derivation(key1, key2, derivation);
 	}
-	private static bool derive_public_key(KeyDerivation derivation, size_t output_index, PublicKey @base, PublicKey derived_key)
+	private static bool derive_public_key(KeyDerivation derivation, uint output_index, PublicKey @base, PublicKey derived_key)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 	  ge_p3 point1 = new ge_p3();
@@ -187,7 +187,7 @@ public class EllipticCurveScalar
 	  {
 		return false;
 	  }
-	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new size_t(output_index), scalar);
+	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new uint(output_index), scalar);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  ge_scalarmult_base(point2, reinterpret_cast<byte>(scalar));
 	  ge_p3_to_cached(point3, point2);
@@ -197,15 +197,15 @@ public class EllipticCurveScalar
 	  ge_tobytes(reinterpret_cast<byte>(derived_key), point5);
 	  return true;
 	}
-	private bool derive_public_key(KeyDerivation derivation, size_t output_index, PublicKey @base, PublicKey derived_key)
+	private bool derive_public_key(KeyDerivation derivation, uint output_index, PublicKey @base, PublicKey derived_key)
 	{
-	  return this.derive_public_key(derivation, new size_t(output_index), @base, derived_key);
+	  return this.derive_public_key(derivation, new uint(output_index), @base, derived_key);
 	}
-	private bool derive_public_key(KeyDerivation derivation, size_t output_index, PublicKey @base, ushort prefix, size_t prefixLength, PublicKey derived_key)
+	private bool derive_public_key(KeyDerivation derivation, uint output_index, PublicKey @base, ushort prefix, uint prefixLength, PublicKey derived_key)
 	{
-	  return this.derive_public_key(derivation, new size_t(output_index), @base, prefix, new size_t(prefixLength), derived_key);
+	  return this.derive_public_key(derivation, new uint(output_index), @base, prefix, new uint(prefixLength), derived_key);
 	}
-	private static bool derive_public_key(KeyDerivation derivation, size_t output_index, PublicKey @base, ushort suffix, size_t suffixLength, PublicKey derived_key)
+	private static bool derive_public_key(KeyDerivation derivation, uint output_index, PublicKey @base, ushort suffix, uint suffixLength, PublicKey derived_key)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 	  ge_p3 point1 = new ge_p3();
@@ -218,7 +218,7 @@ public class EllipticCurveScalar
 	  {
 		return false;
 	  }
-	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new size_t(output_index), suffix, new size_t(suffixLength), scalar);
+	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new uint(output_index), suffix, new uint(suffixLength), scalar);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  ge_scalarmult_base(point2, reinterpret_cast<byte>(scalar));
 	  ge_p3_to_cached(point3, point2);
@@ -247,33 +247,33 @@ public class EllipticCurveScalar
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	void generate_incomplete_key_image(PublicKey UnnamedParameter, EllipticCurvePoint UnnamedParameter2);
 	//
-	private static void derive_secret_key(KeyDerivation derivation, size_t output_index, SecretKey @base, SecretKey derived_key)
+	private static void derive_secret_key(KeyDerivation derivation, uint output_index, SecretKey @base, SecretKey derived_key)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  Debug.Assert(sc_check(reinterpret_cast<const byte>(@base)) == 0);
-	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new size_t(output_index), scalar);
+	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new uint(output_index), scalar);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  sc_add(reinterpret_cast<byte>(derived_key), reinterpret_cast<const byte>(@base), reinterpret_cast<byte>(scalar));
 	}
 //C++ TO C# CONVERTER TODO TASK: C# has no concept of a 'friend' function:
-//ORIGINAL LINE: friend void derive_secret_key(const KeyDerivation &, size_t, const SecretKey &, SecretKey &);
+//ORIGINAL LINE: friend void derive_secret_key(const KeyDerivation &, uint, const SecretKey &, SecretKey &);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	void derive_secret_key(KeyDerivation UnnamedParameter, size_t UnnamedParameter2, SecretKey UnnamedParameter3, SecretKey UnnamedParameter4);
-	private static void derive_secret_key(KeyDerivation derivation, size_t output_index, SecretKey @base, ushort suffix, size_t suffixLength, SecretKey derived_key)
+//	void derive_secret_key(KeyDerivation UnnamedParameter, uint UnnamedParameter2, SecretKey UnnamedParameter3, SecretKey UnnamedParameter4);
+	private static void derive_secret_key(KeyDerivation derivation, uint output_index, SecretKey @base, ushort suffix, uint suffixLength, SecretKey derived_key)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  Debug.Assert(sc_check(reinterpret_cast<const byte>(@base)) == 0);
-	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new size_t(output_index), suffix, new size_t(suffixLength), scalar);
+	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new uint(output_index), suffix, new uint(suffixLength), scalar);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  sc_add(reinterpret_cast<byte>(derived_key), reinterpret_cast<const byte>(@base), reinterpret_cast<byte>(scalar));
 	}
 //C++ TO C# CONVERTER TODO TASK: C# has no concept of a 'friend' function:
-//ORIGINAL LINE: friend void derive_secret_key(const KeyDerivation &, size_t, const SecretKey &, const ushort*, size_t, SecretKey &);
+//ORIGINAL LINE: friend void derive_secret_key(const KeyDerivation &, uint, const SecretKey &, const ushort*, uint, SecretKey &);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	void derive_secret_key(KeyDerivation UnnamedParameter, size_t UnnamedParameter2, SecretKey UnnamedParameter3, ushort UnnamedParameter4, size_t UnnamedParameter5, SecretKey UnnamedParameter6);
-	private static bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, PublicKey @base)
+//	void derive_secret_key(KeyDerivation UnnamedParameter, uint UnnamedParameter2, SecretKey UnnamedParameter3, ushort UnnamedParameter4, uint UnnamedParameter5, SecretKey UnnamedParameter6);
+	private static bool underive_public_key(KeyDerivation derivation, uint output_index, PublicKey derived_key, PublicKey @base)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 	  ge_p3 point1 = new ge_p3();
@@ -286,7 +286,7 @@ public class EllipticCurveScalar
 	  {
 		return false;
 	  }
-	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new size_t(output_index), scalar);
+	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new uint(output_index), scalar);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  ge_scalarmult_base(point2, reinterpret_cast<byte>(scalar));
 	  ge_p3_to_cached(point3, point2);
@@ -296,11 +296,11 @@ public class EllipticCurveScalar
 	  ge_tobytes(reinterpret_cast<byte>(@base), point5);
 	  return true;
 	}
-	private bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, PublicKey @base)
+	private bool underive_public_key(KeyDerivation derivation, uint output_index, PublicKey derived_key, PublicKey @base)
 	{
-	  return this.underive_public_key(derivation, new size_t(output_index), derived_key, @base);
+	  return this.underive_public_key(derivation, new uint(output_index), derived_key, @base);
 	}
-	private static bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, ushort suffix, size_t suffixLength, PublicKey @base)
+	private static bool underive_public_key(KeyDerivation derivation, uint output_index, PublicKey derived_key, ushort suffix, uint suffixLength, PublicKey @base)
 	{
 	  EllipticCurveScalar scalar = new EllipticCurveScalar();
 	  ge_p3 point1 = new ge_p3();
@@ -314,7 +314,7 @@ public class EllipticCurveScalar
 		return false;
 	  }
 
-	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new size_t(output_index), suffix, new size_t(suffixLength), scalar);
+	  Crypto.GlobalMembers.derivation_to_scalar(derivation, new uint(output_index), suffix, new uint(suffixLength), scalar);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  ge_scalarmult_base(point2, reinterpret_cast<byte>(scalar));
 	  ge_p3_to_cached(point3, point2);
@@ -327,9 +327,9 @@ public class EllipticCurveScalar
 
 	/* Inverse function of derive_public_key. It can be used by the receiver to find which "spend" key was used to generate a transaction. This may be useful if the receiver used multiple addresses which only differ in "spend" key.
 	 */
-	private bool underive_public_key(KeyDerivation derivation, size_t output_index, PublicKey derived_key, ushort prefix, size_t prefixLength, PublicKey @base)
+	private bool underive_public_key(KeyDerivation derivation, uint output_index, PublicKey derived_key, ushort prefix, uint prefixLength, PublicKey @base)
 	{
-	  return this.underive_public_key(derivation, new size_t(output_index), derived_key, prefix, new size_t(prefixLength), @base);
+	  return this.underive_public_key(derivation, new uint(output_index), derived_key, prefix, new uint(prefixLength), @base);
 	}
 	private static void generate_signature(Hash prefix_hash, PublicKey pub, SecretKey sec, Signature sig)
 	{
@@ -466,10 +466,10 @@ public class EllipticCurveScalar
 	{
 	  this.hash_data_to_ec(data, len, key);
 	}
-	private static void generate_ring_signature(Hash prefix_hash, KeyImage image, PublicKey[] pubs, size_t pubs_count, SecretKey sec, size_t sec_index, Signature[] sig)
+	private static void generate_ring_signature(Hash prefix_hash, KeyImage image, PublicKey[] pubs, uint pubs_count, SecretKey sec, uint sec_index, Signature[] sig)
 	{
 	  lock_guard<mutex> @lock = new lock_guard<mutex>(GlobalMembers.random_lock);
-	  size_t i = new size_t();
+	  uint i = new uint();
 	  ge_p3 image_unp = new ge_p3();
 	  ge_dsmp image_pre = new ge_dsmp();
 	  EllipticCurveScalar sum = new EllipticCurveScalar();
@@ -477,7 +477,7 @@ public class EllipticCurveScalar
 	  EllipticCurveScalar h = new EllipticCurveScalar();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'alloca' has no equivalent in C#:
-	  rs_comm buf = reinterpret_cast<rs_comm>(alloca(Crypto.GlobalMembers.rs_comm_size(new size_t(pubs_count))));
+	  rs_comm buf = reinterpret_cast<rs_comm>(alloca(Crypto.GlobalMembers.rs_comm_size(new uint(pubs_count))));
 	  Debug.Assert(sec_index < pubs_count);
 #if !NDEBUG
 	  {
@@ -551,26 +551,26 @@ public class EllipticCurveScalar
 		  sc_add(reinterpret_cast<byte>(sum), reinterpret_cast<byte>(sum), reinterpret_cast<byte>(sig[i]));
 		}
 	  }
-	  Crypto.GlobalMembers.hash_to_scalar(buf, Crypto.GlobalMembers.rs_comm_size(new size_t(pubs_count)), h);
+	  Crypto.GlobalMembers.hash_to_scalar(buf, Crypto.GlobalMembers.rs_comm_size(new uint(pubs_count)), h);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  sc_sub(reinterpret_cast<byte>(sig[sec_index]), reinterpret_cast<byte>(h), reinterpret_cast<byte>(sum));
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  sc_mulsub(reinterpret_cast<byte>(sig[sec_index]) + 32, reinterpret_cast<byte>(sig[sec_index]), reinterpret_cast<const byte>(sec), reinterpret_cast<byte>(k));
 	}
 //C++ TO C# CONVERTER TODO TASK: C# has no concept of a 'friend' function:
-//ORIGINAL LINE: friend void generate_ring_signature(const Hash &, const KeyImage &, const PublicKey *const *, size_t, const SecretKey &, size_t, Signature *);
+//ORIGINAL LINE: friend void generate_ring_signature(const Hash &, const KeyImage &, const PublicKey *const *, uint, const SecretKey &, uint, Signature *);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//	void generate_ring_signature(Hash UnnamedParameter, KeyImage UnnamedParameter2, PublicKey[] UnnamedParameter3, size_t UnnamedParameter4, SecretKey UnnamedParameter5, size_t UnnamedParameter6, Signature UnnamedParameter7);
-	private static bool check_ring_signature(Hash prefix_hash, KeyImage image, PublicKey[] pubs, size_t pubs_count, Signature[] sig, bool checkKeyImage)
+//	void generate_ring_signature(Hash UnnamedParameter, KeyImage UnnamedParameter2, PublicKey[] UnnamedParameter3, uint UnnamedParameter4, SecretKey UnnamedParameter5, uint UnnamedParameter6, Signature UnnamedParameter7);
+	private static bool check_ring_signature(Hash prefix_hash, KeyImage image, PublicKey[] pubs, uint pubs_count, Signature[] sig, bool checkKeyImage)
 	{
-	  size_t i = new size_t();
+	  uint i = new uint();
 	  ge_p3 image_unp = new ge_p3();
 	  ge_dsmp image_pre = new ge_dsmp();
 	  EllipticCurveScalar sum = new EllipticCurveScalar();
 	  EllipticCurveScalar h = new EllipticCurveScalar();
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 //C++ TO C# CONVERTER TODO TASK: The memory management function 'alloca' has no equivalent in C#:
-	  rs_comm buf = reinterpret_cast<rs_comm>(alloca(Crypto.GlobalMembers.rs_comm_size(new size_t(pubs_count))));
+	  rs_comm buf = reinterpret_cast<rs_comm>(alloca(Crypto.GlobalMembers.rs_comm_size(new uint(pubs_count))));
 #if !NDEBUG
 	  for (i = 0; i < pubs_count; i++)
 	  {
@@ -618,15 +618,15 @@ public class EllipticCurveScalar
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 		sc_add(reinterpret_cast<byte>(sum), reinterpret_cast<byte>(sum), reinterpret_cast<const byte>(sig[i]));
 	  }
-	  Crypto.GlobalMembers.hash_to_scalar(buf, Crypto.GlobalMembers.rs_comm_size(new size_t(pubs_count)), h);
+	  Crypto.GlobalMembers.hash_to_scalar(buf, Crypto.GlobalMembers.rs_comm_size(new uint(pubs_count)), h);
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  sc_sub(reinterpret_cast<byte>(h), reinterpret_cast<byte>(h), reinterpret_cast<byte>(sum));
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
 	  return sc_isnonzero(reinterpret_cast<byte>(h)) == 0;
 	}
-	private bool check_ring_signature(Hash prefix_hash, KeyImage image, PublicKey[] pubs, size_t pubs_count, Signature sig, bool checkKeyImage)
+	private bool check_ring_signature(Hash prefix_hash, KeyImage image, PublicKey[] pubs, uint pubs_count, Signature sig, bool checkKeyImage)
 	{
-	  return this.check_ring_signature(prefix_hash, image, pubs, new size_t(pubs_count), sig, checkKeyImage);
+	  return this.check_ring_signature(prefix_hash, image, pubs, new uint(pubs_count), sig, checkKeyImage);
 	}
   }
 
@@ -662,11 +662,11 @@ namespace std
 	public partial class hash
 	{
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t operator ()(const Crypto::PublicKey &_v) const
-		public static size_t functorMethod(Crypto.PublicKey _v)
+//ORIGINAL LINE: uint operator ()(const Crypto::PublicKey &_v) const
+		public static uint functorMethod(Crypto.PublicKey _v)
 		{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-			return reinterpret_cast<const size_t &>(_v);
+			return reinterpret_cast<const uint &>(_v);
 		}
 	}
 }
@@ -677,11 +677,11 @@ namespace std
 	public partial class hash
 	{
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t operator ()(const Crypto::KeyImage &_v) const
-		public static size_t functorMethod(Crypto.KeyImage _v)
+//ORIGINAL LINE: uint operator ()(const Crypto::KeyImage &_v) const
+		public static uint functorMethod(Crypto.KeyImage _v)
 		{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
-			return reinterpret_cast<const size_t &>(_v);
+			return reinterpret_cast<const uint &>(_v);
 		}
 	}
 }

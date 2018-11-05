@@ -13,7 +13,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -347,25 +347,25 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 
 	connectPeerList(m_cfg.getPriorityNodes());
 
-	size_t totalExpectedConnectionsCount = m_cfg.getExpectedOutgoingConnectionsCount();
-	size_t expectedWhiteConnections = (totalExpectedConnectionsCount * m_cfg.getWhiteListConnectionsPercent()) / 100;
-	size_t outgoingConnections = getOutgoingConnectionsCount();
+	uint totalExpectedConnectionsCount = m_cfg.getExpectedOutgoingConnectionsCount();
+	uint expectedWhiteConnections = (totalExpectedConnectionsCount * m_cfg.getWhiteListConnectionsPercent()) / 100;
+	uint outgoingConnections = getOutgoingConnectionsCount();
 
 	if (outgoingConnections < totalExpectedConnectionsCount)
 	{
 	  if (outgoingConnections < expectedWhiteConnections)
 	  {
 		//start from white list
-		makeExpectedConnectionsCount(m_peerlist.getWhite(), new size_t(expectedWhiteConnections));
+		makeExpectedConnectionsCount(m_peerlist.getWhite(), new uint(expectedWhiteConnections));
 		//and then do grey list
-		makeExpectedConnectionsCount(m_peerlist.getGray(), new size_t(totalExpectedConnectionsCount));
+		makeExpectedConnectionsCount(m_peerlist.getGray(), new uint(totalExpectedConnectionsCount));
 	  }
 	  else
 	  {
 		//start from grey list
-		makeExpectedConnectionsCount(m_peerlist.getGray(), new size_t(totalExpectedConnectionsCount));
+		makeExpectedConnectionsCount(m_peerlist.getGray(), new uint(totalExpectedConnectionsCount));
 		//and then do white list
-		makeExpectedConnectionsCount(m_peerlist.getWhite(), new size_t(totalExpectedConnectionsCount));
+		makeExpectedConnectionsCount(m_peerlist.getWhite(), new uint(totalExpectedConnectionsCount));
 	  }
 	}
   }
@@ -440,10 +440,10 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 
   // making and processing connections
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t getOutgoingConnectionsCount() const
-  private size_t getOutgoingConnectionsCount()
+//ORIGINAL LINE: uint getOutgoingConnectionsCount() const
+  private uint getOutgoingConnectionsCount()
   {
-	size_t count = 0;
+	uint count = 0;
 
 	foreach (var ctx in m_contexts)
 	{
@@ -455,7 +455,7 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 
 	return count;
   }
-  private void makeExpectedConnectionsCount(Peerlist peerlist, size_t connectionsCount)
+  private void makeExpectedConnectionsCount(Peerlist peerlist, uint connectionsCount)
   {
 	while (getOutgoingConnectionsCount() < connectionsCount)
 	{
@@ -472,10 +472,10 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
   }
   private bool makeNewConnectionFromPeerlist(Peerlist peerlist)
   {
-	size_t peerIndex = new size_t();
+	uint peerIndex = new uint();
 	PeerIndexGenerator idxGen = new PeerIndexGenerator(Math.Min<ulong>(peerlist.count() - 1, m_cfg.getPeerListConnectRange()));
 
-	for (size_t tryCount = 0; idxGen.generate(ref peerIndex) && tryCount < m_cfg.getPeerListGetTryCount(); ++tryCount)
+	for (uint tryCount = 0; idxGen.generate(ref peerIndex) && tryCount < m_cfg.getPeerListGetTryCount(); ++tryCount)
 	{
 	  PeerlistEntry peer = new PeerlistEntry();
 	  if (!peerlist.get(peer, peerIndex))
@@ -528,7 +528,7 @@ namespace CryptoNote
 public class PeerIndexGenerator
 {
 
-  public PeerIndexGenerator(size_t maxIndex)
+  public PeerIndexGenerator(uint maxIndex)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this.maxIndex = maxIndex;
@@ -537,7 +537,7 @@ public class PeerIndexGenerator
 	Debug.Assert(maxIndex > 0);
   }
 
-  public bool generate(ref size_t num)
+  public bool generate(ref uint num)
   {
 	while (randCount < (maxIndex + 1) * 3)
 	{
@@ -555,7 +555,7 @@ public class PeerIndexGenerator
   }
 
 
-  private size_t getRandomIndex()
+  private uint getRandomIndex()
   {
 	//divide by zero workaround
 	if (maxIndex == 0)
@@ -563,13 +563,13 @@ public class PeerIndexGenerator
 	  return 0;
 	}
 
-	size_t x = Crypto.GlobalMembers.rand<size_t>() % (maxIndex + 1);
+	uint x = Crypto.GlobalMembers.rand<uint>() % (maxIndex + 1);
 	return (x * x * x) / (maxIndex * maxIndex);
   }
 
-  private readonly size_t maxIndex = new size_t();
-  private size_t randCount = new size_t();
-  private SortedSet<size_t> visited = new SortedSet<size_t>();
+  private readonly uint maxIndex = new uint();
+  private uint randCount = new uint();
+  private SortedSet<uint> visited = new SortedSet<uint>();
 }
 
 

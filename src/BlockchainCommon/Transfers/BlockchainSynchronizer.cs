@@ -13,7 +13,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -113,14 +113,14 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 
   public override std::future<std::error_code> addUnconfirmedTransaction(ITransactionReader transaction)
   {
-	m_logger.functorMethod(INFO, BRIGHT_WHITE) << "Adding unconfirmed transaction, hash " << transaction.getTransactionHash();
+	m_logger.functorMethod(INFO, BRIGHT_WHITE) << "Adding unconfirmed transaction, hash " << transaction.GetTransactionHash();
 
 	std::unique_lock<object> @lock = new std::unique_lock<object>(m_stateMutex);
 
 	if (m_currentState == State.stopped || m_futureState == State.stopped)
 	{
 	  var message = "Failed to add unconfirmed transaction: not stopped";
-	  m_logger.functorMethod(ERROR, BRIGHT_RED) << message << ", hash " << transaction.getTransactionHash();
+	  m_logger.functorMethod(ERROR, BRIGHT_RED) << message << ", hash " << transaction.GetTransactionHash();
 	  throw new System.Exception(message);
 	}
 
@@ -740,14 +740,14 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 	  ec = addIt.Current.Key.addUnconfirmedTransaction(transaction);
 	  if (ec != null)
 	  {
-		m_logger.functorMethod(ERROR, BRIGHT_RED) << "Failed to add unconfirmed transaction to consumer: " << ec << ", " << ec.message() << ", consumer " << addIt.Current.Key << ", hash " << transaction.getTransactionHash();
+		m_logger.functorMethod(ERROR, BRIGHT_RED) << "Failed to add unconfirmed transaction to consumer: " << ec << ", " << ec.message() << ", consumer " << addIt.Current.Key << ", hash " << transaction.GetTransactionHash();
 		break;
 	  }
 	}
 
 	if (ec != null)
 	{
-	  var transactionHash = transaction.getTransactionHash();
+	  var transactionHash = transaction.GetTransactionHash();
 	  for (var rollbackIt = m_consumers.GetEnumerator(); rollbackIt != addIt; ++rollbackIt)
 	  {
 		rollbackIt.first.removeUnconfirmedTransaction(transactionHash);
@@ -755,7 +755,7 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 	}
 	else
 	{
-	  m_logger.functorMethod(INFO, BRIGHT_WHITE) << "Unconfirmed transaction added, hash " << transaction.getTransactionHash();
+	  m_logger.functorMethod(INFO, BRIGHT_WHITE) << "Unconfirmed transaction added, hash " << transaction.GetTransactionHash();
 	}
 
 	return ec;
@@ -845,7 +845,7 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 	  }
 	  catch
 	  {
-		m_logger.functorMethod(ERROR, BRIGHT_RED) << "Failed to add unconfirmed transaction, hash " << transaction.getTransactionHash();
+		m_logger.functorMethod(ERROR, BRIGHT_RED) << "Failed to add unconfirmed transaction, hash " << transaction.GetTransactionHash();
 		detachedPromise.set_exception(std::current_exception());
 	  }
 	}

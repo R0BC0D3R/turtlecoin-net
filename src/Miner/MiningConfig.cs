@@ -31,9 +31,9 @@ public class MiningConfig
 
 	options.add_options("Core")("help", "Display this help message", cxxopts.value<bool>(help).implicit_value("true"))("version", "Output software version information", cxxopts.value<bool>(version).default_value("false").implicit_value("true"));
 
-	options.add_options("Daemon")("daemon-address", "The daemon [host:port] combination to use for node operations. This option overrides --daemon-host and --daemon-rpc-port", cxxopts.value<string>(daemonAddress), "<host:port>")("daemon-host", "The daemon host to use for node operations", cxxopts.value<string>(daemonHost).default_value("127.0.0.1"), "<host>")("daemon-rpc-port", "The daemon RPC port to use for node operations", cxxopts.value<int>(daemonPort).default_value(Convert.ToString(CryptoNote.RPC_DEFAULT_PORT)), "#")("scan-time", "Blockchain polling interval (seconds). How often miner will check the Blockchain for updates", cxxopts.value<size_t>(scanPeriod).default_value("30"), "#");
+	options.add_options("Daemon")("daemon-address", "The daemon [host:port] combination to use for node operations. This option overrides --daemon-host and --daemon-rpc-port", cxxopts.value<string>(daemonAddress), "<host:port>")("daemon-host", "The daemon host to use for node operations", cxxopts.value<string>(daemonHost).default_value("127.0.0.1"), "<host>")("daemon-rpc-port", "The daemon RPC port to use for node operations", cxxopts.value<int>(daemonPort).default_value(Convert.ToString(CryptoNote.RPC_DEFAULT_PORT)), "#")("scan-time", "Blockchain polling interval (seconds). How often miner will check the Blockchain for updates", cxxopts.value<uint>(scanPeriod).default_value("30"), "#");
 
-	options.add_options("Mining")("address", "The valid CryptoNote miner's address", cxxopts.value<string>(miningAddress), "<address>")("block-timestamp-interval", "Timestamp incremental step for each subsequent block. May be set only if --first-block-timestamp has been set.", cxxopts.value<long>(blockTimestampInterval).default_value("0"), "#")("first-block-timestamp", "Set timestamp to the first mined block. 0 means leave timestamp unchanged", cxxopts.value<ulong>(firstBlockTimestamp).default_value("0"), "#")("limit", "Mine this exact quantity of blocks and then stop. 0 means no limit", cxxopts.value<size_t>(blocksLimit).default_value("0"), "#")("log-level", "Specify log level. Must be 0 - 5", cxxopts.value<ushort>(logLevel).default_value("1"), "#")("threads", "The mining threads count. Must not exceed hardware capabilities.", cxxopts.value<size_t>(threadCount).default_value(Convert.ToString(GlobalMembers.CONCURRENCY_LEVEL)), "#");
+	options.add_options("Mining")("address", "The valid CryptoNote miner's address", cxxopts.value<string>(miningAddress), "<address>")("block-timestamp-interval", "Timestamp incremental step for each subsequent block. May be set only if --first-block-timestamp has been set.", cxxopts.value<long>(blockTimestampInterval).default_value("0"), "#")("first-block-timestamp", "Set timestamp to the first mined block. 0 means leave timestamp unchanged", cxxopts.value<ulong>(firstBlockTimestamp).default_value("0"), "#")("limit", "Mine this exact quantity of blocks and then stop. 0 means no limit", cxxopts.value<uint>(blocksLimit).default_value("0"), "#")("log-level", "Specify log level. Must be 0 - 5", cxxopts.value<ushort>(logLevel).default_value("1"), "#")("threads", "The mining threads count. Must not exceed hardware capabilities.", cxxopts.value<uint>(threadCount).default_value(Convert.ToString(GlobalMembers.CONCURRENCY_LEVEL)), "#");
 
 	try
 	{
@@ -101,10 +101,10 @@ public class MiningConfig
   public string daemonAddress;
   public string daemonHost;
   public int daemonPort;
-  public size_t threadCount = new size_t();
-  public size_t scanPeriod = new size_t();
+  public uint threadCount = new uint();
+  public uint scanPeriod = new uint();
   public ushort logLevel = new ushort();
-  public size_t blocksLimit = new size_t();
+  public uint blocksLimit = new uint();
   public ulong firstBlockTimestamp = new ulong();
   public long blockTimestampInterval = new long();
   public bool help;

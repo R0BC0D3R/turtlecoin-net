@@ -18,7 +18,7 @@ public class Ipv4Address
   }
   public Ipv4Address(string dottedDecimal)
   {
-	size_t offset = 0;
+	uint offset = 0;
 	value = GlobalMembers.readUint8(dottedDecimal, ref offset);
 	if (offset == dottedDecimal.Length || dottedDecimal[offset] != '.')
 	{

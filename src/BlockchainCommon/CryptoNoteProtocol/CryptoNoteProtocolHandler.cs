@@ -20,7 +20,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -259,8 +259,8 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //	int handleCommand(bool is_notify, int command, BinaryArray in_buff, BinaryArray buff_out, CryptoNoteConnectionContext context, ref bool handled);
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: virtual size_t getPeerCount() const override
-	public override size_t getPeerCount()
+//ORIGINAL LINE: virtual uint getPeerCount() const override
+	public override uint getPeerCount()
 	{
 	  return m_peersCount;
 	}
@@ -426,7 +426,7 @@ namespace CryptoNote
 
 	  List<RawBlock> rawBlocks = GlobalMembers.convertRawBlocksLegacyToRawBlocks(arg.blocks);
 
-	  for (size_t index = 0; index < rawBlocks.Count; ++index)
+	  for (uint index = 0; index < rawBlocks.Count; ++index)
 	  {
 		if (!CryptoNote.GlobalMembers.fromBinaryArray(ref blockTemplates[index], rawBlocks[index].block))
 		{
@@ -602,7 +602,7 @@ namespace CryptoNote
 	  {
 		//we know objects that we need, request this objects
 		NOTIFY_REQUEST_GET_OBJECTS.request req = new NOTIFY_REQUEST_GET_OBJECTS.request();
-		size_t count = 0;
+		uint count = 0;
 		var it = context.m_needed_objects.GetEnumerator();
 
 		while (it != context.m_needed_objects.end() && count < BLOCKS_SYNCHRONIZING_DEFAULT_COUNT)
@@ -740,7 +740,7 @@ namespace CryptoNote
 	private int processObjects(CryptoNoteConnectionContext context, List<RawBlock>&& rawBlocks, List<CachedBlock> cachedBlocks)
 	{
 	  Debug.Assert(rawBlocks.size() == cachedBlocks.Count);
-	  for (size_t index = 0; index < rawBlocks.size(); ++index)
+	  for (uint index = 0; index < rawBlocks.size(); ++index)
 	  {
 		if (m_stop != null)
 		{
@@ -792,7 +792,7 @@ namespace CryptoNote
 	private object m_blockchainHeightMutex = new object();
 	private uint m_blockchainHeight = new uint();
 
-	private std::atomic<size_t> m_peersCount = new std::atomic<size_t>();
+	private std::atomic<uint> m_peersCount = new std::atomic<uint>();
 	private Tools.ObserverManager<ICryptoNoteProtocolObserver> m_observerManager = new Tools.ObserverManager<ICryptoNoteProtocolObserver>();
   }
 }

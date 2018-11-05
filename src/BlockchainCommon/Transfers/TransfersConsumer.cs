@@ -18,7 +18,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -200,7 +200,7 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
 
 		foreach (var tx in blocks[i].transactions)
 		{
-		  var pubKey = tx.getTransactionPublicKey();
+		  var pubKey = tx.GetTransactionPublicKey();
 		  if (pubKey == NULL_PUBLIC_KEY)
 		  {
 			++blockInfo.transactionIndex;
@@ -441,7 +441,7 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
 	}
 	catch (System.Exception e)
 	{
-	  m_logger.functorMethod(WARNING, BRIGHT_RED) << "Failed to process transaction: " << e.Message << ", transaction hash " << Common.GlobalMembers.podToHex(tx.getTransactionHash());
+	  m_logger.functorMethod(WARNING, BRIGHT_RED) << "Failed to process transaction: " << e.Message << ", transaction hash " << Common.GlobalMembers.podToHex(tx.GetTransactionHash());
 	  return std::error_code();
 	}
 
@@ -451,7 +451,7 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
 	}
 
 	std::error_code errorCode = new std::error_code();
-	var txHash = tx.getTransactionHash();
+	var txHash = tx.GetTransactionHash();
 	if (blockInfo.height != GlobalMembers.WALLET_UNCONFIRMED_TRANSACTION_HEIGHT)
 	{
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in C#:
@@ -501,7 +501,7 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
 	List<TransactionOutputInformationIn> emptyOutputs = new List<TransactionOutputInformationIn>();
 	List<ITransfersContainer> transactionContainers = new List<ITransfersContainer>();
 
-	m_logger.functorMethod(TRACE) << "Process transaction, block " << (int)blockInfo.height << ", transaction index " << (int)blockInfo.transactionIndex << ", hash " << tx.getTransactionHash();
+	m_logger.functorMethod(TRACE) << "Process transaction, block " << (int)blockInfo.height << ", transaction index " << (int)blockInfo.transactionIndex << ", hash " << tx.GetTransactionHash();
 	bool someContainerUpdated = false;
 	foreach (var kv in m_subscriptions)
 	{
@@ -521,19 +521,19 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
 
 	if (someContainerUpdated)
 	{
-	  m_logger.functorMethod(TRACE) << "Transaction updated some containers, hash " << tx.getTransactionHash();
-	  m_observerManager.notify(IBlockchainConsumerObserver.onTransactionUpdated, this, tx.getTransactionHash(), transactionContainers);
+	  m_logger.functorMethod(TRACE) << "Transaction updated some containers, hash " << tx.GetTransactionHash();
+	  m_observerManager.notify(IBlockchainConsumerObserver.onTransactionUpdated, this, tx.GetTransactionHash(), transactionContainers);
 	}
 	else
 	{
-	  m_logger.functorMethod(TRACE) << "Transaction doesn't updated any container, hash " << tx.getTransactionHash();
+	  m_logger.functorMethod(TRACE) << "Transaction doesn't updated any container, hash " << tx.GetTransactionHash();
 	}
   }
   private void processOutputs(TransactionBlockInfo blockInfo, TransfersSubscription sub, ITransactionReader tx, List<TransactionOutputInformationIn> transfers, List<uint> globalIdxs, ref bool contains, ref bool updated)
   {
 
 	TransactionInformation subscribtionTxInfo = new TransactionInformation();
-	contains = sub.getContainer().getTransactionInformation(tx.getTransactionHash(), subscribtionTxInfo);
+	contains = sub.getContainer().getTransactionInformation(tx.GetTransactionHash(), subscribtionTxInfo);
 	updated = false;
 
 	if (contains)
@@ -543,13 +543,13 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
 		try
 		{
 		  // pool->blockchain
-		  sub.markTransactionConfirmed(blockInfo, tx.getTransactionHash(), globalIdxs);
+		  sub.markTransactionConfirmed(blockInfo, tx.GetTransactionHash(), globalIdxs);
 		  updated = true;
 		}
 		catch
 		{
 			m_logger.functorMethod(ERROR, BRIGHT_RED) << "markTransactionConfirmed failed, throw MarkTransactionConfirmedException";
-			throw new MarkTransactionConfirmedException(tx.getTransactionHash());
+			throw new MarkTransactionConfirmedException(tx.GetTransactionHash());
 		}
 	  }
 	  else

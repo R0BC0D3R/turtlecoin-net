@@ -24,7 +24,7 @@ public class Miner : System.IDisposable
 //  public void Dispose();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  BlockTemplate mine(BlockMiningParameters blockMiningParameters, size_t threadCount);
+//  BlockTemplate mine(BlockMiningParameters blockMiningParameters, uint threadCount);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  ulong getHashCount();
 
@@ -52,7 +52,7 @@ public class Miner : System.IDisposable
   private Logging.LoggerRef m_logger = new Logging.LoggerRef();
 
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
-//  void runWorkers(BlockMiningParameters blockMiningParameters, size_t threadCount);
+//  void runWorkers(BlockMiningParameters blockMiningParameters, uint threadCount);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
 //  void workerFunc(BlockTemplate blockTemplate, ulong difficulty, uint nonceStep);
 //C++ TO C# CONVERTER TODO TASK: The implementation of the following method could not be found:
@@ -136,10 +136,10 @@ public class MiningConfig
   public string daemonAddress;
   public string daemonHost;
   public int daemonPort;
-  public size_t threadCount = new size_t();
-  public size_t scanPeriod = new size_t();
+  public uint threadCount = new uint();
+  public uint scanPeriod = new uint();
   public ushort logLevel = new ushort();
-  public size_t blocksLimit = new size_t();
+  public uint blocksLimit = new uint();
   public ulong firstBlockTimestamp = new ulong();
   public long blockTimestampInterval = new long();
   public bool help;

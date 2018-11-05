@@ -8,7 +8,7 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
@@ -234,15 +234,15 @@ namespace CryptoNote
 	  }
 	}
 
-	public size_t getNumberOfVotes(uint height)
+	public uint getNumberOfVotes(uint height)
 	{
 	  if (height < m_currency.upgradeVotingWindow() - 1)
 	  {
 		return 0;
 	  }
 
-	  size_t voteCounter = 0;
-	  for (size_t i = height + 1 - m_currency.upgradeVotingWindow(); i <= height; ++i)
+	  uint voteCounter = 0;
+	  for (uint i = height + 1 - m_currency.upgradeVotingWindow(); i <= height; ++i)
 	  {
 		auto b = m_blockchain[i].bl;
 		voteCounter += (b.majorVersion == m_targetVersion - 1) && (b.minorVersion == BLOCK_MINOR_VERSION_1) ? 1 : 0;
@@ -273,7 +273,7 @@ namespace CryptoNote
 	  Debug.Assert(m_currency.upgradeVotingWindow() > 1);
 	  Debug.Assert(m_currency.upgradeVotingThreshold() > 0 && m_currency.upgradeVotingThreshold() <= 100);
 
-	  size_t voteCounter = getNumberOfVotes(new uint(height));
+	  uint voteCounter = getNumberOfVotes(new uint(height));
 	  return m_currency.upgradeVotingThreshold() * m_currency.upgradeVotingWindow() <= 100 * voteCounter;
 	}
 

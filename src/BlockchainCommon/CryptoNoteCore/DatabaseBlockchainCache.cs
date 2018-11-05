@@ -14,73 +14,13 @@ using System.Diagnostics;
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { inline bool operator==(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) == 0; } inline bool operator!=(const type &_v1, const type &_v2) { return std::memcmp(&_v1, &_v2, sizeof(type)) != 0; } }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(size_t) <= sizeof(type), "Size of " #type " must be at least that of size_t"); inline size_t hash_value(const type &_v) { return reinterpret_cast<const size_t &>(_v); } } namespace std { template<> struct hash<Crypto::type> { size_t operator()(const Crypto::type &_v) const { return reinterpret_cast<const size_t &>(_v); } }; }
+//ORIGINAL LINE: #define CRYPTO_MAKE_HASHABLE(type) CRYPTO_MAKE_COMPARABLE(type) namespace Crypto { static_assert(sizeof(uint) <= sizeof(type), "Size of " #type " must be at least that of uint"); inline uint hash_value(const type &_v) { return reinterpret_cast<const uint &>(_v); } } namespace std { template<> struct hash<Crypto::type> { uint operator()(const Crypto::type &_v) const { return reinterpret_cast<const uint &>(_v); } }; }
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER (CN_SOFT_SHELL_MEMORY / 2)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_PAD_MULTIPLIER (CN_SOFT_SHELL_WINDOW / CN_SOFT_SHELL_MULTIPLIER)
 //C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define CN_SOFT_SHELL_ITER_MULTIPLIER (CN_SOFT_SHELL_PAD_MULTIPLIER / 2)
-
-
-// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
-//
-// This file is part of Bytecoin.
-//
-// Bytecoin is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Bytecoin is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public License
-// along with Bytecoin.  If not, see <http://www.gnu.org/licenses/>.
-
-
-
-
-
-
-
-namespace CryptoNote
-{
-
-public class TransactionExtraPadding
-{
-  public size_t size = new size_t();
-}
-
-public class TransactionExtraPublicKey
-{
-  public Crypto.PublicKey publicKey = new Crypto.PublicKey();
-}
-
-public class TransactionExtraNonce
-{
-  public List<ushort> nonce = new List<ushort>();
-}
-
-public class TransactionExtraMergeMiningTag
-{
-  public size_t depth = new size_t();
-  public Crypto.Hash merkleRoot = new Crypto.Hash();
-}
-
-// tx_extra_field format, except tx_extra_padding and tx_extra_pub_key:
-//   varint tag;
-//   varint size;
-//   varint data[];
-
-
-
-//C++ TO C# CONVERTER TODO TASK: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
-//ORIGINAL LINE: template<typename T>
-
-}
 
 
 namespace CryptoNote
@@ -270,7 +210,7 @@ public class ExtendedPushedBlockInfo
 //ORIGINAL LINE: ExtractOutputKeysResult DatabaseBlockchainCache::extractKeyOtputIndexes(ulong amount, Common::ArrayView<uint> globalIndexes, ClassicVector<PackedOutIndex>& outIndexes) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ExtractOutputKeysResult DatabaseBlockchainCache::extractKeyOtputReferences(ulong amount, Common::ArrayView<uint> globalIndexes, ClassicVector<System.Tuple<Crypto::Hash, size_t>>& outputReferences) const
+//ORIGINAL LINE: ExtractOutputKeysResult DatabaseBlockchainCache::extractKeyOtputReferences(ulong amount, Common::ArrayView<uint> globalIndexes, ClassicVector<System.Tuple<Crypto::Hash, uint>>& outputReferences) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: uint DatabaseBlockchainCache::getTopBlockIndex() const
@@ -296,20 +236,20 @@ public class ExtendedPushedBlockInfo
 //ORIGINAL LINE: bool DatabaseBlockchainCache::hasTransaction(const Crypto::Hash& transactionHash) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastTimestamps(size_t count) const
+//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastTimestamps(uint count) const
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastTimestamps(size_t count, uint blockIndex, UseGenesis useGenesis) const
+//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastTimestamps(uint count, uint blockIndex, UseGenesis useGenesis) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastBlocksSizes(size_t count) const
+//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastBlocksSizes(uint count) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastBlocksSizes(size_t count, uint blockIndex, UseGenesis useGenesis) const
+//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastBlocksSizes(uint count, uint blockIndex, UseGenesis useGenesis) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastCumulativeDifficulties(size_t count, uint blockIndex, UseGenesis useGenesis) const
+//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastCumulativeDifficulties(uint count, uint blockIndex, UseGenesis useGenesis) const
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastCumulativeDifficulties(size_t count) const
+//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastCumulativeDifficulties(uint count) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: ulong DatabaseBlockchainCache::getDifficultyForNextBlock() const
@@ -336,19 +276,19 @@ public class ExtendedPushedBlockInfo
 //ORIGINAL LINE: ulong DatabaseBlockchainCache::getAlreadyGeneratedTransactions(uint blockIndex) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<CachedBlockInfo> DatabaseBlockchainCache::getLastCachedUnits(uint blockIndex, size_t count, UseGenesis useGenesis) const
+//ORIGINAL LINE: ClassicVector<CachedBlockInfo> DatabaseBlockchainCache::getLastCachedUnits(uint blockIndex, uint count, UseGenesis useGenesis) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<CachedBlockInfo> DatabaseBlockchainCache::getLastDbUnits(uint blockIndex, size_t count, UseGenesis useGenesis) const
+//ORIGINAL LINE: ClassicVector<CachedBlockInfo> DatabaseBlockchainCache::getLastDbUnits(uint blockIndex, uint count, UseGenesis useGenesis) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastUnits(size_t count, uint blockIndex, UseGenesis useGenesis, System.Func<const CachedBlockInfo&, ulong> pred) const
+//ORIGINAL LINE: ClassicVector<ulong> DatabaseBlockchainCache::getLastUnits(uint count, uint blockIndex, UseGenesis useGenesis, System.Func<const CachedBlockInfo&, ulong> pred) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: Crypto::Hash DatabaseBlockchainCache::getBlockHash(uint blockIndex) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<Crypto::Hash> DatabaseBlockchainCache::getBlockHashes(uint startIndex, size_t maxCount) const
+//ORIGINAL LINE: ClassicVector<Crypto::Hash> DatabaseBlockchainCache::getBlockHashes(uint startIndex, uint maxCount) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: IBlockchainCache* DatabaseBlockchainCache::getParent() const
@@ -357,7 +297,7 @@ public class ExtendedPushedBlockInfo
 //ORIGINAL LINE: uint DatabaseBlockchainCache::getStartBlockIndex() const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t DatabaseBlockchainCache::getKeyOutputsCountForAmount(ulong amount, uint blockIndex) const
+//ORIGINAL LINE: uint DatabaseBlockchainCache::getKeyOutputsCountForAmount(ulong amount, uint blockIndex) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: uint DatabaseBlockchainCache::getTimestampLowerBoundBlockIndex(ulong timestamp) const
@@ -366,13 +306,13 @@ public class ExtendedPushedBlockInfo
 //ORIGINAL LINE: bool DatabaseBlockchainCache::getTransactionGlobalIndexes(const Crypto::Hash& transactionHash, ClassicVector<uint>& globalIndexes) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t DatabaseBlockchainCache::getTransactionCount() const
+//ORIGINAL LINE: uint DatabaseBlockchainCache::getTransactionCount() const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: uint DatabaseBlockchainCache::getBlockIndexContainingTx(const Crypto::Hash& transactionHash) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: size_t DatabaseBlockchainCache::getChildCount() const
+//ORIGINAL LINE: uint DatabaseBlockchainCache::getChildCount() const
 
 
 
@@ -395,7 +335,7 @@ public class ExtendedPushedBlockInfo
 //ORIGINAL LINE: ClassicVector<Crypto::Hash> DatabaseBlockchainCache::getTransactionHashes() const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<uint> DatabaseBlockchainCache::getRandomOutsByAmount(ulong amount, size_t count, uint blockIndex) const
+//ORIGINAL LINE: ClassicVector<uint> DatabaseBlockchainCache::getRandomOutsByAmount(ulong amount, uint count, uint blockIndex) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: ExtractOutputKeysResult DatabaseBlockchainCache::extractKeyOutputs(ulong amount, uint blockIndex, Common::ArrayView<uint> globalIndexes, System.Func<const CachedTransactionInfo& info, PackedOutIndex index, uint globalIndex, ExtractOutputKeysResult> callback) const
@@ -404,7 +344,7 @@ public class ExtendedPushedBlockInfo
 //ORIGINAL LINE: ClassicVector<Crypto::Hash> DatabaseBlockchainCache::getTransactionHashesByPaymentId(const Crypto::Hash& paymentId) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-//ORIGINAL LINE: ClassicVector<Crypto::Hash> DatabaseBlockchainCache::getBlockHashesByTimestamps(ulong timestampBegin, size_t secondsCount) const
+//ORIGINAL LINE: ClassicVector<Crypto::Hash> DatabaseBlockchainCache::getBlockHashesByTimestamps(ulong timestampBegin, uint secondsCount) const
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
 //ORIGINAL LINE: DatabaseBlockchainCache::ExtendedPushedBlockInfo DatabaseBlockchainCache::getExtendedPushedBlockInfo(uint blockIndex) const

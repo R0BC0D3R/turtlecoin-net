@@ -27,10 +27,10 @@ public class HttpParser
 	readHeaders(stream, request.headers);
 
 	string body;
-	size_t bodyLen = getBodyLen(request.headers);
+	uint bodyLen = getBodyLen(request.headers);
 	if (bodyLen != null)
 	{
-	  readBody(stream, request.body, new size_t(bodyLen));
+	  readBody(stream, request.body, new uint(bodyLen));
 	}
   }
   public void receiveResponse(std::istream stream, HttpResponse response)
@@ -73,7 +73,7 @@ public class HttpParser
 
 	response.addHeader(name, value);
 	var headers = response.getHeaders();
-	size_t length = 0;
+	uint length = 0;
 	var it = headers.find("content-length");
 //C++ TO C# CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
 	if (it != headers.end())
@@ -85,7 +85,7 @@ public class HttpParser
 	string body;
 	if (length != null)
 	{
-	  readBody(stream, body, new size_t(length));
+	  readBody(stream, body, new uint(length));
 	}
 
 	response.setBody(body);
@@ -211,22 +211,22 @@ public class HttpParser
 
 	return true;
   }
-  private size_t getBodyLen(SortedDictionary<string, string> headers)
+  private uint getBodyLen(SortedDictionary<string, string> headers)
   {
 	var it = headers.find("content-length");
 //C++ TO C# CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
 	if (it != headers.end())
 	{
 //C++ TO C# CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
-	  size_t bytes = Convert.ToUInt32(it.second);
+	  uint bytes = Convert.ToUInt32(it.second);
 	  return bytes;
 	}
 
 	return 0;
   }
-  private void readBody(std::istream stream, string body, size_t bodyLen)
+  private void readBody(std::istream stream, string body, uint bodyLen)
   {
-	size_t read = 0;
+	uint read = 0;
 
 	while (stream.good() && read < bodyLen)
 	{

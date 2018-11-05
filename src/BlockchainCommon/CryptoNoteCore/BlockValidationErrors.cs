@@ -12,11 +12,11 @@ public enum BlockValidationError
 {
   VALIDATION_SUCCESS = 0,
   WRONG_VERSION,
-  PARENT_BLOCK_SIZE_TOO_BIG,
+  PARENT_BLOCK_uintOO_BIG,
   PARENT_BLOCK_WRONG_VERSION,
   TIMESTAMP_TOO_FAR_IN_FUTURE,
   TIMESTAMP_TOO_FAR_IN_PAST,
-  CUMULATIVE_BLOCK_SIZE_TOO_BIG,
+  CUMULATIVE_BLOCK_uintOO_BIG,
   DIFFICULTY_OVERHEAD,
   BLOCK_REWARD_MISMATCH,
   CHECKPOINT_BLOCK_HASH_MISMATCH,
@@ -55,7 +55,7 @@ public class BlockValidationErrorCategory : std::error_category
 		  return "Block validated successfully";
 	  case BlockValidationError.WRONG_VERSION:
 		  return "Wrong block version";
-	  case BlockValidationError.PARENT_BLOCK_SIZE_TOO_BIG:
+	  case BlockValidationError.PARENT_BLOCK_uintOO_BIG:
 		  return "Parent block size is too big";
 	  case BlockValidationError.PARENT_BLOCK_WRONG_VERSION:
 		  return "Parent block has wrong version";
@@ -63,7 +63,7 @@ public class BlockValidationErrorCategory : std::error_category
 		  return "Timestamp is too far in future";
 	  case BlockValidationError.TIMESTAMP_TOO_FAR_IN_PAST:
 		  return "Timestamp is too far in past";
-	  case BlockValidationError.CUMULATIVE_BLOCK_SIZE_TOO_BIG:
+	  case BlockValidationError.CUMULATIVE_BLOCK_uintOO_BIG:
 		  return "Cumulative block size is too big";
 	  case BlockValidationError.DIFFICULTY_OVERHEAD:
 		  return "Block difficulty overhead occurred";
