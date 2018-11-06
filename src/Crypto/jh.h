@@ -1,8 +1,3 @@
-﻿// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
-//
-// Please see the included LICENSE.txt file for more information.
-
-
 /*This program gives the 64-bit optimized bitslice implementation of JH using ANSI C
 
    --------------------------------
@@ -17,10 +12,10 @@
    --------------------------------
    Last Modified: January 16, 2011
 */
+#pragma once
 
-public enum HashReturn
-{
-	SUCCESS = 0,
-	FAIL = 1,
-	BAD_HASHLEN = 2
-}
+typedef unsigned char BitSequence;
+typedef unsigned long long DataLength;
+typedef enum {SUCCESS = 0, FAIL = 1, BAD_HASHLEN = 2} HashReturn;
+
+HashReturn jh_hash(int hashbitlen, const BitSequence *data, DataLength databitlen, BitSequence *hashval);

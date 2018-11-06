@@ -38,7 +38,7 @@ public interface IP2pNodeInternal
   ulong getPeerId();
 
   void handleNodeData(basic_node_data node, P2pContext ctx);
-  bool handleRemotePeerList(LinkedList<PeerlistEntry> peerlist, time_t local_time);
+  bool handleRemotePeerList(LinkedList<PeerlistEntry> peerlist, DateTime local_time);
   void tryPing(P2pContext ctx);
 }
 

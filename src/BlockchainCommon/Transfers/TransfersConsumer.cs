@@ -63,7 +63,7 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
 
 	if (res.get() == null)
 	{
-	  res.reset(new TransfersSubscription(m_currency, m_logger.getLogger(), subscription));
+	  res.reset(new TransfersSubscription(m_currency, m_logger.GetLogger(), subscription));
 	  m_spendKeys.Add(subscription.keys.address.spendPublicKey);
 
 	  if (m_subscriptions.Count == 1)

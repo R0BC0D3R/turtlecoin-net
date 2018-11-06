@@ -119,7 +119,7 @@ namespace CryptoNote
 		Debug.Assert(context.m_requested_objects.Count == 0);
 
 		NOTIFY_REQUEST_CHAIN.request r = boost::value_initialized<NOTIFY_REQUEST_CHAIN.request>();
-		r.block_ids = new List<Crypto.Hash>(m_core.buildSparseChain());
+		r.block_ids = new List<Crypto.Hash>(m_core.BuildSparseChain());
 		logger.functorMethod(Logging.Level.TRACE) << context << "-->>NOTIFY_REQUEST_CHAIN: m_block_ids.size()=" << r.block_ids.Count;
 		GlobalMembers.post_notify<NOTIFY_REQUEST_CHAIN>(m_p2p, r, context);
 	  }
@@ -156,16 +156,16 @@ namespace CryptoNote
 	}
 	public CoreStatistics getStatistics()
 	{
-	  return m_core.getCoreStatistics();
+	  return m_core.GetCoreStatistics();
 	}
 	public bool get_payload_sync_data(CORE_SYNC_DATA hshd)
 	{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: hshd.top_id = m_core.getTopBlockHash();
-	  hshd.top_id.CopyFrom(m_core.getTopBlockHash());
+	  hshd.top_id.CopyFrom(m_core.GetTopBlockHash());
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: hshd.current_height = m_core.getTopBlockIndex() + 1;
-	  hshd.current_height.CopyFrom(m_core.getTopBlockIndex() + 1);
+	  hshd.current_height.CopyFrom(m_core.GetTopBlockIndex() + 1);
 	  return true;
 	}
 	public bool process_payload_sync_data(CORE_SYNC_DATA hshd, CryptoNoteConnectionContext context, bool is_initial)
@@ -178,7 +178,7 @@ namespace CryptoNote
 	  if (context.m_state == CryptoNoteConnectionContext.state_synchronizing)
 	  {
 	  }
-	  else if (m_core.hasBlock(hshd.top_id))
+	  else if (m_core.HasBlock(hshd.top_id))
 	  {
 		if (is_initial)
 		{
@@ -290,7 +290,7 @@ namespace CryptoNote
 	  }
 
 	  NOTIFY_REQUEST_TX_POOL.request notification = new NOTIFY_REQUEST_TX_POOL.request();
-	  notification.txs = m_core.getPoolTransactionHashes();
+	  notification.txs = m_core.GetPoolTransactionHashes();
 
 	  bool ok = GlobalMembers.post_notify<NOTIFY_REQUEST_TX_POOL>(m_p2p, notification, context);
 	  if (!ok)
@@ -310,7 +310,7 @@ namespace CryptoNote
 		return 1;
 	  }
 
-	  var result = m_core.addBlock(new RawBlock({arg.b.block, arg.b.transactions}));
+	  var result = m_core.AddBlock(new RawBlock({arg.b.block, arg.b.transactions}));
 	  if (result == error.AddBlockErrorCondition.BLOCK_ADDED)
 	  {
 		if (result == error.AddBlockErrorCode.ADDED_TO_ALTERNATIVE_AND_SWITCHED)
@@ -341,7 +341,7 @@ namespace CryptoNote
 	  {
 		context.m_state = CryptoNoteConnectionContext.state_synchronizing;
 		NOTIFY_REQUEST_CHAIN.request r = boost::value_initialized<NOTIFY_REQUEST_CHAIN.request>();
-		r.block_ids = new List<Crypto.Hash>(m_core.buildSparseChain());
+		r.block_ids = new List<Crypto.Hash>(m_core.BuildSparseChain());
 		logger.functorMethod(Logging.Level.TRACE) << context << "-->>NOTIFY_REQUEST_CHAIN: m_block_ids.size()=" << r.block_ids.Count;
 		GlobalMembers.post_notify<NOTIFY_REQUEST_CHAIN>(m_p2p, r, context);
 	  }
@@ -392,7 +392,7 @@ namespace CryptoNote
 	  //  context.m_state = CryptoNoteConnectionContext::state_shutdown;
 	  //}
 
-	  rsp.current_blockchain_height = m_core.getTopBlockIndex() + 1;
+	  rsp.current_blockchain_height = m_core.GetTopBlockIndex() + 1;
 	  List<RawBlock> rawBlocks = new List<RawBlock>();
 	  m_core.getBlocks(arg.blocks, rawBlocks, rsp.missed_ids);
 	  if (!arg.txs.empty())
@@ -438,7 +438,7 @@ namespace CryptoNote
 		cachedBlocks.emplace_back(blockTemplates[index]);
 		if (index == 1)
 		{
-		  if (m_core.hasBlock(cachedBlocks[cachedBlocks.Count - 1].getBlockHash()))
+		  if (m_core.HasBlock(cachedBlocks[cachedBlocks.Count - 1].getBlockHash()))
 		  { //TODO
 			context.m_state = CryptoNoteConnectionContext.state_idle;
 			context.m_needed_objects.Clear();
@@ -481,7 +481,7 @@ namespace CryptoNote
 		}
 	  }
 
-	  logger.functorMethod(DEBUGGING, BRIGHT_GREEN) << "Local blockchain updated, new index = " << m_core.getTopBlockIndex();
+	  logger.functorMethod(DEBUGGING, BRIGHT_GREEN) << "Local blockchain updated, new index = " << m_core.GetTopBlockIndex();
 	  if (m_stop == null && context.m_state == CryptoNoteConnectionContext.state_synchronizing)
 	  {
 		request_missing_objects(context, true);
@@ -500,7 +500,7 @@ namespace CryptoNote
 		return 1;
 	  }
 
-	  if (arg.block_ids[arg.block_ids.Count - 1] != m_core.getBlockHashByIndex(0))
+	  if (arg.block_ids[arg.block_ids.Count - 1] != m_core.GetBlockHashByIndex(0))
 	  {
 		logger.functorMethod(Logging.Level.DEBUGGING) << context << "Failed to handle NOTIFY_REQUEST_CHAIN. block_ids doesn't end with genesis block ID";
 		context.m_state = CryptoNoteConnectionContext.state_shutdown;
@@ -566,7 +566,7 @@ namespace CryptoNote
 	  logger.functorMethod(Logging.Level.TRACE) << context << "NOTIFY_REQUEST_TX_POOL: txs.size() = " << arg.txs.size();
 	  NOTIFY_NEW_TRANSACTIONS.request notification = new NOTIFY_NEW_TRANSACTIONS.request();
 	  List<Crypto.Hash> deletedTransactions = new List<Crypto.Hash>();
-	  m_core.getPoolChanges(m_core.getTopBlockHash(), arg.txs, notification.txs, deletedTransactions);
+	  m_core.getPoolChanges(m_core.GetTopBlockHash(), arg.txs, notification.txs, deletedTransactions);
 	  if (!notification.txs.empty())
 	  {
 		bool ok = GlobalMembers.post_notify<NOTIFY_NEW_TRANSACTIONS>(m_p2p, notification, context);
@@ -594,7 +594,7 @@ namespace CryptoNote
 	//----------------------------------------------------------------------------------
 	private uint get_current_blockchain_height()
 	{
-	  return m_core.getTopBlockIndex() + 1;
+	  return m_core.GetTopBlockIndex() + 1;
 	}
 	private bool request_missing_objects(CryptoNoteConnectionContext context, bool check_having_blocks)
 	{
@@ -623,7 +623,7 @@ namespace CryptoNote
 	  { //we have to fetch more objects ids, request blockchain entry
 
 		NOTIFY_REQUEST_CHAIN.request r = boost::value_initialized<NOTIFY_REQUEST_CHAIN.request>();
-		r.block_ids = new List<Crypto.Hash>(m_core.buildSparseChain());
+		r.block_ids = new List<Crypto.Hash>(m_core.BuildSparseChain());
 		logger.functorMethod(Logging.Level.TRACE) << context << "-->>NOTIFY_REQUEST_CHAIN: m_block_ids.size()=" << r.block_ids.Count;
 		GlobalMembers.post_notify<NOTIFY_REQUEST_CHAIN>(m_p2p, r, context);
 	  }
@@ -658,7 +658,7 @@ namespace CryptoNote
 
 		  logger.functorMethod(INFO, BRIGHT_GREEN) << asciiArt << std::endl;
 
-		m_observerManager.notify(ICryptoNoteProtocolObserver.blockchainSynchronized, m_core.getTopBlockIndex());
+		m_observerManager.notify(ICryptoNoteProtocolObserver.blockchainSynchronized, m_core.GetTopBlockIndex());
 	  }
 	  return true;
 	}
@@ -728,12 +728,12 @@ namespace CryptoNote
 		}
 	  });
 
-	  m_observedHeight = Math.Max(peerHeight, m_core.getTopBlockIndex() + 1);
+	  m_observedHeight = Math.Max(peerHeight, m_core.GetTopBlockIndex() + 1);
 		if (context.m_state == CryptoNoteConnectionContext.state_normal)
 		{
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: m_observedHeight = m_core.getTopBlockIndex();
-		  m_observedHeight.CopyFrom(m_core.getTopBlockIndex());
+		  m_observedHeight.CopyFrom(m_core.GetTopBlockIndex());
 		}
 	}
 //C++ TO C# CONVERTER TODO TASK: 'rvalue references' have no equivalent in C#:

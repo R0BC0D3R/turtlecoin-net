@@ -8,27 +8,26 @@ namespace Common
 	namespace Console
 	{
 
-public enum Color : ushort
-{
-  Default,
+        public enum Color : ushort
+        {
+            Default,
 
-  Blue,
-  Green,
-  Red,
-  Yellow,
-  White,
-  Cyan,
-  Magenta,
+            Blue,
+            Green,
+            Red,
+            Yellow,
+            White,
+            Cyan,
+            Magenta,
 
-  BrightBlue,
-  BrightGreen,
-  BrightRed,
-  BrightYellow,
-  BrightWhite,
-  BrightCyan,
-  BrightMagenta
-}
-
+            BrightBlue,
+            BrightGreen,
+            BrightRed,
+            BrightYellow,
+            BrightWhite,
+            BrightCyan,
+            BrightMagenta
+        }
 	}
 }
 

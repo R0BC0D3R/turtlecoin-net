@@ -16,6 +16,8 @@
 
 
 
+using System;
+
 namespace CryptoNote
 {
 
@@ -26,7 +28,7 @@ public class WalletRecord
   public CryptoNote.ITransfersContainer container = null;
   public ulong pendingBalance = 0;
   public ulong actualBalance = 0;
-  public time_t creationTimestamp = new time_t();
+  public DateTime creationTimestamp = new DateTime();
 }
 
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to most C++ 'pragma' directives in C#:

@@ -3,82 +3,74 @@
 // Please see the included LICENSE.txt file for more information.
 
 
+using System;
 using System.Collections.Generic;
 
-//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define ENDL std::endl
-
 namespace Logging
 {
+    public class CommonLogger : ILogger
+    {
+        public char COLOR_DELIMETER { get; set; }
+        public List<string> LEVEL_NAMES { get; set; }
 
-public class CommonLogger : ILogger
-{
+        protected SortedSet<string> disabledCategories = new SortedSet<string>();
+        protected Level logLevel;
+        protected string pattern;
 
-  public static void functorMethod(string category, Level level, boost::posix_time.ptime time, string body)
-  {
-	if (level <= ((int)logLevel) != 0 && disabledCategories.count(category) == 0)
-	{
-	  string body2 = body;
-	  if (!string.IsNullOrEmpty(pattern))
-	  {
-		uint insertPos = 0;
-		if (!string.IsNullOrEmpty(body2) && body2[0] == base.COLOR_DELIMETER)
-		{
-		  uint delimPos = body2.IndexOf(base.COLOR_DELIMETER, 1);
-		  if (delimPos != -1)
-		  {
-//C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: insertPos = delimPos + 1;
-			insertPos.CopyFrom(delimPos + 1);
-		  }
-		}
-
-		body2 = body2.Insert(insertPos, GlobalMembers.formatPattern(pattern, category, level, new boost::posix_time.ptime(time)));
-	  }
-
-	  doLogString(body2);
-	}
-  }
-  public virtual void enableCategory(string category)
-  {
-	disabledCategories.erase(category);
-  }
-  public virtual void disableCategory(string category)
-  {
-	disabledCategories.Add(category);
-  }
-  public virtual void setMaxLevel(Level level)
-  {
-	logLevel = level;
-  }
-
-  public void setPattern(string pattern)
-  {
-	this.pattern = pattern;
-  }
-
-  protected SortedSet<string> disabledCategories = new SortedSet<string>();
-  protected Level logLevel;
-  protected string pattern;
-
-  protected CommonLogger(Level level)
-  {
-	  this.logLevel = new Logging.Level(level);
-	  this.pattern = "%D %T %L [%C] ";
-  }
-  protected virtual void doLogString(string message)
-  {
-  }
-}
-
-}
+        //void operator ()(string category, Level level, DateTime time, string body);
 
 
-namespace Logging
-{
+        protected CommonLogger(Level level)
+        {
+            this.logLevel = level;
+            this.pattern = "%D %T %L [%C] ";
+        }
 
-//C++ TO C# CONVERTER NOTE: C# does not allow anonymous namespaces:
-//namespace
+
+        public void FunctorMethod(string category, Level level, DateTime time, string body)
+        {
+            if ((level <= logLevel) && disabledCategories.Count == 0)
+            {
+                string body2 = body;
+                if (!string.IsNullOrEmpty(pattern))
+                {
+                    int insertPos = 0;
+                    if (!string.IsNullOrEmpty(body2) && body2[0] == COLOR_DELIMETER)
+                    {
+                        int delimPos = body2.IndexOf(COLOR_DELIMETER, 1);
+                        if (delimPos != -1)
+                        {
+                            insertPos = delimPos + 1;
+                        }
+                    }
+
+                    body2 = body2.Insert(insertPos, GlobalMembers.FormatPattern(pattern, category, level, time));
+                }
+
+                doLogString(body2);
+            }
+        }
+        public virtual void EnableCategory(string category)
+        {
+            disabledCategories.Remove(category);
+        }
+        public virtual void DisableCategory(string category)
+        {
+            disabledCategories.Add(category);
+        }
+        public virtual void SetMaxLevel(Level level)
+        {
+            logLevel = level;
+        }
+
+        public void SetPattern(string pattern)
+        {
+            this.pattern = pattern;
+        }
 
 
+        protected virtual void doLogString(string message)
+        {
+        }
+    }
 }

@@ -981,11 +981,11 @@ namespace CryptoNote
 
 	//-----------------------------------------------------------------------------------
 
-	private bool handle_remote_peerlist(LinkedList<PeerlistEntry> peerlist, time_t local_time, CryptoNoteConnectionContext context)
+	private bool handle_remote_peerlist(LinkedList<PeerlistEntry> peerlist, DateTime local_time, CryptoNoteConnectionContext context)
 	{
 	  long delta = 0;
 	  LinkedList<PeerlistEntry> peerlist_ = new LinkedList(peerlist);
-	  if (!fix_time_delta(peerlist_, new time_t(local_time), ref delta))
+	  if (!fix_time_delta(peerlist_, new DateTime(local_time), ref delta))
 	  {
 		return false;
 	  }
@@ -998,7 +998,7 @@ namespace CryptoNote
 	private bool get_local_node_data(basic_node_data node_data)
 	{
 	  node_data.version = CryptoNote.P2P_CURRENT_VERSION;
-	  time_t local_time = new time_t();
+	  DateTime local_time = new DateTime();
 	  time(local_time);
 	  node_data.local_time = local_time;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -1024,10 +1024,10 @@ namespace CryptoNote
 //	bool merge_peerlist_with_local(ClassicLinkedList<PeerlistEntry> bs);
 
 	//-----------------------------------------------------------------------------------
-	private bool fix_time_delta(LinkedList<PeerlistEntry> local_peerlist, time_t local_time, ref long delta)
+	private bool fix_time_delta(LinkedList<PeerlistEntry> local_peerlist, DateTime local_time, ref long delta)
 	{
 	  //fix time delta
-	  time_t now = 0;
+	  DateTime now = 0;
 	  time(now);
 	  delta = now - local_time;
 
@@ -1211,7 +1211,7 @@ namespace CryptoNote
 		  return false;
 		}
 
-		P2pConnectionContext ctx = new P2pConnectionContext(m_dispatcher, logger.getLogger(), std::move(connection));
+		P2pConnectionContext ctx = new P2pConnectionContext(m_dispatcher, logger.GetLogger(), std::move(connection));
 
 		ctx.m_connection_id = boost::uuids.random_generator()();
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
@@ -1461,7 +1461,7 @@ namespace CryptoNote
 	  {
 		try
 		{
-		  P2pConnectionContext ctx = new P2pConnectionContext(m_dispatcher, logger.getLogger(), m_listener.accept());
+		  P2pConnectionContext ctx = new P2pConnectionContext(m_dispatcher, logger.GetLogger(), m_listener.accept());
 		  ctx.m_connection_id = boost::uuids.random_generator()();
 		  ctx.m_is_income = true;
 		  ctx.m_started = time(null);

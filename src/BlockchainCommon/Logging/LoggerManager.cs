@@ -134,13 +134,13 @@ public class LoggerManager : LoggerGroup
 	{
 	  throw new System.Exception("loggers parameter missing");
 	}
-	setMaxLevel(globalLevel);
+	SetMaxLevel(globalLevel);
 	foreach (var category in globalDisabledCategories)
 	{
-	  disableCategory(category);
+	  DisableCategory(category);
 	}
   }
-  public static override void functorMethod(string category, Level level, boost::posix_time.ptime time, string body)
+  public static override void functorMethod(string category, Level level, DateTime time, string body)
   {
 	std::unique_lock<object> @lock = new std::unique_lock<object>(reconfigureLock);
 	base  .functorMethod(category, level, time, body);

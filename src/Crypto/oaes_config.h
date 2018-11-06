@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * ---------------------------------------------------------------------------
  * OpenAES License
  * ---------------------------------------------------------------------------
@@ -28,8 +28,11 @@
  * ---------------------------------------------------------------------------
  */
 
+#ifndef _OAES_CONFIG_H
+#define _OAES_CONFIG_H
 
-#if __cplusplus
+#ifdef __cplusplus 
+extern "C" {
 #endif
 
 //#ifndef OAES_HAVE_ISAAC
@@ -40,6 +43,8 @@
 //#define OAES_DEBUG 0
 //#endif // OAES_DEBUG
 
-#if __cplusplus
+#ifdef __cplusplus 
+}
 #endif
 
+#endif // _OAES_CONFIG_H

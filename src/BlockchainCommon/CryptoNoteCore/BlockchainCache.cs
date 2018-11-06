@@ -166,7 +166,7 @@ public class BlockchainCache : IBlockchainCache
 
 	std::unique_ptr<BlockchainStorage> newStorage = storage.splitStorage(splitBlockIndex - startIndex);
 
-	std::unique_ptr<BlockchainCache> newCache = new std::unique_ptr<BlockchainCache>(new BlockchainCache(filename, currency, logger.getLogger(), this, new uint(splitBlockIndex)));
+	std::unique_ptr<BlockchainCache> newCache = new std::unique_ptr<BlockchainCache>(new BlockchainCache(filename, currency, logger.GetLogger(), this, new uint(splitBlockIndex)));
 
 	newCache.storage = std::move(newStorage);
 

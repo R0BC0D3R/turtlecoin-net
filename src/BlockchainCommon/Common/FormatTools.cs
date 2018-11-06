@@ -24,14 +24,12 @@
 
 namespace Common
 {
-
-public enum ForkStatus
-{
-	UpToDate,
-	ForkLater,
-	ForkSoonReady,
-	ForkSoonNotReady,
-	OutOfDate
-}
-
+    public enum ForkStatus
+    {
+        UpToDate,
+        ForkLater,
+        ForkSoonReady,
+        ForkSoonNotReady,
+        OutOfDate
+    }
 }

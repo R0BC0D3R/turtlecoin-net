@@ -3,19 +3,16 @@
 // Please see the included LICENSE.txt file for more information.
 
 
-//C++ TO C# CONVERTER NOTE: The following #define macro was replaced in-line:
-//ORIGINAL LINE: #define ENDL std::endl
-
 namespace Logging
 {
 
 public class StreamLogger : CommonLogger
 {
-  public StreamLogger(Level level = DEBUGGING) : base.functorMethod(level)
+  public StreamLogger(Level level = Level.DEBUGGING) : base(level)
   {
 	  this.stream = null;
   }
-  public StreamLogger(std::ostream stream, Level level = DEBUGGING) : base.functorMethod(level)
+  public StreamLogger(std::ostream stream, Level level = Level.DEBUGGING) : base(level)
   {
 	  this.stream = stream;
   }

@@ -8,7 +8,7 @@ namespace CryptoNote
 
   public abstract class ITimeProvider : System.IDisposable
   {
-	public abstract time_t now();
+	public abstract DateTime now();
 	public virtual void Dispose()
 	{
 	}
@@ -16,7 +16,7 @@ namespace CryptoNote
 
   public class RealTimeProvider : ITimeProvider
   {
-	public override time_t now()
+	public override DateTime now()
 	{
 	  return time(null);
 	}

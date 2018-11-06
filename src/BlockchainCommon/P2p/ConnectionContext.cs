@@ -26,7 +26,7 @@ public class CryptoNoteConnectionContext
   public uint m_remote_ip = 0;
   public uint m_remote_port = 0;
   public bool m_is_income = false;
-  public time_t m_started = 0;
+  public DateTime m_started = 0;
 
   public enum state
   {

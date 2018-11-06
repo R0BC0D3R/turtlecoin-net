@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="aesb.c" />
+    <ClCompile Include="blake256.c" />
+    <ClCompile Include="chacha8.c" />
+    <ClCompile Include="Crypto.cpp" />
+    <ClCompile Include="crypto-ops.c" />
+    <ClCompile Include="crypto-ops-data.c" />
+    <ClCompile Include="groestl.c" />
+    <ClCompile Include="hash.c" />
+    <ClCompile Include="hash-extra-blake.c" />
+    <ClCompile Include="hash-extra-groestl.c" />
+    <ClCompile Include="hash-extra-jh.c" />
+    <ClCompile Include="hash-extra-skein.c" />
+    <ClCompile Include="jh.c" />
+    <ClCompile Include="keccak.c" />
+    <ClCompile Include="oaes_lib.c" />
+    <ClCompile Include="random.c" />
+    <ClCompile Include="skein.c" />
+    <ClCompile Include="slow-hash.c" />
+    <ClCompile Include="tree-hash.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="blake256.h" />
+    <ClInclude Include="chacha8.h" />
+    <ClInclude Include="crypto.h" />
+    <ClInclude Include="crypto-ops.h" />
+    <ClInclude Include="generic-ops.h" />
+    <ClInclude Include="groestl.h" />
+    <ClInclude Include="groestl_tables.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="hash-ops.h" />
+    <ClInclude Include="initializer.h" />
+    <ClInclude Include="jh.h" />
+    <ClInclude Include="keccak.h" />
+    <ClInclude Include="oaes_config.h" />
+    <ClInclude Include="oaes_lib.h" />
+    <ClInclude Include="random.h" />
+    <ClInclude Include="skein.h" />
+    <ClInclude Include="skein_port.h" />
+    <ClInclude Include="variant2_int_sqrt.h" />
+  </ItemGroup>
+</Project>

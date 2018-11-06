@@ -218,9 +218,9 @@ public class P2pNode : IP2pNode, IStreamSerializable, IP2pNodeInternal, System.I
 	  m_peerlist.set_peer_just_seen(node.peer_id, context.getRemoteAddress());
 	}
   }
-  private bool handleRemotePeerList(LinkedList<PeerlistEntry> peerlist, time_t remoteTime)
+  private bool handleRemotePeerList(LinkedList<PeerlistEntry> peerlist, DateTime remoteTime)
   {
-	return m_peerlist.merge_peerlist(GlobalMembers.fixTimeDelta(peerlist, new time_t(remoteTime)));
+	return m_peerlist.merge_peerlist(GlobalMembers.fixTimeDelta(peerlist, new DateTime(remoteTime)));
   }
   private void tryPing(P2pContext ctx)
   {

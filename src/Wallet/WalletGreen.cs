@@ -1610,7 +1610,7 @@ public abstract partial class WalletGreen : IWallet, ITransfersObserver, IBlockc
 	{
 		ulong timestamp = scanHeightToTimestamp(scanHeight);
 
-		time_t minTimestamp = time_t.MaxValue;
+		DateTime minTimestamp = DateTime.MaxValue;
 
 		foreach (WalletRecord wallet in walletsIndex)
 		{
@@ -1743,7 +1743,7 @@ public abstract partial class WalletGreen : IWallet, ITransfersObserver, IBlockc
   protected ulong getCurrentTimestampAdjusted()
   {
 	  /* Get the current time as a unix timestamp */
-	  std::time_t time = std::time(null);
+	  std::DateTime time = std::time(null);
 
 	  /* Take the amount of time a block can potentially be in the past/future */
 	  std::initializer_list<ulong> limits = new std::initializer_list<ulong>(CryptoNote.parameters.CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT, CryptoNote.parameters.CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3, CryptoNote.parameters.CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V4);
@@ -2332,8 +2332,8 @@ public abstract partial class WalletGreen : IWallet, ITransfersObserver, IBlockc
 	  wallet.spendSecretKey = spendSecretKey;
 	  wallet.container = container;
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
-//ORIGINAL LINE: wallet.creationTimestamp = static_cast<time_t>(sub.syncStart.timestamp);
-	  wallet.creationTimestamp.CopyFrom((time_t)sub.syncStart.timestamp);
+//ORIGINAL LINE: wallet.creationTimestamp = static_cast<DateTime>(sub.syncStart.timestamp);
+	  wallet.creationTimestamp.CopyFrom((DateTime)sub.syncStart.timestamp);
 	  trSubscription.addObserver(this);
 
 	  index.insert(insertIt, std::move(wallet));

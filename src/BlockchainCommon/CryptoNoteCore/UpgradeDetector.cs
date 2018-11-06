@@ -182,7 +182,7 @@ namespace CryptoNote
 		  if (m_blockchain.size() % (60 * 60 / m_currency.difficultyTarget()) == 0)
 		  {
 			var interval = m_currency.difficultyTarget() * (upgradeHeight() - m_blockchain.size() + 2);
-			time_t upgradeTimestamp = time(null) + (time_t)interval;
+			DateTime upgradeTimestamp = time(null) + (DateTime)interval;
 			tm upgradeTime = localtime(upgradeTimestamp);
 			string upgradeTimeStr = new string(new char[40]);
 			strftime(upgradeTimeStr, 40, "%H:%M:%S %Y.%m.%d", upgradeTime);
