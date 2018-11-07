@@ -3,23 +3,22 @@
 // Please see the included LICENSE.txt file for more information.
 
 
+using System.IO;
+
 namespace Logging
 {
+    public class FileLogger : StreamLogger
+    {
+        private FileStream fileStream;
 
-public class FileLogger : StreamLogger
-{
-  public FileLogger(Level level = Level.DEBUGGING) : base(level)
-  {
-  }
-  public void init(string fileName)
-  {
-	fileStream.open(fileName, std::ios.app);
-	base.attachToStream(fileStream);
-  }
+        public FileLogger(Level level = Level.DEBUGGING) : base(level)
+        {
+        }
 
-  private std::ofstream fileStream = new std::ofstream();
+        public void init(string fileName)
+        {
+            fileStream = new FileStream(fileName, FileMode.OpenOrCreate);
+            base.attachToStream(fileStream);
+        }
+    }
 }
-
-}
-
-

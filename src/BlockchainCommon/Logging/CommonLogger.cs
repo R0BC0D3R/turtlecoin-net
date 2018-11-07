@@ -26,8 +26,7 @@ namespace Logging
             this.pattern = "%D %T %L [%C] ";
         }
 
-
-        public void FunctorMethod(string category, Level level, DateTime time, string body)
+        public virtual void FunctorMethod(string category, Level level, DateTime time, string body)
         {
             if ((level <= logLevel) && disabledCategories.Count == 0)
             {
@@ -47,17 +46,20 @@ namespace Logging
                     body2 = body2.Insert(insertPos, GlobalMembers.FormatPattern(pattern, category, level, time));
                 }
 
-                doLogString(body2);
+                DoLogString(body2);
             }
         }
+
         public virtual void EnableCategory(string category)
         {
             disabledCategories.Remove(category);
         }
+
         public virtual void DisableCategory(string category)
         {
             disabledCategories.Add(category);
         }
+
         public virtual void SetMaxLevel(Level level)
         {
             logLevel = level;
@@ -68,8 +70,7 @@ namespace Logging
             this.pattern = pattern;
         }
 
-
-        protected virtual void doLogString(string message)
+        protected virtual void DoLogString(string message)
         {
         }
     }

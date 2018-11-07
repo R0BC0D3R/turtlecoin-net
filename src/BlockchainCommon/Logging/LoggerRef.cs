@@ -5,7 +5,6 @@
 
 namespace Logging
 {
-
     public class LoggerRef
     {
         public static ILogger logger;

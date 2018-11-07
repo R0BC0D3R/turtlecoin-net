@@ -37,7 +37,7 @@ namespace Logging
           {GlobalMembers.DEFAULT, Color.Gray}
         };
 
-        protected override void doLogString(string message)
+        protected override void DoLogString(string message)
         {
             bool readingText = false;
             lock (mutex)

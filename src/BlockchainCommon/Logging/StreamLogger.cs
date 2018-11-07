@@ -3,53 +3,51 @@
 // Please see the included LICENSE.txt file for more information.
 
 
+using System.IO;
+
 namespace Logging
 {
+    public class StreamLogger : CommonLogger
+    {
+        protected Stream stream;
+        private object mutex = new object();
 
-public class StreamLogger : CommonLogger
-{
-  public StreamLogger(Level level = Level.DEBUGGING) : base(level)
-  {
-	  this.stream = null;
-  }
-  public StreamLogger(std::ostream stream, Level level = Level.DEBUGGING) : base(level)
-  {
-	  this.stream = stream;
-  }
-  public void attachToStream(std::ostream stream)
-  {
-	this.stream = stream;
-  }
+        public StreamLogger(Level level = Level.DEBUGGING) : base(level)
+        {
+            this.stream = null;
+        }
 
-  protected override void doLogString(string message)
-  {
-	if (stream != null && stream.good())
-	{
-	  lock (mutex)
-	  {
-		  bool readingText = true;
-	  }
-	  for (uint charPos = 0; charPos < message.Length; ++charPos)
-	  {
-		if (message[charPos] == base.COLOR_DELIMETER)
-		{
-		  readingText = !readingText;
-		}
-		else if (readingText)
-		{
-		  stream << message[charPos];
-		}
-	  }
+        public StreamLogger(Stream stream, Level level = Level.DEBUGGING) : base(level)
+        {
+            this.stream = stream;
+        }
+        public void attachToStream(Stream stream)
+        {
+            this.stream = stream;
+        }
 
-	  stream << std::flush;
-	}
-  }
+        protected override void DoLogString(string message)
+        {
+            //if (stream != null && stream.good())
+            //{
+            //    lock (mutex)
+            //    {
+            //        bool readingText = true;
+            //    }
+            //    for (uint charPos = 0; charPos < message.Length; ++charPos)
+            //    {
+            //        if (message[charPos] == base.COLOR_DELIMETER)
+            //        {
+            //            readingText = !readingText;
+            //        }
+            //        else if (readingText)
+            //        {
+            //            stream << message[charPos];
+            //        }
+            //    }
 
-  protected std::ostream stream;
-
-  private object mutex = new object();
+            //    stream << std::flush;
+            //}
+        }
+    }
 }
-
-}
-
-
