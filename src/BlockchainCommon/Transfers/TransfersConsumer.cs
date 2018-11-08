@@ -42,9 +42,9 @@ namespace CryptoNote
 public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBlockchainConsumer>
 {
 
-  public TransfersConsumer(CryptoNote.Currency currency, INode node, Logging.ILogger logger, SecretKey viewSecret)
+  public TransfersConsumer(CryptoNote.Currency currency, INodeOriginal node, Logging.ILogger logger, SecretKey viewSecret)
   {
-	  this.m_node = new CryptoNote.INode(node);
+	  this.m_node = new CryptoNote.INodeOriginal(node);
 	  this.m_viewSecret = new Crypto.SecretKey(viewSecret);
 //C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  this.m_currency = new CryptoNote.Currency(currency);
@@ -569,7 +569,7 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
 	std::promise<std::error_code> prom = new std::promise<std::error_code>();
 	std::future<std::error_code> f = prom.get_future();
 
-	INode.Callback cb = (std::error_code ec) =>
+	INodeOriginal.Callback cb = (std::error_code ec) =>
 	{
 	  std::promise<std::error_code> p = new std::promise<std::error_code>(std::move(prom));
 	  p.set_value(ec);
@@ -607,7 +607,7 @@ public class TransfersConsumer: IObservableImpl<IBlockchainConsumerObserver, IBl
   private HashSet<Crypto.PublicKey> m_spendKeys = new HashSet<Crypto.PublicKey>();
   private HashSet<Crypto.Hash> m_poolTxs = new HashSet<Crypto.Hash>();
 
-  private INode m_node;
+  private INodeOriginal m_node;
   private readonly CryptoNote.Currency m_currency;
   private Logging.LoggerRef m_logger = new Logging.LoggerRef();
 }

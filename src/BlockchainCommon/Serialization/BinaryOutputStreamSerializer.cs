@@ -30,11 +30,11 @@ public class BinaryOutputStreamSerializer : ISerializer
 	return ISerializer.OUTPUT;
   }
 
-  public override bool beginObject(Common.StringView name)
+  public override bool BeginObject(Common.StringView name)
   {
 	return true;
   }
-  public override void endObject()
+  public override void EndObject()
   {
   }
 
@@ -43,7 +43,7 @@ public class BinaryOutputStreamSerializer : ISerializer
 	writeVarint(stream, size);
 	return true;
   }
-  public override void endArray()
+  public override void EndArray()
   {
   }
 
@@ -100,12 +100,12 @@ public class BinaryOutputStreamSerializer : ISerializer
 	checkedWrite(value.data(), value.Length);
 	return true;
   }
-  public override bool binary(object value, ulong size, Common.StringView name)
+  public override bool Binary(object value, ulong size, Common.StringView name)
   {
 	checkedWrite((char)value, new ulong(size));
 	return true;
   }
-  public override bool binary(string value, Common.StringView name)
+  public override bool Binary(string value, Common.StringView name)
   {
 	// write as string (with size prefix)
 	return this.functorMethod(value, name);
@@ -115,7 +115,7 @@ public class BinaryOutputStreamSerializer : ISerializer
 //ORIGINAL LINE: template<typename T>
   public static new bool functorMethod<T>(T value, Common.StringView name)
   {
-	return base  .functorMethod(value, name);
+	return base  .FunctorMethod(value, name);
   }
 
   private void checkedWrite(string buf, ulong size)

@@ -31,11 +31,11 @@ public class BinaryInputStreamSerializer : ISerializer
 	return ISerializer.INPUT;
   }
 
-  public override bool beginObject(Common.StringView name)
+  public override bool BeginObject(Common.StringView name)
   {
 	return true;
   }
-  public override void endObject()
+  public override void EndObject()
   {
   }
 
@@ -44,7 +44,7 @@ public class BinaryInputStreamSerializer : ISerializer
 	GlobalMembers.readVarintAs<ulong>(stream, ref size);
 	return true;
   }
-  public override void endArray()
+  public override void EndArray()
   {
   }
 
@@ -132,12 +132,12 @@ public class BinaryInputStreamSerializer : ISerializer
 
 	return true;
   }
-  public override bool binary(object value, ulong size, Common.StringView name)
+  public override bool Binary(object value, ulong size, Common.StringView name)
   {
 	checkedRead(ref (char)value, new ulong(size));
 	return true;
   }
-  public override bool binary(string value, Common.StringView name)
+  public override bool Binary(string value, Common.StringView name)
   {
 	return this.functorMethod(value, name);
   }
@@ -146,7 +146,7 @@ public class BinaryInputStreamSerializer : ISerializer
 //ORIGINAL LINE: template<typename T>
   public static new bool functorMethod<T>(T value, Common.StringView name)
   {
-	return base  .functorMethod(value, name);
+	return base  .FunctorMethod(value, name);
   }
 
 

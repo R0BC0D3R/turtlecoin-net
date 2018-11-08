@@ -29,13 +29,17 @@
 	public const int _SKEIN_H_ = 1;
 	public const int IS_BIG_ENDIAN = 4321; // byte 0 is most significant (mc68k)
 	public const int IS_LITTLE_ENDIAN = 1234; // byte 0 is least significant (i386)
-//C++ TO C# CONVERTER TODO TASK: The following #define constant was defined in different ways:
-	public const int PLATFORM_MUST_ALIGN = 1;
-	public const int PLATFORM_MUST_ALIGN = 0;
-//C++ TO C# CONVERTER TODO TASK: The following #define constant was defined in different ways:
-	public const int SKEIN_NEED_SWAP = 1;
-	public const int SKEIN_NEED_SWAP = 0;
-	public const string OAES_VERSION = "0.8.1";
+
+    // special handler for IA64, which may be either endianness (?) here we assume little-endian, but this may need to be changed
+    //TODO: Revisit this.
+    public const int PLATFORM_MUST_ALIGN = 1;
+    //public const int PLATFORM_MUST_ALIGN = 0;
+    
+    //TODO: Revisit this. Need 1 or 0 based on CPU?
+    public const int SKEIN_NEED_SWAP = 1;           // here for big-endian CPUs
+    //public const int SKEIN_NEED_SWAP = 0;           //here for x86 and x86-64 CPUs (and other detected little-endian CPUs)
+
+    public const string OAES_VERSION = "0.8.1";
 	public const int OAES_BLOCK_SIZE = 16;
 	public const int OAES_OPTION_NONE = 0;
 	public const int OAES_OPTION_ECB = 1;
@@ -124,6 +128,6 @@
 	public const int LITTLE_ENDIAN = 1234;
 	public const int BIG_ENDIAN = 4321;
 	public const int PDP_ENDIAN = 3412;
-	public const int true = 1;
-	public const int false = 0;
+	public const int True = 1;
+	public const int False = 0;
 }

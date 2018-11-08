@@ -18,7 +18,7 @@ public class KVBinaryInputStreamSerializer : JsonInputValueSerializer
   {
   }
 
-  public override bool binary(object value, ulong size, Common.StringView name)
+  public override bool Binary(object value, ulong size, Common.StringView name)
   {
 	string str;
 
@@ -36,7 +36,7 @@ public class KVBinaryInputStreamSerializer : JsonInputValueSerializer
 	memcpy(value, str.data(), size);
 	return true;
   }
-  public override bool binary(string value, Common.StringView name)
+  public override bool Binary(string value, Common.StringView name)
   {
 	return this(value, name); // load as string
   }

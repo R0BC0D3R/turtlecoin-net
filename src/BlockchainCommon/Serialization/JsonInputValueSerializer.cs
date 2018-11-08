@@ -49,7 +49,7 @@ public class JsonInputValueSerializer : ISerializer
 	return ISerializer.INPUT;
   }
 
-  public override bool beginObject(Common.StringView name)
+  public override bool BeginObject(Common.StringView name)
   {
 	JsonValue parent = chain[chain.Count - 1].functorMethod;
 
@@ -69,13 +69,13 @@ public class JsonInputValueSerializer : ISerializer
 
 	return false;
   }
-  public override void endObject()
+  public override void EndObject()
   {
 	Debug.Assert(chain.Count > 0);
 	chain.RemoveAt(chain.Count - 1);
   }
 
-  public override bool beginArray(ref ulong size, Common.StringView name)
+  public override bool BeginArray(ref ulong size, Common.StringView name)
   {
 	JsonValue parent = chain[chain.Count - 1].functorMethod;
 	string strName = name;
@@ -92,7 +92,7 @@ public class JsonInputValueSerializer : ISerializer
 	size = 0;
 	return false;
   }
-  public override void endArray()
+  public override void EndArray()
   {
 	Debug.Assert(chain.Count > 0);
 	Debug.Assert(idxs.Count > 0);
@@ -153,7 +153,7 @@ public class JsonInputValueSerializer : ISerializer
 	value = ptr.getString();
 	return true;
   }
-  public override bool binary(object value, ulong size, Common.StringView name)
+  public override bool Binary(object value, ulong size, Common.StringView name)
   {
 	var ptr = getValue.functorMethod(new Common.StringView(name));
 	if (ptr == null)
@@ -182,7 +182,7 @@ public class JsonInputValueSerializer : ISerializer
 //ORIGINAL LINE: template<typename T>
   public static new bool functorMethod<T>(T value, Common.StringView name)
   {
-	return base  .functorMethod(value, name);
+	return base  .FunctorMethod(value, name);
   }
 
   private Common.JsonValue value = new Common.JsonValue();

@@ -38,9 +38,9 @@ public enum State
 //C++ TO C# CONVERTER TODO TASK: Multiple inheritance is not available in C#:
 public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 {
-  public BlockchainExplorer(INode node, Logging.ILogger logger)
+  public BlockchainExplorer(INodeOriginal node, Logging.ILogger logger)
   {
-	  this.node = new CryptoNote.INode(node);
+	  this.node = new CryptoNote.INodeOriginal(node);
 	  this.logger = new Logging.LoggerRef(logger, "BlockchainExplorer");
 	  this.state = State.NOT_INITIALIZED;
 	  this.synchronized = false;
@@ -101,7 +101,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	}
 
 	logger.functorMethod(DEBUGGING) << "Get blocks by hash request came.";
-	NodeRequest new request((INode.Callback cb) =>
+	NodeRequest new request((INodeOriginal.Callback cb) =>
 	{
 		node.getBlocks(blockHashes, blocks, cb);
 	});
@@ -130,7 +130,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	logger.functorMethod(DEBUGGING) << "Get blocks by timestamp " << timestampBegin << " - " << timestampEnd << " request came.";
 
 	List<Hash> blockHashes = new List<Hash>();
-	NodeRequest new request((INode.Callback cb) =>
+	NodeRequest new request((INodeOriginal.Callback cb) =>
 	{
 		node.getBlockHashesByTimestamps(new ulong(timestampBegin), timestampEnd - timestampBegin + 1, blockHashes, cb);
 	});
@@ -175,7 +175,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	}
 
 	logger.functorMethod(DEBUGGING) << "Get transactions by hash request came.";
-	NodeRequest new request((INode.Callback cb) =>
+	NodeRequest new request((INodeOriginal.Callback cb) =>
 	{
 		return node.getTransactions(transactionHashes, transactions, cb);
 	});
@@ -197,7 +197,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	logger.functorMethod(DEBUGGING) << "Get transactions by payment id " << paymentId << " request came.";
 
 	List<Crypto.Hash> transactionHashes = new List<Crypto.Hash>();
-	NodeRequest new request((INode.Callback cb) =>
+	NodeRequest new request((INodeOriginal.Callback cb) =>
 	{
 		return node.getTransactionHashesByPaymentId(paymentId, transactionHashes, cb);
 	});
@@ -226,7 +226,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 	logger.functorMethod(DEBUGGING) << "Get pool state request came.";
 	List<std::unique_ptr<ITransactionReader>> rawNewTransactions = new List<std::unique_ptr<ITransactionReader>>();
 
-	NodeRequest new request((INode.Callback callback) =>
+	NodeRequest new request((INodeOriginal.Callback callback) =>
 	{
 		List<Hash> hashes = new List<Hash>();
 		foreach (Hash hash in knownPoolTransactionHashes)
@@ -291,7 +291,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 
 	logger.functorMethod(DEBUGGING) << "Synchronization status request came.";
 	bool syncStatus = false;
-	NodeRequest new request((INode.Callback cb) =>
+	NodeRequest new request((INodeOriginal.Callback cb) =>
 	{
 		node.isSynchronized(ref syncStatus, cb);
 	});
@@ -382,7 +382,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 
 //C++ TO C# CONVERTER TODO TASK: Only lambda expressions having all locals passed by reference can be converted to C#:
 //ORIGINAL LINE: NodeRequest request([this, rawNewTransactionsPtr, removedTransactionsPtr, isBlockchainActualPtr](const INode::Callback& callback)
-	NodeRequest new request((INode.Callback callback) =>
+	NodeRequest new request((INodeOriginal.Callback callback) =>
 	{
 		List<Hash> hashes = new List<Hash>();
 		hashes.Capacity = knownPoolState.Count;
@@ -433,7 +433,7 @@ public class BlockchainExplorer : IBlockchainExplorer, INodeObserver
 
 		List<TransactionDetails> newTransactionsPtr = new List<TransactionDetails>();
 		newTransactionsPtr.Capacity = newTransactionsHashesPtr.Count;
-		NodeRequest new request((INode.Callback cb) =>
+		NodeRequest new request((INodeOriginal.Callback cb) =>
 		{
 		  node.getTransactions(newTransactionsHashesPtr, newTransactionsPtr, cb);
 		});
@@ -831,7 +831,7 @@ public class ContextCounterHolder : System.IDisposable
 public class NodeRequest
 {
 
-  public NodeRequest(Action<const INode.Callback >& request)
+  public NodeRequest(Action<const INodeOriginal.Callback >& request)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'CopyFrom' method should be created:
 //ORIGINAL LINE: this.requestFunc = request;
@@ -849,7 +849,7 @@ public class NodeRequest
 	return future.get();
   }
 
-  public void performAsync(WalletAsyncContextCounter asyncContextCounter, INode.Callback callback)
+  public void performAsync(WalletAsyncContextCounter asyncContextCounter, INodeOriginal.Callback callback)
   {
 	asyncContextCounter.addAsyncContext();
 	requestFunc(std::bind(NodeRequest.asyncCompleteionCallback, callback, std::@ref(asyncContextCounter), std::placeholders._1));
@@ -860,7 +860,7 @@ public class NodeRequest
 	promise.set_value(ec);
   }
 
-  private static void asyncCompleteionCallback(INode.Callback callback, WalletAsyncContextCounter asyncContextCounter, std::error_code ec)
+  private static void asyncCompleteionCallback(INodeOriginal.Callback callback, WalletAsyncContextCounter asyncContextCounter, std::error_code ec)
   {
 	ContextCounterHolder counterHolder = new ContextCounterHolder(asyncContextCounter);
 	try
@@ -873,7 +873,7 @@ public class NodeRequest
 	}
   }
 
-  private readonly Action<const INode.Callback> requestFunc;
+  private readonly Action<const INodeOriginal.Callback> requestFunc;
 }
 
 public class ScopeExitHandler : System.IDisposable

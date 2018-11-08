@@ -33,7 +33,7 @@ public class JsonOutputStreamSerializer : ISerializer
 	return ISerializer.OUTPUT;
   }
 
-  public override bool beginObject(Common.StringView name)
+  public override bool BeginObject(Common.StringView name)
   {
 	JsonValue parent = chain[chain.Count - 1].functorMethod;
 	JsonValue obj = new JsonValue(JsonValue.OBJECT);
@@ -49,7 +49,7 @@ public class JsonOutputStreamSerializer : ISerializer
 
 	return true;
   }
-  public override void endObject()
+  public override void EndObject()
   {
 	Debug.Assert(chain.Count > 0);
 	chain.RemoveAt(chain.Count - 1);
@@ -62,7 +62,7 @@ public class JsonOutputStreamSerializer : ISerializer
 	chain.Add(res);
 	return true;
   }
-  public override void endArray()
+  public override void EndArray()
   {
 	Debug.Assert(chain.Count > 0);
 	chain.RemoveAt(chain.Count - 1);
@@ -118,12 +118,12 @@ public class JsonOutputStreamSerializer : ISerializer
 	GlobalMembers.insertOrPush(*chain[chain.Count - 1].functorMethod, new Common.StringView(name), value);
 	return true;
   }
-  public override bool binary(object value, ulong size, Common.StringView name)
+  public override bool Binary(object value, ulong size, Common.StringView name)
   {
 	string hex = Common.toHex(value, size);
 	return this.functorMethod(hex, name);
   }
-  public override bool binary(string value, Common.StringView name)
+  public override bool Binary(string value, Common.StringView name)
   {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'const_cast' in C#:
 	return binary(const_cast<char>(value.data()), value.Length, new Common.StringView(name));
@@ -133,7 +133,7 @@ public class JsonOutputStreamSerializer : ISerializer
 //ORIGINAL LINE: template<typename T>
   public static new bool functorMethod<T>(T value, Common.StringView name)
   {
-	return base  .functorMethod(value, name);
+	return base  .FunctorMethod(value, name);
   }
 
 //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:

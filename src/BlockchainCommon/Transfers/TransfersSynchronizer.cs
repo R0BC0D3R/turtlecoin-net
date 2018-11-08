@@ -47,13 +47,13 @@ namespace CryptoNote
 //C++ TO C# CONVERTER TODO TASK: Multiple inheritance is not available in C#:
 public class TransfersSyncronizer : ITransfersSynchronizer, IBlockchainConsumerObserver
 {
-  public TransfersSyncronizer(CryptoNote.Currency currency, Logging.ILogger logger, IBlockchainSynchronizer sync, INode node)
+  public TransfersSyncronizer(CryptoNote.Currency currency, Logging.ILogger logger, IBlockchainSynchronizer sync, INodeOriginal node)
   {
 //C++ TO C# CONVERTER TODO TASK: The following line could not be converted:
 	  this.m_currency = new CryptoNote.Currency(currency);
 	  this.m_logger = new Logging.LoggerRef(logger, "TransfersSyncronizer");
 	  this.m_sync = new CryptoNote.IBlockchainSynchronizer(sync);
-	  this.m_node = new CryptoNote.INode(node);
+	  this.m_node = new CryptoNote.INodeOriginal(node);
   }
   public override void Dispose()
   {
@@ -213,12 +213,12 @@ public class TransfersSyncronizer : ITransfersSynchronizer, IBlockchainConsumerO
 		  s.functorMethod(addr, "address");
 		  s.functorMethod(blob, "state");
 
-		  s.endObject();
+		  s.EndObject();
 		}
 	  }
 
-	  s.endArray();
-	  s.endObject();
+	  s.EndArray();
+	  s.EndObject();
 	}
   }
   public override void load(std::istream @is)
@@ -305,20 +305,20 @@ public class TransfersSyncronizer : ITransfersSynchronizer, IBlockchainConsumerO
 			  m_logger.functorMethod(Logging.Level.DEBUGGING) << "Subscription not found: " << m_currency.accountAddressAsString(acc);
 			}
 
-			s.endObject();
+			s.EndObject();
 		  }
 
-		  s.endArray();
+		  s.EndArray();
 		}
 		else
 		{
 		  m_logger.functorMethod(Logging.Level.DEBUGGING) << "Consumer not found: " << viewKey;
 		}
 
-		s.endObject();
+		s.EndObject();
 	  }
 
-	  s.endArray();
+	  s.EndArray();
 
 	}
 	catch
@@ -347,7 +347,7 @@ public class TransfersSyncronizer : ITransfersSynchronizer, IBlockchainConsumerO
 
   // std::unordered_map<AccountAddress, std::unique_ptr<TransfersConsumer>> m_subscriptions;
   private IBlockchainSynchronizer m_sync;
-  private INode m_node;
+  private INodeOriginal m_node;
   private readonly CryptoNote.Currency m_currency;
 
   private override void onBlocksAdded(IBlockchainConsumer consumer, List<Crypto.Hash> blockHashes)

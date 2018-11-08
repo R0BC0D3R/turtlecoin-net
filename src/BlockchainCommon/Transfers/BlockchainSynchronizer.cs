@@ -34,10 +34,10 @@ namespace CryptoNote
 public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchainSynchronizerObserver, IBlockchainSynchronizer>
 {
 
-  public BlockchainSynchronizer(INode node, Logging.ILogger logger, Hash genesisBlockHash)
+  public BlockchainSynchronizer(INodeOriginal node, Logging.ILogger logger, Hash genesisBlockHash)
   {
 	  this.m_logger = new Logging.LoggerRef(logger, "BlockchainSynchronizer");
-	  this.m_node = new CryptoNote.INode(node);
+	  this.m_node = new CryptoNote.INodeOriginal(node);
 	  this.m_genesisBlockHash = new Crypto.Hash(genesisBlockHash);
 	  this.m_currentState = new CryptoNote.BlockchainSynchronizer.State.stopped;
 	  this.m_futureState = new CryptoNote.BlockchainSynchronizer.State.stopped;
@@ -1020,7 +1020,7 @@ public class BlockchainSynchronizer : INodeObserver, IObservableImpl<IBlockchain
 
   private Logging.LoggerRef m_logger = new Logging.LoggerRef();
   private SortedDictionary<IBlockchainConsumer, SynchronizationState> m_consumers = new SortedDictionary<IBlockchainConsumer, SynchronizationState>();
-  private INode m_node;
+  private INodeOriginal m_node;
   private readonly Crypto.Hash m_genesisBlockHash = new Crypto.Hash();
 
   private Crypto.Hash lastBlockId = new Crypto.Hash();

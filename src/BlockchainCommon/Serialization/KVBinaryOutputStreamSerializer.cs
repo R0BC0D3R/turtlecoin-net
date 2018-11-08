@@ -54,7 +54,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 	return ISerializer.OUTPUT;
   }
 
-  public override bool beginObject(Common.StringView name)
+  public override bool BeginObject(Common.StringView name)
   {
 	checkArrayPreamble(new ushort(GlobalMembers.BIN_KV_SERIALIZE_TYPE_OBJECT));
 
@@ -63,7 +63,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 
 	return true;
   }
-  public override void endObject()
+  public override void EndObject()
   {
 	Debug.Assert(m_objectsStack.Count);
 
@@ -86,7 +86,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 	m_stack.Add(new Level(new Common.StringView(name), new ulong(size)));
 	return true;
   }
-  public override void endArray()
+  public override void EndArray()
   {
 	bool validArray = m_stack[m_stack.Count - 1].state == State.Array;
 	m_stack.RemoveAt(m_stack.Count - 1);
@@ -160,7 +160,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 	write(@out, value.data(), value.Length);
 	return true;
   }
-  public override bool binary(object value, ulong size, Common.StringView name)
+  public override bool Binary(object value, ulong size, Common.StringView name)
   {
 	if (size > 0)
 	{
@@ -171,7 +171,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 	}
 	return true;
   }
-  public override bool binary(string value, Common.StringView name)
+  public override bool Binary(string value, Common.StringView name)
   {
 //C++ TO C# CONVERTER TODO TASK: There is no equivalent to 'const_cast' in C#:
 	return binary(const_cast<char>(value.data()), value.Length, new Common.StringView(name));
@@ -181,7 +181,7 @@ public class KVBinaryOutputStreamSerializer : ISerializer
 //ORIGINAL LINE: template<typename T>
   public static new bool functorMethod<T>(T value, Common.StringView name)
   {
-	return base  .functorMethod(value, name);
+	return base  .FunctorMethod(value, name);
   }
 
 

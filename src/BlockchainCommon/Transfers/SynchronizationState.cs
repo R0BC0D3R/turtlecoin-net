@@ -173,7 +173,7 @@ public class SynchronizationState : IStreamSerializable
   {
 	s.beginObject(name);
 	s.functorMethod(m_blockchain, "blockchain");
-	s.endObject();
+	s.EndObject();
 	return s.functorMethod;
   }
 
